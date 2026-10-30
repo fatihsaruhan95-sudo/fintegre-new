@@ -1,6 +1,10 @@
 <section data-section="programs" id="programs" class="v2-sec" data-tone="dark"
   style="--h:900px; background: radial-gradient(55.56% 38.46% at 16.67% 53.85%, #1D2A8F 0%, #182271 27.5%, #121A52 55%, #111634 77.5%, #0F1115 100%), #0F1115;">
   <style>
+    /* Scroll-linked: the section is several screens tall and one sticky screen shows the carousel,
+       so scrolling down walks through the cards before moving on. */
+    [data-section="programs"].v2-sec { height: calc(900px * var(--s) * 3.6); }
+    [data-section="programs"] .pg-sticky { position: sticky; top: 0; height: calc(900px * var(--s)); overflow: hidden; }
     [data-section="programs"] .pg-abs { position: absolute; }
     [data-section="programs"] .pg-arrow { width: 52px; height: 52px; border-radius: 999px; border: 0; display: flex; align-items: center; justify-content: center;
       color: #F5F7FA; font: 400 18px/1 'Geologica', sans-serif; cursor: pointer; transition: background .25s, opacity .3s var(--inout); }
@@ -12,7 +16,7 @@
 
     /* Scroller: starts at the canvas left edge (scroll-padding 120) and runs to the right edge of the viewport. */
     [data-section="programs"] .pg-scroller { left: 0; top: 304px; height: 540px; width: calc(1440px + (100vw / var(--s) - 1440px) / 2);
-      overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -ms-overflow-style: none; cursor: grab; touch-action: pan-x pan-y; overscroll-behavior-x: contain; }
+      overflow: hidden; scrollbar-width: none; -ms-overflow-style: none; }
     [data-section="programs"] .pg-scroller::-webkit-scrollbar { display: none; }
     [data-section="programs"] .pg-scroller.is-dragging { cursor: grabbing; }
     [data-section="programs"] .pg-scroller.is-dragging * { pointer-events: none; }
@@ -45,6 +49,7 @@
     .motion [data-section="programs"]:not(.is-in) .pg-head[data-m] { translate: 0 24px; }
   </style>
 
+  <div class="pg-sticky">
   <div class="v2-canvas">
     <h2 class="pg-abs pg-head" data-m="up" style="left:120px; top:92px; margin:0; font-weight:400; font-size:64px; line-height:1.04; letter-spacing:-2.56px; color:#F5F7FA; white-space:nowrap;">
       Seven programs.<br>One platform.
@@ -143,5 +148,6 @@
       <button type="button" class="pg-dot" aria-label="Program 6"></button>
       <button type="button" class="pg-dot" aria-label="Program 7"></button>
     </div>
+  </div>
   </div>
 </section>

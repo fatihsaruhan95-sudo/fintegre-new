@@ -18,6 +18,16 @@
 
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) root.classList.add('motion');
 
+  // The hero entrance starts only once everything is loaded and painted (the page is hidden until then).
+  const ready = Promise.all([
+    new Promise((r) => (document.readyState === 'complete' ? r() : addEventListener('load', r, { once: true }))),
+    document.fonts ? document.fonts.ready : Promise.resolve(),
+  ]);
+  const reveal = Promise.race([ready, new Promise((r) => setTimeout(r, 4000))]).then(() => new Promise((r) => {
+    root.classList.remove('v2-loading');
+    requestAnimationFrame(() => requestAnimationFrame(() => setTimeout(r, 150)));
+  }));
+
   // Sections play their entrance once, when their top passes 70% of the screen (works for sections taller
   // than the viewport too), and announce it with 'v2:in'.
   const io = new IntersectionObserver((entries) => {
@@ -29,8 +39,8 @@
     }
   }, { threshold: 0, rootMargin: '0px 0px -30% 0px' });
   document.querySelectorAll('.v2-sec').forEach((s) => {
-    if (s.dataset.section === 'hero') requestAnimationFrame(() => { s.classList.add('is-in'); s.dispatchEvent(new CustomEvent('v2:in')); });
-    else io.observe(s);
+    if (s.dataset.section === 'hero') reveal.then(() => { s.classList.add('is-in'); s.dispatchEvent(new CustomEvent('v2:in')); });
+    else reveal.then(() => io.observe(s));
   });
 
   // Header: hidden over the hero, shown when scrolling up; switches to the light style over light sections.

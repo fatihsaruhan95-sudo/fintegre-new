@@ -25,6 +25,9 @@
   /* Figma timeline (14.5 s): plates rise in, the signal travels down through the layers, each layer
      answers (glow + chip + legend row), then the offer travels back up. Entrances run once; the
      signal cycle (legend, glows, dots) repeats on the same 14.5 s loop while the section is on screen. */
+  /* Scroll-linked story: the section is three screens tall and one sticky screen shows it; scrolling advances the timeline. */
+  [data-section="positioning"].v2-sec { height: calc(900px * var(--s) * 3); }
+  [data-section="positioning"] .pz-sticky { position: sticky; top: 0; height: calc(900px * var(--s)); overflow: hidden; }
   .motion [data-section="positioning"] .pz-a { animation-duration: 14.5s; animation-timing-function: linear; animation-fill-mode: both; animation-play-state: paused; }
   .motion [data-section="positioning"] .pz-loop { animation-iteration-count: infinite; }
   .motion [data-section="positioning"].is-in.pz-run .pz-a { animation-play-state: running; }
@@ -76,6 +79,7 @@
   html:not(.motion) [data-section="positioning"] .pz-glow,
   html:not(.motion) [data-section="positioning"] .pz-signal { opacity: 0; }
 </style>
+  <div class="pz-sticky">
   <div class="v2-canvas">
     <h2 class="pz-abs" style="left:120px; top:150px;">Infrastructure<br>and intelligence.</h2>
     <p class="pz-abs pz-lead" style="left:120px; top:318px;">B2B, white-label, vendor-neutral and asset-light. One orchestration layer for journeys, diagnostics, valuation, vendors and payouts.</p>
@@ -119,5 +123,6 @@
     <div class="pz-abs pz-chip pz-a pz-chip-buyera" style="left:590px; top:570px;"><img alt="" src="assets/positioning-dot.svg" width="7" height="7">Buyer A · €598</div>
     <div class="pz-abs pz-chip pz-chip--hot pz-a pz-chip-buyerb" style="left:1050px; top:654px;"><img alt="" src="assets/positioning-dot-indigo.svg" width="7" height="7">Buyer B · €612</div>
     <div class="pz-abs pz-chip pz-chip--hot pz-a pz-chip-offer" style="left:1010px; top:154px;"><img alt="" src="assets/positioning-dot-indigo.svg" width="7" height="7">Offer ready · €612</div>
+  </div>
   </div>
 </section>

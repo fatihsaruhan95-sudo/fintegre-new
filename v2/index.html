@@ -7,6 +7,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  // Hide the page until fonts, Tailwind and images are ready, so the hero entrance is seen from its first frame.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
 <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 <link rel="stylesheet" href="v2.css">
 </head>
@@ -68,7 +72,7 @@
 
   /* Visual */
   [data-section="hero"] .h-phone { left: 760px; top: 190px; width: 700px; height: 845px; transform-origin: 50% 50%; }
-  [data-section="hero"] .h-phone img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 40px 80px rgba(0,0,0,.6)); }
+  [data-section="hero"] .h-phone img { -webkit-mask-image: linear-gradient(90deg,#000 86%,transparent 97%); mask-image: linear-gradient(90deg,#000 86%,transparent 97%); display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 40px 80px rgba(0,0,0,.6)); }
   [data-section="hero"] .h-fade { left: -1000px; top: 640px; width: 3440px; height: 260px; pointer-events: none;
     background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.92) 70%, #0F1115 100%); }
   [data-section="hero"] .h-fibres { left: 0; top: 0; width: 1440px; height: 900px; pointer-events: none; }
@@ -308,12 +312,18 @@
     [data-section="tools"] { --ink:#0f1115; --ink2:rgba(15,17,21,.68); --ink3:rgba(15,17,21,.46); --subtle:#f5f7fa; --muted:#edf0f4; --line:#dfe3ea; --amber:#fff1d6; --brand:#3047ec; }
     [data-section="tools"] .t-abs { position:absolute; }
     [data-section="tools"] p { margin:0; }
-    [data-section="tools"] .t-mesh { position:absolute; inset:0; overflow:clip; pointer-events:none; }
+    [data-section="tools"] .t-mesh { position:absolute; inset:0; overflow:visible; pointer-events:none; }
     [data-section="tools"] .t-mesh img { position:absolute; display:block; max-width:none; }
-    [data-section="tools"] .t-shade { position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.35)); }
+    [data-section="tools"] .t-shade { position:absolute; top:0; bottom:0; left:-1200px; right:-1200px; background:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.35)); }
 
     /* Left column: pinned while the cards scroll past (translated by js/03-tools.js). */
     [data-section="tools"] .t-pin { position:absolute; left:120px; top:140px; width:560px; height:470px; will-change:transform; }
+    /* Pin on the compositor: a scroll-driven animation moves the column 1:1 with the page, so it never lags a frame. */
+    @supports (animation-timeline: view()) {
+      [data-section="tools"] { view-timeline: --tools block; }
+      [data-section="tools"] .t-pin { animation: t-pin linear both; animation-timeline: --tools; animation-range: contain 0% contain 100%; }
+    }
+    @keyframes t-pin { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, calc(3020px - 100vh / var(--s)), 0); } }
     [data-section="tools"] .t-h { width:560px; font-size:44px; line-height:1.1; letter-spacing:-0.02em; font-weight:400; color:#fff; margin:0; }
     [data-section="tools"] .t-h em { font-family:'Instrument Serif', serif; font-style:italic; font-weight:400; font-size:49.28px; }
     [data-section="tools"] .t-list { position:relative; margin-top:28px; width:420px; height:192px; }
@@ -483,7 +493,7 @@
 
 <section data-section="ecosystem" id="ecosystem" class="v2-sec" style="--h:900px; background:#0B0C10" data-tone="dark">
   <style>
-    [data-section="ecosystem"] .eco-bg { position:absolute; inset:0; background: radial-gradient(800px 375px at 400px 412.5px, rgba(27,39,128,.5) 0%, rgba(19,26,72,.25) 50%, rgba(11,12,16,0) 100%); pointer-events:none; }
+    [data-section="ecosystem"] .eco-bg { position:absolute; top:0; bottom:0; left:-1200px; right:-1200px; background: radial-gradient(800px 375px at 1600px 412.5px, rgba(27,39,128,.5) 0%, rgba(19,26,72,.25) 50%, rgba(11,12,16,0) 100%); pointer-events:none; }
     [data-section="ecosystem"] .eco-abs { position:absolute; margin:0; }
     [data-section="ecosystem"] .eco-h { left:120px; top:96px; font-weight:400; font-size:48px; line-height:1.04; letter-spacing:-0.04em; color:#F5F7FA; white-space:nowrap; }
     [data-section="ecosystem"] .eco-sub { left:900px; top:118px; width:420px; font-weight:300; font-size:17px; line-height:1.55; color:rgba(245,247,250,.62); }
@@ -794,8 +804,8 @@
     <div class="fb-abs" aria-hidden="true" style="left:50%; bottom:0; width:calc(100vw / var(--s) + 4px); translate:-50% 0; height:380px; z-index:1; pointer-events:none;
       background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.75) 60%, rgba(0,0,0,.92) 100%);"></div>
     <!-- Top-left scrim -->
-    <div class="fb-abs" aria-hidden="true" style="left:0; top:0; width:1440px; height:520px; z-index:1; pointer-events:none;
-      background: radial-gradient(800px 200px at -80px 340px, rgba(0,0,0,.72) 0%, rgba(0,0,0,.4) 55%, rgba(0,0,0,0) 100%);"></div>
+    <div class="fb-abs" aria-hidden="true" style="left:-1200px; top:0; width:2640px; height:520px; z-index:1; pointer-events:none;
+      background: radial-gradient(800px 200px at 1120px 340px, rgba(0,0,0,.72) 0%, rgba(0,0,0,.4) 55%, rgba(0,0,0,0) 100%);"></div>
 
     <div class="fb-abs" data-m="up" style="--d:100ms; left:120px; top:170px; z-index:2; display:flex; flex-direction:column; align-items:flex-start; gap:24px;">
       <h2 style="margin:0; width:760px; font-weight:400; font-size:64px; line-height:1.04; letter-spacing:-1.6px; color:#fff;">
@@ -820,6 +830,10 @@
 <section data-section="programs" id="programs" class="v2-sec" data-tone="dark"
   style="--h:900px; background: radial-gradient(55.56% 38.46% at 16.67% 53.85%, #1D2A8F 0%, #182271 27.5%, #121A52 55%, #111634 77.5%, #0F1115 100%), #0F1115;">
   <style>
+    /* Scroll-linked: the section is several screens tall and one sticky screen shows the carousel,
+       so scrolling down walks through the cards before moving on. */
+    [data-section="programs"].v2-sec { height: calc(900px * var(--s) * 3.6); }
+    [data-section="programs"] .pg-sticky { position: sticky; top: 0; height: calc(900px * var(--s)); overflow: hidden; }
     [data-section="programs"] .pg-abs { position: absolute; }
     [data-section="programs"] .pg-arrow { width: 52px; height: 52px; border-radius: 999px; border: 0; display: flex; align-items: center; justify-content: center;
       color: #F5F7FA; font: 400 18px/1 'Geologica', sans-serif; cursor: pointer; transition: background .25s, opacity .3s var(--inout); }
@@ -831,7 +845,7 @@
 
     /* Scroller: starts at the canvas left edge (scroll-padding 120) and runs to the right edge of the viewport. */
     [data-section="programs"] .pg-scroller { left: 0; top: 304px; height: 540px; width: calc(1440px + (100vw / var(--s) - 1440px) / 2);
-      overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -ms-overflow-style: none; cursor: grab; touch-action: pan-x pan-y; overscroll-behavior-x: contain; }
+      overflow: hidden; scrollbar-width: none; -ms-overflow-style: none; }
     [data-section="programs"] .pg-scroller::-webkit-scrollbar { display: none; }
     [data-section="programs"] .pg-scroller.is-dragging { cursor: grabbing; }
     [data-section="programs"] .pg-scroller.is-dragging * { pointer-events: none; }
@@ -864,6 +878,7 @@
     .motion [data-section="programs"]:not(.is-in) .pg-head[data-m] { translate: 0 24px; }
   </style>
 
+  <div class="pg-sticky">
   <div class="v2-canvas">
     <h2 class="pg-abs pg-head" data-m="up" style="left:120px; top:92px; margin:0; font-weight:400; font-size:64px; line-height:1.04; letter-spacing:-2.56px; color:#F5F7FA; white-space:nowrap;">
       Seven programs.<br>One platform.
@@ -962,6 +977,7 @@
       <button type="button" class="pg-dot" aria-label="Program 6"></button>
       <button type="button" class="pg-dot" aria-label="Program 7"></button>
     </div>
+  </div>
   </div>
 </section>
 
@@ -1085,6 +1101,9 @@
   /* Figma timeline (14.5 s): plates rise in, the signal travels down through the layers, each layer
      answers (glow + chip + legend row), then the offer travels back up. Entrances run once; the
      signal cycle (legend, glows, dots) repeats on the same 14.5 s loop while the section is on screen. */
+  /* Scroll-linked story: the section is three screens tall and one sticky screen shows it; scrolling advances the timeline. */
+  [data-section="positioning"].v2-sec { height: calc(900px * var(--s) * 3); }
+  [data-section="positioning"] .pz-sticky { position: sticky; top: 0; height: calc(900px * var(--s)); overflow: hidden; }
   .motion [data-section="positioning"] .pz-a { animation-duration: 14.5s; animation-timing-function: linear; animation-fill-mode: both; animation-play-state: paused; }
   .motion [data-section="positioning"] .pz-loop { animation-iteration-count: infinite; }
   .motion [data-section="positioning"].is-in.pz-run .pz-a { animation-play-state: running; }
@@ -1136,6 +1155,7 @@
   html:not(.motion) [data-section="positioning"] .pz-glow,
   html:not(.motion) [data-section="positioning"] .pz-signal { opacity: 0; }
 </style>
+  <div class="pz-sticky">
   <div class="v2-canvas">
     <h2 class="pz-abs" style="left:120px; top:150px;">Infrastructure<br>and intelligence.</h2>
     <p class="pz-abs pz-lead" style="left:120px; top:318px;">B2B, white-label, vendor-neutral and asset-light. One orchestration layer for journeys, diagnostics, valuation, vendors and payouts.</p>
@@ -1179,6 +1199,7 @@
     <div class="pz-abs pz-chip pz-a pz-chip-buyera" style="left:590px; top:570px;"><img decoding="async" alt="" src="assets/positioning-dot.svg" width="7" height="7">Buyer A · €598</div>
     <div class="pz-abs pz-chip pz-chip--hot pz-a pz-chip-buyerb" style="left:1050px; top:654px;"><img decoding="async" alt="" src="assets/positioning-dot-indigo.svg" width="7" height="7">Buyer B · €612</div>
     <div class="pz-abs pz-chip pz-chip--hot pz-a pz-chip-offer" style="left:1010px; top:154px;"><img decoding="async" alt="" src="assets/positioning-dot-indigo.svg" width="7" height="7">Offer ready · €612</div>
+  </div>
   </div>
 </section>
 
@@ -1246,7 +1267,7 @@
             </div></div>
           </div>
           <div class="dv-abs dv-slide" style="left:2880px;" data-slide="2">
-            <div class="dv-abs dv-photo dv-lighten" style="left:380px; top:170px; width:1500px; height:568px; -webkit-mask-image:url(assets/devices-macbook-mask.svg); mask-image:url(assets/devices-macbook-mask.svg); -webkit-mask-size:1500px 568px; mask-size:1500px 568px; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;"><img decoding="async" alt="MacBook" src="assets/devices-macbook.png"></div>
+            <div class="dv-abs dv-photo dv-lighten" style="left:380px; top:170px; width:1500px; height:568px; -webkit-mask-image:url(assets/devices-macbook-mask.svg), linear-gradient(90deg,#000 60%,transparent 70.6%); mask-image:url(assets/devices-macbook-mask.svg), linear-gradient(90deg,#000 60%,transparent 70.6%); -webkit-mask-size:1500px 568px, 100% 100%; mask-size:1500px 568px, 100% 100%; -webkit-mask-composite:source-in; mask-composite:intersect; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;"><img decoding="async" alt="MacBook" src="assets/devices-macbook.png"></div>
             <div class="dv-abs dv-copy"><div class="dv-copy-in">
               <p class="dv-kicker">MacBook</p>
               <p class="dv-price">up to €540</p>

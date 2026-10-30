@@ -23,6 +23,8 @@
   }, { rootMargin: '0px 0px -12% 0px' });
   cards.forEach((c) => cardIO.observe(c));
 
+  // Browsers with scroll-driven animations pin the column in CSS; the JS translate is only a fallback.
+  const cssPin = CSS.supports('animation-timeline: view()');
   let active = 0, lastShift = -1;
   V2.onScroll(() => {
     const s = V2.scale();
@@ -30,7 +32,7 @@
     if (r.bottom < -200 || r.top > innerHeight + 200) return;
     // Canvas y currently at the top of the viewport.
     const shift = Math.round(Math.min(Math.max(-r.top / s, 0), MAX));
-    if (shift !== lastShift) { pin.style.transform = `translate3d(0, ${shift}px, 0)`; lastShift = shift; }
+    if (!cssPin && shift !== lastShift) { pin.style.transform = `translate3d(0, ${shift}px, 0)`; lastShift = shift; }
     const mid = (innerHeight / 2 - r.top) / s;
     let idx = 0;
     tops.forEach((t, i) => { if (mid >= t - 30) idx = i; });
