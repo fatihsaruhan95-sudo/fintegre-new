@@ -1,0 +1,82 @@
+/* Fintegre v2 — brand book language. Every section is a 1440-wide design canvas scaled to the screen
+   (v2.js sets --s); backgrounds bleed edge to edge on the section itself. */
+:root {
+  --graphite: #0F1115;
+  --indigo: #3047EC;
+  --ice: #B7D7FF;
+  --smoke: #F5F7FA;
+  --titanium: #A7B0BE;
+  --s: 1;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --inout: cubic-bezier(.65, 0, .25, 1);
+  --spring: cubic-bezier(.3, 1.45, .5, 1);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--graphite); color: var(--smoke); }
+body { font-family: 'Geologica', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+a { color: inherit; text-decoration: none; }
+
+/* Section shell: full-bleed background, scaled design canvas centred inside. */
+.v2-sec { position: relative; width: 100%; height: calc(var(--h, 900px) * var(--s)); overflow: clip; }
+.v2-canvas {
+  position: absolute; top: 0; left: 50%; width: 1440px; height: var(--h, 900px);
+  transform: translateX(-50%) scale(var(--s)); transform-origin: top center;
+}
+
+/* Global header (fixed): hidden over the hero's own top bar, shown on scroll up. */
+.v2-header {
+  position: fixed; z-index: 50; top: 0; left: 0; right: 0; height: 0; pointer-events: none;
+}
+.v2-header__bar {
+  pointer-events: auto; position: absolute; top: calc(20px * var(--s)); left: 50%;
+  width: 1312px; height: 64px; transform: translateX(-50%) scale(var(--s)); transform-origin: top center;
+  display: flex; align-items: center; justify-content: space-between; padding: 0 10px 0 24px;
+  border-radius: 999px; background: rgba(15, 17, 21, .62); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  box-shadow: inset 0 0 0 1px rgba(183, 215, 255, .12);
+  opacity: 0; translate: 0 -24px; transition: opacity .5s var(--ease), translate .6s var(--ease);
+}
+.v2-header.is-visible .v2-header__bar { opacity: 1; translate: 0 0; }
+.v2-header.on-light .v2-header__bar { background: rgba(245, 247, 250, .78); color: var(--graphite); box-shadow: inset 0 0 0 1px rgba(15, 17, 21, .08); }
+.v2-nav { display: flex; gap: 32px; font-size: 14px; }
+.v2-nav a { opacity: .82; transition: opacity .2s; }
+.v2-nav a:hover { opacity: 1; }
+.v2-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; }
+.v2-logo img { width: 24px; height: 18px; }
+.v2-header.on-light .v2-logo img { filter: invert(1); }
+.v2-cta { background: var(--smoke); color: var(--graphite); border-radius: 999px; padding: 12px 20px; font-size: 15px; }
+.v2-header.on-light .v2-cta { background: var(--graphite); color: var(--smoke); }
+
+/* Version switch (shared with v1): fixed top-left. */
+.ver-switch {
+  position: fixed; z-index: 60; top: 16px; left: 16px; display: flex; gap: 2px; padding: 3px;
+  border-radius: 999px; background: rgba(15, 17, 21, .7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  box-shadow: inset 0 0 0 1px rgba(183, 215, 255, .18); font: 500 12px/1 'Geologica', system-ui, sans-serif;
+}
+.ver-switch a { padding: 7px 11px; border-radius: 999px; color: rgba(245, 247, 250, .7); letter-spacing: .02em; }
+.ver-switch a[aria-current="page"] { background: var(--smoke); color: #0F1115; }
+.ver-switch a:not([aria-current]):hover { color: #fff; }
+
+/* Entrance motion: elements with data-m start hidden and play when their section gets .is-in.
+   Per-element delay via style="--d: 300ms". */
+.motion [data-m] { opacity: 0; transition: opacity .8s var(--ease) var(--d, 0ms), translate 1s var(--ease) var(--d, 0ms), scale 1s var(--ease) var(--d, 0ms), clip-path 1.4s var(--inout) var(--d, 0ms); }
+.motion [data-m="up"] { translate: 0 40px; }
+.motion [data-m="down"] { translate: 0 -30px; }
+.motion [data-m="left"] { translate: -60px 0; }
+.motion [data-m="right"] { translate: 60px 0; }
+.motion [data-m="scale"] { scale: .94; }
+.motion [data-m="pop"] { scale: .6; transition-timing-function: var(--ease), var(--ease), var(--spring), var(--ease); }
+.motion [data-m="wipe"] { opacity: 1; clip-path: inset(0 100% 0 0); }
+.motion .is-in [data-m] { opacity: 1; translate: none; scale: 1; }
+.motion .is-in [data-m="wipe"] { clip-path: inset(0 0 0 0); }
+/* SVG strokes that draw in: give the path pathLength="1". */
+.motion [data-draw] { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s var(--inout) var(--d, 0ms); }
+.motion .is-in [data-draw] { stroke-dashoffset: 0; }
+
+@media (max-width: 1023px) {
+  .v2-header__bar { width: calc(100vw / var(--s) - 32px); }
+  .v2-nav { display: none; }
+  .ver-switch { top: auto; bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion [data-m], .motion [data-draw] { transition: none !important; }
+}

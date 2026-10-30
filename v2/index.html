@@ -1,0 +1,1618 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fintegre — Make every device worth more (v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="v2.css">
+</head>
+<body>
+<nav class="ver-switch" aria-label="Site version">
+  <a href="/">V1</a>
+  <a href="/v2/" aria-current="page">V2</a>
+</nav>
+
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="#hero" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="../assets/header-mark.svg">Fintegre</a>
+    <nav class="v2-nav">
+      <a href="#programs">Platform</a>
+      <a href="#ecosystem">Solutions</a>
+      <a href="#intelligence">Intelligence</a>
+      <a href="#case-study">Customers</a>
+      <a href="#insights">Insights</a>
+      <a href="../brandbook.html">Brandbook</a>
+    </nav>
+    <a href="#closing" class="v2-cta">Design your program</a>
+  </div>
+</header>
+
+<main class="page">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 327.27px * var(--s)) calc(570px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="hero"] .h-abs { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+  [data-section="hero"] .h-glow { position: absolute; pointer-events: none; max-width: none; }
+
+  /* Top bar (part of the hero design) */
+  [data-section="hero"] .h-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; }
+  [data-section="hero"] .h-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .h-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .h-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .h-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .h-nav a { transition: color .2s; }
+  [data-section="hero"] .h-nav a:hover { color: #F5F7FA; }
+  [data-section="hero"] .h-btn { display: inline-flex; align-items: center; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s, box-shadow .25s; }
+  [data-section="hero"] .h-btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .h-btn--light:hover { background: #fff; }
+  [data-section="hero"] .h-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="hero"] .h-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+
+  /* Copy */
+  [data-section="hero"] .h-copy { left: 120px; top: 230px; }
+  [data-section="hero"] .h-copy__in { display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  [data-section="hero"] h1 { margin: 0; font-weight: 400; font-size: 92px; line-height: .96; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .h-lede { width: 460px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .h-ctas { display: flex; gap: 12px; }
+  [data-section="hero"] .h-ctas .h-btn { padding: 14px 22px; }
+
+  [data-section="hero"] .h-stats { left: 120px; top: 752px; display: flex; gap: 28px; align-items: center; }
+  [data-section="hero"] .h-stat { display: flex; flex-direction: column; gap: 2px; white-space: nowrap; }
+  [data-section="hero"] .h-stat b { font-weight: 300; font-size: 22px; letter-spacing: -0.02em; color: #F5F7FA; }
+  [data-section="hero"] .h-stat span { font-size: 13px; color: #A7B0BE; }
+  [data-section="hero"] .h-div { width: 1px; height: 28px; background: rgba(245,247,250,.16); }
+
+  /* Visual */
+  [data-section="hero"] .h-phone { left: 760px; top: 190px; width: 700px; height: 845px; transform-origin: 50% 50%; }
+  [data-section="hero"] .h-phone img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 40px 80px rgba(0,0,0,.6)); }
+  [data-section="hero"] .h-fade { left: -1000px; top: 640px; width: 3440px; height: 260px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.92) 70%, #0F1115 100%); }
+  [data-section="hero"] .h-fibres { left: 0; top: 0; width: 1440px; height: 900px; pointer-events: none; }
+  [data-section="hero"] .h-fibres svg { position: absolute; overflow: visible; }
+  [data-section="hero"] .h-scan { left: 823px; top: 235.52px; width: 154px; height: 154px; }
+  [data-section="hero"] .h-scan img { display: block; width: 154px; height: 154px; }
+  [data-section="hero"] .h-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; line-height: normal; color: #F5F7FA; }
+  [data-section="hero"] .h-chip img { width: 7px; height: 7px; display: block; }
+
+  [data-section="hero"] .h-card { left: 1040px; top: 460px; width: 340px; height: 330px; border-radius: 26px; overflow: clip;
+    background: rgba(255,255,255,.07); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    box-shadow: inset 0 0 0 1px rgba(183,215,255,.16), 0 30px 60px rgba(0,0,0,.5); }
+  [data-section="hero"] .h-card__label { left: 25px; top: 23px; font-size: 13px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="hero"] .h-price { left: 23px; top: 49px; font-weight: 300; font-size: 72px; line-height: normal; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  [data-section="hero"] .h-delta { left: 25px; top: 127px; padding: 5px 10px; border-radius: 999px; background: rgba(183,215,255,.16); font-size: 12px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="hero"] .h-track, [data-section="hero"] .h-fill { left: 25px; top: 167px; height: 6px; border-radius: 999px; }
+  [data-section="hero"] .h-track { width: 288px; background: rgba(255,255,255,.08); }
+  [data-section="hero"] .h-fill { width: 288px; background: linear-gradient(90deg, #3047EC, #B7D7FF); }
+  [data-section="hero"] .h-bids { left: 25px; top: 189px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; white-space: nowrap; }
+  [data-section="hero"] .h-bid { width: 288px; height: 30px; padding: 0 10px; border-radius: 10px; display: flex; align-items: center; justify-content: space-between; color: #A7B0BE; }
+  [data-section="hero"] .h-bid--best { background: rgba(48,71,236,.9); color: #F5F7FA; }
+
+  /* Entrance (Figma timeline, seconds from arrival → --d) */
+  .motion [data-section="hero"] [data-hm] { opacity: 0; translate: 0 var(--ty, 0px);
+    transition: opacity var(--to, .8s) var(--eo, var(--ease)) var(--d, 0ms), translate var(--tt, 1s) var(--ease) var(--d, 0ms), scale var(--ts, .5s) var(--spring) var(--d, 0ms); }
+  .motion [data-section="hero"] [data-hm="pop"] { scale: .6; }
+  .motion [data-section="hero"].is-in [data-hm] { opacity: 1; translate: none; scale: 1; }
+  .motion [data-section="hero"] [data-draw] { transition-duration: .5s; }
+  .motion [data-section="hero"] .h-fill { width: 8px; transition: width 1.4s var(--inout) 2.8s; }
+  .motion [data-section="hero"].is-in .h-fill { width: 288px; }
+  .motion [data-section="hero"] .h-scan { opacity: 0; scale: .4; }
+  .motion [data-section="hero"].is-in .h-scan { animation: hero-scan-op 2.3s var(--inout) 1.2s both, hero-scan-sc .5s var(--spring) 1.2s both; }
+  @keyframes hero-scan-op { 0% { opacity: 0; } 13% { opacity: 1; } 34.8% { opacity: .4; } 56.5% { opacity: 1; } 78.3% { opacity: .4; } 100% { opacity: 1; } }
+  @keyframes hero-scan-sc { from { scale: .4; } to { scale: 1; } }
+  @media (prefers-reduced-motion: reduce) { [data-section="hero"] * { animation: none !important; } }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="h-glow" alt="" src="assets/hero-glow-1.svg" style="left:720px; top:-100px; width:1060px; height:920px;">
+    <img decoding="async" class="h-glow" alt="" src="assets/hero-glow-2.svg" style="left:-380px; top:420px; width:960px; height:780px;">
+
+    <div class="h-abs h-top">
+      <a href="#hero" class="h-logo" aria-label="Fintegre home"><span class="h-mark"><img decoding="async" alt="" src="assets/hero-logo.svg"></span>Fintegre</a>
+      <nav class="h-nav" aria-label="Hero">
+        <a href="#programs">Platform</a>
+        <a href="#ecosystem">Solutions</a>
+        <a href="#intelligence">Intelligence</a>
+        <a href="#case-study">Customers</a>
+        <a href="#insights">Insights</a>
+        <a href="../brandbook.html">Brandbook</a>
+      </nav>
+      <a href="#closing" class="h-btn h-btn--light" style="padding:10px 18px;">Design your program</a>
+    </div>
+
+    <div class="h-abs h-phone" data-hs="phone">
+      <div data-hm style="--d:200ms; --to:.8s; --tt:1.3s; --ty:90px; width:100%; height:100%;">
+        <img decoding="async" alt="iPhone 18 Pro, back camera" src="assets/hero-iphone.webp" width="700" height="845">
+      </div>
+    </div>
+
+    <div class="h-abs h-fade"></div>
+
+    <div class="h-abs h-fibres" data-hs="fibres" aria-hidden="true">
+      <svg style="left:959px; top:188.4px;" width="91" height="124.725" viewBox="0 0 91 124.725" fill="none"><path pathLength="1" data-draw style="--d:1600ms" d="M0 124.125C60 124.125 31 0.6 91 0.6" stroke-width="1.2" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+      <svg style="left:959px; top:268.4px;" width="141" height="44.725" viewBox="0 0 141 44.725" fill="none"><path pathLength="1" data-draw style="--d:2000ms" d="M0 44.125C60 44.125 81 0.6 141 0.6" stroke-width="1.2" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+      <svg style="left:959px; top:311.9px;" width="91" height="37.675" viewBox="0 0 91 37.675" fill="none"><path pathLength="1" data-draw style="--d:2400ms" d="M0 0.6C60 0.6 31 37.075 91 37.075" stroke-width="1.2" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+    </div>
+
+    <div class="h-abs" data-hs="scan" style="left:0; top:0;">
+      <div class="h-abs h-scan" aria-hidden="true"><img decoding="async" alt="" src="assets/hero-scan-ring.svg"></div>
+    </div>
+
+    <div class="h-abs" data-hs="chip-buyers" style="left:1050px; top:330px;">
+      <div class="h-chip" data-hm="pop" style="--d:2800ms; --to:.3s;"><img decoding="async" alt="" src="assets/hero-dot.svg">4 buyers competing</div>
+    </div>
+
+    <div class="h-abs h-card" data-hs="card" data-hm style="--d:2400ms; --to:.5s; --tt:.7s; --ty:40px;">
+      <p class="h-abs h-card__label">Live valuation · iPhone 18 Pro</p>
+      <p class="h-abs h-price" data-hero-price>€612</p>
+      <div class="h-abs h-track"></div>
+      <div class="h-abs h-fill"></div>
+      <p class="h-abs h-delta" data-hm style="--d:4100ms; --to:.4s; --eo:var(--inout);">+€38 vs. store price</p>
+      <div class="h-abs h-bids">
+        <div class="h-bid h-bid--best" data-hm style="--d:3000ms; --to:.4s; --eo:var(--inout);"><span>Best · Latvia</span><span>€612</span></div>
+        <div class="h-bid" data-hm style="--d:3150ms; --to:.4s; --eo:var(--inout);"><span>Lithuania</span><span>€598</span></div>
+        <div class="h-bid" data-hm style="--d:3300ms; --to:.4s; --eo:var(--inout);"><span>Poland</span><span>€585</span></div>
+        <div class="h-bid" data-hm style="--d:3450ms; --to:.4s; --eo:var(--inout);"><span>Estonia</span><span>€571</span></div>
+      </div>
+    </div>
+
+    <div class="h-abs" data-hs="chip-battery" style="left:1100px; top:250px;">
+      <div class="h-chip" data-hm="pop" style="--d:2400ms; --to:.3s;"><img decoding="async" alt="" src="assets/hero-dot.svg">Battery · 91 %</div>
+    </div>
+    <div class="h-abs" data-hs="chip-screen" style="left:1050px; top:170px;">
+      <div class="h-chip" data-hm="pop" style="--d:2000ms; --to:.3s;"><img decoding="async" alt="" src="assets/hero-dot.svg">Screen · Grade A</div>
+    </div>
+
+    <div class="h-abs h-copy" data-hs="copy">
+      <div class="h-copy__in" data-hm style="--d:100ms; --to:.9s; --tt:1s; --ty:30px;">
+        <h1>Make every<br>device worth<br>more.</h1>
+        <p class="h-lede">The intelligence and orchestration platform behind trade-in programs at retailers, telecom operators and device brands.</p>
+        <div class="h-ctas">
+          <a href="#closing" class="h-btn h-btn--light">Design your program</a>
+          <a href="#fullbleed" class="h-btn h-btn--ghost">Watch the film&nbsp;&nbsp;▷</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-abs" data-hs="stats" style="left:0; top:0;">
+      <div class="h-abs h-stats" data-hm style="--d:1000ms; --to:.8s; --eo:var(--inout);">
+        <div class="h-stat"><b>12</b><span>markets</span></div>
+        <div class="h-div"></div>
+        <div class="h-stat"><b>€240M</b><span>traded</span></div>
+        <div class="h-div"></div>
+        <div class="h-stat"><b>58 s</b><span>to an offer</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="measured" id="measured" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 392.73px * var(--s)) calc(450px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="measured"] p { margin: 0; }
+  [data-section="measured"] .m-abs { position: absolute; }
+  [data-section="measured"] .m-prog { left: 1382px; top: 381.75px; width: 22px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+  [data-section="measured"] .m-prog i { display: block; width: 10px; height: 1.5px; background: rgba(183,215,255,.3); }
+  [data-section="measured"] .m-prog i.on { width: 22px; background: #B7D7FF; }
+  [data-section="measured"] h2 { margin: 0; font-weight: 400; font-size: 76px; line-height: .98; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="measured"] .m-stats { left: 120px; top: 470px; width: 560px; }
+  [data-section="measured"] .m-row { display: flex; align-items: center; gap: 28px; padding: 18px 0; box-shadow: inset 0 1px 0 rgba(183,215,255,.16); }
+  [data-section="measured"] .m-num { width: 230px; flex: none; font-weight: 300; font-size: 52px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="measured"] .m-txt { display: flex; flex-direction: column; gap: 6px; white-space: nowrap; }
+  [data-section="measured"] .m-txt b { font-weight: 400; font-size: 12px; line-height: normal; color: #B7D7FF; }
+  [data-section="measured"] .m-txt span { font-weight: 300; font-size: 15px; line-height: 1.5; color: rgba(245,247,250,.62); }
+  [data-section="measured"] .m-viz { left: 760px; top: 180px; width: 560px; height: 560px; }
+  [data-section="measured"] .m-viz p { position: absolute; font-size: 12px; line-height: normal; white-space: nowrap; }
+  [data-section="measured"] .m-val { font-weight: 300; color: #F5F7FA; }
+  [data-section="measured"] .m-yr { color: rgba(245,247,250,.5); }
+  [data-section="measured"] .m-bar { position: absolute; }
+  [data-section="measured"] .m-bar img { display: block; }
+  /* Bars rise from the baseline. */
+  .motion [data-section="measured"] .m-bar { clip-path: inset(100% 0 0 0); transition: clip-path 1.2s var(--inout) var(--d, 0ms); }
+  .motion [data-section="measured"].is-in .m-bar { clip-path: inset(0 0 0 0); }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" alt="" src="assets/measured-glow.svg" style="position:absolute; left:640px; top:-40px; width:980px; height:980px; max-width:none; pointer-events:none;">
+
+    <div class="m-abs m-prog" aria-hidden="true" data-m="fade" style="--d:600ms"><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+    <h2 class="m-abs" style="left:120px; top:130px;">
+      <span style="display:block; --d:0ms" data-m="up">Connected.</span>
+      <span style="display:block; --d:100ms" data-m="up">Intelligent.</span>
+      <span style="display:block; --d:200ms" data-m="up">Effortless.</span>
+    </h2>
+
+    <div class="m-abs m-stats">
+      <div class="m-row" data-m="up" style="--d:350ms"><p class="m-num">12</p><div class="m-txt"><b>Countries live</b><span>Retailers and carriers across Europe.</span></div></div>
+      <div class="m-row" data-m="up" style="--d:450ms"><p class="m-num">€ 240M</p><div class="m-txt"><b>Value orchestrated</b><span>Trade-in value in the last 12 months.</span></div></div>
+      <div class="m-row" data-m="up" style="--d:550ms"><p class="m-num">3×</p><div class="m-txt"><b>More trade-ins</b><span>When value is shown before checkout.</span></div></div>
+    </div>
+
+    <div class="m-abs m-viz" role="img" aria-label="Trade-in value orchestrated: €62M in 2024, €140M in 2025, €240M in 2026 (example)">
+      <div class="m-bar" style="left:0; top:320px; --d:300ms;"><img decoding="async" alt="" src="assets/measured-bar-2024.svg" width="169.935" height="180"></div>
+      <div class="m-bar" style="left:150px; top:200px; --d:450ms;"><img decoding="async" alt="" src="assets/measured-bar-2025.svg" width="225.892" height="300"></div>
+      <div class="m-bar" style="left:300px; top:60px; --d:600ms;"><img decoding="async" alt="" src="assets/measured-bar-2026.svg" width="291.175" height="440"></div>
+      <p class="m-val" style="left:83.94px; top:294px; --d:1100ms" data-m="up">€ 62M</p>
+      <p class="m-val" style="left:289.89px; top:174px; --d:1250ms" data-m="up">€ 140M</p>
+      <p class="m-val" style="left:505.18px; top:34px; color:#B7D7FF; --d:1400ms" data-m="up">€ 240M</p>
+      <p class="m-yr" style="left:4px; top:516px; --d:300ms" data-m="fade">2024</p>
+      <p class="m-yr" style="left:154px; top:516px; --d:450ms" data-m="fade">2025</p>
+      <p class="m-yr" style="left:304px; top:516px; --d:600ms" data-m="fade">2026</p>
+      <p style="left:0; top:548px; color:rgba(245,247,250,.42); --d:800ms" data-m="fade">Trade-in value orchestrated · Example</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="lifecycle" id="lifecycle" class="v2-sec" data-tone="light" style="--h:900px; background:#F5F7FA; color:#0F1115;">
+<style>
+  [data-section="lifecycle"] p { margin: 0; }
+  [data-section="lifecycle"] .l-abs { position: absolute; }
+  [data-section="lifecycle"] .l-prog { left: 1382px; top: 381.75px; width: 22px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+  [data-section="lifecycle"] .l-prog i { display: block; width: 10px; height: 1.5px; background: rgba(15,17,21,.25); }
+  [data-section="lifecycle"] .l-prog i.on { width: 22px; background: #3047EC; }
+  [data-section="lifecycle"] .l-copy { left: 120px; top: 150px; display: flex; flex-direction: column; gap: 24px; }
+  [data-section="lifecycle"] h2 { margin: 0; font-weight: 400; font-size: 72px; line-height: 1; letter-spacing: -0.04em; color: #0F1115; white-space: nowrap; }
+  [data-section="lifecycle"] .l-lede { width: 460px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(15,17,21,.7); }
+  [data-section="lifecycle"] .l-card { left: 860px; top: 150px; width: 460px; padding: 28px 32px; border-radius: 20px; background: #fff;
+    box-shadow: inset 0 0 0 1px rgba(15,17,21,.08), 0 24px 60px -20px rgba(15,17,21,.08); display: flex; flex-direction: column; }
+  [data-section="lifecycle"] .l-meta { font-size: 12px; color: rgba(15,17,21,.42); white-space: nowrap; }
+  [data-section="lifecycle"] .l-device { font-size: 22px; letter-spacing: -0.01em; color: #0F1115; white-space: nowrap; }
+  [data-section="lifecycle"] .l-sp { height: 18px; flex: none; }
+  [data-section="lifecycle"] .l-row { display: flex; justify-content: space-between; padding: 12px 0; font-size: 12px; line-height: normal; white-space: nowrap;
+    box-shadow: inset 0 1px 0 rgba(15,17,21,.08); }
+  [data-section="lifecycle"] .l-row span:first-child { color: rgba(15,17,21,.5); }
+  [data-section="lifecycle"] .l-total { display: flex; align-items: flex-end; justify-content: space-between; }
+  [data-section="lifecycle"] .l-price { font-weight: 300; font-size: 44px; line-height: normal; color: #0F1115; white-space: nowrap; }
+  [data-section="lifecycle"] .l-btn { display: inline-flex; align-items: center; padding: 10px 22px; border-radius: 999px; background: #3047EC; color: #F5F7FA; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s; }
+  [data-section="lifecycle"] .l-btn:hover { background: #2238d6; }
+  [data-section="lifecycle"] .l-ticker { left: -40px; top: 720px; display: flex; align-items: center; gap: 28px; font-weight: 300; font-size: 64px; line-height: normal; white-space: nowrap; }
+  [data-section="lifecycle"] .l-ticker span { color: rgba(15,17,21,.32); letter-spacing: -0.03em; }
+  [data-section="lifecycle"] .l-ticker i { font-style: normal; color: rgba(15,17,21,.2); }
+  [data-section="lifecycle"] .l-ticker .on { color: #3047EC; }
+</style>
+  <div class="v2-canvas">
+    <div class="l-abs l-prog" aria-hidden="true" data-m="fade" style="--d:600ms"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+    <div class="l-abs l-copy">
+      <h2><span style="display:block; --d:0ms" data-m="up">Soft for people.</span><span style="display:block; --d:100ms" data-m="up">Sharp for data.</span></h2>
+      <p class="l-lede" data-m="up" style="--d:250ms">Every trade-in moves through the same five steps. Your customer sees one price; Fintegre runs everything underneath.</p>
+    </div>
+
+    <div class="l-abs l-card" data-m="up" style="--d:300ms">
+      <p class="l-meta">Trade-in · Store 14 · Vilnius</p>
+      <div class="l-sp"></div>
+      <p class="l-device">iPhone 15 Pro, 256 GB</p>
+      <div class="l-sp"></div>
+      <div class="l-row" data-m="fade" style="--d:600ms"><span>Screen</span><span>Grade A</span></div>
+      <div class="l-row" data-m="fade" style="--d:700ms"><span>Battery</span><span>91 %</span></div>
+      <div class="l-row" data-m="fade" style="--d:800ms"><span>Casing</span><span>Grade A</span></div>
+      <div class="l-row" data-m="fade" style="--d:900ms"><span>Market</span><span>4 buyers</span></div>
+      <div class="l-row" data-m="fade" style="--d:1000ms"><span>Route</span><span style="color:#3047EC">2 / 5</span></div>
+      <div class="l-sp"></div>
+      <div class="l-total" data-m="up" style="--d:1100ms">
+        <p class="l-price">€ 612.00</p>
+        <a href="#programs" class="l-btn">Apply as credit</a>
+      </div>
+    </div>
+
+    <div class="l-abs l-ticker" data-m="left" style="--d:400ms" aria-label="Recover, Assess, Value, Route, Transact">
+      <span>Recover</span><i>/</i><span>Assess</span><i>/</i><span class="on">Value</span><i>/</i><span>Route</span><i>/</i><span>Transact</span><i>/</i><span>Recover</span><i>/</i><span>Assess</span>
+    </div>
+  </div>
+</section>
+
+<section data-section="tools" id="tools" class="v2-sec" style="--h:3020px; background:#0b0b12" data-tone="dark">
+  <style>
+    [data-section="tools"] { --ink:#0f1115; --ink2:rgba(15,17,21,.68); --ink3:rgba(15,17,21,.46); --subtle:#f5f7fa; --muted:#edf0f4; --line:#dfe3ea; --amber:#fff1d6; --brand:#3047ec; }
+    [data-section="tools"] .t-abs { position:absolute; }
+    [data-section="tools"] p { margin:0; }
+    [data-section="tools"] .t-mesh { position:absolute; inset:0; overflow:clip; pointer-events:none; }
+    [data-section="tools"] .t-mesh img { position:absolute; display:block; max-width:none; }
+    [data-section="tools"] .t-shade { position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.35)); }
+
+    /* Left column: pinned while the cards scroll past (translated by js/03-tools.js). */
+    [data-section="tools"] .t-pin { position:absolute; left:120px; top:140px; width:560px; height:470px; will-change:transform; }
+    [data-section="tools"] .t-h { width:560px; font-size:44px; line-height:1.1; letter-spacing:-0.02em; font-weight:400; color:#fff; margin:0; }
+    [data-section="tools"] .t-h em { font-family:'Instrument Serif', serif; font-style:italic; font-weight:400; font-size:49.28px; }
+    [data-section="tools"] .t-list { position:relative; margin-top:28px; width:420px; height:192px; }
+    [data-section="tools"] .t-item { position:absolute; left:0; height:40px; border:0; padding:0 0 0 14px; border-radius:10px; background:rgba(255,255,255,.06);
+      font:500 16px/40px 'Geologica', sans-serif; color:#fff; text-align:left; cursor:pointer; white-space:nowrap; }
+    [data-section="tools"] .t-item::before { content:""; position:absolute; inset:0; border-radius:inherit; background:rgba(255,255,255,.16); opacity:0; transition:opacity .45s var(--ease); }
+    [data-section="tools"] .t-item span { position:relative; opacity:.6; transition:opacity .45s var(--ease); }
+    [data-section="tools"] .t-item.is-on::before, [data-section="tools"] .t-item.is-on span { opacity:1; }
+    [data-section="tools"] .t-item:hover span { opacity:1; }
+    [data-section="tools"] .t-foot { position:absolute; left:0; top:390px; display:flex; flex-direction:column; gap:16px; align-items:flex-start; }
+    [data-section="tools"] .t-foot p { width:400px; font-size:14px; line-height:1.5; color:rgba(255,255,255,.85); }
+    [data-section="tools"] .t-cta { background:#fff; color:var(--ink); border-radius:10px; padding:12px 18px; font-size:14px; font-weight:500; line-height:normal; transition:background .2s; }
+    [data-section="tools"] .t-cta:hover { background:#e9edf3; }
+
+    /* Cards */
+    [data-section="tools"] .t-card { position:absolute; left:760px; width:560px; height:640px; padding:36px; display:flex; flex-direction:column; gap:20px; overflow:clip;
+      border-radius:28px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); }
+    [data-section="tools"] .t-card > img { width:24px; height:24px; display:block; }
+    [data-section="tools"] .t-title { font-size:22px; font-weight:500; color:#fff; line-height:normal; white-space:nowrap; }
+    [data-section="tools"] .t-vis { flex:1 0 0; min-height:1px; overflow:clip; display:flex; flex-direction:column; }
+    [data-section="tools"] .t-desc { width:488px; font-size:14px; line-height:1.5; color:rgba(255,255,255,.65); }
+    .motion [data-section="tools"] .t-card { opacity:0; translate:0 60px; transition:opacity .8s var(--ease), translate 1s var(--ease); }
+    .motion [data-section="tools"] .t-card.is-shown { opacity:1; translate:none; }
+
+    /* Product UI inside the cards */
+    [data-section="tools"] .ui { background:#fff; color:var(--ink); width:100%; display:flex; flex-direction:column; gap:12px; padding:24px; border-radius:22px; overflow:clip; flex-shrink:0; }
+    [data-section="tools"] .ui-row { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-radius:12px; background:var(--subtle); font-size:14px; line-height:normal; white-space:nowrap; }
+    [data-section="tools"] .ui-row > div { display:flex; align-items:center; gap:10px; }
+    [data-section="tools"] .ui-row img { width:18px; height:18px; display:block; }
+    [data-section="tools"] .ui-row b { font-weight:600; }
+    [data-section="tools"] .ui-row--amber { background:var(--amber); }
+    [data-section="tools"] .ui-row--amber > div span { font-weight:500; }
+    [data-section="tools"] .ui-note { font-size:12px; color:var(--ink3); line-height:normal; }
+    [data-section="tools"] .ui-tabs { display:flex; gap:6px; padding:4px; border-radius:12px; background:var(--muted); align-self:flex-start; }
+    [data-section="tools"] .ui-tabs span { padding:8px 16px; border-radius:9px; font-size:13px; font-weight:500; color:var(--ink2); line-height:normal; }
+    [data-section="tools"] .ui-tabs span.on { background:#fff; color:var(--ink); }
+    [data-section="tools"] .ui-val { gap:24px; padding:36px 40px 40px; border-radius:32px; }
+    [data-section="tools"] .ui-val .hd { display:flex; justify-content:space-between; align-items:center; white-space:nowrap; }
+    [data-section="tools"] .ui-val .hd p:first-child { font-size:26px; font-weight:500; line-height:1.2; letter-spacing:-0.005em; }
+    [data-section="tools"] .ui-val .hd p:last-child { font-size:13px; line-height:1.4; color:var(--ink3); }
+    [data-section="tools"] .ui-dev { display:flex; gap:16px; align-items:center; padding:16px 20px; border-radius:16px; background:var(--subtle); white-space:nowrap; font-size:14px; }
+    [data-section="tools"] .ui-dev img { width:32px; height:32px; display:block; }
+    [data-section="tools"] .ui-dev p:first-child { font-weight:500; line-height:1.4; }
+    [data-section="tools"] .ui-dev p:last-child { color:var(--ink2); line-height:1.5; margin-top:2px; }
+    [data-section="tools"] .ui-stats { display:flex; gap:12px; font-size:14px; white-space:nowrap; }
+    [data-section="tools"] .ui-stats div { flex:1 0 0; display:flex; flex-direction:column; gap:6px; padding:14px 16px; border:1px solid var(--line); border-radius:12px; }
+    [data-section="tools"] .ui-stats p:first-child { color:var(--ink2); line-height:1.5; }
+    [data-section="tools"] .ui-stats p:last-child { font-weight:500; line-height:1.4; }
+    [data-section="tools"] .ui-total { display:flex; justify-content:space-between; align-items:center; white-space:nowrap; }
+    [data-section="tools"] .ui-total p:first-child { font-size:14px; line-height:1.5; color:var(--ink2); }
+    [data-section="tools"] .ui-total p:last-child { font-size:48px; font-weight:700; line-height:1; letter-spacing:-0.03em; margin-top:4px; }
+    [data-section="tools"] .ui-btn { display:flex; align-items:center; gap:8px; height:46px; padding:0 16px; border-radius:12px; background:var(--brand); color:#fff; font-size:15px; font-weight:500; line-height:1; }
+    [data-section="tools"] .ui-btn img { width:24px; height:24px; display:block; }
+    [data-section="tools"] .ui-live { display:flex; justify-content:space-between; align-items:center; white-space:nowrap; }
+    [data-section="tools"] .ui-live > p { font-size:16px; font-weight:500; }
+    [data-section="tools"] .ui-pill { display:flex; gap:6px; align-items:center; padding:5px 10px; border-radius:999px; background:var(--muted); font-size:12px; font-weight:500; }
+    [data-section="tools"] .ui-pill img { width:14px; height:14px; display:block; }
+    [data-section="tools"] .ui-q { font-size:16px; font-weight:500; line-height:normal; white-space:nowrap; }
+    [data-section="tools"] .ui-opt { display:flex; justify-content:space-between; align-items:center; padding:14px 16px; border-radius:14px; border:1px solid var(--line); background:#fff; white-space:nowrap; line-height:normal; }
+    [data-section="tools"] .ui-opt.on { border:1.5px solid var(--brand); }
+    [data-section="tools"] .ui-opt > div { display:flex; gap:12px; align-items:center; }
+    [data-section="tools"] .ui-opt i { display:block; padding:8px; border-radius:10px; background:var(--muted); }
+    [data-section="tools"] .ui-opt.on i { background:var(--brand); }
+    [data-section="tools"] .ui-opt i img { width:18px; height:18px; display:block; }
+    [data-section="tools"] .ui-opt p:first-child { font-size:14px; font-weight:500; }
+    [data-section="tools"] .ui-opt p + p { font-size:12px; color:var(--ink2); margin-top:2px; }
+    [data-section="tools"] .ui-opt > b { font-size:15px; font-weight:600; }
+    [data-section="tools"] .ui-go { padding:14px 0; border-radius:12px; background:var(--ink); color:#fff; text-align:center; font-size:14px; font-weight:500; line-height:normal; }
+  </style>
+  <div class="v2-canvas">
+    <div class="t-mesh" aria-hidden="true">
+      <img decoding="async" alt="" src="assets/tools-e1.svg" width="1192" height="1009.26" style="left:-236px;top:1333.31px">
+      <img decoding="async" alt="" src="assets/tools-e2.svg" width="904" height="806.176" style="left:-279.2px;top:311.1px">
+      <img decoding="async" alt="" src="assets/tools-e3.svg" width="1120" height="958.492" style="left:664px;top:-285.18px">
+      <img decoding="async" alt="" src="assets/tools-e4.svg" width="976" height="856.948" style="left:520px;top:1759.23px">
+      <img decoding="async" alt="" src="assets/tools-e5.svg" width="904" height="806.176" style="left:340px;top:992.58px">
+      <div class="t-shade"></div>
+    </div>
+
+    <div class="t-pin">
+      <h2 class="t-h" data-m="up">Tools that work with your<br><em>program,</em> not against it</h2>
+      <div class="t-list" data-m="up" style="--d:150ms" role="tablist" aria-label="Tools">
+        <button class="t-item is-on" style="top:0;width:238px" data-go="0"><span>One clear value, in seconds</span></button>
+        <button class="t-item" style="top:48px;width:237px" data-go="1"><span>Every channel, one journey</span></button>
+        <button class="t-item" style="top:96px;width:191px" data-go="2"><span>Buyers that compete</span></button>
+        <button class="t-item" style="top:144px;width:317px" data-go="3"><span>Payments the customer understands</span></button>
+      </div>
+      <div class="t-foot" data-m="up" style="--d:300ms">
+        <p>No new hardware. No rebuild per market.<br>Your program, live in weeks.</p>
+        <a class="t-cta" href="#closing">Design your program</a>
+      </div>
+    </div>
+
+    <!-- Card 1 -->
+    <article class="t-card" style="top:140px">
+      <img decoding="async" alt="" src="assets/tools-exchange.svg">
+      <p class="t-title">One clear value, in seconds</p>
+      <div class="t-vis">
+        <div class="ui ui-val">
+          <div class="hd"><p>Valuation</p><p>Example values</p></div>
+          <div class="ui-dev"><img decoding="async" alt="" src="assets/tools-smartphone.svg"><div><p>iPhone 15 Pro, 256 GB</p><p>Natural Titanium, IMEI checked</p></div></div>
+          <div class="ui-stats">
+            <div><p>Screen</p><p>Good</p></div>
+            <div><p>Battery</p><p>91%</p></div>
+            <div><p>Casing</p><p>Good</p></div>
+          </div>
+          <div class="ui-total">
+            <div><p>Trade-in value</p><p>€612</p></div>
+            <span class="ui-btn">Apply as credit<img decoding="async" alt="" src="assets/tools-arrow.svg"></span>
+          </div>
+        </div>
+      </div>
+      <p class="t-desc">Checks, market data and competing buyers become one price the customer trusts.</p>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="t-card" style="top:840px">
+      <img decoding="async" alt="" src="assets/tools-route.svg">
+      <p class="t-title">Every channel, one journey</p>
+      <div class="t-vis">
+        <div class="ui">
+          <div class="ui-tabs"><span class="on">In store</span><span>Online</span><span>In app</span></div>
+          <div class="ui-row"><div><img decoding="async" alt="" src="assets/tools-smartphone-sm.svg"><span>Device identified</span></div><b>iPhone 15 Pro</b></div>
+          <div class="ui-row"><div><img decoding="async" alt="" src="assets/tools-shield.svg"><span>Checks complete</span></div><b>3 of 3</b></div>
+          <div class="ui-row"><div><img decoding="async" alt="" src="assets/tools-wallet.svg"><span>Value offered</span></div><b>€612</b></div>
+          <div class="ui-row ui-row--amber"><div><img decoding="async" alt="" src="assets/tools-exchange-sm.svg"><span>Credit applied</span></div><b>New iPhone</b></div>
+          <p class="ui-note">Same steps on every channel</p>
+        </div>
+      </div>
+      <p class="t-desc">The same checks, the same value and the same rules in the store, online and in your app.</p>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="t-card" style="top:1540px">
+      <img decoding="async" alt="" src="assets/tools-funds.svg">
+      <p class="t-title">Buyers that compete</p>
+      <div class="t-vis">
+        <div class="ui">
+          <div class="ui-live"><p>Live offers</p><span class="ui-pill"><img decoding="async" alt="" src="assets/tools-time.svg">Closes in 0:12</span></div>
+          <div class="ui-row ui-row--amber"><div><img decoding="async" alt="" src="assets/tools-award.svg"><span>Buyer B, Latvia</span></div><b>€612</b></div>
+          <div class="ui-row"><div><img decoding="async" alt="" src="assets/tools-user.svg"><span>Buyer A, Lithuania</span></div><b>€598</b></div>
+          <div class="ui-row"><div><img decoding="async" alt="" src="assets/tools-user.svg"><span>Buyer C, Poland</span></div><b>€585</b></div>
+          <div class="ui-row"><div><img decoding="async" alt="" src="assets/tools-user.svg"><span>Buyer D, Estonia</span></div><b>€571</b></div>
+          <p class="ui-note">Example offers</p>
+        </div>
+      </div>
+      <p class="t-desc">Every device goes to your connected buyers at once. The best offer wins in seconds.</p>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="t-card" style="top:2240px">
+      <img decoding="async" alt="" src="assets/tools-bankcard.svg">
+      <p class="t-title">Payments the customer understands</p>
+      <div class="t-vis">
+        <div class="ui">
+          <p class="ui-q">How would you like your €612?</p>
+          <div class="ui-opt on"><div><i><img decoding="async" alt="" src="assets/tools-exchange-w.svg"></i><div><p>Credit on the new iPhone</p><p>Instant</p></div></div><b>€612</b></div>
+          <div class="ui-opt"><div><i><img decoding="async" alt="" src="assets/tools-wallet.svg"></i><div><p>Instant payment to card</p><p>2 min</p></div></div><b>€598</b></div>
+          <div class="ui-opt"><div><i><img decoding="async" alt="" src="assets/tools-calendar.svg"></i><div><p>Lower monthly instalments</p><p>12 months</p></div></div><b>−€51 / mo</b></div>
+          <div class="ui-go">Confirm and hand over</div>
+        </div>
+      </div>
+      <p class="t-desc">One value, three clear ways to take it. Every fee and every waiting time is shown up front.</p>
+    </article>
+  </div>
+</section>
+
+<section data-section="ecosystem" id="ecosystem" class="v2-sec" style="--h:900px; background:#0B0C10" data-tone="dark">
+  <style>
+    [data-section="ecosystem"] .eco-bg { position:absolute; inset:0; background: radial-gradient(800px 375px at 400px 412.5px, rgba(27,39,128,.5) 0%, rgba(19,26,72,.25) 50%, rgba(11,12,16,0) 100%); pointer-events:none; }
+    [data-section="ecosystem"] .eco-abs { position:absolute; margin:0; }
+    [data-section="ecosystem"] .eco-h { left:120px; top:96px; font-weight:400; font-size:48px; line-height:1.04; letter-spacing:-0.04em; color:#F5F7FA; white-space:nowrap; }
+    [data-section="ecosystem"] .eco-sub { left:900px; top:118px; width:420px; font-weight:300; font-size:17px; line-height:1.55; color:rgba(245,247,250,.62); }
+    [data-section="ecosystem"] .eco-lbl { font-size:17px; line-height:normal; white-space:nowrap; color:rgba(245,247,250,.75); }
+    [data-section="ecosystem"] .eco-lbl--r { left:1138px; color:rgba(245,247,250,.8); }
+    [data-section="ecosystem"] .eco-fibres { position:absolute; left:0; top:0; overflow:visible; }
+    [data-section="ecosystem"] .eco-glow { left:551px; top:310px; width:500px; height:500px; }
+    [data-section="ecosystem"] .eco-glow img { display:block; width:500px; height:500px; }
+    [data-section="ecosystem"] .eco-hub { left:726px; top:485px; width:150px; height:150px; border-radius:38px; overflow:hidden;
+      background:linear-gradient(135deg, #B7D7FF 0%, #3047EC 71.429%); box-shadow:0 0 60px rgba(48,71,237,.7); }
+    [data-section="ecosystem"] .eco-hub img { position:absolute; inset:0; width:150px; height:150px; object-fit:cover; transform:scaleX(-1); }
+    [data-section="ecosystem"] .eco-hub::after { content:""; position:absolute; inset:0; border-radius:inherit; box-shadow:inset 0 1px 0 rgba(184,214,255,.45); }
+    [data-section="ecosystem"] .eco-name { left:766.5px; top:653px; font-size:17px; color:#F5F7FA; white-space:nowrap; }
+
+    /* Motion — timings from the Figma timeline (seconds after the section arrives). */
+    .motion [data-section="ecosystem"] .eco-in { opacity:0; transition:opacity var(--t,.6s) cubic-bezier(.5,0,.5,1) var(--d,0s), translate var(--t,.6s) cubic-bezier(.5,0,.5,1) var(--d,0s); }
+    .motion [data-section="ecosystem"] .eco-h.eco-in { translate:0 30px; }
+    .motion [data-section="ecosystem"].is-in .eco-in { opacity:1; translate:none; }
+    .motion [data-section="ecosystem"] .eco-fib { stroke-dasharray:1 1; stroke-dashoffset:1; transition:stroke-dashoffset var(--t) cubic-bezier(.5,0,.5,1) var(--d); }
+    .motion [data-section="ecosystem"].is-in .eco-fib { stroke-dashoffset:0; }
+    .motion [data-section="ecosystem"] .eco-dot { opacity:0; transition:opacity .4s cubic-bezier(.5,0,.5,1) var(--d); }
+    .motion [data-section="ecosystem"].is-in .eco-dot { opacity:1; }
+    .motion [data-section="ecosystem"] .eco-hub { opacity:0; scale:.4; transition:opacity .3s cubic-bezier(.5,0,.5,1) 2.4s, scale .7s cubic-bezier(.5,0,.5,1) 2.4s; }
+    .motion [data-section="ecosystem"].is-in .eco-hub { opacity:1; scale:1; }
+    .motion [data-section="ecosystem"] .eco-glow { opacity:0; transition:opacity .5s cubic-bezier(.16,1,.3,1) 2.4s; }
+    .motion [data-section="ecosystem"].is-in .eco-glow { opacity:1; }
+    .motion [data-section="ecosystem"].is-in .eco-glow img { animation:eco-pulse 1.4s cubic-bezier(.65,0,.25,1) 2.9s infinite alternate; }
+    @keyframes eco-pulse { from { opacity:1; } to { opacity:.55; } }
+
+    /* Sparks: a short bright dash travelling along a fibre, looping every 7 s. */
+    [data-section="ecosystem"] .eco-sparks { filter:drop-shadow(0 0 4px #B7D7FF); }
+    [data-section="ecosystem"] .eco-spark { opacity:0; stroke-dasharray:.08 1; stroke-dashoffset:0; }
+    .motion [data-section="ecosystem"].is-in .eco-spark--in { animation:eco-spark-in 7s cubic-bezier(.5,0,.5,1) var(--d) infinite; }
+    .motion [data-section="ecosystem"].is-in .eco-spark--out { animation:eco-spark-out 7s cubic-bezier(.5,0,.5,1) var(--d) infinite; }
+    @keyframes eco-spark-in { 0% { opacity:1; stroke-dashoffset:0; } 22.8% { opacity:1; stroke-dashoffset:-.92; } 24.2%, 100% { opacity:0; stroke-dashoffset:-.92; } }
+    @keyframes eco-spark-out { 0% { opacity:1; stroke-dashoffset:0; } 15.7% { opacity:1; stroke-dashoffset:-.92; } 17.1%, 100% { opacity:0; stroke-dashoffset:-.92; } }
+    [data-section="ecosystem"]:not(.eco-live) * { animation-play-state:paused !important; }
+    @media (prefers-reduced-motion: reduce) { [data-section="ecosystem"] .eco-spark, [data-section="ecosystem"] .eco-glow img { animation:none !important; } }
+  </style>
+  <div class="v2-canvas">
+    <div class="eco-bg"></div>
+    <h2 class="eco-abs eco-h eco-in" style="--d:.1s;--t:.9s">One layer between<br>every device and every buyer.</h2>
+    <p class="eco-abs eco-sub eco-in" style="--d:.4s;--t:.9s">Every trade-in arrives from a different channel. Fintegre values it once and routes it to the buyer that pays most.</p>
+
+    <svg class="eco-fibres" width="1440" height="900" viewBox="0 0 1440 900" fill="none" aria-hidden="true"><defs><linearGradient id="eco-sa" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#B7D7FF" stop-opacity="0.15"/><stop offset=".38" stop-color="#B7D7FF" stop-opacity="0.45"/><stop offset=".6" stop-color="#fff" stop-opacity="0.7125"/></linearGradient><linearGradient id="eco-sb" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#B7D7FF" stop-opacity="0.1"/><stop offset=".38" stop-color="#B7D7FF" stop-opacity="0.3"/><stop offset=".6" stop-color="#fff" stop-opacity="0.525"/></linearGradient><linearGradient id="eco-sc" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#B7D7FF" stop-opacity="0.06"/><stop offset=".38" stop-color="#B7D7FF" stop-opacity="0.18"/><stop offset=".6" stop-color="#fff" stop-opacity="0.375"/></linearGradient><linearGradient id="eco-na" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#F5F7FA" stop-opacity="0.15"/><stop offset=".38" stop-color="#F5F7FA" stop-opacity="0.45"/><stop offset=".6" stop-color="#fff" stop-opacity="0.7125"/></linearGradient><linearGradient id="eco-nb" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#F5F7FA" stop-opacity="0.1"/><stop offset=".38" stop-color="#F5F7FA" stop-opacity="0.3"/><stop offset=".6" stop-color="#fff" stop-opacity="0.525"/></linearGradient><linearGradient id="eco-pa" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB648" stop-opacity="0.15"/><stop offset=".38" stop-color="#FFB648" stop-opacity="0.45"/><stop offset=".6" stop-color="#fff" stop-opacity="0.7125"/></linearGradient><linearGradient id="eco-pb" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB648" stop-opacity="0.1"/><stop offset=".38" stop-color="#FFB648" stop-opacity="0.3"/><stop offset=".6" stop-color="#fff" stop-opacity="0.525"/></linearGradient><linearGradient id="eco-pc" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB648" stop-opacity="0.06"/><stop offset=".38" stop-color="#FFB648" stop-opacity="0.18"/><stop offset=".6" stop-color="#fff" stop-opacity="0.375"/></linearGradient><linearGradient id="eco-o" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse"><stop offset=".56" stop-color="#fff" stop-opacity=".85"/><stop offset=".67" stop-color="#B7D7FF" stop-opacity=".5"/><stop offset=".78" stop-color="#5D74FF" stop-opacity=".45"/></linearGradient></defs><g fill="none" stroke-width=".9" stroke-linecap="round"><path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 268.5C327.038 268.5 383.025 412.84 495 424.28C648 424.28 678.6 558.856 787 560" pathLength="1" style="--d:0.59s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 279.5C327.038 279.5 383.025 415.48 495 425.16C648 425.16 678.6 559.032 787 560" pathLength="1" style="--d:0.64s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 290.5C327.038 290.5 383.025 418.12 495 426.04C648 426.04 678.6 559.208 787 560" pathLength="1" style="--d:0.67s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 301.5C327.038 301.5 383.025 420.76 495 426.92C648 426.92 678.6 559.384 787 560" pathLength="1" style="--d:0.71s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 312.5C327.038 312.5 383.025 423.4 495 427.8C648 427.8 678.6 559.56 787 560" pathLength="1" style="--d:0.74s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 323.5C327.038 323.5 383.025 426.04 495 428.68C648 428.68 678.6 559.736 787 560" pathLength="1" style="--d:0.77s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 334.5C327.038 334.5 383.025 428.68 495 429.56C648 429.56 678.6 559.912 787 560" pathLength="1" style="--d:0.81s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 345.5C327.038 345.5 383.025 431.32 495 430.44C648 430.44 678.6 560.088 787 560" pathLength="1" style="--d:0.84s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 356.5C327.038 356.5 383.025 433.96 495 431.32C648 431.32 678.6 560.264 787 560" pathLength="1" style="--d:0.88s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 367.5C327.038 367.5 383.025 436.6 495 432.2C648 432.2 678.6 560.44 787 560" pathLength="1" style="--d:0.91s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 378.5C327.038 378.5 383.025 439.24 495 433.08C648 433.08 678.6 560.616 787 560" pathLength="1" style="--d:0.96s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 389.5C327.038 389.5 383.025 441.88 495 433.96C648 433.96 678.6 560.792 787 560" pathLength="1" style="--d:0.99s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sa)" d="M121.75 400.5C327.038 400.5 383.025 444.52 495 434.84C648 434.84 678.6 560.968 787 560" pathLength="1" style="--d:1.01s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sb)" d="M216.75 285C369.788 285 411.525 416.8 495 425.6C648 425.6 678.6 559.12 787 560" pathLength="1" style="--d:1.06s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sb)" d="M216.75 296C369.788 296 411.525 419.44 495 426.48C648 426.48 678.6 559.296 787 560" pathLength="1" style="--d:1.09s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sb)" d="M216.75 307C369.788 307 411.525 422.08 495 427.36C648 427.36 678.6 559.472 787 560" pathLength="1" style="--d:1.13s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sb)" d="M216.75 318C369.788 318 411.525 424.72 495 428.24C648 428.24 678.6 559.648 787 560" pathLength="1" style="--d:1.16s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sb)" d="M216.75 329C369.788 329 411.525 427.36 495 429.12C648 429.12 678.6 559.824 787 560" pathLength="1" style="--d:1.19s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sb)" d="M216.75 340C369.788 340 411.525 430 495 430C648 430 678.6 560 787 560" pathLength="1" style="--d:1.23s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sb)" d="M216.75 351C369.788 351 411.525 432.64 495 430.88C648 430.88 678.6 560.176 787 560" pathLength="1" style="--d:1.26s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sb)" d="M216.75 362C369.788 362 411.525 435.28 495 431.76C648 431.76 678.6 560.352 787 560" pathLength="1" style="--d:1.30s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sb)" d="M216.75 373C369.788 373 411.525 437.92 495 432.64C648 432.64 678.6 560.528 787 560" pathLength="1" style="--d:1.33s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sb)" d="M216.75 384C369.788 384 411.525 440.56 495 433.52C648 433.52 678.6 560.704 787 560" pathLength="1" style="--d:1.36s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sc)" d="M301.75 283.5C408.037 283.5 437.025 416.44 495 425.48C648 425.48 678.6 559.096 787 560" pathLength="1" style="--d:1.41s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sc)" d="M301.75 294.5C408.037 294.5 437.025 419.08 495 426.36C648 426.36 678.6 559.272 787 560" pathLength="1" style="--d:1.44s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sc)" d="M301.75 305.5C408.037 305.5 437.025 421.72 495 427.24C648 427.24 678.6 559.448 787 560" pathLength="1" style="--d:1.48s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sc)" d="M301.75 316.5C408.037 316.5 437.025 424.36 495 428.12C648 428.12 678.6 559.624 787 560" pathLength="1" style="--d:1.51s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sc)" d="M301.75 327.5C408.037 327.5 437.025 427 495 429C648 429 678.6 559.8 787 560" pathLength="1" style="--d:1.55s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sc)" d="M301.75 338.5C408.037 338.5 437.025 429.64 495 429.88C648 429.88 678.6 559.976 787 560" pathLength="1" style="--d:1.58s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sc)" d="M301.75 349.5C408.037 349.5 437.025 432.28 495 430.76C648 430.76 678.6 560.152 787 560" pathLength="1" style="--d:1.61s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sc)" d="M376.75 300C441.787 300 459.525 420.4 495 426.8C648 426.8 678.6 559.36 787 560" pathLength="1" style="--d:1.65s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sc)" d="M376.75 311C441.787 311 459.525 423.04 495 427.68C648 427.68 678.6 559.536 787 560" pathLength="1" style="--d:1.68s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-sc)" d="M376.75 322C441.787 322 459.525 425.68 495 428.56C648 428.56 678.6 559.712 787 560" pathLength="1" style="--d:1.73s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-sc)" d="M376.75 333C441.787 333 459.525 428.32 495 429.44C648 429.44 678.6 559.888 787 560" pathLength="1" style="--d:1.75s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-na)" d="M121.75 515C349.038 515 411.025 551.6 535 557.2C668 557.2 694.6 559.44 787 560" pathLength="1" style="--d:0.90s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-na)" d="M121.75 525C349.038 525 411.025 554 535 558C668 558 694.6 559.6 787 560" pathLength="1" style="--d:0.93s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-na)" d="M121.75 535C349.038 535 411.025 556.4 535 558.8C668 558.8 694.6 559.76 787 560" pathLength="1" style="--d:0.97s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-na)" d="M121.75 545C349.038 545 411.025 558.8 535 559.6C668 559.6 694.6 559.92 787 560" pathLength="1" style="--d:1.00s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-na)" d="M121.75 555C349.038 555 411.025 561.2 535 560.4C668 560.4 694.6 560.08 787 560" pathLength="1" style="--d:1.04s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-na)" d="M121.75 565C349.038 565 411.025 563.6 535 561.2C668 561.2 694.6 560.24 787 560" pathLength="1" style="--d:1.07s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-na)" d="M121.75 575C349.038 575 411.025 566 535 562C668 562 694.6 560.4 787 560" pathLength="1" style="--d:1.12s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-nb)" d="M211.75 530C389.538 530 438.025 555.2 535 558.4C668 558.4 694.6 559.68 787 560" pathLength="1" style="--d:1.15s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-nb)" d="M211.75 540C389.538 540 438.025 557.6 535 559.2C668 559.2 694.6 559.84 787 560" pathLength="1" style="--d:1.18s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-nb)" d="M211.75 550C389.538 550 438.025 560 535 560C668 560 694.6 560 787 560" pathLength="1" style="--d:1.22s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-nb)" d="M211.75 560C389.538 560 438.025 562.4 535 560.8C668 560.8 694.6 560.16 787 560" pathLength="1" style="--d:1.25s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-pa)" d="M121.75 650C327.038 650 383.025 676.8 495 685.6C648 685.6 678.6 559.12 787 560" pathLength="1" style="--d:1.20s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-pa)" d="M121.75 661C327.038 661 383.025 679.44 495 686.48C648 686.48 678.6 559.296 787 560" pathLength="1" style="--d:1.23s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-pa)" d="M121.75 672C327.038 672 383.025 682.08 495 687.36C648 687.36 678.6 559.472 787 560" pathLength="1" style="--d:1.28s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-pa)" d="M121.75 683C327.038 683 383.025 684.72 495 688.24C648 688.24 678.6 559.648 787 560" pathLength="1" style="--d:1.30s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-pa)" d="M121.75 694C327.038 694 383.025 687.36 495 689.12C648 689.12 678.6 559.824 787 560" pathLength="1" style="--d:1.33s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-pa)" d="M121.75 705C327.038 705 383.025 690 495 690C648 690 678.6 560 787 560" pathLength="1" style="--d:1.38s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-pa)" d="M121.75 716C327.038 716 383.025 692.64 495 690.88C648 690.88 678.6 560.176 787 560" pathLength="1" style="--d:1.41s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-pa)" d="M121.75 727C327.038 727 383.025 695.28 495 691.76C648 691.76 678.6 560.352 787 560" pathLength="1" style="--d:1.45s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-pa)" d="M121.75 738C327.038 738 383.025 697.92 495 692.64C648 692.64 678.6 560.528 787 560" pathLength="1" style="--d:1.48s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-pa)" d="M121.75 749C327.038 749 383.025 700.56 495 693.52C648 693.52 678.6 560.704 787 560" pathLength="1" style="--d:1.51s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-pb)" d="M216.75 661C369.788 661 411.525 679.44 495 686.48C648 686.48 678.6 559.296 787 560" pathLength="1" style="--d:1.55s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-pb)" d="M216.75 672C369.788 672 411.525 682.08 495 687.36C648 687.36 678.6 559.472 787 560" pathLength="1" style="--d:1.58s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-pb)" d="M216.75 683C369.788 683 411.525 684.72 495 688.24C648 688.24 678.6 559.648 787 560" pathLength="1" style="--d:1.62s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-pb)" d="M216.75 694C369.788 694 411.525 687.36 495 689.12C648 689.12 678.6 559.824 787 560" pathLength="1" style="--d:1.65s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-pb)" d="M216.75 705C369.788 705 411.525 690 495 690C648 690 678.6 560 787 560" pathLength="1" style="--d:1.70s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-pb)" d="M216.75 716C369.788 716 411.525 692.64 495 690.88C648 690.88 678.6 560.176 787 560" pathLength="1" style="--d:1.73s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-pb)" d="M216.75 727C369.788 727 411.525 695.28 495 691.76C648 691.76 678.6 560.352 787 560" pathLength="1" style="--d:1.75s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-pb)" d="M216.75 738C369.788 738 411.525 697.92 495 692.64C648 692.64 678.6 560.528 787 560" pathLength="1" style="--d:1.80s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-pc)" d="M306.75 659.5C410.287 659.5 438.525 679.08 495 686.36C648 686.36 678.6 559.272 787 560" pathLength="1" style="--d:1.83s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-pc)" d="M306.75 670.5C410.287 670.5 438.525 681.72 495 687.24C648 687.24 678.6 559.448 787 560" pathLength="1" style="--d:1.87s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-pc)" d="M306.75 681.5C410.287 681.5 438.525 684.36 495 688.12C648 688.12 678.6 559.624 787 560" pathLength="1" style="--d:1.90s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-pc)" d="M306.75 692.5C410.287 692.5 438.525 687 495 689C648 689 678.6 559.8 787 560" pathLength="1" style="--d:1.93s;--t:1.51s"/>
+<path class="eco-fib" stroke="url(#eco-pc)" d="M306.75 703.5C410.287 703.5 438.525 689.64 495 689.88C648 689.88 678.6 559.976 787 560" pathLength="1" style="--d:1.97s;--t:1.49s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 393 1122 393" pathLength="1" style="--d:2.80s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 402 1122 402" pathLength="1" style="--d:2.84s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 411 1122 411" pathLength="1" style="--d:2.88s;--t:1.09s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 420 1122 420" pathLength="1" style="--d:2.92s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 429 1122 429" pathLength="1" style="--d:2.96s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 438 1122 438" pathLength="1" style="--d:3.00s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 447 1122 447" pathLength="1" style="--d:3.04s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 537.5 1122 537.5" pathLength="1" style="--d:2.94s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 546.5 1122 546.5" pathLength="1" style="--d:2.99s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 555.5 1122 555.5" pathLength="1" style="--d:3.03s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 564.5 1122 564.5" pathLength="1" style="--d:3.07s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 573.5 1122 573.5" pathLength="1" style="--d:3.10s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 582.5 1122 582.5" pathLength="1" style="--d:3.15s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 677.5 1122 677.5" pathLength="1" style="--d:3.10s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 686.5 1122 686.5" pathLength="1" style="--d:3.15s;--t:1.09s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 695.5 1122 695.5" pathLength="1" style="--d:3.17s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 704.5 1122 704.5" pathLength="1" style="--d:3.22s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 713.5 1122 713.5" pathLength="1" style="--d:3.26s;--t:1.10s"/>
+<path class="eco-fib" stroke="url(#eco-o)" d="M815 560C961.5 560 977.55 722.5 1122 722.5" pathLength="1" style="--d:3.31s;--t:1.09s"/></g><g class="eco-sparks" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path class="eco-spark eco-spark--in" d="M121.75 290.5C327.038 290.5 383.025 418.12 495 426.04C648 426.04 678.6 559.208 787 560" pathLength="1" style="--d:4.21s"/>
+<path class="eco-spark eco-spark--in" d="M121.75 334.5C327.038 334.5 383.025 428.68 495 429.56C648 429.56 678.6 559.912 787 560" pathLength="1" style="--d:4.90s"/>
+<path class="eco-spark eco-spark--in" d="M121.75 545C349.038 545 411.025 558.8 535 559.6C668 559.6 694.6 559.92 787 560" pathLength="1" style="--d:5.60s"/>
+<path class="eco-spark eco-spark--in" d="M121.75 694C327.038 694 383.025 687.36 495 689.12C648 689.12 678.6 559.824 787 560" pathLength="1" style="--d:6.29s"/>
+<path class="eco-spark eco-spark--in" d="M121.75 738C327.038 738 383.025 697.92 495 692.64C648 692.64 678.6 560.528 787 560" pathLength="1" style="--d:7.00s"/>
+<path class="eco-spark eco-spark--out" d="M815 560C961.5 560 977.55 411 1122 411" pathLength="1" style="--d:5.60s"/>
+<path class="eco-spark eco-spark--out" d="M815 560C961.5 560 977.55 555.5 1122 555.5" pathLength="1" style="--d:6.39s"/>
+<path class="eco-spark eco-spark--out" d="M815 560C961.5 560 977.55 695.5 1122 695.5" pathLength="1" style="--d:7.21s"/></g><g><circle class="eco-dot" cx="121.75" cy="268.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.20s"/>
+<circle class="eco-dot" cx="121.75" cy="279.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.22s"/>
+<circle class="eco-dot" cx="121.75" cy="290.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.24s"/>
+<circle class="eco-dot" cx="121.75" cy="301.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.26s"/>
+<circle class="eco-dot" cx="121.75" cy="312.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.28s"/>
+<circle class="eco-dot" cx="121.75" cy="323.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.30s"/>
+<circle class="eco-dot" cx="121.75" cy="334.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.32s"/>
+<circle class="eco-dot" cx="121.75" cy="345.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.34s"/>
+<circle class="eco-dot" cx="121.75" cy="356.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.36s"/>
+<circle class="eco-dot" cx="121.75" cy="367.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.38s"/>
+<circle class="eco-dot" cx="121.75" cy="378.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.40s"/>
+<circle class="eco-dot" cx="121.75" cy="389.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.42s"/>
+<circle class="eco-dot" cx="121.75" cy="400.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.44s"/>
+<circle class="eco-dot" cx="216.75" cy="285" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.46s"/>
+<circle class="eco-dot" cx="216.75" cy="296" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.48s"/>
+<circle class="eco-dot" cx="216.75" cy="307" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.50s"/>
+<circle class="eco-dot" cx="216.75" cy="318" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.52s"/>
+<circle class="eco-dot" cx="216.75" cy="329" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.54s"/>
+<circle class="eco-dot" cx="216.75" cy="340" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.56s"/>
+<circle class="eco-dot" cx="216.75" cy="351" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.58s"/>
+<circle class="eco-dot" cx="216.75" cy="362" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.60s"/>
+<circle class="eco-dot" cx="216.75" cy="373" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.62s"/>
+<circle class="eco-dot" cx="216.75" cy="384" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.64s"/>
+<circle class="eco-dot" cx="301.75" cy="283.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.66s"/>
+<circle class="eco-dot" cx="301.75" cy="294.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.68s"/>
+<circle class="eco-dot" cx="301.75" cy="305.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.70s"/>
+<circle class="eco-dot" cx="301.75" cy="316.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.72s"/>
+<circle class="eco-dot" cx="301.75" cy="327.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.74s"/>
+<circle class="eco-dot" cx="301.75" cy="338.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.76s"/>
+<circle class="eco-dot" cx="301.75" cy="349.5" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.78s"/>
+<circle class="eco-dot" cx="376.75" cy="300" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.80s"/>
+<circle class="eco-dot" cx="376.75" cy="311" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.82s"/>
+<circle class="eco-dot" cx="376.75" cy="322" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.84s"/>
+<circle class="eco-dot" cx="376.75" cy="333" r="1.75" fill="#B7D7FF" fill-opacity="0.8" style="--d:0.86s"/>
+<circle class="eco-dot" cx="121.75" cy="515" r="1.75" fill="#F5F7FA" fill-opacity="0.8" style="--d:0.50s"/>
+<circle class="eco-dot" cx="121.75" cy="525" r="1.75" fill="#F5F7FA" fill-opacity="0.8" style="--d:0.52s"/>
+<circle class="eco-dot" cx="121.75" cy="535" r="1.75" fill="#F5F7FA" fill-opacity="0.8" style="--d:0.54s"/>
+<circle class="eco-dot" cx="121.75" cy="545" r="1.75" fill="#F5F7FA" fill-opacity="0.8" style="--d:0.56s"/>
+<circle class="eco-dot" cx="121.75" cy="555" r="1.75" fill="#F5F7FA" fill-opacity="0.8" style="--d:0.58s"/>
+<circle class="eco-dot" cx="121.75" cy="565" r="1.75" fill="#F5F7FA" fill-opacity="0.8" style="--d:0.60s"/>
+<circle class="eco-dot" cx="121.75" cy="575" r="1.75" fill="#F5F7FA" fill-opacity="0.8" style="--d:0.62s"/>
+<circle class="eco-dot" cx="211.75" cy="530" r="1.75" fill="#F5F7FA" fill-opacity="0.8" style="--d:0.64s"/>
+<circle class="eco-dot" cx="211.75" cy="540" r="1.75" fill="#F5F7FA" fill-opacity="0.8" style="--d:0.66s"/>
+<circle class="eco-dot" cx="211.75" cy="550" r="1.75" fill="#F5F7FA" fill-opacity="0.8" style="--d:0.68s"/>
+<circle class="eco-dot" cx="211.75" cy="560" r="1.75" fill="#F5F7FA" fill-opacity="0.8" style="--d:0.70s"/>
+<circle class="eco-dot" cx="121.75" cy="650" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:0.80s"/>
+<circle class="eco-dot" cx="121.75" cy="661" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:0.82s"/>
+<circle class="eco-dot" cx="121.75" cy="672" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:0.84s"/>
+<circle class="eco-dot" cx="121.75" cy="683" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:0.86s"/>
+<circle class="eco-dot" cx="121.75" cy="694" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:0.88s"/>
+<circle class="eco-dot" cx="121.75" cy="705" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:0.90s"/>
+<circle class="eco-dot" cx="121.75" cy="716" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:0.92s"/>
+<circle class="eco-dot" cx="121.75" cy="727" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:0.94s"/>
+<circle class="eco-dot" cx="121.75" cy="738" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:0.96s"/>
+<circle class="eco-dot" cx="121.75" cy="749" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:0.98s"/>
+<circle class="eco-dot" cx="216.75" cy="661" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.00s"/>
+<circle class="eco-dot" cx="216.75" cy="672" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.02s"/>
+<circle class="eco-dot" cx="216.75" cy="683" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.04s"/>
+<circle class="eco-dot" cx="216.75" cy="694" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.06s"/>
+<circle class="eco-dot" cx="216.75" cy="705" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.08s"/>
+<circle class="eco-dot" cx="216.75" cy="716" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.10s"/>
+<circle class="eco-dot" cx="216.75" cy="727" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.12s"/>
+<circle class="eco-dot" cx="216.75" cy="738" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.14s"/>
+<circle class="eco-dot" cx="306.75" cy="659.5" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.16s"/>
+<circle class="eco-dot" cx="306.75" cy="670.5" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.18s"/>
+<circle class="eco-dot" cx="306.75" cy="681.5" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.20s"/>
+<circle class="eco-dot" cx="306.75" cy="692.5" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.22s"/>
+<circle class="eco-dot" cx="306.75" cy="703.5" r="1.75" fill="#FFB648" fill-opacity="0.8" style="--d:1.24s"/>
+<circle class="eco-dot" cx="1122" cy="393" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.60s"/>
+<circle class="eco-dot" cx="1122" cy="402" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.62s"/>
+<circle class="eco-dot" cx="1122" cy="411" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.64s"/>
+<circle class="eco-dot" cx="1122" cy="420" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.66s"/>
+<circle class="eco-dot" cx="1122" cy="429" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.68s"/>
+<circle class="eco-dot" cx="1122" cy="438" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.70s"/>
+<circle class="eco-dot" cx="1122" cy="447" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.72s"/>
+<circle class="eco-dot" cx="1122" cy="537.5" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.74s"/>
+<circle class="eco-dot" cx="1122" cy="546.5" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.76s"/>
+<circle class="eco-dot" cx="1122" cy="555.5" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.78s"/>
+<circle class="eco-dot" cx="1122" cy="564.5" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.80s"/>
+<circle class="eco-dot" cx="1122" cy="573.5" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.82s"/>
+<circle class="eco-dot" cx="1122" cy="582.5" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.84s"/>
+<circle class="eco-dot" cx="1122" cy="677.5" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.86s"/>
+<circle class="eco-dot" cx="1122" cy="686.5" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.88s"/>
+<circle class="eco-dot" cx="1122" cy="695.5" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.90s"/>
+<circle class="eco-dot" cx="1122" cy="704.5" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.92s"/>
+<circle class="eco-dot" cx="1122" cy="713.5" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.94s"/>
+<circle class="eco-dot" cx="1122" cy="722.5" r="1.75" fill="#B7D7FF" fill-opacity="0.85" style="--d:3.96s"/></g></svg>
+
+    <p class="eco-abs eco-lbl eco-in" style="left:120px;top:222.5px;--d:.3s">Store</p>
+    <p class="eco-abs eco-lbl eco-in" style="left:120px;top:465.5px;--d:.6s">Online</p>
+    <p class="eco-abs eco-lbl eco-in" style="left:120px;top:604px;--d:.9s">In the app</p>
+    <p class="eco-abs eco-lbl eco-lbl--r eco-in" style="top:408px;--d:3.8s">Buyers</p>
+    <p class="eco-abs eco-lbl eco-lbl--r eco-in" style="top:548px;--d:3.95s">Refurbishers</p>
+    <p class="eco-abs eco-lbl eco-lbl--r eco-in" style="top:688px;--d:4.1s">Recommerce partners</p>
+
+    <div class="eco-abs eco-glow" aria-hidden="true"><img decoding="async" alt="" src="assets/ecosystem-hub-glow.svg" width="500" height="500"></div>
+    <div class="eco-abs eco-hub"><img decoding="async" alt="Fintegre" src="assets/ecosystem-3d-mark.jpg" width="150" height="150"></div>
+    <p class="eco-abs eco-name eco-in" style="--d:2.7s">Fintegre</p>
+  </div>
+</section>
+
+<section data-section="fullbleed" id="fullbleed" class="v2-sec" data-tone="dark"
+  style="--h:900px; background: radial-gradient(45.45% 41.67% at 38.18% 45.83%, rgba(48,71,236,.45) 0%, rgba(48,71,236,.12) 55%, rgba(48,71,236,0) 100%), #0F1115;">
+  <style>
+    [data-section="fullbleed"] .fb-abs { position: absolute; }
+    [data-section="fullbleed"] .fb-glow { left: 700px; top: 150px; width: 620px; height: 620px; }
+    [data-section="fullbleed"] .fb-glow img { position: absolute; left: -160px; top: -160px; width: 940px; height: 940px; max-width: none; }
+    [data-section="fullbleed"] .fb-wrap { display: flex; align-items: center; justify-content: center; }
+    [data-section="fullbleed"] .fb-phone { flex: none; transform: rotate(32deg); overflow: hidden;
+      box-shadow: 0 0 90px 0 rgba(48,71,236,.35), 24px 40px 70px 0 rgba(0,0,0,.65); }
+    [data-section="fullbleed"] .fb-phone img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    [data-section="fullbleed"] .fb-chip { left: 1000px; top: 455px; display: flex; align-items: center; gap: 10px; padding: 13px 20px;
+      border-radius: 999px; background: rgba(48,71,236,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 16px 40px 0 rgba(0,0,0,.4); font-size: 16px; font-weight: 400; color: #fff; white-space: nowrap; transform-origin: center; }
+    [data-section="fullbleed"] .fb-pill { padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,.12);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font-size: 13px; font-weight: 500; color: rgba(255,255,255,.9); white-space: nowrap; transition: background .25s; }
+    [data-section="fullbleed"] .fb-pill:hover { background: rgba(255,255,255,.22); }
+    [data-section="fullbleed"] .fb-cta { display: inline-block; padding: 12px 18px; border-radius: 10px; background: #fff; color: #0F1115;
+      font-size: 14px; font-weight: 500; transition: background .25s; }
+    [data-section="fullbleed"] .fb-cta:hover { background: var(--ice); }
+
+    /* Motion (Figma timeline, played once): phones slide in along the diagonal, shift past each other, settle. */
+    .motion [data-section="fullbleed"] .fb-glow { opacity: 0; transition: opacity 1.6s var(--ease) .4s; }
+    .motion [data-section="fullbleed"].is-in .fb-glow { opacity: 1; }
+    .motion [data-section="fullbleed"] .fb-old { translate: 160px -260px; }
+    .motion [data-section="fullbleed"] .fb-new { translate: -140px 300px; }
+    .motion [data-section="fullbleed"].is-in .fb-old { animation: fb-old 5.5s linear both; }
+    .motion [data-section="fullbleed"].is-in .fb-new { animation: fb-new 5.5s linear both; }
+    @keyframes fb-old {
+      0% { translate: 160px -260px; }
+      3.64% { translate: 160px -260px; animation-timing-function: var(--ease); }
+      27.27% { translate: 0 0; }
+      43.64% { translate: 0 0; animation-timing-function: var(--inout); }
+      61.82% { translate: 40px -60px; animation-timing-function: var(--inout); }
+      100% { translate: 0 0; }
+    }
+    @keyframes fb-new {
+      0% { translate: -140px 300px; }
+      6.36% { translate: -140px 300px; animation-timing-function: var(--ease); }
+      30.91% { translate: 0 0; }
+      43.64% { translate: 0 0; animation-timing-function: var(--inout); }
+      61.82% { translate: -30px -50px; animation-timing-function: var(--inout); }
+      100% { translate: 0 0; }
+    }
+    .motion [data-section="fullbleed"] .fb-chip[data-m] { transition-duration: .3s, 1s, .5s, 1s; }
+  </style>
+
+<div class="v2-canvas">
+    <!-- Photo layer: glow + phones + credit chip (clipped to the frame) -->
+    <div class="fb-abs" style="inset:0; overflow:clip; z-index:0;">
+      <div class="fb-abs fb-glow" aria-hidden="true"><img decoding="async" alt="" src="assets/fullbleed-glow.svg" width="940" height="940"></div>
+
+      <div class="fb-abs fb-wrap fb-old" style="left:947.15px; top:-151.27px; width:505.695px; height:592.545px;">
+        <div class="fb-phone" style="width:262px; height:535px; border-radius:44px;">
+          <img decoding="async" alt="iPhone 13, the device being traded in" src="assets/fullbleed-iphone13.webp" style="border-radius:44px;">
+        </div>
+      </div>
+      <div class="fb-abs fb-wrap fb-new" style="left:693.21px; top:453.9px; width:533.57px; height:632.19px;">
+        <div class="fb-phone" style="width:268px; height:578px; border-radius:46px;">
+          <img decoding="async" alt="iPhone 18 Pro, the new device" src="assets/fullbleed-iphone18pro.webp" style="border-radius:46px;">
+        </div>
+      </div>
+
+      <div class="fb-abs fb-chip" data-m="pop" style="--d:2900ms;">
+        <img decoding="async" alt="" src="assets/fullbleed-dot.svg" width="8" height="8" style="display:block;">
+        €240 credit · Instant
+      </div>
+    </div>
+
+    <!-- Bottom scrim (bleeds to the viewport edges) -->
+    <div class="fb-abs" aria-hidden="true" style="left:50%; bottom:0; width:calc(100vw / var(--s) + 4px); translate:-50% 0; height:380px; z-index:1; pointer-events:none;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.75) 60%, rgba(0,0,0,.92) 100%);"></div>
+    <!-- Top-left scrim -->
+    <div class="fb-abs" aria-hidden="true" style="left:0; top:0; width:1440px; height:520px; z-index:1; pointer-events:none;
+      background: radial-gradient(800px 200px at -80px 340px, rgba(0,0,0,.72) 0%, rgba(0,0,0,.4) 55%, rgba(0,0,0,0) 100%);"></div>
+
+    <div class="fb-abs" data-m="up" style="--d:100ms; left:120px; top:170px; z-index:2; display:flex; flex-direction:column; align-items:flex-start; gap:24px;">
+      <h2 style="margin:0; width:760px; font-weight:400; font-size:64px; line-height:1.04; letter-spacing:-1.6px; color:#fff;">
+        For markets that move<br><span style="font-family:'Instrument Serif', serif; font-style:italic; font-size:71.68px; line-height:1.04;">faster</span> than your pricing.
+      </h2>
+      <a class="fb-cta" href="#closing">Talk to Fintegre</a>
+    </div>
+
+    <div class="fb-abs" style="left:120px; top:756px; z-index:2; display:flex; flex-direction:column; align-items:flex-start; gap:16px;">
+      <p style="margin:0; width:400px; font-size:24px; font-weight:500; line-height:1.2; color:#fff;">Choose where to start,<br>whenever you are ready</p>
+      <div style="display:flex; gap:8px;">
+        <a class="fb-pill" href="#programs">Trade-in</a>
+        <a class="fb-pill" href="#programs">Early upgrade</a>
+        <a class="fb-pill" href="#programs">BYOD protection</a>
+        <a class="fb-pill" href="#programs">Warranty extension</a>
+        <a class="fb-pill" href="#programs">Claim validation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="programs" id="programs" class="v2-sec" data-tone="dark"
+  style="--h:900px; background: radial-gradient(55.56% 38.46% at 16.67% 53.85%, #1D2A8F 0%, #182271 27.5%, #121A52 55%, #111634 77.5%, #0F1115 100%), #0F1115;">
+  <style>
+    [data-section="programs"] .pg-abs { position: absolute; }
+    [data-section="programs"] .pg-arrow { width: 52px; height: 52px; border-radius: 999px; border: 0; display: flex; align-items: center; justify-content: center;
+      color: #F5F7FA; font: 400 18px/1 'Geologica', sans-serif; cursor: pointer; transition: background .25s, opacity .3s var(--inout); }
+    [data-section="programs"] .pg-arrow:hover { background: rgba(183,215,255,.24) !important; }
+    [data-section="programs"] .pg-arrow:disabled { opacity: .4; cursor: default; }
+    [data-section="programs"] .pg-arrow.is-flash { opacity: .6; }
+    [data-section="programs"] .pg-compare { font-size: 15px; font-weight: 400; color: #F5F7FA; white-space: pre; transition: opacity .2s; }
+    [data-section="programs"] .pg-compare:hover { opacity: .75; }
+
+    /* Scroller: starts at the canvas left edge (scroll-padding 120) and runs to the right edge of the viewport. */
+    [data-section="programs"] .pg-scroller { left: 0; top: 304px; height: 540px; width: calc(1440px + (100vw / var(--s) - 1440px) / 2);
+      overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -ms-overflow-style: none; cursor: grab; touch-action: pan-x pan-y; overscroll-behavior-x: contain; }
+    [data-section="programs"] .pg-scroller::-webkit-scrollbar { display: none; }
+    [data-section="programs"] .pg-scroller.is-dragging { cursor: grabbing; }
+    [data-section="programs"] .pg-scroller.is-dragging * { pointer-events: none; }
+    [data-section="programs"] .pg-track { display: flex; gap: 24px; align-items: flex-start; padding: 0 920px 0 120px; width: max-content; }
+    [data-section="programs"] .pg-item { flex: none; width: 400px; display: flex; flex-direction: column; gap: 22px; user-select: none; -webkit-user-select: none; }
+    [data-section="programs"] .pg-card { position: relative; width: 400px; height: 420px; border-radius: 28px; overflow: hidden; }
+    [data-section="programs"] .pg-card img { -webkit-user-drag: none; user-select: none; }
+    [data-section="programs"] .pg-dark { background: radial-gradient(250px 262.5px at 200px 26.25px, rgba(48,71,236,.45) 0%, rgba(48,71,236,0) 100%), #161920; }
+    [data-section="programs"] .pg-indigo { background: linear-gradient(141.78deg, #3047EC 14.286%, #141E6E 85.714%); }
+    [data-section="programs"] .pg-light { background: radial-gradient(250px 262.5px at 200px 0px, rgba(183,215,255,.8) 0%, rgba(183,215,255,0) 100%), #F5F7FA; }
+    [data-section="programs"] .pg-chip { position: absolute; display: flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 999px;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; font-weight: 400; white-space: nowrap; }
+    [data-section="programs"] .pg-chip--dark { background: rgba(15,17,21,.55); color: #F5F7FA; }
+    [data-section="programs"] .pg-chip--light { background: rgba(255,255,255,.9); color: #0F1115; }
+    [data-section="programs"] .pg-chip img { display: block; }
+    [data-section="programs"] .pg-device { position: absolute; }
+    [data-section="programs"] .pg-device img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+    [data-section="programs"] .pg-cap { margin: 0; width: 372px; font-size: 17px; line-height: 1.5; font-weight: 400; color: #F5F7FA; }
+    [data-section="programs"] .pg-cap span { font-weight: 300; color: #A7B0BE; }
+    [data-section="programs"] .pg-big { position: absolute; margin: 0; font-weight: 300; font-size: 96px; letter-spacing: -3.84px; line-height: normal; white-space: nowrap; }
+    [data-section="programs"] .pg-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; width: 100%; }
+    [data-section="programs"] .pg-check { display: flex; align-items: flex-start; justify-content: space-between; padding: 15px 0; width: 276px; }
+    [data-section="programs"] .pg-pager { left: 120px; top: 850px; display: flex; gap: 8px; align-items: center; }
+    [data-section="programs"] .pg-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: rgba(245,247,250,.3); cursor: pointer;
+      transition: width .6s var(--inout), background .6s var(--inout); }
+    [data-section="programs"] .pg-dot.is-active { width: 28px; background: #F5F7FA; }
+    /* Cards rise 60px (Figma) instead of the default 40px. */
+    .motion [data-section="programs"]:not(.is-in) .pg-item[data-m] { translate: 0 60px; }
+    .motion [data-section="programs"] .pg-item[data-m] { transition-duration: .9s, 1.1s, 1s, 1.4s; }
+    .motion [data-section="programs"]:not(.is-in) .pg-head[data-m] { translate: 0 24px; }
+  </style>
+
+  <div class="v2-canvas">
+    <h2 class="pg-abs pg-head" data-m="up" style="left:120px; top:92px; margin:0; font-weight:400; font-size:64px; line-height:1.04; letter-spacing:-2.56px; color:#F5F7FA; white-space:nowrap;">
+      Seven programs.<br>One platform.
+    </h2>
+    <p class="pg-abs pg-head" data-m="up" style="--d:50ms; left:900px; top:98px; width:420px; margin:0; font-weight:300; font-size:17px; line-height:1.5; color:rgba(245,247,250,.72);">
+      Start with one and add the rest when you are ready. Every program runs on the same valuation, buyers and payouts.
+    </p>
+    <div class="pg-abs pg-head" data-m="up" style="--d:100ms; left:1204px; top:195px; display:flex; gap:12px;">
+      <button type="button" class="pg-arrow" data-dir="-1" aria-label="Previous program" style="background:rgba(183,215,255,.08);">←</button>
+      <button type="button" class="pg-arrow" data-dir="1" aria-label="Next program" style="background:rgba(183,215,255,.16);">→</button>
+    </div>
+    <a class="pg-abs pg-head pg-compare" data-m="up" href="#positioning" style="--d:150ms; left:900px; top:212px;">Compare all programs  →</a>
+
+    <div class="pg-abs pg-scroller" role="region" aria-roledescription="carousel" aria-label="Programs" tabindex="0">
+      <div class="pg-track">
+        <!-- 01 Trade-in and buyback -->
+        <article class="pg-item" data-m="up" style="--d:150ms;" aria-label="1 of 7">
+          <div class="pg-card pg-dark">
+            <div class="pg-device" style="left:75px; top:44px; width:250px; height:302px;"><img decoding="async" alt="iPhone 18 Pro" src="assets/programs-iphone18pro.webp" draggable="false"></div>
+            <div class="pg-chip pg-chip--dark" style="left:111px; top:352px;"><img decoding="async" alt="" src="assets/programs-dot-ice.svg" width="7" height="7">€612 · Instant offer</div>
+          </div>
+          <p class="pg-cap">Trade-in and buyback. <span>Price any device in seconds and pay out in store, online or in the app.</span></p>
+        </article>
+        <!-- 02 Early upgrade -->
+        <article class="pg-item" data-m="up" style="--d:230ms;" aria-label="2 of 7">
+          <div class="pg-card pg-indigo">
+            <p class="pg-big" style="left:40px; top:48px; color:#fff;">€240</p>
+            <p class="pg-abs" style="left:44px; top:170px; margin:0; font-weight:300; font-size:17px; line-height:1.4; color:rgba(255,255,255,.8); white-space:nowrap;">off a new iPhone, paid with<br>the one in your pocket.</p>
+            <div class="pg-abs" style="left:40px; top:232px; width:320px; padding:6px 22px; border-radius:20px; background:rgba(255,255,255,.1); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); display:flex; flex-direction:column; white-space:nowrap;">
+              <div class="pg-row" style="border-bottom:1px solid rgba(255,255,255,.12); font-size:15px;"><span style="font-weight:300; color:rgba(255,255,255,.75);">New iPhone</span><span style="color:#fff;">€1,199</span></div>
+              <div class="pg-row" style="border-bottom:1px solid rgba(255,255,255,.12); font-size:15px;"><span style="font-weight:300; color:rgba(255,255,255,.75);">Your old iPhone</span><span style="color:#B7D7FF;">−€240</span></div>
+              <div class="pg-row" style="color:#fff;"><span style="font-weight:300; font-size:15px;">You pay</span><span style="font-size:20px;">€959</span></div>
+            </div>
+          </div>
+          <p class="pg-cap">Early upgrade. <span>Customers move to a new device early, with the old one as the deposit.</span></p>
+        </article>
+        <!-- 03 Deferred trade-in -->
+        <article class="pg-item" data-m="up" style="--d:310ms;" aria-label="3 of 7">
+          <div class="pg-card pg-light">
+            <p class="pg-abs" style="left:40px; top:44px; margin:0; font-size:15px; color:rgba(15,17,21,.6); white-space:nowrap;">Price locked</p>
+            <p class="pg-big" style="left:40px; top:66px; color:#0F1115;">€612</p>
+            <div class="pg-abs" style="left:40px; top:236px; width:320px; height:8px; border-radius:999px; background:rgba(15,17,21,.08);"></div>
+            <div class="pg-abs" style="left:40px; top:236px; width:208px; height:8px; border-radius:999px; background:#3047EC;"></div>
+            <p class="pg-abs" style="left:40px; top:258px; margin:0; font-size:14px; color:rgba(15,17,21,.6); white-space:nowrap;">Day 19 of 30</p>
+            <div class="pg-chip pg-chip--light" style="left:40px; top:350px;"><img decoding="async" alt="" src="assets/programs-dot-indigo.svg" width="7" height="7">Device on its way</div>
+          </div>
+          <p class="pg-cap">Deferred trade-in. <span>Lock today’s value and hand the device in later. The price holds until it arrives.</span></p>
+        </article>
+        <!-- 04 BYOD protection -->
+        <article class="pg-item" data-m="up" style="--d:390ms;" aria-label="4 of 7">
+          <div class="pg-card pg-dark">
+            <div class="pg-device" style="left:75px; top:56px; width:250px; height:274px;"><img decoding="async" alt="iPad Pro" src="assets/programs-ipadpro.webp" draggable="false"></div>
+            <div class="pg-chip pg-chip--dark" style="left:120px; top:344px;"><img decoding="async" alt="" src="assets/programs-dot-ice.svg" width="7" height="7">Checked · Grade A</div>
+          </div>
+          <p class="pg-cap">BYOD protection. <span>Cover the phones customers already own, checked and graded at sign-up.</span></p>
+        </article>
+        <!-- 05 Warranty extension -->
+        <article class="pg-item" data-m="up" style="--d:470ms;" aria-label="5 of 7">
+          <div class="pg-card pg-indigo">
+            <div class="pg-device" style="left:92px; top:28px; width:216px; height:250px;"><img decoding="async" alt="Apple Watch Series 12 in Night Blue" src="assets/programs-watch.png" draggable="false"></div>
+            <p class="pg-abs" style="left:40px; top:290px; width:320px; margin:0; text-align:center; font-weight:300; font-size:44px; letter-spacing:-1.32px; color:#fff;">+12 months</p>
+            <p class="pg-abs" style="left:40px; top:346px; width:320px; margin:0; text-align:center; font-weight:300; font-size:15px; color:rgba(255,255,255,.75);">of cover, priced from condition</p>
+          </div>
+          <p class="pg-cap">Warranty extension. <span>Extend cover on checked devices, priced from their real condition.</span></p>
+        </article>
+        <!-- 06 Claim validation -->
+        <article class="pg-item" data-m="up" style="--d:550ms;" aria-label="6 of 7">
+          <div class="pg-card pg-dark" style="white-space:nowrap;">
+            <p class="pg-abs" style="left:40px; top:48px; margin:0; font-size:14px; color:rgba(245,247,250,.6);">Damage check · 42 s</p>
+            <div class="pg-abs" style="left:40px; top:90px; padding:10px 22px 14px; border-radius:20px; background:rgba(255,255,255,.06); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); font-size:16px;">
+              <div class="pg-check"><span style="font-weight:300; color:rgba(245,247,250,.7);">Screen</span><span style="color:#F5F7FA;">Grade B</span></div>
+              <div class="pg-check"><span style="font-weight:300; color:rgba(245,247,250,.7);">Casing</span><span style="color:#F5F7FA;">Grade A</span></div>
+              <div class="pg-check"><span style="font-weight:300; color:rgba(245,247,250,.7);">Battery</span><span style="color:#F5F7FA;">88 %</span></div>
+              <div class="pg-check"><span style="font-weight:300; color:rgba(245,247,250,.7);">Claim</span><span style="color:#B7D7FF;">Valid</span></div>
+            </div>
+          </div>
+          <p class="pg-cap">Claim validation. <span>Check a damaged device before a claim is paid, with the same grading.</span></p>
+        </article>
+        <!-- 07 Return avoidance -->
+        <article class="pg-item" data-m="up" style="--d:630ms;" aria-label="7 of 7">
+          <div class="pg-card pg-light">
+            <div class="pg-device" style="left:35px; top:90px; width:330px; height:202px;"><img decoding="async" alt="MacBook Pro" src="assets/programs-macbookpro.webp" draggable="false"></div>
+            <div class="pg-chip pg-chip--light" style="left:104px; top:330px;"><img decoding="async" alt="" src="assets/programs-dot-indigo.svg" width="7" height="7">Keep €540 as credit</div>
+          </div>
+          <p class="pg-cap">Return avoidance. <span>Turn a return into a trade-in, with an instant credit instead of a refund.</span></p>
+        </article>
+      </div>
+    </div>
+
+    <div class="pg-abs pg-pager" role="tablist" aria-label="Choose a program">
+      <button type="button" class="pg-dot is-active" aria-label="Program 1"></button>
+      <button type="button" class="pg-dot" aria-label="Program 2"></button>
+      <button type="button" class="pg-dot" aria-label="Program 3"></button>
+      <button type="button" class="pg-dot" aria-label="Program 4"></button>
+      <button type="button" class="pg-dot" aria-label="Program 5"></button>
+      <button type="button" class="pg-dot" aria-label="Program 6"></button>
+      <button type="button" class="pg-dot" aria-label="Program 7"></button>
+    </div>
+  </div>
+</section>
+
+<section data-section="intelligence" id="intelligence" class="v2-sec" data-tone="dark"
+  style="--h:900px; background: radial-gradient(62.5% 41.67% at 0% 50%, #26304A 0%, #1E2435 30%, #151820 60%, #0F1115 100%), #0F1115;">
+  <style>
+    [data-section="intelligence"] .in-abs { position: absolute; }
+    [data-section="intelligence"] .in-tab { display: flex; align-items: center; justify-content: space-between; width: 440px; padding: 12px 0;
+      border: 0; border-top: 1px solid rgba(183,215,255,.16); background: none; cursor: pointer; text-align: left; font-family: inherit; white-space: nowrap; }
+    [data-section="intelligence"] .in-tab__label { font-size: 17px; font-weight: 400; color: rgba(245,247,250,.5); transition: color .3s; }
+    [data-section="intelligence"] .in-tab__icon { font-size: 16px; font-weight: 300; color: rgba(245,247,250,.4); transition: color .3s; }
+    [data-section="intelligence"] .in-tab:hover .in-tab__label { color: rgba(245,247,250,.8); }
+    [data-section="intelligence"] .in-tab[aria-selected="true"] .in-tab__label { color: #F5F7FA; }
+    [data-section="intelligence"] .in-tab[aria-selected="true"] .in-tab__icon { color: #B7D7FF; }
+    [data-section="intelligence"] .in-axis { font-size: 12px; font-weight: 300; color: rgba(245,247,250,.42); white-space: nowrap; margin: 0; }
+    [data-section="intelligence"] .in-grid { height: 1px; left: 50px; width: 570px; background: rgba(183,215,255,.12); transform-origin: left; }
+    [data-section="intelligence"] .in-cc { font-size: 12px; font-weight: 400; color: rgba(245,247,250,.68); white-space: nowrap; margin: 0; }
+    [data-section="intelligence"] .in-val { font-size: 12px; font-weight: 300; color: #F5F7FA; white-space: nowrap; margin: 0; }
+    [data-section="intelligence"] .in-bar img { display: block; }
+
+    /* Entrance: grid lines draw, bars grow up from the baseline, values follow. */
+    .motion [data-section="intelligence"] .in-grid { scale: 0 1; transition: scale 1.1s var(--inout) var(--d, 0ms); }
+    .motion [data-section="intelligence"] .in-bar { clip-path: inset(100% 0 0 0); transition: clip-path 1.1s var(--inout) var(--d, 0ms); }
+    .motion [data-section="intelligence"] .in-val { opacity: 0; translate: 0 8px; transition: opacity .6s var(--ease) var(--d, 0ms), translate .8s var(--ease) var(--d, 0ms); }
+    .motion [data-section="intelligence"].is-in .in-grid { scale: 1 1; }
+    .motion [data-section="intelligence"].is-in .in-bar { clip-path: inset(0 0 0 0); }
+    .motion [data-section="intelligence"].is-in .in-val { opacity: 1; translate: none; }
+    /* Replay when another tab is chosen. */
+    .motion [data-section="intelligence"].is-in .in-chart.is-replay .in-bar { clip-path: inset(100% 0 0 0); transition: none; }
+    .motion [data-section="intelligence"].is-in .in-chart.is-replay .in-val { opacity: 0; transition: none; }
+  </style>
+
+  <div class="v2-canvas">
+    <!-- Progress ticks (static, as in Figma) -->
+    <div class="in-abs" aria-hidden="true" style="left:1382px; top:381.75px; width:22px; display:flex; flex-direction:column; align-items:flex-end; gap:12px;">
+      <i style="display:block; width:10px; height:1.5px; background:rgba(183,215,255,.3);"></i>
+      <i style="display:block; width:10px; height:1.5px; background:rgba(183,215,255,.3);"></i>
+      <i style="display:block; width:10px; height:1.5px; background:rgba(183,215,255,.3);"></i>
+      <i style="display:block; width:10px; height:1.5px; background:rgba(183,215,255,.3);"></i>
+      <i style="display:block; width:10px; height:1.5px; background:rgba(183,215,255,.3);"></i>
+      <i style="display:block; width:22px; height:1.5px; background:#B7D7FF;"></i>
+      <i style="display:block; width:10px; height:1.5px; background:rgba(183,215,255,.3);"></i>
+      <i style="display:block; width:10px; height:1.5px; background:rgba(183,215,255,.3);"></i>
+      <i style="display:block; width:10px; height:1.5px; background:rgba(183,215,255,.3);"></i>
+      <i style="display:block; width:10px; height:1.5px; background:rgba(183,215,255,.3);"></i>
+      <i style="display:block; width:10px; height:1.5px; background:rgba(183,215,255,.3);"></i>
+    </div>
+
+    <div class="in-abs" style="left:120px; top:150px; display:flex; flex-direction:column; align-items:flex-start; gap:24px;">
+      <h2 data-m="up" style="margin:0; font-weight:400; font-size:56px; line-height:1.02; letter-spacing:-2.24px; color:#F5F7FA; white-space:nowrap;">
+        Turn trade-in data<br>into better decisions.
+      </h2>
+      <p data-m="up" style="--d:100ms; margin:0; width:440px; font-weight:300; font-size:17px; line-height:1.55; color:rgba(245,247,250,.68);">
+        Every trade-in tells you something about devices, markets and partners. Fintegre puts it in one place, so you decide with data instead of guessing.
+      </p>
+      <div role="tablist" aria-label="Intelligence views" style="display:flex; flex-direction:column;">
+        <button type="button" role="tab" class="in-tab" aria-selected="true" data-m="up" style="--d:200ms;"><span class="in-tab__label">Device values</span><span class="in-tab__icon">—</span></button>
+        <button type="button" role="tab" class="in-tab" aria-selected="false" data-m="up" style="--d:260ms;"><span class="in-tab__label">Vendor performance</span><span class="in-tab__icon">+</span></button>
+        <button type="button" role="tab" class="in-tab" aria-selected="false" data-m="up" style="--d:320ms;"><span class="in-tab__label">Conversion</span><span class="in-tab__icon">+</span></button>
+        <button type="button" role="tab" class="in-tab" aria-selected="false" data-m="up" style="--d:380ms;"><span class="in-tab__label">Discrepancies</span><span class="in-tab__icon">+</span></button>
+      </div>
+    </div>
+
+    <div class="in-abs in-chart" role="img" aria-label="Residual value of iPhone 15 Pro 256 GB by market (example data): LT €612, LV €598, EE €590, RO €548, AE €655"
+      style="left:670px; top:190px; width:620px; height:520px;">
+      <p class="in-abs in-cc" data-m="fade" style="--d:200ms; left:0; top:0;">Residual value · IPhone 15 pro · 256 GB</p>
+      <p class="in-abs in-axis" data-m="fade" style="--d:200ms; left:532px; top:0;">Example data</p>
+
+      <div class="in-abs in-grid" style="--d:250ms; top:420px;"></div><p class="in-abs in-axis" style="left:0; top:414px;">€400</p>
+      <div class="in-abs in-grid" style="--d:310ms; top:316.67px;"></div><p class="in-abs in-axis" style="left:0; top:310.67px;">€500</p>
+      <div class="in-abs in-grid" style="--d:370ms; top:213.33px;"></div><p class="in-abs in-axis" style="left:0; top:207.33px;">€600</p>
+      <div class="in-abs in-grid" style="--d:430ms; top:110px;"></div><p class="in-abs in-axis" style="left:0; top:104px;">€700</p>
+
+      <div class="in-abs in-bar" style="--d:500ms; left:70px; top:200.93px; width:136.152px; height:219.067px;"><img decoding="async" alt="" src="assets/intelligence-bar-lt.svg" width="136.152" height="219.067"></div>
+      <p class="in-abs in-cc" style="left:76px; top:436px;">LT</p>
+      <p class="in-abs in-val" style="--d:1300ms; left:172.15px; top:176.93px;">€612</p>
+
+      <div class="in-abs in-bar" style="--d:600ms; left:174px; top:215.4px; width:129.407px; height:204.6px;"><img decoding="async" alt="" src="assets/intelligence-bar-lv.svg" width="129.407" height="204.6"></div>
+      <p class="in-abs in-cc" style="left:180px; top:436px;">LV</p>
+      <p class="in-abs in-val" style="--d:1400ms; left:269.41px; top:191.4px;">€598</p>
+
+      <div class="in-abs in-bar" style="--d:700ms; left:278px; top:223.67px; width:125.552px; height:196.333px;"><img decoding="async" alt="" src="assets/intelligence-bar-ee.svg" width="125.552" height="196.333"></div>
+      <p class="in-abs in-cc" style="left:284px; top:436px;">EE</p>
+      <p class="in-abs in-val" style="--d:1500ms; left:369.55px; top:199.67px;">€590</p>
+
+      <div class="in-abs in-bar" style="--d:800ms; left:382px; top:267.07px; width:105.314px; height:152.933px;"><img decoding="async" alt="" src="assets/intelligence-bar-ro.svg" width="105.314" height="152.933"></div>
+      <p class="in-abs in-cc" style="left:388px; top:436px;">RO</p>
+      <p class="in-abs in-val" style="--d:1600ms; left:453.31px; top:243.07px;">€548</p>
+
+      <div class="in-abs in-bar" style="--d:900ms; left:486px; top:156.5px; width:156.872px; height:263.5px;"><img decoding="async" alt="" src="assets/intelligence-bar-ae.svg" width="156.872" height="263.5"></div>
+      <p class="in-abs in-cc" style="left:492px; top:436px;">AE</p>
+      <p class="in-abs in-val" style="--d:1700ms; left:608.87px; top:132.5px; color:#B7D7FF;">€655</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="positioning" id="positioning" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(800px * var(--s)) calc(375px * var(--s)) at calc(50% - 320px * var(--s)) calc(412.5px * var(--s)), rgba(27,39,128,.5) 0%, rgba(19,26,72,.25) 50%, rgba(11,12,16,0) 100%), #0B0C10;">
+<style>
+  [data-section="positioning"] .pz-abs { position: absolute; }
+  [data-section="positioning"] .pz-abs > img { display: block; width: 100%; height: 100%; }
+  [data-section="positioning"] h2 { margin: 0; font-weight: 400; font-size: 64px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="positioning"] .pz-lead { margin: 0; width: 410px; font-weight: 300; font-size: 17px; line-height: 1.5; color: rgba(245,247,250,.72); }
+  [data-section="positioning"] .pz-legend { display: flex; flex-direction: column; gap: 26px; left: 120px; top: 486px; }
+  [data-section="positioning"] .pz-row { display: flex; gap: 16px; align-items: flex-start; }
+  [data-section="positioning"] .pz-num { font-size: 13px; color: #B7D7FF; margin: 0; }
+  [data-section="positioning"] .pz-row-text { display: flex; flex-direction: column; gap: 6px; }
+  [data-section="positioning"] .pz-row-title { margin: 0; font-size: 18px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="positioning"] .pz-row-body { margin: 0; width: 340px; font-weight: 300; font-size: 15px; line-height: 1.45; color: #A7B0BE; }
+  [data-section="positioning"] .pz-tag { margin: 0; font-size: 15px; color: rgba(245,247,250,.85); white-space: nowrap; }
+  [data-section="positioning"] .pz-leader { height: 1px; width: 20px; left: 1164px; background: rgba(183,215,255,.5); }
+  [data-section="positioning"] .pz-line { left: 949.25px; top: 304px; width: 1.5px; height: 280px; background: linear-gradient(to bottom, rgba(183,215,255,.6), rgba(183,215,255,.1)); }
+  [data-section="positioning"] .pz-chip {
+    display: flex; gap: 8px; align-items: center; padding: 10px 16px; border-radius: 999px;
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(15,17,21,.6);
+    font-size: 14px; color: #F5F7FA; white-space: nowrap;
+  }
+  [data-section="positioning"] .pz-chip--hot { background: rgba(48,71,236,.9); }
+  [data-section="positioning"] .pz-chip img { width: 7px; height: 7px; display: block; }
+  [data-section="positioning"] .pz-signal { width: 60px; height: 60px; }
+
+  /* Figma timeline (14.5 s): plates rise in, the signal travels down through the layers, each layer
+     answers (glow + chip + legend row), then the offer travels back up. Entrances run once; the
+     signal cycle (legend, glows, dots) repeats on the same 14.5 s loop while the section is on screen. */
+  .motion [data-section="positioning"] .pz-a { animation-duration: 14.5s; animation-timing-function: linear; animation-fill-mode: both; animation-play-state: paused; }
+  .motion [data-section="positioning"] .pz-loop { animation-iteration-count: infinite; }
+  .motion [data-section="positioning"].is-in.pz-run .pz-a { animation-play-state: running; }
+
+  .motion [data-section="positioning"] .pz-layer-partners { animation-name: pz-layer-p; }
+  .motion [data-section="positioning"] .pz-layer-fintegre { animation-name: pz-layer-f; }
+  .motion [data-section="positioning"] .pz-layer-brand { animation-name: pz-layer-b; }
+  .motion [data-section="positioning"] .pz-line { animation-name: pz-line; }
+  .motion [data-section="positioning"] .pz-glow-brand { animation-name: pz-glow-b; }
+  .motion [data-section="positioning"] .pz-glow-fintegre { animation-name: pz-glow-f; }
+  .motion [data-section="positioning"] .pz-glow-partners { animation-name: pz-glow-p; }
+  .motion [data-section="positioning"] .pz-leg-brand { animation-name: pz-leg-b; }
+  .motion [data-section="positioning"] .pz-leg-fintegre { animation-name: pz-leg-f; }
+  .motion [data-section="positioning"] .pz-leg-partners { animation-name: pz-leg-p; }
+  .motion [data-section="positioning"] .pz-sig-down { animation-name: pz-sig-down-o, pz-sig-down-t; }
+  .motion [data-section="positioning"] .pz-sig-up { animation-name: pz-sig-up-o, pz-sig-up-t; }
+  .motion [data-section="positioning"] .pz-chip-store { animation-name: pz-chip-store-o, pz-chip-store-s; }
+  .motion [data-section="positioning"] .pz-chip-grade { animation-name: pz-chip-grade-o, pz-chip-grade-s; }
+  .motion [data-section="positioning"] .pz-chip-buyera { animation-name: pz-chip-buyera-o, pz-chip-buyera-s; }
+  .motion [data-section="positioning"] .pz-chip-buyerb { animation-name: pz-chip-buyerb-o, pz-chip-buyerb-s; }
+  .motion [data-section="positioning"] .pz-chip-offer { animation-name: pz-chip-offer-o, pz-chip-offer-s; }
+
+  @keyframes pz-layer-p { 0% { opacity: 0; translate: 0 60px; } 0.69% { opacity: 0; translate: 0 60px; animation-timing-function: cubic-bezier(.16,1,.3,1); } 7.586% { opacity: 1; translate: 0 0; } 100% { opacity: 1; translate: 0 0; } }
+  @keyframes pz-layer-f { 0% { opacity: 0; translate: 0 60px; } 1.724% { opacity: 0; translate: 0 60px; animation-timing-function: cubic-bezier(.16,1,.3,1); } 8.621% { opacity: 1; translate: 0 0; } 100% { opacity: 1; translate: 0 0; } }
+  @keyframes pz-layer-b { 0% { opacity: 0; translate: 0 60px; } 2.759% { opacity: 0; translate: 0 60px; animation-timing-function: cubic-bezier(.16,1,.3,1); } 9.655% { opacity: 1; translate: 0 0; } 100% { opacity: 1; translate: 0 0; } }
+  @keyframes pz-line { 0% { opacity: 0; } 6.207% { opacity: 0; animation-timing-function: cubic-bezier(.65,0,.25,1); } 9.655% { opacity: 1; } 100% { opacity: 1; } }
+  @keyframes pz-glow-b { 0% { opacity: 0; } 13.793% { opacity: 0; animation-timing-function: cubic-bezier(.65,0,.25,1); } 15.517% { opacity: 1; animation-timing-function: cubic-bezier(.65,0,.25,1); } 20.69% { opacity: .35; } 45.517% { opacity: .35; animation-timing-function: cubic-bezier(.65,0,.25,1); } 49.655% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes pz-glow-f { 0% { opacity: 0; } 21.379% { opacity: 0; animation-timing-function: cubic-bezier(.65,0,.25,1); } 23.103% { opacity: 1; animation-timing-function: cubic-bezier(.65,0,.25,1); } 28.276% { opacity: .35; } 45.517% { opacity: .35; animation-timing-function: cubic-bezier(.65,0,.25,1); } 49.655% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes pz-glow-p { 0% { opacity: 0; } 26.207% { opacity: 0; animation-timing-function: cubic-bezier(.65,0,.25,1); } 27.931% { opacity: 1; animation-timing-function: cubic-bezier(.65,0,.25,1); } 33.103% { opacity: .35; } 45.517% { opacity: .35; animation-timing-function: cubic-bezier(.65,0,.25,1); } 49.655% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes pz-leg-b { 0% { opacity: .45; } 13.793% { opacity: .45; animation-timing-function: cubic-bezier(.65,0,.25,1); } 16.552% { opacity: 1; } 45.517% { opacity: 1; animation-timing-function: cubic-bezier(.65,0,.25,1); } 49.655% { opacity: .45; } 100% { opacity: .45; } }
+  @keyframes pz-leg-f { 0% { opacity: .45; } 21.379% { opacity: .45; animation-timing-function: cubic-bezier(.65,0,.25,1); } 24.138% { opacity: 1; } 45.517% { opacity: 1; animation-timing-function: cubic-bezier(.65,0,.25,1); } 49.655% { opacity: .45; } 100% { opacity: .45; } }
+  @keyframes pz-leg-p { 0% { opacity: .45; } 26.207% { opacity: .45; animation-timing-function: cubic-bezier(.65,0,.25,1); } 28.966% { opacity: 1; } 45.517% { opacity: 1; animation-timing-function: cubic-bezier(.65,0,.25,1); } 49.655% { opacity: .45; } 100% { opacity: .45; } }
+  @keyframes pz-sig-down-o { 0% { opacity: 0; } 12.414% { opacity: 0; } 13.448% { opacity: 1; } 26.897% { opacity: 1; } 27.931% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes pz-sig-down-t { 0% { translate: 0 0; } 18.621% { translate: 0 0; animation-timing-function: cubic-bezier(.65,0,.25,1); } 22.069% { translate: 0 140px; } 23.448% { translate: 0 140px; animation-timing-function: cubic-bezier(.65,0,.25,1); } 26.897% { translate: 0 280px; } 100% { translate: 0 280px; } }
+  @keyframes pz-sig-up-o { 0% { opacity: 0; } 33.103% { opacity: 0; } 33.793% { opacity: 1; } 40.69% { opacity: 1; } 41.724% { opacity: 0; } 100% { opacity: 0; } }
+  @keyframes pz-sig-up-t { 0% { translate: 0 0; } 33.103% { translate: 0 0; animation-timing-function: cubic-bezier(.65,0,.25,1); } 40.69% { translate: 0 -280px; } 100% { translate: 0 -280px; } }
+  @keyframes pz-chip-store-o { 0% { opacity: 0; } 15.172% { opacity: 0; animation-timing-function: cubic-bezier(.16,1,.3,1); } 17.241% { opacity: 1; } 100% { opacity: 1; } }
+  @keyframes pz-chip-store-s { 0% { scale: .6; } 15.172% { scale: .6; animation-timing-function: cubic-bezier(.3,1.45,.5,1); } 18.621% { scale: 1; } 100% { scale: 1; } }
+  @keyframes pz-chip-grade-o { 0% { opacity: 0; } 22.759% { opacity: 0; animation-timing-function: cubic-bezier(.16,1,.3,1); } 24.828% { opacity: 1; } 100% { opacity: 1; } }
+  @keyframes pz-chip-grade-s { 0% { scale: .6; } 22.759% { scale: .6; animation-timing-function: cubic-bezier(.3,1.45,.5,1); } 26.207% { scale: 1; } 100% { scale: 1; } }
+  @keyframes pz-chip-buyera-o { 0% { opacity: 0; } 27.586% { opacity: 0; animation-timing-function: cubic-bezier(.16,1,.3,1); } 29.655% { opacity: 1; } 100% { opacity: 1; } }
+  @keyframes pz-chip-buyera-s { 0% { scale: .6; } 27.586% { scale: .6; animation-timing-function: cubic-bezier(.3,1.45,.5,1); } 31.034% { scale: 1; } 100% { scale: 1; } }
+  @keyframes pz-chip-buyerb-o { 0% { opacity: 0; } 29.655% { opacity: 0; animation-timing-function: cubic-bezier(.16,1,.3,1); } 31.724% { opacity: 1; } 100% { opacity: 1; } }
+  @keyframes pz-chip-buyerb-s { 0% { scale: .6; } 29.655% { scale: .6; animation-timing-function: cubic-bezier(.3,1.45,.5,1); } 33.103% { scale: 1; } 100% { scale: 1; } }
+  @keyframes pz-chip-offer-o { 0% { opacity: 0; } 41.379% { opacity: 0; animation-timing-function: cubic-bezier(.16,1,.3,1); } 43.448% { opacity: 1; } 100% { opacity: 1; } }
+  @keyframes pz-chip-offer-s { 0% { scale: .6; } 41.379% { scale: .6; animation-timing-function: cubic-bezier(.3,1.45,.5,1); } 44.828% { scale: 1; } 100% { scale: 1; } }
+
+  /* Without motion: final, readable state. */
+  html:not(.motion) [data-section="positioning"] .pz-glow,
+  html:not(.motion) [data-section="positioning"] .pz-signal { opacity: 0; }
+</style>
+  <div class="v2-canvas">
+    <h2 class="pz-abs" style="left:120px; top:150px;">Infrastructure<br>and intelligence.</h2>
+    <p class="pz-abs pz-lead" style="left:120px; top:318px;">B2B, white-label, vendor-neutral and asset-light. One orchestration layer for journeys, diagnostics, valuation, vendors and payouts.</p>
+
+    <div class="pz-abs pz-legend">
+      <div class="pz-row pz-a pz-loop pz-leg-brand">
+        <p class="pz-num">01</p>
+        <div class="pz-row-text"><p class="pz-row-title">Your brand</p><p class="pz-row-body">Your journeys in store, online and in the app, with your name on every screen.</p></div>
+      </div>
+      <div class="pz-row pz-a pz-loop pz-leg-fintegre">
+        <p class="pz-num">02</p>
+        <div class="pz-row-text"><p class="pz-row-title">Fintegre</p><p class="pz-row-body">Diagnostics, grading, valuation and routing, in one layer underneath.</p></div>
+      </div>
+      <div class="pz-row pz-a pz-loop pz-leg-partners">
+        <p class="pz-num">03</p>
+        <div class="pz-row-text"><p class="pz-row-title">Partners</p><p class="pz-row-body">Buyers, refurbishers and payouts compete for every device.</p></div>
+      </div>
+    </div>
+
+    <!-- Plates, bottom to top, each with its glow overlay -->
+    <div class="pz-abs pz-a pz-layer-partners" style="left:742px; top:464px; width:416px; height:252px;"><img decoding="async" alt="" src="assets/positioning-layer-partners.svg" width="416" height="252"></div>
+    <div class="pz-abs pz-glow pz-a pz-loop pz-glow-partners" style="left:732px; top:454px; width:436px; height:260px;"><img decoding="async" alt="" src="assets/positioning-glow-partners.svg" width="436" height="260"></div>
+    <div class="pz-abs pz-a pz-layer-fintegre" style="left:742px; top:324px; width:416px; height:252px;"><img decoding="async" alt="" src="assets/positioning-layer-fintegre.svg" width="416" height="252"></div>
+    <div class="pz-abs pz-glow pz-a pz-loop pz-glow-fintegre" style="left:732px; top:314px; width:436px; height:260px;"><img decoding="async" alt="" src="assets/positioning-glow-fintegre.svg" width="436" height="260"></div>
+    <div class="pz-abs pz-a pz-layer-brand" style="left:742px; top:184px; width:416px; height:252px;"><img decoding="async" alt="" src="assets/positioning-layer-brand.svg" width="416" height="252"></div>
+    <div class="pz-abs pz-glow pz-a pz-loop pz-glow-brand" style="left:732px; top:174px; width:436px; height:260px;"><img decoding="async" alt="" src="assets/positioning-glow-brand.svg" width="436" height="260"></div>
+
+    <div class="pz-abs pz-line pz-a"></div>
+    <div class="pz-abs pz-signal pz-a pz-loop pz-sig-down" style="left:920px; top:274px;"><img decoding="async" alt="" src="assets/positioning-signal-down.svg" width="60" height="60"></div>
+    <div class="pz-abs pz-signal pz-a pz-loop pz-sig-up" style="left:920px; top:554px;"><img decoding="async" alt="" src="assets/positioning-signal-up.svg" width="60" height="60"></div>
+
+    <p class="pz-abs pz-tag" style="left:1190px; top:295px;">Your brand</p>
+    <div class="pz-abs pz-leader" style="top:304px;"></div>
+    <p class="pz-abs pz-tag" style="left:1190px; top:435px;">Fintegre</p>
+    <div class="pz-abs pz-leader" style="top:444px;"></div>
+    <p class="pz-abs pz-tag" style="left:1190px; top:575px;">Partners</p>
+    <div class="pz-abs pz-leader" style="top:584px;"></div>
+
+    <div class="pz-abs pz-chip pz-a pz-chip-store" style="left:602px; top:290px;"><img decoding="async" alt="" src="assets/positioning-dot.svg" width="7" height="7">Store 14 · Vilnius</div>
+    <div class="pz-abs pz-chip pz-a pz-chip-grade" style="left:596px; top:430px;"><img decoding="async" alt="" src="assets/positioning-dot.svg" width="7" height="7">Grade A · €612</div>
+    <div class="pz-abs pz-chip pz-a pz-chip-buyera" style="left:590px; top:570px;"><img decoding="async" alt="" src="assets/positioning-dot.svg" width="7" height="7">Buyer A · €598</div>
+    <div class="pz-abs pz-chip pz-chip--hot pz-a pz-chip-buyerb" style="left:1050px; top:654px;"><img decoding="async" alt="" src="assets/positioning-dot-indigo.svg" width="7" height="7">Buyer B · €612</div>
+    <div class="pz-abs pz-chip pz-chip--hot pz-a pz-chip-offer" style="left:1010px; top:154px;"><img decoding="async" alt="" src="assets/positioning-dot-indigo.svg" width="7" height="7">Offer ready · €612</div>
+  </div>
+</section>
+
+<section data-section="devices" id="devices" class="v2-sec" data-tone="dark" style="--h:900px; background:#0F1115;">
+<style>
+  /* Scroll story: four screens of scroll, one sticky screen showing the stage. */
+  [data-section="devices"].v2-sec { height: calc(900px * var(--s) * 4); }
+  [data-section="devices"] .dv-sticky { position: sticky; top: 0; height: calc(900px * var(--s)); overflow: hidden; }
+  [data-section="devices"] .dv-abs { position: absolute; }
+  /* Background lives inside the canvas so the LIGHTEN photos blend with it; it extends past the canvas to bleed. */
+  [data-section="devices"] .dv-bg {
+    left: -2160px; top: 0; width: 5760px; height: 900px;
+    background: radial-gradient(514.29px 346.15px at 2622.86px 450px, rgba(48,71,236,.32) 0%, rgba(48,71,236,.08) 60%, rgba(48,71,236,0) 100%), #0F1115;
+  }
+  [data-section="devices"] .dv-view { left: 0; top: 0; width: 1440px; height: 900px; overflow: hidden; }
+  [data-section="devices"] .dv-stage { left: 0; top: 0; width: 5760px; height: 900px; }
+  [data-section="devices"] .dv-slide { top: 0; width: 1440px; height: 900px; overflow: hidden; }
+  [data-section="devices"] .dv-photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+  [data-section="devices"] .dv-lighten { mix-blend-mode: lighten; }
+  [data-section="devices"] .dv-copy { left: 120px; top: 282px; }
+  [data-section="devices"] .dv-copy-in { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+  [data-section="devices"] .dv-kicker { margin: 0; font-size: 22px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="devices"] .dv-price { margin: 0; font-weight: 300; font-size: 76px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="devices"] .dv-body { margin: 0; width: 400px; font-weight: 300; font-size: 18px; line-height: 1.5; color: #A7B0BE; }
+  [data-section="devices"] .dv-stats { display: flex; gap: 48px; padding-top: 22px; white-space: nowrap; }
+  [data-section="devices"] .dv-stat { display: flex; flex-direction: column; gap: 4px; }
+  [data-section="devices"] .dv-stat b { font-weight: 300; font-size: 30px; letter-spacing: -0.02em; color: #F5F7FA; }
+  [data-section="devices"] .dv-stat span { font-size: 14px; color: #A7B0BE; }
+  [data-section="devices"] .dv-title { left: 120px; top: 120px; margin: 0; font-size: 24px; color: rgba(245,247,250,.9); white-space: nowrap; }
+  [data-section="devices"] .dv-progress { left: 120px; top: 800px; width: 280px; height: 3px; }
+  [data-section="devices"] .dv-seg, [data-section="devices"] .dv-seg-on { position: absolute; top: 0; width: 64px; height: 3px; border-radius: 999px; background: rgba(245,247,250,.18); }
+  [data-section="devices"] .dv-seg-on { background: #F5F7FA; opacity: 0; }
+  [data-section="devices"] .dv-labels { left: 120px; top: 814px; display: flex; gap: 8px; }
+  [data-section="devices"] .dv-labels button {
+    all: unset; cursor: pointer; width: 64px; height: 18px; font: 400 13px/normal 'Geologica', system-ui, sans-serif; color: #A7B0BE; transition: color .3s;
+  }
+  [data-section="devices"] .dv-labels button:hover, [data-section="devices"] .dv-labels button[aria-current="true"] { color: #F5F7FA; }
+  [data-section="devices"] .dv-labels button:focus-visible { outline: 1px solid #B7D7FF; outline-offset: 4px; border-radius: 4px; }
+  /* First slide entrance (Figma: photo slides in 140 px and fades, copy rises 30 px). */
+  .motion [data-section="devices"] [data-m="dv-photo"] { translate: 140px 0; transition: opacity 1.2s var(--ease) var(--d, 0ms), translate 1.3s var(--ease) var(--d, 0ms); }
+  .motion [data-section="devices"] .dv-copy-in[data-m="up"] { translate: 0 30px; }
+  .motion [data-section="devices"].is-in [data-m] { translate: none; }
+</style>
+  <div class="dv-sticky">
+    <div class="v2-canvas">
+      <div class="dv-abs dv-bg" aria-hidden="true"></div>
+      <div class="dv-abs dv-view">
+        <div class="dv-abs dv-stage">
+          <div class="dv-abs dv-slide" style="left:0;" data-slide="0">
+            <div class="dv-abs dv-photo dv-lighten" data-m="dv-photo" style="--d:100ms; left:-40px; top:0; width:1705px; height:900px;"><img decoding="async" alt="iPhone, rear camera close-up" src="assets/devices-iphone.png"></div>
+            <div class="dv-abs dv-copy"><div class="dv-copy-in" data-m="up" style="--d:500ms;">
+              <p class="dv-kicker">iPhone</p>
+              <p class="dv-price">up to €612</p>
+              <p class="dv-body">The device traded most in every market. Screen, battery and casing are checked in under a minute.</p>
+              <div class="dv-stats"><div class="dv-stat"><b>58 s</b><span>Time to offer</span></div><div class="dv-stat"><b>4</b><span>Buyers per device</span></div></div>
+            </div></div>
+          </div>
+          <div class="dv-abs dv-slide" style="left:1440px;" data-slide="1">
+            <div class="dv-abs dv-photo" style="left:700px; top:40px; width:780px; height:1305px;"><img decoding="async" alt="iPad" src="assets/devices-ipad.webp"></div>
+            <div class="dv-abs dv-copy"><div class="dv-copy-in">
+              <p class="dv-kicker">iPad</p>
+              <p class="dv-price">up to €290</p>
+              <p class="dv-body">Big screens hold their value. Graded on the same scale as every iPhone, so offers stay comparable.</p>
+              <div class="dv-stats"><div class="dv-stat"><b>A–D</b><span>One grading scale</span></div><div class="dv-stat"><b>3</b><span>Markets compared</span></div></div>
+            </div></div>
+          </div>
+          <div class="dv-abs dv-slide" style="left:2880px;" data-slide="2">
+            <div class="dv-abs dv-photo dv-lighten" style="left:380px; top:170px; width:1500px; height:568px; -webkit-mask-image:url(assets/devices-macbook-mask.svg); mask-image:url(assets/devices-macbook-mask.svg); -webkit-mask-size:1500px 568px; mask-size:1500px 568px; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;"><img decoding="async" alt="MacBook" src="assets/devices-macbook.png"></div>
+            <div class="dv-abs dv-copy"><div class="dv-copy-in">
+              <p class="dv-kicker">MacBook</p>
+              <p class="dv-price">up to €540</p>
+              <p class="dv-body">Laptops keep their value longest. Chip, memory and storage are read from the device, nothing to type.</p>
+              <div class="dv-stats"><div class="dv-stat"><b>M1–M5</b><span>Chips recognised</span></div><div class="dv-stat"><b>2 min</b><span>To a final offer</span></div></div>
+            </div></div>
+          </div>
+          <div class="dv-abs dv-slide" style="left:4320px;" data-slide="3">
+            <div class="dv-abs dv-photo dv-lighten" style="left:170px; top:140px; width:1440px; height:760px; -webkit-mask-image:url(assets/devices-watch-mask.svg); mask-image:url(assets/devices-watch-mask.svg); -webkit-mask-size:1440px 760px; mask-size:1440px 760px; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;"><img decoding="async" alt="Apple Watch" src="assets/devices-watch.png"></div>
+            <div class="dv-abs dv-copy"><div class="dv-copy-in">
+              <p class="dv-kicker">Apple Watch</p>
+              <p class="dv-price">up to €140</p>
+              <p class="dv-body">Even the smallest device counts. Add it to a phone trade-in and the whole basket is worth more.</p>
+              <div class="dv-stats"><div class="dv-stat"><b>+€140</b><span>Per bundle</span></div><div class="dv-stat"><b>Series 4+</b><span>Accepted</span></div></div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="dv-abs dv-title">Every device has a number.</p>
+      <div class="dv-abs dv-progress" aria-hidden="true">
+        <div class="dv-seg" style="left:0;"></div><div class="dv-seg-on" style="left:0; opacity:1;"></div>
+        <div class="dv-seg" style="left:72px;"></div><div class="dv-seg-on" style="left:72px;"></div>
+        <div class="dv-seg" style="left:144px;"></div><div class="dv-seg-on" style="left:144px;"></div>
+        <div class="dv-seg" style="left:216px;"></div><div class="dv-seg-on" style="left:216px;"></div>
+      </div>
+      <div class="dv-abs dv-labels">
+        <button type="button" data-go="0" aria-current="true">iPhone</button>
+        <button type="button" data-go="1">iPad</button>
+        <button type="button" data-go="2">MacBook</button>
+        <button type="button" data-go="3">Watch</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="case-study" id="case-study" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 327.27px * var(--s)) calc(480px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="case-study"] .cs-abs { position: absolute; }
+  [data-section="case-study"] .cs-abs > img { display: block; }
+  [data-section="case-study"] .cs-intro { left: 120px; top: 170px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  [data-section="case-study"] blockquote { margin: 0; font-weight: 400; font-size: 64px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="case-study"] .cs-lead { margin: 0; width: 440px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="case-study"] .cs-stats { display: flex; gap: 48px; white-space: nowrap; }
+  [data-section="case-study"] .cs-stat { display: flex; flex-direction: column; gap: 8px; }
+  [data-section="case-study"] .cs-stat b { font-weight: 300; font-size: 40px; letter-spacing: -0.03em; color: #F5F7FA; }
+  [data-section="case-study"] .cs-stat span { font-size: 12px; color: #B7D7FF; }
+  [data-section="case-study"] .cs-btn { display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 999px; border: 1px solid rgba(245,247,250,.24); font-size: 15px; color: #F5F7FA; white-space: pre; transition: background-color .3s, border-color .3s; }
+  [data-section="case-study"] .cs-btn:hover { background: rgba(245,247,250,.08); border-color: rgba(245,247,250,.4); }
+  [data-section="case-study"] .cs-visual { left: 760px; top: 110px; width: 620px; height: 700px; }
+  [data-section="case-study"] .cs-card {
+    width: 400px; border-radius: 26px; overflow: hidden; border: 1px solid rgba(183,215,255,.14);
+    background: rgba(255,255,255,.06); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,.45);
+  }
+  [data-section="case-study"] .cs-card p { margin: 0; white-space: nowrap; }
+  [data-section="case-study"] .cs-meta { font-size: 13px; color: #A7B0BE; }
+  [data-section="case-study"] .cs-big { font-weight: 300; font-size: 22px; color: #F5F7FA; }
+  [data-section="case-study"] .cs-device { overflow: hidden; }
+  [data-section="case-study"] .cs-device img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  [data-section="case-study"] .cs-pills { left: 115px; top: 103px; display: flex; gap: 8px; }
+  [data-section="case-study"] .cs-pill { padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.1); font-size: 13px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="case-study"] .cs-pill--ice { background: rgba(183,215,255,.95); color: #0F1115; }
+  [data-section="case-study"] .cs-bid { left: 27px; width: 344px; height: 52px; border-radius: 16px; overflow: hidden; }
+  [data-section="case-study"] .cs-pay { left: 115px; top: 103px; display: flex; gap: 10px; align-items: baseline; white-space: nowrap; }
+  [data-section="case-study"] .cs-fibre { overflow: visible; }
+
+  /* Figma timeline: cards rise in from lower left one by one, fibres draw between them, Buyer B lights up,
+     then the price lands. */
+  .motion [data-section="case-study"] [data-m="cs-card"] { translate: -30px 40px; transition: opacity .6s var(--ease) var(--d, 0ms), translate .9s var(--ease) var(--d, 0ms); }
+  .motion [data-section="case-study"] [data-m="cs-bid"] { opacity: .25; scale: .96; transition: opacity .4s var(--inout) var(--d, 0ms), scale .5s var(--spring) var(--d, 0ms); }
+  .motion [data-section="case-study"] [data-m="cs-pay"] { translate: -16px 0; transition: opacity .4s var(--ease) var(--d, 0ms), translate .5s var(--ease) var(--d, 0ms); }
+  .motion [data-section="case-study"] [data-draw] { transition-duration: .6s; }
+  .motion [data-section="case-study"].is-in [data-m] { opacity: 1; translate: none; scale: 1; }
+</style>
+  <div class="v2-canvas">
+    <div class="cs-abs" style="left:720px; top:-100px; width:1060px; height:920px;" aria-hidden="true"><img decoding="async" alt="" src="assets/case-study-glow-right.svg" width="1060" height="920"></div>
+    <div class="cs-abs" style="left:-380px; top:420px; width:960px; height:780px;" aria-hidden="true"><img decoding="async" alt="" src="assets/case-study-glow-left.svg" width="960" height="780"></div>
+
+    <div class="cs-abs cs-intro">
+      <blockquote>“Trade-in became<br>part of every<br>iPhone sale.”</blockquote>
+      <p class="cs-lead">In store and online, two local buyers compete for each device and the value goes straight to the new iPhone.</p>
+      <div class="cs-stats">
+        <div class="cs-stat"><b>+38%</b><span>Trade-in participation</span></div>
+        <div class="cs-stat"><b>+14%</b><span>Value per device</span></div>
+        <div class="cs-stat"><b>58 s</b><span>Time to offer</span></div>
+      </div>
+      <a class="cs-btn" href="#closing">Read the case  →</a>
+    </div>
+
+    <div class="cs-abs cs-visual" aria-label="Trade-in flow">
+      <!-- Fibres (drawn in sequence) -->
+      <svg class="cs-abs cs-fibre" style="left:99.25px; top:207.25px;" width="91.5" height="55.5" viewBox="0 0 91.5 55.5" fill="none" aria-hidden="true">
+        <path pathLength="1" data-draw style="--d:1100ms;" d="M0.75 0.75C0.75 32.75 90.75 22.75 90.75 54.75" stroke-width="1.5" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.55"/>
+      </svg>
+      <svg class="cs-abs cs-fibre" style="left:199.25px; top:457.25px;" width="71.5" height="55.5" viewBox="0 0 71.5 55.5" fill="none" aria-hidden="true">
+        <path pathLength="1" data-draw style="--d:2300ms;" d="M0.75 0.75C0.75 32.75 70.75 22.75 70.75 54.75" stroke-width="1.5" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.55"/>
+      </svg>
+
+      <div class="cs-abs cs-card" data-m="cs-card" style="--d:400ms; left:40px; top:40px; height:168px;">
+        <div class="cs-abs cs-device" style="left:25px; top:19px; width:62px; height:127px; border-radius:11px; box-shadow:0 10px 20px rgba(0,0,0,.5);"><img decoding="async" alt="iPhone 13" src="assets/case-study-iphone13.webp"></div>
+        <p class="cs-abs cs-meta" style="left:115px; top:29px;">11:43 · Store 14, Vilnius</p>
+        <p class="cs-abs cs-big" style="left:115px; top:53px;">iPhone 13 checked</p>
+        <div class="cs-abs cs-pills"><span class="cs-pill cs-pill--ice">Grade A</span><span class="cs-pill">Battery 88 %</span><span class="cs-pill">58 s</span></div>
+      </div>
+
+      <div class="cs-abs cs-card" data-m="cs-card" style="--d:1600ms; left:140px; top:262px; height:196px;">
+        <p class="cs-abs cs-meta" style="left:27px; top:25px;">Two local buyers compete</p>
+        <div class="cs-abs cs-bid" style="top:57px; background:rgba(255,255,255,.05);">
+          <p class="cs-abs" style="left:18px; top:16px; font-size:15px; color:#A7B0BE;">Buyer A · Lithuania</p>
+          <p class="cs-abs" style="left:281px; top:14px; font-size:18px; color:rgba(245,247,250,.6);">€598</p>
+        </div>
+        <div class="cs-abs cs-bid" data-m="cs-bid" style="--d:2200ms; top:117px; background:rgba(48,71,236,.9); color:#F5F7FA;">
+          <p class="cs-abs" style="left:18px; top:16px; font-size:15px; white-space:pre;">Buyer B · Latvia  ·  Best</p>
+          <p class="cs-abs" style="left:284px; top:14px; font-size:18px;">€612</p>
+        </div>
+      </div>
+
+      <div class="cs-abs cs-card" data-m="cs-card" style="--d:2800ms; left:220px; top:512px; height:168px;">
+        <div class="cs-abs cs-device" style="left:25px; top:19px; width:60px; height:129px; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,.5);"><img decoding="async" alt="iPhone 18 Pro" src="assets/case-study-iphone18pro.webp"></div>
+        <p class="cs-abs cs-meta" style="left:115px; top:29px;">Applied to the new iPhone</p>
+        <p class="cs-abs cs-big" style="left:115px; top:53px;">iPhone 18 Pro</p>
+        <div class="cs-abs cs-pay" data-m="cs-pay" style="--d:3500ms;">
+          <p style="font-size:15px; color:rgba(167,176,190,.7);">€1,199</p>
+          <p style="font-size:20px; color:#B7D7FF;">You pay €587</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="insights" id="insights" class="v2-sec" style="--h:900px; background:#0F1115;" data-tone="dark">
+  <style>
+    [data-section="insights"] .ins-abs { position: absolute; }
+    [data-section="insights"] .ins-wash {
+      left: -327.27px; top: 210px; width: 1309.1px; height: 600px; pointer-events: none;
+      background: radial-gradient(closest-side, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%);
+    }
+    [data-section="insights"] .ins-glow { display: block; max-width: none; pointer-events: none; }
+    [data-section="insights"] .ins-progress { left: 1382px; top: 381.75px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    [data-section="insights"] .ins-progress i { display: block; width: 10px; height: 1.5px; background: rgba(183,215,255,.3); }
+    [data-section="insights"] .ins-progress i.on { width: 22px; background: #B7D7FF; }
+    [data-section="insights"] .ins-copy { left: 120px; top: 150px; width: 520px; display: flex; flex-direction: column; gap: 24px; }
+    [data-section="insights"] h2 { margin: 0; font-weight: 400; font-size: 72px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+    [data-section="insights"] .ins-lead { margin: 0; width: 400px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+    [data-section="insights"] .ins-list { list-style: none; margin: 0; padding: 0; width: 520px; }
+    [data-section="insights"] .ins-list li { border-top: 1px solid rgba(183,215,255,.16); }
+    [data-section="insights"] .ins-list li:last-child { border-bottom: 1px solid rgba(183,215,255,.16); }
+    [data-section="insights"] .ins-list a { display: flex; flex-direction: column; gap: 8px; padding: 16px 0; }
+    [data-section="insights"] .ins-kind { font-size: 12px; color: #B7D7FF; line-height: normal; }
+    [data-section="insights"] .ins-title { font-size: 18px; color: #F5F7FA; line-height: normal; transition: color .3s; }
+    [data-section="insights"] .ins-title b { display: inline-block; margin-left: .35em; font-weight: 400; transition: transform .35s var(--ease); }
+    [data-section="insights"] .ins-list a:hover .ins-title { color: #fff; }
+    [data-section="insights"] .ins-list a:hover .ins-title b { transform: translate(3px, -3px); }
+    [data-section="insights"] .ins-visual { left: 760px; top: 150px; width: 560px; height: 620px; }
+    [data-section="insights"] .ins-cover {
+      position: absolute; overflow: hidden; border-radius: 18px; border: 1px solid rgba(183,215,255,.25);
+      box-shadow: 0 30px 60px -10px rgba(5,8,31,.6); font-size: 12px; line-height: normal; white-space: nowrap;
+    }
+    [data-section="insights"] .ins-cover p { position: absolute; margin: 0; left: 25px; }
+    [data-section="insights"] .ins-cover img { position: absolute; display: block; max-width: none; }
+    [data-section="insights"] .ins-tilt { transform: rotate(var(--r)); }
+  </style>
+  <div class="v2-canvas">
+    <div class="ins-abs ins-wash" aria-hidden="true"></div>
+    <img decoding="async" class="ins-abs ins-glow" src="assets/insights-glow-1.svg" alt="" aria-hidden="true" style="left:720px; top:-100px; width:1060px; height:920px;">
+    <img decoding="async" class="ins-abs ins-glow" src="assets/insights-glow-2.svg" alt="" aria-hidden="true" style="left:-380px; top:420px; width:960px; height:780px;">
+
+    <div class="ins-abs ins-progress" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i>
+    </div>
+
+    <div class="ins-abs ins-copy">
+      <h2 data-m="up">Say what<br>it changes.</h2>
+      <p class="ins-lead" data-m="up" style="--d:120ms">Market reports and benchmarks from the trade-in floor. Data over adjectives.</p>
+      <ul class="ins-list">
+        <li data-m="up" style="--d:240ms"><a href="#insights"><span class="ins-kind">Market report</span><span class="ins-title">iPhone residual values across five European markets <b aria-hidden="true">↗</b></span></a></li>
+        <li data-m="up" style="--d:320ms"><a href="#insights"><span class="ins-kind">Benchmark</span><span class="ins-title">Trade-in at retailers and telecom operators, compared <b aria-hidden="true">↗</b></span></a></li>
+        <li data-m="up" style="--d:400ms"><a href="#insights"><span class="ins-kind">Guide</span><span class="ins-title">How Apple resellers can raise trade-in participation <b aria-hidden="true">↗</b></span></a></li>
+      </ul>
+    </div>
+
+    <div class="ins-abs ins-visual" aria-hidden="true">
+      <!-- Cover · Apple reseller guide (back) -->
+      <div class="ins-abs" data-m="up" style="--d:300ms; left:311.2px; top:30.88px; width:250px; height:330px;">
+        <div class="ins-cover ins-tilt" style="--r:-4deg; inset:0; background:#0F1115; color:#F5F7FA;">
+          <p style="top:25px">Guide</p>
+          <p style="top:289px">Q3 · 2026</p>
+        </div>
+      </div>
+      <!-- Cover · Benchmark (middle) -->
+      <div class="ins-abs" data-m="up" style="--d:420ms; left:180.4px; top:126.82px; width:270px; height:360px;">
+        <div class="ins-cover ins-tilt" style="--r:3deg; inset:0; background:#F5F7FA; color:#0F1115; border-color:rgba(15,17,21,.08);">
+          <p style="top:25px">Benchmark</p>
+          <p style="top:319px">Q3 · 2026</p>
+        </div>
+      </div>
+      <!-- Cover · European Device Value Index (front) -->
+      <div class="ins-abs" data-m="up" style="--d:540ms; left:40.08px; top:163.22px; width:300px; height:400px;">
+        <div class="ins-cover ins-tilt" style="--r:-6deg; inset:0; color:#F5F7FA; background:linear-gradient(135deg, #5D74FF 0%, #3047EC 71.429%);">
+          <p style="top:25px">Fintegre intelligence · Report</p>
+          <img decoding="async" src="assets/insights-bar-1.svg" alt="" width="72.6415" height="70" style="left:25px; top:129px;">
+          <img decoding="async" src="assets/insights-bar-2.svg" alt="" width="91.2938" height="110" style="left:83px; top:89px;">
+          <img decoding="async" src="assets/insights-bar-3.svg" alt="" width="109.946" height="150" style="left:141px; top:49px;">
+          <img decoding="async" src="assets/insights-bar-4.svg" alt="" width="84.2992" height="95" style="left:199px; top:104px;">
+          <p style="top:281px; width:248px; white-space:normal; font-size:30px; line-height:1.04; letter-spacing:-0.03em;">European Device Value Index</p>
+          <p style="top:359px">Q3 · 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="faq" id="faq" class="v2-sec" style="--h:900px; background:#F5F7FA;" data-tone="light">
+  <style>
+    [data-section="faq"] .faq-wrap { position: absolute; left: 0; top: 160px; width: 1440px; display: flex; flex-direction: column; align-items: center; gap: 56px; color: #0F1115; }
+    [data-section="faq"] h2 { margin: 0; width: 720px; font-weight: 400; font-size: 30px; line-height: 1.25; letter-spacing: -0.01em; color: rgba(15,17,21,.46); }
+    [data-section="faq"] h2 span { color: #0F1115; }
+    [data-section="faq"] .faq-list { width: 820px; display: flex; flex-direction: column; gap: 10px; }
+    [data-section="faq"] .faq-item { border-radius: 16px; background: rgba(255,255,255,.6); transition: background-color .4s var(--ease); }
+    [data-section="faq"] .faq-item.is-open { background: #fff; }
+    [data-section="faq"] .faq-item h3 { margin: 0; font: inherit; }
+    [data-section="faq"] .faq-q {
+      all: unset; box-sizing: border-box; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 16px 18px 24px; border-radius: 16px;
+      font-family: 'Geologica', system-ui, sans-serif; font-weight: 500; font-size: 16px; line-height: 20px; color: #0F1115;
+    }
+    [data-section="faq"] .faq-q { transition: padding-bottom .5s var(--ease); }
+    [data-section="faq"] .is-open .faq-q { padding-bottom: 12px; }
+    [data-section="faq"] .faq-q:focus-visible { outline: 2px solid #3047EC; outline-offset: 2px; }
+    [data-section="faq"] .faq-icon { position: relative; flex: none; width: 24px; height: 24px; border-radius: 6px; background: rgba(15,17,21,.06); transition: background-color .25s; }
+    [data-section="faq"] .faq-q:hover .faq-icon { background: rgba(15,17,21,.1); }
+    [data-section="faq"] .faq-icon img { position: absolute; left: 4px; top: 4px; display: block; transition: opacity .3s var(--ease), transform .45s var(--ease); }
+    [data-section="faq"] .faq-icon .minus { opacity: 0; transform: rotate(-90deg); }
+    [data-section="faq"] .is-open .faq-icon .plus { opacity: 0; transform: rotate(90deg); }
+    [data-section="faq"] .is-open .faq-icon .minus { opacity: 1; transform: none; }
+    [data-section="faq"] .faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s var(--ease); }
+    [data-section="faq"] .is-open .faq-a { grid-template-rows: 1fr; }
+    [data-section="faq"] .faq-a > div { overflow: hidden; min-height: 0; }
+    [data-section="faq"] .faq-a p {
+      margin: 0; padding: 0 0 18px 24px; width: 704px; font-weight: 400; font-size: 15px; line-height: 1.55; color: rgba(15,17,21,.68);
+      opacity: 0; transform: translateY(-6px); transition: opacity .35s var(--ease), transform .5s var(--ease);
+    }
+    [data-section="faq"] .is-open .faq-a p { opacity: 1; transform: none; transition-delay: .08s; }
+  </style>
+  <div class="v2-canvas">
+    <div class="faq-wrap">
+      <h2 data-m="up"><span>We are here to help.</span> If your question is not answered here, talk to us anytime.</h2>
+      <div class="faq-list">
+        <div class="faq-item is-open" data-m="up" style="--d:100ms">
+          <h3><button class="faq-q" type="button" aria-expanded="true" aria-controls="faq-a1" id="faq-q1">Is Fintegre a consumer trade-in site?<span class="faq-icon" aria-hidden="true"><img decoding="async" class="plus" src="assets/faq-icon-add.svg" alt="" width="16" height="16"><img decoding="async" class="minus" src="assets/faq-icon-subtract.svg" alt="" width="16" height="16"></span></button></h3>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p>No. Fintegre is B2B and white-label. Your customers see your brand, your store and your app. We run the valuation, the buyers and the payments behind it.</p></div></div>
+        </div>
+        <div class="faq-item" data-m="up" style="--d:160ms">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">Do we need new hardware in our stores?<span class="faq-icon" aria-hidden="true"><img decoding="async" class="plus" src="assets/faq-icon-add.svg" alt="" width="16" height="16"><img decoding="async" class="minus" src="assets/faq-icon-subtract.svg" alt="" width="16" height="16"></span></button></h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2" inert><div><p>No. Trade-in runs in the browser on the phones, tablets and counters your staff already use, and the device checks are guided step by step.</p></div></div>
+        </div>
+        <div class="faq-item" data-m="up" style="--d:220ms">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">Which buyers and vendors can we connect?<span class="faq-icon" aria-hidden="true"><img decoding="async" class="plus" src="assets/faq-icon-add.svg" alt="" width="16" height="16"><img decoding="async" class="minus" src="assets/faq-icon-subtract.svg" alt="" width="16" height="16"></span></button></h3>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3" inert><div><p>Your own buyers and refurbishers, plus vetted partners from the Fintegre vendor network. Each one prices the devices, grades and markets it wants to buy.</p></div></div>
+        </div>
+        <div class="faq-item" data-m="up" style="--d:280ms">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">How long does it take to launch a program?<span class="faq-icon" aria-hidden="true"><img decoding="async" class="plus" src="assets/faq-icon-add.svg" alt="" width="16" height="16"><img decoding="async" class="minus" src="assets/faq-icon-subtract.svg" alt="" width="16" height="16"></span></button></h3>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4" inert><div><p>Weeks, not months. Most programs start in one channel, such as stores or online, and add the others once the first one runs.</p></div></div>
+        </div>
+        <div class="faq-item" data-m="up" style="--d:340ms">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">Does Fintegre buy devices itself?<span class="faq-icon" aria-hidden="true"><img decoding="async" class="plus" src="assets/faq-icon-add.svg" alt="" width="16" height="16"><img decoding="async" class="minus" src="assets/faq-icon-subtract.svg" alt="" width="16" height="16"></span></button></h3>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5" inert><div><p>No. Fintegre runs the platform. Devices go to the buyers in your network, so we never compete with your partners on price.</p></div></div>
+        </div>
+        <div class="faq-item" data-m="up" style="--d:400ms">
+          <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">Which markets do you support?<span class="faq-icon" aria-hidden="true"><img decoding="async" class="plus" src="assets/faq-icon-add.svg" alt="" width="16" height="16"><img decoding="async" class="minus" src="assets/faq-icon-subtract.svg" alt="" width="16" height="16"></span></button></h3>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6" inert><div><p>Programs run across Europe, with local pricing, currencies and buyers in each market. Talk to us about markets further afield.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="closing" id="closing" class="v2-sec" style="--h:900px; background:#0F1115;" data-tone="dark">
+  <style>
+    [data-section="closing"] .cl-head {
+      position: absolute; left: 70px; top: 284px; width: 1300px; margin: 0; text-align: center;
+      font-weight: 400; font-size: 150px; line-height: .92; letter-spacing: -4.5px;
+      background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    }
+    [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 168px; }
+    [data-section="closing"] .cl-foot {
+      position: absolute; left: 20px; top: 557px; width: 1400px; height: 343px; padding: 56px 56px 40px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: #171A21; border: 1px solid rgba(183,215,255,.12); border-radius: 32px; color: #F5F7FA; line-height: normal;
+    }
+    [data-section="closing"] .cl-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    [data-section="closing"] .cl-sub { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+    [data-section="closing"] .cl-logo { position: relative; display: block; width: 99.3px; height: 30px; }
+    [data-section="closing"] .cl-logo img { position: absolute; display: block; max-width: none; }
+    [data-section="closing"] .cl-sub h3 { margin: 0; font-weight: 500; font-size: 14px; color: #F5F7FA; }
+    [data-section="closing"] .cl-sub p { margin: 0; font-size: 13px; color: rgba(255,255,255,.6); }
+    [data-section="closing"] form { display: flex; gap: 8px; align-items: flex-start; }
+    [data-section="closing"] input {
+      width: 260px; height: 46px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08); color: #fff; font: 400 14px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s;
+    }
+    [data-section="closing"] input::placeholder { color: rgba(255,255,255,.5); }
+    [data-section="closing"] input:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.1); }
+    [data-section="closing"] button {
+      border: 0; cursor: pointer; padding: 12px 18px; border-radius: 10px; background: #fff; color: #0F1115;
+      font: 500 14px/18px 'Geologica', system-ui, sans-serif; transition: background-color .25s, transform .25s var(--ease);
+    }
+    [data-section="closing"] button:hover { background: #B7D7FF; }
+    [data-section="closing"] .cl-cols { display: flex; gap: 96px; white-space: nowrap; }
+    [data-section="closing"] .cl-cols nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    [data-section="closing"] .cl-cols span { font-size: 13px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-cols a, [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 14px; color: #fff; transition: opacity .2s; }
+    [data-section="closing"] .cl-cols a:hover, [data-section="closing"] .cl-legal a:hover { opacity: .7; }
+    [data-section="closing"] .cl-bottom { display: flex; justify-content: space-between; font-size: 12px; }
+    [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
+    [data-section="closing"] .cl-legal { display: flex; gap: 10px; }
+    [data-section="closing"] .cl-legal a { font-size: 12px; color: rgba(255,255,255,.8); }
+  </style>
+  <div class="v2-canvas">
+    <h2 class="cl-head" data-m="up">Make every device<br>worth <em>more</em></h2>
+
+    <footer class="cl-foot" data-m="up" style="--d:250ms">
+      <div class="cl-top">
+        <div class="cl-sub">
+          <a href="#hero" class="cl-logo" aria-label="Fintegre home">
+            <img decoding="async" src="assets/closing-logo-mark.svg" alt="" width="32.1605" height="23.0769" style="left:3.77px; top:3.46px;">
+            <img decoding="async" src="assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
+          </a>
+          <h3>Get trade-in insights</h3>
+          <p>Market reports and program benchmarks. No spam.</p>
+          <form class="cl-form" novalidate>
+            <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="cl-cols">
+          <nav aria-label="Platform"><span>Platform</span>
+            <a href="#lifecycle">Trade-in orchestration</a><a href="#intelligence">Device value intelligence</a><a href="#ecosystem">Vendor network</a><a href="#tools">Integrations</a>
+          </nav>
+          <nav aria-label="Solutions"><span>Solutions</span>
+            <a href="#programs">Retailers</a><a href="#programs">Telecom operators</a><a href="#ecosystem">OEM and ecosystems</a><a href="#devices">Apple and premium retail</a>
+          </nav>
+          <nav aria-label="Company"><span>Company</span>
+            <a href="#case-study">Customers</a><a href="#insights">Insights</a><a href="#positioning">About</a><a href="#faq">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="cl-bottom">
+        <small>© 2026 Fintegre. All rights reserved.</small>
+        <nav class="cl-legal" aria-label="Legal"><a href="#closing">Privacy</a><a href="#closing">Cookies</a><a href="#closing">Imprint</a></nav>
+      </div>
+    </footer>
+  </div>
+</section>
+</main>
+<script src="v2.js"></script>
+<script src="js/00-hero.js"></script>
+<script src="js/03-tools.js"></script>
+<script src="js/04-ecosystem.js"></script>
+<script src="js/06-programs.js"></script>
+<script src="js/07-intelligence.js"></script>
+<script src="js/08-positioning.js"></script>
+<script src="js/09-devices.js"></script>
+<script src="js/12-faq.js"></script>
+<script src="js/13-closing.js"></script>
+</body>
+</html>

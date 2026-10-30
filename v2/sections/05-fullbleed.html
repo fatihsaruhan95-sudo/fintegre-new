@@ -1,0 +1,94 @@
+<section data-section="fullbleed" id="fullbleed" class="v2-sec" data-tone="dark"
+  style="--h:900px; background: radial-gradient(45.45% 41.67% at 38.18% 45.83%, rgba(48,71,236,.45) 0%, rgba(48,71,236,.12) 55%, rgba(48,71,236,0) 100%), #0F1115;">
+  <style>
+    [data-section="fullbleed"] .fb-abs { position: absolute; }
+    [data-section="fullbleed"] .fb-glow { left: 700px; top: 150px; width: 620px; height: 620px; }
+    [data-section="fullbleed"] .fb-glow img { position: absolute; left: -160px; top: -160px; width: 940px; height: 940px; max-width: none; }
+    [data-section="fullbleed"] .fb-wrap { display: flex; align-items: center; justify-content: center; }
+    [data-section="fullbleed"] .fb-phone { flex: none; transform: rotate(32deg); overflow: hidden;
+      box-shadow: 0 0 90px 0 rgba(48,71,236,.35), 24px 40px 70px 0 rgba(0,0,0,.65); }
+    [data-section="fullbleed"] .fb-phone img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    [data-section="fullbleed"] .fb-chip { left: 1000px; top: 455px; display: flex; align-items: center; gap: 10px; padding: 13px 20px;
+      border-radius: 999px; background: rgba(48,71,236,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 16px 40px 0 rgba(0,0,0,.4); font-size: 16px; font-weight: 400; color: #fff; white-space: nowrap; transform-origin: center; }
+    [data-section="fullbleed"] .fb-pill { padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,.12);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font-size: 13px; font-weight: 500; color: rgba(255,255,255,.9); white-space: nowrap; transition: background .25s; }
+    [data-section="fullbleed"] .fb-pill:hover { background: rgba(255,255,255,.22); }
+    [data-section="fullbleed"] .fb-cta { display: inline-block; padding: 12px 18px; border-radius: 10px; background: #fff; color: #0F1115;
+      font-size: 14px; font-weight: 500; transition: background .25s; }
+    [data-section="fullbleed"] .fb-cta:hover { background: var(--ice); }
+
+    /* Motion (Figma timeline, played once): phones slide in along the diagonal, shift past each other, settle. */
+    .motion [data-section="fullbleed"] .fb-glow { opacity: 0; transition: opacity 1.6s var(--ease) .4s; }
+    .motion [data-section="fullbleed"].is-in .fb-glow { opacity: 1; }
+    .motion [data-section="fullbleed"] .fb-old { translate: 160px -260px; }
+    .motion [data-section="fullbleed"] .fb-new { translate: -140px 300px; }
+    .motion [data-section="fullbleed"].is-in .fb-old { animation: fb-old 5.5s linear both; }
+    .motion [data-section="fullbleed"].is-in .fb-new { animation: fb-new 5.5s linear both; }
+    @keyframes fb-old {
+      0% { translate: 160px -260px; }
+      3.64% { translate: 160px -260px; animation-timing-function: var(--ease); }
+      27.27% { translate: 0 0; }
+      43.64% { translate: 0 0; animation-timing-function: var(--inout); }
+      61.82% { translate: 40px -60px; animation-timing-function: var(--inout); }
+      100% { translate: 0 0; }
+    }
+    @keyframes fb-new {
+      0% { translate: -140px 300px; }
+      6.36% { translate: -140px 300px; animation-timing-function: var(--ease); }
+      30.91% { translate: 0 0; }
+      43.64% { translate: 0 0; animation-timing-function: var(--inout); }
+      61.82% { translate: -30px -50px; animation-timing-function: var(--inout); }
+      100% { translate: 0 0; }
+    }
+    .motion [data-section="fullbleed"] .fb-chip[data-m] { transition-duration: .3s, 1s, .5s, 1s; }
+  </style>
+
+<div class="v2-canvas">
+    <!-- Photo layer: glow + phones + credit chip (clipped to the frame) -->
+    <div class="fb-abs" style="inset:0; overflow:clip; z-index:0;">
+      <div class="fb-abs fb-glow" aria-hidden="true"><img alt="" src="assets/fullbleed-glow.svg" width="940" height="940"></div>
+
+      <div class="fb-abs fb-wrap fb-old" style="left:947.15px; top:-151.27px; width:505.695px; height:592.545px;">
+        <div class="fb-phone" style="width:262px; height:535px; border-radius:44px;">
+          <img alt="iPhone 13, the device being traded in" src="assets/fullbleed-iphone13.webp" style="border-radius:44px;">
+        </div>
+      </div>
+      <div class="fb-abs fb-wrap fb-new" style="left:693.21px; top:453.9px; width:533.57px; height:632.19px;">
+        <div class="fb-phone" style="width:268px; height:578px; border-radius:46px;">
+          <img alt="iPhone 18 Pro, the new device" src="assets/fullbleed-iphone18pro.webp" style="border-radius:46px;">
+        </div>
+      </div>
+
+      <div class="fb-abs fb-chip" data-m="pop" style="--d:2900ms;">
+        <img alt="" src="assets/fullbleed-dot.svg" width="8" height="8" style="display:block;">
+        €240 credit · Instant
+      </div>
+    </div>
+
+    <!-- Bottom scrim (bleeds to the viewport edges) -->
+    <div class="fb-abs" aria-hidden="true" style="left:50%; bottom:0; width:calc(100vw / var(--s) + 4px); translate:-50% 0; height:380px; z-index:1; pointer-events:none;
+      background:linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.75) 60%, rgba(0,0,0,.92) 100%);"></div>
+    <!-- Top-left scrim -->
+    <div class="fb-abs" aria-hidden="true" style="left:0; top:0; width:1440px; height:520px; z-index:1; pointer-events:none;
+      background: radial-gradient(800px 200px at -80px 340px, rgba(0,0,0,.72) 0%, rgba(0,0,0,.4) 55%, rgba(0,0,0,0) 100%);"></div>
+
+    <div class="fb-abs" data-m="up" style="--d:100ms; left:120px; top:170px; z-index:2; display:flex; flex-direction:column; align-items:flex-start; gap:24px;">
+      <h2 style="margin:0; width:760px; font-weight:400; font-size:64px; line-height:1.04; letter-spacing:-1.6px; color:#fff;">
+        For markets that move<br><span style="font-family:'Instrument Serif', serif; font-style:italic; font-size:71.68px; line-height:1.04;">faster</span> than your pricing.
+      </h2>
+      <a class="fb-cta" href="#closing">Talk to Fintegre</a>
+    </div>
+
+    <div class="fb-abs" style="left:120px; top:756px; z-index:2; display:flex; flex-direction:column; align-items:flex-start; gap:16px;">
+      <p style="margin:0; width:400px; font-size:24px; font-weight:500; line-height:1.2; color:#fff;">Choose where to start,<br>whenever you are ready</p>
+      <div style="display:flex; gap:8px;">
+        <a class="fb-pill" href="#programs">Trade-in</a>
+        <a class="fb-pill" href="#programs">Early upgrade</a>
+        <a class="fb-pill" href="#programs">BYOD protection</a>
+        <a class="fb-pill" href="#programs">Warranty extension</a>
+        <a class="fb-pill" href="#programs">Claim validation</a>
+      </div>
+    </div>
+  </div>
+</section>

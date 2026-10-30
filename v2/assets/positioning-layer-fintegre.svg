@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="416" height="252" viewBox="0 0 416 252" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Layer &#194;&#183; Fintegre" clip-path="url(#clip0_0_37)">
+<path id="Vector" d="M0 120L208 240V252L0 132V120Z" fill="#1B2470"/>
+<path id="Vector_2" d="M208 240L416 120V132L208 252V240Z" fill="#121A55"/>
+<path id="Vector_3" d="M208 0L416 120L208 240L0 120L208 0Z" fill="url(#paint0_linear_0_37)" stroke="#B7D7FF" stroke-opacity="0.533333"/>
+<path id="Vector_4" d="M208 48L333 120L208 192L83 120L208 48Z" stroke="#B7D7FF" stroke-opacity="0.35"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_37" x1="0" y1="0" x2="207.769" y2="360.133" gradientUnits="userSpaceOnUse">
+<stop stop-color="#3D55FF"/>
+<stop offset="1" stop-color="#1A2580"/>
+</linearGradient>
+<clipPath id="clip0_0_37">
+<rect width="416" height="252" fill="white"/>
+</clipPath>
+</defs>
+</svg>

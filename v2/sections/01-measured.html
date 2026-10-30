@@ -1,0 +1,55 @@
+<section data-section="measured" id="measured" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 392.73px * var(--s)) calc(450px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="measured"] p { margin: 0; }
+  [data-section="measured"] .m-abs { position: absolute; }
+  [data-section="measured"] .m-prog { left: 1382px; top: 381.75px; width: 22px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+  [data-section="measured"] .m-prog i { display: block; width: 10px; height: 1.5px; background: rgba(183,215,255,.3); }
+  [data-section="measured"] .m-prog i.on { width: 22px; background: #B7D7FF; }
+  [data-section="measured"] h2 { margin: 0; font-weight: 400; font-size: 76px; line-height: .98; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="measured"] .m-stats { left: 120px; top: 470px; width: 560px; }
+  [data-section="measured"] .m-row { display: flex; align-items: center; gap: 28px; padding: 18px 0; box-shadow: inset 0 1px 0 rgba(183,215,255,.16); }
+  [data-section="measured"] .m-num { width: 230px; flex: none; font-weight: 300; font-size: 52px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="measured"] .m-txt { display: flex; flex-direction: column; gap: 6px; white-space: nowrap; }
+  [data-section="measured"] .m-txt b { font-weight: 400; font-size: 12px; line-height: normal; color: #B7D7FF; }
+  [data-section="measured"] .m-txt span { font-weight: 300; font-size: 15px; line-height: 1.5; color: rgba(245,247,250,.62); }
+  [data-section="measured"] .m-viz { left: 760px; top: 180px; width: 560px; height: 560px; }
+  [data-section="measured"] .m-viz p { position: absolute; font-size: 12px; line-height: normal; white-space: nowrap; }
+  [data-section="measured"] .m-val { font-weight: 300; color: #F5F7FA; }
+  [data-section="measured"] .m-yr { color: rgba(245,247,250,.5); }
+  [data-section="measured"] .m-bar { position: absolute; }
+  [data-section="measured"] .m-bar img { display: block; }
+  /* Bars rise from the baseline. */
+  .motion [data-section="measured"] .m-bar { clip-path: inset(100% 0 0 0); transition: clip-path 1.2s var(--inout) var(--d, 0ms); }
+  .motion [data-section="measured"].is-in .m-bar { clip-path: inset(0 0 0 0); }
+</style>
+  <div class="v2-canvas">
+    <img alt="" src="assets/measured-glow.svg" style="position:absolute; left:640px; top:-40px; width:980px; height:980px; max-width:none; pointer-events:none;">
+
+    <div class="m-abs m-prog" aria-hidden="true" data-m="fade" style="--d:600ms"><i></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+    <h2 class="m-abs" style="left:120px; top:130px;">
+      <span style="display:block; --d:0ms" data-m="up">Connected.</span>
+      <span style="display:block; --d:100ms" data-m="up">Intelligent.</span>
+      <span style="display:block; --d:200ms" data-m="up">Effortless.</span>
+    </h2>
+
+    <div class="m-abs m-stats">
+      <div class="m-row" data-m="up" style="--d:350ms"><p class="m-num">12</p><div class="m-txt"><b>Countries live</b><span>Retailers and carriers across Europe.</span></div></div>
+      <div class="m-row" data-m="up" style="--d:450ms"><p class="m-num">€ 240M</p><div class="m-txt"><b>Value orchestrated</b><span>Trade-in value in the last 12 months.</span></div></div>
+      <div class="m-row" data-m="up" style="--d:550ms"><p class="m-num">3×</p><div class="m-txt"><b>More trade-ins</b><span>When value is shown before checkout.</span></div></div>
+    </div>
+
+    <div class="m-abs m-viz" role="img" aria-label="Trade-in value orchestrated: €62M in 2024, €140M in 2025, €240M in 2026 (example)">
+      <div class="m-bar" style="left:0; top:320px; --d:300ms;"><img alt="" src="assets/measured-bar-2024.svg" width="169.935" height="180"></div>
+      <div class="m-bar" style="left:150px; top:200px; --d:450ms;"><img alt="" src="assets/measured-bar-2025.svg" width="225.892" height="300"></div>
+      <div class="m-bar" style="left:300px; top:60px; --d:600ms;"><img alt="" src="assets/measured-bar-2026.svg" width="291.175" height="440"></div>
+      <p class="m-val" style="left:83.94px; top:294px; --d:1100ms" data-m="up">€ 62M</p>
+      <p class="m-val" style="left:289.89px; top:174px; --d:1250ms" data-m="up">€ 140M</p>
+      <p class="m-val" style="left:505.18px; top:34px; color:#B7D7FF; --d:1400ms" data-m="up">€ 240M</p>
+      <p class="m-yr" style="left:4px; top:516px; --d:300ms" data-m="fade">2024</p>
+      <p class="m-yr" style="left:154px; top:516px; --d:450ms" data-m="fade">2025</p>
+      <p class="m-yr" style="left:304px; top:516px; --d:600ms" data-m="fade">2026</p>
+      <p style="left:0; top:548px; color:rgba(245,247,250,.42); --d:800ms" data-m="fade">Trade-in value orchestrated · Example</p>
+    </div>
+  </div>
+</section>

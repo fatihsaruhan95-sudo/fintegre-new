@@ -1,0 +1,81 @@
+<section data-section="insights" id="insights" class="v2-sec" style="--h:900px; background:#0F1115;" data-tone="dark">
+  <style>
+    [data-section="insights"] .ins-abs { position: absolute; }
+    [data-section="insights"] .ins-wash {
+      left: -327.27px; top: 210px; width: 1309.1px; height: 600px; pointer-events: none;
+      background: radial-gradient(closest-side, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%);
+    }
+    [data-section="insights"] .ins-glow { display: block; max-width: none; pointer-events: none; }
+    [data-section="insights"] .ins-progress { left: 1382px; top: 381.75px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    [data-section="insights"] .ins-progress i { display: block; width: 10px; height: 1.5px; background: rgba(183,215,255,.3); }
+    [data-section="insights"] .ins-progress i.on { width: 22px; background: #B7D7FF; }
+    [data-section="insights"] .ins-copy { left: 120px; top: 150px; width: 520px; display: flex; flex-direction: column; gap: 24px; }
+    [data-section="insights"] h2 { margin: 0; font-weight: 400; font-size: 72px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+    [data-section="insights"] .ins-lead { margin: 0; width: 400px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+    [data-section="insights"] .ins-list { list-style: none; margin: 0; padding: 0; width: 520px; }
+    [data-section="insights"] .ins-list li { border-top: 1px solid rgba(183,215,255,.16); }
+    [data-section="insights"] .ins-list li:last-child { border-bottom: 1px solid rgba(183,215,255,.16); }
+    [data-section="insights"] .ins-list a { display: flex; flex-direction: column; gap: 8px; padding: 16px 0; }
+    [data-section="insights"] .ins-kind { font-size: 12px; color: #B7D7FF; line-height: normal; }
+    [data-section="insights"] .ins-title { font-size: 18px; color: #F5F7FA; line-height: normal; transition: color .3s; }
+    [data-section="insights"] .ins-title b { display: inline-block; margin-left: .35em; font-weight: 400; transition: transform .35s var(--ease); }
+    [data-section="insights"] .ins-list a:hover .ins-title { color: #fff; }
+    [data-section="insights"] .ins-list a:hover .ins-title b { transform: translate(3px, -3px); }
+    [data-section="insights"] .ins-visual { left: 760px; top: 150px; width: 560px; height: 620px; }
+    [data-section="insights"] .ins-cover {
+      position: absolute; overflow: hidden; border-radius: 18px; border: 1px solid rgba(183,215,255,.25);
+      box-shadow: 0 30px 60px -10px rgba(5,8,31,.6); font-size: 12px; line-height: normal; white-space: nowrap;
+    }
+    [data-section="insights"] .ins-cover p { position: absolute; margin: 0; left: 25px; }
+    [data-section="insights"] .ins-cover img { position: absolute; display: block; max-width: none; }
+    [data-section="insights"] .ins-tilt { transform: rotate(var(--r)); }
+  </style>
+  <div class="v2-canvas">
+    <div class="ins-abs ins-wash" aria-hidden="true"></div>
+    <img class="ins-abs ins-glow" src="assets/insights-glow-1.svg" alt="" aria-hidden="true" style="left:720px; top:-100px; width:1060px; height:920px;">
+    <img class="ins-abs ins-glow" src="assets/insights-glow-2.svg" alt="" aria-hidden="true" style="left:-380px; top:420px; width:960px; height:780px;">
+
+    <div class="ins-abs ins-progress" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="on"></i><i></i>
+    </div>
+
+    <div class="ins-abs ins-copy">
+      <h2 data-m="up">Say what<br>it changes.</h2>
+      <p class="ins-lead" data-m="up" style="--d:120ms">Market reports and benchmarks from the trade-in floor. Data over adjectives.</p>
+      <ul class="ins-list">
+        <li data-m="up" style="--d:240ms"><a href="#insights"><span class="ins-kind">Market report</span><span class="ins-title">iPhone residual values across five European markets <b aria-hidden="true">↗</b></span></a></li>
+        <li data-m="up" style="--d:320ms"><a href="#insights"><span class="ins-kind">Benchmark</span><span class="ins-title">Trade-in at retailers and telecom operators, compared <b aria-hidden="true">↗</b></span></a></li>
+        <li data-m="up" style="--d:400ms"><a href="#insights"><span class="ins-kind">Guide</span><span class="ins-title">How Apple resellers can raise trade-in participation <b aria-hidden="true">↗</b></span></a></li>
+      </ul>
+    </div>
+
+    <div class="ins-abs ins-visual" aria-hidden="true">
+      <!-- Cover · Apple reseller guide (back) -->
+      <div class="ins-abs" data-m="up" style="--d:300ms; left:311.2px; top:30.88px; width:250px; height:330px;">
+        <div class="ins-cover ins-tilt" style="--r:-4deg; inset:0; background:#0F1115; color:#F5F7FA;">
+          <p style="top:25px">Guide</p>
+          <p style="top:289px">Q3 · 2026</p>
+        </div>
+      </div>
+      <!-- Cover · Benchmark (middle) -->
+      <div class="ins-abs" data-m="up" style="--d:420ms; left:180.4px; top:126.82px; width:270px; height:360px;">
+        <div class="ins-cover ins-tilt" style="--r:3deg; inset:0; background:#F5F7FA; color:#0F1115; border-color:rgba(15,17,21,.08);">
+          <p style="top:25px">Benchmark</p>
+          <p style="top:319px">Q3 · 2026</p>
+        </div>
+      </div>
+      <!-- Cover · European Device Value Index (front) -->
+      <div class="ins-abs" data-m="up" style="--d:540ms; left:40.08px; top:163.22px; width:300px; height:400px;">
+        <div class="ins-cover ins-tilt" style="--r:-6deg; inset:0; color:#F5F7FA; background:linear-gradient(135deg, #5D74FF 0%, #3047EC 71.429%);">
+          <p style="top:25px">Fintegre intelligence · Report</p>
+          <img src="assets/insights-bar-1.svg" alt="" width="72.6415" height="70" style="left:25px; top:129px;">
+          <img src="assets/insights-bar-2.svg" alt="" width="91.2938" height="110" style="left:83px; top:89px;">
+          <img src="assets/insights-bar-3.svg" alt="" width="109.946" height="150" style="left:141px; top:49px;">
+          <img src="assets/insights-bar-4.svg" alt="" width="84.2992" height="95" style="left:199px; top:104px;">
+          <p style="top:281px; width:248px; white-space:normal; font-size:30px; line-height:1.04; letter-spacing:-0.03em;">European Device Value Index</p>
+          <p style="top:359px">Q3 · 2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="416" height="252" viewBox="0 0 416 252" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Layer &#194;&#183; Your brand" clip-path="url(#clip0_0_26)">
+<path id="Vector" d="M0 120L208 240V252L0 132V120Z" fill="#B7D7FF" fill-opacity="0.133333"/>
+<path id="Vector_2" d="M208 240L416 120V132L208 252V240Z" fill="#B7D7FF" fill-opacity="0.0784314"/>
+<path id="Vector_3" d="M208 0L416 120L208 240L0 120L208 0Z" fill="url(#paint0_linear_0_26)" stroke="#B7D7FF" stroke-opacity="0.4"/>
+<path id="Vector_4" d="M208 48L333 120L208 192L83 120L208 48Z" stroke="#B7D7FF" stroke-opacity="0.25"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_26" x1="0" y1="0" x2="207.769" y2="360.133" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B7D7FF" stop-opacity="0.16"/>
+<stop offset="1" stop-color="#B7D7FF" stop-opacity="0.05"/>
+</linearGradient>
+<clipPath id="clip0_0_26">
+<rect width="416" height="252" fill="white"/>
+</clipPath>
+</defs>
+</svg>

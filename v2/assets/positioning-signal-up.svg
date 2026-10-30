@@ -1,0 +1,7 @@
+<svg width="60" height="60" viewBox="-24 -24 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="f" x="-24" y="-24" width="60" height="60" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feMorphology radius="2" operator="dilate" in="SourceAlpha"/><feGaussianBlur stdDeviation="7"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.717647 0 0 0 0 0.843137 0 0 0 0 1 0 0 0 0.9 0" result="s"/>
+<feBlend mode="normal" in="SourceGraphic" in2="s"/></filter></defs>
+<g filter="url(#f)"><circle cx="6" cy="6" r="6" fill="#F5F7FA"/></g>
+</svg>

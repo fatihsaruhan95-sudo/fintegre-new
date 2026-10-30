@@ -1,0 +1,100 @@
+<section data-section="devices" id="devices" class="v2-sec" data-tone="dark" style="--h:900px; background:#0F1115;">
+<style>
+  /* Scroll story: four screens of scroll, one sticky screen showing the stage. */
+  [data-section="devices"].v2-sec { height: calc(900px * var(--s) * 4); }
+  [data-section="devices"] .dv-sticky { position: sticky; top: 0; height: calc(900px * var(--s)); overflow: hidden; }
+  [data-section="devices"] .dv-abs { position: absolute; }
+  /* Background lives inside the canvas so the LIGHTEN photos blend with it; it extends past the canvas to bleed. */
+  [data-section="devices"] .dv-bg {
+    left: -2160px; top: 0; width: 5760px; height: 900px;
+    background: radial-gradient(514.29px 346.15px at 2622.86px 450px, rgba(48,71,236,.32) 0%, rgba(48,71,236,.08) 60%, rgba(48,71,236,0) 100%), #0F1115;
+  }
+  [data-section="devices"] .dv-view { left: 0; top: 0; width: 1440px; height: 900px; overflow: hidden; }
+  [data-section="devices"] .dv-stage { left: 0; top: 0; width: 5760px; height: 900px; }
+  [data-section="devices"] .dv-slide { top: 0; width: 1440px; height: 900px; overflow: hidden; }
+  [data-section="devices"] .dv-photo > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+  [data-section="devices"] .dv-lighten { mix-blend-mode: lighten; }
+  [data-section="devices"] .dv-copy { left: 120px; top: 282px; }
+  [data-section="devices"] .dv-copy-in { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+  [data-section="devices"] .dv-kicker { margin: 0; font-size: 22px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="devices"] .dv-price { margin: 0; font-weight: 300; font-size: 76px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="devices"] .dv-body { margin: 0; width: 400px; font-weight: 300; font-size: 18px; line-height: 1.5; color: #A7B0BE; }
+  [data-section="devices"] .dv-stats { display: flex; gap: 48px; padding-top: 22px; white-space: nowrap; }
+  [data-section="devices"] .dv-stat { display: flex; flex-direction: column; gap: 4px; }
+  [data-section="devices"] .dv-stat b { font-weight: 300; font-size: 30px; letter-spacing: -0.02em; color: #F5F7FA; }
+  [data-section="devices"] .dv-stat span { font-size: 14px; color: #A7B0BE; }
+  [data-section="devices"] .dv-title { left: 120px; top: 120px; margin: 0; font-size: 24px; color: rgba(245,247,250,.9); white-space: nowrap; }
+  [data-section="devices"] .dv-progress { left: 120px; top: 800px; width: 280px; height: 3px; }
+  [data-section="devices"] .dv-seg, [data-section="devices"] .dv-seg-on { position: absolute; top: 0; width: 64px; height: 3px; border-radius: 999px; background: rgba(245,247,250,.18); }
+  [data-section="devices"] .dv-seg-on { background: #F5F7FA; opacity: 0; }
+  [data-section="devices"] .dv-labels { left: 120px; top: 814px; display: flex; gap: 8px; }
+  [data-section="devices"] .dv-labels button {
+    all: unset; cursor: pointer; width: 64px; height: 18px; font: 400 13px/normal 'Geologica', system-ui, sans-serif; color: #A7B0BE; transition: color .3s;
+  }
+  [data-section="devices"] .dv-labels button:hover, [data-section="devices"] .dv-labels button[aria-current="true"] { color: #F5F7FA; }
+  [data-section="devices"] .dv-labels button:focus-visible { outline: 1px solid #B7D7FF; outline-offset: 4px; border-radius: 4px; }
+  /* First slide entrance (Figma: photo slides in 140 px and fades, copy rises 30 px). */
+  .motion [data-section="devices"] [data-m="dv-photo"] { translate: 140px 0; transition: opacity 1.2s var(--ease) var(--d, 0ms), translate 1.3s var(--ease) var(--d, 0ms); }
+  .motion [data-section="devices"] .dv-copy-in[data-m="up"] { translate: 0 30px; }
+  .motion [data-section="devices"].is-in [data-m] { translate: none; }
+</style>
+  <div class="dv-sticky">
+    <div class="v2-canvas">
+      <div class="dv-abs dv-bg" aria-hidden="true"></div>
+      <div class="dv-abs dv-view">
+        <div class="dv-abs dv-stage">
+          <div class="dv-abs dv-slide" style="left:0;" data-slide="0">
+            <div class="dv-abs dv-photo dv-lighten" data-m="dv-photo" style="--d:100ms; left:-40px; top:0; width:1705px; height:900px;"><img alt="iPhone, rear camera close-up" src="assets/devices-iphone.png"></div>
+            <div class="dv-abs dv-copy"><div class="dv-copy-in" data-m="up" style="--d:500ms;">
+              <p class="dv-kicker">iPhone</p>
+              <p class="dv-price">up to €612</p>
+              <p class="dv-body">The device traded most in every market. Screen, battery and casing are checked in under a minute.</p>
+              <div class="dv-stats"><div class="dv-stat"><b>58 s</b><span>Time to offer</span></div><div class="dv-stat"><b>4</b><span>Buyers per device</span></div></div>
+            </div></div>
+          </div>
+          <div class="dv-abs dv-slide" style="left:1440px;" data-slide="1">
+            <div class="dv-abs dv-photo" style="left:700px; top:40px; width:780px; height:1305px;"><img alt="iPad" src="assets/devices-ipad.webp"></div>
+            <div class="dv-abs dv-copy"><div class="dv-copy-in">
+              <p class="dv-kicker">iPad</p>
+              <p class="dv-price">up to €290</p>
+              <p class="dv-body">Big screens hold their value. Graded on the same scale as every iPhone, so offers stay comparable.</p>
+              <div class="dv-stats"><div class="dv-stat"><b>A–D</b><span>One grading scale</span></div><div class="dv-stat"><b>3</b><span>Markets compared</span></div></div>
+            </div></div>
+          </div>
+          <div class="dv-abs dv-slide" style="left:2880px;" data-slide="2">
+            <div class="dv-abs dv-photo dv-lighten" style="left:380px; top:170px; width:1500px; height:568px; -webkit-mask-image:url(assets/devices-macbook-mask.svg); mask-image:url(assets/devices-macbook-mask.svg); -webkit-mask-size:1500px 568px; mask-size:1500px 568px; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;"><img alt="MacBook" src="assets/devices-macbook.png"></div>
+            <div class="dv-abs dv-copy"><div class="dv-copy-in">
+              <p class="dv-kicker">MacBook</p>
+              <p class="dv-price">up to €540</p>
+              <p class="dv-body">Laptops keep their value longest. Chip, memory and storage are read from the device, nothing to type.</p>
+              <div class="dv-stats"><div class="dv-stat"><b>M1–M5</b><span>Chips recognised</span></div><div class="dv-stat"><b>2 min</b><span>To a final offer</span></div></div>
+            </div></div>
+          </div>
+          <div class="dv-abs dv-slide" style="left:4320px;" data-slide="3">
+            <div class="dv-abs dv-photo dv-lighten" style="left:170px; top:140px; width:1440px; height:760px; -webkit-mask-image:url(assets/devices-watch-mask.svg); mask-image:url(assets/devices-watch-mask.svg); -webkit-mask-size:1440px 760px; mask-size:1440px 760px; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;"><img alt="Apple Watch" src="assets/devices-watch.png"></div>
+            <div class="dv-abs dv-copy"><div class="dv-copy-in">
+              <p class="dv-kicker">Apple Watch</p>
+              <p class="dv-price">up to €140</p>
+              <p class="dv-body">Even the smallest device counts. Add it to a phone trade-in and the whole basket is worth more.</p>
+              <div class="dv-stats"><div class="dv-stat"><b>+€140</b><span>Per bundle</span></div><div class="dv-stat"><b>Series 4+</b><span>Accepted</span></div></div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="dv-abs dv-title">Every device has a number.</p>
+      <div class="dv-abs dv-progress" aria-hidden="true">
+        <div class="dv-seg" style="left:0;"></div><div class="dv-seg-on" style="left:0; opacity:1;"></div>
+        <div class="dv-seg" style="left:72px;"></div><div class="dv-seg-on" style="left:72px;"></div>
+        <div class="dv-seg" style="left:144px;"></div><div class="dv-seg-on" style="left:144px;"></div>
+        <div class="dv-seg" style="left:216px;"></div><div class="dv-seg-on" style="left:216px;"></div>
+      </div>
+      <div class="dv-abs dv-labels">
+        <button type="button" data-go="0" aria-current="true">iPhone</button>
+        <button type="button" data-go="1">iPad</button>
+        <button type="button" data-go="2">MacBook</button>
+        <button type="button" data-go="3">Watch</button>
+      </div>
+    </div>
+  </div>
+</section>
