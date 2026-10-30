@@ -52,6 +52,7 @@
     if (y < heroH * 0.8 || y > lastY + 4) header.classList.remove('is-visible');
     else if (y < lastY - 4) header.classList.add('is-visible');
     lastY = y;
+    root.classList.toggle('v2-hdr-on', header.classList.contains('is-visible'));
     const probe = 60;
     header.classList.toggle('on-light', lights.some((s) => { const r = s.getBoundingClientRect(); return r.top <= probe && r.bottom >= probe; }));
   });
