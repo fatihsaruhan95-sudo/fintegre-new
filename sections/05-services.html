@@ -1,0 +1,154 @@
+<section data-section="services" class="bg-white content-stretch flex flex-col items-start overflow-clip pb-[120px] pt-[120px] justify-center px-[120px] relative rounded-tl-[40px] rounded-tr-[40px] w-full h-[940px] max-lg:h-auto max-lg:px-[48px] max-lg:pt-[96px] max-lg:pb-[96px] max-md:px-[20px] max-md:pt-[80px] max-md:pb-[80px] max-md:rounded-t-[24px]" data-node-id="61:59" data-name="Services">
+  <style>
+    /* Program cells, compare link and Built on links (behaviour in interact/c-programs.js). */
+    [data-section="services"] [data-c-program], [data-section="services"] [data-c-program-link], [data-section="services"] [data-c-compare] { cursor: pointer; }
+    [data-section="services"] [data-c-program], [data-section="services"] [data-c-program-link] { transition: background-color .3s ease; }
+    [data-section="services"] [data-c-program]:hover, [data-section="services"] [data-c-program-link]:hover,
+    [data-section="services"] [data-c-program][aria-expanded="true"] { background-color: rgba(48, 71, 236, .035); }
+    [data-section="services"] [data-c-program] > div:first-child, [data-section="services"] [data-c-program-link] > div:first-child,
+    [data-section="services"] [data-c-compare], [data-section="services"] [data-c-builton] { overflow: visible; }
+    [data-section="services"] [data-name="Icon / arrow-right"], [data-section="services"] [data-name="Icon / arrow-right-up"] { transition: transform .35s cubic-bezier(.16, 1, .3, 1); }
+    [data-section="services"] [data-c-program]:hover [data-name="Icon / arrow-right"], [data-section="services"] [data-c-program]:focus-visible [data-name="Icon / arrow-right"],
+    [data-section="services"] [data-c-program-link]:hover [data-name="Icon / arrow-right"], [data-section="services"] [data-c-program-link]:focus-visible [data-name="Icon / arrow-right"],
+    [data-section="services"] [data-c-compare]:hover [data-name="Icon / arrow-right"], [data-section="services"] [data-c-compare]:focus-visible [data-name="Icon / arrow-right"] { transform: translateX(5px); }
+    [data-section="services"] [data-c-builton]:hover [data-name="Icon / arrow-right-up"], [data-section="services"] [data-c-builton]:focus-visible [data-name="Icon / arrow-right-up"] { transform: translate(2px, -2px); }
+    [data-section="services"] [data-c-builton]:hover p { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    [data-section="services"] :is([data-c-program], [data-c-program-link], [data-c-compare], [data-c-builton]):focus-visible { outline: 2px solid #3047ec; outline-offset: -2px; border-radius: 6px; }
+
+    /* Program sheet: right side on wide screens, bottom sheet on phones. */
+    [data-section="services"] .c-sheet { position: fixed; inset: 0; z-index: 250; display: none; font-family: 'Geologica', sans-serif; font-variation-settings: "CRSV" 0, "SHRP" 0; color: #0f1115; }
+    [data-section="services"] .c-sheet.is-open { display: block; }
+    [data-section="services"] .c-sheet__backdrop { position: absolute; inset: 0; background: rgba(11, 11, 18, .38); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); opacity: 0; transition: opacity .4s ease; }
+    [data-section="services"] .c-sheet__panel { position: absolute; top: 12px; right: 12px; bottom: 12px; width: min(520px, calc(100% - 24px)); display: flex; flex-direction: column; background: #fff; border-radius: 28px; box-shadow: 0 30px 80px rgba(11, 11, 18, .28); transform: translateX(calc(100% + 24px)); transition: transform .55s cubic-bezier(.16, 1, .3, 1); overflow: hidden; outline: none; }
+    [data-section="services"] .c-sheet.is-shown .c-sheet__backdrop { opacity: 1; }
+    [data-section="services"] .c-sheet.is-shown .c-sheet__panel { transform: none; }
+    [data-section="services"] .c-sheet__bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 20px 0 40px; min-height: 64px; }
+    [data-section="services"] .c-sheet__grab { display: none; }
+    [data-section="services"] .c-sheet__eyebrow { font-size: 13px; color: rgba(15, 17, 21, .5); }
+    [data-section="services"] .c-sheet__back { font: inherit; font-size: 13px; font-weight: 500; color: #3047ec; background: none; border: 0; padding: 6px 0; cursor: pointer; }
+    [data-section="services"] .c-sheet__close { width: 40px; height: 40px; border-radius: 12px; border: 0; background: #f5f7fa; color: #0f1115; font-size: 22px; line-height: 1; cursor: pointer; transition: background-color .2s; flex: none; }
+    [data-section="services"] .c-sheet__close:hover { background: #edf0f4; }
+    [data-section="services"] .c-sheet__body { flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 12px 40px 40px; }
+    [data-section="services"] .c-sheet__icon { width: 44px; height: 44px; border-radius: 12px; background: #f5f7fa; display: grid; place-items: center; margin-bottom: 20px; }
+    [data-section="services"] .c-sheet__icon img { width: 22px; height: 22px; }
+    [data-section="services"] .c-sheet__title { font-size: 32px; line-height: 1.1; letter-spacing: -.6px; font-weight: 400; margin: 0 0 12px; outline: none; }
+    [data-section="services"] .c-sheet__summary { font-size: 16px; line-height: 1.5; color: rgba(15, 17, 21, .62); margin: 0 0 32px; }
+    [data-section="services"] .c-sheet__h { font-size: 13px; font-weight: 500; color: rgba(15, 17, 21, .5); margin: 0 0 14px; letter-spacing: .1px; }
+    [data-section="services"] .c-sheet__steps { list-style: none; margin: 0 0 32px; padding: 0; display: grid; gap: 14px; }
+    [data-section="services"] .c-sheet__steps li { display: grid; grid-template-columns: 28px 1fr; gap: 14px; font-size: 15px; line-height: 1.5; }
+    [data-section="services"] .c-sheet__steps li span { width: 28px; height: 28px; border-radius: 50%; background: #0f1115; color: #fff; font-size: 13px; font-weight: 500; display: grid; place-items: center; margin-top: -2px; }
+    [data-section="services"] .c-sheet__chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 32px; padding: 0; list-style: none; }
+    [data-section="services"] .c-sheet__chips li { font-size: 14px; padding: 7px 12px; border-radius: 999px; background: #f5f7fa; }
+    [data-section="services"] .c-sheet__chips li[data-off] { background: none; color: rgba(15, 17, 21, .32); text-decoration: line-through; }
+    [data-section="services"] .c-sheet__metric { border-radius: 18px; padding: 20px 22px; margin: 0 0 32px; background: linear-gradient(135deg, #eef1ff, #f6f3ff); }
+    [data-section="services"] .c-sheet__metric b { display: block; font-size: 40px; line-height: 1; letter-spacing: -1.2px; font-weight: 600; margin-bottom: 8px; }
+    [data-section="services"] .c-sheet__metric p { margin: 0; font-size: 14px; line-height: 1.45; color: rgba(15, 17, 21, .68); }
+    [data-section="services"] .c-sheet__metric small { display: inline-block; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: .6px; color: #3047ec; margin-bottom: 12px; }
+    [data-section="services"] .c-sheet__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    [data-section="services"] .c-sheet__btn { display: inline-flex; align-items: center; gap: 8px; height: 46px; padding: 0 18px; border-radius: 12px; font-size: 15px; font-weight: 500; cursor: pointer; transition: background-color .2s, border-color .2s; }
+    [data-section="services"] .c-sheet__btn--primary { background: #0f1115; color: #fff; }
+    [data-section="services"] .c-sheet__btn--primary:hover { background: #262a33; }
+    [data-section="services"] .c-sheet__btn--ghost { border: 1px solid #dfe3ea; }
+    [data-section="services"] .c-sheet__btn--ghost:hover { border-color: #0f1115; }
+    [data-section="services"] .c-sheet :is(.c-sheet__btn, .c-sheet__close, .c-sheet__back, .c-sheet__row-btn):focus-visible { outline: 2px solid #3047ec; outline-offset: 2px; }
+    [data-section="services"] .c-sheet__table { width: 100%; border-collapse: collapse; margin: 0 0 32px; font-size: 14px; }
+    [data-section="services"] .c-sheet__table th { font-weight: 500; font-size: 12px; color: rgba(15, 17, 21, .5); text-align: center; padding: 0 4px 12px; white-space: nowrap; }
+    [data-section="services"] .c-sheet__table th:first-child { text-align: left; padding-left: 0; }
+    [data-section="services"] .c-sheet__table td { border-top: 1px solid rgba(15, 17, 21, .08); padding: 0; text-align: center; height: 52px; }
+    [data-section="services"] .c-sheet__table td:first-child { text-align: left; }
+    [data-section="services"] .c-sheet__table tbody th { text-align: left; font-size: inherit; font-weight: 400; color: inherit; padding: 0; border-top: 1px solid rgba(15, 17, 21, .08); white-space: normal; }
+    [data-section="services"] .c-sheet__row-btn { font: inherit; font-size: 15px; color: #0f1115; background: none; border: 0; padding: 14px 0; cursor: pointer; text-align: left; display: inline-flex; align-items: center; gap: 6px; border-radius: 6px; }
+    [data-section="services"] .c-sheet__row-btn::after { content: '→'; color: rgba(15, 17, 21, .35); transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+    [data-section="services"] .c-sheet__row-btn:hover::after { transform: translateX(4px); color: #3047ec; }
+    [data-section="services"] .c-yes { display: inline-grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #e8f5ee; color: #12805c; font-size: 13px; font-weight: 600; }
+    [data-section="services"] .c-no { color: rgba(15, 17, 21, .25); }
+    [data-section="services"] .c-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    @media (max-width: 767px) {
+      [data-section="services"] .c-sheet__panel { top: auto; left: 0; right: 0; bottom: 0; width: auto; max-height: 88vh; max-height: 88dvh; border-radius: 24px 24px 0 0; transform: translateY(100%); }
+      [data-section="services"] .c-sheet__grab { display: block; position: absolute; top: 8px; left: 50%; width: 36px; height: 4px; margin-left: -18px; border-radius: 4px; background: rgba(15, 17, 21, .15); }
+      [data-section="services"] .c-sheet__bar { padding: 18px 14px 0 20px; min-height: 58px; }
+      [data-section="services"] .c-sheet__body { padding: 8px 20px 28px; }
+      [data-section="services"] .c-sheet__title { font-size: 26px; }
+      [data-section="services"] .c-sheet__btn { flex: 1 1 100%; justify-content: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-section="services"] *, [data-section="services"] .c-sheet__panel, [data-section="services"] .c-sheet__backdrop { transition: none !important; }
+    }
+  
+    /* Simplified program grid (2026-10-30): soft rounded cards like the rest of the site. */
+    [data-section="services"] .svc-card { position: relative; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; min-height: 196px; padding: 28px; border-radius: 24px; background: #f4f5f7; text-align: left; transition: background .3s, translate .4s cubic-bezier(.16,1,.3,1), box-shadow .4s cubic-bezier(.16,1,.3,1); }
+    [data-section="services"] .svc-card:hover, [data-section="services"] .svc-card:focus-visible { background: #eef0f4; box-shadow: 0 18px 40px -22px rgba(15,17,21,.28); }
+    .motion [data-section="services"] .svc-card.svc-card:hover { translate: 0 -4px; }
+    [data-section="services"] .svc-card h3 { font-size: 20px; line-height: 1.25; letter-spacing: -.01em; color: #0f1115; font-weight: 400; }
+    [data-section="services"] .svc-card p { font-size: 15px; line-height: 1.5; color: rgba(15,17,21,.62); margin-top: 8px; }
+    [data-section="services"] .svc-go { align-self: flex-end; width: 36px; height: 36px; border-radius: 999px; display: grid; place-items: center; background: #fff; transition: background .3s, translate .3s; }
+    [data-section="services"] .svc-go img { width: 16px; height: 16px; }
+    [data-section="services"] .svc-card:hover .svc-go { background: #0f1115; }
+    [data-section="services"] .svc-card:hover .svc-go img { filter: invert(1); }
+    [data-section="services"] .svc-card--outline { background: transparent; box-shadow: inset 0 0 0 1px rgba(15,17,21,.12); }
+    [data-section="services"] .svc-card--outline h3 { color: #3047ec; }
+    [data-section="services"] .svc-card--outline:hover { background: #f4f5f7; }
+  </style>
+  <div class="c-sheet" id="c-sheet" data-c-sheet>
+    <div class="c-sheet__backdrop" data-c-sheet-close></div>
+    <div class="c-sheet__panel" role="dialog" aria-modal="true" aria-labelledby="c-sheet-title" tabindex="-1">
+      <span class="c-sheet__grab" aria-hidden="true"></span>
+      <div class="c-sheet__bar">
+        <span class="c-sheet__eyebrow" data-c-sheet-eyebrow>Program</span>
+        <button type="button" class="c-sheet__close" aria-label="Close" data-c-sheet-close>&times;</button>
+      </div>
+      <div class="c-sheet__body" data-c-sheet-body></div>
+    </div>
+  </div>
+  <div class="flex items-end justify-between gap-[48px] pb-[56px] relative shrink-0 w-full max-lg:flex-col max-lg:items-start max-lg:gap-[24px] max-lg:pb-[40px]" data-name="Services head">
+    <h2 data-reveal class="font-['Geologica'] font-normal text-[60px] leading-[1.04] tracking-[-1.2px] text-[#0f1115] max-lg:text-[44px] max-md:text-[34px]">One platform.<br>Every trade-in <span class="font-['Instrument_Serif'] italic text-[67px] tracking-normal max-lg:text-[49px] max-md:text-[38px]">program</span>.</h2>
+    <div class="flex flex-col gap-[20px] w-[380px] shrink-0 max-lg:w-full max-lg:max-w-[520px]">
+      <p class="text-[18px] leading-[1.5] text-[rgba(15,17,21,0.62)] max-md:text-[16px]">Seven programs on one platform. Start with one and add the rest when you are ready.</p>
+      <div class="flex gap-[8px] items-center self-start" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="c-sheet" data-c-compare data-name="Compare all programs">
+        <span class="text-[16px] font-medium text-[#0f1115]">Compare all programs</span>
+        <span class="relative size-[16px]" data-name="Icon / arrow-right"><img alt="" class="absolute inset-0 size-full" src="assets/services-icon-arrow-right-dark.svg"></span>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-4 gap-[16px] w-full relative max-lg:grid-cols-2 max-md:grid-cols-1 max-md:gap-[12px]" data-name="Program grid">
+      <div class="svc-card" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="c-sheet" data-c-program="tradein" data-name="Program · Trade-in and buyback">
+        <img hidden alt="" src="assets/services-icon-exchange.svg">
+        <div><h3>Trade-in and buyback</h3><p>Value the old device and apply it to the new one.</p></div>
+        <span class="svc-go" aria-hidden="true"><img alt="" src="assets/services-icon-arrow-right.svg"></span>
+      </div>
+      <div class="svc-card" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="c-sheet" data-c-program="upgrade" data-name="Program · Early upgrade">
+        <img hidden alt="" src="assets/services-icon-arrow-up.svg">
+        <div><h3>Early upgrade</h3><p>Upgrade before the contract ends; residual value covers the gap.</p></div>
+        <span class="svc-go" aria-hidden="true"><img alt="" src="assets/services-icon-arrow-right.svg"></span>
+      </div>
+      <div class="svc-card" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="c-sheet" data-c-program="deferred" data-name="Program · Deferred trade-in">
+        <img hidden alt="" src="assets/services-icon-calendar.svg">
+        <div><h3>Deferred trade-in</h3><p>Buy now, hand the old device in later at today’s value.</p></div>
+        <span class="svc-go" aria-hidden="true"><img alt="" src="assets/services-icon-arrow-right.svg"></span>
+      </div>
+      <div class="svc-card" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="c-sheet" data-c-program="byod" data-name="Program · BYOD protection">
+        <img hidden alt="" src="assets/services-icon-shield-check.svg">
+        <div><h3>BYOD protection</h3><p>Check a used device and insure it on the spot.</p></div>
+        <span class="svc-go" aria-hidden="true"><img alt="" src="assets/services-icon-arrow-right.svg"></span>
+      </div>
+      <div class="svc-card" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="c-sheet" data-c-program="warranty" data-name="Program · Warranty extension">
+        <img hidden alt="" src="assets/services-icon-award.svg">
+        <div><h3>Warranty extension</h3><p>Confirm condition and extend the warranty at the counter.</p></div>
+        <span class="svc-go" aria-hidden="true"><img alt="" src="assets/services-icon-arrow-right.svg"></span>
+      </div>
+      <div class="svc-card" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="c-sheet" data-c-program="claims" data-name="Program · Claim validation">
+        <img hidden alt="" src="assets/services-icon-file-text.svg">
+        <div><h3>Claim validation</h3><p>Objective checks before any damage claim is paid.</p></div>
+        <span class="svc-go" aria-hidden="true"><img alt="" src="assets/services-icon-arrow-right.svg"></span>
+      </div>
+      <div class="svc-card" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" aria-controls="c-sheet" data-c-program="returns" data-name="Program · Return avoidance">
+        <img hidden alt="" src="assets/services-icon-refresh.svg">
+        <div><h3>Return avoidance</h3><p>Diagnose at the point of return and fix instead of refund.</p></div>
+        <span class="svc-go" aria-hidden="true"><img alt="" src="assets/services-icon-arrow-right.svg"></span>
+      </div>
+      <div class="svc-card svc-card--outline" role="link" tabindex="0" data-href="#estimator" data-c-program-link data-name="Program · Not sure which fits?">
+        <div><h3>Not sure which fits?</h3><p>Answer three questions and get a recommended program in two minutes.</p></div>
+        <span class="svc-go" aria-hidden="true"><img alt="" src="assets/services-icon-arrow-right.svg"></span>
+      </div>
+  </div>
+</section>

@@ -1,0 +1,214 @@
+<section data-section="resources" class="bg-white content-stretch flex flex-col gap-[20px] items-start overflow-clip pb-[89px] pt-[105px] px-[120px] relative rounded-tl-[40px] rounded-tr-[40px] w-full h-[940px] max-lg:h-auto max-lg:gap-[24px] max-lg:px-[48px] max-lg:pt-[96px] max-lg:pb-[120px] max-md:px-[20px] max-md:pt-[80px] max-md:pb-[104px] max-md:rounded-t-[24px]" data-node-id="65:108" data-name="Resources and contact">
+<style>
+  /* Resources: lead form states, report lift, time slots, booking sheet. */
+  [data-section="resources"] [data-lead-form] { transition: border-color .2s; }
+  [data-section="resources"] [data-lead-form][hidden] { display: none; }
+  [data-section="resources"] [data-lead-form].is-invalid { border-color: rgba(255,170,160,.75); }
+  [data-section="resources"] [data-lead-msg].is-error { color: #ffbcb2; }
+  [data-section="resources"] [data-lead-form] button[disabled] { opacity: .7; cursor: progress; }
+  [data-section="resources"] .lead-success { display: flex; gap: 12px; align-items: center; width: 480px; min-height: 58px; padding: 10px 18px 10px 12px; border-radius: 14px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); backdrop-filter: blur(10px); }
+  [data-section="resources"] .lead-success[hidden] { display: none; }
+  [data-section="resources"] .lead-success__check { flex: none; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: #fff; color: #3047ec; }
+  [data-section="resources"] .lead-success:focus { outline: none; }
+  [data-section="resources"] .lead-reset { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+  /* Report covers rise a little once the report is on its way. */
+  [data-section="resources"] [class*="rotate-["] > div { transition: transform .9s cubic-bezier(.16,1,.3,1); }
+  [data-section="resources"] [data-report].is-sent [class*="rotate-["] > div { transform: translateY(-16px); }
+  [data-section="resources"] [data-report].is-sent [class*="-rotate-["] > div { transform: translateY(-22px) rotate(-1deg); }
+  /* Slots and controls. */
+  [data-section="resources"] [data-slot] { transition: background-color .2s, color .2s; }
+  [data-section="resources"] [data-slot][aria-checked="false"]:hover { background-color: rgba(255,255,255,.65); }
+  [data-section="resources"] [data-slots] { padding: 3px; margin: -3px; }
+  [data-section="resources"] [data-slot]:focus-visible,
+  [data-section="resources"] [data-book-open]:focus-visible,
+  [data-section="resources"] [data-name="Specialist call"] a:focus-visible { outline: 2px solid #3047ec; outline-offset: 2px; }
+  [data-section="resources"] [data-name="Specialist call"] a:hover span:last-child { color: #0f1115; }
+  [data-section="resources"] [data-lead-form] input:focus-visible { outline: none; }
+  [data-section="resources"] [data-lead-form]:focus-within { border-color: rgba(255,255,255,.5); }
+  [data-section="resources"] [data-lead-form] button:focus-visible { outline: 2px solid #3047ec; outline-offset: -4px; }
+  /* Booking sheet. */
+  .book { width: min(420px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); padding: 0; border: 0; border-radius: 24px; background: #fff; color: #0f1115; font-family: 'Geologica', system-ui, sans-serif; box-shadow: 0 30px 80px rgba(5,7,16,.35); overflow: auto; }
+  .book::backdrop { background: rgba(5,7,16,.55); backdrop-filter: blur(6px); }
+  .book[open] { animation: book-in .45s cubic-bezier(.16,1,.3,1); }
+  @keyframes book-in { from { opacity: 0; translate: 0 16px; scale: .98; } }
+  .book__inner { display: grid; gap: 18px; padding: 28px; }
+  .book__head { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+  .book__title { font-size: 22px; font-weight: 500; letter-spacing: -.2px; line-height: 1.2; }
+  .book__sub { margin-top: 4px; font-size: 14px; color: rgba(15,17,21,.68); }
+  .book__close { flex: none; width: 36px; height: 36px; border-radius: 10px; background: rgba(15,17,21,.06); font-size: 20px; line-height: 1; color: #0f1115; }
+  .book__slot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-radius: 14px; background: #edf0f4; }
+  .book__slot b { display: block; font-weight: 500; font-size: 15px; }
+  .book__slot span { font-size: 13px; color: rgba(15,17,21,.68); }
+  .book__slot button { font-size: 13px; font-weight: 500; color: #3047ec; padding: 6px 4px; }
+  .book__field { display: grid; gap: 6px; font-size: 13px; font-weight: 500; color: rgba(15,17,21,.68); }
+  .book__field input { height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid rgba(15,17,21,.14); font: 400 15px 'Geologica', system-ui, sans-serif; color: #0f1115; background: #fff; transition: border-color .2s, box-shadow .2s; }
+  .book__field input:focus { outline: none; border-color: #3047ec; box-shadow: 0 0 0 3px rgba(48,71,236,.15); }
+  .book__field input[aria-invalid="true"] { border-color: #d6453a; }
+  .book__err { font-size: 12px; font-weight: 400; color: #c23a30; min-height: 0; }
+  .book__err:empty { display: none; }
+  .book__submit { height: 50px; border-radius: 12px; background: #0f1115; color: #fff; font-size: 15px; font-weight: 500; transition: opacity .2s; }
+  .book__submit[disabled] { opacity: .7; cursor: progress; }
+  .book__fine { font-size: 12px; color: rgba(15,17,21,.5); text-align: center; }
+  .book__done { display: grid; gap: 16px; justify-items: start; padding: 32px 28px 28px; }
+  .book__done[hidden], .book__inner[hidden] { display: none; }
+  .book__done .book__check { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: #3047ec; color: #fff; }
+  .book__done p { font-size: 18px; line-height: 1.4; letter-spacing: -.1px; }
+  .book__done .book__submit { width: 100%; }
+  .book button:focus-visible { outline: 2px solid #3047ec; outline-offset: 2px; }
+  @media (max-width: 767px) {
+    .book { width: 100vw; max-width: 100vw; margin: auto 0 0; border-radius: 24px 24px 0 0; }
+    .book[open] { animation-name: book-up; }
+    @keyframes book-up { from { translate: 0 100%; } }
+    [data-section="resources"] .lead-success { width: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .book[open] { animation: none; }
+    [data-section="resources"] [class*="rotate-["] > div, [data-section="resources"] [data-slot], [data-section="resources"] [data-lead-form] { transition: none; }
+  }
+</style>
+
+  <div class="[word-break:break-word] content-stretch flex font-['Geologica'] font-normal items-end justify-between leading-[0] not-italic overflow-clip pb-[16px] relative shrink-0 w-full max-lg:flex-col max-lg:items-start max-lg:gap-[20px] max-lg:pb-[8px]" data-node-id="69:116" data-name="Frame">
+    <p data-reveal class="relative shrink-0 text-[0px] text-[color:var(--color-text-primary,#0f1115)] tracking-[-1.4px] w-[720px] max-lg:w-full max-lg:max-w-[640px] max-md:tracking-[-0.8px]" data-node-id="69:117" style='font-variation-settings: "CRSV" 0, "SHRP" 0'><span class="leading-[1.05] text-[56px] max-lg:text-[44px] max-md:text-[34px]">Start with insight, or with a </span><span class="font-['Instrument_Serif'] italic leading-[1.05] text-[62.72px] max-lg:text-[49px] max-md:text-[38px]">conversation</span></p>
+    <div class="relative shrink-0 text-[16px] text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))] w-[380px] max-lg:w-full max-lg:max-w-[520px] max-md:text-[15px]" data-node-id="69:118" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>
+      <p class="leading-[1.5] mb-0">Read what the market is doing, or talk it</p>
+      <p class="leading-[1.5]">through with someone who runs trade-in every day.</p>
+    </div>
+  </div>
+  <div class="bg-[#0b0b12] h-[440px] overflow-clip relative rounded-[32px] shrink-0 w-full max-lg:h-auto max-lg:flex max-lg:flex-col max-lg:p-[48px] max-lg:pb-[470px] max-md:p-[24px] max-md:pt-[32px] max-md:pb-[340px] max-md:rounded-[24px]" data-node-id="69:119" data-name="Report lead magnet" data-report>
+    <div class="absolute h-[520px] left-[-120px] top-[-160px] w-[620px]" data-node-id="69:120" data-name="Ellipse">
+      <div class="absolute inset-[-30.77%_-25.81%]"><img alt="" class="block max-w-none size-full" src="assets/resources-ellipse-1.svg" /></div>
+    </div>
+    <div class="absolute h-[420px] left-[180px] top-[300px] w-[560px]" data-node-id="69:121" data-name="Ellipse">
+      <div class="absolute inset-[-38.1%_-28.57%]"><img alt="" class="block max-w-none size-full" src="assets/resources-ellipse-2.svg" /></div>
+    </div>
+    <div class="absolute h-[620px] left-[700px] top-[-80px] w-[640px]" data-node-id="69:122" data-name="Ellipse">
+      <div class="absolute inset-[-25.81%_-25%]"><img alt="" class="block max-w-none size-full" src="assets/resources-ellipse-3.svg" /></div>
+    </div>
+    <div class="absolute h-[360px] left-[900px] top-[300px] w-[420px]" data-node-id="69:123" data-name="Ellipse">
+      <div class="absolute inset-[-44.44%_-38.1%]"><img alt="" class="block max-w-none size-full" src="assets/resources-ellipse-4.svg" /></div>
+    </div>
+    <div class="absolute content-stretch flex flex-col gap-[24px] items-start left-[72px] overflow-clip top-[37px] max-lg:relative max-lg:left-auto max-lg:top-auto max-lg:w-full max-md:gap-[20px]" data-node-id="69:124" data-name="Copy">
+      <div class="backdrop-blur-[8px] bg-[rgba(255,255,255,0.14)] content-stretch flex items-start overflow-clip px-[12px] py-[6px] relative rounded-[8px] shrink-0" data-node-id="69:125" data-name="Frame">
+        <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[13px] text-white whitespace-nowrap" data-node-id="69:126" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Free report, Q3 2026</p>
+      </div>
+      <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[1.1] not-italic relative shrink-0 text-[40px] text-white tracking-[-0.6px] w-[560px] max-lg:w-full max-lg:max-w-[560px] max-lg:text-[36px] max-md:text-[28px] max-md:tracking-[-0.4px]" data-node-id="69:127" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>What is a used iPhone worth in Europe this quarter?</p>
+      <div class="content-stretch flex flex-col gap-[12px] items-start overflow-clip relative shrink-0" data-node-id="69:128" data-name="Frame">
+        <div class="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0" data-node-id="69:129" data-name="Frame">
+          <div class="relative shrink-0 size-[18px]" data-node-id="69:893" data-name="Icon / global"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/resources-icon-global.svg" /></div>
+          <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[15px] text-[rgba(255,255,255,0.85)] whitespace-nowrap max-md:whitespace-normal max-md:shrink max-md:min-w-0" data-node-id="69:895" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Residual values across 12 European markets</p>
+        </div>
+        <div class="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0" data-node-id="69:896" data-name="Frame">
+          <div class="relative shrink-0 size-[18px]" data-node-id="69:897" data-name="Icon / bar-chart"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/resources-icon-bar-chart.svg" /></div>
+          <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[15px] text-[rgba(255,255,255,0.85)] whitespace-nowrap max-md:whitespace-normal max-md:shrink max-md:min-w-0" data-node-id="69:899" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Retailer and telco trade-in benchmarks</p>
+        </div>
+        <div class="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0" data-node-id="69:900" data-name="Frame">
+          <div class="relative shrink-0 size-[18px]" data-node-id="69:901" data-name="Icon / line-chart"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/resources-icon-line-chart.svg" /></div>
+          <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[15px] text-[rgba(255,255,255,0.85)] whitespace-nowrap max-md:whitespace-normal max-md:shrink max-md:min-w-0" data-node-id="69:903" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>What moves a device’s value up or down</p>
+        </div>
+      </div>
+      <form class="backdrop-blur-[10px] bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.16)] border-solid content-stretch flex gap-[6px] items-center overflow-clip p-[6px] relative rounded-[14px] shrink-0 max-md:w-full max-md:flex-col max-md:items-stretch" data-node-id="69:904" data-name="Email capture" onsubmit="return false" novalidate data-lead-form>
+        <label class="content-stretch flex h-[44px] items-center overflow-clip pl-[14px] relative shrink-0 w-[300px] max-md:w-full max-md:shrink" data-node-id="69:905" data-name="Frame">
+          <input type="email" name="email" autocomplete="email" placeholder="Your work email" aria-label="Your work email" aria-describedby="lead-msg" required class="w-full h-full bg-transparent border-0 outline-none p-0 font-['Geologica'] font-normal leading-[normal] text-[15px] text-white placeholder:text-[rgba(255,255,255,0.55)]" data-node-id="69:906" style='font-variation-settings: "CRSV" 0, "SHRP" 0' />
+        </label>
+        <button type="submit" class="bg-white content-stretch flex gap-[8px] items-center overflow-clip px-[18px] py-[12px] relative rounded-[10px] shrink-0 max-md:justify-center" data-node-id="69:907" data-name="Frame">
+          <span class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[15px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="69:908" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Get the report</span>
+          <span class="relative shrink-0 size-[16px]" data-node-id="69:909" data-name="Icon / download"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/resources-icon-download.svg" /></span>
+        </button>
+      </form>
+      <div data-lead-success hidden role="status" tabindex="-1" class="lead-success max-md:w-full">
+        <span class="lead-success__check" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.5 8.4l3 3 6-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <p class="font-['Geologica'] font-normal text-[15px] leading-[1.4] text-white" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Check your inbox — the European Device Value Index, Q3 2026 is on its way</p>
+      </div>
+      <p id="lead-msg" data-lead-msg aria-live="polite" class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[12px] text-[rgba(255,255,255,0.5)] whitespace-nowrap max-md:whitespace-normal max-md:shrink" data-node-id="69:911" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Free, sent by email. No spam, unsubscribe anytime.</p>
+    </div>
+    <div class="absolute flex h-[364.792px] items-center justify-center left-[866.96px] top-[50px] w-[289.143px] max-lg:left-[calc(50%-103px)] max-lg:top-auto max-lg:bottom-[40px] max-md:origin-bottom-left max-md:scale-[0.72] max-md:left-[calc(50%-74px)] max-md:bottom-[28px]" data-node-id="69:912">
+      <div class="flex-none rotate-[6deg]">
+        <div class="h-[340px] opacity-85 overflow-clip relative rounded-[15.3px] shadow-[0px_20.4px_40.8px_0px_rgba(0,0,0,0.35)] w-[255px]" data-name="Frame" style="background-image: linear-gradient(148.3924992892524deg, rgb(164, 150, 255) 7.5188%, rgb(48, 71, 236) 82.707%)">
+          <div class="absolute h-[23.8px] left-[20.4px] top-[20.4px] w-[31.416px]" data-node-id="69:913" data-name="Logo / Mark">
+            <div class="absolute inset-[11.64%_9.57%_11.64%_9.44%]" data-node-id="I69:913;10:46" data-name="Group"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/resources-cover-back-mark.svg" /></div>
+          </div>
+          <div class="absolute h-[102px] left-[195.5px] top-[34px] w-[47.563px]" data-node-id="69:919" data-name="Vector">
+            <div class="absolute inset-[-0.35%_-1.62%]"><img alt="" class="block max-w-none size-full" src="assets/resources-cover-back-line.svg" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="absolute flex h-[356.96px] items-center justify-center left-[782.5px] top-[32.21px] w-[278.096px] max-lg:left-[calc(50%-187px)] max-lg:top-auto max-lg:bottom-[66px] max-md:origin-bottom-left max-md:scale-[0.72] max-md:left-[calc(50%-135px)] max-md:bottom-[47px]" data-node-id="69:922">
+      <div class="-rotate-[4deg] flex-none">
+        <div class="h-[340px] overflow-clip relative rounded-[15.3px] shadow-[0px_20.4px_40.8px_0px_rgba(0,0,0,0.35)] w-[255px]" data-name="Frame" style="background-image: linear-gradient(148.3924992892524deg, rgb(48, 71, 236) 7.5188%, rgb(164, 150, 255) 82.707%)">
+          <div class="absolute h-[23.8px] left-[20.4px] top-[20.4px] w-[31.416px]" data-node-id="69:923" data-name="Logo / Mark">
+            <div class="absolute inset-[11.64%_9.57%_11.64%_9.44%]" data-node-id="I69:923;10:46" data-name="Group"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/resources-cover-front-mark.svg" /></div>
+          </div>
+          <div class="absolute h-[102px] left-[195.5px] top-[34px] w-[47.563px]" data-node-id="69:929" data-name="Vector">
+            <div class="absolute inset-[-0.35%_-1.62%]"><img alt="" class="block max-w-none size-full" src="assets/resources-cover-front-line.svg" /></div>
+          </div>
+          <p class="[word-break:break-word] absolute font-['Geologica'] font-medium leading-[1.05] left-[20.4px] not-italic text-[25.5px] text-white top-[244.8px] tracking-[-0.255px] w-[212.5px]" data-node-id="69:930" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>European Device Value Index</p>
+          <p class="[word-break:break-word] absolute font-['Geologica'] font-normal leading-[normal] left-[20.4px] not-italic text-[10.2px] text-[rgba(255,255,255,0.75)] top-[309.4px] whitespace-pre" data-node-id="69:931" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Q3 2026  Fintegre Intelligence</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-[var(--color-bg-muted,#edf0f4)] content-stretch flex gap-[48px] items-center overflow-clip px-[40px] py-[24px] relative rounded-[28px] shrink-0 w-full max-lg:flex-wrap max-lg:justify-between max-lg:gap-[24px] max-lg:px-[32px] max-md:flex-col max-md:items-start max-md:px-[20px] max-md:rounded-[24px]" data-node-id="69:932" data-name="Specialist call">
+    <div class="content-stretch flex gap-[16px] items-center overflow-clip relative shrink-0 max-md:w-full max-lg:basis-full max-md:basis-auto" data-node-id="69:933" data-name="Frame">
+      <div class="relative shrink-0 size-[64px]" data-node-id="69:934" data-name="Ellipse"><img alt="" class="absolute block inset-0 max-w-none size-full" height="64" width="64" src="assets/resources-avatar.png" /></div>
+      <div class="[word-break:break-word] content-stretch flex flex-col gap-[4px] items-start leading-[normal] not-italic overflow-clip relative shrink-0 whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="69:935" data-name="Frame">
+        <p class="font-['Geologica'] font-medium relative shrink-0 text-[20px] text-[color:var(--color-text-primary,#0f1115)]" data-node-id="69:936" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Talk to a trade-in specialist</p>
+        <p class="font-['Geologica'] font-normal relative shrink-0 text-[14px] text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))]" data-node-id="69:937" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>20 minutes, no slides, focused on your markets</p>
+      </div>
+    </div>
+    <div class="content-stretch flex flex-[1_0_0] flex-col gap-[10px] items-start min-w-px overflow-clip relative max-md:w-full" data-node-id="69:938" data-name="Frame">
+      <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[13px] text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))] whitespace-nowrap max-md:whitespace-normal" data-node-id="69:939" id="slots-label" data-slots-label style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Next available</p>
+      <div class="content-stretch flex gap-[8px] items-start overflow-clip relative shrink-0 max-lg:flex-wrap" data-node-id="69:940" data-name="Frame" role="radiogroup" aria-labelledby="slots-label" data-slots>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-slot class="bg-white content-stretch flex items-start overflow-clip px-[16px] py-[10px] relative rounded-[10px] shrink-0" data-node-id="69:941" data-name="Frame"><span class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="69:942" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Tue 10:00</span></button>
+        <button type="button" role="radio" aria-checked="true" tabindex="0" data-slot class="bg-[var(--color-bg-brand,#3047ec)] content-stretch flex items-start overflow-clip px-[16px] py-[10px] relative rounded-[10px] shrink-0" data-node-id="69:943" data-name="Frame"><span class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap" data-node-id="69:944" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Tue 14:30</span></button>
+        <button type="button" role="radio" aria-checked="false" tabindex="-1" data-slot class="bg-white content-stretch flex items-start overflow-clip px-[16px] py-[10px] relative rounded-[10px] shrink-0" data-node-id="69:945" data-name="Frame"><span class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="69:946" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Wed 11:00</span></button>
+      </div>
+    </div>
+    <div class="content-stretch flex flex-col gap-[12px] items-end overflow-clip relative shrink-0 max-md:items-start" data-node-id="69:949" data-name="Frame">
+      <button type="button" aria-haspopup="dialog" data-book-open class="bg-[var(--color-text-primary,#0f1115)] content-stretch flex gap-[8px] items-center overflow-clip px-[22px] py-[14px] relative rounded-[12px] shrink-0" data-node-id="69:950" data-name="Frame">
+        <span class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[15px] text-white whitespace-nowrap" data-node-id="69:951" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Book a call</span>
+        <span class="relative shrink-0 size-[16px]" data-node-id="69:952" data-name="Icon / calendar"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/resources-icon-calendar.svg" /></span>
+      </button>
+      <div class="content-stretch flex gap-[16px] items-start overflow-clip relative shrink-0" data-node-id="69:954" data-name="Frame">
+        <a href="mailto:sales@fintegre.com" aria-label="Email sales@fintegre.com" class="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0" data-node-id="69:955" data-name="Frame">
+          <span class="relative shrink-0 size-[16px]" data-node-id="69:956" data-name="Icon / mail"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/resources-icon-mail.svg" /></span>
+          <span class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[13px] text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))] whitespace-nowrap" data-node-id="69:958" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>sales@fintegre.com</span>
+        </a>
+        <a href="https://www.linkedin.com/company/fintegre" target="_blank" rel="noopener" aria-label="Fintegre on LinkedIn (opens in a new tab)" class="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0" data-node-id="69:959" data-name="Frame">
+          <span class="relative shrink-0 size-[16px]" data-node-id="69:960" data-name="Icon / linkedin-box"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/resources-icon-linkedin.svg" /></span>
+          <span class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[13px] text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))] whitespace-nowrap" data-node-id="69:962" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <dialog class="book" data-book aria-labelledby="book-title">
+    <form class="book__inner" data-book-form novalidate>
+      <div class="book__head">
+        <div>
+          <p class="book__title" id="book-title">Book your call</p>
+          <p class="book__sub">20 minutes with a trade-in specialist.</p>
+        </div>
+        <button type="button" class="book__close" data-book-close aria-label="Close">&times;</button>
+      </div>
+      <div class="book__slot">
+        <div><b data-book-when>Tue 3 Nov, 14:30</b><span>20 minutes · video call · CET</span></div>
+        <button type="button" data-book-close data-book-change aria-label="Change time">Change</button>
+      </div>
+      <label class="book__field">Your name
+        <input type="text" name="name" autocomplete="name" required aria-describedby="book-name-err" />
+        <span class="book__err" id="book-name-err" aria-live="polite"></span>
+      </label>
+      <label class="book__field">Work email
+        <input type="email" name="email" autocomplete="email" required aria-describedby="book-email-err" />
+        <span class="book__err" id="book-email-err" aria-live="polite"></span>
+      </label>
+      <button type="submit" class="book__submit">Confirm booking</button>
+      <p class="book__fine">We only use your details to set up this call.</p>
+    </form>
+    <div class="book__done" data-book-done hidden role="status" tabindex="-1">
+      <span class="book__check" aria-hidden="true"><svg viewBox="0 0 16 16" width="18" height="18"><path d="M3.5 8.4l3 3 6-6.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <p data-book-msg>You're booked: Tue 14:30, 20 minutes. A calendar invite is on its way.</p>
+      <button type="button" class="book__submit" data-book-close>Done</button>
+    </div>
+  </dialog>
+</section>

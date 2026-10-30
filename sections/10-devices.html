@@ -1,0 +1,76 @@
+<style>
+  /* Devices: tile hover/focus and "Also" chip note (driven by interact/b-middle.js). */
+  [data-section="devices"] .dv-tile { cursor: pointer; }
+  [data-section="devices"] .dv-tile:focus-visible, [data-section="devices"] .dv-chip:focus-visible { outline: 2px solid #3047ec; outline-offset: 3px; }
+  [data-section="devices"] .dv-tile > img {
+    transform-origin: center center;
+    transition: opacity .8s var(--m-ease) var(--m-delay, 0ms), translate 1.8s var(--m-ease) var(--m-delay, 0ms), scale 1.8s var(--m-ease) var(--m-delay, 0ms), transform .7s cubic-bezier(.16, 1, .3, 1);
+  }
+  [data-section="devices"] .dv-tile:hover > img, [data-section="devices"] .dv-tile:focus-visible > img { transform: scale(1.04); }
+  [data-section="devices"] .dv-arrow { opacity: 0; transform: translate(-6px, 6px) scale(.9); transition: opacity .3s ease, transform .45s cubic-bezier(.16, 1, .3, 1); }
+  [data-section="devices"] .dv-tile:hover .dv-arrow, [data-section="devices"] .dv-tile:focus-visible .dv-arrow { opacity: 1; transform: none; }
+  [data-section="devices"] .dv-chip { cursor: pointer; transition: opacity .8s var(--m-ease) var(--m-delay, 0ms), translate 1s var(--m-ease) var(--m-delay, 0ms), scale 1s var(--m-ease) var(--m-delay, 0ms), background-color .2s ease, border-color .2s ease; }
+  [data-section="devices"] .dv-chip:hover { border-color: rgba(15,17,21,0.3); }
+  [data-section="devices"] .dv-chip[aria-pressed="true"] { background: #f1f0f2; border-color: rgba(15,17,21,0.3); }
+  [data-section="devices"] .dv-note { height: 0; margin-top: -24px; overflow: visible; font: 400 14px/20px 'Geologica', sans-serif; color: rgba(15,17,21,0.6); opacity: 0; translate: 0 4px; transition: opacity .3s ease, translate .3s ease; }
+  [data-section="devices"] .dv-note.is-on { opacity: 1; translate: none; }
+  @media (max-width: 767px) { [data-section="devices"] .dv-note { margin-top: -20px; } }
+  @media (prefers-reduced-motion: reduce) {
+    [data-section="devices"] .dv-tile > img, [data-section="devices"] .dv-arrow, [data-section="devices"] .dv-note { transition: none; }
+  }
+</style>
+<section data-section="devices" class="bg-white content-stretch flex flex-col gap-[40px] items-start pb-[86px] pt-[85px] px-[120px] relative w-full h-[940px] max-lg:h-auto max-lg:px-[48px] max-lg:py-[96px] max-md:px-[20px] max-md:py-[80px] max-md:gap-[32px]" data-node-id="82:130" data-name="Every device">
+  <div class="[word-break:break-word] content-stretch flex font-['Geologica'] font-normal items-end justify-between not-italic overflow-clip relative shrink-0 w-full max-lg:flex-col max-lg:items-start max-lg:gap-[20px]" data-node-id="82:131">
+    <h2 data-reveal class="leading-[0] relative shrink-0 text-[#0f1115] text-[0px] tracking-[-1.2px] whitespace-nowrap font-normal max-md:whitespace-normal" data-node-id="82:132">
+      <span class="block leading-[1.04] mb-0 text-[60px] max-lg:text-[44px] max-md:text-[34px]">Every device your</span>
+      <span class="block"><span class="leading-[1.04] text-[60px] max-lg:text-[44px] max-md:text-[34px]">customers </span><span class="[word-break:break-word] font-['Instrument_Serif'] italic leading-[1.04] text-[67.2px] max-lg:text-[49px] max-md:text-[38px]">bring</span><span class="leading-[1.04] text-[60px] max-lg:text-[44px] max-md:text-[34px]">.</span></span>
+    </h2>
+    <p class="leading-[1.5] relative shrink-0 text-[18px] text-[rgba(15,17,21,0.6)] w-[380px] max-lg:w-full max-lg:max-w-[520px] max-md:text-[16px]" data-node-id="82:133">Phones, laptops, tablets and watches, checked and valued with the same care. One program covers them all.</p>
+  </div>
+  <div class="content-stretch flex gap-[20px] items-start overflow-clip relative shrink-0 max-lg:grid max-lg:grid-cols-2 max-lg:w-full max-md:grid-cols-1 max-md:gap-[16px]" data-node-id="82:134" data-name="Device grid">
+    <div data-href="#services" role="link" tabindex="0" aria-label="Smartphones: see the trade-in program" class="dv-tile h-[520px] overflow-clip relative rounded-[28px] shrink-0 w-[590px] max-lg:w-full max-lg:h-[340px] max-md:h-[320px]" data-node-id="82:135" data-name="Device · Smartphones">
+      <img alt="Smartphones" class="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[28px] size-full" src="assets/devices-smartphones.jpg">
+      <span aria-hidden="true" class="dv-arrow absolute bg-white flex items-center justify-center right-[20px] rounded-full size-[40px] top-[20px] shadow-[0_4px_16px_rgba(15,17,21,0.12)] max-md:right-[16px] max-md:top-[16px]"><svg width="18" height="18" viewBox="0 0 14 14"><path d="M9.14077 5.61402L4.54644 10.2083L3.79167 9.45356L8.38547 4.85924H4.33666V3.79167H10.2083V9.66333H9.14077V5.61402Z" fill="#0f1115"/></svg></span>
+      <div class="[word-break:break-word] absolute content-stretch flex flex-col font-['Geologica'] font-normal gap-[4px] items-start leading-[normal] left-[32px] not-italic overflow-clip top-[438px] whitespace-nowrap max-lg:top-auto max-lg:bottom-[28px] max-md:left-[24px]" data-node-id="82:136">
+        <p class="relative shrink-0 text-[#0f1115] text-[22px] tracking-[-0.11px]" data-node-id="82:137">Smartphones</p>
+        <p class="relative shrink-0 text-[14px] text-[rgba(15,17,21,0.6)]" data-node-id="82:138">iPhone, Galaxy, Pixel and more</p>
+      </div>
+    </div>
+    <div class="content-stretch flex flex-col gap-[20px] items-start overflow-clip relative shrink-0 max-lg:contents" data-node-id="82:139">
+      <div data-href="#services" role="link" tabindex="0" aria-label="Laptops: see the trade-in program" class="dv-tile h-[250px] overflow-clip relative rounded-[28px] shrink-0 w-[590px] max-lg:w-full max-lg:h-[340px] max-md:h-[320px] max-lg:bg-[#f1f0f2]" data-node-id="82:140" data-name="Device · Laptops">
+        <img alt="Laptops" class="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[28px] size-full max-lg:object-[85%_50%] max-lg:top-[84px] max-lg:h-[calc(100%-84px)] max-lg:rounded-t-none max-md:top-[72px] max-md:h-[calc(100%-72px)]" src="assets/devices-laptops.jpg">
+        <span aria-hidden="true" class="dv-arrow absolute bg-white flex items-center justify-center right-[20px] rounded-full size-[40px] top-[20px] shadow-[0_4px_16px_rgba(15,17,21,0.12)] max-md:right-[16px] max-md:top-[16px]"><svg width="18" height="18" viewBox="0 0 14 14"><path d="M9.14077 5.61402L4.54644 10.2083L3.79167 9.45356L8.38547 4.85924H4.33666V3.79167H10.2083V9.66333H9.14077V5.61402Z" fill="#0f1115"/></svg></span>
+        <div class="[word-break:break-word] absolute content-stretch flex flex-col font-['Geologica'] font-normal gap-[4px] items-start leading-[normal] left-[32px] not-italic overflow-clip top-[32px] whitespace-nowrap max-md:left-[24px] max-md:top-[24px]" data-node-id="82:141">
+          <p class="relative shrink-0 text-[#0f1115] text-[22px] tracking-[-0.11px]" data-node-id="82:142">Laptops</p>
+          <p class="relative shrink-0 text-[14px] text-[rgba(15,17,21,0.6)]" data-node-id="82:143">MacBook and Windows laptops</p>
+        </div>
+      </div>
+      <div class="content-stretch flex gap-[20px] items-start overflow-clip relative shrink-0 max-lg:contents" data-node-id="82:144">
+        <div data-href="#services" role="link" tabindex="0" aria-label="Tablets: see the trade-in program" class="dv-tile h-[250px] overflow-clip relative rounded-[28px] shrink-0 w-[285px] max-lg:w-full max-lg:h-[340px] max-md:h-[320px]" data-node-id="82:145" data-name="Device · Tablets">
+          <img alt="Tablets" class="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[28px] size-full" src="assets/devices-tablets.jpg">
+          <span aria-hidden="true" class="dv-arrow absolute bg-white flex items-center justify-center right-[20px] rounded-full size-[40px] top-[20px] shadow-[0_4px_16px_rgba(15,17,21,0.12)] max-md:right-[16px] max-md:top-[16px]"><svg width="18" height="18" viewBox="0 0 14 14"><path d="M9.14077 5.61402L4.54644 10.2083L3.79167 9.45356L8.38547 4.85924H4.33666V3.79167H10.2083V9.66333H9.14077V5.61402Z" fill="#0f1115"/></svg></span>
+          <div class="[word-break:break-word] absolute content-stretch flex flex-col font-['Geologica'] font-normal gap-[4px] items-start leading-[normal] left-[32px] not-italic overflow-clip top-[168px] whitespace-nowrap max-lg:top-auto max-lg:bottom-[28px] max-md:left-[24px]" data-node-id="82:146">
+            <p class="relative shrink-0 text-[#0f1115] text-[22px] tracking-[-0.11px]" data-node-id="82:147">Tablets</p>
+            <p class="relative shrink-0 text-[14px] text-[rgba(15,17,21,0.6)]" data-node-id="82:148">iPad, Galaxy Tab</p>
+          </div>
+        </div>
+        <div data-href="#services" role="link" tabindex="0" aria-label="Watches: see the trade-in program" class="dv-tile h-[250px] overflow-clip relative rounded-[28px] shrink-0 w-[285px] max-lg:w-full max-lg:h-[340px] max-md:h-[320px]" data-node-id="82:149" data-name="Device · Watches">
+          <img alt="Watches" class="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[28px] size-full" src="assets/devices-watches.jpg">
+          <span aria-hidden="true" class="dv-arrow absolute bg-white flex items-center justify-center right-[20px] rounded-full size-[40px] top-[20px] shadow-[0_4px_16px_rgba(15,17,21,0.12)] max-md:right-[16px] max-md:top-[16px]"><svg width="18" height="18" viewBox="0 0 14 14"><path d="M9.14077 5.61402L4.54644 10.2083L3.79167 9.45356L8.38547 4.85924H4.33666V3.79167H10.2083V9.66333H9.14077V5.61402Z" fill="#0f1115"/></svg></span>
+          <div class="[word-break:break-word] absolute content-stretch flex flex-col font-['Geologica'] font-normal gap-[4px] items-start leading-[normal] left-[32px] not-italic overflow-clip top-[168px] whitespace-nowrap max-lg:top-auto max-lg:bottom-[28px] max-md:left-[24px]" data-node-id="82:150">
+            <p class="relative shrink-0 text-[#0f1115] text-[22px] tracking-[-0.11px]" data-node-id="82:151">Watches</p>
+            <p class="relative shrink-0 text-[14px] text-[rgba(15,17,21,0.6)]" data-node-id="82:152">Apple Watch, Galaxy Watch</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0 max-md:flex-wrap max-md:w-full" data-node-id="82:153">
+    <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[14px] text-[rgba(15,17,21,0.5)] whitespace-nowrap" data-node-id="82:154">Also</p>
+    <button type="button" data-dv-chip="Desktops" aria-controls="dv-note" class="dv-chip border border-[rgba(15,17,21,0.12)] border-solid content-stretch flex items-start overflow-clip px-[14px] py-[7px] relative rounded-[999px] shrink-0" data-node-id="82:155"><span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[14px] whitespace-nowrap" data-node-id="82:156">Desktops</span></button>
+    <button type="button" data-dv-chip="Consoles" aria-controls="dv-note" class="dv-chip border border-[rgba(15,17,21,0.12)] border-solid content-stretch flex items-start overflow-clip px-[14px] py-[7px] relative rounded-[999px] shrink-0" data-node-id="82:157"><span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[14px] whitespace-nowrap" data-node-id="82:158">Consoles</span></button>
+    <button type="button" data-dv-chip="Cameras" aria-controls="dv-note" class="dv-chip border border-[rgba(15,17,21,0.12)] border-solid content-stretch flex items-start overflow-clip px-[14px] py-[7px] relative rounded-[999px] shrink-0" data-node-id="82:159"><span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[14px] whitespace-nowrap" data-node-id="82:160">Cameras</span></button>
+    <button type="button" data-dv-chip="Headphones" aria-controls="dv-note" class="dv-chip border border-[rgba(15,17,21,0.12)] border-solid content-stretch flex items-start overflow-clip px-[14px] py-[7px] relative rounded-[999px] shrink-0" data-node-id="82:161"><span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[14px] whitespace-nowrap" data-node-id="82:162">Headphones</span></button>
+    <button type="button" data-dv-chip="Smart home" aria-controls="dv-note" class="dv-chip border border-[rgba(15,17,21,0.12)] border-solid content-stretch flex items-start overflow-clip px-[14px] py-[7px] relative rounded-[999px] shrink-0" data-node-id="82:163"><span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[14px] whitespace-nowrap" data-node-id="82:164">Smart home</span></button>
+  </div>
+</section>

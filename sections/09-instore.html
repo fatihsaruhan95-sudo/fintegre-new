@@ -1,0 +1,202 @@
+<style>
+  /* In store: accordion, phone focus, handover screen and pager (driven by interact/b-middle.js). */
+  [data-section="instore"] .is-item:focus-visible, [data-section="instore"] .is-dot:focus-visible { outline: 2px solid #a496ff; outline-offset: 2px; }
+  [data-section="instore"] .is-item { transition: opacity .8s var(--m-ease) var(--m-delay, 0ms), translate 1s var(--m-ease) var(--m-delay, 0ms), scale 1s var(--m-ease) var(--m-delay, 0ms), background-color .3s ease; }
+  [data-section="instore"] .is-item[aria-expanded="false"]:hover { background: #303035; }
+  [data-section="instore"] .is-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s cubic-bezier(.65, 0, .25, 1); }
+  [data-section="instore"] .is-item[aria-expanded="true"] .is-body { grid-template-rows: 1fr; }
+  [data-section="instore"] .is-body > span { min-height: 0; overflow: hidden; opacity: 0; transition: opacity .3s ease; }
+  [data-section="instore"] .is-item[aria-expanded="true"] .is-body > span { opacity: 1; transition-delay: .12s; }
+  [data-section="instore"] .is-chev { transition: rotate .35s cubic-bezier(.65, 0, .25, 1); }
+  [data-section="instore"] .is-item[aria-expanded="true"] .is-chev { rotate: 180deg; }
+  [data-section="instore"] [data-is-phone] {
+    transform-origin: center center;
+    transition: opacity .8s var(--m-ease) var(--m-delay, 0ms), translate 1s var(--m-ease) var(--m-delay, 0ms), scale 1s var(--m-ease) var(--m-delay, 0ms), transform .6s cubic-bezier(.16, 1, .3, 1), filter .6s ease;
+  }
+  [data-section="instore"] [data-is-phone].is-dim { transform: scale(.94); filter: opacity(.4); }
+  [data-section="instore"] [data-is-handover] { opacity: 0; visibility: hidden; transition: opacity .45s ease, visibility 0s linear .45s; }
+  [data-section="instore"] [data-is-handover].is-on { opacity: 1; visibility: visible; transition: opacity .45s ease; }
+  [data-section="instore"] .is-dot { display: flex; align-items: center; height: 29px; cursor: pointer; }
+  [data-section="instore"] .is-dot > span { display: block; width: 5px; height: 5px; border-radius: 2.5px; background: rgba(255,255,255,.3); transition: width .4s cubic-bezier(.65, 0, .25, 1), background-color .3s ease; }
+  [data-section="instore"] .is-dot[aria-current="step"] > span { width: 32px; background: #fff; }
+  [data-section="instore"] .is-dot:not([aria-current="step"]):hover > span { background: rgba(255,255,255,.6); }
+  @media (prefers-reduced-motion: reduce) {
+    [data-section="instore"] .is-body, [data-section="instore"] .is-body > span, [data-section="instore"] .is-chev, [data-section="instore"] [data-is-handover], [data-section="instore"] .is-dot > span { transition: none; }
+    [data-section="instore"] [data-is-phone] { transition: none; }
+  }
+</style>
+<section data-section="instore" class="bg-[#161618] content-stretch flex flex-col gap-[32px] items-start overflow-clip pb-[99px] pt-[98px] px-[120px] relative rounded-tl-[40px] rounded-tr-[40px] w-full h-[940px] max-lg:h-auto max-lg:px-[48px] max-lg:py-[96px] max-md:px-[20px] max-md:py-[80px] max-md:rounded-t-[24px]" data-node-id="76:128" data-name="In store (devices)">
+  <div class="content-stretch flex gap-[56px] items-start overflow-clip relative shrink-0 max-lg:flex-col max-lg:gap-[20px] max-lg:w-full" data-node-id="76:129">
+    <div class="content-stretch flex flex-col items-start overflow-clip pl-[200px] relative shrink-0 max-lg:pl-0" data-node-id="76:130">
+      <div class="bg-[rgba(255,255,255,0.08)] content-stretch flex items-start overflow-clip px-[12px] py-[7px] relative rounded-[8px] shrink-0" data-node-id="76:131">
+        <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[13px] text-[rgba(255,255,255,0.75)] whitespace-nowrap" data-node-id="76:132">Fintegre in store</p>
+      </div>
+    </div>
+    <p data-reveal class="[word-break:break-word] font-['Geologica'] font-medium leading-[0] not-italic relative shrink-0 text-[32px] text-white tracking-[-0.32px] w-[780px] max-lg:w-full max-lg:text-[28px] max-md:text-[24px] max-md:tracking-[-0.24px]" data-node-id="76:133"><span class="leading-[1.2]">See it at the counter. </span><span class="leading-[1.2] text-[rgba(255,255,255,0.5)]">Your staff value a device, the customer sees one price and the new phone goes home.</span></p>
+  </div>
+  <div class="bg-[#1f1f22] content-stretch flex gap-[60px] items-center px-[80px] py-[48px] relative rounded-[32px] shrink-0 w-full max-lg:flex-col max-lg:items-stretch max-lg:px-[40px] max-lg:py-[40px] max-lg:gap-[40px] max-md:px-[16px] max-md:py-[24px] max-md:gap-[28px] max-md:rounded-[24px]" data-node-id="76:134" data-name="Device stage">
+    <div class="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0 w-[420px] max-lg:w-full" data-node-id="76:135" data-name="Accordion">
+      <button type="button" aria-expanded="true" aria-controls="is-stage" data-is-item="0" class="is-item bg-[#2a2a2e] content-stretch flex flex-col items-start overflow-clip pl-[26px] pr-[20px] py-[22px] relative rounded-[16px] shrink-0 w-full text-left" data-node-id="76:136">
+        <span class="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="76:137">
+          <span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap max-md:text-[18px] max-md:whitespace-normal max-md:shrink max-md:min-w-0" data-node-id="76:138">Assess at the counter</span>
+          <span class="bg-[rgba(255,255,255,0.06)] content-stretch flex items-start overflow-clip p-[6px] relative rounded-[8px] shrink-0" data-node-id="76:139"><span class="is-chev relative shrink-0 size-[16px]" data-node-id="76:904" data-name="Icon / arrow-up-s"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-icon-arrow-down-s.svg"></span></span>
+        </span>
+        <span class="is-body w-full"><span><span class="block [word-break:break-word] font-['Geologica'] font-normal leading-[1.45] not-italic relative pt-[14px] text-[17px] text-[rgba(255,255,255,0.6)] w-[348px] max-lg:w-full max-md:text-[15px]" data-node-id="76:906">Staff check any device in under a minute with the diagnostics you choose. Screen, battery and casing are recorded, nothing is guessed.</span></span></span>
+      </button>
+      <button type="button" aria-expanded="false" aria-controls="is-stage" data-is-item="1" class="is-item bg-[#2a2a2e] content-stretch flex flex-col items-start overflow-clip pl-[26px] pr-[20px] py-[22px] relative rounded-[16px] shrink-0 w-full text-left" data-node-id="76:907">
+        <span class="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="76:908">
+          <span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap max-md:text-[18px] max-md:whitespace-normal max-md:shrink max-md:min-w-0" data-node-id="76:909">Offer in seconds</span>
+          <span class="bg-[rgba(255,255,255,0.06)] content-stretch flex items-start overflow-clip p-[6px] relative rounded-[8px] shrink-0" data-node-id="76:910"><span class="is-chev relative shrink-0 size-[16px]" data-node-id="76:911" data-name="Icon / arrow-down-s"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-icon-arrow-down-s.svg"></span></span>
+        </span>
+        <span class="is-body w-full"><span><span class="block [word-break:break-word] font-['Geologica'] font-normal leading-[1.45] not-italic relative pt-[14px] text-[17px] text-[rgba(255,255,255,0.6)] w-[348px] max-lg:w-full max-md:text-[15px]" data-node-id="76:912">Buyers compete for every device in real time. The customer sees one firm price, the best one.</span></span></span>
+      </button>
+      <button type="button" aria-expanded="false" aria-controls="is-stage" data-is-item="2" class="is-item bg-[#2a2a2e] content-stretch flex flex-col items-start overflow-clip pl-[26px] pr-[20px] py-[22px] relative rounded-[16px] shrink-0 w-full text-left" data-node-id="76:913">
+        <span class="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="76:914">
+          <span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap max-md:text-[18px] max-md:whitespace-normal max-md:shrink max-md:min-w-0" data-node-id="76:915">Hand over the new device</span>
+          <span class="bg-[rgba(255,255,255,0.06)] content-stretch flex items-start overflow-clip p-[6px] relative rounded-[8px] shrink-0" data-node-id="76:916"><span class="is-chev relative shrink-0 size-[16px]" data-node-id="76:917" data-name="Icon / arrow-down-s"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-icon-arrow-down-s.svg"></span></span>
+        </span>
+        <span class="is-body w-full"><span><span class="block [word-break:break-word] font-['Geologica'] font-normal leading-[1.45] not-italic relative pt-[14px] text-[17px] text-[rgba(255,255,255,0.6)] w-[348px] max-lg:w-full max-md:text-[15px]" data-node-id="76:918">The value goes on as credit at the till. The new device goes home and the receipt goes by email.</span></span></span>
+      </button>
+    </div>
+    <div class="content-stretch flex flex-[1_0_0] gap-[28px] items-center justify-center min-w-px relative max-lg:flex-none max-md:[zoom:0.7] max-[379px]:[zoom:0.64]" data-node-id="76:919" data-name="Devices" id="is-stage">
+      <!-- Phone · Device check -->
+      <div data-is-phone="check" class="h-[432.568px] relative shrink-0 w-[214.889px]" data-node-id="76:920" data-name="Phone · Device check">
+        <div class="absolute border-[#5a5a60] border-[1.047px] border-solid h-[432.568px] left-[2.79px] overflow-clip rounded-[33.489px] top-0 w-[209.307px]" data-node-id="76:921" data-name="Titanium frame" style="background-image: linear-gradient(90deg, rgb(74, 74, 80) 0%, rgb(42, 42, 46) 8%, rgb(42, 42, 46) 92%, rgb(74, 74, 80) 100%);">
+          <div class="absolute bg-[#0e0e10] h-[421.405px] left-[4.53px] overflow-clip rounded-[27.908px] top-[4.53px] w-[198.144px]" data-node-id="76:926" data-name="Screen">
+            <p class="[word-break:break-word] absolute font-['Geologica'] font-semibold leading-[normal] left-[19.54px] not-italic text-[8.372px] text-white top-[11.16px] whitespace-nowrap" data-node-id="76:927">11:43</p>
+            <div class="absolute bg-black h-[18.14px] left-[67.68px] rounded-[9.07px] top-[7.67px] w-[62.792px]" data-node-id="76:928"></div>
+            <div class="absolute content-stretch flex gap-[2.791px] items-center left-[147.91px] overflow-clip top-[13.26px]" data-node-id="76:929">
+              <div class="bg-white h-[2.791px] relative rounded-[0.698px] shrink-0 w-[2.093px]" data-node-id="76:930"></div>
+              <div class="bg-white h-[4.186px] relative rounded-[0.698px] shrink-0 w-[2.093px]" data-node-id="76:931"></div>
+              <div class="bg-white h-[5.582px] relative rounded-[0.698px] shrink-0 w-[2.093px]" data-node-id="76:932"></div>
+              <div class="bg-white h-[6.977px] relative rounded-[0.698px] shrink-0 w-[2.093px]" data-node-id="76:933"></div>
+              <div class="bg-white h-[6.977px] relative rounded-[2.093px] shrink-0 w-[13.954px]" data-node-id="76:934"></div>
+            </div>
+            <div class="absolute bg-[rgba(255,255,255,0.85)] h-[2.791px] left-[61.4px] rounded-[1.395px] top-[413.03px] w-[75.351px]" data-node-id="76:935"></div>
+            <div class="absolute bg-[#1b1b1f] h-[385.125px] left-0 overflow-clip rounded-[16.745px] top-[36.28px] w-[198.144px]" data-node-id="76:936">
+              <div class="absolute bg-[rgba(255,255,255,0.25)] h-[2.791px] left-[86.51px] rounded-[1.395px] top-[5.58px] w-[25.117px]" data-node-id="76:937"></div>
+              <p class="[word-break:break-word] absolute font-['Geologica'] font-semibold leading-[normal] left-[13.95px] not-italic text-[9.768px] text-white top-[18.14px] whitespace-nowrap" data-node-id="76:938">Trade-in</p>
+              <p class="[word-break:break-word] absolute font-['Geologica'] font-normal leading-[normal] left-[13.95px] not-italic text-[7.675px] text-[rgba(255,255,255,0.5)] top-[32.09px] whitespace-nowrap" data-node-id="76:939">Store 14, Vilnius</p>
+              <div class="absolute bg-[rgba(255,255,255,0.08)] content-stretch flex items-center justify-center left-[163.26px] overflow-clip rounded-[10.465px] size-[20.931px] top-[19.54px]" data-node-id="76:940">
+                <div class="relative shrink-0 size-[11.163px]" data-node-id="76:941" data-name="Icon / more"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-icon-more.svg"></div>
+              </div>
+              <div class="absolute left-[46.75px] size-[104.654px] top-[73.26px]" data-node-id="76:943" data-name="Ellipse"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-ring-track.svg"></div>
+              <div class="absolute left-[46.75px] size-[104.654px] top-[73.26px]" data-node-id="76:944" data-name="Ellipse"><div class="absolute inset-[0_0_0_0.89%]"><img alt="" class="block max-w-none size-full" src="assets/instore-ring-progress.svg"></div></div>
+              <div class="absolute bg-[#2c2c31] border-[#8c8c94] border-[1.047px] border-solid h-[60.001px] left-[83.72px] rounded-[6.977px] top-[95.58px] w-[30.698px]" data-node-id="76:945"></div>
+              <p class="[word-break:break-word] absolute font-['Geologica'] font-medium leading-[normal] left-[89.65px] not-italic text-[8.372px] text-[rgba(255,255,255,0.7)] top-[188.38px] whitespace-nowrap" data-node-id="76:946">72%</p>
+              <p class="-translate-x-1/2 [word-break:break-word] absolute font-['Geologica'] font-semibold leading-[normal] left-[99.07px] not-italic text-[10.465px] text-center text-white top-[203.73px] w-[170.236px]" data-node-id="76:947">Checking iPhone 15 Pro</p>
+              <div class="absolute bg-[rgba(255,255,255,0.05)] h-[23.721px] left-[13.95px] overflow-clip rounded-[6.977px] top-[230.24px] w-[170.236px]" data-node-id="76:948">
+                <div class="absolute left-[8.37px] size-[5.582px] top-[9.07px]" data-node-id="76:949"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-dot-done.svg"></div>
+                <p class="[word-break:break-word] absolute font-['Geologica'] font-normal leading-[normal] left-[19.54px] not-italic text-[8.372px] text-[rgba(255,255,255,0.8)] top-[6.28px] whitespace-nowrap" data-node-id="76:950">Screen</p>
+                <p class="[word-break:break-word] absolute font-['Geologica'] font-medium leading-[normal] left-[139.54px] not-italic text-[8.372px] text-white top-[6.28px] whitespace-nowrap" data-node-id="76:951">Good</p>
+              </div>
+              <div class="absolute bg-[rgba(255,255,255,0.05)] h-[23.721px] left-[13.95px] overflow-clip rounded-[6.977px] top-[258.15px] w-[170.236px]" data-node-id="76:952">
+                <div class="absolute left-[8.37px] size-[5.582px] top-[9.07px]" data-node-id="76:953"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-dot-done.svg"></div>
+                <p class="[word-break:break-word] absolute font-['Geologica'] font-normal leading-[normal] left-[19.54px] not-italic text-[8.372px] text-[rgba(255,255,255,0.8)] top-[6.28px] whitespace-nowrap" data-node-id="76:954">Battery</p>
+                <p class="[word-break:break-word] absolute font-['Geologica'] font-medium leading-[normal] left-[143.72px] not-italic text-[8.372px] text-white top-[6.28px] whitespace-nowrap" data-node-id="76:955">91%</p>
+              </div>
+              <div class="absolute bg-[rgba(255,255,255,0.05)] h-[23.721px] left-[13.95px] overflow-clip rounded-[6.977px] top-[286.05px] w-[170.236px]" data-node-id="76:956">
+                <div class="absolute left-[8.37px] size-[5.582px] top-[9.07px]" data-node-id="76:957"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-dot-pending.svg"></div>
+                <p class="[word-break:break-word] absolute font-['Geologica'] font-normal leading-[normal] left-[19.54px] not-italic text-[8.372px] text-[rgba(255,255,255,0.8)] top-[6.28px] whitespace-nowrap" data-node-id="76:958">Casing</p>
+                <p class="[word-break:break-word] absolute font-['Geologica'] font-medium leading-[normal] left-[123.49px] not-italic text-[8.372px] text-[rgba(255,255,255,0.45)] top-[6.28px] whitespace-nowrap" data-node-id="76:959">Checking</p>
+              </div>
+              <div class="absolute bg-[rgba(255,255,255,0.05)] h-[23.721px] left-[13.95px] overflow-clip rounded-[6.977px] top-[313.96px] w-[170.236px]" data-node-id="76:960">
+                <div class="absolute left-[8.37px] size-[5.582px] top-[9.07px]" data-node-id="76:961"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-dot-pending.svg"></div>
+                <p class="[word-break:break-word] absolute font-['Geologica'] font-normal leading-[normal] left-[19.54px] not-italic text-[8.372px] text-[rgba(255,255,255,0.8)] top-[6.28px] whitespace-nowrap" data-node-id="76:962">Market</p>
+                <p class="[word-break:break-word] absolute font-['Geologica'] font-medium leading-[normal] left-[129.77px] not-italic text-[8.372px] text-[rgba(255,255,255,0.45)] top-[6.28px] whitespace-nowrap" data-node-id="76:963">Waiting</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bg-[#3a3a3f] h-[18.14px] left-[0.7px] rounded-[1.395px] top-[86.51px] w-[2.791px]" data-node-id="76:922"></div>
+        <div class="absolute bg-[#3a3a3f] h-[33.489px] left-[0.7px] rounded-[1.395px] top-[121.12px] w-[2.791px]" data-node-id="76:923"></div>
+        <div class="absolute bg-[#3a3a3f] h-[33.489px] left-[0.7px] rounded-[1.395px] top-[160.05px] w-[2.791px]" data-node-id="76:924"></div>
+        <div class="absolute bg-[#3a3a3f] h-[48.838px] left-[212.8px] rounded-[1.395px] top-[129.77px] w-[2.791px]" data-node-id="76:925"></div>
+      </div>
+      <!-- Phone · Offer -->
+      <div data-is-phone="offer" class="h-[439.545px] relative shrink-0 w-[192.563px]" data-node-id="76:964" data-name="Phone · Offer">
+        <div class="absolute border-[#5a5a60] border-[1.047px] border-solid h-[390.707px] left-[2.79px] overflow-clip rounded-[29.917px] top-[48.84px] w-[186.981px]" data-node-id="76:965" data-name="Titanium frame" style="background-image: linear-gradient(90deg, rgb(74, 74, 80) 0%, rgb(42, 42, 46) 8%, rgb(42, 42, 46) 92%, rgb(74, 74, 80) 100%);">
+          <div class="absolute bg-[#0e0e10] h-[379.544px] left-[4.53px] overflow-clip rounded-[24.335px] top-[4.53px] w-[175.818px]" data-node-id="76:970" data-name="Screen">
+            <p class="[word-break:break-word] absolute font-['Geologica'] font-semibold leading-[normal] left-[19.54px] not-italic text-[8.372px] text-white top-[11.16px] whitespace-nowrap" data-node-id="76:971">11:43</p>
+            <div class="absolute bg-black h-[18.14px] left-[59.86px] rounded-[9.07px] top-[7.68px] w-[56.094px]" data-node-id="76:972"></div>
+            <div class="absolute content-stretch flex gap-[2.791px] items-center left-[125.58px] overflow-clip top-[13.26px]" data-node-id="76:973">
+              <div class="bg-white h-[2.791px] relative rounded-[0.698px] shrink-0 w-[2.093px]" data-node-id="76:974"></div>
+              <div class="bg-white h-[4.186px] relative rounded-[0.698px] shrink-0 w-[2.093px]" data-node-id="76:975"></div>
+              <div class="bg-white h-[5.582px] relative rounded-[0.698px] shrink-0 w-[2.093px]" data-node-id="76:976"></div>
+              <div class="bg-white h-[6.977px] relative rounded-[0.698px] shrink-0 w-[2.093px]" data-node-id="76:977"></div>
+              <div class="bg-white h-[6.977px] relative rounded-[2.093px] shrink-0 w-[13.954px]" data-node-id="76:978"></div>
+            </div>
+            <div class="absolute bg-[rgba(255,255,255,0.85)] h-[2.791px] left-[54.25px] rounded-[1.395px] top-[371.17px] w-[67.313px]" data-node-id="76:979"></div>
+            <div class="absolute bg-[#1b1b1f] h-[343.264px] left-0 overflow-clip rounded-[16.745px] top-[36.28px] w-[175.818px]" data-node-id="76:980">
+              <div class="absolute bg-[rgba(255,255,255,0.25)] h-[2.791px] left-[75.35px] rounded-[1.395px] top-[5.58px] w-[25.117px]" data-node-id="76:981"></div>
+              <p class="[word-break:break-word] absolute font-['Geologica'] font-semibold leading-[normal] left-[13.95px] not-italic text-[9.768px] text-white top-[18.14px] whitespace-nowrap" data-node-id="76:982">Your offer</p>
+              <p class="[word-break:break-word] absolute font-['Geologica'] font-normal leading-[normal] left-[13.95px] not-italic text-[7.675px] text-[rgba(255,255,255,0.5)] top-[32.09px] whitespace-nowrap" data-node-id="76:983">iPhone 15 Pro, 256 GB</p>
+              <p class="[word-break:break-word] absolute font-['Geologica'] font-normal leading-[normal] left-[13.95px] not-italic text-[7.675px] text-[rgba(255,255,255,0.55)] top-[64.19px] whitespace-nowrap" data-node-id="76:984">Trade-in value</p>
+              <p class="[word-break:break-word] absolute font-['Geologica'] font-bold leading-[normal] left-[13.95px] not-italic text-[32.094px] text-white top-[75.35px] whitespace-nowrap" data-node-id="76:985">€612</p>
+              <div class="absolute bg-[#ffb648] content-stretch flex gap-[4.186px] items-start left-[13.95px] overflow-clip px-[6.977px] py-[3.488px] rounded-[696.993px] top-[118.61px]" data-node-id="76:986">
+                <div class="relative shrink-0 size-[8.372px]" data-node-id="76:987" data-name="Icon / award"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-icon-award.svg"></div>
+                <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[7.675px] whitespace-nowrap" data-node-id="76:989">Best of 4 buyers</p>
+              </div>
+              <div class="[word-break:break-word] absolute bg-[rgba(255,182,72,0.14)] h-[23.721px] leading-[normal] left-[13.95px] not-italic overflow-clip rounded-[6.977px] text-[8.372px] top-[149.31px] w-[147.91px] whitespace-nowrap" data-node-id="76:990">
+                <p class="absolute font-['Geologica'] font-normal left-[8.37px] text-[rgba(255,255,255,0.85)] top-[6.28px]" data-node-id="76:991">Buyer B, Latvia</p>
+                <p class="absolute font-['Geologica'] font-semibold left-[120px] text-white top-[6.28px]" data-node-id="76:992">€612</p>
+              </div>
+              <div class="[word-break:break-word] absolute bg-[rgba(255,255,255,0.05)] h-[23.721px] leading-[normal] left-[13.95px] not-italic overflow-clip rounded-[6.977px] text-[8.372px] top-[177.21px] w-[147.91px] whitespace-nowrap" data-node-id="76:993">
+                <p class="absolute font-['Geologica'] font-normal left-[8.37px] text-[rgba(255,255,255,0.85)] top-[6.28px]" data-node-id="76:994">Buyer A, Lithuania</p>
+                <p class="absolute font-['Geologica'] font-semibold left-[118.61px] text-white top-[6.28px]" data-node-id="76:995">€598</p>
+              </div>
+              <div class="[word-break:break-word] absolute bg-[rgba(255,255,255,0.05)] h-[23.721px] leading-[normal] left-[13.95px] not-italic overflow-clip rounded-[6.977px] text-[8.372px] top-[205.12px] w-[147.91px] whitespace-nowrap" data-node-id="76:996">
+                <p class="absolute font-['Geologica'] font-normal left-[8.37px] text-[rgba(255,255,255,0.85)] top-[6.28px]" data-node-id="76:997">Buyer C, Poland</p>
+                <p class="absolute font-['Geologica'] font-semibold left-[118.61px] text-white top-[6.28px]" data-node-id="76:998">€585</p>
+              </div>
+              <div class="absolute bg-white h-[32.094px] left-[13.95px] overflow-clip rounded-[9.768px] top-[280.47px] w-[147.91px]" data-node-id="76:999">
+                <p class="[word-break:break-word] absolute font-['Geologica'] font-medium leading-[normal] left-[38.37px] not-italic text-[#0f1115] text-[9.768px] top-[9.77px] whitespace-nowrap" data-node-id="76:1000">Apply as credit</p>
+              </div>
+              <p class="[word-break:break-word] absolute font-['Geologica'] font-normal leading-[normal] left-[52.33px] not-italic text-[8.372px] text-[rgba(255,255,255,0.55)] top-[319.54px] whitespace-nowrap" data-node-id="76:1001">or pay out to card</p>
+            <div data-is-handover aria-hidden="true" class="absolute bg-[#1b1b1f] inset-0 overflow-clip rounded-[16.745px]" data-name="Screen · Handover">
+              <div class="absolute bg-[rgba(255,255,255,0.25)] h-[2.791px] left-[75.35px] rounded-[1.395px] top-[5.58px] w-[25.117px]"></div>
+              <p class="absolute font-['Geologica'] font-semibold leading-[normal] left-[13.95px] text-[9.768px] text-white top-[18.14px] whitespace-nowrap">Handover complete</p>
+              <p class="absolute font-['Geologica'] font-normal leading-[normal] left-[13.95px] text-[7.675px] text-[rgba(255,255,255,0.5)] top-[32.09px] whitespace-nowrap">Store 14, Vilnius</p>
+              <div class="absolute bg-[rgba(164,150,255,0.14)] flex items-center justify-center left-[60.4px] rounded-full size-[55px] top-[60px]">
+                <div class="bg-[#a496ff] flex items-center justify-center rounded-full size-[34px]"><svg width="18" height="18" viewBox="0 0 14 14" aria-hidden="true"><path d="M5.95 8.66583L10.7758 3.83952L11.5187 4.58187L5.95 10.1505L2.6089 6.80943L3.35125 6.06707L5.95 8.66583Z" fill="#0f1115"/></svg></div>
+              </div>
+              <p class="absolute font-['Geologica'] font-normal leading-[normal] left-0 right-0 text-center text-[7.675px] text-[rgba(255,255,255,0.55)] top-[127px]">Credit applied</p>
+              <p class="absolute font-['Geologica'] font-bold leading-[normal] left-0 right-0 text-center text-[32.094px] text-white top-[138px]">€612</p>
+              <div class="absolute bg-[rgba(255,255,255,0.05)] h-[23.721px] left-[13.95px] overflow-clip rounded-[6.977px] top-[190px] w-[147.91px]">
+                <div class="absolute left-[8.37px] size-[5.582px] top-[9.07px]"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-dot-done.svg"></div>
+                <p class="absolute font-['Geologica'] font-normal leading-[normal] left-[19.54px] text-[8.372px] text-[rgba(255,255,255,0.8)] top-[6.28px] whitespace-nowrap">New device</p>
+                <p class="absolute font-['Geologica'] font-medium leading-[normal] right-[8.37px] text-[8.372px] text-white top-[6.28px] whitespace-nowrap">iPhone 16 Pro</p>
+              </div>
+              <div class="absolute bg-[rgba(255,255,255,0.05)] h-[23.721px] left-[13.95px] overflow-clip rounded-[6.977px] top-[218px] w-[147.91px]">
+                <div class="absolute left-[8.37px] size-[5.582px] top-[9.07px]"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-dot-done.svg"></div>
+                <p class="absolute font-['Geologica'] font-normal leading-[normal] left-[19.54px] text-[8.372px] text-[rgba(255,255,255,0.8)] top-[6.28px] whitespace-nowrap">Traded in</p>
+                <p class="absolute font-['Geologica'] font-medium leading-[normal] right-[8.37px] text-[8.372px] text-white top-[6.28px] whitespace-nowrap">iPhone 15 Pro</p>
+              </div>
+              <div class="absolute bg-[rgba(255,255,255,0.05)] h-[23.721px] left-[13.95px] overflow-clip rounded-[6.977px] top-[246px] w-[147.91px]">
+                <div class="absolute left-[8.37px] size-[5.582px] top-[9.07px]"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/instore-dot-done.svg"></div>
+                <p class="absolute font-['Geologica'] font-normal leading-[normal] left-[19.54px] text-[8.372px] text-[rgba(255,255,255,0.8)] top-[6.28px] whitespace-nowrap">Receipt</p>
+                <p class="absolute font-['Geologica'] font-medium leading-[normal] right-[8.37px] text-[8.372px] text-white top-[6.28px] whitespace-nowrap">Sent by email</p>
+              </div>
+              <div class="absolute bg-white flex items-center justify-center h-[32.094px] left-[13.95px] overflow-clip rounded-[9.768px] top-[280.47px] w-[147.91px]">
+                <p class="font-['Geologica'] font-medium leading-[normal] text-[#0f1115] text-[9.768px] whitespace-nowrap">Next customer</p>
+              </div>
+              <p class="absolute font-['Geologica'] font-normal leading-[normal] left-0 right-0 text-center text-[8.372px] text-[rgba(255,255,255,0.55)] top-[319.54px] whitespace-nowrap">Ref. FT-20418</p>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="absolute bg-[#3a3a3f] h-[18.14px] left-[0.7px] rounded-[1.395px] top-[126.98px] w-[2.791px]" data-node-id="76:966"></div>
+        <div class="absolute bg-[#3a3a3f] h-[33.489px] left-[0.7px] rounded-[1.395px] top-[158.24px] w-[2.791px]" data-node-id="76:967"></div>
+        <div class="absolute bg-[#3a3a3f] h-[33.489px] left-[0.7px] rounded-[1.395px] top-[193.4px] w-[2.791px]" data-node-id="76:968"></div>
+        <div class="absolute bg-[#3a3a3f] h-[48.838px] left-[190.47px] rounded-[1.395px] top-[166.05px] w-[2.791px]" data-node-id="76:969"></div>
+      </div>
+    </div>
+  </div>
+  <div class="content-stretch flex items-start justify-center overflow-clip relative shrink-0 w-full" data-node-id="77:133" data-name="Pager row">
+    <div role="group" aria-label="Steps" class="bg-[#2a2a2e] content-stretch flex gap-[6px] h-[29px] items-center px-[16px] relative rounded-[10px] shrink-0" data-node-id="76:1002">
+      <button type="button" class="is-dot" data-is-dot="0" aria-current="step" aria-controls="is-stage" aria-label="Step 1: Assess at the counter"><span></span></button>
+      <button type="button" class="is-dot" data-is-dot="1" aria-controls="is-stage" aria-label="Step 2: Offer in seconds"><span></span></button>
+      <button type="button" class="is-dot" data-is-dot="2" aria-controls="is-stage" aria-label="Step 3: Hand over the new device"><span></span></button>
+    </div>
+  </div>
+</section>

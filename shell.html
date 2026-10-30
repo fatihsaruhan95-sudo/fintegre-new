@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fintegre — Make every device worth more</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&family=Archivo+Black&family=Outfit:wght@400;600;700&family=Montserrat:wght@600;700;800&family=Bebas+Neue&family=DM+Sans:wght@500;700&family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="motion.css">
+</head>
+<body>
+<header class="site-header" aria-label="Main">
+  <nav class="backdrop-blur-[24px] bg-[rgba(7,10,28,0.72)] border border-[rgba(255,255,255,0.12)] border-solid flex h-[60px] items-center justify-between pl-[20px] pr-[8px] relative rounded-[16px] w-[860px] max-lg:w-[calc(100vw-32px)] max-lg:max-w-[560px]">
+    <a href="#hero" class="h-[28px] relative shrink-0 w-[37px]" aria-label="Fintegre home">
+      <span class="absolute inset-[11.64%_9.57%_11.64%_9.44%]"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/header-mark.svg"></span>
+    </a>
+    <div class="flex items-start relative shrink-0 max-lg:hidden">
+      <div class="nav-drop">
+        <button type="button" class="nav-item" aria-expanded="false" aria-controls="menu-platform">Platform <img alt="" src="assets/header-chevron.svg" class="size-[16px] nav-chev"></button>
+        <div class="nav-panel" id="menu-platform" role="menu">
+          <a href="#services" role="menuitem"><b>Trade-in orchestration</b><span>One flow for value, buyers and payout, in store, online and in app.</span></a>
+          <a href="#intelligence" role="menuitem"><b>Device value intelligence</b><span>Residual values by model, condition and market, updated daily.</span></a>
+          <a href="#features" role="menuitem"><b>Vendor network</b><span>Connected buyers bid on every device in seconds.</span></a>
+          <a href="#instore" role="menuitem"><b>Integrations</b><span>POS, e-commerce and app SDKs. No new hardware.</span></a>
+          <a href="#estimator" role="menuitem"><b>Program management</b><span>Rules, pricing and reporting for every market.</span></a>
+        </div>
+      </div>
+      <div class="nav-drop">
+        <button type="button" class="nav-item" aria-expanded="false" aria-controls="menu-solutions">Solutions <img alt="" src="assets/header-chevron.svg" class="size-[16px] nav-chev"></button>
+        <div class="nav-panel" id="menu-solutions" role="menu">
+          <a href="#instore" role="menuitem"><b>Electronics retailers</b><span>Upgrades at the counter and online.</span></a>
+          <a href="#services" role="menuitem"><b>Telecom operators</b><span>More value in every contract upgrade.</span></a>
+          <a href="#features" role="menuitem"><b>OEM and ecosystems</b><span>One program across your channel partners.</span></a>
+          <a href="#devices" role="menuitem"><b>Apple and premium retail</b><span>Premium trade-in, launched fast.</span></a>
+        </div>
+      </div>
+      <a href="#intelligence" class="nav-item">Intelligence</a>
+      <a href="#numbers" class="nav-item">Customers</a>
+      <a href="#resources" class="nav-item">Insights</a>
+      <a href="#closing" class="nav-item">Company</a>
+    </div>
+    <button type="button" data-menu-open class="lg:hidden ml-auto mr-[8px] flex items-center justify-center rounded-[12px] size-[44px] bg-[rgba(255,255,255,0.08)]" aria-label="Open menu">
+      <span class="block w-[18px] h-[12px] border-y-[1.75px] border-white relative after:content-[''] after:absolute after:left-0 after:right-0 after:top-1/2 after:-translate-y-1/2 after:h-[1.75px] after:bg-white"></span>
+    </button>
+    <a href="#estimator" class="bg-[#3047ec] flex items-center justify-center rounded-[12px] shrink-0 size-[44px]" aria-label="Design your program">
+      <img alt="" src="assets/header-icon-arrow.svg" class="size-[24px]">
+    </a>
+  </nav>
+</header>
+
+<div class="drop-menu" id="drop-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <filter id="drop-goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="blur"/>
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 24 -10" result="goo"/>
+      <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+    </filter>
+  </svg>
+  <div class="drop-menu__scrim" data-menu-close></div>
+  <!-- Shapes merge through the goo filter; the crisp content sits on top in the same boxes. -->
+  <div class="drop-menu__goo" aria-hidden="true"><span class="drop-blob drop-blob--top"></span><span class="drop-blob drop-blob--drop"></span></div>
+  <div class="drop-menu__top">
+    <img alt="Fintegre" src="assets/hero-logo-mark.svg" class="drop-menu__mark"><span class="drop-menu__word">Fintegre</span>
+    <button type="button" data-menu-close class="drop-menu__close" aria-label="Close menu"><span></span></button>
+  </div>
+  <nav class="drop-menu__drop" aria-label="Main">
+    <a href="#services">Platform</a>
+    <a href="#features">Solutions</a>
+    <a href="#intelligence">Intelligence</a>
+    <a href="#numbers">Customers</a>
+    <a href="#resources">Insights</a>
+    <a href="#closing">Company</a>
+    <a href="#estimator" class="drop-menu__cta">Design your program</a>
+  </nav>
+</div>
+
+<div class="tour" id="tour" role="dialog" aria-modal="true" aria-label="Fintegre in two minutes" hidden>
+  <div class="tour__backdrop" data-tour-close></div>
+  <div class="tour__box">
+    <button type="button" class="tour__close" data-tour-close aria-label="Close">&times;</button>
+    <div class="tour__screen">
+      <img alt="" src="assets/fullbleed-photo.jpg">
+      <button type="button" class="tour__play" data-tour-play aria-label="Play tour"><span></span></button>
+      <div class="tour__progress"><i></i></div>
+    </div>
+    <div class="tour__meta">
+      <p class="tour__title">Fintegre in two minutes</p>
+      <ol class="tour__chapters">
+        <li data-at="0"><b>0:00</b> Assess any device at the counter</li>
+        <li data-at="0.35"><b>0:40</b> One price from competing buyers</li>
+        <li data-at="0.7"><b>1:25</b> Hand over and pay out in one step</li>
+      </ol>
+    </div>
+  </div>
+</div>
+<main class="page">
+<!--SECTIONS-->
+</main>
+<script src="site.js"></script>
+<script src="motion.js"></script>
+<script src="interact/shell.js"></script>
+<!--INTERACT-->
+</body>
+</html>

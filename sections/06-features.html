@@ -1,0 +1,342 @@
+<section data-section="features" class="bg-[#0b0b12] relative w-full" data-node-id="88:159" data-name="Features (sticky)">
+  <style>
+    /* Feature list buttons and interactive product mocks (behaviour in interact/c-programs.js). */
+    [data-section="features"] [data-c-feature-go] { cursor: pointer; transition: background-color .25s ease; }
+    [data-section="features"] [data-c-feature-go]:hover { background-color: rgba(255, 255, 255, .1); }
+    [data-section="features"] [data-c-feature-go]:hover [data-feature-label] { opacity: 1 !important; }
+    [data-section="features"] [data-feature-label], [data-section="features"] [data-feature-active] { transition: opacity .3s ease; }
+    [data-section="features"] [data-c-feature-go]:focus-visible { outline: 2px solid rgba(255, 255, 255, .9); outline-offset: 2px; }
+    [data-section="features"] [data-name="Feature list"] { overflow: visible; }
+    [data-section="features"] :is([data-c-credit], [data-c-tab], [data-c-buyer], [data-c-payout], [data-c-confirm], .c-undo) { cursor: pointer; }
+    [data-section="features"] :is([data-c-credit], [data-c-tab], [data-c-buyer], [data-c-payout], [data-c-confirm]):focus-visible { outline: 2px solid #3047ec; outline-offset: 2px; }
+
+    /* Card 1: apply as credit. */
+    [data-section="features"] [data-c-credit] { transition: background-color .3s ease, transform .2s ease; }
+    [data-section="features"] [data-c-credit]:hover { background-color: #2639c9; }
+    [data-section="features"] [data-c-credit]:active { transform: scale(.98); }
+    [data-section="features"] [data-c-credit][aria-pressed="true"] { background-color: #12805c !important; }
+    [data-section="features"] [data-c-credit][aria-pressed="true"] [data-name="Icon"] { display: none; }
+    [data-section="features"] .c-undo { font: inherit; color: #3047ec; font-weight: 500; background: none; border: 0; padding: 0; margin-left: 6px; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+    [data-section="features"] .c-undo:focus-visible { outline: 2px solid #3047ec; outline-offset: 2px; border-radius: 3px; }
+
+    /* Card 2: channel tabs. */
+    [data-section="features"] [data-c-tab] { transition: background-color .25s ease, box-shadow .25s ease; }
+    [data-section="features"] [data-c-tab] p { color: rgba(15, 17, 21, .68); transition: color .25s ease; }
+    [data-section="features"] [data-c-tab]:hover p, [data-section="features"] [data-c-tab][aria-selected="true"] p { color: #0f1115; }
+    [data-section="features"] [data-c-tab][aria-selected="true"] { background-color: #fff; }
+    [data-section="features"] [data-c-panel] :is([data-c-row-label], [data-c-row-value]) { transition: opacity .2s ease, transform .2s ease; }
+    [data-section="features"] [data-c-panel].is-swapping :is([data-c-row-label], [data-c-row-value]) { opacity: 0; transform: translateY(4px); }
+
+    /* Card 3: buyers. */
+    [data-section="features"] [data-c-buyer] { transition: background-color .3s ease; }
+    [data-section="features"] [data-c-buyer][aria-checked="true"] { background-color: #fff1d6 !important; }
+    [data-section="features"] [data-c-buyer][aria-checked="false"] { background-color: #f5f7fa !important; }
+    [data-section="features"] [data-c-buyer][aria-checked="false"]:hover { background-color: #edf0f4 !important; }
+    [data-section="features"] [data-c-buyer][aria-checked="true"] > div > p { font-weight: 500 !important; }
+    [data-section="features"] [data-c-buyer][aria-checked="false"] > div > p { font-weight: 400 !important; }
+    [data-section="features"] [data-c-countdown] { font-variant-numeric: tabular-nums; }
+    [data-section="features"] [data-name="Frame"]:has(> [data-c-countdown]) { transition: background-color .3s ease; }
+    [data-section="features"] [data-name="Frame"]:has(> [data-c-countdown].is-low) { background-color: #fff1d6; }
+
+    /* Card 4: payout options and confirm. */
+    [data-section="features"] [data-c-payout] { transition: border-color .25s ease; }
+    [data-section="features"] [data-c-payout][aria-checked="true"] { border: 1.5px solid #3047ec !important; }
+    [data-section="features"] [data-c-payout][aria-checked="false"] { border: 1px solid #dfe3ea !important; }
+    [data-section="features"] [data-c-payout][aria-checked="false"]:hover { border-color: #b9c0cc !important; }
+    [data-section="features"] [data-c-payout-tile] { transition: background-color .25s ease; }
+    [data-section="features"] [data-c-payout][aria-checked="true"] [data-c-payout-tile] { background-color: #3047ec !important; }
+    [data-section="features"] [data-c-payout][aria-checked="true"] [data-c-payout-tile] img { filter: brightness(0) invert(1); }
+    [data-section="features"] [data-c-payout][aria-checked="false"] [data-c-payout-tile] { background-color: #edf0f4 !important; }
+    [data-section="features"] [data-c-payout][aria-checked="false"] [data-c-payout-tile] img[src*="exchange-white"] { filter: brightness(0); opacity: .94; }
+    [data-section="features"] [data-c-confirm] { transition: background-color .3s ease; }
+    [data-section="features"] [data-c-confirm]:hover { background-color: #262a33 !important; }
+    [data-section="features"] [data-c-confirm].is-done { background-color: #12805c !important; }
+
+    @media (prefers-reduced-motion: reduce) {
+      [data-section="features"] :is([data-c-feature-go], [data-c-credit], [data-c-tab], [data-c-tab] p, [data-c-buyer], [data-c-payout], [data-c-payout-tile], [data-c-confirm], [data-c-row-label], [data-c-row-value], [data-feature-label], [data-feature-active]) { transition: none !important; }
+    }
+  </style>
+  <!-- Mesh background: ellipses use Figma layer blur 200 (= stdDeviation 100) as CSS blur(100px) -->
+  <div class="absolute bg-[#0b0b12] inset-0 overflow-clip pointer-events-none" data-node-id="88:160" data-name="Mesh" aria-hidden="true">
+    <div class="absolute h-[609.264px] left-[-36px] top-[1533.31px] w-[792px] rounded-[50%] bg-[rgba(201,138,58,0.55)] max-lg:left-[-20%] max-lg:top-[52%] max-md:w-[420px] max-md:h-[340px]" style="filter: blur(100px)" data-node-id="88:161" data-name="Ellipse"></div>
+    <div class="absolute h-[406.176px] left-[-79.2px] top-[511.1px] w-[504px] rounded-[50%] bg-[rgba(255,126,95,0.28)] max-lg:left-[-30%] max-lg:top-[10%] max-md:w-[420px] max-md:h-[340px]" style="filter: blur(100px)" data-node-id="88:162" data-name="Ellipse"></div>
+    <div class="absolute h-[558.492px] left-[864px] top-[-85.18px] w-[720px] rounded-[50%] bg-[rgba(48,71,236,0.45)] max-lg:left-[35%] max-lg:top-[-4%] max-md:w-[420px] max-md:h-[340px]" style="filter: blur(100px)" data-node-id="88:163" data-name="Ellipse"></div>
+    <div class="absolute h-[456.948px] left-[720px] top-[1959.23px] w-[576px] rounded-[50%] bg-[rgba(164,150,255,0.3)] max-lg:left-[25%] max-lg:top-[82%] max-md:w-[420px] max-md:h-[340px]" style="filter: blur(100px)" data-node-id="88:164" data-name="Ellipse"></div>
+    <div class="absolute h-[406.176px] left-[540px] top-[1192.58px] w-[504px] rounded-[50%] bg-[rgba(46,107,94,0.35)] max-lg:left-[25%] max-lg:top-[32%] max-md:w-[420px] max-md:h-[340px]" style="filter: blur(100px)" data-node-id="88:165" data-name="Ellipse"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.35)]" data-node-id="88:166" data-name="Rectangle"></div>
+  </div>
+
+  <div class="relative flex items-start gap-[80px] px-[120px] max-lg:flex-col max-lg:items-stretch max-lg:gap-[56px] max-lg:px-[48px] max-lg:py-[96px] max-md:px-[20px] max-md:py-[80px] max-md:gap-[40px]">
+    <!-- Left column (sticky) -->
+    <div class="sticky top-[140px] mt-[140px] mb-[140px] self-start w-[560px] shrink-0 flex flex-col items-start max-lg:static max-lg:my-0 max-lg:w-full max-lg:self-stretch">
+      <div class="content-stretch flex flex-col gap-[28px] items-start overflow-clip relative shrink-0 max-lg:w-full max-lg:overflow-visible" data-node-id="88:167" data-name="Sticky column">
+        <div data-reveal class="[word-break:break-word] font-['Geologica'] font-normal leading-[0] min-h-[104px] not-italic relative shrink-0 text-[0px] text-white tracking-[-0.88px] w-[560px] max-lg:w-full max-lg:min-h-0 max-md:tracking-[-0.6px]" data-node-id="88:168" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>
+          <p class="leading-[1.1] mb-0 text-[44px] max-md:text-[34px]">Tools that work with your</p>
+          <p><span class="[word-break:break-word] font-['Instrument_Serif'] italic leading-[1.1] text-[49.28px] max-md:text-[38px]">program,</span><span class="leading-[1.1] text-[44px] max-md:text-[34px]"> not against it</span></p>
+        </div>
+        <div class="flex flex-col gap-[8px] h-[192px] items-start overflow-clip relative shrink-0 w-[420px] max-lg:hidden" data-node-id="88:169" data-name="Feature list">
+          <div data-feature-item="0" role="button" tabindex="0" aria-controls="c-feature-card-0" data-c-feature-go class="is-active relative h-[40px] w-[238px] shrink-0 rounded-[10px] bg-[rgba(255,255,255,0.06)]">
+            <div data-feature-active class="absolute inset-0 bg-[rgba(255,255,255,0.16)] rounded-[10px]" data-node-id="88:171" data-name="Active · 1"></div>
+            <p data-feature-label class="[word-break:break-word] absolute font-['Geologica'] font-medium leading-[normal] left-[14px] not-italic text-[16px] text-white top-[10px] whitespace-nowrap" data-node-id="88:172" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>One clear value, in seconds</p>
+          </div>
+          <div data-feature-item="1" role="button" tabindex="0" aria-controls="c-feature-card-1" data-c-feature-go class="relative h-[40px] w-[237px] shrink-0 rounded-[10px] bg-[rgba(255,255,255,0.06)]">
+            <div data-feature-active class="absolute inset-0 bg-[rgba(255,255,255,0.16)] opacity-0 rounded-[10px]" data-node-id="88:174" data-name="Active · 2"></div>
+            <p data-feature-label class="[word-break:break-word] absolute font-['Geologica'] font-medium leading-[normal] left-[14px] not-italic opacity-60 text-[16px] text-white top-[10px] whitespace-nowrap" data-node-id="88:175" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Every channel, one journey</p>
+          </div>
+          <div data-feature-item="2" role="button" tabindex="0" aria-controls="c-feature-card-2" data-c-feature-go class="relative h-[40px] w-[191px] shrink-0 rounded-[10px] bg-[rgba(255,255,255,0.06)]">
+            <div data-feature-active class="absolute inset-0 bg-[rgba(255,255,255,0.16)] opacity-0 rounded-[10px]" data-node-id="88:177" data-name="Active · 3"></div>
+            <p data-feature-label class="[word-break:break-word] absolute font-['Geologica'] font-medium leading-[normal] left-[14px] not-italic opacity-60 text-[16px] text-white top-[10px] whitespace-nowrap" data-node-id="88:178" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Buyers that compete</p>
+          </div>
+          <div data-feature-item="3" role="button" tabindex="0" aria-controls="c-feature-card-3" data-c-feature-go class="relative h-[40px] w-[317px] shrink-0 rounded-[10px] bg-[rgba(255,255,255,0.06)]">
+            <div data-feature-active class="absolute inset-0 bg-[rgba(255,255,255,0.16)] opacity-0 rounded-[10px]" data-node-id="88:180" data-name="Active · 4"></div>
+            <p data-feature-label class="[word-break:break-word] absolute font-['Geologica'] font-medium leading-[normal] left-[14px] not-italic opacity-60 text-[16px] text-white top-[10px] whitespace-nowrap" data-node-id="88:181" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Payments the customer understands</p>
+          </div>
+        </div>
+      </div>
+      <!-- CTA: Figma y=530, sticky column ends at y=464 -> 66px gap -->
+      <div class="mt-[66px] content-stretch flex flex-col gap-[16px] items-start overflow-clip relative shrink-0 max-lg:mt-[28px]" data-node-id="88:182" data-name="Frame">
+        <div class="[word-break:break-word] font-['Geologica'] font-normal leading-[0] not-italic relative shrink-0 text-[14px] text-[rgba(255,255,255,0.85)] w-[400px] max-lg:w-full max-lg:max-w-[400px] max-lg:text-[15px]" data-node-id="88:183" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>
+          <p class="leading-[1.5] mb-0">No new hardware. No rebuild per market.</p>
+          <p class="leading-[1.5]">Your program, live in weeks.</p>
+        </div>
+        <a href="#estimator" data-href="#estimator" class="bg-white content-stretch flex items-start overflow-clip px-[18px] py-[12px] relative rounded-[10px] shrink-0" data-node-id="88:184" data-name="Frame">
+          <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:185" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Design your program</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right column: card track -->
+    <div class="flex flex-col gap-[60px] pt-[140px] pb-[140px] w-[560px] shrink-0 max-lg:w-full max-lg:pt-0 max-lg:pb-0 max-lg:gap-[24px] max-md:gap-[20px]" data-node-id="88:186" data-name="Card track">
+      <!-- Card 0 -->
+      <div data-feature-card="0" id="c-feature-card-0" class="relative backdrop-blur-[20px] bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.1)] border-solid content-stretch flex flex-col gap-[20px] h-[640px] items-start overflow-clip p-[36px] rounded-[28px] shrink-0 w-[560px] max-lg:w-full max-lg:h-auto max-lg:p-[28px] max-md:p-[20px] max-md:gap-[16px] max-md:rounded-[22px]" data-node-id="88:187" data-name="Card · One clear value, in seconds">
+        <div class="relative shrink-0 size-[24px]" data-node-id="88:188" data-name="Icon / exchange">
+          <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-exchange.svg" />
+        </div>
+        <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap max-lg:text-[20px] max-md:whitespace-normal" data-node-id="88:189" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>One clear value, in seconds</p>
+        <div class="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px overflow-clip relative w-full max-lg:flex-none" data-node-id="88:190" data-name="Visual">
+          <div class="bg-[var(--color-bg-page,white)] content-stretch flex flex-col gap-[24px] items-start overflow-clip pb-[40px] pt-[36px] px-[40px] relative rounded-[32px] shrink-0 w-full max-md:px-[18px] max-md:pt-[20px] max-md:pb-[22px] max-md:gap-[16px] max-md:rounded-[20px]" data-node-id="88:191" data-name="Product UI · Valuation">
+            <div class="[word-break:break-word] content-stretch flex items-center justify-between not-italic overflow-clip relative shrink-0 w-full whitespace-nowrap" data-node-id="88:192" data-name="Frame">
+              <p class="font-['Geologica'] font-medium leading-[1.2] relative shrink-0 text-[26px] text-[color:var(--color-text-primary,#0f1115)] tracking-[-0.13px]" data-node-id="88:193" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Valuation</p>
+              <p class="font-['Geologica'] font-normal leading-[1.4] relative shrink-0 text-[13px] text-[color:var(--color-text-tertiary,rgba(15,17,21,0.46))]" data-node-id="88:194" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Example values</p>
+            </div>
+            <div class="bg-[var(--color-bg-subtle,#f5f7fa)] content-stretch flex gap-[16px] items-center overflow-clip px-[20px] py-[16px] relative rounded-[16px] shrink-0 w-full max-md:gap-[12px] max-md:px-[14px] max-md:py-[14px]" data-node-id="88:195" data-name="Frame">
+              <div class="relative shrink-0 size-[32px]" data-node-id="88:196" data-name="Icon / smartphone">
+                <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-smartphone.svg" />
+              </div>
+              <div class="[word-break:break-word] content-stretch flex flex-col gap-[2px] items-start not-italic overflow-clip relative shrink-0 text-[14px] whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="88:197" data-name="Frame">
+                <p class="font-['Geologica'] font-medium leading-[1.4] relative shrink-0 text-[color:var(--color-text-primary,#0f1115)]" data-node-id="88:198" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>iPhone 15 Pro, 256 GB</p>
+                <p class="font-['Geologica'] font-normal leading-[1.5] relative shrink-0 text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))]" data-node-id="88:199" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Natural Titanium, IMEI checked</p>
+              </div>
+            </div>
+            <div class="[word-break:break-word] content-stretch flex gap-[12px] items-start not-italic overflow-clip relative shrink-0 text-[14px] w-full whitespace-nowrap max-md:gap-[8px]" data-node-id="88:200" data-name="Frame">
+              <div class="border border-[var(--color-border-default,#dfe3ea)] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[6px] items-start min-w-px overflow-clip px-[16px] py-[14px] relative rounded-[12px] max-md:px-[12px] max-md:py-[12px]" data-node-id="88:201" data-name="Frame">
+                <p class="font-['Geologica'] font-normal leading-[1.5] relative shrink-0 text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))]" data-node-id="88:202" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Screen</p>
+                <p class="font-['Geologica'] font-medium leading-[1.4] relative shrink-0 text-[color:var(--color-text-primary,#0f1115)]" data-node-id="88:203" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Good</p>
+              </div>
+              <div class="border border-[var(--color-border-default,#dfe3ea)] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[6px] items-start min-w-px overflow-clip px-[16px] py-[14px] relative rounded-[12px] max-md:px-[12px] max-md:py-[12px]" data-node-id="88:204" data-name="Frame">
+                <p class="font-['Geologica'] font-normal leading-[1.5] relative shrink-0 text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))]" data-node-id="88:205" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Battery</p>
+                <p class="font-['Geologica'] font-medium leading-[1.4] relative shrink-0 text-[color:var(--color-text-primary,#0f1115)]" data-node-id="88:206" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>91%</p>
+              </div>
+              <div class="border border-[var(--color-border-default,#dfe3ea)] border-solid content-stretch flex flex-[1_0_0] flex-col gap-[6px] items-start min-w-px overflow-clip px-[16px] py-[14px] relative rounded-[12px] max-md:px-[12px] max-md:py-[12px]" data-node-id="88:207" data-name="Frame">
+                <p class="font-['Geologica'] font-normal leading-[1.5] relative shrink-0 text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))]" data-node-id="88:208" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Casing</p>
+                <p class="font-['Geologica'] font-medium leading-[1.4] relative shrink-0 text-[color:var(--color-text-primary,#0f1115)]" data-node-id="88:209" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Good</p>
+              </div>
+            </div>
+            <div class="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full max-md:flex-wrap max-md:gap-[16px] max-md:items-end" data-node-id="88:210" data-name="Frame">
+              <div class="[word-break:break-word] content-stretch flex flex-col gap-[4px] items-start not-italic overflow-clip relative shrink-0 whitespace-nowrap" data-node-id="88:211" data-name="Frame">
+                <p class="font-['Geologica'] font-normal leading-[1.5] relative shrink-0 text-[14px] text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))]" data-node-id="88:212" data-c-credit-label aria-live="polite" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Trade-in value</p>
+                <p class="font-['Geologica'] font-bold leading-none relative shrink-0 text-[48px] text-[color:var(--color-text-primary,#0f1115)] tracking-[-1.44px] max-md:text-[40px]" data-node-id="88:213" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>€612</p>
+              </div>
+              <div class="bg-[var(--color-action-primary,#3047ec)] content-stretch flex gap-[var(--spacing-8,8px)] h-[46px] items-center justify-center px-[var(--spacing-16,16px)] relative rounded-[var(--radius-md,12px)] shrink-0" data-node-id="15:201" role="button" tabindex="0" aria-pressed="false" data-c-credit>
+                <p class="[word-break:break-word] font-['Geologica'] font-medium leading-none not-italic relative shrink-0 text-[15px] text-[color:var(--color-text-on-brand,white)] whitespace-nowrap" data-node-id="15:202" data-c-credit-text style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Apply as credit</p>
+                <div class="relative shrink-0 size-[24px]" data-node-id="15:203" data-name="Icon">
+                  <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-button-arrow.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[1.5] not-italic relative shrink-0 text-[14px] text-[rgba(255,255,255,0.65)] w-[488px] max-lg:w-full max-lg:text-[15px]" data-node-id="88:215" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Checks, market data and competing buyers become one price the customer trusts.</p>
+      </div>
+
+      <!-- Card 1 -->
+      <div data-feature-card="1" id="c-feature-card-1" class="relative backdrop-blur-[20px] bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.1)] border-solid content-stretch flex flex-col gap-[20px] h-[640px] items-start overflow-clip p-[36px] rounded-[28px] shrink-0 w-[560px] max-lg:w-full max-lg:h-auto max-lg:p-[28px] max-md:p-[20px] max-md:gap-[16px] max-md:rounded-[22px]" data-node-id="88:216" data-name="Card · Every channel, one journey">
+        <div class="relative shrink-0 size-[24px]" data-node-id="88:217" data-name="Icon / route">
+          <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-route.svg" />
+        </div>
+        <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap max-lg:text-[20px] max-md:whitespace-normal" data-node-id="88:218" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Every channel, one journey</p>
+        <div class="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px overflow-clip relative w-full max-lg:flex-none" data-node-id="88:219" data-name="Visual">
+          <div class="bg-[var(--color-bg-page,white)] content-stretch flex flex-col gap-[12px] items-start overflow-clip p-[24px] relative rounded-[22px] shrink-0 w-full max-md:p-[16px] max-md:rounded-[18px]" data-node-id="88:220" role="tabpanel" id="c-channel-panel" aria-live="polite" data-c-panel data-name="Frame">
+            <div class="bg-[var(--color-bg-muted,#edf0f4)] content-stretch flex gap-[6px] items-start overflow-clip p-[4px] relative rounded-[12px] shrink-0" data-node-id="88:221" role="tablist" aria-label="Channel" data-c-tabs data-name="Frame">
+              <div class="content-stretch flex items-start overflow-clip px-[16px] py-[8px] relative rounded-[9px] shrink-0" data-node-id="88:222" role="tab" aria-selected="true" aria-controls="c-channel-panel" tabindex="0" data-c-tab="store" data-name="Frame">
+                <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[13px] whitespace-nowrap" data-node-id="88:223" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>In store</p>
+              </div>
+              <div class="content-stretch flex items-start overflow-clip px-[16px] py-[8px] relative rounded-[9px] shrink-0" data-node-id="88:224" role="tab" aria-selected="false" aria-controls="c-channel-panel" tabindex="-1" data-c-tab="online" data-name="Frame">
+                <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[13px] whitespace-nowrap" data-node-id="88:225" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Online</p>
+              </div>
+              <div class="content-stretch flex items-start overflow-clip px-[16px] py-[8px] relative rounded-[9px] shrink-0" data-node-id="88:226" role="tab" aria-selected="false" aria-controls="c-channel-panel" tabindex="-1" data-c-tab="app" data-name="Frame">
+                <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[13px] whitespace-nowrap" data-node-id="88:227" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>In app</p>
+              </div>
+            </div>
+            <div class="bg-[var(--color-bg-subtle,#f5f7fa)] content-stretch flex items-center justify-between overflow-clip px-[14px] py-[12px] relative rounded-[12px] shrink-0 w-full max-md:gap-[12px] max-md:px-[12px]" data-node-id="88:228" data-name="Frame">
+              <div class="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0" data-node-id="88:229" data-name="Frame">
+                <div class="relative shrink-0 size-[18px]" data-node-id="88:230" data-name="Icon / smartphone">
+                  <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-smartphone-sm.svg" />
+                </div>
+                <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="88:231" data-c-row-label="0" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Device identified</p>
+              </div>
+              <p class="[word-break:break-word] font-['Geologica'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:232" data-c-row-value="0" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>iPhone 15 Pro</p>
+            </div>
+            <div class="bg-[var(--color-bg-subtle,#f5f7fa)] content-stretch flex items-center justify-between overflow-clip px-[14px] py-[12px] relative rounded-[12px] shrink-0 w-full max-md:gap-[12px] max-md:px-[12px]" data-node-id="88:233" data-name="Frame">
+              <div class="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0" data-node-id="88:234" data-name="Frame">
+                <div class="relative shrink-0 size-[18px]" data-node-id="88:235" data-name="Icon / shield-check">
+                  <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-shield-check.svg" />
+                </div>
+                <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="88:236" data-c-row-label="1" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Checks complete</p>
+              </div>
+              <p class="[word-break:break-word] font-['Geologica'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:237" data-c-row-value="1" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>3 of 3</p>
+            </div>
+            <div class="bg-[var(--color-bg-subtle,#f5f7fa)] content-stretch flex items-center justify-between overflow-clip px-[14px] py-[12px] relative rounded-[12px] shrink-0 w-full max-md:gap-[12px] max-md:px-[12px]" data-node-id="88:238" data-name="Frame">
+              <div class="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0" data-node-id="88:239" data-name="Frame">
+                <div class="relative shrink-0 size-[18px]" data-node-id="88:240" data-name="Icon / wallet">
+                  <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-wallet.svg" />
+                </div>
+                <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="88:241" data-c-row-label="2" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Value offered</p>
+              </div>
+              <p class="[word-break:break-word] font-['Geologica'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:242" data-c-row-value="2" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>€612</p>
+            </div>
+            <div class="bg-[var(--color-accent-amber-subtle,#fff1d6)] content-stretch flex items-center justify-between overflow-clip px-[14px] py-[12px] relative rounded-[12px] shrink-0 w-full max-md:gap-[12px] max-md:px-[12px]" data-node-id="88:243" data-name="Frame">
+              <div class="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0" data-node-id="88:244" data-name="Frame">
+                <div class="relative shrink-0 size-[18px]" data-node-id="88:245" data-name="Icon / exchange">
+                  <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-exchange-amber.svg" />
+                </div>
+                <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="88:246" data-c-row-label="3" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Credit applied</p>
+              </div>
+              <p class="[word-break:break-word] font-['Geologica'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:247" data-c-row-value="3" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>New iPhone</p>
+            </div>
+            <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--color-text-tertiary,rgba(15,17,21,0.46))] whitespace-nowrap" data-node-id="88:248" data-c-row-note style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Same steps on every channel</p>
+          </div>
+        </div>
+        <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[1.5] not-italic relative shrink-0 text-[14px] text-[rgba(255,255,255,0.65)] w-[488px] max-lg:w-full max-lg:text-[15px]" data-node-id="88:249" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>The same checks, the same value and the same rules in the store, online and in your app.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div data-feature-card="2" id="c-feature-card-2" class="relative backdrop-blur-[20px] bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.1)] border-solid content-stretch flex flex-col gap-[20px] h-[640px] items-start overflow-clip p-[36px] rounded-[28px] shrink-0 w-[560px] max-lg:w-full max-lg:h-auto max-lg:p-[28px] max-md:p-[20px] max-md:gap-[16px] max-md:rounded-[22px]" data-node-id="88:250" data-name="Card · Buyers that compete">
+        <div class="relative shrink-0 size-[24px]" data-node-id="88:251" data-name="Icon / funds">
+          <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-funds.svg" />
+        </div>
+        <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap max-lg:text-[20px] max-md:whitespace-normal" data-node-id="88:252" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Buyers that compete</p>
+        <div class="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px overflow-clip relative w-full max-lg:flex-none" data-node-id="88:253" data-name="Visual">
+          <div class="bg-[var(--color-bg-page,white)] content-stretch flex flex-col gap-[12px] items-start overflow-clip p-[24px] relative rounded-[22px] shrink-0 w-full max-md:p-[16px] max-md:rounded-[18px]" data-node-id="88:254" role="radiogroup" aria-label="Live offers, choose a buyer" data-c-buyers data-name="Frame">
+            <div class="content-stretch flex items-center justify-between overflow-clip relative shrink-0 w-full" data-node-id="88:255" data-name="Frame">
+              <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:256" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Live offers</p>
+              <div class="bg-[var(--color-bg-muted,#edf0f4)] content-stretch flex gap-[6px] items-center overflow-clip px-[10px] py-[5px] relative rounded-[999px] shrink-0" data-node-id="88:257" data-name="Frame">
+                <div class="relative shrink-0 size-[14px]" data-node-id="88:258" data-name="Icon / time">
+                  <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-time.svg" />
+                </div>
+                <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:259" data-c-countdown role="timer" aria-live="off" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Closes in 0:12</p>
+              </div>
+            </div>
+            <div class="bg-[var(--color-accent-amber-subtle,#fff1d6)] content-stretch flex items-center justify-between overflow-clip px-[14px] py-[12px] relative rounded-[12px] shrink-0 w-full max-md:gap-[12px] max-md:px-[12px]" data-node-id="88:260" role="radio" aria-checked="true" tabindex="0" data-c-buyer data-name="Frame">
+              <div class="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0" data-node-id="88:261" data-name="Frame">
+                <div class="relative shrink-0 size-[18px]" data-node-id="88:262" data-name="Icon / award">
+                  <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-award.svg" />
+                </div>
+                <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="88:263" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Buyer B, Latvia</p>
+              </div>
+              <p class="[word-break:break-word] font-['Geologica'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:264" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>€612</p>
+            </div>
+            <div class="bg-[var(--color-bg-subtle,#f5f7fa)] content-stretch flex items-center justify-between overflow-clip px-[14px] py-[12px] relative rounded-[12px] shrink-0 w-full max-md:gap-[12px] max-md:px-[12px]" data-node-id="88:265" role="radio" aria-checked="false" tabindex="-1" data-c-buyer data-name="Frame">
+              <div class="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0" data-node-id="88:266" data-name="Frame">
+                <div class="relative shrink-0 size-[18px]" data-node-id="88:267" data-name="Icon / user">
+                  <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-user.svg" />
+                </div>
+                <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="88:268" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Buyer A, Lithuania</p>
+              </div>
+              <p class="[word-break:break-word] font-['Geologica'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:269" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>€598</p>
+            </div>
+            <div class="bg-[var(--color-bg-subtle,#f5f7fa)] content-stretch flex items-center justify-between overflow-clip px-[14px] py-[12px] relative rounded-[12px] shrink-0 w-full max-md:gap-[12px] max-md:px-[12px]" data-node-id="88:270" role="radio" aria-checked="false" tabindex="-1" data-c-buyer data-name="Frame">
+              <div class="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0" data-node-id="88:271" data-name="Frame">
+                <div class="relative shrink-0 size-[18px]" data-node-id="88:272" data-name="Icon / user">
+                  <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-user.svg" />
+                </div>
+                <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="88:273" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Buyer C, Poland</p>
+              </div>
+              <p class="[word-break:break-word] font-['Geologica'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:274" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>€585</p>
+            </div>
+            <div class="bg-[var(--color-bg-subtle,#f5f7fa)] content-stretch flex items-center justify-between overflow-clip px-[14px] py-[12px] relative rounded-[12px] shrink-0 w-full max-md:gap-[12px] max-md:px-[12px]" data-node-id="88:275" role="radio" aria-checked="false" tabindex="-1" data-c-buyer data-name="Frame">
+              <div class="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0" data-node-id="88:276" data-name="Frame">
+                <div class="relative shrink-0 size-[18px]" data-node-id="88:277" data-name="Icon / user">
+                  <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-user.svg" />
+                </div>
+                <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="88:278" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Buyer D, Estonia</p>
+              </div>
+              <p class="[word-break:break-word] font-['Geologica'] font-semibold leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:279" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>€571</p>
+            </div>
+            <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--color-text-tertiary,rgba(15,17,21,0.46))] whitespace-nowrap" data-node-id="88:280" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Example offers</p>
+          </div>
+        </div>
+        <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[1.5] not-italic relative shrink-0 text-[14px] text-[rgba(255,255,255,0.65)] w-[488px] max-lg:w-full max-lg:text-[15px]" data-node-id="88:281" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Every device goes to your connected buyers at once. The best offer wins in seconds.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div data-feature-card="3" id="c-feature-card-3" class="relative backdrop-blur-[20px] bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.1)] border-solid content-stretch flex flex-col gap-[20px] h-[640px] items-start overflow-clip p-[36px] rounded-[28px] shrink-0 w-[560px] max-lg:w-full max-lg:h-auto max-lg:p-[28px] max-md:p-[20px] max-md:gap-[16px] max-md:rounded-[22px]" data-node-id="88:282" data-name="Card · Payments the customer understands">
+        <div class="relative shrink-0 size-[24px]" data-node-id="88:283" data-name="Icon / bank-card">
+          <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-bank-card.svg" />
+        </div>
+        <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[22px] text-white whitespace-nowrap max-lg:text-[20px] max-md:whitespace-normal" data-node-id="88:284" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Payments the customer understands</p>
+        <div class="content-stretch flex flex-[1_0_0] flex-col items-start min-h-px overflow-clip relative w-full max-lg:flex-none" data-node-id="88:285" data-name="Visual">
+          <div class="bg-[var(--color-bg-page,white)] content-stretch flex flex-col gap-[12px] items-start overflow-clip p-[24px] relative rounded-[22px] shrink-0 w-full max-md:p-[16px] max-md:rounded-[18px]" data-node-id="88:286" role="radiogroup" aria-labelledby="c-payout-title" data-c-payouts data-name="Frame">
+            <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[16px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:287" id="c-payout-title" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>How would you like your €612?</p>
+            <div class="bg-[var(--color-bg-page,white)] border-[1.5px] border-[var(--color-border-brand,#3047ec)] border-solid content-stretch flex items-center justify-between overflow-clip px-[16px] py-[14px] relative rounded-[14px] shrink-0 w-full max-md:gap-[12px] max-md:px-[12px]" data-node-id="88:288" role="radio" aria-checked="true" tabindex="0" data-c-payout data-name="Frame">
+              <div class="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0 max-md:gap-[10px]" data-node-id="88:289" data-name="Frame">
+                <div class="bg-[var(--color-bg-brand,#3047ec)] content-stretch flex items-start overflow-clip p-[8px] relative rounded-[10px] shrink-0" data-node-id="88:290" data-c-payout-tile data-name="Frame">
+                  <div class="relative shrink-0 size-[18px]" data-node-id="88:291" data-name="Icon / exchange">
+                    <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-exchange-white.svg" />
+                  </div>
+                </div>
+                <div class="[word-break:break-word] content-stretch flex flex-col gap-[2px] items-start leading-[normal] not-italic overflow-clip relative shrink-0 whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="88:292" data-name="Frame">
+                  <p class="font-['Geologica'] font-medium relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)]" data-node-id="88:293" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Credit on the new iPhone</p>
+                  <p class="font-['Geologica'] font-normal relative shrink-0 text-[12px] text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))]" data-node-id="88:294" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Instant</p>
+                </div>
+              </div>
+              <p class="[word-break:break-word] font-['Geologica'] font-semibold leading-[normal] not-italic relative shrink-0 text-[15px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:295" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>€612</p>
+            </div>
+            <div class="bg-[var(--color-bg-page,white)] border border-[var(--color-border-default,#dfe3ea)] border-solid content-stretch flex items-center justify-between overflow-clip px-[16px] py-[14px] relative rounded-[14px] shrink-0 w-full max-md:gap-[12px] max-md:px-[12px]" data-node-id="88:296" role="radio" aria-checked="false" tabindex="-1" data-c-payout data-name="Frame">
+              <div class="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0 max-md:gap-[10px]" data-node-id="88:297" data-name="Frame">
+                <div class="bg-[var(--color-bg-muted,#edf0f4)] content-stretch flex items-start overflow-clip p-[8px] relative rounded-[10px] shrink-0" data-node-id="88:298" data-c-payout-tile data-name="Frame">
+                  <div class="relative shrink-0 size-[18px]" data-node-id="88:299" data-name="Icon / wallet">
+                    <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-wallet.svg" />
+                  </div>
+                </div>
+                <div class="[word-break:break-word] content-stretch flex flex-col gap-[2px] items-start leading-[normal] not-italic overflow-clip relative shrink-0 whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="88:300" data-name="Frame">
+                  <p class="font-['Geologica'] font-medium relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)]" data-node-id="88:301" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Instant payment to card</p>
+                  <p class="font-['Geologica'] font-normal relative shrink-0 text-[12px] text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))]" data-node-id="88:302" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>2 min</p>
+                </div>
+              </div>
+              <p class="[word-break:break-word] font-['Geologica'] font-semibold leading-[normal] not-italic relative shrink-0 text-[15px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:303" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>€598</p>
+            </div>
+            <div class="bg-[var(--color-bg-page,white)] border border-[var(--color-border-default,#dfe3ea)] border-solid content-stretch flex items-center justify-between overflow-clip px-[16px] py-[14px] relative rounded-[14px] shrink-0 w-full max-md:gap-[12px] max-md:px-[12px]" data-node-id="88:304" role="radio" aria-checked="false" tabindex="-1" data-c-payout data-name="Frame">
+              <div class="content-stretch flex gap-[12px] items-center overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0 max-md:gap-[10px]" data-node-id="88:305" data-name="Frame">
+                <div class="bg-[var(--color-bg-muted,#edf0f4)] content-stretch flex items-start overflow-clip p-[8px] relative rounded-[10px] shrink-0" data-node-id="88:306" data-c-payout-tile data-name="Frame">
+                  <div class="relative shrink-0 size-[18px]" data-node-id="88:307" data-name="Icon / calendar">
+                    <img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/features-icon-calendar.svg" />
+                  </div>
+                </div>
+                <div class="[word-break:break-word] content-stretch flex flex-col gap-[2px] items-start leading-[normal] not-italic overflow-clip relative shrink-0 whitespace-nowrap max-md:shrink max-md:min-w-0 max-md:whitespace-normal" data-node-id="88:308" data-name="Frame">
+                  <p class="font-['Geologica'] font-medium relative shrink-0 text-[14px] text-[color:var(--color-text-primary,#0f1115)]" data-node-id="88:309" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Lower monthly instalments</p>
+                  <p class="font-['Geologica'] font-normal relative shrink-0 text-[12px] text-[color:var(--color-text-secondary,rgba(15,17,21,0.68))]" data-node-id="88:310" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>12 months</p>
+                </div>
+              </div>
+              <p class="[word-break:break-word] font-['Geologica'] font-semibold leading-[normal] not-italic relative shrink-0 text-[15px] text-[color:var(--color-text-primary,#0f1115)] whitespace-nowrap" data-node-id="88:311" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>−€51 / mo</p>
+            </div>
+            <div class="bg-[var(--color-text-primary,#0f1115)] content-stretch flex items-start justify-center overflow-clip py-[14px] relative rounded-[12px] shrink-0 w-full" data-node-id="88:312" role="button" tabindex="0" data-c-confirm data-name="Frame">
+              <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[14px] text-[color:var(--color-text-on-brand,white)] whitespace-nowrap" data-node-id="88:313" data-c-confirm-text aria-live="polite" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>Confirm and hand over</p>
+            </div>
+          </div>
+        </div>
+        <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[1.5] not-italic relative shrink-0 text-[14px] text-[rgba(255,255,255,0.65)] w-[488px] max-lg:w-full max-lg:text-[15px]" data-node-id="88:314" style='font-variation-settings: "CRSV" 0, "SHRP" 0'>One value, three clear ways to take it. Every fee and every waiting time is shown up front.</p>
+      </div>
+    </div>
+  </div>
+</section>

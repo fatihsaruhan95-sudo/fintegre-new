@@ -1,0 +1,48 @@
+/* Section motion (driven by motion.js). Effects use the standalone translate/scale properties so they
+   compose with Tailwind's transform utilities. Everything is gated on html.motion, so without JS or with
+   reduced motion the page is fully visible. */
+:root {
+  --m-ease: cubic-bezier(.16, 1, .3, 1);
+  --m-spring: cubic-bezier(.3, 1.45, .5, 1);
+  --m-inout: cubic-bezier(.65, 0, .25, 1);
+}
+
+.motion [data-m] {
+  opacity: 0;
+  transition:
+    opacity .8s var(--m-ease) var(--m-delay, 0ms),
+    translate 1s var(--m-ease) var(--m-delay, 0ms),
+    scale 1s var(--m-ease) var(--m-delay, 0ms),
+    clip-path 1.6s var(--m-inout) var(--m-delay, 0ms);
+}
+.motion [data-m="up"]     { translate: 0 36px; }
+.motion [data-m="down"]   { translate: 0 -24px; }
+.motion [data-m="left"]   { translate: -48px 0; }
+.motion [data-m="right"]  { translate: 56px 0; }
+.motion [data-m="scale"]  { scale: .94; }
+.motion [data-m="pop"]    { scale: .5; transition-timing-function: var(--m-spring); }
+.motion [data-m="zoom"]   { opacity: 1; scale: 1.14; transition-duration: .8s, 1.8s, 1.8s, 0s; }
+.motion [data-m="draw-x"] { opacity: 1; scale: 0 1; transform-origin: left center; transition-duration: .8s, 1s, 1.2s, 0s; }
+.motion [data-m="draw-y"] { opacity: 1; scale: 1 0; transform-origin: center top; transition-duration: .8s, 1s, 1.2s, 0s; }
+.motion [data-m="bar"]    { opacity: 1; scale: 0 1; transform-origin: left center; transition-duration: .8s, 1s, 1.4s, 0s; }
+.motion [data-m="wipe"]   { opacity: 1; clip-path: inset(-12px 100% -12px -12px); }
+
+.motion [data-m].m-in {
+  opacity: 1;
+  translate: none;
+  scale: 1;
+}
+/* Only the wipe clips; a slight negative inset keeps line caps and end dots whole. */
+.motion [data-m="wipe"].m-in { clip-path: inset(-12px -12px -12px -12px); }
+
+/* Ambient loops. */
+@keyframes m-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+@keyframes m-drift {
+  0%, 100% { translate: 0 0; }
+  33% { translate: 40px -30px; }
+  66% { translate: -30px 24px; }
+}
+.motion .m-float { animation: m-float 6s ease-in-out infinite paused; will-change: translate; }
+.motion .m-drift { animation: m-drift 18s ease-in-out infinite paused; will-change: translate; }
+.motion .m-awake .m-float, .motion .m-awake .m-drift { animation-play-state: running; }
+.m-parallax { scale: 1.12; will-change: translate; }

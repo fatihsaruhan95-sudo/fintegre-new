@@ -1,0 +1,106 @@
+<style>
+  /* Estimator: chip, field and result states (driven by interact/b-middle.js). */
+  [data-section="estimator"] [role="radio"] { cursor: pointer; transition: opacity .8s var(--m-ease) var(--m-delay, 0ms), translate 1s var(--m-ease) var(--m-delay, 0ms), scale 1s var(--m-spring, ease) var(--m-delay, 0ms), background-color .2s ease, border-color .2s ease; }
+  [data-section="estimator"] [role="radio"][aria-checked="false"]:hover { border-color: rgba(15,17,21,0.3); }
+  [data-section="estimator"] button:focus-visible, [data-section="estimator"] a:focus-visible { outline: 2px solid #3047ec; outline-offset: 2px; }
+  [data-section="estimator"] [hidden] { display: none !important; }
+  [data-section="estimator"] input[aria-invalid="true"] { border-color: #c2410c; }
+  [data-section="estimator"] [data-est-done]:not([hidden]) { animation: est-in .5s cubic-bezier(.16, 1, .3, 1); }
+  [data-section="estimator"] [data-est-done]:focus { outline: none; }
+  @keyframes est-in { from { opacity: 0; translate: 0 12px; } }
+  @media (prefers-reduced-motion: reduce) { [data-section="estimator"] [data-est-done]:not([hidden]) { animation: none; } }
+</style>
+<section data-section="estimator" class="bg-white content-stretch flex flex-col items-start overflow-clip px-[120px] py-[122px] relative rounded-tl-[40px] rounded-tr-[40px] w-full h-[940px] max-lg:h-auto max-lg:px-[48px] max-lg:py-[96px] max-md:px-[20px] max-md:py-[80px] max-md:rounded-t-[24px]" data-node-id="62:940" data-name="Program estimator">
+  <h2 data-reveal class="[word-break:break-word] font-['Geologica'] font-normal leading-[0] not-italic relative shrink-0 text-[#0f1115] text-[0px] tracking-[-1.2px] whitespace-nowrap max-md:whitespace-normal" data-node-id="79:136">
+    <span class="block leading-[1.04] mb-0 text-[60px] max-lg:text-[44px] max-md:text-[34px]">Get a trade-in program</span>
+    <span class="block"><span class="[word-break:break-word] font-['Instrument_Serif'] italic leading-[1.04] text-[67.2px] max-lg:text-[49px] max-md:text-[38px]">estimate</span><span class="leading-[1.04] text-[60px] max-lg:text-[44px] max-md:text-[34px]"> in two minutes.</span></span>
+  </h2>
+  <div class="h-[36px] relative shrink-0 w-[10px] max-md:h-[28px]" data-node-id="79:137"></div>
+  <div class="bg-[rgba(15,17,21,0.1)] h-px relative shrink-0 w-full" data-node-id="79:138"></div>
+  <div class="content-stretch flex gap-[96px] items-start overflow-clip pt-[32px] relative shrink-0 w-full max-lg:flex-col max-lg:gap-[48px] max-md:gap-[40px]" data-node-id="79:139">
+    <div class="content-stretch flex flex-col gap-[40px] items-start overflow-clip relative shrink-0 w-[440px] max-lg:w-full max-lg:max-w-[560px]" data-node-id="79:140">
+      <p class="[word-break:break-word] font-['Geologica'] font-normal leading-[1.5] not-italic relative shrink-0 text-[18px] text-[rgba(15,17,21,0.6)] w-[440px] max-lg:w-full max-md:text-[16px]" data-node-id="79:141">Tell us who you are and how many devices you see. A specialist sends back three things, within one working day.</p>
+      <div class="content-stretch flex flex-col items-start overflow-clip relative shrink-0 w-full" data-node-id="79:142">
+        <div class="bg-[rgba(15,17,21,0.1)] h-px relative shrink-0 w-full" data-node-id="79:143"></div>
+        <div class="[word-break:break-word] content-stretch flex font-['Geologica'] font-normal gap-[20px] items-start leading-[normal] not-italic overflow-clip py-[22px] relative shrink-0 w-full whitespace-nowrap max-md:whitespace-normal" data-node-id="79:144">
+          <p class="relative shrink-0 text-[14px] text-[rgba(15,17,21,0.4)]" data-node-id="79:145">01</p>
+          <div class="content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0" data-node-id="79:146">
+            <p class="relative shrink-0 text-[#0f1115] text-[18px]" data-node-id="79:147">Recommended journey</p>
+            <p class="relative shrink-0 text-[15px] text-[rgba(15,17,21,0.6)]" data-node-id="79:148">The flow that fits your counter, site and app.</p>
+          </div>
+        </div>
+        <div class="bg-[rgba(15,17,21,0.1)] h-px relative shrink-0 w-full" data-node-id="79:149"></div>
+        <div class="[word-break:break-word] content-stretch flex font-['Geologica'] font-normal gap-[20px] items-start leading-[normal] not-italic overflow-clip py-[22px] relative shrink-0 w-full whitespace-nowrap max-md:whitespace-normal" data-node-id="79:150">
+          <p class="relative shrink-0 text-[14px] text-[rgba(15,17,21,0.4)]" data-node-id="79:151">02</p>
+          <div class="content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0" data-node-id="79:152">
+            <p class="relative shrink-0 text-[#0f1115] text-[18px]" data-node-id="79:153">Buyers to connect</p>
+            <p class="relative shrink-0 text-[15px] text-[rgba(15,17,21,0.6)]" data-node-id="79:154">Who prices your devices best, by market.</p>
+          </div>
+        </div>
+        <div class="bg-[rgba(15,17,21,0.1)] h-px relative shrink-0 w-full" data-node-id="79:155"></div>
+        <div class="[word-break:break-word] content-stretch flex font-['Geologica'] font-normal gap-[20px] items-start leading-[normal] not-italic overflow-clip py-[22px] relative shrink-0 w-full whitespace-nowrap max-md:whitespace-normal" data-node-id="79:156">
+          <p class="relative shrink-0 text-[14px] text-[rgba(15,17,21,0.4)]" data-node-id="79:157">03</p>
+          <div class="content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0 max-md:shrink max-md:min-w-0" data-node-id="79:158">
+            <p class="relative shrink-0 text-[#0f1115] text-[18px]" data-node-id="79:159">Launch plan</p>
+            <p class="relative shrink-0 text-[15px] text-[rgba(15,17,21,0.6)]" data-node-id="79:160">What goes live first, and when.</p>
+          </div>
+        </div>
+        <div class="bg-[rgba(15,17,21,0.1)] h-px relative shrink-0 w-full" data-node-id="79:161"></div>
+      </div>
+    </div>
+    <form novalidate data-est-form onsubmit="return false" class="bg-[#f4f5f7] content-stretch flex flex-[1_0_0] flex-col gap-[28px] items-start min-w-px overflow-clip px-[48px] py-[32px] relative rounded-[28px] max-lg:flex-none max-lg:w-full max-md:px-[20px] max-md:py-[24px] max-md:rounded-[22px] max-md:gap-[24px]" data-node-id="79:162" data-name="Estimate form">
+      <div class="content-stretch flex flex-col gap-[14px] items-start overflow-clip relative shrink-0 w-full" data-node-id="79:163">
+        <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[15px] whitespace-nowrap" data-node-id="79:164">You are</p>
+        <div class="content-start flex flex-wrap gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="79:165" role="radiogroup" aria-label="You are" data-est-group="role">
+          <button type="button" role="radio" aria-checked="true" class="bg-[#0f1115] content-stretch flex gap-[8px] items-center overflow-clip px-[18px] py-[11px] relative rounded-[999px] shrink-0" data-node-id="79:166">
+            <span class="relative shrink-0 size-[14px]" data-node-id="79:931" data-name="Icon / check"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/estimator-icon-check.svg"></span>
+            <span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[15px] text-white whitespace-nowrap" data-node-id="79:933">Electronics retailer</span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" class="bg-white border border-[rgba(15,17,21,0.1)] border-solid content-stretch flex items-center overflow-clip px-[18px] py-[11px] relative rounded-[999px] shrink-0" data-node-id="79:934"><span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[15px] whitespace-nowrap" data-node-id="79:935">Telecom operator</span></button>
+          <button type="button" role="radio" aria-checked="false" class="bg-white border border-[rgba(15,17,21,0.1)] border-solid content-stretch flex items-center overflow-clip px-[18px] py-[11px] relative rounded-[999px] shrink-0" data-node-id="79:936"><span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[15px] whitespace-nowrap" data-node-id="79:937">OEM or ecosystem</span></button>
+          <button type="button" role="radio" aria-checked="false" class="bg-white border border-[rgba(15,17,21,0.1)] border-solid content-stretch flex items-center overflow-clip px-[18px] py-[11px] relative rounded-[999px] shrink-0" data-node-id="79:938"><span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[15px] whitespace-nowrap" data-node-id="79:939">Premium retail</span></button>
+        </div>
+      </div>
+      <div class="content-stretch flex flex-col gap-[14px] items-start overflow-clip relative shrink-0 w-full" data-node-id="79:940">
+        <p class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[15px] whitespace-nowrap" data-node-id="79:941">Devices traded in per month</p>
+        <div class="content-start flex flex-wrap gap-[8px] items-start overflow-clip relative shrink-0 w-full" data-node-id="79:942" role="radiogroup" aria-label="Devices traded in per month" data-est-group="volume">
+          <button type="button" role="radio" aria-checked="false" class="bg-white border border-[rgba(15,17,21,0.1)] border-solid content-stretch flex items-center overflow-clip px-[18px] py-[11px] relative rounded-[999px] shrink-0" data-node-id="79:943"><span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[15px] whitespace-nowrap" data-node-id="79:944">Under 1k</span></button>
+          <button type="button" role="radio" aria-checked="true" class="bg-[#0f1115] content-stretch flex gap-[8px] items-center overflow-clip px-[18px] py-[11px] relative rounded-[999px] shrink-0" data-node-id="79:945">
+            <span class="relative shrink-0 size-[14px]" data-node-id="79:946" data-name="Icon / check"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/estimator-icon-check.svg"></span>
+            <span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[15px] text-white whitespace-nowrap" data-node-id="79:948">1k to 10k</span>
+          </button>
+          <button type="button" role="radio" aria-checked="false" class="bg-white border border-[rgba(15,17,21,0.1)] border-solid content-stretch flex items-center overflow-clip px-[18px] py-[11px] relative rounded-[999px] shrink-0" data-node-id="79:949"><span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[15px] whitespace-nowrap" data-node-id="79:950">10k to 50k</span></button>
+          <button type="button" role="radio" aria-checked="false" class="bg-white border border-[rgba(15,17,21,0.1)] border-solid content-stretch flex items-center overflow-clip px-[18px] py-[11px] relative rounded-[999px] shrink-0" data-node-id="79:951"><span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[15px] whitespace-nowrap" data-node-id="79:952">50k+</span></button>
+        </div>
+      </div>
+      <div class="content-stretch flex flex-col gap-[14px] items-start overflow-clip relative shrink-0 w-full" data-node-id="79:953">
+        <label for="estimator-email" class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[15px] whitespace-nowrap" data-node-id="79:954">Work email</label>
+        <input id="estimator-email" type="email" name="email" placeholder="name@company.com" autocomplete="email" class="bg-white border border-[rgba(15,17,21,0.1)] border-solid overflow-clip px-[20px] py-[16px] relative rounded-[14px] shrink-0 w-full font-['Geologica'] font-normal leading-[normal] text-[16px] text-[#0f1115] placeholder:text-[rgba(15,17,21,0.4)] outline-none focus:border-[rgba(15,17,21,0.3)]" data-node-id="79:955" aria-describedby="estimator-email-error">
+        <p id="estimator-email-error" data-est-error hidden class="font-['Geologica'] font-normal leading-[1.4] text-[14px] text-[#c2410c] -mt-[4px]">Enter a work email, like name@company.com.</p>
+      </div>
+      <div class="content-stretch flex gap-[24px] items-center overflow-clip relative shrink-0 w-full max-md:flex-col max-md:items-start max-md:gap-[16px]" data-node-id="79:957">
+        <button type="submit" class="bg-[#0f1115] content-stretch flex gap-[10px] items-center overflow-clip px-[28px] py-[17px] relative rounded-[999px] shrink-0 max-md:w-full max-md:justify-center" data-node-id="79:958">
+          <span class="[word-break:break-word] font-['Geologica'] font-medium leading-[normal] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap" data-node-id="79:959">Get my estimate</span>
+          <span class="relative shrink-0 size-[16px]" data-node-id="79:960" data-name="Icon / arrow-right"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/estimator-icon-arrow-right.svg"></span>
+        </button>
+        <a href="#resources" data-href="#resources" class="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0" data-node-id="79:962">
+          <span class="[word-break:break-word] font-['Geologica'] font-normal leading-[normal] not-italic relative shrink-0 text-[15px] text-[rgba(15,17,21,0.6)] whitespace-nowrap" data-node-id="79:963">or book a 20-minute call</span>
+          <span class="relative shrink-0 size-[14px]" data-node-id="79:964" data-name="Icon / arrow-right-up"><img alt="" class="absolute block inset-0 max-w-none size-full" src="assets/estimator-icon-arrow-right-up.svg"></span>
+        </a>
+      </div>
+      <div data-est-done hidden role="status" tabindex="-1" class="flex flex-col gap-[24px] items-start w-full">
+        <span class="bg-[#0f1115] flex items-center justify-center rounded-full shrink-0 size-[44px]"><img alt="" class="block size-[20px]" src="assets/estimator-icon-check.svg"></span>
+        <div class="flex flex-col gap-[8px] items-start font-['Geologica'] font-normal not-italic">
+          <p class="font-medium leading-[1.2] text-[#0f1115] text-[26px] tracking-[-0.26px] max-md:text-[22px]">Thanks. Your estimate is on its way.</p>
+          <p class="leading-[1.5] text-[16px] text-[rgba(15,17,21,0.6)]">A specialist will reply within one working day.</p>
+        </div>
+        <dl class="w-full font-['Geologica'] font-normal not-italic text-[15px] leading-[normal]">
+          <div class="flex justify-between gap-[16px] border-t border-[rgba(15,17,21,0.1)] py-[14px]"><dt class="text-[rgba(15,17,21,0.6)]">You are</dt><dd class="text-[#0f1115] text-right" data-est-sum="role"></dd></div>
+          <div class="flex justify-between gap-[16px] border-t border-[rgba(15,17,21,0.1)] py-[14px]"><dt class="text-[rgba(15,17,21,0.6)]">Devices per month</dt><dd class="text-[#0f1115] text-right" data-est-sum="volume"></dd></div>
+          <div class="flex justify-between gap-[16px] border-y border-[rgba(15,17,21,0.1)] py-[14px]"><dt class="text-[rgba(15,17,21,0.6)]">Reply to</dt><dd class="text-[#0f1115] text-right [word-break:break-all]" data-est-sum="email"></dd></div>
+        </dl>
+        <button type="button" data-est-reset class="font-['Geologica'] font-normal text-[15px] text-[#0f1115] underline underline-offset-[4px] decoration-[rgba(15,17,21,0.3)] hover:decoration-[#0f1115]">Start again</button>
+      </div>
+    </form>
+  </div>
+</section>

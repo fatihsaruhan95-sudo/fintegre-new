@@ -1,0 +1,190 @@
+:root {
+  --ease-soft: cubic-bezier(.16, 1, .3, 1);
+  --ease-inout: cubic-bezier(.65, 0, .25, 1);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: #0f1115;
+  font-family: 'Geologica', system-ui, sans-serif;
+  font-variation-settings: "CRSV" 0, "SHRP" 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The design is a 1440 canvas scaled to the window (site.js); sections overlap by 40px so each rounded top sits over the previous one. */
+html, body { overflow-x: hidden; }
+.page { width: 1440px; } /* widened to the window by site.js */
+.page > section { position: relative; }
+.page > section + section { margin-top: -40px; }
+
+/* Below 1024px the page is fluid; sections switch to their max-lg:/max-md: layouts. */
+.is-fluid .page { width: 100%; }
+@media (max-width: 767px) { .page > section + section { margin-top: -24px; } }
+
+/* Floating header: hidden at the top (the hero has its own), hides on scroll down, returns on scroll up. */
+.site-header {
+  position: fixed; top: 16px; left: 50%; z-index: 100;
+  transform: translate(-50%, -90px); opacity: 0;
+  transition: transform .5s var(--ease-soft), opacity .35s var(--ease-soft);
+  pointer-events: none;
+}
+.site-header.is-visible { transform: translate(-50%, 0); opacity: 1; pointer-events: auto; }
+.nav-item {
+  display: flex; gap: 4px; height: 40px; align-items: center; padding: 0 12px;
+  border-radius: 8px; color: #fff; font-size: 15px; line-height: 1; white-space: nowrap;
+  transition: background .2s;
+}
+.nav-item:hover { background: rgba(255, 255, 255, .08); }
+
+/* Scroll reveal for section headlines. */
+/* Uses the standalone `translate` property so it composes with Tailwind's transform utilities (e.g. -translate-x-1/2). */
+[data-reveal] {
+  opacity: 0; translate: 0 44px;
+  transition: opacity .9s var(--ease-soft), translate .9s var(--ease-soft);
+}
+[data-reveal].is-in { opacity: 1; translate: none; }
+
+/* Sticky features: item highlight follows the card in view. */
+[data-feature-active], [data-feature-label] { transition: opacity .4s var(--ease-soft); }
+
+/* FAQ accordion. */
+[data-faq-answer] { overflow: hidden; transition: max-height .45s var(--ease-inout), opacity .3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; translate: none; transition: none; }
+  .site-header { transition: none; }
+}
+
+/* Header dropdowns. */
+.nav-drop { position: relative; }
+.nav-drop .nav-item { background: none; border: 0; cursor: pointer; font: inherit; font-size: 15px; }
+.nav-chev { transition: rotate .25s var(--ease-soft); }
+.nav-drop.is-open .nav-chev { rotate: 180deg; }
+.nav-panel {
+  position: absolute; top: calc(100% + 14px); left: -12px; width: 340px; padding: 8px;
+  display: grid; gap: 2px; border-radius: 16px;
+  background: rgba(7, 10, 28, .92); border: 1px solid rgba(255, 255, 255, .12); backdrop-filter: blur(24px);
+  opacity: 0; translate: 0 -6px; pointer-events: none;
+  transition: opacity .2s var(--ease-soft), translate .25s var(--ease-soft);
+}
+.nav-drop.is-open .nav-panel { opacity: 1; translate: none; pointer-events: auto; }
+.nav-panel a { display: grid; gap: 4px; padding: 12px 14px; border-radius: 10px; color: #fff; transition: background .2s; }
+.nav-panel a:hover { background: rgba(255, 255, 255, .08); }
+.nav-panel b { font-weight: 500; font-size: 15px; }
+.nav-panel span { font-size: 13px; line-height: 1.45; color: rgba(255, 255, 255, .62); }
+
+/* Droplet menu: the header pill drops a second pill that holds the menu. Shapes merge through an SVG goo
+   filter; the readable content is a separate, unfiltered layer laid out in the same boxes. */
+.no-scroll { overflow: hidden; }
+.drop-menu { position: fixed; inset: 0; z-index: 200; --top: 16px; --pill-h: 60px; --gap: 12px; }
+.drop-menu[hidden] { display: none; }
+.drop-menu__scrim { position: absolute; inset: 0; background: rgba(5, 7, 16, .28); opacity: 0; transition: opacity .35s var(--ease-soft); }
+.drop-menu.is-open .drop-menu__scrim { opacity: 1; }
+.drop-menu__goo { position: absolute; inset: 0; filter: url(#drop-goo) drop-shadow(0 14px 30px rgba(7, 10, 28, .22)); pointer-events: none; }
+/* Once the drop has landed the merge filter is switched off, so the two pills rest apart with no bridge. */
+.drop-menu.is-settled .drop-menu__goo { filter: drop-shadow(0 14px 30px rgba(7, 10, 28, .22)); }
+.drop-blob { position: absolute; left: 50%; translate: -50% 0; background: #fff; }
+.drop-blob--top { top: var(--top); width: 232px; height: var(--pill-h); border-radius: 18px; }
+/* The drop starts as a small bead tucked under the top pill and stretches into the menu pill. */
+.drop-blob--drop {
+  top: calc(var(--top) + var(--pill-h) - 34px); width: 40px; height: 40px; border-radius: 20px;
+  transition: top .5s var(--ease-soft), width .55s var(--ease-soft) .08s, height .55s var(--ease-soft) .08s, border-radius .5s var(--ease-soft);
+}
+.drop-menu.is-open .drop-blob--drop {
+  top: calc(var(--top) + var(--pill-h) + var(--gap));
+  width: var(--drop-w, 720px); height: var(--drop-h, 60px); border-radius: 18px;
+}
+.drop-menu__top, .drop-menu__drop { position: absolute; left: 50%; translate: -50% 0; color: #0f1115; }
+.drop-menu__top {
+  top: var(--top); width: 232px; height: var(--pill-h); display: flex; align-items: center; gap: 10px; padding: 0 10px 0 20px;
+}
+.drop-menu__mark { height: 20px; width: auto; }
+.drop-menu__word { font-weight: 600; font-size: 18px; letter-spacing: -.01em; }
+.drop-menu__close { margin-left: auto; width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; transition: background .2s; }
+.drop-menu__close:hover { background: rgba(15, 17, 21, .06); }
+.drop-menu__close span { position: relative; width: 18px; height: 18px; }
+.drop-menu__close span::before, .drop-menu__close span::after {
+  content: ''; position: absolute; left: 50%; top: 50%; width: 20px; height: 2px; border-radius: 2px; background: #0f1115;
+  translate: -50% -50%; rotate: 45deg;
+}
+.drop-menu__close span::after { rotate: -45deg; }
+.drop-menu__drop {
+  top: calc(var(--top) + var(--pill-h) + var(--gap)); width: max-content; max-width: calc(100vw - 32px); min-height: var(--pill-h);
+  display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 8px 8px 8px 16px;
+  opacity: 0; translate: -50% -10px; transition: opacity .25s var(--ease-soft), translate .35s var(--ease-soft);
+}
+.drop-menu.is-open .drop-menu__drop { opacity: 1; translate: -50% 0; transition-delay: .26s; }
+.drop-menu__drop a { padding: 10px 12px; border-radius: 12px; font-size: 16px; white-space: nowrap; transition: background .2s; }
+.drop-menu__drop a:hover { background: rgba(15, 17, 21, .06); }
+.drop-menu__drop .drop-menu__cta { background: #3047ec; color: #fff; padding: 10px 16px; }
+.drop-menu__drop .drop-menu__cta:hover { background: #2639d0; }
+html.menu-open .site-header, html.menu-open [data-name="Header pill"] { opacity: 0 !important; pointer-events: none; }
+@media (max-width: 767px) {
+  .drop-menu__drop { width: calc(100vw - 32px); flex-direction: column; align-items: stretch; gap: 2px; padding: 12px; }
+  .drop-menu__drop a { font-size: 22px; padding: 12px 14px; }
+  .drop-menu__drop .drop-menu__cta { margin-top: 8px; text-align: center; font-size: 17px; padding: 14px; }
+  .drop-blob--drop { border-radius: 20px; }
+  .drop-menu.is-open .drop-blob--drop { border-radius: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .drop-blob--drop, .drop-menu__drop, .drop-menu__scrim { transition: none !important; }
+}
+
+/* Tour dialog. */
+.tour { position: fixed; inset: 0; z-index: 300; display: grid; place-items: center; padding: 24px; }
+.tour[hidden] { display: none; }
+.tour__backdrop { position: absolute; inset: 0; background: rgba(5, 7, 16, .78); backdrop-filter: blur(8px); }
+.tour__box { position: relative; width: min(960px, 100%); border-radius: 24px; overflow: hidden; background: #0e0e10; color: #fff; }
+.tour__close { position: absolute; top: 14px; right: 14px; z-index: 2; width: 40px; height: 40px; border-radius: 12px; background: rgba(0, 0, 0, .5); color: #fff; font-size: 24px; }
+.tour__screen { position: relative; aspect-ratio: 16 / 9; background: #000; }
+.tour__screen img { width: 100%; height: 100%; object-fit: cover; opacity: .7; transition: opacity .4s; }
+.tour.is-playing .tour__screen img { opacity: 1; }
+.tour__play { position: absolute; inset: 0; margin: auto; width: 84px; height: 84px; border-radius: 50%; background: rgba(255, 255, 255, .92); transition: opacity .3s, scale .3s; }
+.tour__play span { display: block; margin-left: 32px; width: 0; height: 0; border-left: 22px solid #0f1115; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+.tour.is-playing .tour__play { opacity: 0; scale: .8; pointer-events: none; }
+.tour__progress { position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: rgba(255, 255, 255, .15); }
+.tour__progress i { display: block; height: 100%; width: 0; background: #3047ec; }
+.tour__meta { display: grid; gap: 14px; padding: 22px 26px 26px; }
+.tour__title { font-size: 20px; }
+.tour__chapters { display: grid; gap: 6px; }
+.tour__chapters li { display: flex; gap: 14px; padding: 10px 12px; border-radius: 10px; cursor: pointer; color: rgba(255, 255, 255, .7); transition: background .2s, color .2s; }
+.tour__chapters li:hover, .tour__chapters li.is-current { background: rgba(255, 255, 255, .08); color: #fff; }
+.tour__chapters b { font-weight: 500; color: #a496ff; min-width: 36px; }
+
+/* Shared interactive affordances. */
+a, button { cursor: pointer; }
+
+/* Clickable non-link blocks (data-href) and cards. */
+[data-href], [data-menu-open], [data-tour-open] { cursor: pointer; }
+[data-href]:focus-visible, [data-menu-open]:focus-visible, [data-tour-open]:focus-visible { outline: 2px solid #3047ec; outline-offset: 3px; }
+[data-card-link] { transition: translate .4s var(--ease-soft), box-shadow .4s var(--ease-soft); }
+.motion [data-card-link][data-card-link]:hover, [data-card-link]:hover { translate: 0 -6px; box-shadow: 0 18px 40px -18px rgba(15, 17, 21, .28); }
+
+/* Statement pills swap words. */
+[data-rotate] { transition: opacity .26s var(--ease-soft), translate .26s var(--ease-soft); }
+[data-rotate].is-swapping { opacity: 0; translate: 0 8px; }
+
+/* Device photos show the whole product rather than a cropped cover. */
+[data-section="devices"] [data-name^="Device ·"] > img { object-fit: contain; }
+[data-section="devices"] [data-name="Device · Laptops"] > img { object-position: right bottom; }
+/* Tile colour = the photo's own backdrop, so the contained photo has no visible edge. */
+[data-section="devices"] [data-name="Device · Smartphones"] { background-color: #eeedf0 !important; }
+[data-section="devices"] [data-name="Device · Laptops"] { background-color: #f1f0f2 !important; }
+[data-section="devices"] [data-name="Device · Tablets"] { background-color: #eeeef1 !important; }
+[data-section="devices"] [data-name="Device · Watches"] { background-color: #efeef0 !important; }
+
+/* Full-bleed chips sit on a moving (parallax) photo; a live backdrop blur there costs a repaint every frame.
+   Over the darkened photo a translucent fill reads the same. */
+[data-section="fullbleed"] [class*="backdrop-blur"] { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+
+/* Figma's "clip content" came across as overflow-clip on every frame. Plain layout frames don't need it and it
+   cuts off shadows and hover lifts, so it is switched off. Clipping stays where it shapes something: section
+   roots, rounded boxes (cards, photos, pills), phone screens/frames and the mesh background. */
+.page > section .overflow-clip:not([class*="rounded"]):not([data-name="Screen"]):not([data-name="Titanium frame"]):not([data-name="Mesh"]):not([data-name*="Visual"]):not([data-name*="Chart"]) {
+  overflow: visible;
+}
+
+@media (max-width: 767px) {
+  [data-section="services"] .svc-card { min-height: 0; padding: 22px; gap: 16px; }
+}
