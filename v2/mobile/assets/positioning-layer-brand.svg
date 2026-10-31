@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="324.48" height="196.56" viewBox="0 0 324.48 196.56" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Layer &#194;&#183; Your brand" clip-path="url(#clip0_0_34)">
+<path id="Vector" d="M0 93.6L162.24 187.2V196.56L0 102.96V93.6Z" fill="#B7D7FF" fill-opacity="0.133333"/>
+<path id="Vector_2" d="M162.24 187.2L324.48 93.6V102.96L162.24 196.56V187.2Z" fill="#B7D7FF" fill-opacity="0.0784314"/>
+<path id="Vector_3" d="M162.24 0L324.48 93.6L162.24 187.2L0 93.6L162.24 0Z" fill="url(#paint0_linear_0_34)" stroke-width="0.78" stroke="#B7D7FF" stroke-opacity="0.4"/>
+<path id="Vector_4" d="M162.24 37.44L259.74 93.6L162.24 149.76L64.74 93.6L162.24 37.44Z" stroke-width="0.78" stroke="#B7D7FF" stroke-opacity="0.25"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_34" x1="0" y1="0" x2="162.06" y2="280.904" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B7D7FF" stop-opacity="0.16"/>
+<stop offset="1" stop-color="#B7D7FF" stop-opacity="0.05"/>
+</linearGradient>
+<clipPath id="clip0_0_34">
+<rect width="324.48" height="196.56" fill="white"/>
+</clipPath>
+</defs>
+</svg>

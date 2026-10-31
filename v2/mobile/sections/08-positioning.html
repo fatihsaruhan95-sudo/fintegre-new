@@ -1,0 +1,64 @@
+<section data-section="positioning" id="positioning" class="v2-sec" data-tone="dark" style="--h:1227px; background: radial-gradient(calc(216.67px * var(--s)) calc(511.23px * var(--s)) at calc(50% - 86.67px * var(--s)) calc(562.36px * var(--s)), rgba(27,39,128,.5) 0%, rgba(19,26,72,.25) 50%, rgba(11,12,16,0) 100%), #0B0C10;">
+<style>
+  [data-section="positioning"] .pz-abs { position: absolute; }
+  [data-section="positioning"] .pz-abs > img { display: block; }
+  [data-section="positioning"] h2 { margin: 0; width: 350px; font-weight: 400; font-size: 42px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="positioning"] .pz-lead { margin: 0; width: 340px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="positioning"] .pz-stack { left: 33px; top: 365px; width: 324.48px; height: 414.96px; }
+  [data-section="positioning"] .pz-layer { left: 0; width: 324.48px; height: 196.56px; }
+  [data-section="positioning"] .pz-line { left: 161.65px; top: 93.6px; width: 1.17px; height: 218.4px; background: linear-gradient(to bottom, rgba(183,215,255,.6), rgba(183,215,255,.1)); }
+  [data-section="positioning"] .pz-chip {
+    display: flex; gap: 8px; align-items: center; padding: 10px 16px; border-radius: 999px; transform-origin: center;
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(15,17,21,.6);
+    font-size: 14px; color: #F5F7FA; white-space: nowrap;
+  }
+  [data-section="positioning"] .pz-chip--hot { background: rgba(48,71,236,.9); }
+  [data-section="positioning"] .pz-legend { left: 20px; top: 859.96px; width: 350px; display: flex; flex-direction: column; gap: 26px; }
+  [data-section="positioning"] .pz-row { display: flex; gap: 16px; align-items: flex-start; }
+  [data-section="positioning"] .pz-row p { margin: 0; }
+  [data-section="positioning"] .pz-num { font-size: 13px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="positioning"] .pz-row-text { flex: 1 0 0; min-width: 1px; display: flex; flex-direction: column; gap: 6px; }
+  [data-section="positioning"] .pz-row-title { font-size: 18px; color: #F5F7FA; }
+  [data-section="positioning"] .pz-row-body { font-weight: 300; font-size: 15px; line-height: 1.45; color: #A7B0BE; }
+
+  /* Figma mobile timeline: copy rises, the three plates drop into place bottom to top, the legend rises,
+     then the chips pop in (spring). Played once on arrival. */
+  .motion [data-section="positioning"] [data-m] {
+    translate: var(--mx, 0px) var(--my, 0px); scale: var(--ms, 1);
+    transition: opacity var(--od, .72s) var(--ease) var(--d, 0ms), translate var(--td, .9s) var(--ease) var(--d, 0ms), scale .5s var(--spring) var(--d, 0ms);
+  }
+  .motion [data-section="positioning"].is-in [data-m] { opacity: 1; translate: none; scale: 1; }
+</style>
+  <div class="v2-canvas">
+    <div class="pz-abs" style="left:-110px; top:170px; width:620px; height:620px;" aria-hidden="true"><img alt="" src="assets/positioning-glow.svg" width="620" height="620"></div>
+
+    <h2 class="pz-abs" data-m="up" style="--my:30px; --d:100ms; left:20px; top:96px;">Infrastructure<br>and intelligence.</h2>
+    <p class="pz-abs pz-lead" data-m="up" style="--my:16px; --d:350ms; left:20px; top:200px;">B2B, white-label, vendor-neutral and asset-light. One orchestration layer for journeys, diagnostics, valuation, vendors and payouts.</p>
+
+    <div class="pz-abs pz-stack" aria-hidden="true">
+      <div class="pz-abs pz-layer" data-m="down" style="--my:-60px; --od:.6s; --d:600ms; top:218.4px;"><img alt="" src="assets/positioning-layer-partners.svg" width="324.48" height="196.56"></div>
+      <div class="pz-abs pz-layer" data-m="down" style="--my:-60px; --od:.6s; --d:950ms; top:109.2px;"><img alt="" src="assets/positioning-layer-fintegre.svg" width="324.48" height="196.56"></div>
+      <div class="pz-abs pz-layer" data-m="down" style="--my:-60px; --od:.6s; --d:1300ms; top:0;"><img alt="" src="assets/positioning-layer-brand.svg" width="324.48" height="196.56"></div>
+      <div class="pz-abs pz-line"></div>
+    </div>
+
+    <div class="pz-abs pz-chip pz-chip--hot" data-m="pop" style="--ms:.6; --od:.3s; --d:2000ms; left:195.48px; top:321px;"><img alt="" src="assets/positioning-dot-indigo.svg" width="7" height="7">Offer ready · €612</div>
+    <div class="pz-abs pz-chip" data-m="pop" style="--ms:.6; --od:.3s; --d:1800ms; left:12px; top:435px;"><img alt="" src="assets/positioning-dot.svg" width="7" height="7">Store 14 · Vilnius</div>
+    <div class="pz-abs pz-chip pz-chip--hot" data-m="pop" style="--ms:.6; --od:.3s; --d:2200ms; left:216.48px; top:773.96px;"><img alt="" src="assets/positioning-dot-indigo.svg" width="7" height="7">Buyer B · €612</div>
+
+    <div class="pz-abs pz-legend" data-m="up" style="--my:20px; --d:1400ms;">
+      <div class="pz-row">
+        <p class="pz-num">01</p>
+        <div class="pz-row-text"><p class="pz-row-title">Your brand</p><p class="pz-row-body">Your journeys in store, online and in the app, with your name on every screen.</p></div>
+      </div>
+      <div class="pz-row">
+        <p class="pz-num">02</p>
+        <div class="pz-row-text"><p class="pz-row-title">Fintegre</p><p class="pz-row-body">Diagnostics, grading, valuation and routing, in one layer underneath.</p></div>
+      </div>
+      <div class="pz-row">
+        <p class="pz-num">03</p>
+        <div class="pz-row-text"><p class="pz-row-title">Partners</p><p class="pz-row-body">Buyers, refurbishers and payouts compete for every device.</p></div>
+      </div>
+    </div>
+  </div>
+</section>

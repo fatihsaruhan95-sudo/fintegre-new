@@ -1,0 +1,117 @@
+<section data-section="devices" id="devices" class="v2-sec" data-tone="dark" style="--h:999px; background: radial-gradient(calc(139.29px * var(--s)) calc(384.23px * var(--s)) at calc(50% - 69.64px * var(--s)) calc(499.5px * var(--s)), rgba(48,71,236,.32) 0%, rgba(48,71,236,.08) 60%, rgba(48,71,236,0) 100%), #0F1115;">
+<style>
+  [data-section="devices"] .dv-abs { position: absolute; }
+  [data-section="devices"] .dv-abs > img { display: block; }
+  [data-section="devices"] h2 { margin: 0; width: 350px; font-weight: 400; font-size: 42px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; }
+  /* Swipe row: real horizontal scroller, snapping card by card, the next card peeking in. Extra bottom
+     room keeps the card shadows from being clipped. */
+  [data-section="devices"] .dv-swipe {
+    left: 0; top: 220px; width: 390px; height: 700px; padding: 0 20px 75px;
+    display: flex; gap: 14px; align-items: flex-start;
+    overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-padding-left: 20px;
+    -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; scrollbar-width: none;
+  }
+  [data-section="devices"] .dv-swipe::-webkit-scrollbar { display: none; }
+  /* Snapping waits until the cards have slid in: snap points follow the translated boxes, so snapping
+     during the entrance would leave the row scrolled. */
+  .motion [data-section="devices"] .dv-swipe:not(.dv-snap) { scroll-snap-type: none; }
+  [data-section="devices"] .dv-card {
+    position: relative; flex: 0 0 310px; height: 625px; overflow: hidden; scroll-snap-align: start;
+    border-radius: 28px; border: 1px solid rgba(183,215,255,.14); background: rgba(255,255,255,.05);
+    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45);
+  }
+  [data-section="devices"] .dv-photo { position: absolute; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+  [data-section="devices"] .dv-photo img { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  [data-section="devices"] .dv-wide { left: -120px; top: -1px; width: 560px; height: 300px; mix-blend-mode: lighten;
+    -webkit-mask-image: url(assets/devices-mask-wide.svg); mask-image: url(assets/devices-mask-wide.svg); -webkit-mask-size: 560px 300px; mask-size: 560px 300px; }
+  [data-section="devices"] .dv-wide img { object-fit: cover; }
+  [data-section="devices"] .dv-ipad { left: 34px; top: 11px; width: 240px; height: 300px;
+    -webkit-mask-image: url(assets/devices-mask-ipad.svg); mask-image: url(assets/devices-mask-ipad.svg); -webkit-mask-size: 240px 300px; mask-size: 240px 300px; }
+  [data-section="devices"] .dv-ipad img { object-fit: contain; }
+  [data-section="devices"] .dv-copy { position: absolute; left: 19px; top: 315px; width: 270px; display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+  [data-section="devices"] .dv-copy p { margin: 0; }
+  [data-section="devices"] .dv-kicker { font-size: 22px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="devices"] .dv-price { font-weight: 300; font-size: 48px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="devices"] .dv-body { width: 100%; font-weight: 300; font-size: 15px; line-height: 1.5; color: #A7B0BE; }
+  [data-section="devices"] .dv-stats { display: flex; gap: 48px; padding-top: 22px; white-space: nowrap; }
+  [data-section="devices"] .dv-stat { display: flex; flex-direction: column; gap: 4px; }
+  [data-section="devices"] .dv-stat b { font-weight: 300; font-size: 30px; letter-spacing: -0.02em; color: #F5F7FA; }
+  [data-section="devices"] .dv-stat span { font-size: 14px; color: #A7B0BE; }
+  [data-section="devices"] .dv-progress { left: 20px; top: 877px; width: 280px; height: 3px; overflow: hidden; z-index: 1; }
+  [data-section="devices"] .dv-seg, [data-section="devices"] .dv-seg-on { position: absolute; top: 0; width: 64px; height: 3px; border-radius: 999px; background: rgba(245,247,250,.18); }
+  [data-section="devices"] .dv-seg-on { background: #F5F7FA; opacity: 0; transition: opacity .3s; }
+  [data-section="devices"] .dv-labels { left: 20px; top: 885px; display: flex; gap: 8px; z-index: 1; }
+  [data-section="devices"] .dv-labels button {
+    all: unset; cursor: pointer; width: 64px; padding: 6px 0; font: 400 13px/18px 'Geologica', system-ui, sans-serif; color: #A7B0BE; transition: color .3s;
+  }
+  [data-section="devices"] .dv-labels button[aria-current="true"] { color: #F5F7FA; }
+  [data-section="devices"] .dv-labels button:focus-visible { outline: 1px solid #B7D7FF; outline-offset: 2px; border-radius: 4px; }
+
+  /* Figma mobile timeline: headline rises, the first two cards slide in from the right, the first
+     progress segment fills (4 → 64 px over 2 s). */
+  .motion [data-section="devices"] [data-m] {
+    translate: var(--mx, 0px) var(--my, 0px);
+    transition: opacity var(--od, .72s) var(--ease) var(--d, 0ms), translate var(--td, .9s) var(--ease) var(--d, 0ms);
+  }
+  .motion [data-section="devices"].is-in [data-m] { opacity: 1; translate: none; }
+  .motion [data-section="devices"] .dv-seg-on[data-fill] { width: 4px; }
+  .motion [data-section="devices"].is-in .dv-seg-on[data-fill] { width: 64px; transition: width 2s linear 600ms, opacity .3s; }
+</style>
+  <div class="v2-canvas">
+    <div class="dv-abs" style="left:-200px; top:120px; width:780px; height:700px;" aria-hidden="true"><img alt="" src="assets/devices-glow.svg" width="780" height="700"></div>
+
+    <h2 class="dv-abs" data-m="up" style="--my:30px; --d:100ms; left:20px; top:96px;">Every device<br>has a number.</h2>
+
+    <div class="dv-abs dv-swipe" role="region" aria-label="Devices" tabindex="0">
+      <article class="dv-card" data-m="right" style="--mx:80px; --od:.8s; --td:1s; --d:400ms;">
+        <div class="dv-photo dv-wide"><img alt="iPhone, rear camera close-up" src="assets/devices-iphone.webp"></div>
+        <div class="dv-copy">
+          <p class="dv-kicker">iPhone</p>
+          <p class="dv-price">up to €612</p>
+          <p class="dv-body">The device traded most in every market. Screen, battery and casing are checked in under a minute.</p>
+          <div class="dv-stats"><div class="dv-stat"><b>58 s</b><span>Time to offer</span></div><div class="dv-stat"><b>4</b><span>Buyers per device</span></div></div>
+        </div>
+      </article>
+      <article class="dv-card" data-m="right" style="--mx:80px; --od:.8s; --td:1s; --d:600ms;">
+        <div class="dv-photo dv-ipad"><img alt="iPad" src="assets/devices-ipad.webp"></div>
+        <div class="dv-copy">
+          <p class="dv-kicker">iPad</p>
+          <p class="dv-price">up to €290</p>
+          <p class="dv-body">Big screens hold their value. Graded on the same scale as every iPhone, so offers stay comparable.</p>
+          <div class="dv-stats"><div class="dv-stat"><b>A–D</b><span>One grading scale</span></div><div class="dv-stat"><b>3</b><span>Markets compared</span></div></div>
+        </div>
+      </article>
+      <article class="dv-card">
+        <div class="dv-photo dv-wide"><img alt="MacBook" src="assets/devices-macbook.webp" loading="lazy"></div>
+        <div class="dv-copy">
+          <p class="dv-kicker">MacBook</p>
+          <p class="dv-price">up to €540</p>
+          <p class="dv-body">Laptops keep their value longest. Chip, memory and storage are read from the device, nothing to type.</p>
+          <div class="dv-stats"><div class="dv-stat"><b>M1–M5</b><span>Chips recognised</span></div><div class="dv-stat"><b>2 min</b><span>To a final offer</span></div></div>
+        </div>
+      </article>
+      <article class="dv-card">
+        <div class="dv-photo dv-wide"><img alt="Apple Watch" src="assets/devices-watch.webp" loading="lazy"></div>
+        <div class="dv-copy">
+          <p class="dv-kicker">Apple Watch</p>
+          <p class="dv-price">up to €140</p>
+          <p class="dv-body">Even the smallest device counts. Add it to a phone trade-in and the whole basket is worth more.</p>
+          <div class="dv-stats"><div class="dv-stat"><b>+€140</b><span>Per bundle</span></div><div class="dv-stat"><b>Series 4+</b><span>Accepted</span></div></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="dv-abs dv-progress" aria-hidden="true">
+      <div class="dv-seg" style="left:0;"></div><div class="dv-seg-on" data-fill style="left:0; opacity:1;"></div>
+      <div class="dv-seg" style="left:72px;"></div><div class="dv-seg-on" style="left:72px;"></div>
+      <div class="dv-seg" style="left:144px;"></div><div class="dv-seg-on" style="left:144px;"></div>
+      <div class="dv-seg" style="left:216px;"></div><div class="dv-seg-on" style="left:216px;"></div>
+    </div>
+    <div class="dv-abs dv-labels">
+      <button type="button" data-go="0" aria-current="true">iPhone</button>
+      <button type="button" data-go="1">iPad</button>
+      <button type="button" data-go="2">MacBook</button>
+      <button type="button" data-go="3">Watch</button>
+    </div>
+  </div>
+</section>

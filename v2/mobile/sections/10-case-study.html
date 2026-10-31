@@ -1,0 +1,102 @@
+<section data-section="case-study" id="case-study" class="v2-sec" data-tone="dark" style="--h:1233px; background: radial-gradient(calc(177.27px * var(--s)) calc(410.83px * var(--s)) at calc(50% - 88.64px * var(--s)) calc(657.33px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="case-study"] .cs-abs { position: absolute; }
+  [data-section="case-study"] .cs-abs > img { display: block; }
+  [data-section="case-study"] p { margin: 0; }
+  [data-section="case-study"] .cs-intro { left: 20px; top: 96px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  [data-section="case-study"] blockquote { margin: 0; width: 350px; font-weight: 400; font-size: 40px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="case-study"] .cs-lead { width: 340px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="case-study"] .cs-stats { display: flex; gap: 28px; white-space: nowrap; }
+  [data-section="case-study"] .cs-stat { display: flex; flex-direction: column; gap: 8px; }
+  [data-section="case-study"] .cs-stat b { font-weight: 300; font-size: 34px; letter-spacing: -0.03em; color: #F5F7FA; }
+  [data-section="case-study"] .cs-stat span { font-size: 12px; color: #B7D7FF; }
+  [data-section="case-study"] .cs-btn { display: inline-flex; align-items: center; height: 48px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(245,247,250,.24); font-size: 15px; color: #F5F7FA; white-space: pre; transition: background-color .3s, border-color .3s; }
+  [data-section="case-study"] .cs-btn:active { background: rgba(245,247,250,.08); border-color: rgba(245,247,250,.4); }
+  [data-section="case-study"] .cs-visual { left: 20px; top: 559px; width: 350px; height: 577.5px; }
+  [data-section="case-study"] .cs-card {
+    left: 0; width: 350px; border-radius: 22.75px; overflow: hidden; border: .875px solid rgba(183,215,255,.14);
+    background: rgba(255,255,255,.06); backdrop-filter: blur(13.125px); -webkit-backdrop-filter: blur(13.125px);
+    box-shadow: 0 26.25px 52.5px rgba(0,0,0,.45);
+  }
+  [data-section="case-study"] .cs-card p { white-space: nowrap; }
+  [data-section="case-study"] .cs-meta { left: 100.63px; top: 25.38px; font-size: 11.375px; color: #A7B0BE; }
+  [data-section="case-study"] .cs-big { left: 100.63px; top: 46.38px; font-weight: 300; font-size: 19.25px; color: #F5F7FA; }
+  [data-section="case-study"] .cs-device { left: 21.88px; top: 16.63px; overflow: hidden; box-shadow: 0 8.75px 17.5px rgba(0,0,0,.5); }
+  [data-section="case-study"] .cs-device img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  [data-section="case-study"] .cs-pills { left: 100.63px; top: 90.13px; display: flex; gap: 7px; }
+  [data-section="case-study"] .cs-pill { padding: 5.25px 10.5px; border-radius: 999px; background: rgba(255,255,255,.1); font-size: 11.375px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="case-study"] .cs-pill--ice { background: rgba(183,215,255,.95); color: #0F1115; }
+  [data-section="case-study"] .cs-bid { left: 23.63px; width: 301px; height: 45.5px; border-radius: 14px; overflow: hidden; }
+  [data-section="case-study"] .cs-bid .l { left: 15.75px; top: 14px; font-size: 13.125px; }
+  [data-section="case-study"] .cs-bid .r { top: 12.25px; font-size: 15.75px; }
+  [data-section="case-study"] .cs-pay { left: 100.63px; top: 90.13px; display: flex; gap: 8.75px; align-items: baseline; white-space: nowrap; }
+  [data-section="case-study"] .cs-fibre { overflow: visible; }
+
+  /* Figma mobile timeline: intro rises, the three step cards rise in one by one, the fibres draw
+     between them. Played once on arrival. */
+  .motion [data-section="case-study"] [data-m] {
+    translate: 0 var(--my, 0px);
+    transition: opacity var(--od, .72s) var(--ease) var(--d, 0ms), translate var(--td, .9s) var(--ease) var(--d, 0ms);
+  }
+  .motion [data-section="case-study"].is-in [data-m] { opacity: 1; translate: none; }
+  .motion [data-section="case-study"] [data-draw] { transition-duration: .5s; }
+</style>
+  <div class="v2-canvas">
+    <div class="cs-abs" style="left:-90px; top:-90px; width:760px; height:700px;" aria-hidden="true"><img alt="" src="assets/case-study-glow-top.svg" width="760" height="700"></div>
+    <div class="cs-abs" style="left:-300px; top:760px; width:700px; height:640px;" aria-hidden="true"><img alt="" src="assets/case-study-glow-bottom.svg" width="700" height="640"></div>
+
+    <div class="cs-abs cs-intro" data-m="up" style="--my:30px; --d:100ms;">
+      <blockquote>“Trade-in became<br>part of every<br>iPhone sale.”</blockquote>
+      <p class="cs-lead">In store and online, two local buyers compete for each device and the value goes straight to the new iPhone.</p>
+      <div class="cs-stats">
+        <div class="cs-stat"><b>+38%</b><span>Trade-in participation</span></div>
+        <div class="cs-stat"><b>+14%</b><span>Value per device</span></div>
+        <div class="cs-stat"><b>58 s</b><span>Time to offer</span></div>
+      </div>
+      <a class="cs-btn" href="#closing">Read the case  →</a>
+    </div>
+
+    <div class="cs-abs cs-visual" aria-label="Trade-in flow">
+      <div class="cs-abs cs-card" data-m="up" style="--my:40px; --od:.64s; --td:.8s; --d:600ms; top:0; height:147px;">
+        <div class="cs-abs cs-device" style="width:54.25px; height:111.125px; border-radius:9.625px;"><img alt="iPhone 13" src="assets/case-study-iphone13.webp"></div>
+        <p class="cs-abs cs-meta">11:43 · Store 14, Vilnius</p>
+        <p class="cs-abs cs-big">iPhone 13 checked</p>
+        <div class="cs-abs cs-pills"><span class="cs-pill cs-pill--ice">Grade A</span><span class="cs-pill">Battery 88 %</span><span class="cs-pill">58 s</span></div>
+      </div>
+
+      <div class="cs-abs cs-card" data-m="up" style="--my:40px; --od:.64s; --td:.8s; --d:1300ms; top:203px; height:171.5px;">
+        <p class="cs-abs" style="left:23.63px; top:21.88px; font-size:11.375px; color:#A7B0BE;">Two local buyers compete</p>
+        <div class="cs-abs cs-bid" style="top:49.88px; background:rgba(255,255,255,.05);">
+          <p class="cs-abs l" style="color:#A7B0BE;">Buyer A · Lithuania</p>
+          <p class="cs-abs r" style="left:245.88px; color:rgba(245,247,250,.6);">€598</p>
+        </div>
+        <div class="cs-abs cs-bid" style="top:102.38px; background:rgba(48,71,236,.9); color:#F5F7FA;">
+          <p class="cs-abs l" style="white-space:pre;">Buyer B · Latvia  ·  Best</p>
+          <p class="cs-abs r" style="left:248.5px;">€612</p>
+        </div>
+      </div>
+
+      <div class="cs-abs cs-card" data-m="up" style="--my:40px; --od:.64s; --td:.8s; --d:2000ms; top:430.5px; height:147px;">
+        <div class="cs-abs cs-device" style="width:52.5px; height:112.875px; border-radius:8.75px;"><img alt="iPhone 18 Pro" src="assets/case-study-iphone18pro.webp"></div>
+        <p class="cs-abs cs-meta">Applied to the new iPhone</p>
+        <p class="cs-abs cs-big">iPhone 18 Pro</p>
+        <div class="cs-abs cs-pay">
+          <p style="font-size:13.125px; color:rgba(167,176,190,.7);">€1,199</p>
+          <p style="font-size:17.5px; color:#B7D7FF;">You pay €587</p>
+        </div>
+      </div>
+
+      <!-- Fibres between the steps (the Figma fibre vectors, inline so they can draw in) and their end nodes -->
+      <svg class="cs-abs cs-fibre" style="left:69.35px; top:147px;" width="211.3" height="56" viewBox="0 0 211.3 56" fill="none" aria-hidden="true">
+        <path pathLength="1" data-draw style="--d:1200ms;" d="M0.65 0C0.65 36 210.65 20 210.65 56" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/>
+      </svg>
+      <div class="cs-abs" style="left:67px; top:144px; width:6px; height:6px;" aria-hidden="true"><img alt="" src="assets/case-study-node.svg" width="6" height="6"></div>
+      <div class="cs-abs" style="left:277px; top:200px; width:6px; height:6px;" aria-hidden="true"><img alt="" src="assets/case-study-node.svg" width="6" height="6"></div>
+      <svg class="cs-abs cs-fibre" style="left:69.35px; top:374.5px;" width="211.3" height="56" viewBox="0 0 211.3 56" fill="none" aria-hidden="true">
+        <path pathLength="1" data-draw style="--d:1900ms;" d="M210.65 0C210.65 36 0.65 20 0.65 56" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/>
+      </svg>
+      <div class="cs-abs" style="left:277px; top:371.5px; width:6px; height:6px;" aria-hidden="true"><img alt="" src="assets/case-study-node.svg" width="6" height="6"></div>
+      <div class="cs-abs" style="left:67px; top:427.5px; width:6px; height:6px;" aria-hidden="true"><img alt="" src="assets/case-study-node.svg" width="6" height="6"></div>
+    </div>
+  </div>
+</section>

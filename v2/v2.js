@@ -3,8 +3,11 @@
   const root = document.documentElement;
   // Scale the 1440×900 design so one section fits the screen; spare width becomes side bleed.
   const fit = () => {
-    const s = Math.min(window.innerWidth / 1440, Math.max(window.innerHeight, 560) / 900);
-    root.style.setProperty('--s', String(Math.min(s, 1.6)));
+    // The phone page (html.m) is a 390-wide design scaled to the screen width.
+    const s = root.classList.contains('m')
+      ? window.innerWidth / 390
+      : Math.min(window.innerWidth / 1440, Math.max(window.innerHeight, 560) / 900);
+    root.style.setProperty('--s', String(Math.min(s, root.classList.contains('m') ? 2 : 1.6)));
   };
   fit();
   window.addEventListener('resize', fit);

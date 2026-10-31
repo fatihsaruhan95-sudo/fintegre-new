@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" class="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fintegre — Make every device worth more (v2)</title>
+<script>
+  // Phones get this page; wider screens go back to the desktop v2.
+  if (innerWidth >= 768) location.replace('../' + location.hash);
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="../v2.css">
+<link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+<nav class="ver-switch" aria-label="Site version">
+  <a href="/">V1</a>
+  <a href="/v2/" aria-current="page">V2</a>
+</nav>
+
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="#hero" class="v2-logo" aria-label="Fintegre home"><img alt="" src="../../assets/header-mark.svg">Fintegre</a>
+    <button type="button" class="m-burger" data-menu-open aria-label="Open menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<main class="page">
+<!--SECTIONS-->
+</main>
+<script src="../v2.js"></script>
+<script>
+  // Marks the top of the page, where the version switch shows below the hero's top bar.
+  V2.onScroll(() => document.documentElement.classList.toggle('m-top', scrollY < 200));
+</script>
+<!--SCRIPTS-->
+</body>
+</html>

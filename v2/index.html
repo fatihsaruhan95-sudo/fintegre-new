@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <script>
+  // Phones get the mobile layout.
+  if (innerWidth < 768) location.replace('mobile/' + location.hash);
   // Hide the page until fonts, Tailwind and images are ready, so the hero entrance is seen from its first frame.
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
 </script>

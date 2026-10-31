@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="58.9758" height="85.6427" viewBox="0 0 58.9758 85.6427" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Bar &#194;&#183; RO" clip-path="url(#clip0_0_4)">
+<path id="Vector" d="M1.83105e-06 85.6422H19.04L58.9758 -0.000429687H39.9358L1.83105e-06 85.6422Z" fill="url(#paint0_linear_0_4)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_4" x1="1.83105e-06" y1="-0.000429687" x2="1.83105e-06" y2="85.6422" gradientUnits="userSpaceOnUse">
+<stop stop-color="#5D74FF"/>
+<stop offset="1" stop-color="#3047EC" stop-opacity="0.15"/>
+</linearGradient>
+<clipPath id="clip0_0_4">
+<rect width="58.9758" height="85.6427" fill="white"/>
+</clipPath>
+</defs>
+</svg>

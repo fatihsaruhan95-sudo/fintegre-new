@@ -1,0 +1,13 @@
+/* Phone layout of v2: the same section system on a 390-wide design canvas (v2.js scales it to the screen width). */
+.m .v2-canvas { width: 390px; }
+.m .v2-header__bar { width: 358px; height: 56px; padding: 0 8px 0 18px; top: calc(12px * var(--s)); }
+.m .v2-nav, .m .v2-cta { display: none; }
+.m-burger { width: 40px; height: 40px; border: 0; border-radius: 999px; background: var(--smoke); display: grid; place-content: center; gap: 5px; cursor: pointer; }
+.m-burger i { display: block; width: 16px; height: 1.5px; background: var(--graphite); }
+.v2-header.on-light .m-burger { background: var(--graphite); }
+.v2-header.on-light .m-burger i { background: var(--smoke); }
+/* The V1|V2 switch never covers content: under the hero's top bar (right side) while at the top of the page,
+   inside the floating header pill while it is shown, hidden otherwise. */
+.m .ver-switch { top: calc(72px * var(--s)); bottom: auto; left: auto; right: 16px; translate: none; opacity: 0; pointer-events: none; transition: opacity .3s var(--ease), top .5s var(--ease), right .5s var(--ease); }
+.m.m-top .ver-switch { opacity: 1; pointer-events: auto; }
+.m.v2-hdr-on .ver-switch { opacity: 1; pointer-events: auto; translate: none; top: calc(25px * var(--s)); right: calc(50% - 52px); }

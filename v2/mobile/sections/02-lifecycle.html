@@ -1,0 +1,52 @@
+<section data-section="lifecycle" id="lifecycle" class="v2-sec" data-tone="light" style="--h:891px; background:#F5F7FA;">
+<style>
+  [data-section="lifecycle"] .lc-abs { position: absolute; }
+  [data-section="lifecycle"] p { margin: 0; }
+  [data-section="lifecycle"] h2 { margin: 0; left: 20px; top: 96px; width: 350px; font-weight: 400; font-size: 42px; line-height: 1; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="lifecycle"] .lc-body { left: 20px; top: 200px; width: 340px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.7); }
+  [data-section="lifecycle"] .lc-card { left: 20px; top: 315px; width: 350px; padding: 28px 24px; border-radius: 20px; background: #fff; display: flex; flex-direction: column;
+    box-shadow: inset 0 0 0 1px rgba(15,17,21,.08), 0 24px 60px -20px rgba(15,17,21,.08); color: #0F1115; }
+  [data-section="lifecycle"] .lc-meta { font-size: 12px; line-height: normal; color: rgba(15,17,21,.42); white-space: nowrap; }
+  [data-section="lifecycle"] .lc-device { margin-top: 18px; font-size: 22px; line-height: normal; letter-spacing: -0.01em; white-space: nowrap; }
+  [data-section="lifecycle"] .lc-rows { margin: 18px 0 0; padding: 0; }
+  [data-section="lifecycle"] .lc-row { display: flex; justify-content: space-between; padding: 12px 0; border-top: 1px solid rgba(15,17,21,.08); font-size: 12px; line-height: normal; white-space: nowrap; }
+  [data-section="lifecycle"] .lc-row dt { color: rgba(15,17,21,.5); }
+  [data-section="lifecycle"] .lc-row dd { margin: 0; color: #0F1115; }
+  [data-section="lifecycle"] .lc-foot { margin-top: 18px; display: flex; align-items: flex-end; justify-content: space-between; }
+  [data-section="lifecycle"] .lc-price { font-weight: 300; font-size: 30px; line-height: normal; white-space: nowrap; }
+  [data-section="lifecycle"] .lc-btn { padding: 10px 22px; border-radius: 999px; background: #3047EC; color: #F5F7FA; font-size: 15px; line-height: normal; white-space: nowrap; }
+  /* Ticker: two identical halves so a -50% shift loops seamlessly (Figma: 140 px per 8 s ≈ 17.5 px/s). */
+  [data-section="lifecycle"] .lc-ticker { left: -200px; top: 771px; display: flex; width: max-content; font-weight: 300; font-size: 40px; line-height: normal; white-space: nowrap; will-change: transform; }
+  [data-section="lifecycle"] .lc-ticker span { margin-right: 18px; color: rgba(15,17,21,.32); letter-spacing: -0.03em; }
+  [data-section="lifecycle"] .lc-ticker span.s { color: rgba(15,17,21,.2); letter-spacing: 0; }
+  [data-section="lifecycle"] .lc-ticker span.v { color: #3047EC; }
+  .motion [data-section="lifecycle"] .lc-ticker { animation: lc-tick var(--lc-dur, 50s) linear infinite; animation-play-state: paused; }
+  .motion [data-section="lifecycle"] .lc-ticker.is-run { animation-play-state: running; }
+  @keyframes lc-tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .motion [data-section="lifecycle"]:not(.is-in) [data-m="up"] { translate: 0 var(--ty, 40px); }
+</style>
+  <div class="v2-canvas">
+    <h2 class="lc-abs" data-m="up" style="--d:100ms; --ty:30px;">Soft for people.<br>Sharp for data.</h2>
+    <p class="lc-abs lc-body" data-m="up" style="--d:300ms; --ty:20px;">Every trade-in moves through the same five steps. Your customer sees one price; Fintegre runs everything underneath.</p>
+
+    <div class="lc-abs lc-card" data-m="up" style="--d:600ms; --ty:60px;">
+      <p class="lc-meta">Trade-in · Store 14 · Vilnius</p>
+      <p class="lc-device">iPhone 15 Pro, 256 GB</p>
+      <dl class="lc-rows">
+        <div class="lc-row"><dt>Screen</dt><dd>Grade A</dd></div>
+        <div class="lc-row"><dt>Battery</dt><dd>91 %</dd></div>
+        <div class="lc-row"><dt>Casing</dt><dd>Grade A</dd></div>
+        <div class="lc-row"><dt>Market</dt><dd>4 buyers</dd></div>
+        <div class="lc-row"><dt>Route</dt><dd style="color:#3047EC;">2 / 5</dd></div>
+      </dl>
+      <div class="lc-foot">
+        <p class="lc-price">€ 612</p>
+        <span class="lc-btn">Apply as credit</span>
+      </div>
+    </div>
+
+    <div class="lc-abs lc-ticker" aria-label="Recover, Assess, Value, Route, Transact">
+      <span aria-hidden="true">Recover</span><span class="s" aria-hidden="true">/</span><span aria-hidden="true">Assess</span><span class="s" aria-hidden="true">/</span><span class="v" aria-hidden="true">Value</span><span class="s" aria-hidden="true">/</span><span aria-hidden="true">Route</span><span class="s" aria-hidden="true">/</span><span aria-hidden="true">Transact</span><span class="s" aria-hidden="true">/</span><span aria-hidden="true">Recover</span><span class="s" aria-hidden="true">/</span><span aria-hidden="true">Assess</span><span class="s" aria-hidden="true">/</span><span class="v" aria-hidden="true">Value</span><span class="s" aria-hidden="true">/</span><span aria-hidden="true">Route</span><span class="s" aria-hidden="true">/</span><span aria-hidden="true">Transact</span><span class="s" aria-hidden="true">/</span>
+    </div>
+  </div>
+</section>
