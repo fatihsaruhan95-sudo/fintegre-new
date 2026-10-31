@@ -46,16 +46,13 @@
     else reveal.then(() => io.observe(s));
   });
 
-  // Header: hidden over the hero, shown when scrolling up; switches to the light style over light sections.
+  // Header: hidden over the hero (it has its own top bar), then always shown; switches to the light style
+  // over light sections.
   const header = document.querySelector('.v2-header');
-  // Read on every check: some pages switch a section's tone at runtime (e.g. the builder's light step).
   const lights = () => document.querySelectorAll('.v2-sec[data-tone="light"]');
-  let lastY = scrollY;
   window.V2.onScroll(() => {
-    const y = scrollY, heroH = document.querySelector('.v2-sec')?.offsetHeight || 900;
-    if (y < heroH * 0.8 || y > lastY + 4) header.classList.remove('is-visible');
-    else if (y < lastY - 4) header.classList.add('is-visible');
-    lastY = y;
+    const heroH = document.querySelector('.v2-sec')?.offsetHeight || 900;
+    header.classList.toggle('is-visible', scrollY >= heroH * 0.8);
     root.classList.toggle('v2-hdr-on', header.classList.contains('is-visible'));
     const probe = 60;
     header.classList.toggle('on-light', [...lights()].some((s) => { const r = s.getBoundingClientRect(); return r.top <= probe && r.bottom >= probe; }));
