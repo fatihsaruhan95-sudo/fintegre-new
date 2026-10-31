@@ -18,11 +18,6 @@
 <link rel="stylesheet" href="/v2/mobile/menu.css">
 </head>
 <body>
-<nav class="ver-switch" aria-label="Site version">
-  <a href="/">V1</a>
-  <a href="/v2/" aria-current="page">V2</a>
-</nav>
-
 <header class="v2-header" aria-label="Main">
   <div class="v2-header__bar">
     <a href="/v2/" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="/assets/header-mark.svg">Fintegre</a>
@@ -560,10 +555,6 @@
 
 <script src="/v2/v2.js"></script>
 <script src="/v2/mobile/menu.js"></script>
-<script>
-  // Marks the top of the page, where the version switch shows below the hero's top bar.
-  V2.onScroll(() => document.documentElement.classList.toggle('m-top', scrollY < 200));
-</script>
 <script>
 // Report hero: Share uses the native share sheet when there is one, else copies the link.
 (() => {
