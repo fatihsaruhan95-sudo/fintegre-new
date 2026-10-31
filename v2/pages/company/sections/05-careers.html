@@ -2,9 +2,19 @@
 <style>
   [data-section="careers"] p, [data-section="careers"] h2 { margin: 0; }
   [data-section="careers"] .cr-glow { position: absolute; max-width: none; pointer-events: none; }
-  [data-section="careers"] .cr-photo { position: absolute; left: 620px; top: 40px; width: 1200px; height: 633px; mix-blend-mode: lighten; pointer-events: none;
-    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 60%, transparent 100%); }
-  [data-section="careers"] .cr-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  /* Photo: an engineer and an analyst at the sticky-note wall, with indigo tint and scrims (as the hero). */
+  [data-section="careers"] .cr-a { position: absolute; pointer-events: none; }
+  [data-section="careers"] .cr-photo { left: 240px; top: 0; width: 1300px; height: 731px; overflow: hidden; }
+  [data-section="careers"] .cr-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
+  [data-section="careers"] .cr-tint { left: 240px; top: 0; width: 1300px; height: 731px; background: rgba(20,30,110,.08); }
+  [data-section="careers"] .cr-scrim { left: 0; top: 0; width: 900px; height: 900px;
+    background: linear-gradient(90deg, #0F1115 0%, rgba(15,17,21,.92) 42%, rgba(15,17,21,.55) 62%, rgba(15,17,21,.12) 82%, rgba(15,17,21,0) 100%); }
+  [data-section="careers"] .cr-scrim::before { content: ''; position: absolute; right: 100%; top: 0; width: 2000px; height: 100%; background: #0F1115; }
+  [data-section="careers"] .cr-fade-top { left: -1000px; top: 0; width: 3440px; height: 110px;
+    background: linear-gradient(180deg, rgba(15,17,21,.9) 0%, rgba(15,17,21,.45) 50%, rgba(15,17,21,0) 100%); }
+  [data-section="careers"] .cr-fade-bot { left: -1000px; top: 500px; width: 3440px; height: 400px;
+    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.6) 35%, rgba(15,17,21,.92) 65%, #0F1115 100%); }
+  [data-section="careers"] .cr-room { left: 700px; top: 520px; width: 760px; height: 420px; border-radius: 50%; background: rgba(48,71,236,.42); opacity: .5; filter: blur(90px); }
   [data-section="careers"] .cr-copy { position: absolute; left: 120px; top: 150px; width: 560px; }
   [data-section="careers"] h2 { font-weight: 400; font-size: 56px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
   [data-section="careers"] .cr-lede { margin-top: 19.3px; width: 440px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
@@ -49,15 +59,19 @@
   [data-section="careers"] .cr-role__d a:hover { background: #fff; }
   .motion [data-section="careers"] [data-m="up"] { translate: 0 var(--ty, 40px); }
   .motion [data-section="careers"].is-in [data-m] { translate: none; }
-  .motion [data-section="careers"] .cr-photo { opacity: 0; transition: opacity 1.3s var(--ease) 150ms, translate 1.6s var(--ease) 150ms; translate: 40px 0; }
-  .motion [data-section="careers"].is-in .cr-photo { opacity: 1; translate: none; }
+  .motion [data-section="careers"] .cr-photo { opacity: 0; transition: opacity 1.3s var(--ease) 100ms; }
+  .motion [data-section="careers"] .cr-photo img { scale: 1.06; transition: scale 4.5s var(--ease) 100ms; }
+  .motion [data-section="careers"].is-in .cr-photo { opacity: 1; }
+  .motion [data-section="careers"].is-in .cr-photo img { scale: 1; }
 </style>
   <div class="v2-canvas">
-    <!-- Ground repeated inside the canvas so the lighten-blended photo has a backdrop (the scaled canvas is its own blend group). -->
-    <div style="position:absolute; left:-2000px; top:0; width:5440px; height:900px; pointer-events:none; background: radial-gradient(720px 321.43px at 2576px 450px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;"></div>
-    <img class="cr-glow" alt="" src="/v2/assets/company-careers-glow-1.svg" style="left:700px; top:-80px; width:1060px; height:960px;">
+    <div class="cr-a cr-photo"><img alt="Two Fintegre colleagues, an engineer and an analyst, laughing at a glass wall of sticky notes in the Vilnius office at night" src="/v2/assets/company-careers-team.webp" width="1536" height="864" loading="lazy" decoding="async"></div>
+    <div class="cr-a cr-tint"></div>
+    <div class="cr-a cr-scrim"></div>
+    <div class="cr-a cr-fade-top"></div>
+    <div class="cr-a cr-fade-bot"></div>
+    <div class="cr-a cr-room"></div>
     <img class="cr-glow" alt="" src="/v2/assets/company-careers-glow-2.svg" style="left:-420px; top:440px; width:980px; height:780px;">
-    <div class="cr-photo"><img alt="Corner of an iPhone with its camera module" src="/v2/assets/company-careers-iphone.webp" width="1800" height="950"></div>
 
     <div class="cr-copy" data-m="up" style="--d:100ms">
       <h2>Build what sits<br>behind every<br>trade-in.</h2>
