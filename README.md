@@ -2,6 +2,10 @@
 
 The new Fintegre.com homepage as a static HTML build, converted from the Figma design (FTG New Flow, "Home — v3").
 
+## Design system
+
+Designing in Figma or building pages? Start with [docs/design-system](docs/design-system/README.md): how to work in the Figma file, the foundations, one file per component, the brand rule sets and the review checklist.
+
 ## Run it
 
 Open `index.html` through any static server, for example:
