@@ -1,0 +1,98 @@
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:1010px; background:#0F1115;">
+<style>
+  /* 390-wide adaptation of the desktop "Hero · Mission" (team photo, ops card, stat chips). */
+  [data-section="hero"] .ch-a { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+
+  /* Top bar (drawn in the hero, like the other mobile heroes) */
+  [data-section="hero"] .ch-top { left: 12px; top: 12px; width: 366px; height: 60px; padding: 8px 8px 8px 18px; border-radius: 999px; z-index: 2;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: inset 0 0 0 1px rgba(183,215,255,.14), 0 16px 40px rgba(0,0,0,.35); }
+  [data-section="hero"] .ch-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .ch-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .ch-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .ch-actions { display: flex; align-items: center; gap: 6px; }
+  [data-section="hero"] .ch-pill { height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .ch-burger { width: 44px; height: 44px; border: 0; padding: 0; border-radius: 999px; background: rgba(255,255,255,.08);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  [data-section="hero"] .ch-burger i { display: block; height: 1.5px; border-radius: 1px; background: #F5F7FA; }
+
+  [data-section="hero"] .ch-room { left: -330px; top: 260px; width: 760px; height: 624px; max-width: none; pointer-events: none; }
+
+  /* Copy */
+  [data-section="hero"] .ch-copy { left: 20px; top: 116px; width: 350px; z-index: 1; }
+  [data-section="hero"] h1 { margin: 0; font-weight: 400; font-size: 44px; line-height: 1.02; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .ch-lede { margin-top: 20px; width: 345px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
+
+  /* Photo with tint and fades */
+  [data-section="hero"] .ch-photo { left: 0; top: 400px; width: 390px; height: 520px; overflow: hidden; }
+  [data-section="hero"] .ch-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 32% 50%; transform-origin: 50% 50%; }
+  [data-section="hero"] .ch-photo::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, #0F1115 0%, rgba(15,17,21,.55) 18%, rgba(15,17,21,0) 34%, rgba(15,17,21,0) 66%, rgba(15,17,21,.96) 100%), rgba(20,30,110,.14); }
+
+  /* Ops card, fibre, node */
+  [data-section="hero"] .ch-card { left: 140px; top: 430px; width: 230px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; padding: 14px 18px; border-radius: 20px; line-height: normal; white-space: nowrap;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="hero"] .ch-card__k { font-size: 12px; color: #B7D7FF; }
+  [data-section="hero"] .ch-card__v { font-weight: 300; font-size: 18px; color: #F5F7FA; font-variant-numeric: tabular-nums; }
+  [data-section="hero"] .ch-card__s { font-weight: 300; font-size: 12px; color: #A7B0BE; }
+  [data-section="hero"] .ch-fibre { left: 0; top: 0; overflow: visible; pointer-events: none; }
+  [data-section="hero"] .ch-node { left: 326px; top: 761px; width: 34px; height: 34px; }
+  [data-section="hero"] .ch-node img { display: block; width: 34px; height: 34px; }
+
+  /* Stat chips */
+  [data-section="hero"] .ch-chips { left: 20px; top: 872px; width: 350px; display: flex; flex-wrap: wrap; gap: 6px; }
+  [data-section="hero"] .ch-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px 10px 14px; border-radius: 999px; white-space: nowrap; line-height: normal;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  [data-section="hero"] .ch-chip img { width: 6px; height: 6px; display: block; }
+  [data-section="hero"] .ch-chip b { font-weight: 400; font-size: 22px; color: #F5F7FA; }
+  [data-section="hero"] .ch-chip span { font-weight: 300; font-size: 13px; color: #A7B0BE; }
+  [data-section="hero"] .ch-chip--indigo { background: rgba(48,71,236,.92); }
+  [data-section="hero"] .ch-chip--indigo span { color: rgba(245,247,250,.85); }
+
+  /* Entrance */
+  .motion [data-section="hero"] [data-cm] { opacity: 0; translate: 0 var(--ty, 0px);
+    transition: opacity var(--to, .8s) var(--ease) var(--d, 0ms), translate var(--tt, 1s) var(--ease) var(--d, 0ms), scale .7s var(--spring) var(--d, 0ms); }
+  .motion [data-section="hero"] [data-cm="pop"] { scale: .6; }
+  .motion [data-section="hero"].is-in [data-cm] { opacity: 1; translate: none; scale: 1; }
+  .motion [data-section="hero"] .ch-photo { opacity: 0; transition: opacity 1.2s var(--ease) 300ms; }
+  .motion [data-section="hero"] .ch-photo img { scale: 1.06; transition: scale 4.5s var(--ease) 300ms; }
+  .motion [data-section="hero"].is-in .ch-photo { opacity: 1; }
+  .motion [data-section="hero"].is-in .ch-photo img { scale: 1; }
+  .motion [data-section="hero"] [data-draw] { transition-duration: 1s; }
+</style>
+  <div class="v2-canvas">
+    <div class="ch-a ch-photo"><img alt="The Fintegre team at work in the Vilnius office" src="/v2/assets/company-hero-team.webp" width="1536" height="864"></div>
+    <img class="ch-a ch-room" alt="" src="/v2/assets/company-hero-roomlight.svg">
+
+    <div class="ch-a ch-top">
+      <a href="/v2/" class="ch-logo" aria-label="Fintegre home"><span class="ch-mark"><img alt="" src="/v2/assets/hero-logo.svg"></span>Fintegre</a>
+      <div class="ch-actions">
+        <a href="/v2/design-your-program/" class="ch-pill">Design your program</a>
+        <button type="button" class="ch-burger" data-menu-open aria-label="Open menu" aria-controls="m-menu" aria-expanded="false"><i style="width:18px"></i><i style="width:12px"></i></button>
+      </div>
+    </div>
+
+    <div class="ch-a ch-copy" data-cm style="--d:200ms; --to:.8s; --tt:1s; --ty:30px;">
+      <h1>Make every<br>device worth<br>more.</h1>
+      <p class="ch-lede">Fintegre is the platform behind trade-in and device programs at retailers, telecom operators and device brands. We keep devices in use longer and put their value back in the customer’s hand.</p>
+    </div>
+
+    <svg class="ch-a ch-fibre" width="390" height="1010" viewBox="0 0 390 1010" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:2300ms" d="M366 528C392 610 372 700 343 778" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <div class="ch-a ch-node" data-cm="pop" style="--d:2200ms; --to:.3s;" aria-hidden="true"><img alt="" src="/v2/assets/company-hero-node.svg"></div>
+
+    <div class="ch-a ch-card" data-cm style="--d:1800ms; --to:.72s; --tt:.9s; --ty:30px;">
+      <p class="ch-card__k">Vilnius ops · today</p>
+      <p class="ch-card__v"><span data-ops-count>4,812</span> devices checked</p>
+      <p class="ch-card__s">across 12 markets · avg. 41 s</p>
+    </div>
+
+    <div class="ch-a ch-chips">
+      <div class="ch-chip" data-cm style="--d:1200ms; --to:.56s; --tt:.7s; --ty:24px;"><img alt="" src="/v2/assets/company-dot-ice.svg"><b>2019</b><span>Founded in Vilnius</span></div>
+      <div class="ch-chip" data-cm style="--d:1320ms; --to:.56s; --tt:.7s; --ty:24px;"><img alt="" src="/v2/assets/company-dot-ice.svg"><b>12</b><span>Markets</span></div>
+      <div class="ch-chip" data-cm style="--d:1440ms; --to:.56s; --tt:.7s; --ty:24px;"><img alt="" src="/v2/assets/company-dot-ice.svg"><b>1.2M</b><span>Devices checked</span></div>
+      <div class="ch-chip ch-chip--indigo" data-cm style="--d:1560ms; --to:.56s; --tt:.7s; --ty:24px;"><img alt="" src="/v2/assets/company-dot-ice.svg"><b>90</b><span>People</span></div>
+    </div>
+  </div>
+</section>

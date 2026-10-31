@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="832.7" height="568" viewBox="0 0 832.7 568" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Room light &#194;&#183; 219:3085" filter="url(#filter0_f_0_25)">
+<ellipse cx="416.35" cy="284" rx="366.35" ry="234" fill="url(#paint0_radial_0_25)"/>
+</g>
+<defs>
+<filter id="filter0_f_0_25" x="0" y="0" width="832.7" height="568" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_0_25"/>
+</filter>
+<radialGradient id="paint0_radial_0_25" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(416.35 284) scale(366.35 234)">
+<stop stop-color="#B7D7FF" stop-opacity="0.35"/>
+<stop offset="1" stop-color="#B7D7FF" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>

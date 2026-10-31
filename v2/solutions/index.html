@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solutions — Fintegre (v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  // Phones get the mobile layout.
+  if (innerWidth < 768) location.replace('/v2/mobile/solutions/' + location.hash);
+  // Hide the page until fonts, Tailwind and images are ready, so the hero entrance is seen from its first frame.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="/v2/v2.css">
+</head>
+<body>
+<nav class="ver-switch" aria-label="Site version">
+  <a href="/">V1</a>
+  <a href="/v2/" aria-current="page">V2</a>
+</nav>
+
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="/v2/" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="/assets/header-mark.svg">Fintegre</a>
+    <nav class="v2-nav">
+      <a href="/v2/platform/">Platform</a>
+      <a href="/v2/solutions/">Solutions</a>
+      <a href="/v2/intelligence/">Intelligence</a>
+      <a href="/v2/customers/">Customers</a>
+      <a href="/v2/insights/">Insights</a>
+      <a href="/v2/company/">Company</a>
+    </nav>
+    <a href="/v2/design-your-program/" class="v2-cta">Design your program</a>
+  </div>
+</header>
+
+<main class="page">
+<section data-section="hero" id="hero" class="v2-sec" data-sol data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 261.82px * var(--s)) calc(540px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  /* Shared by every Solutions section (all carry data-sol). */
+  [data-sol] p { margin: 0; }
+  [data-sol] .a { position: absolute; }
+  [data-sol] .nw { white-space: nowrap; }
+  [data-sol] .glow { position: absolute; pointer-events: none; max-width: none; display: block; }
+  [data-sol] .fib { position: absolute; overflow: visible; pointer-events: none; }
+  [data-sol] .dev { display: block; width: 100%; height: 100%; object-fit: contain; }
+  [data-sol] .btn { display: inline-flex; align-items: center; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s, box-shadow .25s, color .25s; }
+  [data-sol] .btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-sol] .btn--light:hover { background: #fff; }
+  [data-sol] .btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-sol] .btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+  [data-sol] .btn--dark { background: #0F1115; color: #F5F7FA; }
+  [data-sol] .btn--dark:hover { background: #262a33; }
+  [data-sol] .chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap; font-size: 14px; line-height: normal; color: #F5F7FA;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  [data-sol] .chip img, [data-sol] .dot { width: 7px; height: 7px; display: block; flex: none; }
+  [data-sol] .glass { background: rgba(255,255,255,.07); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    box-shadow: inset 0 0 0 1px rgba(183,215,255,.16), 0 30px 60px rgba(0,0,0,.5); }
+  [data-sol] .eyebrow { font-size: 14px; line-height: normal; color: #3047EC; white-space: nowrap; }
+  [data-sol][data-tone="dark"] .eyebrow { color: #B7D7FF; }
+
+  /* Entrance motion: Figma timeline (seconds after the section arrives) → --d; offsets via --tx/--ty, pops via --sc. */
+  .motion [data-sol] [data-sm] { opacity: 0; translate: var(--tx, 0px) var(--ty, 0px); scale: var(--sc, 1);
+    transition: opacity var(--to, .8s) var(--ease) var(--d, 0ms), translate var(--tt, 1.1s) var(--ease) var(--d, 0ms), scale var(--tt, .7s) var(--ease) var(--d, 0ms); }
+  .motion [data-sol].is-in [data-sm] { opacity: 1; translate: none; scale: 1; }
+  .motion [data-sol] [data-grow] { transform: scaleX(0); transform-origin: 0 50%; transition: transform var(--tt, 1s) var(--ease) var(--d, 0ms); }
+  .motion [data-sol].is-in [data-grow] { transform: none; }
+  .motion [data-sol] [data-draw] { transition-duration: .8s; }
+
+  /* Hero */
+  [data-section="hero"] .h-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; }
+  [data-section="hero"] .h-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .h-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .h-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .h-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .h-nav a { transition: color .2s; }
+  [data-section="hero"] .h-nav a:hover, [data-section="hero"] .h-nav a[aria-current] { color: #F5F7FA; }
+  [data-section="hero"] .h-copy { left: 120px; top: 214px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  [data-section="hero"] h1 { margin: 0; font-weight: 400; font-size: 84px; line-height: .96; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .h-lede { width: 510px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .h-ctas { display: flex; gap: 12px; }
+  [data-section="hero"] .h-ctas .btn { padding: 14px 22px; }
+  [data-section="hero"] .h-seg { top: 770px; width: 276px; height: 60px; display: block; }
+  [data-section="hero"] .h-seg i { position: absolute; left: 0; top: 0; width: 276px; height: 2px; background: rgba(245,247,250,.18); transition: background-color .3s; }
+  [data-section="hero"] .h-seg b { position: absolute; left: 0; top: 20px; font-weight: 400; font-size: 16px; line-height: normal; color: rgba(245,247,250,.72); white-space: nowrap; transition: color .3s; }
+  [data-section="hero"] .h-seg span { position: absolute; left: 0; top: 44px; font-weight: 300; font-size: 13px; line-height: normal; color: #A7B0BE; white-space: nowrap; }
+  [data-section="hero"] .h-seg.is-on i, [data-section="hero"] .h-seg:hover i { background: #F5F7FA; }
+  [data-section="hero"] .h-seg.is-on b, [data-section="hero"] .h-seg:hover b { color: #F5F7FA; }
+  [data-section="hero"] .h-card { left: 916px; top: 164px; display: flex; flex-direction: column; gap: 4px; padding: 18px 22px; border-radius: 24px; }
+  [data-section="hero"] .h-card__label { font-size: 13px; line-height: normal; color: #A7B0BE; }
+  [data-section="hero"] .h-card__price { font-weight: 300; font-size: 48px; line-height: normal; letter-spacing: -0.03em; color: #F5F7FA; }
+  [data-section="hero"] .h-card__row { display: flex; gap: 8px; align-items: center; font-weight: 300; font-size: 13px; line-height: normal; color: rgba(245,247,250,.75); }
+  [data-section="hero"] .chip--blue { background: #3047EC; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-hero-glow-1.svg" style="left:640px; top:-120px; width:1120px; height:960px;">
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-hero-glow-2.svg" style="left:-380px; top:420px; width:960px; height:780px;">
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-hero-room-light.svg" style="left:640px; top:210px; width:820px; height:540px;">
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-hero-floor-light.svg" style="left:580px; top:570px; width:960px; height:180px;">
+    <div class="a" style="left:0; top:660px; width:1440px; height:240px; background:linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.92) 70%, #0F1115 100%);"></div>
+
+    <div class="a h-top">
+      <a href="/v2/" class="h-logo" aria-label="Fintegre home"><span class="h-mark"><img decoding="async" alt="" src="/v2/assets/hero-logo.svg"></span>Fintegre</a>
+      <nav class="h-nav" aria-label="Main">
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/" aria-current="page">Solutions</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/customers/">Customers</a>
+        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/design-your-program/" class="btn btn--light" style="padding:10px 18px;">Design your program</a>
+    </div>
+
+    <div class="a h-copy" data-sm style="--ty:50px; --to:.9s; --tt:1.1s;">
+      <h1>Trade-in built<br>around how<br>you sell.</h1>
+      <p class="h-lede">Retailers, telecom operators, device brands and premium resellers run different programs on Fintegre. The valuation, the buyers and the payouts stay the same.</p>
+      <div class="h-ctas">
+        <a href="#program-fit" class="btn btn--light">Find your program</a>
+        <a href="/v2/design-your-program/" class="btn btn--ghost">Talk to our team</a>
+      </div>
+    </div>
+
+    <nav aria-label="Segments">
+      <a href="#retailers" class="a h-seg is-on" style="left:120px; --ty:30px; --d:600ms; --to:.72s; --tt:.9s;" data-sm><i></i><b>Electronics retailers</b><span>Counter and online</span></a>
+      <a href="#telecom" class="a h-seg" style="left:420px; --ty:30px; --d:720ms; --to:.72s; --tt:.9s;" data-sm><i></i><b>Telecom operators</b><span>Contract renewals</span></a>
+      <a href="#oem" class="a h-seg" style="left:720px; --ty:30px; --d:840ms; --to:.72s; --tt:.9s;" data-sm><i></i><b>OEM &amp; ecosystems</b><span>Channel partners</span></a>
+      <a href="#premium" class="a h-seg" style="left:1020px; --ty:30px; --d:960ms; --to:.72s; --tt:.9s;" data-sm><i></i><b>Apple &amp; premium retail</b><span>In-store experience</span></a>
+    </nav>
+
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-hero-contact-shadow.svg" style="left:656px; top:626px; width:788px; height:54px;">
+    <div class="a" style="left:880px; top:385px; width:440px; height:267px; --ty:40px; --d:200ms; --to:.9s; --tt:1.2s;" data-sm><img decoding="async" class="dev" alt="MacBook Air in sky blue" src="/v2/assets/solutions-macbook-air.webp" width="440" height="267"></div>
+    <div class="a" style="left:690px; top:377px; width:220px; height:275px; --ty:40px; --d:350ms; --to:.9s; --tt:1.2s;" data-sm><img decoding="async" class="dev" alt="iPad mini in starlight" src="/v2/assets/solutions-ipad-mini-starlight.webp" width="220" height="275"></div>
+    <div class="a" style="left:1286px; top:427px; width:128px; height:225px; --ty:40px; --d:500ms; --to:.9s; --tt:1.2s;" data-sm><img decoding="async" class="dev" alt="iPhone 17 in lavender" src="/v2/assets/solutions-iphone17-lavender.webp" width="128" height="225"></div>
+    <div class="a" style="left:1222px; top:546px; width:92px; height:106px; --ty:30px; --d:650ms; --to:.9s; --tt:1.2s;" data-sm><img decoding="async" class="dev" alt="Apple Watch" src="/v2/assets/solutions-apple-watch.webp" width="92" height="106"></div>
+
+    <svg class="fib" style="left:799.8px; top:302px;" width="176.9" height="30" viewBox="0 0 176.9 30" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1600ms" d="M176.2 0C176.2 15 0.7 15 0.7 30" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <svg class="fib" style="left:1029.3px; top:302px;" width="31.4" height="38" viewBox="0 0 31.4 38" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1700ms" d="M0.7 0C0.7 19 30.7 19 30.7 38" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <svg class="fib" style="left:1133.3px; top:302px;" width="207.9" height="78" viewBox="0 0 207.9 78" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1800ms" d="M0.7 0C0.7 39 207.2 39 207.2 78" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <svg class="fib" style="left:1079.3px; top:302px;" width="71.4" height="190" viewBox="0 0 71.4 190" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1900ms" d="M0.7 0C0.7 95 70.7 95 70.7 190" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+
+    <div class="a h-card glass" style="--ty:24px; --d:900ms; --to:.9s; --tt:1.2s;" data-sm>
+      <p class="h-card__label nw">One valuation · every channel</p>
+      <p class="h-card__price nw">€612</p>
+      <div class="h-card__row nw"><img decoding="async" class="dot" alt="" src="/v2/assets/hero-dot.svg">Same engine, buyers and payouts</div>
+    </div>
+
+    <div class="a" style="left:712px; top:332px;"><a href="#oem" class="chip" style="--sc:.6; --d:1300ms; --to:.3s;" data-sm><img decoding="async" alt="" src="/v2/assets/hero-dot.svg">OEM &amp; ecosystems</a></div>
+    <div class="a" style="left:970px; top:340px;"><a href="#retailers" class="chip chip--blue" style="--sc:.6; --d:1420ms; --to:.3s;" data-sm><img decoding="async" alt="" src="/v2/assets/hero-dot.svg">Electronics retailers</a></div>
+    <div class="a" style="left:1254px; top:380px;"><a href="#telecom" class="chip" style="--sc:.6; --d:1540ms; --to:.3s;" data-sm><img decoding="async" alt="" src="/v2/assets/hero-dot.svg">Telecom operators</a></div>
+    <div class="a" style="left:1048px; top:492px;"><a href="#premium" class="chip" style="--sc:.6; --d:1660ms; --to:.3s;" data-sm><img decoding="async" alt="" src="/v2/assets/hero-dot.svg">Apple &amp; premium retail</a></div>
+  </div>
+</section>
+
+<section data-section="retailers" id="retailers" class="v2-sec" data-sol data-tone="dark" style="--h:900px; background: radial-gradient(calc(600px * var(--s)) calc(281.25px * var(--s)) at calc(50% - 780px * var(--s)) calc(421.87px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="retailers"] .r-copy { left: 800px; top: 150px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  [data-section="retailers"] .r-copy .eyebrow { font-size: 18px; }
+  [data-section="retailers"] h2 { margin: 0; font-weight: 400; font-size: 64px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="retailers"] .r-lede { width: 500px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="retailers"] .r-card { left: 800px; top: 520px; width: 520px; height: 272px; border-radius: 26px; overflow: clip;
+    box-shadow: inset 0 0 0 1px rgba(183,215,255,.14), 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="retailers"] .r-card p { position: absolute; line-height: normal; white-space: pre; }
+  [data-section="retailers"] .r-bar { position: absolute; top: 149px; height: 8px; border-radius: 999px; }
+  [data-section="retailers"] .r-key { position: absolute; top: 185px; width: 8px; height: 8px; display: block; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-retail-glow.svg" style="left:-440px; top:-60px; width:1180px; height:1000px;">
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-retail-counter-light.svg" style="left:-30px; top:740px; width:780px; height:170px;">
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-retail-contact-shadow.svg" style="left:138px; top:796px; width:444px; height:46px;">
+    <div class="a" style="left:170px; top:150px; width:380px; height:668px; --tx:-90px; --d:0ms; --to:1.28s; --tt:1.6s;" data-sm>
+      <img decoding="async" class="dev" alt="Two iPhone 17 in sage, front and back" src="/v2/assets/solutions-iphone17-sage-pair.webp" width="380" height="668">
+    </div>
+
+    <div class="a r-copy" style="--ty:40px; --d:200ms;" data-sm>
+      <p class="eyebrow">Electronics retailers</p>
+      <h2>Trade-in at the<br>counter and online.</h2>
+      <p class="r-lede">Staff check the device in under a minute and the credit lands on the same receipt. Online, customers lock a price and hand the device in later at a store or to a courier.</p>
+    </div>
+
+    <div class="a r-card glass" style="--ty:60px; --d:500ms; --to:.88s;" data-sm>
+      <p style="left:27px; top:25px; font-size:13px; color:#A7B0BE;">Store 14, Riga · Today</p>
+      <p style="left:25px; top:45px; font-weight:300; font-size:56px; letter-spacing:-0.04em; color:#F5F7FA;">42</p>
+      <p style="left:103px; top:79px; font-weight:300; font-size:15px; color:rgba(245,247,250,.72);">trade-ins  ·  €18,420 in credit</p>
+      <div class="r-bar" style="left:27px; width:464px; background:rgba(255,255,255,.08);"></div>
+      <div class="r-bar" style="left:27px; width:330px; background:#3047EC; --d:900ms; --tt:1s;" data-grow></div>
+      <div class="r-bar" style="left:361px; width:130px; background:#B7D7FF; --d:1600ms; --to:.4s;" data-sm></div>
+      <img decoding="async" class="r-key" alt="" src="/v2/assets/solutions-dot-indigo.svg" style="left:27px;">
+      <p style="left:43px; top:179px; font-size:14px; color:#F5F7FA;">At the counter</p>
+      <p style="left:43px; top:203px; font-weight:300; font-size:13px; color:#A7B0BE;">30 devices  ·  58 s to an offer</p>
+      <img decoding="async" class="r-key" alt="" src="/v2/assets/hero-dot.svg" style="left:267px; width:8px; height:8px;">
+      <p style="left:283px; top:179px; font-size:14px; color:#F5F7FA;">Online, handed in later</p>
+      <p style="left:283px; top:203px; font-weight:300; font-size:13px; color:#A7B0BE;">12 devices  ·  Price held 14 days</p>
+    </div>
+
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-scan-ring.svg" style="left:363px; top:227px; width:146px; height:146px; --sc:.6; --d:600ms; --to:.3s;" data-sm>
+
+    <svg class="fib" style="left:560px; top:600px;" width="240" height="41.4" viewBox="0 0 240 41.4" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1200ms" d="M0 40.7C60 40.7 90 30.7 120 20.7C150 10.7 180 0.7 240 0.7" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <svg class="fib" style="left:540px; top:458.3px;" width="60" height="62.4" viewBox="0 0 60 62.4" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:800ms" d="M0 61.7C20 61.7 24 36 30 31C36 26 40 0.7 60 0.7" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <svg class="fib" style="left:491px; top:299.3px;" width="89" height="80.4" viewBox="0 0 89 80.4" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:800ms" d="M0 0.7C30 0.7 38 30 44.5 40.2C51 50.4 59 79.7 89 79.7" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+
+    <div class="a" style="left:580px; top:360px;"><div class="chip" style="--sc:.6; --d:1100ms; --to:.3s;" data-sm><img decoding="async" alt="" src="/v2/assets/hero-dot.svg">Screen · Grade A</div></div>
+    <div class="a" style="left:600px; top:440px;"><div class="chip" style="--sc:.6; --d:1300ms; --to:.3s;" data-sm><img decoding="async" alt="" src="/v2/assets/hero-dot.svg">Battery · 88 %</div></div>
+  </div>
+</section>
+
+<section data-section="telecom" id="telecom" class="v2-sec" data-sol data-tone="dark" style="--h:900px; background:#0F1115;">
+<style>
+  [data-section="telecom"] .t-photo { left: -240px; top: 286px; width: 1244px; height: 700px; overflow: hidden; }
+  [data-section="telecom"] .t-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  [data-section="telecom"] .t-copy { left: 120px; top: 96px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; white-space: nowrap; }
+  [data-section="telecom"] .t-copy .eyebrow { font-size: 18px; }
+  [data-section="telecom"] h2 { margin: 0; font-weight: 400; font-size: 60px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="telecom"] .t-lede { left: 920px; top: 120px; width: 400px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="telecom"] .t-step { width: 266.4px; border-radius: 19.24px; overflow: clip; background: rgba(255,255,255,.07);
+    backdrop-filter: blur(11.1px); -webkit-backdrop-filter: blur(11.1px);
+    box-shadow: inset 0 0 0 .74px rgba(183,215,255,.14), 0 22.2px 44.4px rgba(0,0,0,.45); }
+  [data-section="telecom"] .t-step p { position: absolute; line-height: normal; white-space: pre; }
+  [data-section="telecom"] .t-dev { position: absolute; left: 18.5px; top: 18.5px; box-shadow: 0 7.4px 14.8px rgba(0,0,0,.5); }
+  [data-section="telecom"] .t-dev img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+  [data-section="telecom"] .t-pill { position: absolute; padding: 4.44px 8.88px; border-radius: 999px; background: rgba(255,255,255,.08); font-size: 9.62px; line-height: normal; color: #F5F7FA; white-space: nowrap; }
+  [data-section="telecom"] .t-div { position: absolute; left: 18.5px; width: 227.92px; height: .74px; background: rgba(255,255,255,.08); }
+  [data-section="telecom"] .t-bid { position: absolute; left: 19.98px; width: 224.96px; height: 38.48px; border-radius: 11.84px; }
+  [data-section="telecom"] .t-chip { left: 380px; top: 820px; padding: 8px 14px 8px 12px; font-size: 13px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  [data-section="telecom"] .t-chip i { width: 6px; height: 6px; border-radius: 50%; background: #B7D7FF; flex: none; }
+</style>
+  <div class="v2-canvas">
+    <div class="a t-photo" style="--sc:1.06; --to:1s; --tt:4s;" data-sm>
+      <img decoding="async" alt="A telecom store advisor and a customer smiling at a tablet while he holds his phone" src="/v2/assets/solutions-telecom-store.webp" width="1244" height="700">
+    </div>
+    <div class="a" style="left:-240px; top:286px; width:1244px; height:700px; background:rgba(20,30,110,.14);"></div>
+    <div class="a" style="left:0; top:276px; width:1440px; height:130px; background:linear-gradient(180deg, #0F1115, rgba(15,17,21,0));"></div>
+    <div class="a" style="left:0; top:740px; width:1440px; height:160px; background:linear-gradient(180deg, rgba(15,17,21,0), #0F1115);"></div>
+    <div class="a" style="left:640px; top:240px; width:380px; height:700px; background:linear-gradient(90deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.72) 55%, #0F1115 100%);"></div>
+    <div class="a" style="left:0; top:240px; width:140px; height:700px; background:linear-gradient(90deg, rgba(15,17,21,.7), rgba(15,17,21,0));"></div>
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-telecom-room-light.svg" style="left:600px; top:150px; width:1120px; height:920px;">
+
+    <div class="a t-copy" style="--ty:30px; --d:100ms; --to:.72s; --tt:.9s;" data-sm>
+      <p class="eyebrow">Telecom operators</p>
+      <h2>An early upgrade inside<br>every contract renewal.</h2>
+    </div>
+    <p class="a t-lede" style="--d:400ms;" data-sm>The old device becomes the deposit on the new one. The offer appears in the renewal flow, in store or in your app, and the credit is applied to the first bill.</p>
+
+    <svg class="fib" style="left:1025.7px; top:433.33px;" width="85" height="95.05" viewBox="0 0 85 95.05" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:2000ms" d="M0.7 0.7C50.7 0.7 34.3 94.35 84.3 94.35" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <svg class="fib" style="left:1025.7px; top:619.78px;" width="85" height="110.844" viewBox="0 0 85 110.844" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:2900ms" d="M84.3 0.7C34.3 0.7 50.7 110.144 0.7 110.144" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <svg class="fib" style="left:611.3px; top:411.87px;" width="149.4" height="296.83" viewBox="0 0 149.4 296.83" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1100ms" d="M0.700166 296.13C40.7002 136.13 58.7002 0.7 148.7 0.7" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-telecom-node.svg" style="left:595px; top:691px; width:34px; height:34px; --sc:.6; --d:900ms; --to:.3s;" data-sm>
+
+    <div class="a t-step" style="left:760px; top:316px; height:214.6px; --ty:50px; --d:1400ms; --to:.72s; --tt:.9s;" data-sm>
+      <div class="t-dev" style="width:45.88px; height:93.98px; border-radius:8.14px;"><img decoding="async" alt="iPhone 13" src="/v2/assets/solutions-iphone13.webp" width="46" height="94"></div>
+      <p style="left:82.14px; top:24.42px; font-size:9.62px; color:#A7B0BE;">Plan 24 · Tallinn</p>
+      <p style="left:82.14px; top:42.18px; font-weight:300; font-size:16.28px; line-height:1.2; color:#F5F7FA; white-space:nowrap;">Contract ends<br>in 61 days</p>
+      <span class="t-pill" style="left:18.5px; top:136.9px;">Grade B</span>
+      <span class="t-pill" style="left:83.62px; top:136.9px;">Battery 84 %</span>
+      <span class="t-pill" style="left:173.9px; top:136.9px;">128 GB</span>
+      <div class="t-div" style="top:170.94px;"></div>
+      <p style="left:18.5px; top:182.78px; font-weight:300; font-size:10.36px; color:rgba(245,247,250,.72);">Eligible for early upgrade</p>
+    </div>
+
+    <div class="a t-step" style="left:1110px; top:430px; height:244.2px; --ty:50px; --d:2300ms; --to:.72s; --tt:.9s;" data-sm>
+      <p style="left:19.98px; top:19.98px; font-size:9.62px; color:#A7B0BE;">Upgrade offer · two buyers</p>
+      <p style="left:18.5px; top:33.3px; font-weight:300; font-size:47.36px; letter-spacing:-0.04em; color:#F5F7FA;">€320</p>
+      <p style="left:19.98px; top:96.94px; font-weight:300; font-size:11.1px; color:rgba(245,247,250,.72);">credit toward iPhone 18 Pro</p>
+      <div class="t-bid" style="top:129.5px; background:rgba(255,255,255,.05);">
+        <p style="left:11.84px; top:12.58px; font-size:10.36px; color:rgba(245,247,250,.72);">Buyer A · Estonia</p>
+        <p style="left:183.52px; top:11.1px; font-weight:300; font-size:12.58px; color:#F5F7FA;">€305</p>
+      </div>
+      <div class="t-bid" style="top:173.9px; background:rgba(48,71,236,.9); color:#F5F7FA;">
+        <p style="left:11.84px; top:12.58px; font-size:10.36px;">Buyer B · Finland  ·  Best</p>
+        <p style="left:183.52px; top:11.1px; font-weight:300; font-size:12.58px;">€320</p>
+      </div>
+    </div>
+
+    <div class="a t-step" style="left:760px; top:650px; height:199.8px; --ty:50px; --d:3200ms; --to:.72s; --tt:.9s;" data-sm>
+      <div class="t-dev" style="width:44.4px; height:95.46px; border-radius:7.4px;"><img decoding="async" alt="iPhone 18 Pro" src="/v2/assets/solutions-iphone18pro.webp" width="44" height="95"></div>
+      <p style="left:82.14px; top:24.42px; font-size:9.62px; color:#A7B0BE;">Renewed for 24 months</p>
+      <p style="left:82.14px; top:42.18px; font-weight:300; font-size:16.28px; color:#F5F7FA;">iPhone 18 Pro</p>
+      <p style="left:82.14px; top:76.22px; font-weight:300; font-size:10.36px; color:#A7B0BE;">€47.40</p>
+      <p style="left:122.1px; top:74px; font-weight:300; font-size:12.58px; color:#B7D7FF;">€38.90 / month</p>
+      <div class="t-div" style="top:136.9px;"></div>
+      <p style="left:18.5px; top:150.22px; font-weight:300; font-size:10.36px; color:rgba(245,247,250,.72);">Credit applied to the first bill</p>
+      <span class="t-pill" style="left:18.5px; top:173.9px; background:#B7D7FF; color:#0F1115;">Signed in app</span>
+    </div>
+
+    <div class="a chip t-chip" style="--ty:20px; --d:1000ms; --to:.56s; --tt:.7s;" data-sm><i></i>Offer shown at the table · 41 s</div>
+  </div>
+</section>
+
+<section data-section="oem" id="oem" class="v2-sec" data-sol data-tone="light" style="--h:900px; background: radial-gradient(calc(514.29px * var(--s)) calc(281.25px * var(--s)) at calc(50% - 102.86px * var(--s)) calc(393.75px * var(--s)), rgba(184,214,255,.55) 0%, rgba(245,247,250,0) 100%), #F5F7FA;">
+<style>
+  [data-section="oem"] .o-copy { left: 120px; top: 150px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  [data-section="oem"] .o-copy .eyebrow { font-size: 18px; }
+  [data-section="oem"] h2 { margin: 0; font-weight: 400; font-size: 60px; line-height: 1.04; letter-spacing: -0.04em; color: #0F1115; white-space: nowrap; }
+  [data-section="oem"] .o-lede { width: 440px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(15,17,21,.7); }
+  [data-section="oem"] .o-stats { display: flex; gap: 40px; white-space: nowrap; line-height: normal; }
+  [data-section="oem"] .o-stats div { display: flex; flex-direction: column; gap: 2px; }
+  [data-section="oem"] .o-stats b { font-weight: 300; font-size: 30px; letter-spacing: -0.03em; color: #0F1115; }
+  [data-section="oem"] .o-stats span { font-size: 13px; color: #6B7380; }
+  [data-section="oem"] .o-card { left: 640px; top: 140px; width: 620px; height: 600px; border-radius: 26px; overflow: clip; background: #fff; box-shadow: 0 30px 60px rgba(15,20,64,.12); }
+  [data-section="oem"] .o-card p { position: absolute; line-height: normal; white-space: nowrap; }
+  [data-section="oem"] .o-bar { position: absolute; left: 236px; height: 10px; border-radius: 999px; }
+  [data-section="oem"] .o-pill { left: 500px; top: 530px; padding: 6px 12px; border-radius: 999px; background: #3047EC; color: #fff; font-size: 13px; line-height: normal; white-space: nowrap; }
+  [data-section="oem"] .o-ipad img { filter: drop-shadow(0 30px 30px rgba(15,20,64,.18)); }
+</style>
+  <div class="v2-canvas">
+    <div class="a o-copy" style="--ty:40px; --to:.8s; --tt:1s;" data-sm>
+      <p class="eyebrow">OEM &amp; ecosystems</p>
+      <h2>One program<br>across every<br>channel partner.</h2>
+      <p class="o-lede">Run trade-in under your brand in your own stores, at retail partners and with carriers. One price list, one set of grading rules and one report for every channel.</p>
+      <div class="o-stats">
+        <div><b>140</b><span>channel partners</span></div>
+        <div><b>9</b><span>markets</span></div>
+        <div><b>1</b><span>price list</span></div>
+      </div>
+    </div>
+    <div class="a o-ipad" style="left:1130px; top:250px; width:440px; height:736px; --tx:80px; --d:200ms; --to:1.12s; --tt:1.4s;" data-sm>
+      <img decoding="async" class="dev" alt="Two iPad Air, front and back, in blue" src="/v2/assets/solutions-ipad-air-pair.webp" width="440" height="736">
+    </div>
+    <div class="a o-card" style="--ty:60px; --d:300ms; --to:.88s;" data-sm>
+      <p style="left:36px; top:34px; font-size:13px; color:#6B7380;">Offers by channel · this week</p>
+      <p style="left:36px; top:58px; font-weight:300; font-size:22px; color:#0F1115;">iPhone 16 Pro, 256 GB, Grade A</p>
+      <p style="left:36px; top:126px; font-size:14px; color:#0F1115;">Brand store</p>
+      <p style="left:36px; top:148px; font-weight:300; font-size:13px; color:#6B7380;">2,140 devices</p>
+      <div class="o-bar" style="top:138px; width:250px; background:rgba(15,17,21,.06);"></div>
+      <div class="o-bar" style="top:138px; width:250px; background:linear-gradient(90deg,#3047EC,#7399FF); --d:800ms;" data-grow></div>
+      <p style="left:520px; top:130px; font-weight:300; font-size:17px; color:#0F1115;">€492</p>
+      <p style="left:36px; top:202px; font-size:14px; color:#0F1115;">Retail partner · Poland</p>
+      <p style="left:36px; top:224px; font-weight:300; font-size:13px; color:#6B7380;">1,860 devices</p>
+      <div class="o-bar" style="top:214px; width:250px; background:rgba(15,17,21,.06);"></div>
+      <div class="o-bar" style="top:214px; width:218px; background:linear-gradient(90deg,#3047EC,#7399FF); --d:920ms;" data-grow></div>
+      <p style="left:520px; top:206px; font-weight:300; font-size:17px; color:#0F1115;">€490</p>
+      <p style="left:36px; top:278px; font-size:14px; color:#0F1115;">Carrier · Lithuania</p>
+      <p style="left:36px; top:300px; font-weight:300; font-size:13px; color:#6B7380;">1,420 devices</p>
+      <div class="o-bar" style="top:290px; width:250px; background:rgba(15,17,21,.06);"></div>
+      <div class="o-bar" style="top:290px; width:165px; background:linear-gradient(90deg,#3047EC,#7399FF); --d:1040ms;" data-grow></div>
+      <p style="left:520px; top:282px; font-weight:300; font-size:17px; color:#0F1115;">€491</p>
+      <p style="left:36px; top:354px; font-size:14px; color:#0F1115;">Online marketplace</p>
+      <p style="left:36px; top:376px; font-weight:300; font-size:13px; color:#6B7380;">980 devices</p>
+      <div class="o-bar" style="top:366px; width:250px; background:rgba(15,17,21,.06);"></div>
+      <div class="o-bar" style="top:366px; width:115px; background:linear-gradient(90deg,#3047EC,#7399FF); --d:1160ms;" data-grow></div>
+      <p style="left:520px; top:358px; font-weight:300; font-size:17px; color:#0F1115;">€488</p>
+      <p style="left:36px; top:430px; font-size:14px; color:#0F1115;">Repair network</p>
+      <p style="left:36px; top:452px; font-weight:300; font-size:13px; color:#6B7380;">610 devices</p>
+      <div class="o-bar" style="top:442px; width:250px; background:rgba(15,17,21,.06);"></div>
+      <div class="o-bar" style="top:442px; width:73px; background:linear-gradient(90deg,#3047EC,#7399FF); --d:1280ms;" data-grow></div>
+      <p style="left:520px; top:434px; font-weight:300; font-size:17px; color:#0F1115;">€489</p>
+      <div class="a" style="left:36px; top:512px; width:548px; height:1px; background:rgba(15,17,21,.08);"></div>
+      <p style="left:36px; top:536px; font-size:14px; color:#0F1115;">Price spread across channels</p>
+      <div class="a o-pill" style="--d:2300ms; --to:.3s;" data-sm>± 0.8 %</div>
+    </div>
+  </div>
+</section>
+
+<section data-section="premium" id="premium" class="v2-sec" data-sol data-tone="dark" style="--h:900px; background: radial-gradient(calc(720px * var(--s)) calc(321.43px * var(--s)) at calc(50% + 72px * var(--s)) calc(642.86px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="premium"] .p-copy { left: 120px; top: 120px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  [data-section="premium"] .p-copy .eyebrow { font-size: 18px; }
+  [data-section="premium"] h2 { margin: 0; font-weight: 400; font-size: 60px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="premium"] .p-lede { width: 460px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="premium"] .p-photo { left: -260px; top: 520px; width: 1500px; height: 568px; mix-blend-mode: lighten; }
+  [data-section="premium"] .p-photo img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .8; }
+  [data-section="premium"] .p-card { left: 940px; top: 80px; width: 380px; height: 640px; border-radius: 26px; overflow: clip; background: rgba(255,255,255,.08);
+    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: inset 0 0 0 1px rgba(183,215,255,.14), 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="premium"] .p-card p { position: absolute; line-height: normal; white-space: nowrap; }
+  [data-section="premium"] .p-line { position: absolute; left: 29px; width: 320px; height: 56px; }
+  [data-section="premium"] .p-line p:nth-child(1) { left: 0; top: 0; font-size: 15px; color: #F5F7FA; }
+  [data-section="premium"] .p-line p:nth-child(2) { left: 0; top: 24px; font-weight: 300; font-size: 13px; color: #A7B0BE; }
+  [data-section="premium"] .p-line p.amt { top: 0; left: auto; right: 0; font-weight: 300; font-size: 15px; color: #F5F7FA; }
+  [data-section="premium"] .p-line p.amt.neg { color: #B7D7FF; }
+  [data-section="premium"] .p-rule { position: absolute; left: 28.5px; width: 321px; height: 1px; display: block; }
+  [data-section="premium"] .p-pill { left: 29px; top: 595px; padding: 6px 12px; border-radius: 999px; background: #B7D7FF; color: #0F1115; font-size: 13px; line-height: normal; white-space: nowrap; }
+  [data-section="premium"] .p-watch img { filter: drop-shadow(0 20px 20px rgba(0,0,0,.6)); }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-premium-glow.svg" style="left:20px; top:340px; width:1360px; height:780px;">
+    <div class="a p-photo" style="--ty:60px; --d:100ms; --to:1.28s; --tt:1.6s;" data-sm>
+      <img decoding="async" alt="" src="/v2/assets/solutions-glowing-macbook.webp" width="1500" height="568">
+    </div>
+
+    <div class="a p-copy" style="--ty:40px; --to:.8s; --tt:1s;" data-sm>
+      <p class="eyebrow">Apple &amp; premium retail</p>
+      <h2>A premium trade-in,<br>right at the table.</h2>
+      <p class="p-lede">Specialists check the device with the customer, show the offer on the store iPad and take the credit off the same sale. No forms and no queue at the counter.</p>
+    </div>
+
+    <div class="a p-card" style="--ty:80px; --d:400ms; --to:.88s; --tt:1.1s;" data-sm>
+      <p style="left:29px; top:29px; font-size:13px; color:#A7B0BE;">Premium reseller · Warsaw</p>
+      <p style="left:29px; top:53px; font-weight:300; font-size:22px; color:#F5F7FA;">Receipt 0418-2291</p>
+      <p style="left:29px; top:87px; font-weight:300; font-size:13px; color:#A7B0BE;">28 Oct 2026 · 16:42 · Table 3</p>
+      <img decoding="async" class="p-rule" alt="" src="/v2/assets/solutions-rule-dashed.svg" style="top:124.5px;">
+      <div class="p-line" style="top:145px; --ty:16px; --d:900ms; --to:.56s; --tt:.7s;" data-sm><p>iPhone 18 Pro, 256 GB</p><p>Natural titanium</p><p class="amt">€1,199.00</p></div>
+      <div class="p-line" style="top:215px; --ty:16px; --d:1080ms; --to:.56s; --tt:.7s;" data-sm><p>Trade-in · iPhone 15 Pro</p><p>Grade A · battery 91 %</p><p class="amt neg">−€520.00</p></div>
+      <div class="p-line" style="top:285px; --ty:16px; --d:1260ms; --to:.56s; --tt:.7s;" data-sm><p>Trade-in · Apple Watch S9</p><p>Grade B · 45 mm</p><p class="amt neg">−€95.00</p></div>
+      <div class="p-line" style="top:355px; --ty:16px; --d:1440ms; --to:.56s; --tt:.7s;" data-sm><p>Case and screen glass</p><p class="amt">€59.00</p></div>
+      <img decoding="async" class="p-rule" alt="" src="/v2/assets/solutions-rule-dashed.svg" style="top:434.5px;">
+      <div class="a" style="left:0; top:0; width:380px; height:640px; --d:1800ms; --to:.4s;" data-sm>
+        <p style="left:29px; top:455px; font-weight:300; font-size:14px; color:#A7B0BE;">Trade-in credit</p>
+        <p style="right:31px; top:455px; font-weight:300; font-size:14px; color:#B7D7FF;">−€615.00</p>
+        <p style="left:29px; top:499px; font-size:15px; color:#F5F7FA;">Total paid</p>
+        <p style="right:31px; top:523px; font-weight:300; font-size:56px; letter-spacing:-0.04em; color:#F5F7FA;">€643</p>
+      </div>
+      <div class="a p-pill" style="--sc:.6; --d:2200ms; --to:.3s;" data-sm>Credit applied in the same sale</div>
+    </div>
+
+    <svg class="fib" style="left:739.54px; top:470px;" width="87.1683" height="68.5203" viewBox="0 0 87.1683 68.5203" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1300ms" d="M86.4683 0C86.4683 30 20.4683 50 0.468275 68" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <div class="a p-watch" style="left:736px; top:270px; width:180px; height:208px; --sc:.6; --d:1200ms; --to:.3s;" data-sm>
+      <img decoding="async" class="dev" alt="Apple Watch with a black sport band" src="/v2/assets/solutions-apple-watch.webp" width="180" height="208">
+    </div>
+    <div class="a" style="left:540px; top:520px;"><div class="chip" style="--sc:.6; --d:1600ms; --to:.3s;" data-sm><img decoding="async" alt="" src="/v2/assets/hero-dot.svg">Checked at the table · 52 s</div></div>
+  </div>
+</section>
+
+<section data-section="program-fit" id="program-fit" class="v2-sec" data-sol data-tone="dark" style="--h:1020px; background: radial-gradient(calc(800px * var(--s)) calc(425px * var(--s)) at calc(50% - 480px * var(--s)) calc(510px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="program-fit"] h2 { left: 120px; top: 100px; margin: 0; font-weight: 400; font-size: 60px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="program-fit"] .f-lede { left: 900px; top: 110px; width: 420px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="program-fit"] .f-link { left: 900px; top: 228px; font-size: 15px; line-height: normal; color: #F5F7FA; white-space: pre; transition: color .2s; }
+  [data-section="program-fit"] .f-link:hover { color: #B7D7FF; }
+  [data-section="program-fit"] .f-card { left: 120px; top: 330px; width: 1200px; height: 600px; border-radius: 26px; overflow: clip; background: rgba(255,255,255,.06);
+    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: inset 0 0 0 1px rgba(183,215,255,.14), 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="program-fit"] .f-col { position: absolute; top: 27px; width: 120px; translate: -50% 0; text-align: center; font-size: 14px; line-height: 1.3; color: rgba(245,247,250,.85); }
+  [data-section="program-fit"] .f-row { position: absolute; left: -1px; width: 1200px; height: 70px; outline: none; transition: background-color .35s var(--ease); }
+  [data-section="program-fit"] .f-row.is-on { background: rgba(48,71,236,.14); }
+  [data-section="program-fit"] .f-row span { position: absolute; line-height: normal; white-space: nowrap; }
+  [data-section="program-fit"] .f-n { left: 40px; top: 27px; font-weight: 300; font-size: 13px; color: #A7B0BE; }
+  [data-section="program-fit"] .f-name { left: 84px; top: 15px; font-size: 16px; color: #F5F7FA; }
+  [data-section="program-fit"] .f-desc { left: 84px; top: 38px; font-weight: 300; font-size: 13px; color: #A7B0BE; }
+  [data-section="program-fit"] .f-core { position: absolute; top: 14px; width: 42px; height: 42px; max-width: none; }
+  [data-section="program-fit"] .f-add { position: absolute; top: 29px; width: 12px; height: 12px; }
+  [data-section="program-fit"] .f-none { position: absolute; top: 34.5px; width: 12px; height: 1px; background: rgba(245,247,250,.2); }
+  [data-section="program-fit"] .f-rule { position: absolute; left: 40px; top: 69px; width: 1120px; height: 1px; background: rgba(255,255,255,.06); }
+  [data-section="program-fit"] .f-legend { left: 120px; top: 958px; width: 600px; height: 24px; font-weight: 300; font-size: 13px; line-height: normal; color: #A7B0BE; white-space: nowrap; }
+  [data-section="program-fit"] .f-legend > * { position: absolute; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-fit-glow.svg" style="left:-380px; top:20px; width:1060px; height:960px;">
+    <h2 class="a" data-sm style="--ty:40px; --to:.8s; --tt:1s;">Seven programs.<br>Pick the ones you need.</h2>
+    <p class="a f-lede" data-sm style="--ty:30px; --d:150ms;">Every segment starts with trade-in. The rest depends on how you sell and what you already offer. All seven run on the same valuation, buyers and payouts.</p>
+    <a class="a f-link" href="/v2/platform/" data-sm style="--d:250ms;">See all seven programs  →</a>
+
+    <div class="a f-card" role="table" aria-label="Which program fits which segment" style="--ty:60px; --d:200ms; --to:.88s;" data-sm>
+      <div role="row">
+        <p class="f-col" role="columnheader" style="left:639px;">Electronics<br>retailers</p>
+        <p class="f-col" role="columnheader" style="left:799px;">Telecom<br>operators</p>
+        <p class="f-col" role="columnheader" style="left:959px;">OEM &amp;<br>ecosystems</p>
+        <p class="f-col" role="columnheader" style="left:1109px;">Apple &amp;<br>premium retail</p>
+      </div>
+      <div class="a" style="left:-1px; top:87px; width:1200px; height:1px; background:rgba(255,255,255,.08);"></div>
+      <div class="f-row is-on" role="row" tabindex="0" style="top:88px; --ty:20px; --d:600ms; --to:.56s; --tt:.7s;" data-sm>
+        <span class="f-n">01</span><span class="f-name">Trade-in and buyback</span><span class="f-desc">Price any device and pay out in seconds</span>
+        <img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:618px; --sc:.6; --d:1400ms; --to:.3s;" data-sm><img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:778px; --sc:.6; --d:1460ms; --to:.3s;" data-sm><img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:938px; --sc:.6; --d:1520ms; --to:.3s;" data-sm><img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:1088px; --sc:.6; --d:1580ms; --to:.3s;" data-sm><i class="f-rule"></i>
+      </div>
+      <div class="f-row" role="row" tabindex="0" style="top:158px; --ty:20px; --d:700ms; --to:.56s; --tt:.7s;" data-sm>
+        <span class="f-n">02</span><span class="f-name">Early upgrade</span><span class="f-desc">The old device is the deposit on the new one</span>
+        <img decoding="async" class="f-add" alt="Add-on" src="/v2/assets/solutions-mark-addon.svg" style="left:633px;"><img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:778px; --sc:.6; --d:1640ms; --to:.3s;" data-sm><img decoding="async" class="f-add" alt="Add-on" src="/v2/assets/solutions-mark-addon.svg" style="left:953px;"><img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:1088px; --sc:.6; --d:1700ms; --to:.3s;" data-sm><i class="f-rule"></i>
+      </div>
+      <div class="f-row" role="row" tabindex="0" style="top:228px; --ty:20px; --d:800ms; --to:.56s; --tt:.7s;" data-sm>
+        <span class="f-n">03</span><span class="f-name">Deferred trade-in</span><span class="f-desc">Lock today’s value, hand the device in later</span>
+        <img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:618px; --sc:.6; --d:1760ms; --to:.3s;" data-sm><img decoding="async" class="f-add" alt="Add-on" src="/v2/assets/solutions-mark-addon.svg" style="left:793px;"><img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:938px; --sc:.6; --d:1450ms; --to:.3s;" data-sm><img decoding="async" class="f-add" alt="Add-on" src="/v2/assets/solutions-mark-addon.svg" style="left:1103px;"><i class="f-rule"></i>
+      </div>
+      <div class="f-row" role="row" tabindex="0" style="top:298px; --ty:20px; --d:900ms; --to:.56s; --tt:.7s;" data-sm>
+        <span class="f-n">04</span><span class="f-name">BYOD protection</span><span class="f-desc">Cover devices customers bring to a plan</span>
+        <i class="f-none" style="left:633px;" aria-label="Not offered"></i><img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:778px; --sc:.6; --d:1510ms; --to:.3s;" data-sm><img decoding="async" class="f-add" alt="Add-on" src="/v2/assets/solutions-mark-addon.svg" style="left:953px;"><i class="f-none" style="left:1103px;" aria-label="Not offered"></i><i class="f-rule"></i>
+      </div>
+      <div class="f-row" role="row" tabindex="0" style="top:368px; --ty:20px; --d:1000ms; --to:.56s; --tt:.7s;" data-sm>
+        <span class="f-n">05</span><span class="f-name">Warranty extension</span><span class="f-desc">Extend cover on checked, graded devices</span>
+        <img decoding="async" class="f-add" alt="Add-on" src="/v2/assets/solutions-mark-addon.svg" style="left:633px;"><i class="f-none" style="left:793px;" aria-label="Not offered"></i><img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:938px; --sc:.6; --d:1570ms; --to:.3s;" data-sm><img decoding="async" class="f-add" alt="Add-on" src="/v2/assets/solutions-mark-addon.svg" style="left:1103px;"><i class="f-rule"></i>
+      </div>
+      <div class="f-row" role="row" tabindex="0" style="top:438px; --ty:20px; --d:1100ms; --to:.56s; --tt:.7s;" data-sm>
+        <span class="f-n">06</span><span class="f-name">Claim validation</span><span class="f-desc">Check a damaged device before paying a claim</span>
+        <img decoding="async" class="f-add" alt="Add-on" src="/v2/assets/solutions-mark-addon.svg" style="left:633px;"><img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:778px; --sc:.6; --d:1630ms; --to:.3s;" data-sm><img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:938px; --sc:.6; --d:1690ms; --to:.3s;" data-sm><i class="f-none" style="left:1103px;" aria-label="Not offered"></i><i class="f-rule"></i>
+      </div>
+      <div class="f-row" role="row" tabindex="0" style="top:508px; --ty:20px; --d:1200ms; --to:.56s; --tt:.7s;" data-sm>
+        <span class="f-n">07</span><span class="f-name">Return avoidance</span><span class="f-desc">Resell a returned device instead of writing it off</span>
+        <img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:618px; --sc:.6; --d:1750ms; --to:.3s;" data-sm><i class="f-none" style="left:793px;" aria-label="Not offered"></i><img decoding="async" class="f-add" alt="Add-on" src="/v2/assets/solutions-mark-addon.svg" style="left:953px;"><img decoding="async" class="f-core" alt="Core" src="/v2/assets/solutions-mark-core.svg" style="left:1088px; --sc:.6; --d:1810ms; --to:.3s;" data-sm>
+      </div>
+    </div>
+
+    <div class="a f-legend">
+      <img decoding="async" alt="" src="/v2/assets/solutions-mark-core.svg" style="left:-14px; top:-9px; width:42px; height:42px; max-width:none;">
+      <p style="left:22px; top:3px;">Core program for this segment</p>
+      <img decoding="async" alt="" src="/v2/assets/solutions-mark-addon.svg" style="left:256px; top:6px; width:12px; height:12px;">
+      <p style="left:276px; top:3px;">Often added later</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="proof" id="proof" class="v2-sec" data-sol data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% + 65.45px * var(--s)) calc(420px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="proof"] .m-copy { left: 120px; top: 150px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  [data-section="proof"] h2 { margin: 0; font-weight: 400; font-size: 64px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="proof"] .m-lede { width: 380px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="proof"] .m-metric { top: 600px; width: 270px; height: 180px; }
+  [data-section="proof"] .m-metric i { position: absolute; left: 0; top: 0; width: 270px; height: 1px; }
+  [data-section="proof"] .m-metric p { position: absolute; left: 0; line-height: normal; white-space: nowrap; }
+  [data-section="proof"] .m-v { top: 28px; font-weight: 300; font-size: 64px; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="proof"] .m-from { opacity: 0; }
+  [data-section="proof"] .m-l { top: 118px; font-size: 15px; color: #F5F7FA; }
+  [data-section="proof"] .m-s { top: 142px; font-weight: 300; font-size: 13px; color: #A7B0BE; }
+  /* Value crossfade: the old figure shows first, then the live-program figure replaces it. */
+  .motion [data-section="proof"] .m-to { opacity: 0; }
+  .motion [data-section="proof"].is-in .m-from { animation: proof-from 1.1s linear var(--vd) both; }
+  .motion [data-section="proof"].is-in .m-to { animation: proof-to .3s var(--ease) calc(var(--vd) + 800ms) both; }
+  @keyframes proof-from { 0% { opacity: 0; } 18% { opacity: 1; } 73% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes proof-to { from { opacity: 0; } to { opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { [data-section="proof"] .m-v { animation: none !important; } [data-section="proof"] .m-to { opacity: 1 !important; } }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-proof-glow.svg" style="left:520px; top:-140px; width:1160px; height:920px;">
+    <div class="a" style="left:880px; top:40px; width:417px; height:520px; --ty:70px; --to:1s; --tt:1.4s;" data-sm>
+      <img decoding="async" class="dev" alt="iPad mini in midnight" src="/v2/assets/solutions-ipad-mini-midnight.webp" width="417" height="520">
+    </div>
+    <div class="a" style="left:0; top:480px; width:1440px; height:220px; background:linear-gradient(180deg, rgba(15,17,21,0), #0F1115);"></div>
+    <div class="a m-copy" style="--ty:40px; --d:100ms;" data-sm>
+      <h2>Measured in<br>live programs.</h2>
+      <p class="m-lede">Results from the first twelve months after launch, one program per segment.</p>
+    </div>
+    <div class="a m-metric" style="left:120px; --ty:30px; --d:500ms; --to:.72s; --tt:.9s; --vd:500ms;" data-sm>
+      <i style="background:rgba(245,247,250,.9);"></i>
+      <p class="m-v m-from" aria-hidden="true">+12 %</p>
+      <p class="m-v m-to">+38 %</p>
+      <p class="m-l">Trade-in participation</p>
+      <p class="m-s">Electronics retailer, Baltics</p>
+    </div>
+    <div class="a m-metric" style="left:420px; --ty:30px; --d:650ms; --to:.72s; --tt:.9s; --vd:650ms;" data-sm>
+      <i style="background:rgba(245,247,250,.2);"></i>
+      <p class="m-v m-from" aria-hidden="true">1.3×</p>
+      <p class="m-v m-to">2.4×</p>
+      <p class="m-l">Early upgrades per renewal</p>
+      <p class="m-s">Telecom operator, Poland</p>
+    </div>
+    <div class="a m-metric" style="left:720px; --ty:30px; --d:800ms; --to:.72s; --tt:.9s; --vd:800ms;" data-sm>
+      <i style="background:rgba(245,247,250,.2);"></i>
+      <p class="m-v m-from" aria-hidden="true">± 3.1 %</p>
+      <p class="m-v m-to">± 0.8 %</p>
+      <p class="m-l">Price spread across 140 partners</p>
+      <p class="m-s">Device brand, 9 markets</p>
+    </div>
+    <div class="a m-metric" style="left:1020px; --ty:30px; --d:950ms; --to:.72s; --tt:.9s; --vd:950ms;" data-sm>
+      <i style="background:rgba(245,247,250,.2);"></i>
+      <p class="m-v m-from" aria-hidden="true">2 min</p>
+      <p class="m-v m-to">52 s</p>
+      <p class="m-l">Check at the table</p>
+      <p class="m-s">Premium reseller, Warsaw</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="talk" id="talk" class="v2-sec" data-sol data-tone="light" style="--h:900px; background: radial-gradient(calc(600px * var(--s)) calc(321.43px * var(--s)) at calc(50% + 300px * var(--s)) calc(482.14px * var(--s)), rgba(184,214,255,.6) 0%, rgba(245,247,250,0) 100%), #F5F7FA;">
+<style>
+  [data-section="talk"] .k-copy { left: 120px; top: 170px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  [data-section="talk"] h2 { margin: 0; font-weight: 400; font-size: 72px; line-height: 1; letter-spacing: -0.04em; color: #0F1115; white-space: nowrap; }
+  [data-section="talk"] .k-lede { width: 440px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(15,17,21,.7); }
+  [data-section="talk"] .k-list { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
+  [data-section="talk"] .k-list li { display: flex; gap: 12px; align-items: center; font-size: 15px; line-height: normal; color: #0F1115; white-space: nowrap; }
+  [data-section="talk"] .k-list img { width: 8px; height: 8px; }
+  [data-section="talk"] .k-card { left: 700px; top: 110px; width: 620px; height: 680px; border-radius: 28px; overflow: clip; background: #fff; box-shadow: 0 30px 60px rgba(15,20,64,.12); color: #0F1115; }
+  [data-section="talk"] .k-card .lbl { position: absolute; left: 40px; font-size: 13px; line-height: normal; color: #6B7380; white-space: nowrap; }
+  [data-section="talk"] .k-title { position: absolute; left: 40px; top: 40px; margin: 0; font-weight: 400; font-size: 26px; line-height: normal; letter-spacing: -0.02em; white-space: nowrap; }
+  [data-section="talk"] fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+  [data-section="talk"] .k-opt { position: absolute; left: 40px; width: 540px; height: 54px; border-radius: 16px; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(15,17,21,.1); transition: background-color .25s, box-shadow .25s, color .25s; }
+  [data-section="talk"] .k-opt:hover { box-shadow: inset 0 0 0 1px rgba(48,71,236,.45); }
+  [data-section="talk"] .k-opt input { position: absolute; opacity: 0; pointer-events: none; }
+  [data-section="talk"] .k-opt img { position: absolute; left: 17px; top: 18px; width: 16px; height: 16px; }
+  [data-section="talk"] .k-opt .on { display: none; left: 18px; top: 19px; }
+  [data-section="talk"] .k-opt span { position: absolute; left: 47px; top: 15px; font-size: 15px; line-height: normal; white-space: nowrap; }
+  [data-section="talk"] .k-opt:has(input:checked) { background: #3047EC; color: #fff; box-shadow: none; }
+  [data-section="talk"] .k-opt:has(input:checked) .off { display: none; }
+  [data-section="talk"] .k-opt:has(input:checked) .on { display: block; }
+  [data-section="talk"] .k-opt:has(input:checked) span { left: 48px; top: 16px; }
+  [data-section="talk"] .k-opt:has(input:focus-visible) { outline: 2px solid #3047EC; outline-offset: 2px; }
+  [data-section="talk"] .k-mk { position: absolute; left: 40px; top: 416px; display: flex; gap: 8px; }
+  [data-section="talk"] .k-mk button { border: 0; padding: 8px 14px; border-radius: 999px; background: rgba(15,17,21,.05); color: #0F1115; font: inherit; font-size: 13px; line-height: normal; white-space: nowrap; cursor: pointer; transition: background-color .2s; }
+  [data-section="talk"] .k-mk button:hover { background: rgba(15,17,21,.1); }
+  [data-section="talk"] .k-mk button[aria-pressed="true"] { background: #B7D7FF; }
+  [data-section="talk"] .k-slider { position: absolute; left: 40px; top: 498px; width: 540px; height: 34px; }
+  [data-section="talk"] .k-track, [data-section="talk"] .k-fill { position: absolute; left: 0; top: 14px; height: 6px; border-radius: 999px; }
+  [data-section="talk"] .k-track { width: 540px; background: rgba(15,17,21,.08); }
+  [data-section="talk"] .k-fill { width: calc(var(--p, .5556) * 540px); background: #3047EC; transform-origin: 0 50%; }
+  [data-section="talk"] .k-knob { position: absolute; top: 7px; left: calc(var(--p, .5556) * 540px - 10px); width: 20px; height: 20px; pointer-events: none; }
+  [data-section="talk"] .k-slider input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+  [data-section="talk"] .k-slider:has(input:focus-visible) .k-knob { outline: 2px solid #3047EC; outline-offset: 2px; border-radius: 50%; }
+  [data-section="talk"] .k-val { position: absolute; left: 40px; top: 532px; font-weight: 300; font-size: 15px; line-height: normal; white-space: nowrap; }
+  [data-section="talk"] .k-submit { position: absolute; left: 40px; top: 590px; border: 0; padding: 16px 24px; font: inherit; font-size: 15px; cursor: pointer; white-space: pre; }
+  [data-section="talk"] .k-note { position: absolute; left: 310px; top: 607px; font-weight: 300; font-size: 13px; line-height: normal; color: #6B7380; white-space: nowrap; }
+  [data-section="talk"] .k-note.is-err { color: #C2372B; }
+  [data-section="talk"] .k-done { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 16px; padding: 0 60px; background: #fff;
+    opacity: 0; visibility: hidden; transition: opacity .5s var(--ease), visibility 0s .5s; }
+  [data-section="talk"] .k-card.is-sent .k-done { opacity: 1; visibility: visible; transition: opacity .5s var(--ease); }
+  [data-section="talk"] .k-done b { font-weight: 400; font-size: 34px; letter-spacing: -0.03em; }
+  [data-section="talk"] .k-done p { font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.7); max-width: 440px; }
+  [data-section="talk"] .k-done img { width: 42px; height: 42px; }
+  .motion [data-section="talk"] .k-fill { transform: scaleX(.2); transition: transform .8s var(--ease) 1.2s; }
+  .motion [data-section="talk"].is-in .k-fill { transform: none; }
+</style>
+  <div class="v2-canvas">
+    <div class="a k-copy" style="--ty:40px; --to:.8s; --tt:1s;" data-sm>
+      <h2>Tell us how<br>you sell.</h2>
+      <p class="k-lede">Pick your business and markets. We come back within one working day with a program outline and example numbers for your devices.</p>
+      <ul class="k-list">
+        <li><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">Live in six to eight weeks</li>
+        <li><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">White-label, under your brand</li>
+        <li><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">No devices on your balance sheet</li>
+      </ul>
+    </div>
+
+    <form class="a k-card" novalidate style="--ty:60px; --d:250ms; --to:.88s;" data-sm aria-labelledby="talk-title">
+      <h3 class="k-title" id="talk-title">Design your program</h3>
+      <fieldset>
+        <legend class="lbl" style="top:96px;">Your business</legend>
+        <label class="k-opt" style="top:122px; --ty:16px; --d:700ms; --to:.48s; --tt:.6s;" data-sm><input type="radio" name="business" value="Electronics retail chain"><img decoding="async" class="off" alt="" src="/v2/assets/solutions-radio.svg"><img decoding="async" class="on" alt="" src="/v2/assets/solutions-radio-on.svg"><span>Electronics retail chain</span></label>
+        <label class="k-opt" style="top:186px; --ty:16px; --d:780ms; --to:.48s; --tt:.6s;" data-sm><input type="radio" name="business" value="Telecom operator" checked><img decoding="async" class="off" alt="" src="/v2/assets/solutions-radio.svg"><img decoding="async" class="on" alt="" src="/v2/assets/solutions-radio-on.svg"><span>Telecom operator</span></label>
+        <label class="k-opt" style="top:250px; --ty:16px; --d:860ms; --to:.48s; --tt:.6s;" data-sm><input type="radio" name="business" value="Device brand or ecosystem"><img decoding="async" class="off" alt="" src="/v2/assets/solutions-radio.svg"><img decoding="async" class="on" alt="" src="/v2/assets/solutions-radio-on.svg"><span>Device brand or ecosystem</span></label>
+        <label class="k-opt" style="top:314px; --ty:16px; --d:940ms; --to:.48s; --tt:.6s;" data-sm><input type="radio" name="business" value="Apple or premium reseller"><img decoding="async" class="off" alt="" src="/v2/assets/solutions-radio.svg"><img decoding="async" class="on" alt="" src="/v2/assets/solutions-radio-on.svg"><span>Apple or premium reseller</span></label>
+      </fieldset>
+      <p class="lbl" style="top:390px;" id="talk-markets">Markets</p>
+      <div class="k-mk" role="group" aria-labelledby="talk-markets">
+        <button type="button" aria-pressed="true">Estonia</button>
+        <button type="button" aria-pressed="true">Latvia</button>
+        <button type="button" aria-pressed="true">Lithuania</button>
+        <button type="button" aria-pressed="false">Poland</button>
+        <button type="button" aria-pressed="false">Finland</button>
+        <button type="button" aria-pressed="false" data-more>+ 7 more</button>
+      </div>
+      <label class="lbl" style="top:478px;" for="talk-devices">Devices per month</label>
+      <div class="k-slider">
+        <div class="k-track"></div>
+        <div class="k-fill"></div>
+        <img decoding="async" class="k-knob" alt="" src="/v2/assets/solutions-slider-knob.svg" style="--tx:-240px; --to:.2s; --tt:.8s; --d:1200ms;" data-sm>
+        <input id="talk-devices" type="range" min="0" max="1000" value="556" aria-valuetext="about 4,000 devices">
+      </div>
+      <p class="k-val" aria-live="polite">about 4,000</p>
+      <button type="submit" class="btn btn--dark k-submit" style="--sc:.6; --d:2100ms; --to:.3s;" data-sm>Book a 30-minute call  →</button>
+      <p class="k-note" aria-live="polite">Reply within one working day</p>
+      <div class="k-done" role="status">
+        <img decoding="async" alt="" src="/v2/assets/solutions-mark-core.svg" style="width:42px; height:42px; margin-left:-14px;">
+        <b>Thanks, we’re on it.</b>
+        <p data-done-text>We come back within one working day with a program outline and example numbers for your devices.</p>
+        <button type="button" class="btn btn--ghost" data-reset style="padding:12px 20px; border:0; font:inherit; font-size:15px; color:#0F1115; box-shadow: inset 0 0 0 1px rgba(15,17,21,.2); cursor:pointer;">Change answers</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section data-section="closing" id="closing" class="v2-sec" data-sol style="--h:900px; background: linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), radial-gradient(calc(960px * var(--s)) calc(360px * var(--s)) at 50% calc(396px * var(--s)), rgba(48,71,236,.42) 0%, rgba(34,51,173,.32) 25%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), #0F1115;" data-tone="dark">
+  <style>
+    [data-section="closing"] .cl-head {
+      position: absolute; left: 70px; top: 284px; width: 1300px; margin: 0; text-align: center;
+      font-weight: 400; font-size: 150px; line-height: .92; letter-spacing: -4.5px;
+      background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    }
+    [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 168px; }
+    [data-section="closing"] .cl-foot {
+      position: absolute; left: 20px; top: 557px; width: 1400px; height: 343px; padding: 56px 56px 40px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: radial-gradient(700px 380px at 10% 0%, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 70%), linear-gradient(135deg, rgba(28,34,72,.92) 0%, rgba(17,20,34,.92) 100%); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 -20px 60px rgba(0,0,0,.45); border-radius: 32px; color: #F5F7FA; line-height: normal;
+    }
+    [data-section="closing"] .cl-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    [data-section="closing"] .cl-sub { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+    [data-section="closing"] .cl-logo { position: relative; display: block; width: 99.3px; height: 30px; }
+    [data-section="closing"] .cl-logo img { position: absolute; display: block; max-width: none; }
+    [data-section="closing"] .cl-sub h3 { margin: 0; font-weight: 500; font-size: 14px; color: #F5F7FA; }
+    [data-section="closing"] .cl-sub p { margin: 0; font-size: 13px; color: rgba(255,255,255,.6); }
+    [data-section="closing"] form { display: flex; gap: 8px; align-items: flex-start; }
+    [data-section="closing"] input {
+      width: 260px; height: 46px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08); color: #fff; font: 400 14px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s;
+    }
+    [data-section="closing"] input::placeholder { color: rgba(255,255,255,.5); }
+    [data-section="closing"] input:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.1); }
+    [data-section="closing"] button {
+      border: 0; cursor: pointer; padding: 12px 18px; border-radius: 10px; background: #fff; color: #0F1115;
+      font: 500 14px/18px 'Geologica', system-ui, sans-serif; transition: background-color .25s, transform .25s var(--ease);
+    }
+    [data-section="closing"] button:hover { background: #B7D7FF; }
+    [data-section="closing"] .cl-cols { display: flex; gap: 96px; white-space: nowrap; }
+    [data-section="closing"] .cl-cols nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    [data-section="closing"] .cl-cols span { font-size: 13px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-cols a, [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 14px; color: #fff; transition: opacity .2s; }
+    [data-section="closing"] .cl-cols a:hover, [data-section="closing"] .cl-legal a:hover { opacity: .7; }
+    [data-section="closing"] .cl-bottom { display: flex; justify-content: space-between; font-size: 12px; }
+    [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
+    [data-section="closing"] .cl-legal { display: flex; gap: 10px; }
+    [data-section="closing"] .cl-legal a { font-size: 12px; color: rgba(255,255,255,.8); }
+  </style>
+  <div class="v2-canvas">
+    <h2 class="cl-head" data-m="up">Built for the way<br>you <em>sell</em></h2>
+
+    <footer class="cl-foot" data-m="up" style="--d:250ms">
+      <div class="cl-top">
+        <div class="cl-sub">
+          <a href="/v2/" class="cl-logo" aria-label="Fintegre home">
+            <img decoding="async" src="/v2/assets/closing-logo-mark.svg" alt="" width="32.1605" height="23.0769" style="left:3.77px; top:3.46px;">
+            <img decoding="async" src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
+          </a>
+          <h3>Get trade-in insights</h3>
+          <p>Market reports and program benchmarks. No spam.</p>
+          <form class="cl-form" novalidate>
+            <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="cl-cols">
+          <nav aria-label="Platform"><span>Platform</span>
+            <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device value intelligence</a><a href="/v2/platform/">Vendor network</a><a href="/v2/platform/">Integrations</a>
+          </nav>
+          <nav aria-label="Solutions"><span>Solutions</span>
+            <a href="#retailers">Retailers</a><a href="#telecom">Telecom operators</a><a href="#oem">OEM and ecosystems</a><a href="#premium">Apple and premium retail</a>
+          </nav>
+          <nav aria-label="Company"><span>Company</span>
+            <a href="/v2/customers/">Customers</a><a href="/v2/insights/">Insights</a><a href="/v2/company/">About</a><a href="/v2/design-your-program/">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="cl-bottom">
+        <small>© 2026 Fintegre. All rights reserved.</small>
+        <nav class="cl-legal" aria-label="Legal"><a href="#closing">Privacy</a><a href="#closing">Cookies</a><a href="#closing">Imprint</a></nav>
+      </div>
+    </footer>
+  </div>
+</section>
+</main>
+<script src="/v2/v2.js"></script>
+<script>
+// Program fit matrix: the highlighted row follows the pointer / keyboard focus, and comes back to row 01 when you leave.
+(() => {
+  const sec = document.querySelector('[data-section="program-fit"]');
+  if (!sec) return;
+  const rows = [...sec.querySelectorAll('.f-row')];
+  const set = (r) => rows.forEach((x) => x.classList.toggle('is-on', x === r));
+  rows.forEach((r) => {
+    r.addEventListener('pointerenter', () => set(r));
+    r.addEventListener('focus', () => set(r));
+  });
+  sec.querySelector('.f-card').addEventListener('pointerleave', () => set(rows[0]));
+})();
+</script>
+<script>
+// "Tell us how you sell": business radios, market toggles, devices slider, browser-side validation and a success state (no backend).
+(() => {
+  const sec = document.querySelector('[data-section="talk"]');
+  if (!sec) return;
+  const form = sec.querySelector('form');
+  const slider = sec.querySelector('.k-slider');
+  const range = slider.querySelector('input');
+  const val = sec.querySelector('.k-val');
+  const note = sec.querySelector('.k-note');
+  const noteText = note.textContent;
+  const fmt = new Intl.NumberFormat('en-US');
+
+  // 0..1000 on the slider → 100..13,000 devices a month (quadratic, so the low end has room), rounded.
+  const devices = (v) => {
+    const n = 100 + Math.pow(v / 1000, 2) * 12900;
+    return n < 1000 ? Math.round(n / 50) * 50 : Math.round(n / 500) * 500;
+  };
+  const paint = () => {
+    const p = range.value / 1000;
+    slider.style.setProperty('--p', p);
+    const n = devices(+range.value);
+    val.textContent = (n >= 13000 ? 'more than ' : 'about ') + fmt.format(n);
+    range.setAttribute('aria-valuetext', val.textContent + ' devices');
+  };
+  range.addEventListener('input', paint);
+  paint();
+
+  sec.querySelectorAll('.k-mk button').forEach((b) =>
+    b.addEventListener('click', () => {
+      b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+      note.textContent = noteText; note.classList.remove('is-err');
+    }));
+  form.addEventListener('change', () => { note.textContent = noteText; note.classList.remove('is-err'); });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const biz = form.querySelector('input[name="business"]:checked');
+    const markets = [...sec.querySelectorAll('.k-mk button[aria-pressed="true"]')].map((b) => b.textContent.trim());
+    let err = '';
+    if (!biz) err = 'Pick your business first';
+    else if (!markets.length) err = 'Pick at least one market';
+    if (err) { note.textContent = err; note.classList.add('is-err'); return; }
+    const list = markets.length > 2 ? markets.slice(0, -1).join(', ') + ' and ' + markets.at(-1) : markets.join(' and ');
+    sec.querySelector('[data-done-text]').textContent =
+      `${biz.value}, ${list}, ${val.textContent} devices a month. We come back within one working day with a program outline and example numbers.`;
+    form.classList.add('is-sent');
+    sec.querySelector('[data-reset]').focus({ preventScroll: true });
+  });
+  sec.querySelector('[data-reset]').addEventListener('click', () => form.classList.remove('is-sent'));
+})();
+</script>
+<script>
+// Closing footer: newsletter form has no backend yet, so it validates locally and confirms in place.
+(() => {
+  const form = document.querySelector('[data-section="closing"] .cl-form');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input');
+    const btn = form.querySelector('button');
+    if (!input.checkValidity()) { input.focus(); input.style.borderColor = 'rgba(255,140,140,.7)'; return; }
+    input.style.borderColor = '';
+    input.value = '';
+    input.placeholder = 'Thanks, you are on the list';
+    btn.textContent = 'Subscribed';
+    btn.disabled = true;
+  });
+  form.querySelector('input').addEventListener('input', (e) => { e.target.style.borderColor = ''; });
+})();
+</script>
+</body>
+</html>

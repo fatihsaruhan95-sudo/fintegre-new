@@ -1,0 +1,106 @@
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 392.73px * var(--s)) calc(510px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="hero"] .rh-abs { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+  [data-section="hero"] .rh-glow { position: absolute; pointer-events: none; max-width: none; }
+
+  [data-section="hero"] .rh-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; z-index: 2; }
+  [data-section="hero"] .rh-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .rh-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .rh-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .rh-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .rh-nav a { transition: color .2s; }
+  [data-section="hero"] .rh-nav a:hover { color: #F5F7FA; }
+  [data-section="hero"] .rh-btn { display: inline-flex; align-items: center; border-radius: 999px; font: 400 15px/normal 'Geologica', system-ui, sans-serif; white-space: nowrap; border: 0; cursor: pointer; transition: background-color .25s, box-shadow .25s; }
+  [data-section="hero"] .rh-btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .rh-btn--white { background: #fff; color: #0F1115; }
+  [data-section="hero"] .rh-btn--light:hover, [data-section="hero"] .rh-btn--white:hover { background: #B7D7FF; }
+  [data-section="hero"] .rh-btn--ghost { background: transparent; color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="hero"] .rh-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+
+  [data-section="hero"] .rh-copy { left: 120px; top: 176px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  [data-section="hero"] .rh-crumb { font-size: 14px; color: #B7D7FF; line-height: normal; white-space: pre; }
+  [data-section="hero"] .rh-crumb a:hover { color: #F5F7FA; }
+  [data-section="hero"] h1 { margin: 0; font-weight: 400; font-size: 64px; line-height: 1.02; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .rh-lede { width: 540px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .rh-meta { font-size: 14px; color: #A7B0BE; line-height: normal; white-space: pre; }
+  [data-section="hero"] .rh-ctas { display: flex; gap: 12px; }
+  [data-section="hero"] .rh-ctas .rh-btn { padding: 14px 22px; }
+
+  [data-section="hero"] .rh-vis { left: 780px; top: 110px; width: 620px; height: 760px; }
+  [data-section="hero"] .rh-cover { position: absolute; overflow: clip; line-height: normal; white-space: nowrap; }
+  [data-section="hero"] .rh-cover p, [data-section="hero"] .rh-cover img { position: absolute; display: block; max-width: none; }
+
+  [data-section="hero"] .rh-card { left: 120px; top: 640px; width: 640px; height: 192px; border-radius: 26px; overflow: clip;
+    background: rgba(255,255,255,.07); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(183,215,255,.14); box-shadow: 0 30px 60px rgba(5,8,31,.5); }
+  [data-section="hero"] .rh-card > * { position: absolute; }
+  [data-section="hero"] .rh-big { top: 48px; font-weight: 300; font-size: 44px; line-height: normal; letter-spacing: -0.03em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .rh-small { top: 110px; width: 170px; font-weight: 300; font-size: 13px; line-height: 1.45; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .rh-div { top: 52px; width: 1px; height: 104px; background: rgba(245,247,250,.12); }
+  [data-section="hero"] svg.rh-abs { overflow: visible; }
+
+  .motion [data-section="hero"] [data-m][data-ty] { translate: 0 var(--ty); }
+  .motion [data-section="hero"] [data-m][data-tx] { translate: var(--tx) 0; }
+  .motion [data-section="hero"].is-in [data-m][data-ty], .motion [data-section="hero"].is-in [data-m][data-tx] { translate: none; }
+  .motion [data-section="hero"] [data-draw] { transition-duration: .7s; }
+</style>
+  <div class="v2-canvas">
+    <img class="rh-glow" alt="" src="/v2/assets/insights-hero-glow-1.svg" style="left:720px; top:-100px; width:1060px; height:920px;">
+    <img class="rh-glow" alt="" src="/v2/assets/insights-hero-glow-2.svg" style="left:-380px; top:420px; width:960px; height:780px;">
+
+    <div class="rh-abs rh-vis" aria-hidden="true">
+      <img class="rh-glow" alt="" src="/v2/assets/report-room-light-hero.svg" style="left:136.05px; top:60px; width:944.9px; height:640px;">
+      <div class="rh-abs" data-m="right" data-tx="80px" style="--tx:80px; --d:200ms; left:304.13px; top:148.59px; width:497px; height:600px; transform:rotate(10deg);">
+        <img alt="" src="/v2/assets/report-iphone18pro-burgundy.webp" style="display:block; width:100%; height:100%; object-fit:contain;">
+      </div>
+      <div class="rh-cover" data-m="up" data-ty="90px" style="--ty:90px; --d:400ms; left:59.02px; top:54.67px; width:420px; height:560px; transform:rotate(-4deg); border:1.4px solid rgba(183,215,255,.25); border-radius:25.2px; box-shadow:0 42px 84px -14px rgba(5,8,31,.6); background:linear-gradient(135deg, #5D74FF 0%, #3047EC 71.429%); color:#F5F7FA;">
+        <p style="left:33.6px; top:33.6px; font-size:16.8px;">Fintegre intelligence · Report</p>
+        <img alt="" src="/v2/assets/report-hbar-1.svg" width="101.698" height="98" style="left:33.6px; top:179.2px;">
+        <img alt="" src="/v2/assets/report-hbar-2.svg" width="127.811" height="154" style="left:114.8px; top:123.2px;">
+        <img alt="" src="/v2/assets/report-hbar-3.svg" width="153.925" height="210" style="left:196px; top:67.2px;">
+        <img alt="" src="/v2/assets/report-hbar-4.svg" width="118.019" height="133" style="left:277.2px; top:144.2px;">
+        <p style="left:33.6px; top:392px; width:347.2px; white-space:normal; font-size:42px; line-height:1.04; letter-spacing:-0.03em;">European Device Value Index</p>
+        <p style="left:33.6px; top:501.2px; font-size:16.8px;">Q3 · 2026</p>
+      </div>
+    </div>
+
+    <div class="rh-abs rh-top">
+      <a href="/v2/" class="rh-logo" aria-label="Fintegre home"><span class="rh-mark"><img alt="" src="/v2/assets/insights-logo-mark.svg"></span>Fintegre</a>
+      <nav class="rh-nav" aria-label="Hero">
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/customers/">Customers</a>
+        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/design-your-program/" class="rh-btn rh-btn--light" style="padding:10px 18px;">Design your program</a>
+    </div>
+
+    <div class="rh-abs rh-copy" data-m="up">
+      <p class="rh-crumb"><a href="/v2/insights/">Insights</a>  /  Market report</p>
+      <h1>European Device<br>Value Index, Q3 2026</h1>
+      <p class="rh-lede">Residual values for 140 phone, tablet and watch models across five European markets, from 41,800 devices checked and valued between July and September.</p>
+      <p class="rh-meta">2 Oct 2026  ·  14 min read  ·  28 pages</p>
+      <div class="rh-ctas">
+        <a href="#download" class="rh-btn rh-btn--white">Download the report</a>
+        <button type="button" class="rh-btn rh-btn--ghost rh-share">Share&nbsp;&nbsp;↗</button>
+      </div>
+    </div>
+
+    <div class="rh-abs rh-card" data-m="up" style="--d:900ms;">
+      <p style="left:26px; top:22px; font-size:13px; color:#A7B0BE; line-height:normal;">Key takeaways</p>
+      <p class="rh-big" style="left:26px;">−9 %</p>
+      <p class="rh-small" style="left:26px;">Value drop in the 30 days after a new iPhone launch</p>
+      <i class="rh-div" style="left:210px;"></i>
+      <p class="rh-big" style="left:226px;">€612</p>
+      <p class="rh-small" style="left:226px;">Best median bid, iPhone 15 Pro 256 GB, Latvia</p>
+      <i class="rh-div" style="left:410px;"></i>
+      <p class="rh-big" style="left:426px;">+14 %</p>
+      <p class="rh-small" style="left:426px;">Value per device when three or more buyers compete</p>
+    </div>
+
+    <svg class="rh-abs" aria-hidden="true" style="left:759.35px; top:559.35px;" width="91.3" height="141.3" viewBox="0 0 91.3 141.3" fill="none"><path pathLength="1" data-draw style="--d:1500ms" d="M0.65 140.65C60.65 140.65 40.65 40.65 90.65 0.650024" stroke-width="1.3" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+  </div>
+</section>

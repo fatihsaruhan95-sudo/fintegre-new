@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study — Fintegre (v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  // Phones get the mobile layout.
+  if (innerWidth < 768) location.replace('/v2/mobile/case-study/' + location.hash);
+  // Hide the page until fonts, Tailwind and images are ready, so the hero entrance is seen from its first frame.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="/v2/v2.css">
+</head>
+<body>
+<nav class="ver-switch" aria-label="Site version">
+  <a href="/">V1</a>
+  <a href="/v2/" aria-current="page">V2</a>
+</nav>
+
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="/v2/" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="/assets/header-mark.svg">Fintegre</a>
+    <nav class="v2-nav">
+      <a href="/v2/platform/">Platform</a>
+      <a href="/v2/solutions/">Solutions</a>
+      <a href="/v2/intelligence/">Intelligence</a>
+      <a href="/v2/customers/">Customers</a>
+      <a href="/v2/insights/">Insights</a>
+      <a href="/v2/company/">Company</a>
+    </nav>
+    <a href="/v2/design-your-program/" class="v2-cta">Design your program</a>
+  </div>
+</header>
+
+<main class="page">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 327.27px * var(--s)) calc(480px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 22.5%, rgba(18,26,90,.9) 45%, rgba(17,22,55,.45) 72.5%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  /* Page-wide helpers for the Case study page (this file is the first section, so these load first). */
+  .page .v2-canvas { line-height: normal; }
+  .page .v2-canvas p { margin: 0; }
+  .cs-abs { position: absolute; }
+  .cs-glow { position: absolute; pointer-events: none; max-width: none; display: block; }
+  .cs-img { position: absolute; display: block; max-width: none; object-fit: contain; pointer-events: none; }
+  .cs-glass { background: rgba(255,255,255,.06); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  .cs-btn { display: inline-flex; align-items: center; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; padding: 14px 22px; transition: background-color .25s, box-shadow .25s, color .25s; }
+  .cs-btn--white { background: #fff; color: #0F1115; }
+  .cs-btn--white:hover { background: #B7D7FF; }
+  .cs-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  .cs-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.6); }
+  .cs-h2 { font-weight: 400; font-size: 60px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  .cs-lede { font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  .cs-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px 10px 14px; border-radius: 999px; white-space: nowrap; font-size: 14px; color: #F5F7FA; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .cs-chip img { width: 6px; height: 6px; display: block; }
+  svg.cs-abs { overflow: visible; }
+
+  @property --x { syntax: '*'; inherits: false; }
+  @property --y { syntax: '*'; inherits: false; }
+  @property --sc { syntax: '*'; inherits: false; }
+  @property --op { syntax: '*'; inherits: false; }
+  /* Entrance system for this page: data-k + --x/--y/--sc offsets, --d delay, --o/--t durations (Figma timeline). */
+  .motion [data-k] { opacity: 0; translate: var(--x, 0px) var(--y, 0px); scale: var(--sc, 1);
+    transition: opacity var(--o, .7s) var(--ease) var(--d, 0ms), translate var(--t, 1s) var(--ease) var(--d, 0ms), scale var(--t, .7s) var(--spring) var(--d, 0ms); }
+  .motion .is-in [data-k] { opacity: var(--op, 1); translate: none; scale: 1; }
+  .motion [data-w] { transform: scaleX(0); transform-origin: 0 50%; transition: transform var(--t, 1.4s) var(--inout) var(--d, 0ms); }
+  .motion .is-in [data-w] { transform: none; }
+
+  /* Top bar (part of the hero design) */
+  [data-section="hero"] .cs-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; }
+  [data-section="hero"] .cs-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .cs-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .cs-mark img { position: absolute; left: 2.49px; top: 2.33px; width: 21.38px; height: 15.34px; max-width: none; }
+  [data-section="hero"] .cs-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .cs-nav a { transition: color .2s; }
+  [data-section="hero"] .cs-nav a:hover, [data-section="hero"] .cs-nav a[aria-current] { color: #F5F7FA; }
+  [data-section="hero"] .cs-top .cs-btn { padding: 10px 18px; background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .cs-top .cs-btn:hover { background: #fff; }
+
+
+  [data-section="hero"] .hc-copy { position: absolute; left: 120px; top: 180px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  [data-section="hero"] .hc-crumb { font-size: 14px; color: #A7B0BE; white-space: pre; }
+  [data-section="hero"] .hc-crumb a { transition: color .2s; }
+  [data-section="hero"] .hc-crumb a:hover { color: #F5F7FA; }
+  [data-section="hero"] h1 { margin: 0; width: 600px; font-weight: 400; font-size: 68px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .hc-kpis { display: flex; gap: 44px; white-space: nowrap; }
+  [data-section="hero"] .hc-kpis div { display: flex; flex-direction: column; gap: 8px; }
+  [data-section="hero"] .hc-kpis b { font-weight: 300; font-size: 44px; letter-spacing: -0.03em; color: #F5F7FA; }
+  [data-section="hero"] .hc-kpis span { font-size: 12px; color: #B7D7FF; }
+  [data-section="hero"] .hc-card { position: absolute; left: 1010px; top: 470px; width: 360px; padding: 26px 28px 18px; border-radius: 26px; background: rgba(15,17,21,.62); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="hero"] .hc-row { display: flex; justify-content: space-between; padding: 12px 0; font-size: 14px; white-space: nowrap; border-bottom: 1px solid rgba(183,215,255,.1); }
+  [data-section="hero"] .hc-row:last-child { border-bottom: 0; }
+  [data-section="hero"] .hc-row span { font-weight: 300; color: #A7B0BE; }
+  [data-section="hero"] .hc-row b { font-weight: 400; color: #F5F7FA; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="cs-glow" alt="" src="/v2/assets/case-study-glow-hero-r.svg" style="left:680px; top:-120px; width:1120px; height:960px;">
+    <img decoding="async" class="cs-glow" alt="" src="/v2/assets/case-study-glow-hero-l.svg" style="left:-400px; top:380px; width:1000px; height:820px;">
+    <img decoding="async" class="cs-glow" alt="" src="/v2/assets/case-study-room-light.svg" style="left:745.45px; top:140px; width:1142.1px; height:766px;">
+    <img decoding="async" class="cs-img" alt="Two iPhone 18 Pro in Glacier" src="/v2/assets/case-study-iphone18pro-glacier.webp" data-k style="left:1010px; top:190px; width:613px; height:740px; --x:60px; --o:1.4s; --t:1.6s;">
+    <div class="cs-abs" style="left:0; top:600px; width:1440px; height:300px; background:linear-gradient(180deg, rgba(15,17,21,0), #0F1115);"></div>
+
+    <div class="cs-abs cs-top">
+      <a href="/v2/" class="cs-logo" aria-label="Fintegre home"><span class="cs-mark"><img decoding="async" alt="" src="/v2/assets/case-study-logo-mark.svg"></span>Fintegre</a>
+      <nav class="cs-nav" aria-label="Hero">
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/customers/" aria-current="page">Customers</a>
+        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/design-your-program/" class="cs-btn">Design your program</a>
+    </div>
+
+    <div class="hc-copy" data-k style="--y:50px; --d:200ms; --o:.7s; --t:1s;">
+      <p class="hc-crumb"><a href="/v2/customers/">Customers</a>  /  A Baltic electronics retailer</p>
+      <h1>Trade-in became part of every iPhone sale.</h1>
+      <p class="cs-lede" style="width:470px;">40 stores and an online shop across Lithuania, Latvia and Estonia. Six months after launch, trade-in is part of most new iPhone sales.</p>
+      <div class="hc-kpis">
+        <div data-k style="--y:30px; --d:800ms; --o:.63s; --t:.9s;"><b>+38%</b><span>Trade-in participation</span></div>
+        <div data-k style="--y:30px; --d:950ms; --o:.63s; --t:.9s;"><b>+14%</b><span>Value per device</span></div>
+        <div data-k style="--y:30px; --d:1100ms; --o:.63s; --t:.9s;"><b>58 s</b><span>Time to offer</span></div>
+        <div data-k style="--y:30px; --d:1250ms; --o:.63s; --t:.9s;"><b>9 wk</b><span>Pilot to rollout</span></div>
+      </div>
+    </div>
+
+    <div class="hc-card" data-k style="--sc:.6; --d:1200ms; --o:.3s; --t:.7s;">
+      <p style="font-size:13px; color:#A7B0BE; margin-bottom:12px;">Program at a glance</p>
+      <div class="hc-row" data-k style="--y:12px; --d:1600ms; --o:.42s; --t:.6s;"><span>Markets</span><b>LT · LV · EE</b></div>
+      <div class="hc-row" data-k style="--y:12px; --d:1750ms; --o:.42s; --t:.6s;"><span>Channels</span><b>40 stores, online</b></div>
+      <div class="hc-row" data-k style="--y:12px; --d:1900ms; --o:.42s; --t:.6s;"><span>Programs</span><b>Trade-in, early upgrade</b></div>
+      <div class="hc-row" data-k style="--y:12px; --d:2050ms; --o:.42s; --t:.6s;"><span>Buyers</span><b>3 local, live bids</b></div>
+      <div class="hc-row" data-k style="--y:12px; --d:2200ms; --o:.42s; --t:.6s;"><span>Live since</span><b>March 2026</b></div>
+    </div>
+
+    <svg class="cs-abs" style="left:986px; top:268.3px;" width="150.192" height="91.3731" viewBox="0 0 150.192 91.3731" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:2400ms; transition-duration:.8s;" d="M0 0.7C60 0.7 80 70.7 150 90.7" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <div class="cs-abs cs-chip" data-k style="left:780px; top:250px; background:#3047EC; backdrop-filter:none; -webkit-backdrop-filter:none; --sc:.6; --d:2200ms; --o:.25s; --t:.7s;"><img decoding="async" alt="" src="/v2/assets/case-study-dot.svg">Checked · Grade A · 58 s</div>
+  </div>
+</section>
+
+<section data-section="challenge" id="challenge" class="v2-sec" data-tone="light" style="--h:900px; background:#F5F7FA;">
+<style>
+  [data-section="challenge"] .ch-copy { position: absolute; left: 120px; top: 236px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  [data-section="challenge"] .ch-list { width: 470px; font-size: 15px; white-space: nowrap; }
+  [data-section="challenge"] .ch-list div { display: flex; justify-content: space-between; padding: 14px 0; border-top: 1px solid rgba(15,17,21,.1); }
+  [data-section="challenge"] .ch-list b { font-weight: 400; color: #0F1115; }
+  [data-section="challenge"] .ch-list span { font-weight: 300; color: #5C6373; }
+  [data-section="challenge"] .ch-card { position: absolute; left: 800px; top: 300px; width: 380px; padding: 28px 30px 22px; border-radius: 26px; background: #fff; box-shadow: 0 30px 60px rgba(15,20,64,.12); white-space: nowrap; }
+  [data-section="challenge"] .ch-row { display: flex; justify-content: space-between; padding: 12px 0; font-size: 14px; border-top: 1px solid #E3E8F0; }
+  [data-section="challenge"] .ch-row span { font-weight: 300; color: #5C6373; }
+  [data-section="challenge"] .ch-row b { font-weight: 400; color: #0F1115; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="cs-glow" alt="" src="/v2/assets/case-study-glow-ice.svg" style="left:560px; top:-80px; width:1200px; height:1040px;">
+    <div class="ch-copy" data-k style="--y:50px; --d:200ms; --o:.7s; --t:1s;">
+      <h2 class="cs-h2" style="margin:0; width:640px; color:#0F1115;">Trade-in was a side<br>desk.</h2>
+      <p class="cs-lede" style="width:470px; color:#5C6373;">Prices came from a printed list, updated once a month. One buyer took every device at a fixed margin. An offer took six minutes, so staff rarely brought it up, and customers rarely said yes.</p>
+      <div class="ch-list">
+        <div data-k style="--y:16px; --d:800ms; --o:.42s; --t:.6s;"><b>Prices a month old</b><span>Lost value on every new model launch</span></div>
+        <div data-k style="--y:16px; --d:950ms; --o:.42s; --t:.6s;"><b>One buyer, fixed margin</b><span>No competition for the device</span></div>
+        <div data-k style="--y:16px; --d:1100ms; --o:.42s; --t:.6s;"><b>Six minutes per offer</b><span>Queues at the till, low uptake</span></div>
+      </div>
+    </div>
+    <img decoding="async" class="cs-img" alt="iPhone 13" src="/v2/assets/case-study-iphone13-tall.webp" data-k style="left:1080px; top:150px; width:330px; height:674px; border-radius:48px; box-shadow:0 36px 60px rgba(15,20,64,.22); --y:80px; --d:300ms; --o:1s; --t:1.3s;">
+    <div class="ch-card" data-k style="--y:60px; --d:900ms; --o:.7s; --t:1s;">
+      <p style="font-size:13px; color:#5C6373;">Before · Store 6, Riga · 2025</p>
+      <p style="font-weight:300; font-size:22px; color:#0F1115; margin-bottom:14px;">iPhone 13, 128 GB</p>
+      <div class="ch-row" data-k style="--d:1300ms; --o:.3s;"><span>Time to offer</span><b>6 min</b></div>
+      <div class="ch-row" data-k style="--d:1420ms; --o:.3s;"><span>Price source</span><b>Monthly list</b></div>
+      <div class="ch-row" data-k style="--d:1540ms; --o:.3s;"><span>Buyers</span><b>1</b></div>
+      <div class="ch-row" data-k style="--d:1660ms; --o:.3s;"><span>Offer</span><b>€362</b></div>
+      <div class="ch-row" data-k style="--d:1780ms; --o:.3s;"><span>Payout</span><b>5 days</b></div>
+      <div class="ch-row" data-k style="--d:1900ms; --o:.3s;"><span>Participation</span><b>11 %</b></div>
+    </div>
+  </div>
+</section>
+
+<section data-section="setup" id="setup" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(720px * var(--s)) calc(281.25px * var(--s)) at 50% calc(534.37px * var(--s)), rgba(34,54,196,.85) 0%, rgba(26,40,143,.825) 22.5%, rgba(18,26,90,.8) 45%, rgba(17,22,55,.4) 72.5%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="setup"] .su-step { position: absolute; width: 270px; padding: 22px 24px 24px; border-radius: 24px; display: flex; flex-direction: column; gap: 10px; }
+  [data-section="setup"] .su-step small { font-size: 13px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="setup"] .su-step b { font-weight: 300; font-size: 21px; color: #F5F7FA; }
+  [data-section="setup"] .su-step span { font-weight: 300; font-size: 14px; line-height: 1.5; color: rgba(245,247,250,.7); }
+  [data-section="setup"] .su-node { position: absolute; width: 14px; height: 14px; display: block; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="cs-glow" alt="" src="/v2/assets/case-study-glow-setup.svg" style="left:100px; top:180px; width:1300px; height:720px;">
+    <h2 class="cs-abs cs-h2" data-k style="left:120px; top:130px; margin:0; --y:50px; --d:100ms; --o:.63s; --t:.9s;">Live in nine weeks.</h2>
+    <p class="cs-abs cs-lede" data-k style="left:880px; top:142px; width:440px; --y:30px; --d:300ms; --o:.63s; --t:.9s;">A pilot in three Vilnius stores first. Then the rest of the chain and the online shop, on the same prices and buyers.</p>
+
+    <svg class="cs-abs" style="left:120px; top:549.25px;" width="1200.09" height="15.3564" viewBox="0 0 1200.09 15.3564" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:300ms; transition-duration:2.6s;" d="M0.0449192 7.67819C400.045 -16.3218 800.045 31.6782 1200.04 7.67819" stroke-width="1.5" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+
+    <img decoding="async" class="su-node" alt="" src="/v2/assets/case-study-node-12.svg" data-k style="left:303px; top:538px; --sc:.4; --d:600ms; --o:.2s; --t:.6s;">
+    <svg class="cs-abs" style="left:309.3px; top:490px;" width="1.4" height="52" viewBox="0 0 1.4 52" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:750ms; transition-duration:.4s;" d="M0.7 52V0" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.4"/></svg>
+    <div class="su-step cs-glass" data-k style="left:175px; top:317px; --y:-30px; --d:850ms; --o:.56s; --t:.8s;"><small>Weeks 1–2</small><b>Connected to the till</b><span>Checkout in stores and online integrated. Staff app on store iPhones.</span></div>
+
+    <img decoding="async" class="su-node" alt="" src="/v2/assets/case-study-node-34.svg" data-k style="left:603px; top:546px; --sc:.4; --d:1200ms; --o:.2s; --t:.6s;">
+    <svg class="cs-abs" style="left:609.3px; top:558px;" width="1.4" height="52" viewBox="0 0 1.4 52" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1350ms; transition-duration:.4s;" d="M0.7 0V52" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.4"/></svg>
+    <div class="su-step cs-glass" data-k style="left:475px; top:610px; --y:30px; --d:1450ms; --o:.56s; --t:.8s;"><small>Weeks 3–4</small><b>Buyer network set up</b><span>Three local buyers in Lithuania, Latvia and Estonia bid live on every device.</span></div>
+
+    <img decoding="async" class="su-node" alt="" src="/v2/assets/case-study-node-56.svg" data-k style="left:903px; top:545px; --sc:.4; --d:1800ms; --o:.2s; --t:.6s;">
+    <svg class="cs-abs" style="left:909.3px; top:490px;" width="1.4" height="52" viewBox="0 0 1.4 52" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1950ms; transition-duration:.4s;" d="M0.7 52V0" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.4"/></svg>
+    <div class="su-step cs-glass" data-k style="left:775px; top:312px; --y:-30px; --d:2050ms; --o:.56s; --t:.8s;"><small>Weeks 5–6</small><b>Pilot in 3 Vilnius stores</b><span>1,240 devices checked. An offer in 58 seconds on average.</span></div>
+
+    <img decoding="async" class="su-node" alt="" src="/v2/assets/case-study-node-79.svg" data-k style="left:1183px; top:518px; width:54px; height:54px; --sc:.4; --d:2400ms; --o:.2s; --t:.6s;">
+    <svg class="cs-abs" style="left:1209.3px; top:558px;" width="1.4" height="52" viewBox="0 0 1.4 52" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:2550ms; transition-duration:.4s;" d="M0.7 0V52" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.4"/></svg>
+    <div class="su-step cs-glass" data-k style="left:1075px; top:610px; background:rgba(48,71,236,.9); --y:30px; --d:2650ms; --o:.56s; --t:.8s;"><small style="color:#F5F7FA;">Weeks 7–9</small><b>40 stores and online</b><span>Same flow and the same prices in every channel.</span></div>
+  </div>
+</section>
+
+<section data-section="results" id="results" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% + 327.3px * var(--s)) calc(480px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 22.5%, rgba(18,26,90,.9) 45%, rgba(17,22,55,.45) 72.5%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="results"] .rs-card { position: absolute; border-radius: 26px; white-space: nowrap; }
+  [data-section="results"] .rs-card p, [data-section="results"] .rs-card i { position: absolute; }
+  [data-section="results"] .rs-card > i:not(.rs-track):not(.rs-bar) { left: 71px; width: 596px; height: 1px; }
+  [data-section="results"] .rs-g { left: 31px; font-size: 11px; color: #A7B0BE; }
+  [data-section="results"] .rs-v { font-size: 12px; color: #F5F7FA; }
+  [data-section="results"] .rs-m { top: 451px; font-size: 12px; color: #A7B0BE; }
+  [data-section="results"] .rs-delta { padding: 6px 12px; border-radius: 999px; background: #3047EC; font-size: 13px; color: #F5F7FA; }
+  [data-section="results"] .rs-track, [data-section="results"] .rs-bar { left: 149px; height: 8px; border-radius: 4px; }
+  [data-section="results"] .rs-track { width: 220px; background: rgba(255,255,255,.06); }
+</style>
+  <div class="v2-canvas">
+    <h2 class="cs-abs cs-h2" data-k style="left:120px; top:120px; margin:0; --y:50px; --d:100ms; --o:.63s; --t:.9s;">Six months in.</h2>
+    <p class="cs-abs cs-lede" data-k style="left:120px; top:200px; width:520px; --y:30px; --d:300ms; --o:.63s; --t:.9s;">Measured against the same months a year earlier, in the same 40 stores.</p>
+
+    <div class="rs-card cs-glass" data-k style="left:120px; top:300px; width:700px; height:500px; --y:60px; --d:300ms; --o:.7s; --t:1s;" role="img" aria-label="Trade-in participation rose from 11% in March to 49% in August">
+      <p style="left:31px; top:27px; font-size:13px; color:#A7B0BE;">Trade-in participation · share of iPhone sales</p>
+      <p style="left:31px; top:51px; font-weight:300; font-size:44px; letter-spacing:-0.03em; color:#F5F7FA;">49 %</p>
+      <p style="left:150px; top:73px; font-size:14px; color:#B7D7FF;">from 11 % before launch</p>
+      <i style="top:439px; background:rgba(183,215,255,.22);"></i><p class="rs-g" style="top:431px;">0%</p>
+      <i style="top:342.33px; background:rgba(183,215,255,.08);"></i><p class="rs-g" style="top:334.33px;">20%</p>
+      <i style="top:245.67px; background:rgba(183,215,255,.08);"></i><p class="rs-g" style="top:237.67px;">40%</p>
+      <i style="top:149px; background:rgba(183,215,255,.08);"></i><p class="rs-g" style="top:141px;">60%</p>
+      <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-bar-mar.svg" data-k style="left:95px; top:385.83px; width:74px; height:53.167px; --y:31.9px; --d:600ms; --o:.4s; --t:.9s;">
+      <p class="rs-v" data-k style="left:119px; top:361.83px; --d:1200ms; --o:.3s;">11%</p>
+      <p class="rs-m" style="left:103px;">Mar</p>
+      <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-bar-apr.svg" data-k style="left:189px; top:347.17px; width:74px; height:91.833px; --y:55.1px; --d:750ms; --o:.4s; --t:.9s;">
+      <p class="rs-v" data-k style="left:213px; top:323.17px; --d:1350ms; --o:.3s;">19%</p>
+      <p class="rs-m" style="left:197px;">Apr</p>
+      <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-bar-may.svg" data-k style="left:283px; top:308.5px; width:74px; height:130.5px; --y:78.3px; --d:900ms; --o:.4s; --t:.9s;">
+      <p class="rs-v" data-k style="left:307px; top:284.5px; --d:1500ms; --o:.3s;">27%</p>
+      <p class="rs-m" style="left:291px;">May</p>
+      <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-bar-jun.svg" data-k style="left:377px; top:269.83px; width:74px; height:169.167px; --y:101.5px; --d:1050ms; --o:.4s; --t:.9s;">
+      <p class="rs-v" data-k style="left:401px; top:245.83px; --d:1650ms; --o:.3s;">35%</p>
+      <p class="rs-m" style="left:385px;">Jun</p>
+      <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-bar-jul.svg" data-k style="left:471px; top:226.33px; width:74px; height:212.667px; --y:127.6px; --d:1200ms; --o:.4s; --t:.9s;">
+      <p class="rs-v" data-k style="left:495px; top:202.33px; --d:1800ms; --o:.3s;">44%</p>
+      <p class="rs-m" style="left:479px;">Jul</p>
+      <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-bar-aug.svg" data-k style="left:565px; top:202.17px; width:74px; height:236.833px; --y:142.1px; --d:1350ms; --o:.4s; --t:.9s;">
+      <p class="rs-v" data-k style="left:589px; top:178.17px; --d:1950ms; --o:.3s;">49%</p>
+      <p class="rs-m" style="left:573px;">Aug</p>
+    </div>
+    <div class="rs-card cs-glass" data-k style="left:860px; top:300px; width:460px; height:240px; --y:60px; --d:600ms; --o:.7s; --t:1s;">
+      <p style="left:29px; top:25px; font-size:13px; color:#A7B0BE;">Value per device · average credit</p>
+      <p style="left:29px; top:47px; font-weight:300; font-size:40px; letter-spacing:-0.03em; color:#F5F7FA;">€612</p>
+      <p class="rs-delta" style="left:131px; top:61px;">+14%</p>
+      <p style="left:29px; top:129px; font-size:13px; color:#A7B0BE;">Before</p>
+      <i class="rs-track" style="top:134px;"></i><i class="rs-bar" data-w style="top:134px; width:184px; background:rgba(167,176,190,.45); --d:1200ms; --t:1.2s;"></i>
+      <p style="left:383px; top:127px; font-size:15px; color:#A7B0BE;">€536</p>
+      <p style="left:29px; top:177px; font-size:13px; color:#F5F7FA;">After</p>
+      <i class="rs-track" style="top:182px;"></i><i class="rs-bar" data-w style="top:182px; width:210px; background:#B7D7FF; --d:1500ms; --t:1.2s;"></i>
+      <p style="left:383px; top:175px; font-size:15px; color:#F5F7FA;">€612</p>
+    </div>
+    <div class="rs-card cs-glass" data-k style="left:860px; top:560px; width:460px; height:240px; --y:60px; --d:800ms; --o:.7s; --t:1s;">
+      <p style="left:29px; top:25px; font-size:13px; color:#A7B0BE;">Time to offer · store median</p>
+      <p style="left:29px; top:47px; font-weight:300; font-size:40px; letter-spacing:-0.03em; color:#F5F7FA;">58 s</p>
+      <p class="rs-delta" style="left:117px; top:61px;">−84%</p>
+      <p style="left:29px; top:129px; font-size:13px; color:#A7B0BE;">Before</p>
+      <i class="rs-track" style="top:134px;"></i><i class="rs-bar" data-w style="top:134px; width:220px; background:rgba(167,176,190,.45); --d:1200ms; --t:1.2s;"></i>
+      <p style="left:383px; top:127px; font-size:15px; color:#A7B0BE;">6 min</p>
+      <p style="left:29px; top:177px; font-size:13px; color:#F5F7FA;">After</p>
+      <i class="rs-track" style="top:182px;"></i><i class="rs-bar" data-w style="top:182px; width:35px; background:#B7D7FF; --d:1500ms; --t:1.2s;"></i>
+      <p style="left:383px; top:175px; font-size:15px; color:#F5F7FA;">58 s</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="quote" id="quote" class="v2-sec" data-tone="dark" style="--h:900px; background:#0F1115;">
+<style>
+  .motion [data-section="quote"] .qt-photo { opacity: 0; scale: 1.08; transition: opacity 1.6s var(--ease), scale 2.4s var(--ease); }
+  .motion [data-section="quote"].is-in .qt-photo { opacity: 1; scale: 1; }
+</style>
+  <div class="v2-canvas">
+    <div class="cs-abs" style="inset:0; background:#0F1115;"></div>
+    <img decoding="async" class="cs-glow" alt="" src="/v2/assets/case-study-glow-quote.svg" style="left:600px; top:0; width:1100px; height:900px;">
+    <div class="cs-abs" style="left:0; top:0; width:1706px; height:900px; mix-blend-mode:lighten;">
+      <img decoding="async" class="cs-img qt-photo" alt="Close-up of an iPhone camera lens" src="/v2/assets/case-study-lens.webp" style="inset:0; width:100%; height:100%; object-fit:cover;">
+    </div>
+    <div class="cs-abs" style="left:0; top:0; width:1000px; height:900px; background:linear-gradient(90deg, #0F1115 50%, rgba(15,17,21,0));"></div>
+    <blockquote class="cs-abs" data-k style="left:120px; top:290px; margin:0; display:flex; flex-direction:column; gap:40px; --y:50px; --d:300ms; --o:.77s; --t:1.1s;">
+      <p style="width:700px; font-size:56px; line-height:1.08; letter-spacing:-0.03em; color:#F5F7FA;">“The trade-in offer is now the first thing staff show, not the last.”</p>
+      <footer style="display:flex; flex-direction:column; gap:4px; white-space:nowrap;"><cite style="font-style:normal; font-size:16px; color:#F5F7FA;">Retail Operations Director</cite><span style="font-weight:300; font-size:15px; color:#A7B0BE;">A Baltic electronics retailer</span></footer>
+    </blockquote>
+  </div>
+</section>
+
+<section data-section="related" id="related" class="v2-sec" data-tone="light" style="--h:900px; background:#F5F7FA;">
+<style>
+  [data-section="related"] .re-card { position: absolute; top: 300px; height: 440px; display: block; overflow: clip; border-radius: 28px; transition: box-shadow .4s var(--ease); }
+  [data-section="related"] .re-card:hover { box-shadow: 0 40px 80px rgba(15,20,64,.22), 0 0 0 1px rgba(48,71,236,.25) !important; }
+  [data-section="related"] .re-card .cs-img { transition: transform .8s var(--ease); }
+  [data-section="related"] .re-card:hover .cs-img { transform: translateY(-8px); }
+  [data-section="related"] .re-copy { position: absolute; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; white-space: nowrap; }
+  [data-section="related"] .re-copy p:nth-child(1) { font-size: 14px; color: #A7B0BE; }
+  [data-section="related"] .re-copy p:nth-child(2) { font-weight: 300; font-size: 52px; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="related"] .re-copy p:nth-child(3) { font-weight: 300; font-size: 16px; color: rgba(245,247,250,.8); }
+  [data-section="related"] .re-all { position: absolute; left: 1201px; top: 178px; font-size: 15px; color: #0F1115; white-space: pre; transition: color .2s; }
+  [data-section="related"] .re-all:hover { color: #3047EC; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="cs-glow" alt="" src="/v2/assets/case-study-glow-ice-related.svg" style="left:0; top:100px; width:1400px; height:900px;">
+    <h2 class="cs-abs cs-h2" data-k style="left:120px; top:150px; margin:0; color:#0F1115; --y:50px; --d:100ms; --o:.63s; --t:.9s;">More from customers.</h2>
+    <a class="re-all" href="/v2/customers/">All customers  →</a>
+
+    <a href="/v2/case-study/" class="re-card" aria-label="A Polish mobile operator: 22% less churn at contract renewal" data-k style="left:120px; width:560px; background:#fff; box-shadow:0 30px 60px rgba(15,20,64,.1); --y:70px; --d:400ms; --o:.7s; --t:1s;">
+      <div class="re-copy" style="left:32px; top:36px;">
+        <p style="color:#5C6373;">A Polish mobile operator</p><p style="color:#0F1115; font-size:72px;">−22%</p><p style="color:rgba(15,17,21,.8);">churn at contract renewal</p>
+      </div>
+      <p class="cs-abs" style="left:32px; top:380px; font-size:15px; color:#0F1115; white-space:pre;">Read the case  →</p>
+      <div class="cs-abs" data-k style="left:244.33px; top:90px; width:281.45px; height:427.84px; --y:50px; --d:700ms; --o:.01s; --t:1.2s;">
+        <img decoding="async" class="cs-img" alt="Two iPhone 17 in Sage" src="/v2/assets/case-study-iphone17-sage.webp" style="left:26.72px; top:13.92px; width:228px; height:400px; rotate:8deg;">
+      </div>
+    </a>
+
+    <a href="/v2/case-study/" class="re-card" aria-label="A European device brand: €4.2M residual value recovered" data-k style="left:710px; width:290px; background:#0F1115; border:1px solid rgba(183,215,255,.14); box-shadow:0 30px 60px rgba(15,20,64,.25); --y:70px; --d:600ms; --o:.7s; --t:1s;">
+      <div class="cs-abs" data-k style="left:29px; top:39px; width:300px; height:183px; --y:50px; --d:900ms; --o:.01s; --t:1.2s;"><img decoding="async" class="cs-img" alt="MacBook Pro" src="/v2/assets/case-study-macbook.webp" style="inset:0; width:100%; height:100%;"></div>
+      <div class="re-copy" style="left:31px; top:269px;"><p>A European device brand</p><p>€4.2M</p><p>residual value recovered</p></div>
+    </a>
+
+    <a href="/v2/case-study/" class="re-card" aria-label="A premium Apple reseller: 61 second average device check" data-k style="left:1030px; width:290px; background:linear-gradient(123.39deg, #3047ED 0%, #141E6E 71.43%); box-shadow:0 30px 60px rgba(15,20,64,.25); --y:70px; --d:800ms; --o:.7s; --t:1s;">
+      <div class="cs-abs" data-k style="left:70px; top:34px; width:170px; height:196px; --y:50px; --d:1100ms; --o:.01s; --t:1.2s;"><img decoding="async" class="cs-img" alt="Apple Watch" src="/v2/assets/case-study-watch.webp" style="inset:0; width:100%; height:100%; filter:drop-shadow(0 20px 20px rgba(0,0,0,.45));"></div>
+      <div class="re-copy" style="left:32px; top:270px;"><p>A premium Apple reseller</p><p>61 s</p><p>average device check</p></div>
+    </a>
+  </div>
+</section>
+
+<section data-section="closing" id="closing" class="v2-sec" style="--h:900px; background: radial-gradient(calc(1080px * var(--s)) calc(560px * var(--s)) at 50% calc(330px * var(--s)), rgba(48,71,236,.42) 0%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), #0F1115;" data-tone="dark">
+  <style>
+    [data-section="closing"] .cl-head {
+      position: absolute; left: 70px; top: 284px; width: 1300px; margin: 0; text-align: center;
+      font-weight: 400; font-size: 150px; line-height: .92; letter-spacing: -4.5px;
+      background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    }
+    [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 168px; }
+    [data-section="closing"] .cl-foot {
+      position: absolute; left: 20px; top: 557px; width: 1400px; height: 343px; padding: 56px 56px 40px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: radial-gradient(700px 380px at 10% 0%, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 70%), linear-gradient(135deg, rgba(28,34,72,.92) 0%, rgba(17,20,34,.92) 100%); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 -20px 60px rgba(0,0,0,.45); border-radius: 32px; color: #F5F7FA; line-height: normal;
+    }
+    [data-section="closing"] .cl-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    [data-section="closing"] .cl-sub { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+    [data-section="closing"] .cl-logo { position: relative; display: block; width: 99.3px; height: 30px; }
+    [data-section="closing"] .cl-logo img { position: absolute; display: block; max-width: none; }
+    [data-section="closing"] .cl-sub h3 { margin: 0; font-weight: 500; font-size: 14px; color: #F5F7FA; }
+    [data-section="closing"] .cl-sub p { margin: 0; font-size: 13px; color: rgba(255,255,255,.6); }
+    [data-section="closing"] form { display: flex; gap: 8px; align-items: flex-start; }
+    [data-section="closing"] input {
+      width: 260px; height: 46px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08); color: #fff; font: 400 14px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s;
+    }
+    [data-section="closing"] input::placeholder { color: rgba(255,255,255,.5); }
+    [data-section="closing"] input:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.1); }
+    [data-section="closing"] button {
+      border: 0; cursor: pointer; padding: 12px 18px; border-radius: 10px; background: #fff; color: #0F1115;
+      font: 500 14px/18px 'Geologica', system-ui, sans-serif; transition: background-color .25s, transform .25s var(--ease);
+    }
+    [data-section="closing"] button:hover { background: #B7D7FF; }
+    [data-section="closing"] .cl-cols { display: flex; gap: 96px; white-space: nowrap; }
+    [data-section="closing"] .cl-cols nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    [data-section="closing"] .cl-cols span { font-size: 13px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-cols a, [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 14px; color: #fff; transition: opacity .2s; }
+    [data-section="closing"] .cl-cols a:hover, [data-section="closing"] .cl-legal a:hover { opacity: .7; }
+    [data-section="closing"] .cl-bottom { display: flex; justify-content: space-between; font-size: 12px; }
+    [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
+    [data-section="closing"] .cl-legal { display: flex; gap: 10px; }
+    [data-section="closing"] .cl-legal a { font-size: 12px; color: rgba(255,255,255,.8); }
+  </style>
+  <div class="v2-canvas">
+    <h2 class="cl-head" data-m="up">Run it in<br>your own <em>stores</em></h2>
+
+    <footer class="cl-foot" data-m="up" style="--d:250ms">
+      <div class="cl-top">
+        <div class="cl-sub">
+          <a href="/v2/" class="cl-logo" aria-label="Fintegre home">
+            <img decoding="async" src="/v2/assets/case-study-foot-mark.svg" alt="" width="32.1605" height="23.0769" style="left:3.77px; top:3.46px;">
+            <img decoding="async" src="/v2/assets/case-study-foot-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
+          </a>
+          <h3>Get trade-in insights</h3>
+          <p>Market reports and program benchmarks. No spam.</p>
+          <form class="cl-form" novalidate>
+            <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="cl-cols">
+          <nav aria-label="Platform"><span>Platform</span>
+            <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device value intelligence</a><a href="/v2/platform/">Vendor network</a><a href="/v2/platform/">Integrations</a>
+          </nav>
+          <nav aria-label="Solutions"><span>Solutions</span>
+            <a href="/v2/solutions/">Retailers</a><a href="/v2/solutions/">Telecom operators</a><a href="/v2/solutions/">OEM and ecosystems</a><a href="/v2/solutions/">Apple and premium retail</a>
+          </nav>
+          <nav aria-label="Company"><span>Company</span>
+            <a href="/v2/customers/">Customers</a><a href="/v2/insights/">Insights</a><a href="/v2/company/">About</a><a href="/v2/company/">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="cl-bottom">
+        <small>© 2026 Fintegre. All rights reserved.</small>
+        <nav class="cl-legal" aria-label="Legal"><a href="#closing">Privacy</a><a href="#closing">Cookies</a><a href="#closing">Imprint</a></nav>
+      </div>
+    </footer>
+  </div>
+</section>
+</main>
+<script src="/v2/v2.js"></script>
+<script>
+// Closing footer: newsletter form has no backend yet, so it validates locally and confirms in place.
+(() => {
+  const form = document.querySelector('[data-section="closing"] .cl-form');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input');
+    const btn = form.querySelector('button');
+    if (!input.checkValidity()) { input.focus(); input.style.borderColor = 'rgba(255,140,140,.7)'; return; }
+    input.style.borderColor = '';
+    input.value = '';
+    input.placeholder = 'Thanks, you are on the list';
+    btn.textContent = 'Subscribed';
+    btn.disabled = true;
+  });
+  form.querySelector('input').addEventListener('input', (e) => { e.target.style.borderColor = ''; });
+})();
+</script>
+</body>
+</html>

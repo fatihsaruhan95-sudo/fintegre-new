@@ -1,0 +1,57 @@
+<section data-section="milestones" id="milestones" class="v2-sec" data-tone="dark" style="--h:1329px; background: radial-gradient(calc(195px * var(--s)) calc(415.31px * var(--s)) at 50% calc(830.62px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="milestones"] p, [data-section="milestones"] h2 { margin: 0; }
+  [data-section="milestones"] .cm-bg { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(195px 415.31px at 195px 830.62px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="milestones"] .cm-glow { position: absolute; max-width: none; pointer-events: none; }
+  [data-section="milestones"] .cm-lens { position: absolute; left: -3.6px; top: -10px; width: 483.6px; height: 255.44px; mix-blend-mode: lighten; opacity: .9; pointer-events: none;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 95%); mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 95%); }
+  [data-section="milestones"] .cm-lens img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  [data-section="milestones"] .cm-col { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; padding: 270px 20px 88px; }
+  [data-section="milestones"] h2 { width: 350px; font-weight: 400; font-size: 36px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="milestones"] .cm-lede { width: 320px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="milestones"] .cm-timeline { position: relative; flex: none; width: 350px; height: 807px; }
+  [data-section="milestones"] .cm-line { position: absolute; left: 5.4px; top: 22px; overflow: visible; pointer-events: none; }
+  [data-section="milestones"] .cm-dot { position: absolute; padding: 0; border: 0; background: none; cursor: pointer; line-height: 0; -webkit-tap-highlight-color: transparent; }
+  [data-section="milestones"] .cm-dot img { display: block; transition: scale .4s var(--spring), filter .3s; }
+  [data-section="milestones"] .cm-dot.is-hot img { scale: 1.35; filter: brightness(1.6); }
+  [data-section="milestones"] .cm-dot--now.is-hot img { scale: 1.1; filter: none; }
+  [data-section="milestones"] .cm-ms { position: absolute; left: 32px; width: 318px; font-weight: 300; }
+  [data-section="milestones"] .cm-ms b { display: block; font-weight: 300; font-size: 28px; line-height: normal; letter-spacing: -0.03em; color: #F5F7FA; transition: color .3s; }
+  [data-section="milestones"] .cm-ms p { margin-top: 5px; width: 300px; font-size: 14px; line-height: 1.5; color: rgba(245,247,250,.65); transition: color .3s; }
+  [data-section="milestones"] .cm-ms.is-hot b { color: #B7D7FF; }
+  [data-section="milestones"] .cm-ms.is-hot p { color: rgba(245,247,250,.85); }
+  .motion [data-section="milestones"] [data-m="up"] { translate: 0 var(--ty, 24px); }
+  .motion [data-section="milestones"].is-in [data-m] { translate: none; }
+  .motion [data-section="milestones"] .cm-lens { opacity: 0; transition: opacity 1.3s var(--ease) 100ms; }
+  .motion [data-section="milestones"].is-in .cm-lens { opacity: .9; }
+  .motion [data-section="milestones"] .cm-line path { transition-duration: 2.2s; }
+</style>
+  <div class="v2-canvas">
+    <div class="cm-bg"></div>
+    <div class="cm-lens"><img alt="Close-up of an iPhone camera lens" src="/v2/assets/company-ms-lens.webp" width="1560" height="823"></div>
+    <img class="cm-glow" alt="" src="/v2/mobile/assets/company-ms-glow.svg" style="left:-120px; top:420px; width:820px; height:820px;">
+    <div class="cm-col">
+      <h2 data-m="up" style="--d:100ms">Seven years,<br>one product.</h2>
+      <p class="cm-lede" data-m="up" style="--d:200ms">From one counter in Vilnius to programs in twelve markets.</p>
+      <div class="cm-timeline">
+        <svg class="cm-line" width="1.2" height="738" viewBox="0 0 1.2 738" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:300ms" d="M0.6 0V738" stroke-width="1.2" stroke="#B7D7FF" stroke-opacity="0.35"/></svg>
+          <button type="button" class="cm-dot" style="left:0; top:16px; --d:300ms" data-m="pop" data-year="2019" aria-label="2019"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:10px; --d:350ms" data-m="up" data-year="2019"><b>2019</b><p>Founded in Vilnius. First trade-in counter in four stores.</p></div>
+          <button type="button" class="cm-dot" style="left:0; top:126px; --d:420ms" data-m="pop" data-year="2020" aria-label="2020"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:120px; --d:470ms" data-m="up" data-year="2020"><b>2020</b><p>Live valuation. Bids from four buyers in under a minute.</p></div>
+          <button type="button" class="cm-dot" style="left:0; top:236px; --d:540ms" data-m="pop" data-year="2021" aria-label="2021"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:230px; --d:590ms" data-m="up" data-year="2021"><b>2021</b><p>Latvia and Estonia. One program across the Baltics.</p></div>
+          <button type="button" class="cm-dot" style="left:0; top:346px; --d:660ms" data-m="pop" data-year="2022" aria-label="2022"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:340px; --d:710ms" data-m="up" data-year="2022"><b>2022</b><p>Telecom operators. Early upgrade and BYOD protection.</p></div>
+          <button type="button" class="cm-dot" style="left:0; top:456px; --d:780ms" data-m="pop" data-year="2023" aria-label="2023"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:450px; --d:830ms" data-m="up" data-year="2023"><b>2023</b><p>Poland. White-label SDK for partner apps.</p></div>
+          <button type="button" class="cm-dot" style="left:0; top:545px; --d:900ms" data-m="pop" data-year="2024" aria-label="2024"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:539px; --d:950ms" data-m="up" data-year="2024"><b>2024</b><p>Warranty and claim validation join the platform.</p></div>
+          <button type="button" class="cm-dot" style="left:0; top:655px; --d:1020ms" data-m="pop" data-year="2025" aria-label="2025"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:649px; --d:1070ms" data-m="up" data-year="2025"><b>2025</b><p>One million devices checked.</p></div>
+          <button type="button" class="cm-dot cm-dot--now is-hot" style="left:-18px; top:726px; --d:1140ms" data-m="pop" data-year="2026" aria-label="2026"><img alt="" src="/v2/assets/company-ms-dot-now.svg" width="49" height="49"></button>
+          <div class="cm-ms is-hot" style="top:738px; --d:1190ms" data-m="up" data-year="2026"><b>2026</b><p>12 markets and €240M traded.</p></div>
+      </div>
+    </div>
+  </div>
+</section>

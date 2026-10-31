@@ -1,0 +1,51 @@
+<section data-section="cta" id="cta" class="v2-sec" data-tone="dark" style="--h:1124px; background:#0F1115;">
+  <style>
+    .motion [data-section="cta"] [data-m="up"] { translate: 0 var(--ty, 40px); }
+    .motion [data-section="cta"].is-in [data-m] { translate: none; }
+    /* the canvas is its own blend group, so give it the ground colour for the photo's lighten blend */
+    [data-section="cta"] .v2-canvas { background: #0F1115; }
+    [data-section="cta"] .ct-photo { position: absolute; left: -330px; top: 10px; width: 900px; height: 475px; object-fit: cover; mix-blend-mode: lighten; pointer-events: none; max-width: none; }
+    [data-section="cta"] .ct-fade-b { position: absolute; left: 0; top: 280px; width: 390px; height: 240px; background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.9) 60%, #0F1115 100%); pointer-events: none; }
+    [data-section="cta"] .ct-glow { position: absolute; left: -320px; top: 420px; width: 740px; height: 700px; max-width: none; pointer-events: none; }
+    [data-section="cta"] h2 { position: absolute; left: 20px; top: 420px; width: 350px; margin: 0; font-weight: 400; font-size: 40px; line-height: 1; letter-spacing: -1.6px; color: #F5F7FA; }
+    [data-section="cta"] .ct-body { position: absolute; left: 20px; top: 560px; width: 340px; margin: 0; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
+    [data-section="cta"] .ct-btns { position: absolute; left: 20px; top: 688px; display: flex; gap: 10px; }
+    [data-section="cta"] .ct-btn { display: flex; align-items: center; justify-content: center; height: 48px; padding: 0 18px; border-radius: 999px; font-size: 14px; line-height: normal; white-space: pre; -webkit-tap-highlight-color: transparent; transition: background-color .25s, box-shadow .25s; }
+    [data-section="cta"] .ct-btn--light { background: #F5F7FA; color: #0F1115; }
+    [data-section="cta"] .ct-btn--light:active { background: #fff; }
+    [data-section="cta"] .ct-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+    [data-section="cta"] .ct-btn--ghost:active { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+    [data-section="cta"] .ct-card {
+      position: absolute; left: 25px; top: 784px; width: 340px; height: 250px; overflow: hidden; border-radius: 26px;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(183,215,255,.16); box-shadow: 0 30px 60px rgba(0,0,0,.5);
+      backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); line-height: normal;
+    }
+    [data-section="cta"] .ct-card > * { position: absolute; margin: 0; white-space: nowrap; }
+    [data-section="cta"] .ct-lbl { font-size: 13px; color: #A7B0BE; }
+    [data-section="cta"] .ct-val { font-size: 13px; color: #F5F7FA; }
+    [data-section="cta"] .ct-big { left: 23px; top: 45px; font-weight: 300; font-size: 52px; letter-spacing: -2.08px; color: #F5F7FA; }
+    [data-section="cta"] .ct-pill { left: 25px; top: 117px; padding: 5px 10px; border-radius: 999px; background: rgba(183,215,255,.16); color: #B7D7FF; font-size: 12px; }
+  </style>
+  <div class="v2-canvas">
+    <img class="ct-photo" src="/v2/assets/platform-cta-iphone-camera.webp" alt="" width="900" height="475" loading="lazy" data-m="fade" style="--d:100ms">
+    <div class="ct-fade-b"></div>
+    <img class="ct-glow" src="/v2/mobile/assets/platform-cta-glow.svg" alt="" width="740" height="700">
+
+    <h2 data-m="up" style="--d:200ms">See the platform with your own numbers.</h2>
+    <p class="ct-body" data-m="up" style="--ty:30px; --d:400ms">Tell us your channels, markets and monthly volume. In a 30-minute call we show how each step would run for you and what it would return.</p>
+    <div class="ct-btns" data-m="up" style="--ty:24px; --d:550ms">
+      <a class="ct-btn ct-btn--light" href="/v2/design-your-program/">Book a platform demo</a>
+      <a class="ct-btn ct-btn--ghost" href="#integrations">API docs  →</a>
+    </div>
+
+    <div class="ct-card" data-m="up" style="--ty:50px; --d:1000ms" aria-label="Example estimate">
+      <p class="ct-lbl" style="left:25px; top:23px;">Estimate · 4,200 devices a month</p>
+      <p class="ct-big">+€58,800</p>
+      <span class="ct-pill">extra value per month</span>
+      <p class="ct-lbl" style="left:25px; top:165px;">Value per device</p>
+      <p class="ct-val" style="left:282px; top:165px;">+€14</p>
+      <p class="ct-lbl" style="left:25px; top:199px;">Trade-in participation</p>
+      <p class="ct-val" style="left:272px; top:199px;">+38 %</p>
+    </div>
+  </div>
+</section>

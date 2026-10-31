@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design your program — Fintegre (v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  // Phones get the mobile layout.
+  if (innerWidth < 768) location.replace('/v2/mobile/design-your-program/' + location.hash);
+  // Hide the page until fonts, Tailwind and images are ready, so the hero entrance is seen from its first frame.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="/v2/v2.css">
+</head>
+<body>
+<nav class="ver-switch" aria-label="Site version">
+  <a href="/">V1</a>
+  <a href="/v2/" aria-current="page">V2</a>
+</nav>
+
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="/v2/" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="/assets/header-mark.svg">Fintegre</a>
+    <nav class="v2-nav">
+      <a href="/v2/platform/">Platform</a>
+      <a href="/v2/solutions/">Solutions</a>
+      <a href="/v2/intelligence/">Intelligence</a>
+      <a href="/v2/customers/">Customers</a>
+      <a href="/v2/insights/">Insights</a>
+      <a href="/v2/company/">Company</a>
+    </nav>
+    <a href="/v2/design-your-program/" class="v2-cta">Design your program</a>
+  </div>
+</header>
+
+<main class="page">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(720px * var(--s)) calc(321.43px * var(--s)) at calc(50% - 72px * var(--s)) calc(450px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="hero"] .dh-a { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+  [data-section="hero"] .dh-glow { position: absolute; pointer-events: none; max-width: none; display: block; }
+  [data-section="hero"] .dh-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; }
+  [data-section="hero"] .dh-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .dh-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .dh-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .dh-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); white-space: nowrap; }
+  [data-section="hero"] .dh-nav a { transition: color .2s; }
+  [data-section="hero"] .dh-nav a:hover { color: #F5F7FA; }
+  [data-section="hero"] .dh-btn { display: inline-flex; align-items: center; border-radius: 999px; font-size: 15px; white-space: nowrap; transition: background-color .25s, box-shadow .25s; cursor: pointer; }
+  [data-section="hero"] .dh-btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .dh-btn--light:hover { background: #fff; }
+  [data-section="hero"] .dh-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="hero"] .dh-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+  [data-section="hero"] .dh-top .dh-btn { padding: 10px 18px; }
+
+  [data-section="hero"] .dh-photo { left: 790px; top: 150px; width: 614px; height: 1080px; }
+  [data-section="hero"] .dh-photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  [data-section="hero"] .dh-fade { left: 700px; top: 640px; width: 760px; height: 260px; background: linear-gradient(180deg, rgba(15,17,21,0), rgba(15,17,21,.92)); pointer-events: none; }
+
+  [data-section="hero"] .dh-copy { left: 120px; top: 212px; width: 600px; height: 453px; }
+  [data-section="hero"] h1 { position: absolute; left: 0; top: 0; margin: 0; width: 600px; font-weight: 400; font-size: 72px; line-height: 1.02; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .dh-lede { position: absolute; left: 0; top: 174px; width: 470px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .dh-steps { position: absolute; left: 0; top: 326px; display: flex; gap: 10px; }
+  [data-section="hero"] .dh-chip { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; border: 0; font: inherit; font-size: 14px; line-height: normal; color: #F5F7FA; white-space: pre; cursor: pointer;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: background-color .3s; }
+  [data-section="hero"] .dh-chip img { width: 7px; height: 7px; display: none; }
+  [data-section="hero"] .dh-chip:hover { background: rgba(48,71,236,.5); }
+  [data-section="hero"] .dh-chip.is-on { background: #3047EC; }
+  [data-section="hero"] .dh-chip.is-on img { display: block; }
+  [data-section="hero"] .dh-ctas .dh-btn { position: absolute; top: 404px; padding: 15px 24px; }
+
+  [data-section="hero"] .dh-card { left: 1040px; top: 470px; width: 330px; padding: 26px 28px 28px; border-radius: 26px; display: flex; flex-direction: column; gap: 14px; white-space: nowrap; transform-origin: 50% 50%;
+    background: linear-gradient(rgba(255,255,255,.05), rgba(255,255,255,.05)), rgba(15,17,21,.62); border: 1px solid rgba(183,215,255,.14);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="hero"] .dh-card .lbl { font-size: 13px; color: #A7B0BE; }
+  [data-section="hero"] .dh-card .val { font-weight: 300; font-size: 56px; letter-spacing: -0.03em; color: #F5F7FA; line-height: normal; }
+  [data-section="hero"] .dh-card .sub { font-size: 13px; color: #B7D7FF; }
+  [data-section="hero"] .dh-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 14px; background: rgba(255,255,255,.05); }
+  [data-section="hero"] .dh-row span { font-size: 14px; color: #A7B0BE; }
+  [data-section="hero"] .dh-row b { font-weight: 400; font-size: 15px; color: #F5F7FA; }
+  [data-section="hero"] .dh-row--on { background: rgba(48,71,236,.9); }
+  [data-section="hero"] .dh-row--on span { color: #F5F7FA; }
+
+  [data-section="hero"] .dh-fib { left: 0; top: 0; width: 1440px; height: 900px; pointer-events: none; }
+  [data-section="hero"] .dh-fib svg { position: absolute; overflow: visible; }
+  [data-section="hero"] .dh-tag { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; font-size: 14px; color: #F5F7FA; white-space: nowrap;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  [data-section="hero"] .dh-tag img { width: 7px; height: 7px; display: block; }
+  [data-section="hero"] .dh-tag--on { background: #3047EC; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="dh-glow" alt="" src="/v2/assets/design-your-program-glow-hero-r.svg" style="left:680px; top:-140px; width:1120px; height:980px;">
+    <img decoding="async" class="dh-glow" alt="" src="/v2/assets/design-your-program-glow-hero-l.svg" style="left:-440px; top:440px; width:1000px; height:780px;">
+
+    <div class="dh-a dh-top" data-m="down" style="--d:0ms">
+      <a href="/v2/" class="dh-logo" aria-label="Fintegre home"><span class="dh-mark"><img decoding="async" alt="" src="/v2/assets/hero-logo.svg"></span>Fintegre</a>
+      <nav class="dh-nav" aria-label="Main">
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/customers/">Customers</a>
+        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/design-your-program/" class="dh-btn dh-btn--light" aria-current="page">Design your program</a>
+    </div>
+
+    <img decoding="async" class="dh-glow" alt="" src="/v2/assets/design-your-program-roomlight.svg" style="left:630px; top:10px; width:960px; height:960px;">
+    <div class="dh-a dh-photo" data-m="right" style="--d:300ms"><img decoding="async" alt="iPhone 17 in Lavender" src="/v2/assets/design-your-program-iphone17-lavender.webp"></div>
+    <div class="dh-a dh-fade"></div>
+
+    <div class="dh-a dh-copy" data-m="up" style="--d:100ms">
+      <h1>Design your<br>program.</h1>
+      <p class="dh-lede">Choose programs, channels and markets. We show what a device could be worth, how many buyers would bid and how fast you can launch. Four steps, about three minutes.</p>
+      <div class="dh-steps" role="list" aria-label="Builder steps">
+        <button type="button" class="dh-chip is-on" data-dyp-goto="1" role="listitem"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">1  Programs</button>
+        <button type="button" class="dh-chip" data-dyp-goto="2" role="listitem"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">2  Channels</button>
+        <button type="button" class="dh-chip" data-dyp-goto="3" role="listitem"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">3  Markets</button>
+        <button type="button" class="dh-chip" data-dyp-goto="4" role="listitem"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">4  Contact</button>
+      </div>
+      <div class="dh-ctas">
+        <a href="#builder" class="dh-btn dh-btn--light" data-dyp-goto="1" style="left:0">Start with programs</a>
+        <a href="#builder" class="dh-btn dh-btn--ghost" data-dyp-goto="4" style="left:206px">Book a call instead</a>
+      </div>
+    </div>
+
+    <div class="dh-a dh-card" data-m="pop" style="--d:1000ms">
+      <p class="lbl">Example · Baltic electronics retailer</p>
+      <p class="val">€214</p>
+      <p class="sub">Estimated value per device</p>
+      <div class="dh-row"><span>Buyers available</span><b>14</b></div>
+      <div class="dh-row"><span>Time to launch</span><b>6 weeks</b></div>
+      <div class="dh-row dh-row--on"><span>Programs</span><b>3 selected</b></div>
+    </div>
+
+    <div class="dh-a dh-fib" aria-hidden="true">
+      <svg style="left:904.3px; top:317.3px" width="96.4" height="83.4" viewBox="0 0 96.4003 83.4003" fill="none"><path pathLength="1" data-draw style="--d:1400ms" d="M95.7001 0.700184C55.7001 12.7002 35.7001 62.7002 0.70012 82.7002" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+      <svg style="left:1005.45px; top:409.3px" width="35.2538" height="111.4" viewBox="0 0 35.2538 111.4" fill="none"><path pathLength="1" data-draw style="--d:1600ms" d="M34.5536 0.700166C-5.44641 10.7002 -15.4464 60.7002 34.5536 110.7" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    </div>
+    <div class="dh-a dh-tag" data-m="pop" style="left:1010px; top:300px; --d:1600ms"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">Trade-in</div>
+    <div class="dh-a dh-tag dh-tag--on" data-m="pop" style="left:1060px; top:390px; --d:1800ms"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">Early upgrade</div>
+  </div>
+</section>
+
+<section data-section="builder" id="builder" class="v2-sec" data-tone="dark" data-step="1" style="--h:900px; background:#0F1115;">
+<style>
+  [data-section="builder"] { transition: background-color .7s var(--ease); }
+  [data-section="builder"].is-light { background-color: #F5F7FA !important; }
+  [data-section="builder"] p, [data-section="builder"] h2 { margin: 0; }
+  [data-section="builder"] button { font: inherit; color: inherit; border: 0; background: none; padding: 0; cursor: pointer; text-align: left; }
+  [data-section="builder"] .b-a { position: absolute; }
+  [data-section="builder"] [hidden] { display: none !important; }
+
+  /* Full-bleed backgrounds, one per step, cross-faded. */
+  [data-section="builder"] .b-bg { position: absolute; inset: 0; opacity: 0; transition: opacity .8s var(--ease); pointer-events: none; }
+  [data-section="builder"] .b-bg[data-bg="1"] { background: radial-gradient(calc(600px * var(--s)) calc(281.25px * var(--s)) at calc(50% - 420px * var(--s)) calc(478.12px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="builder"] .b-bg[data-bg="2"] { background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% + 65.45px * var(--s)) calc(450px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="builder"] .b-bg[data-bg="3"] { background: radial-gradient(calc(720px * var(--s)) calc(321.43px * var(--s)) at calc(50% - 144px * var(--s)) calc(514.29px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="builder"] .b-bg[data-bg="4"] { background: #F5F7FA; }
+  [data-section="builder"] .b-bg[data-bg="5"] { background: radial-gradient(calc(800px * var(--s)) calc(346.15px * var(--s)) at calc(50% + 80px * var(--s)) calc(450px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="builder"][data-step="1"] .b-bg[data-bg="1"], [data-section="builder"][data-step="2"] .b-bg[data-bg="2"], [data-section="builder"][data-step="3"] .b-bg[data-bg="3"],
+  [data-section="builder"][data-step="4"] .b-bg[data-bg="4"], [data-section="builder"][data-step="5"] .b-bg[data-bg="5"] { opacity: 1; }
+
+  /* Per-step layers (glows, panels, fibres): only the current step is shown. */
+  [data-section="builder"] [data-for] { opacity: 0; visibility: hidden; transition: opacity .6s var(--ease), visibility 0s linear .6s; }
+  [data-section="builder"][data-step="1"] [data-for~="1"], [data-section="builder"][data-step="2"] [data-for~="2"], [data-section="builder"][data-step="3"] [data-for~="3"],
+  [data-section="builder"][data-step="4"] [data-for~="4"], [data-section="builder"][data-step="5"] [data-for~="5"] { opacity: 1; visibility: visible; transition: opacity .7s var(--ease) .15s, visibility 0s; }
+  [data-section="builder"] .b-glow { position: absolute; pointer-events: none; max-width: none; display: block; }
+
+  /* Panel entrance: children rise in with a stagger whenever their step becomes current. */
+  [data-section="builder"] .b-panel { position: absolute; left: 0; top: 0; width: 900px; height: 900px; }
+  [data-section="builder"] .b-in { opacity: 0; translate: 0 28px; transition: opacity .7s var(--ease) calc(var(--i, 0) * 60ms + 120ms), translate .9s var(--ease) calc(var(--i, 0) * 60ms + 120ms); }
+  [data-section="builder"].is-in [data-for].is-cur .b-in { opacity: 1; translate: none; }
+
+  /* Step copy */
+  [data-section="builder"] .b-copy { left: 120px; top: 132px; width: 700px; }
+  [data-section="builder"] .b-kicker { position: absolute; left: 0; top: 0; font-size: 15px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="builder"] .b-title { position: absolute; left: 0; top: 35px; width: 700px; font-weight: 400; font-size: 56px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="builder"] .b-lede { position: absolute; left: 0; top: 171px; width: 540px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+
+  /* Step 1 · program options */
+  [data-section="builder"] .b-opts { left: 120px; top: 399px; width: 752px; display: grid; grid-template-columns: 370px 370px; gap: 12px; }
+  [data-section="builder"] .b-opt { position: relative; height: 76px; border-radius: 20px; border: 1px solid rgba(183,215,255,.14) !important; background: rgba(255,255,255,.05) !important;
+    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); transition: background-color .35s var(--ease), border-color .35s, filter .35s, transform .2s, opacity .7s var(--ease) calc(var(--i, 0) * 60ms + 120ms), translate .9s var(--ease) calc(var(--i, 0) * 60ms + 120ms); }
+  [data-section="builder"] .b-opt:hover { border-color: rgba(183,215,255,.32) !important; }
+  [data-section="builder"] .b-opt:active { transform: scale(.985); }
+  [data-section="builder"] .b-opt.is-on { background: rgba(48,71,236,.92) !important; border-color: transparent !important; filter: drop-shadow(0 16px 20px rgba(18,26,115,.55)); }
+  [data-section="builder"] .b-opt b { position: absolute; left: 21px; top: 15px; font-weight: 400; font-size: 17px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="builder"] .b-opt span { position: absolute; left: 21px; top: 41px; font-weight: 300; font-size: 13px; color: rgba(245,247,250,.55); white-space: nowrap; transition: color .3s; }
+  [data-section="builder"] .b-opt.is-on span { color: rgba(245,247,250,.8); }
+  [data-section="builder"] .b-check { position: absolute; left: 329px; top: 27px; width: 20px; height: 20px; }
+  [data-section="builder"] .b-check img { position: absolute; display: block; }
+  [data-section="builder"] .b-check .on, [data-section="builder"] .b-check .tick { opacity: 0; scale: .4; transition: opacity .25s, scale .45s var(--spring); }
+  [data-section="builder"] .b-check .on { inset: 0; width: 20px; height: 20px; }
+  [data-section="builder"] .b-check .off { inset: 0; width: 20px; height: 20px; transition: opacity .2s; }
+  [data-section="builder"] .b-check .tick { left: 4px; top: 4px; width: 12px; height: 12px; }
+  [data-section="builder"] .is-on .b-check .on, [data-section="builder"] .is-on .b-check .tick { opacity: 1; scale: 1; }
+  [data-section="builder"] .is-on .b-check .off { opacity: 0; }
+
+  /* Step 2 · channel cards */
+  [data-section="builder"] .b-chs { left: 120px; top: 399px; width: 782px; height: 372px; display: flex; gap: 16px; }
+  [data-section="builder"] .b-ch { position: relative; overflow: clip; flex: 0 0 250px; height: 372px; border-radius: 26px; border: 1px solid rgba(183,215,255,.12) !important; background: rgba(255,255,255,.04) !important;
+    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); transition: background-color .4s, border-color .4s, box-shadow .4s, opacity .7s var(--ease) calc(var(--i, 0) * 80ms + 120ms), translate .9s var(--ease) calc(var(--i, 0) * 80ms + 120ms); }
+  [data-section="builder"] .b-ch:hover { border-color: rgba(183,215,255,.32) !important; }
+  [data-section="builder"] .b-ch.is-on { background: rgba(255,255,255,.09) !important; border-color: rgba(183,215,255,.55) !important; box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="builder"] .b-ch .dev { position: absolute; object-fit: contain; display: block; opacity: .55; transition: opacity .4s, translate .6s var(--ease); }
+  [data-section="builder"] .b-ch.is-on .dev { opacity: 1; }
+  [data-section="builder"] .b-ch:hover .dev { translate: 0 -4px; }
+  [data-section="builder"] .b-ch b { position: absolute; left: 22px; top: 222px; font-weight: 300; font-size: 22px; color: rgba(245,247,250,.7); white-space: nowrap; transition: color .3s; }
+  [data-section="builder"] .b-ch span.d { position: absolute; left: 22px; top: 256px; width: 202px; font-weight: 300; font-size: 13px; line-height: 1.45; color: rgba(245,247,250,.45); transition: color .3s; }
+  [data-section="builder"] .b-ch.is-on b { color: #F5F7FA; }
+  [data-section="builder"] .b-ch.is-on span.d { color: rgba(245,247,250,.62); }
+  [data-section="builder"] .b-pill { position: absolute; left: 22px; top: 314px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; font-size: 13px; color: #F5F7FA; white-space: nowrap;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); transition: background-color .3s; }
+  [data-section="builder"] .b-pill img { width: 7px; height: 7px; display: none; }
+  [data-section="builder"] .is-on .b-pill { background: #3047EC; }
+  [data-section="builder"] .is-on .b-pill img { display: block; }
+  [data-section="builder"] .b-pill .t-on { display: none; }
+  [data-section="builder"] .is-on .b-pill .t-on { display: inline; }
+  [data-section="builder"] .is-on .b-pill .t-off { display: none; }
+
+  /* Step 3 · markets + volume */
+  [data-section="builder"] .b-mks { left: 120px; top: 395px; width: 760px; display: flex; flex-wrap: wrap; gap: 10px; }
+  [data-section="builder"] .b-mk { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; font-size: 15px; color: #F5F7FA; white-space: nowrap; line-height: normal;
+    background: rgba(255,255,255,.06) !important; border: 1px solid rgba(183,215,255,.14) !important; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    transition: background-color .3s, border-color .3s, padding .3s, opacity .7s var(--ease) calc(var(--i, 0) * 40ms + 120ms), translate .9s var(--ease) calc(var(--i, 0) * 40ms + 120ms); }
+  [data-section="builder"] .b-mk:hover { border-color: rgba(183,215,255,.4) !important; }
+  [data-section="builder"] .b-mk img { width: 7px; height: 7px; display: none; }
+  [data-section="builder"] .b-mk.is-on { background: #3047EC !important; border-color: #3047EC !important; padding: 10px 16px; }
+  [data-section="builder"] .b-mk.is-on img { display: block; }
+  [data-section="builder"] .b-vol { left: 120px; top: 515px; width: 760px; height: 212px; border-radius: 26px; background: rgba(255,255,255,.06); border: 1px solid rgba(183,215,255,.14);
+    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.3); }
+  [data-section="builder"] .b-vol .lbl { position: absolute; left: 30px; top: 26px; font-size: 14px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="builder"] .b-vol .num { position: absolute; left: 30px; top: 48px; font-weight: 300; font-size: 48px; letter-spacing: -0.03em; color: #F5F7FA; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  [data-section="builder"] .b-vol .unit { position: absolute; left: 172px; top: 76px; font-weight: 300; font-size: 14px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="builder"] .b-segs { position: absolute; left: 409px; top: 38px; display: flex; gap: 4px; padding: 4px; border-radius: 999px; background: rgba(255,255,255,.06); }
+  [data-section="builder"] .b-seg { padding: 8px 14px; border-radius: 999px; font-size: 13px; color: rgba(245,247,250,.6); white-space: nowrap; transition: background-color .3s, color .3s; }
+  [data-section="builder"] .b-seg:hover { color: #F5F7FA; }
+  [data-section="builder"] .b-seg.is-on { background: #3047EC; color: #F5F7FA; }
+  [data-section="builder"] .b-track { position: absolute; left: 30px; top: 144px; width: 696px; height: 4px; border-radius: 2px; background: rgba(255,255,255,.12); }
+  [data-section="builder"] .b-fill { position: absolute; left: 30px; top: 144px; height: 4px; border-radius: 2px; background: linear-gradient(90deg, #3047EC, #B7D7FF); width: calc(var(--t, .5) * 696px); }
+  [data-section="builder"] .b-thumb { position: absolute; top: 114px; left: calc(30px + var(--t, .5) * 696px - 32px); width: 64px; height: 64px; pointer-events: none; }
+  [data-section="builder"] .b-thumb img { display: block; width: 64px; height: 64px; transition: scale .3s var(--spring); }
+  [data-section="builder"] .b-vol:has(input:active) .b-thumb img { scale: 1.12; }
+  [data-section="builder"] .b-range { position: absolute; left: 18px; top: 122px; width: 720px; height: 48px; margin: 0; opacity: 0; cursor: pointer; }
+  [data-section="builder"] .b-range:focus-visible ~ .b-thumb img { outline: 2px solid #B7D7FF; outline-offset: -18px; border-radius: 999px; }
+  [data-section="builder"] .b-tick { position: absolute; top: 164px; font-size: 12px; color: #A7B0BE; white-space: nowrap; transition: color .3s; }
+  [data-section="builder"] .b-tick.is-on { color: #B7D7FF; }
+
+  /* Step 4 · contact form (light) */
+  [data-section="builder"] .b-light .b-kicker { color: #3047EC; }
+  [data-section="builder"] .b-light .b-title { color: #0F1115; }
+  [data-section="builder"] .b-light .b-lede { top: 113px; color: rgba(15,17,21,.62); }
+  [data-section="builder"] .b-form { left: 120px; top: 337px; width: 760px; display: grid; grid-template-columns: 374px 374px; column-gap: 12px; row-gap: 14px; }
+  [data-section="builder"] .b-field { position: relative; display: flex; flex-direction: column; gap: 8px; }
+  [data-section="builder"] .b-field--wide { grid-column: 1 / -1; }
+  [data-section="builder"] .b-field label { font-size: 14px; color: rgba(15,17,21,.7); }
+  [data-section="builder"] .b-field input, [data-section="builder"] .b-field textarea { width: 100%; height: 56px; padding: 0 18px; border-radius: 16px; border: 1px solid rgba(15,17,21,.08); background: #fff; outline: none;
+    font: 300 16px/1.4 'Geologica', system-ui, sans-serif; color: #0F1115; transition: border-color .2s, box-shadow .2s; }
+  [data-section="builder"] .b-field textarea { height: 96px; padding: 16px 18px; resize: none; }
+  [data-section="builder"] .b-field ::placeholder { color: rgba(15,17,21,.38); }
+  [data-section="builder"] .b-field input:focus, [data-section="builder"] .b-field textarea:focus { border-color: #3047EC; box-shadow: 0 0 0 .5px #3047EC, 0 0 0 5px rgba(48,71,237,.12); }
+  [data-section="builder"] .b-field.is-bad input { border-color: #D93F4C; box-shadow: 0 0 0 .5px #D93F4C; }
+  [data-section="builder"] .b-err { position: absolute; right: 2px; top: 1px; font-size: 12px; color: #D93F4C; opacity: 0; transition: opacity .2s; }
+  [data-section="builder"] .b-field.is-bad .b-err { opacity: 1; }
+  [data-section="builder"] .b-privacy { left: 120px; top: 679px; width: 600px; font-weight: 300; font-size: 13px; color: rgba(15,17,21,.55); }
+
+  /* Shared step navigation */
+  [data-section="builder"] .b-nav { left: 120px; top: var(--nav-top, 779px); display: flex; align-items: center; gap: 12px; transition: top .6s var(--ease); }
+  [data-section="builder"] .b-btn { display: inline-flex; align-items: center; padding: 15px 24px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: pre; transition: background-color .25s, color .25s, box-shadow .25s, opacity .25s; }
+  [data-section="builder"] .b-btn--ghost { color: #F5F7FA !important; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="builder"] .b-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.55); }
+  [data-section="builder"] .b-btn--light { background: #F5F7FA !important; color: #0F1115 !important; }
+  [data-section="builder"] .b-btn--light:hover { background: #fff !important; }
+  [data-section="builder"] .b-btn[aria-disabled="true"] { opacity: .45; cursor: not-allowed; }
+  [data-section="builder"] .b-count { font-size: 14px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="builder"] .b-hint { font-size: 14px; color: #B7D7FF; white-space: nowrap; opacity: 0; transition: opacity .3s; }
+  [data-section="builder"] .b-hint.is-on { opacity: 1; }
+  [data-section="builder"].is-light .b-btn--ghost { color: #0F1115 !important; box-shadow: inset 0 0 0 1px rgba(15,17,21,.2); }
+  [data-section="builder"].is-light .b-btn--light { background: #3047EC !important; color: #F5F7FA !important; }
+  [data-section="builder"].is-light .b-btn--light:hover { background: #2238d6 !important; }
+  [data-section="builder"].is-light .b-hint { color: #D93F4C; }
+  [data-section="builder"][data-step="5"] .b-nav { opacity: 0; visibility: hidden; }
+
+  /* Live summary card */
+  [data-section="builder"] .b-card { left: 960px; top: 132px; width: 380px; padding: 28px 30px 30px; border-radius: 28px; display: flex; flex-direction: column; gap: 18px; overflow: clip;
+    background: rgba(255,255,255,.07); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45);
+    transition: background-color .6s, box-shadow .6s, opacity .6s var(--ease), translate .8s var(--ease); }
+  [data-section="builder"].is-light .b-card { background: radial-gradient(190px 247.5px at 76px 495px, rgba(34,54,196,.7) 0%, rgba(24,36,109,.35) 50%, rgba(15,17,21,0) 100%), #0F1115; box-shadow: 0 30px 70px rgba(15,18,51,.28); }
+  [data-section="builder"][data-step="5"] .b-card { opacity: 0; visibility: hidden; translate: 40px 0; }
+  [data-section="builder"] .b-card__hd { display: flex; justify-content: space-between; align-items: center; white-space: nowrap; }
+  [data-section="builder"] .b-card__hd p:first-child { font-weight: 300; font-size: 24px; color: #F5F7FA; }
+  [data-section="builder"] .b-card__hd p:last-child { font-size: 13px; color: #B7D7FF; }
+  [data-section="builder"] .b-prog { display: flex; gap: 6px; }
+  [data-section="builder"] .b-prog i { width: 75.5px; height: 4px; border-radius: 2px; background: rgba(255,255,255,.12); transition: background-color .5s var(--ease); }
+  [data-section="builder"] .b-prog i.done { background: rgba(183,215,255,.6); }
+  [data-section="builder"] .b-prog i.now { background: #B7D7FF; }
+  [data-section="builder"] .b-small { font-size: 13px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="builder"] .b-tags { display: flex; flex-wrap: wrap; gap: 6px; min-height: 29px; }
+  [data-section="builder"] .b-tags span { padding: 7px 12px; border-radius: 999px; font-size: 13px; line-height: normal; color: #F5F7FA; background: rgba(255,255,255,.1); white-space: nowrap; transition: background-color .4s; animation: dyp-tag .45s var(--spring) both; }
+  [data-section="builder"] .b-tags span.cur { background: rgba(48,71,236,.9); }
+  [data-section="builder"] .b-tags span.old { animation: none; }
+  [data-section="builder"] .b-tags em { font-style: normal; font-size: 13px; color: rgba(167,176,190,.8); padding: 7px 0; }
+  @keyframes dyp-tag { from { opacity: 0; scale: .7; } to { opacity: 1; scale: 1; } }
+  [data-section="builder"] .b-div { height: 1px; background: rgba(255,255,255,.1); }
+  [data-section="builder"] .b-est { display: flex; flex-direction: column; gap: 4px; white-space: nowrap; }
+  [data-section="builder"] .b-est .l { font-size: 13px; color: #B7D7FF; }
+  [data-section="builder"] .b-est .v { font-weight: 300; font-size: 48px; letter-spacing: -0.03em; color: #F5F7FA; font-variant-numeric: tabular-nums; line-height: normal; }
+  [data-section="builder"] .b-est .n { font-size: 13px; color: #A7B0BE; }
+  [data-section="builder"] .b-flash { animation: dyp-flash .5s var(--ease); }
+  @keyframes dyp-flash { from { opacity: .25; translate: 0 6px; } to { opacity: 1; translate: none; } }
+  [data-section="builder"] .b-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-radius: 14px; background: rgba(255,255,255,.05); white-space: nowrap; }
+  [data-section="builder"] .b-row span { font-size: 14px; color: #A7B0BE; }
+  [data-section="builder"] .b-row b { font-weight: 400; font-size: 15px; color: #F5F7FA; }
+  [data-section="builder"] .b-row.is-muted b { color: #A7B0BE; }
+  [data-section="builder"] .b-foot { font-size: 12px; color: rgba(167,176,190,.8); }
+
+  [data-section="builder"] .b-fib { left: 0; top: 0; width: 1440px; height: 900px; pointer-events: none; }
+  [data-section="builder"] .b-fib svg { position: absolute; overflow: visible; }
+  [data-section="builder"] .b-fib path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.2s var(--inout) .5s; }
+  [data-section="builder"].is-in .b-fib.is-cur path { stroke-dashoffset: 0; }
+
+  /* 05 · Confirmation */
+  [data-section="builder"] .b-done-copy { left: 120px; top: 190px; width: 600px; }
+  [data-section="builder"] .b-sent { position: absolute; left: 0; top: 0; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #3047EC; font-size: 14px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="builder"] .b-sent img { width: 7px; height: 7px; display: block; }
+  [data-section="builder"] .b-done-copy .b-title { top: 62px; width: 600px; }
+  [data-section="builder"] .b-done-copy .b-lede { top: 256px; width: 480px; }
+  [data-section="builder"] .b-next { left: 120px; top: 546px; width: 600px; height: 168px; }
+  [data-section="builder"] .b-next > p { position: absolute; left: 0; top: 0; font-size: 14px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="builder"] .b-next .line { position: absolute; left: 5px; top: 40px; width: 1px; height: 104px; background: rgba(183,215,255,.3); transform-origin: top; }
+  [data-section="builder"] .b-next .dot { position: absolute; left: 0; width: 11px; height: 11px; display: block; }
+  [data-section="builder"] .b-next .when { position: absolute; left: 32px; font-size: 14px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="builder"] .b-next .what { position: absolute; left: 110px; font-weight: 300; font-size: 17px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="builder"] .b-receipt { left: 900px; top: 190px; width: 420px; padding: 30px 32px 32px; border-radius: 28px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;
+    background: rgba(255,255,255,.07); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="builder"] .b-receipt > * { align-self: stretch; }
+  [data-section="builder"] .b-receipt .h { font-weight: 300; font-size: 24px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="builder"] .b-line { display: flex; justify-content: space-between; gap: 16px; font-size: 14px; }
+  [data-section="builder"] .b-line span { color: #A7B0BE; white-space: nowrap; }
+  [data-section="builder"] .b-line b { font-weight: 400; color: #F5F7FA; text-align: right; }
+  [data-section="builder"] .b-row--on { background: rgba(48,71,236,.9); }
+  [data-section="builder"] .b-row--on span { color: #F5F7FA; }
+  [data-section="builder"] .b-receipt .b-btn { align-self: flex-start; }
+  [data-section="builder"] .b-mark { left: 1250px; top: 136px; width: 150px; height: 150px; border-radius: 34px; box-shadow: 0 24px 50px rgba(13,20,102,.6); overflow: hidden; }
+  [data-section="builder"] .b-mark img { width: 100%; height: 100%; display: block; object-fit: contain; transform: scaleX(-1); }
+  [data-section="builder"] .b-pop { opacity: 0; scale: .6; transition: opacity .5s var(--ease) var(--pd, 0ms), scale .8s var(--spring) var(--pd, 0ms); }
+  [data-section="builder"].is-in [data-for].is-cur .b-pop { opacity: 1; scale: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    [data-section="builder"] .b-in, [data-section="builder"] .b-pop, [data-section="builder"] [data-for] { transition: none !important; }
+  }
+</style>
+  <div class="b-bg" data-bg="1"></div><div class="b-bg" data-bg="2"></div><div class="b-bg" data-bg="3"></div><div class="b-bg" data-bg="4"></div><div class="b-bg" data-bg="5"></div>
+  <div class="v2-canvas">
+    <!-- Glows per step -->
+    <div data-for="1" aria-hidden="true">
+      <img decoding="async" class="b-glow" alt="" src="/v2/assets/design-your-program-glow-2.svg" style="left:800px; top:-120px; width:1000px; height:920px;">
+      <img decoding="async" class="b-glow" alt="" src="/v2/assets/design-your-program-glow-3.svg" style="left:-420px; top:380px; width:980px; height:780px;">
+    </div>
+    <div data-for="2" aria-hidden="true">
+      <img decoding="async" class="b-glow" alt="" src="/v2/assets/design-your-program-glow-4.svg" style="left:780px; top:-40px; width:1020px; height:920px;">
+      <img decoding="async" class="b-glow" alt="" src="/v2/assets/design-your-program-glow-5.svg" style="left:-80px; top:460px; width:1000px; height:780px;">
+    </div>
+    <div data-for="3" aria-hidden="true">
+      <img decoding="async" class="b-glow" alt="" src="/v2/assets/design-your-program-glow-6.svg" style="left:760px; top:-140px; width:1060px; height:960px;">
+      <img decoding="async" class="b-glow" alt="" src="/v2/assets/design-your-program-glow-7.svg" style="left:-400px; top:380px; width:980px; height:780px;">
+    </div>
+    <div data-for="5" aria-hidden="true">
+      <img decoding="async" class="b-glow" alt="" src="/v2/assets/design-your-program-glow-8.svg" style="left:700px; top:-220px; width:1120px; height:1000px;">
+      <img decoding="async" class="b-glow" alt="" src="/v2/assets/design-your-program-glow-hero-l.svg" style="left:-420px; top:420px; width:1000px; height:780px;">
+    </div>
+
+    <!-- Step 1 · Programs -->
+    <div class="b-panel" data-for="1" data-b-panel="1" role="group" aria-label="Step 1 of 4: programs">
+      <div class="b-a b-copy">
+        <p class="b-kicker b-in" style="--i:0">Step 1 of 4</p>
+        <h2 class="b-title b-in" style="--i:1">Which programs do you want to run?</h2>
+        <p class="b-lede b-in" style="--i:2">Pick as many as you need. Most retailers start with trade-in and add more within a year.</p>
+      </div>
+      <div class="b-a b-opts">
+        <button type="button" class="b-opt b-in is-on" style="--i:3" data-group="programs" data-val="Trade-in" aria-pressed="true"><b>Trade-in</b><span>Old device as credit at checkout</span><i class="b-check"><img decoding="async" class="off" alt="" src="/v2/assets/design-your-program-check-off.svg"><img decoding="async" class="on" alt="" src="/v2/assets/design-your-program-check-on.svg"><img decoding="async" class="tick" alt="" src="/v2/assets/design-your-program-tick.svg"></i></button>
+        <button type="button" class="b-opt b-in is-on" style="--i:4" data-group="programs" data-val="Early upgrade" aria-pressed="true"><b>Early upgrade</b><span>New phone before the contract ends</span><i class="b-check"><img decoding="async" class="off" alt="" src="/v2/assets/design-your-program-check-off.svg"><img decoding="async" class="on" alt="" src="/v2/assets/design-your-program-check-on.svg"><img decoding="async" class="tick" alt="" src="/v2/assets/design-your-program-tick.svg"></i></button>
+        <button type="button" class="b-opt b-in" style="--i:5" data-group="programs" data-val="Buyback" aria-pressed="false"><b>Buyback</b><span>Cash for a device, no purchase needed</span><i class="b-check"><img decoding="async" class="off" alt="" src="/v2/assets/design-your-program-check-off.svg"><img decoding="async" class="on" alt="" src="/v2/assets/design-your-program-check-on.svg"><img decoding="async" class="tick" alt="" src="/v2/assets/design-your-program-tick.svg"></i></button>
+        <button type="button" class="b-opt b-in is-on" style="--i:6" data-group="programs" data-val="BYOD protection" aria-pressed="true"><b>BYOD protection</b><span>Cover for devices customers already own</span><i class="b-check"><img decoding="async" class="off" alt="" src="/v2/assets/design-your-program-check-off.svg"><img decoding="async" class="on" alt="" src="/v2/assets/design-your-program-check-on.svg"><img decoding="async" class="tick" alt="" src="/v2/assets/design-your-program-tick.svg"></i></button>
+        <button type="button" class="b-opt b-in" style="--i:7" data-group="programs" data-val="Warranty" aria-pressed="false"><b>Warranty</b><span>Repairs and swaps after purchase</span><i class="b-check"><img decoding="async" class="off" alt="" src="/v2/assets/design-your-program-check-off.svg"><img decoding="async" class="on" alt="" src="/v2/assets/design-your-program-check-on.svg"><img decoding="async" class="tick" alt="" src="/v2/assets/design-your-program-tick.svg"></i></button>
+        <button type="button" class="b-opt b-in" style="--i:8" data-group="programs" data-val="Claim validation" aria-pressed="false"><b>Claim validation</b><span>Check a damage claim before paying it</span><i class="b-check"><img decoding="async" class="off" alt="" src="/v2/assets/design-your-program-check-off.svg"><img decoding="async" class="on" alt="" src="/v2/assets/design-your-program-check-on.svg"><img decoding="async" class="tick" alt="" src="/v2/assets/design-your-program-tick.svg"></i></button>
+        <button type="button" class="b-opt b-in" style="--i:9" data-group="programs" data-val="Return avoidance" aria-pressed="false"><b>Return avoidance</b><span>Solve the issue before a return</span><i class="b-check"><img decoding="async" class="off" alt="" src="/v2/assets/design-your-program-check-off.svg"><img decoding="async" class="on" alt="" src="/v2/assets/design-your-program-check-on.svg"><img decoding="async" class="tick" alt="" src="/v2/assets/design-your-program-tick.svg"></i></button>
+      </div>
+    </div>
+
+    <!-- Step 2 · Channels -->
+    <div class="b-panel" data-for="2" data-b-panel="2" role="group" aria-label="Step 2 of 4: channels">
+      <div class="b-a b-copy">
+        <p class="b-kicker b-in" style="--i:0">Step 2 of 4</p>
+        <h2 class="b-title b-in" style="--i:1">Where do customers<br>trade in?</h2>
+        <p class="b-lede b-in" style="--i:2">One program, three ways in. The valuation and the buyers stay the same in every channel.</p>
+      </div>
+      <div class="b-a b-chs">
+        <button type="button" class="b-ch b-in is-on" style="--i:3" data-group="channels" data-val="In store" aria-pressed="true">
+          <img decoding="async" class="dev" alt="iPad Pro on a store counter" src="/v2/assets/design-your-program-ch-instore.webp" style="left:38px; top:20px; width:170px; height:186px;">
+          <b>In store</b><span class="d">Staff check the device on a tablet at the counter.</span>
+          <span class="b-pill"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg"><span class="t-on">Selected</span><span class="t-off">Add</span></span>
+        </button>
+        <button type="button" class="b-ch b-in is-on" style="--i:4" data-group="channels" data-val="Online" aria-pressed="true">
+          <img decoding="async" class="dev" alt="MacBook Pro" src="/v2/assets/design-your-program-ch-online.webp" style="left:12px; top:38px; width:222px; height:136px;">
+          <b>Online</b><span class="d">Quote on your site, free courier pickup.</span>
+          <span class="b-pill"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg"><span class="t-on">Selected</span><span class="t-off">Add</span></span>
+        </button>
+        <button type="button" class="b-ch b-in" style="--i:5" data-group="channels" data-val="In your app" aria-pressed="false">
+          <img decoding="async" class="dev" alt="" src="/v2/assets/design-your-program-roomlight-sm.svg" style="left:-22px; top:-22px; width:290px; height:270px; opacity:1;">
+          <img decoding="async" class="dev" alt="" src="/v2/assets/design-your-program-contact-shadow.svg" style="left:59px; top:193px; width:126px; height:30px; opacity:1;">
+          <img decoding="async" class="dev" alt="iPhone Air in Sky Blue" src="/v2/assets/design-your-program-ch-app.webp" style="left:67px; top:12px; width:112px; height:196px;">
+          <b>In your app</b><span class="d">Quote and checks inside your own app.</span>
+          <span class="b-pill"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg"><span class="t-on">Selected</span><span class="t-off">Add</span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3 · Markets and volume -->
+    <div class="b-panel" data-for="3" data-b-panel="3" role="group" aria-label="Step 3 of 4: markets and volume">
+      <div class="b-a b-copy">
+        <p class="b-kicker b-in" style="--i:0">Step 3 of 4</p>
+        <h2 class="b-title b-in" style="--i:1">Markets and monthly volume.</h2>
+        <p class="b-lede b-in" style="--i:2">We match your markets with local buyers. Volume tells us how many buyers will compete for each device.</p>
+      </div>
+      <div class="b-a b-mks">
+        <button type="button" class="b-mk b-in is-on" style="--i:3" data-group="markets" data-val="Lithuania" aria-pressed="true"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">Lithuania</button>
+        <button type="button" class="b-mk b-in is-on" style="--i:4" data-group="markets" data-val="Latvia" aria-pressed="true"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">Latvia</button>
+        <button type="button" class="b-mk b-in is-on" style="--i:5" data-group="markets" data-val="Estonia" aria-pressed="true"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">Estonia</button>
+        <button type="button" class="b-mk b-in" style="--i:6" data-group="markets" data-val="Poland" aria-pressed="false"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">Poland</button>
+        <button type="button" class="b-mk b-in" style="--i:7" data-group="markets" data-val="Finland" aria-pressed="false"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">Finland</button>
+        <button type="button" class="b-mk b-in" style="--i:8" data-group="markets" data-val="Czechia" aria-pressed="false"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">Czechia</button>
+        <button type="button" class="b-mk b-in" style="--i:9" data-group="markets" data-val="Slovakia" aria-pressed="false"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">Slovakia</button>
+        <button type="button" class="b-mk b-in" style="--i:10" data-group="markets" data-val="Romania" aria-pressed="false"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg">Romania</button>
+      </div>
+      <div class="b-a b-vol b-in" style="--i:6">
+        <p class="lbl">Devices per month</p>
+        <p class="num" data-b-volnum>2,500</p>
+        <p class="unit">across all channels</p>
+        <div class="b-segs" role="group" aria-label="Device mix">
+          <button type="button" class="b-seg" data-mix="Phones">Phones</button>
+          <button type="button" class="b-seg is-on" data-mix="Phones + tablets">Phones + tablets</button>
+          <button type="button" class="b-seg" data-mix="All devices">All devices</button>
+        </div>
+        <i class="b-track"></i><i class="b-fill"></i>
+        <input class="b-range" type="range" min="0" max="1000" step="1" value="500" data-b-vol aria-label="Devices per month">
+        <span class="b-thumb"><img decoding="async" alt="" src="/v2/assets/design-your-program-thumb.svg"></span>
+        <span class="b-tick" data-tick="0" style="left:30px">500</span>
+        <span class="b-tick" data-tick="1" style="left:187.5px">1,000</span>
+        <span class="b-tick is-on" data-tick="2" style="left:361px">2,500</span>
+        <span class="b-tick" data-tick="3" style="left:534.5px">5,000</span>
+        <span class="b-tick" data-tick="4" style="left:677px">10,000+</span>
+      </div>
+    </div>
+
+    <!-- Step 4 · Contact -->
+    <div class="b-panel b-light" data-for="4" data-b-panel="4" role="group" aria-label="Step 4 of 4: contact">
+      <div class="b-a b-copy">
+        <p class="b-kicker b-in" style="--i:0">Step 4 of 4</p>
+        <h2 class="b-title b-in" style="--i:1">Where should we send it?</h2>
+        <p class="b-lede b-in" style="--i:2">A program lead replies within one working day with a draft plan and a valuation sample for your markets.</p>
+      </div>
+      <form class="b-a b-form" data-b-form novalidate>
+        <div class="b-field b-in" style="--i:3"><label for="dyp-name">Full name</label><input id="dyp-name" name="name" type="text" autocomplete="name" placeholder="First and last name" required><span class="b-err">Please add your name</span></div>
+        <div class="b-field b-in" style="--i:4"><label for="dyp-email">Work email</label><input id="dyp-email" name="email" type="email" autocomplete="email" placeholder="name@retailer.lt" required><span class="b-err">Please add a valid email</span></div>
+        <div class="b-field b-in" style="--i:5"><label for="dyp-company">Company</label><input id="dyp-company" name="company" type="text" autocomplete="organization" placeholder="Company name" required><span class="b-err">Please add your company</span></div>
+        <div class="b-field b-in" style="--i:6"><label for="dyp-role">Role</label><input id="dyp-role" name="role" type="text" autocomplete="organization-title" placeholder="e.g. Head of trade-in"></div>
+        <div class="b-field b-field--wide b-in" style="--i:7"><label for="dyp-notes">Anything we should know?</label><textarea id="dyp-notes" name="notes" placeholder="Current program, timing, tenders, devices you see most."></textarea></div>
+      </form>
+      <p class="b-a b-privacy b-in" style="--i:8">We use these details only to reply about this program. No newsletter unless you ask for it.</p>
+    </div>
+
+    <!-- Shared navigation -->
+    <div class="b-a b-nav" data-b-nav>
+      <button type="button" class="b-btn b-btn--ghost" data-b-back>Back</button>
+      <button type="button" class="b-btn b-btn--light" data-b-next>Continue to channels  →</button>
+      <span class="b-count" data-b-count>3 of 7 selected</span>
+      <span class="b-hint" data-b-hint role="status"></span>
+    </div>
+
+    <!-- Live summary -->
+    <aside class="b-a b-card" aria-label="Your program summary" aria-live="polite">
+      <div class="b-card__hd"><p>Your program</p><p data-b-steplabel>Step 1 of 4</p></div>
+      <div class="b-prog" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <p class="b-small">Selected</p>
+      <div class="b-tags" data-b-tags></div>
+      <div class="b-div"></div>
+      <div class="b-est"><p class="l">Estimated value per device</p><p class="v" data-b-val>€180–240</p><p class="n" data-b-note>Typical range for phones in the Baltics</p></div>
+      <div class="b-row" data-b-buyrow><span>Buyers available</span><b data-b-buyers>—</b></div>
+      <div class="b-row"><span>Time to launch</span><b data-b-time>~8 weeks</b></div>
+      <p class="b-foot" data-b-foot>Add channels and markets to narrow the estimate.</p>
+    </aside>
+
+    <!-- Fibres: selections → summary -->
+    <div class="b-a b-fib" data-for="1" aria-hidden="true">
+      <svg style="left:871.3px; top:291.3px" width="89.4" height="146.4" viewBox="0 0 89.4001 146.4" fill="none"><path pathLength="1" d="M0.7 145.7C48.7 145.7 48.7 8.70013 88.7 0.700135" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+      <svg style="left:871.3px; top:311.3px" width="89.4" height="214.4" viewBox="0 0 89.4001 214.4" fill="none"><path pathLength="1" d="M0.7 213.7C58.7 213.7 53.7 8.70015 88.7 0.700154" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    </div>
+    <div class="b-a b-fib" data-for="3" aria-hidden="true">
+      <svg style="left:879.3px; top:540.3px" width="81.4" height="55.4" viewBox="0 0 81.4 55.4" fill="none"><path pathLength="1" d="M0.7 54.7C45.7 54.7 40.7 0.7 80.7 0.7" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    </div>
+
+    <!-- 05 · Confirmation (after sending) -->
+    <div class="b-panel" data-for="5" data-b-panel="5" role="region" aria-label="Request sent" style="width:1440px">
+      <div class="b-a b-done-copy">
+        <p class="b-sent b-pop" style="--pd:100ms"><img decoding="async" alt="" src="/v2/assets/design-your-program-dot.svg"><span data-d-chip>Request sent · FP-2614</span></p>
+        <h2 class="b-title b-in" style="--i:1" tabindex="-1" data-d-focus>Thank you.<br>We reply within<br>one working day.</h2>
+        <p class="b-lede b-in" style="--i:2" data-d-lede>A program lead reviews your choices and sends a draft plan with a valuation sample for Lithuania, Latvia and Estonia.</p>
+      </div>
+      <div class="b-a b-next b-in" style="--i:4">
+        <p>What happens next</p>
+        <i class="line"></i>
+        <img decoding="async" class="dot" alt="" src="/v2/assets/design-your-program-tl-dot-on.svg" style="top:34px">
+        <span class="when" style="top:31px">Today</span><span class="what" style="top:28px">Draft plan and valuation sample by email</span>
+        <img decoding="async" class="dot" alt="" src="/v2/assets/design-your-program-tl-dot.svg" style="top:86px">
+        <span class="when" style="top:83px">Week 1</span><span class="what" style="top:80px">30-minute scoping call with your team</span>
+        <img decoding="async" class="dot" alt="" src="/v2/assets/design-your-program-tl-dot.svg" style="top:138px">
+        <span class="when" style="top:135px">Week 6</span><span class="what" style="top:132px">First devices traded in your stores</span>
+      </div>
+      <div class="b-a b-receipt b-in" style="--i:3">
+        <p class="h">Program summary</p>
+        <p class="b-small" data-d-meta>FP-2614 · 31 Oct 2026 · A Baltic electronics retailer</p>
+        <div class="b-div"></div>
+        <div class="b-line"><span>Programs</span><b data-d-programs>Trade-in, Early upgrade, BYOD</b></div>
+        <div class="b-line"><span>Channels</span><b data-d-channels>In store, Online</b></div>
+        <div class="b-line"><span>Markets</span><b data-d-markets>Lithuania, Latvia, Estonia</b></div>
+        <div class="b-line"><span>Volume</span><b data-d-volume>2,500 devices / month</b></div>
+        <div class="b-div"></div>
+        <div class="b-est"><p class="l">Estimated value per device</p><p class="v" data-d-val>€214</p></div>
+        <div class="b-row"><span>Buyers competing</span><b data-d-buyers>14</b></div>
+        <div class="b-row b-row--on"><span>Time to launch</span><b data-d-time>6 weeks</b></div>
+        <button type="button" class="b-btn b-btn--ghost" data-d-pdf>Download summary (PDF)</button>
+      </div>
+      <div class="b-a b-mark b-pop" style="--pd:700ms"><img decoding="async" alt="" src="/v2/assets/ecosystem-3d-mark.jpg"></div>
+    </div>
+  </div>
+</section>
+
+<section data-section="closing" id="closing" class="v2-sec" style="--h:900px; background: radial-gradient(calc(1080px * var(--s)) calc(560px * var(--s)) at 50% calc(330px * var(--s)), rgba(48,71,236,.42) 0%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), #0F1115;" data-tone="dark">
+  <style>
+    [data-section="closing"] .cl-head {
+      position: absolute; left: 70px; top: 284px; width: 1300px; margin: 0; text-align: center;
+      font-weight: 400; font-size: 150px; line-height: .92; letter-spacing: -4.5px;
+      background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    }
+    [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 168px; }
+    [data-section="closing"] .cl-foot {
+      position: absolute; left: 20px; top: 557px; width: 1400px; height: 343px; padding: 56px 56px 40px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: radial-gradient(700px 380px at 10% 0%, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 70%), linear-gradient(135deg, rgba(28,34,72,.92) 0%, rgba(17,20,34,.92) 100%); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 -20px 60px rgba(0,0,0,.45); border-radius: 32px; color: #F5F7FA; line-height: normal;
+    }
+    [data-section="closing"] .cl-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    [data-section="closing"] .cl-sub { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+    [data-section="closing"] .cl-logo { position: relative; display: block; width: 99.3px; height: 30px; }
+    [data-section="closing"] .cl-logo img { position: absolute; display: block; max-width: none; }
+    [data-section="closing"] .cl-sub h3 { margin: 0; font-weight: 500; font-size: 14px; color: #F5F7FA; }
+    [data-section="closing"] .cl-sub p { margin: 0; font-size: 13px; color: rgba(255,255,255,.6); }
+    [data-section="closing"] form { display: flex; gap: 8px; align-items: flex-start; }
+    [data-section="closing"] input {
+      width: 260px; height: 46px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08); color: #fff; font: 400 14px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s;
+    }
+    [data-section="closing"] input::placeholder { color: rgba(255,255,255,.5); }
+    [data-section="closing"] input:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.1); }
+    [data-section="closing"] button {
+      border: 0; cursor: pointer; padding: 12px 18px; border-radius: 10px; background: #fff; color: #0F1115;
+      font: 500 14px/18px 'Geologica', system-ui, sans-serif; transition: background-color .25s, transform .25s var(--ease);
+    }
+    [data-section="closing"] button:hover { background: #B7D7FF; }
+    [data-section="closing"] .cl-cols { display: flex; gap: 96px; white-space: nowrap; }
+    [data-section="closing"] .cl-cols nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    [data-section="closing"] .cl-cols span { font-size: 13px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-cols a, [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 14px; color: #fff; transition: opacity .2s; }
+    [data-section="closing"] .cl-cols a:hover, [data-section="closing"] .cl-legal a:hover { opacity: .7; }
+    [data-section="closing"] .cl-bottom { display: flex; justify-content: space-between; font-size: 12px; }
+    [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
+    [data-section="closing"] .cl-legal { display: flex; gap: 10px; }
+    [data-section="closing"] .cl-legal a { font-size: 12px; color: rgba(255,255,255,.8); }
+  </style>
+  <div class="v2-canvas">
+    <h2 class="cl-head" data-m="up">Make every device<br>worth <em>more</em></h2>
+
+    <footer class="cl-foot" data-m="up" style="--d:250ms">
+      <div class="cl-top">
+        <div class="cl-sub">
+          <a href="/v2/" class="cl-logo" aria-label="Fintegre home">
+            <img decoding="async" src="/v2/assets/closing-logo-mark.svg" alt="" width="32.1605" height="23.0769" style="left:3.77px; top:3.46px;">
+            <img decoding="async" src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
+          </a>
+          <h3>Get trade-in insights</h3>
+          <p>Market reports and program benchmarks. No spam.</p>
+          <form class="cl-form" novalidate>
+            <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="cl-cols">
+                    <nav aria-label="Platform"><span>Platform</span>
+            <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device value intelligence</a><a href="/v2/platform/">Vendor network</a><a href="/v2/platform/">Integrations</a>
+          </nav>
+          <nav aria-label="Solutions"><span>Solutions</span>
+            <a href="/v2/solutions/">Retailers</a><a href="/v2/solutions/">Telecom operators</a><a href="/v2/solutions/">OEM and ecosystems</a><a href="/v2/solutions/">Apple and premium retail</a>
+          </nav>
+          <nav aria-label="Company"><span>Company</span>
+            <a href="/v2/customers/">Customers</a><a href="/v2/insights/">Insights</a><a href="/v2/company/">About</a><a href="/v2/design-your-program/">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="cl-bottom">
+        <small>© 2026 Fintegre. All rights reserved.</small>
+        <nav class="cl-legal" aria-label="Legal"><a href="/v2/company/">Privacy</a><a href="/v2/company/">Cookies</a><a href="/v2/company/">Imprint</a></nav>
+      </div>
+    </footer>
+  </div>
+</section>
+</main>
+<script src="/v2/v2.js"></script>
+<script>
+// Design your program: a real 4-step builder (programs → channels → markets/volume → contact) with a live
+// summary card, then a confirmation once the form is sent. No backend: everything is computed in the browser.
+(() => {
+  const sec = document.querySelector('[data-section="builder"]');
+  if (!sec) return;
+  const isMobile = document.documentElement.classList.contains('m');
+  const canvas = sec.querySelector('.v2-canvas');
+  const $ = (s) => sec.querySelector(s);
+  const $$ = (s) => [...sec.querySelectorAll(s)];
+
+  const PROGRAMS = 7;
+  const SHORT = { 'BYOD protection': 'BYOD' };
+  const TRADED = { Lithuania: 15100, Latvia: 12300, Estonia: 13800, Poland: 58400, Finland: 21700, Czechia: 26900, Slovakia: 11200, Romania: 24600 };
+  const MIX_BASE = { Phones: 228, 'Phones + tablets': 214, 'All devices': 196 };
+  const TICKS = [500, 1000, 2500, 5000, 10000];
+  const NAV_TOP = { 1: 779, 2: 807, 3: 763, 4: 723 };
+  const NEXT_LABEL = { 1: 'Continue to channels  →', 2: 'Continue to markets  →', 3: 'Continue to contact  →', 4: 'Send my program  →' };
+
+  const state = { step: 1, programs: [], channels: [], markets: [], t: 0.5, mix: 'Phones + tablets' };
+  // Start from what the page shows (the Figma defaults).
+  for (const g of ['programs', 'channels', 'markets']) state[g] = $$(`[data-group="${g}"].is-on`).map((b) => b.dataset.val);
+
+  const fmt = (n) => n.toLocaleString('en-US');
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const listJoin = (a) => (a.length < 2 ? a.join('') : `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}`);
+
+  // Volume slider: ticks are evenly spaced, values interpolate between them.
+  const volume = () => {
+    const seg = clamp(state.t, 0, 1) * 4, i = Math.min(3, Math.floor(seg)), f = seg - i;
+    const v = TICKS[i] + (TICKS[i + 1] - TICKS[i]) * f;
+    const step = v < 1000 ? 50 : v < 5000 ? 100 : 250;
+    return Math.round(v / step) * step;
+  };
+  const volLabel = () => (state.t >= 0.999 ? '10,000+' : fmt(volume()));
+
+  const calc = () => {
+    const n = state.programs.length, c = state.channels.length, m = state.markets.length;
+    const app = state.channels.includes('In your app');
+    const buyers = m ? Math.round(4 + m * 2.2 + Math.log2(volume() / 500) * 1.5) : 0;
+    const value = (MIX_BASE[state.mix] || 214) + Math.round((buyers - 14) * 1.5);
+    const weeks = clamp(6 + Math.max(0, m - 3) + (n > 3 ? 1 : 0) + (app ? 1 : 0), 6, 12);
+    const traded = state.markets.reduce((s, k) => s + (TRADED[k] || 0), 0);
+    return { n, c, m, app, buyers, value, weeks, traded };
+  };
+
+  // ---------- Summary card ----------
+  const card = {
+    label: $('[data-b-steplabel]'), bars: $$('.b-prog i'), tags: $('[data-b-tags]'), val: $('[data-b-val]'), note: $('[data-b-note]'),
+    buyRow: $('[data-b-buyrow]'), buyers: $('[data-b-buyers]'), time: $('[data-b-time]'), foot: $('[data-b-foot]'),
+  };
+  let shownTags = new Set();
+  const setText = (el, txt) => {
+    if (!el || el.textContent === txt) return;
+    el.textContent = txt;
+    el.classList.remove('b-flash'); void el.offsetWidth; el.classList.add('b-flash');
+  };
+  const renderCard = () => {
+    const s = Math.min(state.step, 4), k = calc();
+    card.label.textContent = s === 4 ? 'Ready to send' : `Step ${s} of 4`;
+    card.bars.forEach((b, i) => { b.className = i + 1 < s ? 'done' : i + 1 === s ? 'now' : ''; });
+
+    const tags = [
+      ...state.programs.map((t) => [t, 1]),
+      ...(s >= 2 ? state.channels.map((t) => [t, 2]) : []),
+      ...(s >= 3 ? state.markets.map((t) => [t, 3]) : []),
+      ...(s >= 3 ? [[`${volLabel()} / month`, 3]] : []),
+    ];
+    const max = isMobile ? 14 : 11;
+    const next = new Set();
+    card.tags.innerHTML = '';
+    tags.slice(0, max).forEach(([t, from]) => {
+      const el = document.createElement('span');
+      el.textContent = t;
+      if (from === s && s < 4) el.classList.add('cur');
+      const key = `${from}:${t}`;
+      if (shownTags.has(key) || t.endsWith('/ month')) el.classList.add('old');
+      next.add(key);
+      card.tags.append(el);
+    });
+    if (tags.length > max) { const em = document.createElement('em'); em.textContent = `+${tags.length - max} more`; card.tags.append(em); }
+    if (!tags.length) { const em = document.createElement('em'); em.textContent = 'Nothing selected yet'; card.tags.append(em); }
+    shownTags = next;
+
+    let val, note, buyers, time, foot;
+    if (s === 1) {
+      val = k.n ? '€180–240' : '—';
+      note = 'Typical range for phones in the Baltics';
+      buyers = '—';
+      time = k.n ? `~${clamp(5 + k.n, 6, 12)} weeks` : '—';
+      foot = 'Add channels and markets to narrow the estimate.';
+    } else if (s === 2) {
+      val = k.c ? '€190–235' : '€180–240';
+      note = 'Phones and tablets, Baltic buyers';
+      buyers = k.c ? `${5 + k.c * 2} in network` : '—';
+      time = `~${clamp(4 + Math.max(k.n, 1) + (k.app ? 1 : 0), 6, 12)} weeks`;
+      foot = 'Add markets and volume to see live bids.';
+    } else {
+      val = k.m ? `€${k.value}` : '—';
+      note = 'Average best bid, last 30 days';
+      buyers = k.m ? `${k.buyers} competing` : '—';
+      time = k.m ? `${k.weeks} weeks` : '—';
+      foot = s === 4 ? 'Your summary is attached to the request.' : k.m ? `Based on ${fmt(k.traded)} devices traded in these markets last month.` : 'Pick at least one market to see live bids.';
+    }
+    setText(card.val, val);
+    card.note.textContent = note;
+    setText(card.buyers, buyers);
+    card.buyRow.classList.toggle('is-muted', buyers === '—');
+    setText(card.time, time);
+    card.foot.textContent = foot;
+  };
+
+  // ---------- Step 1–3 inputs ----------
+  const count = $('[data-b-count]');
+  const hint = $('[data-b-hint]');
+  const renderInputs = () => {
+    if (count) count.textContent = `${state.programs.length} of ${PROGRAMS} selected`;
+    $$('[data-group]').forEach((b) => {
+      const on = state[b.dataset.group].includes(b.dataset.val);
+      b.classList.toggle('is-on', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+    $$('[data-mix]').forEach((b) => { const on = b.dataset.mix === state.mix; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', String(on)); });
+    const vol = $('[data-b-volnum]');
+    if (vol) vol.textContent = volLabel();
+    $$('.b-vol').forEach((v) => v.style.setProperty('--t', String(state.t)));
+    const near = Math.round(state.t * 4);
+    $$('.b-tick').forEach((t) => t.classList.toggle('is-on', Number(t.dataset.tick) === near && Math.abs(state.t * 4 - near) < 0.08));
+    const r = $('[data-b-vol]');
+    if (r) { r.value = String(Math.round(state.t * 1000)); r.setAttribute('aria-valuetext', `${volLabel()} devices per month`); }
+  };
+
+  sec.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-group]');
+    if (b) {
+      const g = state[b.dataset.group], v = b.dataset.val, i = g.indexOf(v);
+      if (i >= 0) g.splice(i, 1); else g.push(v);
+      // Keep the canonical order of the options on the page.
+      const order = $$(`[data-group="${b.dataset.group}"]`).map((x) => x.dataset.val);
+      g.sort((a, z) => order.indexOf(a) - order.indexOf(z));
+      hint.classList.remove('is-on');
+      update();
+      return;
+    }
+    const m = e.target.closest('[data-mix]');
+    if (m) { state.mix = m.dataset.mix; update(); }
+  });
+  const range = $('[data-b-vol]');
+  if (range) range.addEventListener('input', () => { state.t = Number(range.value) / 1000; update(); });
+
+  // ---------- Navigation ----------
+  const nav = $('[data-b-nav]');
+  const back = $('[data-b-back]');
+  const next = $('[data-b-next]');
+  const required = { 1: ['programs', 'Pick at least one program'], 2: ['channels', 'Pick at least one channel'], 3: ['markets', 'Pick at least one market'] };
+  const valid = (s) => !required[s] || state[required[s][0]].length > 0;
+
+  const renderNav = () => {
+    const s = state.step;
+    if (back) back.hidden = s === 1 || s === 5;
+    if (count) count.hidden = s !== 1;
+    if (next) {
+      next.textContent = NEXT_LABEL[s] || '';
+      next.setAttribute('aria-disabled', String(!valid(s)));
+    }
+    if (nav && !isMobile && NAV_TOP[s]) nav.style.setProperty('--nav-top', `${NAV_TOP[s]}px`);
+  };
+
+  const fitHeight = () => {
+    // Phones: the section is as tall as the current step's content.
+    if (!isMobile) return;
+    const inner = sec.querySelector('[data-b-flow]');
+    if (inner) sec.style.setProperty('--h', `${Math.ceil(inner.offsetHeight)}px`);
+  };
+
+  const heroChips = [...document.querySelectorAll('[data-section="hero"] [data-dyp-goto]')].filter((c) => c.tagName === 'BUTTON');
+  const goTo = (s, opts = {}) => {
+    state.step = s;
+    sec.dataset.step = String(s);
+    sec.classList.toggle('is-light', s === 4);
+    $$('[data-for]').forEach((el) => el.classList.remove('is-cur'));
+    requestAnimationFrame(() => requestAnimationFrame(() => $$('[data-for]').forEach((el) => {
+      if (el.dataset.for.split(' ').includes(String(s))) el.classList.add('is-cur');
+    })));
+    // Inert hidden panels so keyboard focus stays in the current step.
+    $$('[data-b-panel]').forEach((p) => { p.inert = p.dataset.bPanel !== String(s); });
+    heroChips.forEach((c) => c.classList.toggle('is-on', Number(c.dataset.dypGoto) === Math.min(s, 4)));
+    hint.classList.remove('is-on');
+    update();
+    fitHeight();
+    if (opts.scroll !== false) {
+      const top = sec.getBoundingClientRect().top + scrollY;
+      if (Math.abs(sec.getBoundingClientRect().top) > 4) scrollTo({ top, behavior: 'smooth' });
+    }
+    if (opts.focus) {
+      const h = sec.querySelector(`[data-b-panel="${s}"] h2`);
+      if (h) { h.setAttribute('tabindex', '-1'); setTimeout(() => h.focus({ preventScroll: true }), 400); }
+    }
+  };
+
+  const update = () => { renderInputs(); renderCard(); renderNav(); fitHeight(); };
+
+  if (back) back.addEventListener('click', () => goTo(Math.max(1, state.step - 1), { focus: true }));
+  if (next) next.addEventListener('click', () => {
+    const s = state.step;
+    if (s === 4) { form.requestSubmit(); return; }
+    if (!valid(s)) { hint.textContent = required[s][1]; hint.classList.add('is-on'); return; }
+    goTo(s + 1, { focus: true });
+  });
+
+  // ---------- Step 4 form ----------
+  const form = $('[data-b-form]');
+  const fieldOk = (input) => {
+    const ok = input.checkValidity() && (!input.required || input.value.trim() !== '');
+    input.closest('.b-field').classList.toggle('is-bad', !ok);
+    return ok;
+  };
+  form.addEventListener('input', (e) => { if (e.target.closest('.b-field.is-bad')) fieldOk(e.target); });
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const inputs = [...form.querySelectorAll('input[required]')];
+    const bad = inputs.filter((i) => !fieldOk(i));
+    if (bad.length) {
+      hint.textContent = 'Please check the highlighted fields';
+      hint.classList.add('is-on');
+      bad[0].focus();
+      return;
+    }
+    if (!valid(1) || !valid(2) || !valid(3)) { goTo([1, 2, 3].find((s) => !valid(s))); return; }
+    fillConfirmation(new FormData(form));
+    goTo(5, { focus: true });
+  });
+
+  // ---------- Confirmation ----------
+  const fillConfirmation = (data) => {
+    const k = calc();
+    const id = `FP-${2000 + Math.floor(Math.random() * 7999)}`;
+    const date = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+    const company = String(data.get('company') || '').trim();
+    const put = (sel, txt) => { const el = $(sel); if (el) el.textContent = txt; };
+    put('[data-d-chip]', `Request sent · ${id}`);
+    put('[data-d-lede]', `A program lead reviews your choices and sends a draft plan with a valuation sample for ${listJoin(state.markets)}.`);
+    put('[data-d-meta]', `${id} · ${date} · ${company || 'Your company'}`);
+    put('[data-d-programs]', state.programs.map((p) => SHORT[p] || p).join(', '));
+    put('[data-d-channels]', state.channels.join(', '));
+    put('[data-d-markets]', state.markets.join(', '));
+    put('[data-d-volume]', `${volLabel()} devices / month`);
+    put('[data-d-val]', `€${k.value}`);
+    put('[data-d-buyers]', String(k.buyers));
+    put('[data-d-time]', `${k.weeks} weeks`);
+    sec._summary = { id, date, company, name: String(data.get('name') || ''), email: String(data.get('email') || ''), k };
+  };
+
+  // "Download summary (PDF)": a clean printable page; the browser's print dialog saves it as PDF.
+  const pdf = $('[data-d-pdf]');
+  if (pdf) pdf.addEventListener('click', () => {
+    const s = sec._summary || { id: '', date: '', company: '', k: calc() };
+    const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const rows = [['Programs', state.programs.join(', ')], ['Channels', state.channels.join(', ')], ['Markets', state.markets.join(', ')],
+      ['Volume', `${volLabel()} devices / month`], ['Device mix', state.mix], ['Estimated value per device', `€${s.k.value}`],
+      ['Buyers competing', s.k.buyers], ['Time to launch', `${s.k.weeks} weeks`]];
+    const w = window.open('', '_blank');
+    if (!w) return;
+    w.document.write(`<!doctype html><title>Fintegre program summary ${esc(s.id)}</title><style>body{font:15px/1.5 system-ui,sans-serif;color:#0F1115;max-width:640px;margin:48px auto;padding:0 24px}h1{font-weight:400;font-size:28px;margin:0 0 4px}p{color:#5b6372;margin:0 0 24px}td{padding:10px 0;border-bottom:1px solid #e3e7ee;vertical-align:top}td:first-child{color:#5b6372;width:45%}</style><h1>Program summary</h1><p>${esc([s.id, s.date, s.company].filter(Boolean).join(' · '))}</p><table>${rows.map(([a, b]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}</table>`);
+    w.document.close();
+    w.focus();
+    w.print();
+  });
+
+  // ---------- Entry points from the hero (step chips, CTAs) ----------
+  document.addEventListener('click', (e) => {
+    const g = e.target.closest('[data-dyp-goto]');
+    if (!g) return;
+    e.preventDefault();
+    e.stopPropagation();
+    goTo(Number(g.dataset.dypGoto));
+  }, true);
+
+  // Mobile channel swipe row: dots follow the scroll position.
+  const row = $('[data-b-swipe]');
+  if (row) {
+    const dots = $$('[data-b-dots] i');
+    const onScroll = () => {
+      const max = row.scrollWidth - row.clientWidth || 1;
+      const i = clamp(Math.round((row.scrollLeft / max) * (dots.length - 1)), 0, dots.length - 1);
+      dots.forEach((d, j) => d.classList.toggle('is-on', j === i));
+    };
+    row.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  window.addEventListener('resize', fitHeight);
+  if (document.fonts) document.fonts.ready.then(fitHeight);
+  goTo(1, { scroll: false });
+})();
+</script>
+<script>
+// Closing footer: newsletter form has no backend yet, so it validates locally and confirms in place.
+(() => {
+  const form = document.querySelector('[data-section="closing"] .cl-form');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input');
+    const btn = form.querySelector('button');
+    if (!input.checkValidity()) { input.focus(); input.style.borderColor = 'rgba(255,140,140,.7)'; return; }
+    input.style.borderColor = '';
+    input.value = '';
+    input.placeholder = 'Thanks, you are on the list';
+    btn.textContent = 'Subscribed';
+    btn.disabled = true;
+  });
+  form.querySelector('input').addEventListener('input', (e) => { e.target.style.borderColor = ''; });
+})();
+</script>
+</body>
+</html>

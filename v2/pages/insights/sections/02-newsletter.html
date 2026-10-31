@@ -1,0 +1,61 @@
+<section data-section="newsletter" id="newsletter" class="v2-sec" data-tone="light" style="--h:900px; background:#F5F7FA;">
+<style>
+  [data-section="newsletter"] .nl-abs { position: absolute; }
+  [data-section="newsletter"] p { margin: 0; }
+  [data-section="newsletter"] .nl-copy { left: 120px; top: 230px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  [data-section="newsletter"] h2 { margin: 0; font-weight: 400; font-size: 64px; line-height: 1; letter-spacing: -0.04em; color: #0F1115; white-space: nowrap; }
+  [data-section="newsletter"] .nl-lede { width: 470px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(15,17,21,.62); }
+  [data-section="newsletter"] form { display: flex; gap: 10px; align-items: flex-start; }
+  [data-section="newsletter"] input { width: 320px; height: 50px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(15,17,21,.1); background: #fff; color: #0F1115;
+    font: 400 15px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, box-shadow .25s; }
+  [data-section="newsletter"] input::placeholder { color: rgba(15,17,21,.45); }
+  [data-section="newsletter"] input:focus { border-color: #3047EC; box-shadow: 0 0 0 3px rgba(48,71,236,.15); }
+  [data-section="newsletter"] input.is-bad { border-color: #E5484D; }
+  [data-section="newsletter"] button { height: 50px; padding: 0 24px; border: 0; border-radius: 999px; background: #3047EC; color: #F5F7FA; cursor: pointer;
+    font: 400 15px/normal 'Geologica', system-ui, sans-serif; transition: background-color .25s; }
+  [data-section="newsletter"] button:hover { background: #2236C4; }
+  [data-section="newsletter"] button[disabled] { background: #0F1115; cursor: default; }
+  [data-section="newsletter"] .nl-note { font-size: 13px; color: rgba(15,17,21,.5); line-height: normal; white-space: nowrap; }
+  [data-section="newsletter"] .nl-note.is-bad { color: #C4373C; }
+  [data-section="newsletter"] .nl-note.is-ok { color: #3047EC; }
+  [data-section="newsletter"] .nl-vis { left: 740px; top: 100px; width: 600px; height: 700px; }
+  [data-section="newsletter"] .nl-cover { position: absolute; overflow: clip; border-radius: 18px; line-height: normal; white-space: nowrap; box-shadow: 0 30px 60px -10px rgba(15,20,51,.22); }
+  [data-section="newsletter"] .nl-cover > * { position: absolute; display: block; max-width: none; }
+  .motion [data-section="newsletter"] [data-m][data-ty] { translate: 0 var(--ty); }
+  .motion [data-section="newsletter"].is-in [data-m][data-ty] { translate: none; }
+</style>
+  <div class="v2-canvas">
+    <div class="nl-abs nl-copy">
+      <h2 data-m="up">One email,<br>every quarter.</h2>
+      <p class="nl-lede" data-m="up" style="--d:100ms">The Device Value Index and new benchmarks, sent to trade-in, pricing and category teams. No more than one email a month.</p>
+      <form class="nl-form" novalidate data-m="up" style="--d:200ms">
+        <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="nl-note" data-m="up" style="--d:250ms" aria-live="polite">Unsubscribe in one click. We never share your address.</p>
+    </div>
+
+    <div class="nl-abs nl-vis" aria-hidden="true">
+      <div class="nl-cover" data-m="up" data-ty="70px" style="--ty:70px; --d:200ms; left:20.45px; top:173.13px; width:270px; height:360px; transform:rotate(6deg); background:#0F1115; color:#F5F7FA; font-size:12px;">
+        <p style="left:24px; top:24px;">Next edition</p>
+        <p style="left:24px; top:56px; font-size:28px; line-height:1.04; letter-spacing:-0.03em;">Ships<br>3 Dec</p>
+        <p style="left:24px; top:128px; color:#A7B0BE;">Q4 · 2026</p>
+      </div>
+      <div class="nl-cover" data-m="up" data-ty="70px" style="--ty:70px; --d:380ms; left:166.84px; top:122.33px; width:270px; height:360px; transform:rotate(1deg); background:#fff; border:1px solid rgba(15,17,21,.08); color:#0F1115; font-size:12px;">
+        <p style="left:22px; top:22px;">Benchmark</p>
+        <p style="left:22px; top:248px; font-size:28px; line-height:1.04; letter-spacing:-0.03em;">Retail vs.<br>telecom</p>
+        <p style="left:22px; top:318px; color:rgba(15,17,21,.5);">Q3 · 2026</p>
+      </div>
+      <div class="nl-cover" data-m="up" data-ty="70px" style="--ty:70px; --d:560ms; left:306.86px; top:136.16px; width:300px; height:400px; transform:rotate(-5deg); border:1px solid rgba(183,215,255,.25); background:linear-gradient(135deg, #5D74FF 0%, #3047EC 71.429%); color:#F5F7FA; font-size:12px;">
+        <p style="left:24px; top:24px;">Fintegre intelligence · Report</p>
+        <img alt="" src="/v2/assets/insights-nbar-1.svg" width="72.642" height="70" style="left:24px; top:128px;">
+        <img alt="" src="/v2/assets/insights-nbar-2.svg" width="91.294" height="110" style="left:82px; top:88px;">
+        <img alt="" src="/v2/assets/insights-nbar-3.svg" width="109.946" height="150" style="left:140px; top:48px;">
+        <img alt="" src="/v2/assets/insights-nbar-4.svg" width="84.299" height="95" style="left:198px; top:103px;">
+        <p style="left:24px; top:280px; width:248px; white-space:normal; font-size:30px; line-height:1.04; letter-spacing:-0.03em;">European Device Value Index</p>
+        <p style="left:24px; top:358px;">Q3 · 2026</p>
+      </div>
+      <img class="nl-abs" data-m="up" data-ty="70px" alt="" src="/v2/assets/insights-applewatch.webp" style="--ty:70px; --d:740ms; left:60px; top:470px; width:210px; height:242px; object-fit:contain; filter:drop-shadow(0 24px 40px rgba(15,20,51,.3));">
+    </div>
+  </div>
+</section>

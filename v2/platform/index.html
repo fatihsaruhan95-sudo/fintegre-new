@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platform — Fintegre (v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  // Phones get the mobile layout.
+  if (innerWidth < 768) location.replace('/v2/mobile/platform/' + location.hash);
+  // Hide the page until fonts, Tailwind and images are ready, so the hero entrance is seen from its first frame.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="/v2/v2.css">
+</head>
+<body>
+<nav class="ver-switch" aria-label="Site version">
+  <a href="/">V1</a>
+  <a href="/v2/" aria-current="page">V2</a>
+</nav>
+
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="/v2/" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="/assets/header-mark.svg">Fintegre</a>
+    <nav class="v2-nav">
+      <a href="/v2/platform/">Platform</a>
+      <a href="/v2/solutions/">Solutions</a>
+      <a href="/v2/intelligence/">Intelligence</a>
+      <a href="/v2/customers/">Customers</a>
+      <a href="/v2/insights/">Insights</a>
+      <a href="/v2/company/">Company</a>
+    </nav>
+    <a href="/v2/design-your-program/" class="v2-cta">Design your program</a>
+  </div>
+</header>
+
+<main class="page">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(321.43px * var(--s)) at calc(50% + 261.82px * var(--s)) calc(546.43px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.9) 25%, rgba(18,26,90,.85) 50%, rgba(16,21,56,.425) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="hero"] .ph-a { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+  [data-section="hero"] .ph-glow { position: absolute; display: block; max-width: none; pointer-events: none; }
+
+  /* Top bar */
+  [data-section="hero"] .ph-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; }
+  [data-section="hero"] .ph-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .ph-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .ph-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .ph-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); white-space: nowrap; }
+  [data-section="hero"] .ph-nav a { transition: color .2s; }
+  [data-section="hero"] .ph-nav a:hover, [data-section="hero"] .ph-nav a[aria-current] { color: #F5F7FA; }
+  [data-section="hero"] .ph-btn { display: inline-flex; align-items: center; border-radius: 999px; font-size: 15px; line-height: normal; white-space: pre; transition: background-color .25s, box-shadow .25s; }
+  [data-section="hero"] .ph-btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .ph-btn--light:hover { background: #fff; }
+  [data-section="hero"] .ph-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="hero"] .ph-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+
+  /* Copy */
+  [data-section="hero"] .ph-copy { left: 120px; top: 232px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  [data-section="hero"] h1 { margin: 0; font-weight: 400; font-size: 84px; line-height: .96; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .ph-lede { width: 470px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .ph-ctas { display: flex; gap: 12px; }
+  [data-section="hero"] .ph-ctas .ph-btn { padding: 14px 22px; }
+
+  [data-section="hero"] .ph-stats { left: 120px; top: 752px; display: flex; gap: 28px; align-items: center; }
+  [data-section="hero"] .ph-stat { display: flex; flex-direction: column; gap: 2px; white-space: nowrap; }
+  [data-section="hero"] .ph-stat b { font-weight: 300; font-size: 22px; letter-spacing: -0.02em; color: #F5F7FA; }
+  [data-section="hero"] .ph-stat span { font-size: 13px; color: #A7B0BE; }
+  [data-section="hero"] .ph-div { width: 1px; height: 28px; background: rgba(245,247,250,.16); }
+
+  /* Visual */
+  [data-section="hero"] .ph-photo { left: 823.45px; top: 131.1px; width: 911.47px; height: 1100px; }
+  [data-section="hero"] .ph-photo img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 36px 70px rgba(0,0,0,.55)); }
+  [data-section="hero"] .ph-fade { left: 0; top: 640px; width: 1440px; height: 260px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.92) 70%, #0F1115 100%); }
+  [data-section="hero"] .ph-fibre { position: absolute; overflow: visible; }
+  [data-section="hero"] .ph-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; line-height: normal; color: #F5F7FA; }
+  [data-section="hero"] .ph-chip img { width: 7px; height: 7px; display: block; }
+
+  [data-section="hero"] .ph-card { left: 1004px; top: 410px; width: 372px; height: 413px; border-radius: 26px; overflow: clip; line-height: normal;
+    background: linear-gradient(rgba(255,255,255,.07), rgba(255,255,255,.07)), rgba(15,17,21,.72);
+    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    box-shadow: inset 0 0 0 1px rgba(183,215,255,.16), 0 30px 60px rgba(0,0,0,.5); }
+  [data-section="hero"] .ph-card__k { left: 25px; top: 23px; font-size: 13px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="hero"] .ph-card__t { left: 25px; top: 45px; font-size: 22px; letter-spacing: -0.02em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .ph-steps { left: 19px; top: 91px; display: flex; flex-direction: column; gap: 4px; }
+  [data-section="hero"] .ph-step { width: 332px; padding: 11px 12px; border-radius: 12px; display: flex; gap: 12px; align-items: center; white-space: nowrap; }
+  [data-section="hero"] .ph-step:nth-child(odd) { background: rgba(255,255,255,.04); }
+  [data-section="hero"] .ph-step i { font-style: normal; width: 12px; height: 16px; font-size: 12px; color: rgba(183,215,255,.9); }
+  [data-section="hero"] .ph-step div { flex: 1 0 0; min-width: 1px; display: flex; flex-direction: column; gap: 2px; }
+  [data-section="hero"] .ph-step b { font-weight: 400; font-size: 14px; color: #F5F7FA; }
+  [data-section="hero"] .ph-step small { font-weight: 300; font-size: 12px; color: #A7B0BE; }
+  [data-section="hero"] .ph-step em { font-style: normal; font-size: 14px; color: rgba(245,247,250,.85); }
+  [data-section="hero"] .ph-step.is-on { background: rgba(48,71,236,.92); }
+  [data-section="hero"] .ph-step.is-on i, [data-section="hero"] .ph-step.is-on small { color: rgba(255,255,255,.8); }
+  [data-section="hero"] .ph-step.is-on em { color: #fff; }
+
+  /* Entrance: Figma timeline (s from arrival → --d). --to/--tt opacity/translate durations, --y distance. */
+  .motion [data-section="hero"] [data-m] { transition: opacity var(--to,.8s) var(--ease) var(--d,0ms), translate var(--tt,1.1s) var(--ease) var(--d,0ms); }
+  .motion [data-section="hero"] [data-m="up"] { translate: 0 var(--y,40px); }
+  .motion [data-section="hero"].is-in [data-m] { opacity: 1; translate: none; }
+  .motion [data-section="hero"] [data-draw] { transition-duration: .6s; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="ph-glow" alt="" src="/v2/assets/platform-hero-glow.svg" style="left:700px; top:-120px; width:1080px; height:960px;">
+    <img decoding="async" class="ph-glow" alt="" src="/v2/assets/platform-hero-glow1.svg" style="left:-400px; top:440px; width:980px; height:780px;">
+    <img decoding="async" class="ph-glow" alt="" src="/v2/assets/platform-hero-glow-ice.svg" style="left:660px; top:-40px; width:940px; height:880px;">
+
+    <div class="ph-a ph-photo" data-m="up" style="--d:200ms; --y:60px;">
+      <img decoding="async" alt="Two iPhone 18 Pro in Glacier, back cameras" src="/v2/assets/platform-hero-phone.webp" width="1257" height="1517">
+    </div>
+
+    <div class="ph-a ph-fade"></div>
+
+    <div class="ph-a ph-top">
+      <a href="/v2/" class="ph-logo" aria-label="Fintegre home"><span class="ph-mark"><img decoding="async" alt="" src="/v2/assets/platform-hero-logo.svg"></span>Fintegre</a>
+      <nav class="ph-nav" aria-label="Main">
+        <a href="/v2/platform/" aria-current="page">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/customers/">Customers</a>
+        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/design-your-program/" class="ph-btn ph-btn--light" style="padding:10px 18px;">Design your program</a>
+    </div>
+
+    <div class="ph-a ph-copy" data-m="up" style="--d:100ms; --y:40px;">
+      <h1>One layer for<br>every trade-in.</h1>
+      <p class="ph-lede">Fintegre sits between your sales channels, the device and the buyers. It checks, values, routes and pays out, the same way in every store, website and app.</p>
+      <div class="ph-ctas">
+        <a href="/v2/design-your-program/" class="ph-btn ph-btn--light">Design your program</a>
+        <a href="#integrations" class="ph-btn ph-btn--ghost">See the API docs  →</a>
+      </div>
+    </div>
+
+    <div class="ph-a ph-stats" data-m="up" style="--d:600ms; --y:24px;">
+      <div class="ph-stat"><b>5 steps</b><span>one record per device</span></div>
+      <div class="ph-div"></div>
+      <div class="ph-stat"><b>1.2 s</b><span>to a valuation</span></div>
+      <div class="ph-div"></div>
+      <div class="ph-stat"><b>40+</b><span>connected buyers</span></div>
+    </div>
+
+    <img decoding="async" class="ph-glow" alt="" src="/v2/assets/platform-hero-scan-ring.svg" data-m="fade" style="left:849px; top:180px; width:164px; height:164px; --d:1100ms; --to:.3s;">
+
+    <svg class="ph-fibre" aria-hidden="true" style="left:995px; top:165.35px;" width="181" height="97.3" viewBox="0 0 181 97.3" fill="none"><path pathLength="1" data-draw style="--d:1400ms" d="M0 96.65C90.5 96.65 90.5 0.65 181 0.65" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <svg class="ph-fibre" aria-hidden="true" style="left:995px; top:245.35px;" width="231" height="17.3" viewBox="0 0 231 17.3" fill="none"><path pathLength="1" data-draw style="--d:1600ms" d="M0 16.65C115.5 16.65 115.5 0.65 231 0.65" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <svg class="ph-fibre" aria-hidden="true" style="left:995px; top:261.35px;" width="181" height="65.3" viewBox="0 0 181 65.3" fill="none"><path pathLength="1" data-draw style="--d:1800ms" d="M0 0.65C90.5 0.65 90.5 64.65 181 64.65" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+
+    <div class="ph-a ph-chip" data-m="up" style="left:1150px; top:147px; --d:1900ms; --y:16px;"><img decoding="async" alt="" src="/v2/assets/platform-hero-dot.svg">IMEI verified</div>
+    <div class="ph-a ph-chip" data-m="up" style="left:1200px; top:227px; --d:2100ms; --y:16px;"><img decoding="async" alt="" src="/v2/assets/platform-hero-dot.svg">Screen · Grade A</div>
+    <div class="ph-a ph-chip" data-m="up" style="left:1150px; top:307px; --d:2300ms; --y:16px;"><img decoding="async" alt="" src="/v2/assets/platform-hero-dot.svg">Live market · 4 buyers</div>
+
+    <div class="ph-a ph-card" data-m="up" style="--d:2400ms; --y:50px;">
+      <p class="ph-a ph-card__k">Trade-in 48213 · Store 14, Riga</p>
+      <p class="ph-a ph-card__t">iPhone 18 Pro, 256 GB</p>
+      <div class="ph-a ph-steps">
+        <div class="ph-step" data-m="fade" style="--d:2800ms; --to:.3s;"><i>1</i><div><b>Discover</b><small>Store POS · iPhone 18 Pro</small></div><em>0.4 s</em></div>
+        <div class="ph-step" data-m="fade" style="--d:3150ms; --to:.3s;"><i>2</i><div><b>Assess</b><small>Grade A · battery 91 %</small></div><em>41 s</em></div>
+        <div class="ph-step" data-m="fade" style="--d:3500ms; --to:.3s;"><i>3</i><div><b>Value</b><small>€612 · Latvian market</small></div><em>1.2 s</em></div>
+        <div class="ph-step" data-m="fade" style="--d:3850ms; --to:.3s;"><i>4</i><div><b>Route</b><small>Buyer B wins of 4</small></div><em>3.0 s</em></div>
+        <div class="ph-step is-on" data-m="fade" style="--d:4200ms; --to:.3s;"><i>5</i><div><b>Transact</b><small>Credit applied to basket</small></div><em>€612</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="flow" id="flow" class="v2-sec" data-tone="dark" style="--h:900px; background:#0F1115;">
+<style>
+  [data-section="flow"] .pf-a { position: absolute; }
+  [data-section="flow"] p { margin: 0; }
+  [data-section="flow"] .pf-glow { position: absolute; display: block; max-width: none; pointer-events: none; }
+  [data-section="flow"] svg.pf-line { position: absolute; overflow: visible; }
+
+  [data-section="flow"] h2 { left: 120px; top: 112px; margin: 0; font-weight: 400; font-size: 60px; line-height: 1; letter-spacing: -0.035em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="flow"] .pf-lede { left: 900px; top: 132px; width: 400px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+
+  [data-section="flow"] .pf-node { display: block; }
+  [data-section="flow"] .pf-label { display: flex; flex-direction: column; gap: 8px; }
+  [data-section="flow"] .pf-label b { font-weight: 400; font-size: 26px; line-height: normal; letter-spacing: -0.025em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="flow"] .pf-label span { width: 210px; font-weight: 300; font-size: 14px; line-height: 1.5; color: rgba(245,247,250,.62); }
+
+  [data-section="flow"] .pf-card { width: 224px; border-radius: 24px; overflow: clip; line-height: normal; white-space: nowrap;
+    background: rgba(255,255,255,.07); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    box-shadow: inset 0 0 0 1px rgba(183,215,255,.16), 0 30px 60px rgba(0,0,0,.5); }
+  [data-section="flow"] .pf-card--value { background: rgba(48,71,236,.22); box-shadow: inset 0 0 0 1px rgba(183,215,255,.32), 0 30px 60px rgba(0,0,0,.5); }
+  [data-section="flow"] .pf-k { font-size: 12px; color: #A7B0BE; }
+  [data-section="flow"] .pf-ice { font-size: 12px; color: #B7D7FF; }
+  [data-section="flow"] .pf-dev { font-size: 17px; line-height: 1.18; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="flow"] .pf-photo { display: block; object-fit: contain; }
+  [data-section="flow"] .pf-rows { left: 17px; top: 13px; display: flex; flex-direction: column; font-size: 13px; }
+  [data-section="flow"] .pf-rows div { width: 188px; padding: 7px 0; display: flex; justify-content: space-between; }
+  [data-section="flow"] .pf-rows span { color: #A7B0BE; }
+  [data-section="flow"] .pf-rows b { font-weight: 400; color: #F5F7FA; }
+  [data-section="flow"] .pf-price { left: 15px; top: 33px; font-weight: 300; font-size: 52px; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="flow"] .pf-pill { left: 17px; top: 103px; padding: 5px 10px; border-radius: 999px; background: rgba(183,215,255,.16); font-size: 12px; color: #B7D7FF; }
+  [data-section="flow"] .pf-track, [data-section="flow"] .pf-fill { left: 17px; top: 147px; height: 5px; border-radius: 999px; }
+  [data-section="flow"] .pf-track { width: 188px; background: rgba(255,255,255,.08); }
+  [data-section="flow"] .pf-fill { width: 150px; background: linear-gradient(90deg, #3047EC, #B7D7FF); }
+  [data-section="flow"] .pf-bids { left: 9px; top: 39px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; }
+  [data-section="flow"] .pf-bids div { width: 204px; padding: 8px 10px; border-radius: 10px; display: flex; justify-content: space-between; }
+  [data-section="flow"] .pf-bids span { color: #A7B0BE; }
+  [data-section="flow"] .pf-bids b { font-weight: 400; color: #F5F7FA; }
+  [data-section="flow"] .pf-bids .is-best { background: rgba(48,71,236,.92); }
+  [data-section="flow"] .pf-bids .is-best span { color: rgba(255,255,255,.85); }
+
+  /* Entrance: Figma timeline (s → --d). */
+  .motion [data-section="flow"] [data-m] { transition: opacity var(--to,.8s) var(--ease) var(--d,0ms), translate var(--tt,1.1s) var(--ease) var(--d,0ms), scale .7s var(--spring) var(--d,0ms); }
+  .motion [data-section="flow"] [data-m="up"] { translate: 0 var(--y,24px); }
+  .motion [data-section="flow"].is-in [data-m] { opacity: 1; translate: none; scale: 1; }
+  .motion [data-section="flow"] [data-draw] { transition-duration: var(--dd,.6s); }
+  .motion [data-section="flow"] .pf-fill { width: 0; transition: width 1s var(--ease) 2400ms; }
+  .motion [data-section="flow"].is-in .pf-fill { width: 150px; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="pf-glow" alt="" src="/v2/assets/platform-flow-glow.svg" style="left:220px; top:100px; width:1040px; height:860px;">
+    <img decoding="async" class="pf-glow" alt="" src="/v2/assets/platform-flow-glow1.svg" style="left:920px; top:440px; width:860px; height:660px;">
+
+    <h2 class="pf-a">From counter to credit<br>in five steps.</h2>
+    <p class="pf-a pf-lede">Every device takes the same path. Each step writes to one record, so stores, finance and buyers all see the same numbers.</p>
+
+    <!-- Fibre wave -->
+    <svg class="pf-line" aria-hidden="true" style="left:-40px; top:565.25px;" width="270" height="43.5" viewBox="0 0 270 43.5" fill="none"><path pathLength="1" data-draw style="--d:400ms" d="M0 42.75C135 42.75 135 0.75 270 0.75" stroke-width="1.5" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+    <svg class="pf-line" aria-hidden="true" style="left:230px; top:523.25px;" width="255" height="43.5" viewBox="0 0 255 43.5" fill="none"><path pathLength="1" data-draw style="--d:950ms" d="M0 42.75C127.5 42.75 127.5 0.75 255 0.75" stroke-width="1.5" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+    <svg class="pf-line" aria-hidden="true" style="left:485px; top:501.25px;" width="255" height="23.5" viewBox="0 0 255 23.5" fill="none"><path pathLength="1" data-draw style="--d:1500ms" d="M0 22.75C127.5 22.75 127.5 0.75 255 0.75" stroke-width="1.5" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+    <svg class="pf-line" aria-hidden="true" style="left:740px; top:501.25px;" width="255" height="23.5" viewBox="0 0 255 23.5" fill="none"><path pathLength="1" data-draw style="--d:2050ms" d="M0 0.75C127.5 0.75 127.5 22.75 255 22.75" stroke-width="1.5" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+    <svg class="pf-line" aria-hidden="true" style="left:995px; top:523.25px;" width="255" height="43.5" viewBox="0 0 255 43.5" fill="none"><path pathLength="1" data-draw style="--d:2600ms" d="M0 0.75C127.5 0.75 127.5 42.75 255 42.75" stroke-width="1.5" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+    <svg class="pf-line" aria-hidden="true" style="left:1250px; top:565.25px;" width="230" height="43.5" viewBox="0 0 230 43.5" fill="none"><path pathLength="1" data-draw style="--d:3150ms" d="M0 0.75C115 0.75 115 42.75 230 42.75" stroke-width="1.5" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+
+    <!-- 1 Discover -->
+    <img decoding="async" class="pf-a pf-node" alt="" src="/v2/assets/platform-flow-node.svg" data-m="pop" style="left:208px; top:544px; width:44px; height:44px; --d:900ms; --to:.3s;">
+    <div class="pf-a pf-label" data-m="up" style="left:125px; top:443px; --d:950ms;"><b>Discover</b><span>A customer starts a trade-in in store, online or in the app.</span></div>
+    <svg class="pf-line" aria-hidden="true" style="left:229.35px; top:574px;" width="1.3" height="36" viewBox="0 0 1.3 36" fill="none"><path pathLength="1" data-draw style="--d:1100ms; --dd:.35s" d="M0.65 0V36" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.35"/></svg>
+    <div class="pf-a pf-card" data-m="up" style="left:118px; top:610px; height:150px; --d:1250ms; --y:36px;">
+      <img decoding="async" class="pf-a pf-photo" alt="iPhone 13" src="/v2/assets/platform-flow-iphone13.webp" style="left:17px; top:17px; width:44px; height:90px;">
+      <p class="pf-a pf-k" style="left:73px; top:23px;">11:43 · Store 14, Riga</p>
+      <p class="pf-a pf-dev" style="left:73px; top:43px;">iPhone 13<br>128 GB</p>
+      <p class="pf-a pf-ice" style="left:17px; top:119px;">Started at the POS</p>
+    </div>
+
+    <!-- 2 Assess -->
+    <img decoding="async" class="pf-a pf-node" alt="" src="/v2/assets/platform-flow-node.svg" data-m="pop" style="left:463px; top:502px; width:44px; height:44px; --d:1450ms; --to:.3s;">
+    <div class="pf-a pf-label" data-m="up" style="left:380px; top:401px; --d:1500ms;"><b>Assess</b><span>Screen, battery and casing checked in under a minute.</span></div>
+    <svg class="pf-line" aria-hidden="true" style="left:484.35px; top:532px;" width="1.3" height="36" viewBox="0 0 1.3 36" fill="none"><path pathLength="1" data-draw style="--d:1650ms; --dd:.35s" d="M0.65 0V36" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.35"/></svg>
+    <div class="pf-a pf-card" data-m="up" style="left:373px; top:568px; height:168px; --d:1800ms; --y:36px;">
+      <div class="pf-a pf-rows">
+        <div><span>Screen</span><b>Grade A</b></div>
+        <div><span>Battery</span><b>88 %</b></div>
+        <div><span>Casing</span><b>Grade B</b></div>
+        <div><span>IMEI</span><b>Clean</b></div>
+      </div>
+      <p class="pf-a pf-ice" style="left:17px; top:139px;">Checked in 41 s</p>
+    </div>
+
+    <!-- 3 Value -->
+    <img decoding="async" class="pf-a pf-node" alt="" src="/v2/assets/platform-flow-node-value.svg" data-m="pop" style="left:699px; top:461px; width:82px; height:82px; --d:2000ms; --to:.3s;">
+    <div class="pf-a pf-label" data-m="up" style="left:635px; top:379px; --d:2050ms;"><b style="color:#B7D7FF;">Value</b><span>Live market data sets a price the customer can accept.</span></div>
+    <svg class="pf-line" aria-hidden="true" style="left:739.35px; top:510px;" width="1.3" height="36" viewBox="0 0 1.3 36" fill="none"><path pathLength="1" data-draw style="--d:2200ms; --dd:.35s" d="M0.65 0V36" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.35"/></svg>
+    <div class="pf-a pf-card pf-card--value" data-m="up" style="left:628px; top:546px; height:176px; --d:2350ms; --y:36px;">
+      <p class="pf-a pf-k" style="left:17px; top:17px;">Live valuation</p>
+      <p class="pf-a pf-price">€212</p>
+      <p class="pf-a pf-pill">+€14 vs. store grid</p>
+      <div class="pf-a pf-track"></div>
+      <div class="pf-a pf-fill"></div>
+    </div>
+
+    <!-- 4 Route -->
+    <img decoding="async" class="pf-a pf-node" alt="" src="/v2/assets/platform-flow-node.svg" data-m="pop" style="left:973px; top:502px; width:44px; height:44px; --d:2550ms; --to:.3s;">
+    <div class="pf-a pf-label" data-m="up" style="left:890px; top:401px; --d:2600ms;"><b>Route</b><span>Connected buyers compete. The best bid wins.</span></div>
+    <svg class="pf-line" aria-hidden="true" style="left:994.35px; top:532px;" width="1.3" height="36" viewBox="0 0 1.3 36" fill="none"><path pathLength="1" data-draw style="--d:2750ms; --dd:.35s" d="M0.65 0V36" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.35"/></svg>
+    <div class="pf-a pf-card" data-m="up" style="left:883px; top:568px; height:150px; --d:2900ms; --y:36px;">
+      <p class="pf-a pf-k" style="left:17px; top:17px;">4 buyers bid</p>
+      <div class="pf-a pf-bids">
+        <div class="is-best"><span>Buyer B · Latvia</span><b>€212</b></div>
+        <div><span>Buyer A · Lithuania</span><b>€204</b></div>
+        <div><span>Buyer D · Poland</span><b>€197</b></div>
+      </div>
+    </div>
+
+    <!-- 5 Transact -->
+    <img decoding="async" class="pf-a pf-node" alt="" src="/v2/assets/platform-flow-node.svg" data-m="pop" style="left:1228px; top:544px; width:44px; height:44px; --d:3100ms; --to:.3s;">
+    <div class="pf-a pf-label" data-m="up" style="left:1145px; top:443px; --d:3150ms;"><b>Transact</b><span>Credit, payout or voucher, settled with the buyer.</span></div>
+    <svg class="pf-line" aria-hidden="true" style="left:1249.35px; top:574px;" width="1.3" height="36" viewBox="0 0 1.3 36" fill="none"><path pathLength="1" data-draw style="--d:3300ms; --dd:.35s" d="M0.65 0V36" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.35"/></svg>
+    <div class="pf-a pf-card" data-m="up" style="left:1138px; top:610px; height:150px; --d:3450ms; --y:36px;">
+      <img decoding="async" class="pf-a pf-photo" alt="iPhone 17 in Mist Blue" src="/v2/assets/platform-flow-iphone17.webp" style="left:17px; top:17px; width:51px; height:90px;">
+      <p class="pf-a pf-k" style="left:71px; top:23px; width:140px; white-space:normal;">Applied to the new iPhone</p>
+      <p class="pf-a pf-dev" style="left:71px; top:61px; color:#B7D7FF;">You pay<br>€987</p>
+      <p class="pf-a pf-k" style="left:17px; top:119px;">Buyer settles T+2</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="modules" id="modules" class="v2-sec" style="--h:1000px; background:radial-gradient(calc(600px * var(--s)) calc(357.14px * var(--s)) at 50% calc(500px * var(--s)), rgba(34,54,196,.7) 0%, rgba(26,40,143,.575) 25%, rgba(18,26,90,.45) 50%, rgba(15,17,21,0) 100%), #0F1115" data-tone="dark">
+  <style>
+    [data-section="modules"] .pm-abs { position:absolute; margin:0; }
+    [data-section="modules"] .pm-glow { position:absolute; pointer-events:none; }
+    [data-section="modules"] .pm-glow img { display:block; width:100%; height:100%; max-width:none; }
+    [data-section="modules"] .pm-fib { position:absolute; pointer-events:none; }
+    [data-section="modules"] .pm-fib > div { position:absolute; }
+    [data-section="modules"] .pm-fib img { display:block; width:100%; height:100%; max-width:none; }
+    [data-section="modules"] .pm-hub { position:absolute; }
+    [data-section="modules"] .pm-hub img { display:block; width:100%; height:100%; object-fit:cover; transform:scaleX(-1); border-radius:inherit; }
+    [data-section="modules"] .pm-card { position:absolute; box-sizing:border-box; overflow:hidden; border:1px solid rgba(183,215,255,.16); border-radius:26px;
+      background:rgba(255,255,255,.07); backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px); box-shadow:0 30px 60px rgba(0,0,0,.5); }
+    [data-section="modules"] .pm-chip { position:absolute; display:flex; align-items:center; gap:8px; padding:9px 16px; border-radius:999px; background:#3047EC;
+      font-size:14px; line-height:normal; color:#F5F7FA; white-space:nowrap; }
+    [data-section="modules"] .pm-chip img, [data-section="modules"] .pm-src img, [data-section="modules"] .pm-ev img { display:block; width:7px; height:7px; flex:none; }
+    /* Motion: Figma 10 s timeline played once on arrival (delays = Figma keyframe times). */
+    .motion [data-section="modules"] .pm-in { opacity:0; translate:var(--x,0) var(--y,40px);
+      transition:opacity var(--to,.8s) var(--ease) var(--d,0s), translate var(--tt,1.1s) var(--ease) var(--d,0s); }
+    .motion [data-section="modules"].is-in .pm-in { opacity:1; translate:none; }
+    .motion [data-section="modules"] .pm-pop { opacity:0; scale:.6; transition:opacity .3s var(--ease) var(--d,0s), scale .7s var(--spring) var(--d,0s); }
+    .motion [data-section="modules"].is-in .pm-pop { opacity:1; scale:1; }
+    .motion [data-section="modules"] .pm-fade { opacity:0; transition:opacity .3s var(--ease) var(--d,0s); }
+    .motion [data-section="modules"].is-in .pm-fade { opacity:1; }
+    /* Fibres: Figma trims the path; here the stroke image is wiped open in its drawing direction. */
+    .motion [data-section="modules"] .pm-fib { transition:clip-path var(--t,.6s) var(--inout) var(--d,0s); }
+    .motion [data-section="modules"] .pm-fib.w-r { clip-path:inset(-6px calc(100% + 6px) -6px -6px); }
+    .motion [data-section="modules"] .pm-fib.w-l { clip-path:inset(-6px -6px -6px calc(100% + 6px)); }
+    .motion [data-section="modules"] .pm-fib.w-d { clip-path:inset(-6px -6px calc(100% + 6px) -6px); }
+    .motion [data-section="modules"].is-in .pm-fib { clip-path:inset(-6px); }
+    @media (prefers-reduced-motion: reduce) { [data-section="modules"] * { transition:none !important; } }
+
+    [data-section="modules"] .pm-card h3 { position:absolute; left:21px; top:21px; margin:0; font-weight:400; font-size:20px; line-height:normal; letter-spacing:-0.02em; color:#F5F7FA; white-space:nowrap; }
+    [data-section="modules"] .pm-desc { position:absolute; left:21px; top:51px; margin:0; font-weight:300; font-size:13px; line-height:1.5; color:rgba(245,247,250,.6); }
+    [data-section="modules"] .pm-rows { position:absolute; left:21px; display:flex; flex-direction:column; margin:0; font-size:13px; line-height:normal; white-space:nowrap; }
+    [data-section="modules"] .pm-rows > div { display:flex; justify-content:space-between; align-items:center; padding:7px 0; }
+    [data-section="modules"] .pm-rows dt { color:#A7B0BE; } [data-section="modules"] .pm-rows dd { margin:0; color:#F5F7FA; }
+    [data-section="modules"] .pm-bids { position:absolute; left:11px; top:117px; display:flex; flex-direction:column; gap:4px; margin:0; font-size:13px; line-height:normal; white-space:nowrap; }
+    [data-section="modules"] .pm-bids > div { width:286px; display:flex; justify-content:space-between; align-items:center; padding:8px 10px; border-radius:10px; box-sizing:border-box; }
+    [data-section="modules"] .pm-bids dt { color:#A7B0BE; } [data-section="modules"] .pm-bids dd { margin:0; color:#F5F7FA; }
+    [data-section="modules"] .pm-bids .is-top { background:rgba(48,71,236,.92); } [data-section="modules"] .pm-bids .is-top dt { color:rgba(255,255,255,.85); }
+    [data-section="modules"] .pm-bar { position:absolute; width:18px; border-radius:4px; }
+    [data-section="modules"] .pm-price { position:absolute; left:21px; top:103px; margin:0; font-weight:300; font-size:30px; line-height:normal; letter-spacing:-0.03em; color:#F5F7FA; white-space:nowrap; }
+    [data-section="modules"] .pm-cap { position:absolute; left:21px; top:205px; margin:0; font-size:12px; line-height:normal; color:#A7B0BE; white-space:nowrap; }
+    [data-section="modules"] .pm-kpis { position:absolute; left:21px; top:103px; display:flex; gap:28px; margin:0; line-height:normal; white-space:nowrap; }
+    [data-section="modules"] .pm-kpis div { display:flex; flex-direction:column; gap:2px; }
+    [data-section="modules"] .pm-kpis dd { order:-1; margin:0; font-weight:300; font-size:22px; letter-spacing:-0.02em; color:#F5F7FA; }
+    [data-section="modules"] .pm-kpis dt { font-size:12px; color:#A7B0BE; }
+
+    [data-section="modules"] .pm-h { left:0; top:100px; width:1440px; text-align:center; font-weight:400; font-size:60px; line-height:1; letter-spacing:-0.035em; color:#F5F7FA; }
+    [data-section="modules"] .pm-sub { left:460px; top:186px; width:520px; text-align:center; font-weight:300; font-size:17px; line-height:1.55; color:rgba(245,247,250,.68); }
+  </style>
+  <div class="v2-canvas">
+    <div class="pm-glow" style="left:260px; top:160px; width:920px; height:800px" aria-hidden="true"><img decoding="async" alt="" src="/v2/assets/platform-modules-glow.svg" width="920" height="800"></div>
+    <h2 class="pm-abs pm-h">Five modules. One platform.</h2>
+    <p class="pm-abs pm-sub">Use them together or start with one. Every module shares the same device record and the same rules.</p>
+
+    <div class="pm-fib w-d" style="left:720px; top:660px; width:0px; height:100px; --d:1.7s; --t:0.6s" aria-hidden="true"><div style="inset:0 -0.65px"><img decoding="async" alt="" src="/v2/assets/platform-modules-fibre0.svg"></div></div>
+    <div class="pm-fib w-r" style="left:820px; top:590px; width:150px; height:150px; --d:1.5s; --t:0.6s" aria-hidden="true"><div style="inset:-0.43% 0"><img decoding="async" alt="" src="/v2/assets/platform-modules-fibre1.svg"></div></div>
+    <div class="pm-fib w-l" style="left:490px; top:590px; width:130px; height:139px; --d:1.3s; --t:0.6s" aria-hidden="true"><div style="inset:-0.47% 0"><img decoding="async" alt="" src="/v2/assets/platform-modules-fibre2.svg"></div></div>
+    <div class="pm-fib w-r" style="left:820px; top:411px; width:200px; height:119px; --d:1.1s; --t:0.6s" aria-hidden="true"><div style="inset:-0.55% 0"><img decoding="async" alt="" src="/v2/assets/platform-modules-fibre3.svg"></div></div>
+    <div class="pm-fib w-l" style="left:410px; top:418px; width:210px; height:112px; --d:0.9s; --t:0.6s" aria-hidden="true"><div style="inset:-0.58% 0"><img decoding="async" alt="" src="/v2/assets/platform-modules-fibre4.svg"></div></div>
+
+    <div class="pm-hub pm-pop" style="left:620px; top:460px; width:200px; height:200px; border-radius:44px; box-shadow:0 0 90px rgba(48,71,236,.9); --d:0.3s"><img decoding="async" alt="Fintegre" src="/v2/assets/platform-modules-mark.webp" width="200" height="200"></div>
+
+    <article class="pm-card pm-in" style="left:110px; top:300px; width:300px; height:236px; --d:1.3s">
+        <h3>Diagnostics</h3>
+        <p class="pm-desc" style="width:256px">Guided checks in store, self-checks at home.</p>
+        <dl class="pm-rows" style="top:103px; width:256px">
+          <div><dt>Screen</dt><dd>Grade A</dd></div>
+          <div><dt>Battery health</dt><dd>91 %</dd></div>
+          <div><dt>Casing</dt><dd>Grade A</dd></div>
+          <div><dt>Functions</dt><dd>24 / 24</dd></div>
+        </dl>
+      </article>
+    <article class="pm-card pm-in" style="left:1020px; top:284px; width:310px; height:254px; --d:1.55s">
+        <h3>Vendor network</h3>
+        <p class="pm-desc" style="width:266px">42 buyers and refurbishers in 9 markets bid on every device.</p>
+        <dl class="pm-bids">
+          <div class="is-top"><dt>Buyer B · Latvia</dt><dd>€612</dd></div>
+          <div><dt>Buyer A · Lithuania</dt><dd>€598</dd></div>
+          <div><dt>Buyer C · Poland</dt><dd>€585</dd></div>
+        </dl>
+      </article>
+    <article class="pm-card pm-in" style="left:150px; top:612px; width:340px; height:234px; --d:1.8s">
+        <h3>Valuation engine</h3>
+        <p class="pm-desc" style="width:296px">Prices from live resale data, per grade and market.</p>
+        <div aria-hidden="true">
+        <span class="pm-bar" style="left:21px; top:181px; height:18px; background:rgba(183,215,255,0.18)"></span>
+        <span class="pm-bar" style="left:46px; top:170.2px; height:28.8px; background:rgba(183,215,255,0.21)"></span>
+        <span class="pm-bar" style="left:71px; top:173.8px; height:25.2px; background:rgba(183,215,255,0.24)"></span>
+        <span class="pm-bar" style="left:96px; top:157.6px; height:41.4px; background:rgba(183,215,255,0.27)"></span>
+        <span class="pm-bar" style="left:121px; top:153.1px; height:45.9px; background:rgba(183,215,255,0.3)"></span>
+        <span class="pm-bar" style="left:146px; top:154.9px; height:44.1px; background:rgba(183,215,255,0.33)"></span>
+        <span class="pm-bar" style="left:171px; top:142.3px; height:56.7px; background:rgba(183,215,255,0.36)"></span>
+        <span class="pm-bar" style="left:196px; top:136px; height:63px; background:rgba(183,215,255,0.39)"></span>
+        <span class="pm-bar" style="left:221px; top:137.8px; height:61.2px; background:rgba(183,215,255,0.42)"></span>
+        <span class="pm-bar" style="left:246px; top:126.1px; height:72.9px; background:rgba(183,215,255,0.45)"></span>
+        <span class="pm-bar" style="left:271px; top:121.6px; height:77.4px; background:rgba(183,215,255,0.48)"></span>
+        <span class="pm-bar" style="left:296px; top:116.2px; height:82.8px; background:#3047EC"></span>
+        </div>
+        <p class="pm-price">€612</p>
+        <p class="pm-cap">iPhone 18 Pro · Grade A · Latvia</p>
+      </article>
+    <article class="pm-card pm-in" style="left:970px; top:640px; width:310px; height:200px; --d:2.05s">
+        <h3>Payouts</h3>
+        <p class="pm-desc" style="width:266px">Store credit, bank transfer or voucher.</p>
+        <dl class="pm-rows" style="top:95px; width:266px">
+          <div><dt>Store credit · 11:44</dt><dd>€612</dd></div>
+          <div><dt>Bank transfer · T+1</dt><dd>€180</dd></div>
+          <div><dt>Settled with Buyer B</dt><dd style="color:#B7D7FF">Paid</dd></div>
+        </dl>
+      </article>
+    <article class="pm-card pm-in" style="left:540px; top:760px; width:360px; height:180px; --d:2.3s">
+        <h3>Program management</h3>
+        <p class="pm-desc" style="width:316px">Rules, stores and results in one place.</p>
+        <dl class="pm-kpis">
+          <div><dt>participation</dt><dd>38 %</dd></div>
+          <div><dt>value per device</dt><dd>+14 %</dd></div>
+          <div><dt>stores live</dt><dd>126</dd></div>
+        </dl>
+      </article>
+
+    <div class="pm-chip pm-pop" style="left:635px; top:410px; --d:.8s"><img decoding="async" alt="" src="/v2/assets/platform-modules-dot.svg" width="7" height="7">One device record</div>
+  </div>
+</section>
+
+<section data-section="integrations" id="integrations" class="v2-sec" style="--h:900px; background:#0F1115" data-tone="dark">
+  <style>
+    [data-section="integrations"] .pm-abs { position:absolute; margin:0; }
+    [data-section="integrations"] .pm-glow { position:absolute; pointer-events:none; }
+    [data-section="integrations"] .pm-glow img { display:block; width:100%; height:100%; max-width:none; }
+    [data-section="integrations"] .pm-fib { position:absolute; pointer-events:none; }
+    [data-section="integrations"] .pm-fib > div { position:absolute; }
+    [data-section="integrations"] .pm-fib img { display:block; width:100%; height:100%; max-width:none; }
+    [data-section="integrations"] .pm-hub { position:absolute; }
+    [data-section="integrations"] .pm-hub img { display:block; width:100%; height:100%; object-fit:cover; transform:scaleX(-1); border-radius:inherit; }
+    [data-section="integrations"] .pm-card { position:absolute; box-sizing:border-box; overflow:hidden; border:1px solid rgba(183,215,255,.16); border-radius:26px;
+      background:rgba(255,255,255,.07); backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px); box-shadow:0 30px 60px rgba(0,0,0,.5); }
+    [data-section="integrations"] .pm-chip { position:absolute; display:flex; align-items:center; gap:8px; padding:9px 16px; border-radius:999px; background:#3047EC;
+      font-size:14px; line-height:normal; color:#F5F7FA; white-space:nowrap; }
+    [data-section="integrations"] .pm-chip img, [data-section="integrations"] .pm-src img, [data-section="integrations"] .pm-ev img { display:block; width:7px; height:7px; flex:none; }
+    /* Motion: Figma 10 s timeline played once on arrival (delays = Figma keyframe times). */
+    .motion [data-section="integrations"] .pi-in { opacity:0; translate:var(--x,0) var(--y,40px);
+      transition:opacity var(--to,.8s) var(--ease) var(--d,0s), translate var(--tt,1.1s) var(--ease) var(--d,0s); }
+    .motion [data-section="integrations"].is-in .pi-in { opacity:1; translate:none; }
+    .motion [data-section="integrations"] .pm-pop { opacity:0; scale:.6; transition:opacity .3s var(--ease) var(--d,0s), scale .7s var(--spring) var(--d,0s); }
+    .motion [data-section="integrations"].is-in .pm-pop { opacity:1; scale:1; }
+    .motion [data-section="integrations"] .pi-fade { opacity:0; transition:opacity .3s var(--ease) var(--d,0s); }
+    .motion [data-section="integrations"].is-in .pi-fade { opacity:1; }
+    /* Fibres: Figma trims the path; here the stroke image is wiped open in its drawing direction. */
+    .motion [data-section="integrations"] .pm-fib { transition:clip-path var(--t,.6s) var(--inout) var(--d,0s); }
+    .motion [data-section="integrations"] .pm-fib.w-r { clip-path:inset(-6px calc(100% + 6px) -6px -6px); }
+    .motion [data-section="integrations"] .pm-fib.w-l { clip-path:inset(-6px -6px -6px calc(100% + 6px)); }
+    .motion [data-section="integrations"] .pm-fib.w-d { clip-path:inset(-6px -6px calc(100% + 6px) -6px); }
+    .motion [data-section="integrations"].is-in .pm-fib { clip-path:inset(-6px); }
+    @media (prefers-reduced-motion: reduce) { [data-section="integrations"] * { transition:none !important; } }
+
+    [data-section="integrations"] .pi-src { position:absolute; display:flex; align-items:center; gap:12px; padding:12px 20px 12px 18px; border-radius:999px; box-sizing:border-box; overflow:hidden;
+      border:1px solid rgba(183,215,255,.16); background:rgba(255,255,255,.07); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); white-space:nowrap; line-height:normal; }
+    [data-section="integrations"] .pi-src span { display:flex; flex-direction:column; gap:1px; }
+    [data-section="integrations"] .pi-src b { font-weight:400; font-size:15px; color:#F5F7FA; }
+    [data-section="integrations"] .pi-src small { font-size:12px; color:#A7B0BE; }
+    [data-section="integrations"] .pi-lbl { position:absolute; margin:0; line-height:normal; white-space:nowrap; }
+    [data-section="integrations"] .pi-log-h { position:absolute; left:23px; top:21px; margin:0; font-size:13px; line-height:normal; color:#A7B0BE; white-space:nowrap; }
+    [data-section="integrations"] .pi-evs { position:absolute; left:23px; top:51px; margin:0; padding:0; list-style:none; display:flex; flex-direction:column; }
+    [data-section="integrations"] .pi-ev { display:flex; align-items:center; gap:var(--g,16px); padding:11px 0; border-bottom:1px solid rgba(255,255,255,.06); line-height:normal; white-space:nowrap; }
+    [data-section="integrations"] .pi-ev:last-child { border-bottom:0; }
+    [data-section="integrations"] .pi-ev time { font-weight:300; font-size:13px; color:#A7B0BE; }
+    [data-section="integrations"] .pi-ev span { flex:1 0 0; min-width:1px; font-size:14px; color:#F5F7FA; }
+    [data-section="integrations"] .pi-ev em { font-style:normal; font-size:13px; color:rgba(245,247,250,.8); }
+
+    [data-section="integrations"] .pi-copy { left:120px; top:150px; display:flex; flex-direction:column; gap:24px; }
+    [data-section="integrations"] .pi-copy h2 { margin:0; font-weight:400; font-size:56px; line-height:1.02; letter-spacing:-0.035em; color:#F5F7FA; white-space:nowrap; }
+    [data-section="integrations"] .pi-copy p { margin:0; width:430px; font-weight:300; font-size:17px; line-height:1.55; color:rgba(245,247,250,.68); }
+  </style>
+  <div class="v2-canvas">
+    <div class="pm-glow" style="left:660px; top:-20px; width:1020px; height:940px" aria-hidden="true"><img decoding="async" alt="" src="/v2/assets/platform-integrations-glow0.svg" width="1020" height="940"></div>
+    <div class="pm-glow" style="left:-380px; top:340px; width:920px; height:740px" aria-hidden="true"><img decoding="async" alt="" src="/v2/assets/platform-integrations-glow1.svg" width="920" height="740"></div>
+    <div class="pm-abs pi-copy">
+      <h2>Plugs into the systems<br>you already run.</h2>
+      <p>Connect through your POS, web shop, mobile app or ERP. One REST API and webhooks for every channel. Most programs go live in six to eight weeks.</p>
+    </div>
+
+    <div class="pm-fib w-r" style="left:903px; top:478.5px; width:237px; height:194px; --d:1.85s; --t:0.8s" aria-hidden="true"><div style="inset:-0.28% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre0.svg"></div></div>
+    <div class="pm-fib w-r" style="left:903px; top:475.5px; width:237px; height:192px; --d:1.81s; --t:0.8s" aria-hidden="true"><div style="inset:-0.29% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre1.svg"></div></div>
+    <div class="pm-fib w-r" style="left:903px; top:472.5px; width:237px; height:190px; --d:1.77s; --t:0.8s" aria-hidden="true"><div style="inset:-0.29% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre2.svg"></div></div>
+    <div class="pm-fib w-r" style="left:903px; top:469.5px; width:237px; height:188px; --d:1.73s; --t:0.8s" aria-hidden="true"><div style="inset:-0.29% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre3.svg"></div></div>
+    <div class="pm-fib w-r" style="left:903px; top:466.5px; width:237px; height:186px; --d:1.69s; --t:0.8s" aria-hidden="true"><div style="inset:-0.3% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre4.svg"></div></div>
+    <div class="pm-fib w-r" style="left:903px; top:463.5px; width:237px; height:184px; --d:1.65s; --t:0.8s" aria-hidden="true"><div style="inset:-0.3% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre5.svg"></div></div>
+    <div class="pm-fib w-r" style="left:894px; top:464.5px; width:246px; height:88px; --d:1.6s; --t:0.8s" aria-hidden="true"><div style="inset:-0.63% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre6.svg"></div></div>
+    <div class="pm-fib w-r" style="left:894px; top:461.5px; width:246px; height:86px; --d:1.56s; --t:0.8s" aria-hidden="true"><div style="inset:-0.64% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre7.svg"></div></div>
+    <div class="pm-fib w-r" style="left:894px; top:458.5px; width:246px; height:84px; --d:1.52s; --t:0.8s" aria-hidden="true"><div style="inset:-0.65% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre8.svg"></div></div>
+    <div class="pm-fib w-r" style="left:894px; top:455.5px; width:246px; height:82px; --d:1.48s; --t:0.8s" aria-hidden="true"><div style="inset:-0.67% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre9.svg"></div></div>
+    <div class="pm-fib w-r" style="left:894px; top:452.5px; width:246px; height:80px; --d:1.44s; --t:0.8s" aria-hidden="true"><div style="inset:-0.69% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre10.svg"></div></div>
+    <div class="pm-fib w-r" style="left:894px; top:449.5px; width:246px; height:78px; --d:1.4s; --t:0.8s" aria-hidden="true"><div style="inset:-0.71% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre11.svg"></div></div>
+    <div class="pm-fib w-r" style="left:908px; top:432.5px; width:232px; height:18px; --d:1.35s; --t:0.8s" aria-hidden="true"><div style="inset:-3.06% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre12.svg"></div></div>
+    <div class="pm-fib w-r" style="left:908px; top:427.5px; width:232px; height:20px; --d:1.31s; --t:0.8s" aria-hidden="true"><div style="inset:-2.75% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre13.svg"></div></div>
+    <div class="pm-fib w-r" style="left:908px; top:422.5px; width:232px; height:22px; --d:1.27s; --t:0.8s" aria-hidden="true"><div style="inset:-2.5% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre14.svg"></div></div>
+    <div class="pm-fib w-r" style="left:908px; top:417.5px; width:232px; height:24px; --d:1.23s; --t:0.8s" aria-hidden="true"><div style="inset:-2.29% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre15.svg"></div></div>
+    <div class="pm-fib w-r" style="left:908px; top:412.5px; width:232px; height:26px; --d:1.19s; --t:0.8s" aria-hidden="true"><div style="inset:-2.12% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre16.svg"></div></div>
+    <div class="pm-fib w-r" style="left:908px; top:407.5px; width:232px; height:28px; --d:1.15s; --t:0.8s" aria-hidden="true"><div style="inset:-1.96% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre17.svg"></div></div>
+    <div class="pm-fib w-r" style="left:887px; top:312.5px; width:253px; height:124px; --d:1.1s; --t:0.8s" aria-hidden="true"><div style="inset:-0.44% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre18.svg"></div></div>
+    <div class="pm-fib w-r" style="left:887px; top:307.5px; width:253px; height:126px; --d:1.06s; --t:0.8s" aria-hidden="true"><div style="inset:-0.44% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre19.svg"></div></div>
+    <div class="pm-fib w-r" style="left:887px; top:302.5px; width:253px; height:128px; --d:1.02s; --t:0.8s" aria-hidden="true"><div style="inset:-0.43% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre20.svg"></div></div>
+    <div class="pm-fib w-r" style="left:887px; top:297.5px; width:253px; height:130px; --d:0.98s; --t:0.8s" aria-hidden="true"><div style="inset:-0.42% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre21.svg"></div></div>
+    <div class="pm-fib w-r" style="left:887px; top:292.5px; width:253px; height:132px; --d:0.94s; --t:0.8s" aria-hidden="true"><div style="inset:-0.42% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre22.svg"></div></div>
+    <div class="pm-fib w-r" style="left:887px; top:287.5px; width:253px; height:134px; --d:0.9s; --t:0.8s" aria-hidden="true"><div style="inset:-0.41% 0"><img decoding="async" alt="" src="/v2/assets/platform-integrations-fibre23.svg"></div></div>
+
+    <article class="pm-card pi-card pi-in" style="left:120px; top:490px; width:440px; height:231px; --d:.6s; --g:16px" aria-label="Webhook events for trade-in 48213">
+      <p class="pi-log-h">Webhooks · trade-in 48213</p>
+      <ol class="pi-evs">
+          <li class="pi-ev pi-fade" style="width:392px; --d:2.6s"><img decoding="async" alt="" src="/v2/assets/platform-modules-dot.svg" width="7" height="7"><time>11:43:02</time><span>Trade-in created</span><em>POS</em></li>
+          <li class="pi-ev pi-fade" style="width:392px; --d:3.0s"><img decoding="async" alt="" src="/v2/assets/platform-modules-dot.svg" width="7" height="7"><time>11:43:43</time><span>Assessment completed</span><em>Grade A</em></li>
+          <li class="pi-ev pi-fade" style="width:392px; --d:3.4s"><img decoding="async" alt="" src="/v2/assets/platform-modules-dot.svg" width="7" height="7"><time>11:43:44</time><span>Offer accepted</span><em>€612</em></li>
+          <li class="pi-ev pi-fade" style="width:392px; --d:3.8s"><img decoding="async" alt="" src="/v2/assets/platform-integrations-dot-on.svg" width="7" height="7"><time>11:43:47</time><span>Credit issued</span><em style="color:#B7D7FF">ERP</em></li>
+      </ol>
+    </article>
+
+    <div class="pi-src pi-in" style="left:740px; top:269.5px; --x:20px; --y:0px; --d:0.30s"><img decoding="async" alt="" src="/v2/assets/platform-modules-dot.svg" width="7" height="7"><span><b>POS</b><small>Store checkout</small></span></div>
+    <div class="pi-src pi-in" style="left:740px; top:389.5px; --x:20px; --y:0px; --d:0.45s"><img decoding="async" alt="" src="/v2/assets/platform-modules-dot.svg" width="7" height="7"><span><b>E-commerce</b><small>Web shop and cart</small></span></div>
+    <div class="pi-src pi-in" style="left:740px; top:509.5px; --x:20px; --y:0px; --d:0.60s"><img decoding="async" alt="" src="/v2/assets/platform-modules-dot.svg" width="7" height="7"><span><b>App SDK</b><small>iOS and Android</small></span></div>
+    <div class="pi-src pi-in" style="left:740px; top:629.5px; --x:20px; --y:0px; --d:0.75s"><img decoding="async" alt="" src="/v2/assets/platform-modules-dot.svg" width="7" height="7"><span><b>ERP</b><small>Finance and stock</small></span></div>
+
+    <div class="pm-hub pm-pop" style="left:1140px; top:380px; width:140px; height:140px; border-radius:32px; box-shadow:0 0 80px rgba(48,71,236,.9); --d:2.0s"><img decoding="async" alt="Fintegre" src="/v2/assets/platform-modules-mark.webp" width="140" height="140"></div>
+    <p class="pi-lbl" style="left:1165.5px; top:538px; font-size:15px; color:#F5F7FA">Fintegre API</p>
+    <p class="pi-lbl" style="left:1144.5px; top:562px; font-size:12px; color:#A7B0BE">REST · webhooks · SDK</p>
+  </div>
+</section>
+
+<section data-section="white-label" id="white-label" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(45.455% 38.462% at 77.27% 61.54%, rgba(34,54,196,.75) 0%, rgba(26,40,143,.625) 25%, rgba(18,26,90,.5) 50%, rgba(15,17,21,0) 100%), #0F1115;">
+  <style>
+    [data-section="white-label"] .wl-phone { position: absolute; width: 280px; height: 571.776px; }
+    [data-section="white-label"] .wl-ph-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; border-radius: 50px; box-shadow: 0 36px 70px rgba(0,0,0,.6); max-width: none; pointer-events: none; }
+    [data-section="white-label"] .wl-screen { position: absolute; left: 13.41px; top: 13.74px; width: 249.907px; height: 542.991px; overflow: hidden; border-radius: 31.402px; background: var(--bg); line-height: normal; }
+    [data-section="white-label"] .wl-t { position: absolute; margin: 0; white-space: nowrap; font-weight: 400; }
+    [data-section="white-label"] .wl-k { left: 18px; font-size: 12px; color: var(--mu); }
+    [data-section="white-label"] .wl-v { right: 18px; font-size: 12px; color: var(--ink); }
+    [data-section="white-label"] .wl-logo { position: absolute; left: 18px; top: 48px; width: 16px; height: 16px; border-radius: 5px; background: var(--ac); }
+    [data-section="white-label"] .wl-offer { position: absolute; left: 18px; top: 144px; width: 211.944px; height: 124px; overflow: hidden; border-radius: 18px; background: var(--of); }
+    [data-section="white-label"] .wl-pill { position: absolute; left: 16px; top: 92px; padding: 4px 9px; border-radius: 999px; background: var(--pill); color: var(--ac); font-size: 10px; white-space: nowrap; }
+    [data-section="white-label"] .wl-rule { position: absolute; left: 18px; width: 211.944px; height: 1px; background: var(--ln); }
+    [data-section="white-label"] .wl-bar { position: absolute; top: 416.99px; width: 40.477px; height: 4px; border-radius: 999px; background: var(--tr); }
+    [data-section="white-label"] .wl-bar.on { background: var(--ac); }
+    [data-section="white-label"] .wl-btn { position: absolute; left: 18px; top: 462.99px; width: 211.944px; height: 46px; border-radius: 999px; background: var(--ac); color: #fff; font-weight: 500; font-size: 12.5px; display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+    [data-section="white-label"] .wl-btn:hover { filter: brightness(1.08); }
+    [data-section="white-label"] .wl-notch { position: absolute; left: 87.34px; top: 14.39px; width: 103.364px; height: 24.206px; background: #000; border-radius: 0 0 14px 14px; }
+    [data-section="white-label"] .wl-cap { margin: 0; font-size: 13px; line-height: normal; color: #A7B0BE; white-space: nowrap; }
+    [data-section="white-label"] .wl-copy h2 { margin: 0; font-weight: 400; color: #F5F7FA; line-height: 1; }
+    [data-section="white-label"] .wl-copy p, [data-section="white-label"] .wl-body { margin: 0; font-weight: 300; line-height: 1.55; color: rgba(245,247,250,.68); }
+    [data-section="white-label"] .wl-points { display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none; }
+    [data-section="white-label"] .wl-points li { display: flex; gap: 12px; align-items: center; font-size: 15px; line-height: normal; color: rgba(245,247,250,.86); white-space: nowrap; }
+    [data-section="white-label"] .wl-points img { width: 6px; height: 6px; flex: none; }
+    .motion [data-section="white-label"] [data-m="up"] { translate: 0 var(--ty, 40px); }
+    .motion [data-section="white-label"].is-in [data-m] { translate: none; }
+    [data-section="white-label"] .wl-glow { position: absolute; left: 500px; top: 0; width: 1100px; height: 920px; max-width: none; pointer-events: none; }
+    [data-section="white-label"] .wl-copy { position: absolute; left: 120px; top: 250px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+    [data-section="white-label"] .wl-copy h2 { font-size: 54px; letter-spacing: -1.89px; white-space: nowrap; }
+    [data-section="white-label"] .wl-copy p { width: 380px; font-size: 17px; }
+  </style>
+  <div class="v2-canvas">
+    <img decoding="async" class="wl-glow" src="/v2/assets/platform-white-label-glow.svg" alt="" width="1100" height="920">
+    <div class="wl-copy" data-m="up" style="--ty:30px;--d:100ms">
+      <h2>Your brand<br>on every screen.</h2>
+      <p>Customers see your colours, your words and your prices. The same five steps run underneath, in store, online and in the app.</p>
+      <ul class="wl-points">
+          <li><img decoding="async" src="/v2/assets/platform-white-label-dot.svg" alt="" width="6" height="6">Your domain, logo, fonts and colours</li>
+          <li><img decoding="async" src="/v2/assets/platform-white-label-dot.svg" alt="" width="6" height="6">Copy and grading rules per market</li>
+          <li><img decoding="async" src="/v2/assets/platform-white-label-dot.svg" alt="" width="6" height="6">One setup for every channel</li>
+      </ul>
+    </div>
+      <div class="wl-phone " data-m="up" style="left:560px;top:236px;--d:300ms;--ty:70px;--bg:#fff;--ink:#16181d;--mu:#6b7280;--ac:#f26b1d;--of:#fff1e8;--ln:rgba(22,24,29,.08);--tr:rgba(22,24,29,.12);--st:rgba(22,24,29,.6);--pill:rgba(242,107,29,.16)">
+        <img decoding="async" class="wl-ph-photo" src="/v2/assets/platform-white-label-iphone13.webp" alt="" width="280" height="572" loading="lazy">
+        <div class="wl-screen">
+          <p class="wl-t" style="left:22px;top:12px;font-weight:500;font-size:11px;color:var(--ink)">9:41</p>
+          <i class="wl-logo"></i>
+          <p class="wl-t" style="left:42px;top:47px;font-weight:500;font-size:14px;color:var(--ink)">Retailer</p>
+          <p class="wl-t" style="right:20px;top:49px;font-size:11px;color:var(--mu)">Trade-in</p>
+          <p class="wl-t" style="left:18px;top:88px;font-size:11px;color:var(--mu)">Your trade-in</p>
+          <p class="wl-t" style="left:18px;top:104px;font-size:18px;letter-spacing:-.36px;color:var(--ink)">iPhone 13, 128 GB</p>
+          <div class="wl-offer">
+            <p class="wl-t" style="left:16px;top:14px;font-size:11px;color:var(--mu)">Our offer</p>
+            <p class="wl-t" style="left:14px;top:28px;font-weight:300;font-size:44px;letter-spacing:-1.76px;color:var(--ink)">€212</p>
+            <span class="wl-pill">Valid for 7 days</span>
+          </div>
+          <p class="wl-t wl-k" style="top:290px">Screen</p><p class="wl-t wl-v" style="top:290px">Grade A</p><i class="wl-rule" style="top:314px"></i>
+          <p class="wl-t wl-k" style="top:324px">Battery</p><p class="wl-t wl-v" style="top:324px">88 %</p><i class="wl-rule" style="top:348px"></i>
+          <p class="wl-t wl-k" style="top:358px">Casing</p><p class="wl-t wl-v" style="top:358px">Grade B</p><i class="wl-rule" style="top:382px"></i>
+          <p class="wl-t" style="left:18px;top:395px;font-size:11px;color:var(--st)">Step 3 of 5 · Accept your offer</p>
+          <i class="wl-bar on" style="left:18px"></i><i class="wl-bar on" style="left:64.48px"></i><i class="wl-bar on" style="left:110.95px;width:28px"></i><i class="wl-bar" style="left:144.95px"></i><i class="wl-bar" style="left:191.43px"></i>
+          <a class="wl-btn" href="/v2/design-your-program/" data-m="pop" style="--d:1600ms">Use €212 as store credit</a>
+        </div>
+        <i class="wl-notch"></i>
+      </div>
+      <p class="wl-cap" data-m="up" style="position:absolute;left:618px;top:829.78px;--ty:12px;--d:900ms">Electronics retailer · Latvia</p>
+      <div class="wl-phone " data-m="up" style="left:860px;top:166px;--d:550ms;--ty:70px;--bg:#f3f7f6;--ink:#10201e;--mu:#5e6e6b;--ac:#0e8a7e;--of:#dff1ee;--ln:rgba(16,32,30,.08);--tr:rgba(16,32,30,.12);--st:rgba(16,32,30,.6);--pill:rgba(14,138,126,.16)">
+        <img decoding="async" class="wl-ph-photo" src="/v2/assets/platform-white-label-iphone13.webp" alt="" width="280" height="572" loading="lazy">
+        <div class="wl-screen">
+          <p class="wl-t" style="left:22px;top:12px;font-weight:500;font-size:11px;color:var(--ink)">9:41</p>
+          <i class="wl-logo"></i>
+          <p class="wl-t" style="left:42px;top:47px;font-weight:500;font-size:14px;color:var(--ink)">Operator</p>
+          <p class="wl-t" style="right:20px;top:49px;font-size:11px;color:var(--mu)">Trade-in</p>
+          <p class="wl-t" style="left:18px;top:88px;font-size:11px;color:var(--mu)">Your trade-in</p>
+          <p class="wl-t" style="left:18px;top:104px;font-size:18px;letter-spacing:-.36px;color:var(--ink)">iPhone 13, 128 GB</p>
+          <div class="wl-offer">
+            <p class="wl-t" style="left:16px;top:14px;font-size:11px;color:var(--mu)">Our offer</p>
+            <p class="wl-t" style="left:14px;top:28px;font-weight:300;font-size:44px;letter-spacing:-1.76px;color:var(--ink)">€212</p>
+            <span class="wl-pill">Valid for 7 days</span>
+          </div>
+          <p class="wl-t wl-k" style="top:290px">Screen</p><p class="wl-t wl-v" style="top:290px">Grade A</p><i class="wl-rule" style="top:314px"></i>
+          <p class="wl-t wl-k" style="top:324px">Battery</p><p class="wl-t wl-v" style="top:324px">88 %</p><i class="wl-rule" style="top:348px"></i>
+          <p class="wl-t wl-k" style="top:358px">Casing</p><p class="wl-t wl-v" style="top:358px">Grade B</p><i class="wl-rule" style="top:382px"></i>
+          <p class="wl-t" style="left:18px;top:395px;font-size:11px;color:var(--st)">Step 3 of 5 · Accept your offer</p>
+          <i class="wl-bar on" style="left:18px"></i><i class="wl-bar on" style="left:64.48px"></i><i class="wl-bar on" style="left:110.95px;width:28px"></i><i class="wl-bar" style="left:144.95px"></i><i class="wl-bar" style="left:191.43px"></i>
+          <a class="wl-btn" href="/v2/design-your-program/" data-m="pop" style="--d:1900ms">Take €212 off your new plan</a>
+        </div>
+        <i class="wl-notch"></i>
+      </div>
+      <p class="wl-cap" data-m="up" style="position:absolute;left:918.5px;top:759.78px;--ty:12px;--d:1150ms">Telecom operator · Poland</p>
+      <div class="wl-phone " data-m="up" style="left:1160px;top:256px;--d:800ms;--ty:70px;--bg:#15131c;--ink:#f5f3ff;--mu:#a39db5;--ac:#8b5cf6;--of:#251e37;--ln:rgba(245,243,255,.08);--tr:rgba(245,243,255,.12);--st:rgba(245,243,255,.6);--pill:rgba(139,92,246,.16)">
+        <img decoding="async" class="wl-ph-photo" src="/v2/assets/platform-white-label-iphone13.webp" alt="" width="280" height="572" loading="lazy">
+        <div class="wl-screen">
+          <p class="wl-t" style="left:22px;top:12px;font-weight:500;font-size:11px;color:var(--ink)">9:41</p>
+          <i class="wl-logo"></i>
+          <p class="wl-t" style="left:42px;top:47px;font-weight:500;font-size:14px;color:var(--ink)">Brand</p>
+          <p class="wl-t" style="right:20px;top:49px;font-size:11px;color:var(--mu)">Trade-in</p>
+          <p class="wl-t" style="left:18px;top:88px;font-size:11px;color:var(--mu)">Your trade-in</p>
+          <p class="wl-t" style="left:18px;top:104px;font-size:18px;letter-spacing:-.36px;color:var(--ink)">iPhone 13, 128 GB</p>
+          <div class="wl-offer">
+            <p class="wl-t" style="left:16px;top:14px;font-size:11px;color:var(--mu)">Our offer</p>
+            <p class="wl-t" style="left:14px;top:28px;font-weight:300;font-size:44px;letter-spacing:-1.76px;color:var(--ink)">€212</p>
+            <span class="wl-pill">Valid for 7 days</span>
+          </div>
+          <p class="wl-t wl-k" style="top:290px">Screen</p><p class="wl-t wl-v" style="top:290px">Grade A</p><i class="wl-rule" style="top:314px"></i>
+          <p class="wl-t wl-k" style="top:324px">Battery</p><p class="wl-t wl-v" style="top:324px">88 %</p><i class="wl-rule" style="top:348px"></i>
+          <p class="wl-t wl-k" style="top:358px">Casing</p><p class="wl-t wl-v" style="top:358px">Grade B</p><i class="wl-rule" style="top:382px"></i>
+          <p class="wl-t" style="left:18px;top:395px;font-size:11px;color:var(--st)">Step 3 of 5 · Accept your offer</p>
+          <i class="wl-bar on" style="left:18px"></i><i class="wl-bar on" style="left:64.48px"></i><i class="wl-bar on" style="left:110.95px;width:28px"></i><i class="wl-bar" style="left:144.95px"></i><i class="wl-bar" style="left:191.43px"></i>
+          <a class="wl-btn" href="/v2/design-your-program/" data-m="pop" style="--d:2200ms">Apply €212 to your order</a>
+        </div>
+        <i class="wl-notch"></i>
+      </div>
+      <p class="wl-cap" data-m="up" style="position:absolute;left:1213px;top:849.78px;--ty:12px;--d:1400ms">Device brand store · Estonia</p>
+  </div>
+</section>
+
+<section data-section="security" id="security" class="v2-sec" data-tone="light" style="--h:900px; background:#F5F7FA;">
+  <style>
+    [data-section="security"] .sc-h { margin: 0; font-weight: 400; line-height: 1; color: #0F1115; }
+    [data-section="security"] .sc-body { margin: 0; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(15,17,21,.62); }
+    [data-section="security"] .sc-phone { position: absolute; width: 230px; height: 469.673px; }
+    [data-section="security"] .sc-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; border-radius: 40px; box-shadow: 0 30px 60px rgba(15,20,51,.28); max-width: none; pointer-events: none; }
+    [data-section="security"] .sc-screen { position: absolute; left: 11.02px; top: 11.29px; width: 205.28px; height: 446.028px; overflow: hidden; border-radius: 25.794px; background: #fff; text-align: center; }
+    [data-section="security"] .sc-check { position: absolute; left: 70.64px; top: 150px; width: 64px; height: 64px; }
+    [data-section="security"] .sc-check img { position: absolute; display: block; }
+    [data-section="security"] .sc-done { position: absolute; left: 0; top: 232px; width: 100%; margin: 0; font-size: 17px; letter-spacing: -.255px; line-height: normal; color: #0F1115; }
+    [data-section="security"] .sc-sub { position: absolute; left: 0; top: 260px; width: 100%; margin: 0; font-size: 11px; line-height: 1.5; color: #6b7280; }
+    [data-section="security"] .sc-notch { position: absolute; left: 71.74px; top: 11.82px; width: 84.907px; height: 19.883px; background: #000; border-radius: 0 0 12px 12px; }
+    [data-section="security"] .sc-card { position: absolute; height: 423px; overflow: hidden; border-radius: 24px; background: #fff; box-shadow: 0 24px 60px rgba(15,20,51,.12); line-height: normal; }
+    [data-section="security"] .sc-card-k { position: absolute; left: 28px; top: 26px; margin: 0; font-size: 13px; color: #6b7280; white-space: nowrap; }
+    [data-section="security"] .sc-card-t { position: absolute; left: 28px; top: 48px; margin: 0; font-size: 22px; letter-spacing: -.44px; color: #0F1115; white-space: nowrap; }
+    [data-section="security"] .sc-rows { position: absolute; left: 28px; top: 96px; right: 28px; margin: 0; padding: 0; list-style: none; }
+    [data-section="security"] .sc-rows li { display: flex; gap: 12px; align-items: center; padding: 13px 0; border-top: 1px solid rgba(15,17,21,.07); white-space: nowrap; }
+    [data-section="security"] .sc-rows li:first-child { border-top: 0; }
+    [data-section="security"] .sc-tick { position: relative; flex: none; width: 18px; height: 18px; border-radius: 999px; background: rgba(48,71,236,.12); }
+    [data-section="security"] .sc-tick img { position: absolute; left: 3px; top: 3px; width: 12px; height: 12px; }
+    [data-section="security"] .sc-rows .sc-lbl { flex: 1 0 0; min-width: 1px; display: flex; flex-direction: column; gap: 2px; }
+    [data-section="security"] .sc-lbl b { font-weight: 400; font-size: 14px; color: #0F1115; }
+    [data-section="security"] .sc-lbl span { font-size: 12px; color: #6b7280; }
+    [data-section="security"] .sc-res { font-size: 13px; color: #3047EC; }
+    [data-section="security"] .sc-pr { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(15,17,21,.12); }
+    [data-section="security"] .sc-pr h3 { margin: 0; font-weight: 400; font-size: 20px; letter-spacing: -.4px; line-height: normal; color: #0F1115; white-space: nowrap; }
+    [data-section="security"] .sc-pr p { margin: 0; font-weight: 300; font-size: 15px; line-height: 1.55; color: rgba(15,17,21,.62); }
+    .motion [data-section="security"] [data-m="up"] { translate: 0 var(--ty, 40px); }
+    .motion [data-section="security"].is-in [data-m] { translate: none; }
+    [data-section="security"] .sc-glow { position: absolute; left: 560px; top: -160px; width: 1160px; height: 960px; max-width: none; pointer-events: none; }
+    [data-section="security"] .sc-copy { position: absolute; left: 120px; top: 150px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+    [data-section="security"] .sc-copy .sc-h { font-size: 60px; letter-spacing: -2.1px; white-space: nowrap; }
+    [data-section="security"] .sc-copy .sc-body { width: 420px; }
+    [data-section="security"] .sc-prs { position: absolute; left: 120px; top: 676px; display: flex; gap: 40px; align-items: flex-start; }
+    [data-section="security"] .sc-pr { width: 370px; padding-top: 22px; }
+  </style>
+  <div class="v2-canvas">
+    <img decoding="async" class="sc-glow" src="/v2/assets/platform-security-glow.svg" alt="" width="1160" height="960">
+    <div class="sc-copy" data-m="up" style="--ty:30px;--d:100ms">
+      <h2 class="sc-h">Checked, wiped<br>and on record.</h2>
+      <p class="sc-body">Every device is verified before it is valued, and every decision is logged. Your compliance team gets the same record as your stores.</p>
+    </div>
+    <div class="sc-phone" data-m="up" style="left:1110px;top:118px;--ty:70px;--d:300ms">
+      <img decoding="async" class="sc-photo" src="/v2/assets/platform-white-label-iphone13.webp" alt="" width="230" height="470" loading="lazy">
+      <div class="sc-screen">
+        <div class="sc-check" data-m="pop" style="--d:1100ms"><img decoding="async" src="/v2/assets/platform-security-check.svg" alt="" width="64" height="64" style="left:0;top:0"><img decoding="async" src="/v2/assets/platform-security-icon-check.svg" alt="" width="28" height="28" style="left:18px;top:18px"></div>
+        <p class="sc-done">Erase complete</p>
+        <p class="sc-sub">All content and settings removed.<br>Certificate 7F2A-91C4</p>
+      </div>
+      <i class="sc-notch"></i>
+    </div>
+    <div class="sc-card" data-m="up" style="left:650px;top:196px;width:440px;--ty:50px;--d:500ms">
+      <p class="sc-card-k">Device record 48213 · Audit trail</p>
+      <p class="sc-card-t">iPhone 13, 128 GB</p>
+      <ul class="sc-rows">
+          <li data-m="fade" style="--d:1200ms"><span class="sc-tick"><img decoding="async" src="/v2/assets/platform-security-tick.svg" alt="" width="12" height="12"></span><span class="sc-lbl"><b>IMEI check</b><span>11:43:05</span></span><span class="sc-res">Not blacklisted</span></li>
+          <li data-m="fade" style="--d:1500ms"><span class="sc-tick"><img decoding="async" src="/v2/assets/platform-security-tick.svg" alt="" width="12" height="12"></span><span class="sc-lbl"><b>Activation lock</b><span>11:43:09</span></span><span class="sc-res">Off</span></li>
+          <li data-m="fade" style="--d:1800ms"><span class="sc-tick"><img decoding="async" src="/v2/assets/platform-security-tick.svg" alt="" width="12" height="12"></span><span class="sc-lbl"><b>Customer ID</b><span>11:43:31</span></span><span class="sc-res">Verified</span></li>
+          <li data-m="fade" style="--d:2100ms"><span class="sc-tick"><img decoding="async" src="/v2/assets/platform-security-tick.svg" alt="" width="12" height="12"></span><span class="sc-lbl"><b>Data erase</b><span>11:44:12</span></span><span class="sc-res">Certificate issued</span></li>
+          <li data-m="fade" style="--d:2400ms"><span class="sc-tick"><img decoding="async" src="/v2/assets/platform-security-tick.svg" alt="" width="12" height="12"></span><span class="sc-lbl"><b>Personal data</b><span>Retained 90 days</span></span><span class="sc-res">Stored in the EU</span></li>
+      </ul>
+    </div>
+    <div class="sc-prs">
+      <div class="sc-pr" data-m="up" style="--ty:24px;--d:1600ms"><h3>GDPR by design</h3><p>Customer data stays in the EU, is minimised at every step and deleted on a schedule you set.</p></div>
+      <div class="sc-pr" data-m="up" style="--ty:24px;--d:1800ms"><h3>IMEI and theft checks</h3><p>Every device is checked against global blacklists and activation lock before it gets a price.</p></div>
+      <div class="sc-pr" data-m="up" style="--ty:24px;--d:2000ms"><h3>A full audit log</h3><p>Every grade, price, bid and payout is recorded and can be exported for finance and audit.</p></div>
+    </div>
+  </div>
+</section>
+
+<section data-section="cta" id="cta" class="v2-sec" data-tone="dark" style="--h:900px; background:#0F1115;">
+  <style>
+    .motion [data-section="cta"] [data-m="up"] { translate: 0 var(--ty, 40px); }
+    .motion [data-section="cta"].is-in [data-m] { translate: none; }
+    /* the canvas is its own blend group, so give it the ground colour for the photo's lighten blend */
+    [data-section="cta"] .v2-canvas { background: #0F1115; }
+    [data-section="cta"] .ct-photo { position: absolute; left: 200px; top: 90px; width: 1520px; height: 802px; object-fit: cover; mix-blend-mode: lighten; pointer-events: none; max-width: none; }
+    [data-section="cta"] .ct-fade-l { position: absolute; left: 380px; top: 0; width: 640px; height: 900px; background: linear-gradient(90deg, #0F1115 0%, rgba(15,17,21,.85) 35%, rgba(15,17,21,0) 100%); pointer-events: none; }
+    [data-section="cta"] .ct-fade-b { position: absolute; left: 0; top: 700px; width: 1440px; height: 200px; background: linear-gradient(180deg, rgba(15,17,21,0) 0%, #0F1115 100%); pointer-events: none; }
+    [data-section="cta"] .ct-glow { position: absolute; left: -380px; top: 60px; width: 1120px; height: 920px; max-width: none; pointer-events: none; }
+    [data-section="cta"] .ct-copy { position: absolute; left: 120px; top: 230px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+    [data-section="cta"] .ct-copy h2 { margin: 0; font-weight: 400; font-size: 60px; line-height: 1; letter-spacing: -2.1px; color: #F5F7FA; white-space: nowrap; }
+    [data-section="cta"] .ct-copy p { margin: 0; width: 440px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+    [data-section="cta"] .ct-btns { display: flex; gap: 12px; }
+    [data-section="cta"] .ct-btn { padding: 14px 22px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: pre; transition: background-color .25s, box-shadow .25s; }
+    [data-section="cta"] .ct-btn--light { background: #F5F7FA; color: #0F1115; }
+    [data-section="cta"] .ct-btn--light:hover { background: #fff; }
+    [data-section="cta"] .ct-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+    [data-section="cta"] .ct-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+    [data-section="cta"] .ct-card {
+      position: absolute; left: 800px; top: 560px; width: 340px; height: 250px; overflow: hidden; border-radius: 26px;
+      background: rgba(255,255,255,.07); border: 1px solid rgba(183,215,255,.16); box-shadow: 0 30px 60px rgba(0,0,0,.5);
+      backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); line-height: normal;
+    }
+    [data-section="cta"] .ct-card > * { position: absolute; margin: 0; white-space: nowrap; }
+    [data-section="cta"] .ct-lbl { font-size: 13px; color: #A7B0BE; }
+    [data-section="cta"] .ct-val { font-size: 13px; color: #F5F7FA; }
+    [data-section="cta"] .ct-big { left: 23px; top: 45px; font-weight: 300; font-size: 52px; letter-spacing: -2.08px; color: #F5F7FA; }
+    [data-section="cta"] .ct-pill { left: 25px; top: 117px; padding: 5px 10px; border-radius: 999px; background: rgba(183,215,255,.16); color: #B7D7FF; font-size: 12px; }
+  </style>
+  <div class="v2-canvas">
+    <img decoding="async" class="ct-photo" src="/v2/assets/platform-cta-iphone-camera.webp" alt="" width="1520" height="802" loading="lazy" data-m="fade" style="--d:100ms">
+    <div class="ct-fade-l"></div>
+    <div class="ct-fade-b"></div>
+    <img decoding="async" class="ct-glow" src="/v2/assets/platform-cta-glow.svg" alt="" width="1120" height="920">
+
+    <div class="ct-copy" data-m="up" style="--d:300ms">
+      <h2>See the platform<br>with your own numbers.</h2>
+      <p>Tell us your channels, markets and monthly volume. In a 30-minute call we show how each step would run for you and what it would return.</p>
+      <div class="ct-btns">
+        <a class="ct-btn ct-btn--light" href="/v2/design-your-program/">Book a platform demo</a>
+        <a class="ct-btn ct-btn--ghost" href="#integrations">Read the API docs  →</a>
+      </div>
+    </div>
+
+    <div class="ct-card" data-m="up" style="--ty:50px; --d:1000ms" aria-label="Example estimate">
+      <p class="ct-lbl" style="left:25px; top:23px;">Estimate · 4,200 devices a month</p>
+      <p class="ct-big">+€58,800</p>
+      <span class="ct-pill">extra value per month</span>
+      <p class="ct-lbl" style="left:25px; top:165px;">Value per device</p>
+      <p class="ct-val" style="left:282px; top:165px;">+€14</p>
+      <p class="ct-lbl" style="left:25px; top:199px;">Trade-in participation</p>
+      <p class="ct-val" style="left:272px; top:199px;">+38 %</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="closing" id="closing" class="v2-sec" data-tone="dark" style="--h:881px; background: linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), radial-gradient(calc(960px * var(--s)) calc(352.4px * var(--s)) at 50% calc(387.64px * var(--s)), rgba(48,71,236,.42) 0%, rgba(34,51,173,.32) 25%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), #0F1115;">
+  <style>
+    [data-section="closing"] .cl-head {
+      position: absolute; left: 70px; top: 284px; width: 1300px; margin: 0; text-align: center;
+      font-weight: 400; font-size: 150px; line-height: .92; letter-spacing: -4.5px;
+      background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    }
+    [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+    [data-section="closing"] .cl-foot {
+      position: absolute; left: 20px; top: 538px; width: 1400px; height: 343px; padding: 56px 56px 40px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: radial-gradient(437.5px 77.96px at 350px 46.77px, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 100%), linear-gradient(169.59deg, rgba(28,34,72,.92) 14.29%, rgba(17,20,34,.92) 85.71%);
+      border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 -20px 60px rgba(0,0,0,.45); border-radius: 32px; color: #F5F7FA; line-height: normal;
+    }
+    [data-section="closing"] .cl-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    [data-section="closing"] .cl-sub { position: relative; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+    [data-section="closing"] .cl-logo { position: relative; display: block; width: 99.3px; height: 30px; }
+    [data-section="closing"] .cl-logo img { position: absolute; display: block; max-width: none; }
+    [data-section="closing"] .cl-sub h3 { margin: 0; font-weight: 500; font-size: 14px; color: #F5F7FA; }
+    [data-section="closing"] .cl-sub p { margin: 0; font-size: 13px; color: rgba(255,255,255,.6); }
+    [data-section="closing"] form { display: flex; gap: 8px; align-items: flex-start; }
+    [data-section="closing"] input {
+      width: 260px; height: 46px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08); color: #fff; font: 400 14px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s;
+    }
+    [data-section="closing"] input::placeholder { color: rgba(255,255,255,.5); }
+    [data-section="closing"] input:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.1); }
+    [data-section="closing"] input.is-bad { border-color: rgba(255,140,140,.7); }
+    [data-section="closing"] button {
+      border: 0; cursor: pointer; padding: 12px 18px; border-radius: 10px; background: #fff; color: #0F1115;
+      font: 500 14px/18px 'Geologica', system-ui, sans-serif; transition: background-color .25s;
+    }
+    [data-section="closing"] button:hover:not(:disabled) { background: #B7D7FF; }
+    [data-section="closing"] button:disabled { cursor: default; background: #B7D7FF; }
+    [data-section="closing"] .cl-msg { position: absolute; left: 0; top: 166px; margin: 0; font-size: 12px; white-space: nowrap; color: rgba(255,255,255,.6); opacity: 0; transition: opacity .3s; }
+    [data-section="closing"] .cl-msg.is-on { opacity: 1; }
+    [data-section="closing"] .cl-msg.is-err { color: #FFB4B4; }
+    [data-section="closing"] .cl-msg.is-ok { color: #B7D7FF; }
+    [data-section="closing"] .cl-cols { display: flex; gap: 96px; white-space: nowrap; }
+    [data-section="closing"] .cl-cols nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    [data-section="closing"] .cl-cols span { font-size: 13px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-cols a, [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 14px; color: #fff; transition: opacity .2s; }
+    [data-section="closing"] .cl-cols a:hover, [data-section="closing"] .cl-legal a:hover { opacity: .7; }
+    [data-section="closing"] .cl-bottom { display: flex; justify-content: space-between; font-size: 12px; }
+    [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
+    [data-section="closing"] .cl-legal { display: flex; gap: 10px; }
+    [data-section="closing"] .cl-legal a { font-size: 12px; color: rgba(255,255,255,.8); }
+  </style>
+  <div class="v2-canvas">
+    <h2 class="cl-head" data-m="up">Run every trade-in<br>on one <em>layer</em></h2>
+
+    <footer class="cl-foot" data-m="up" style="--d:250ms">
+      <div class="cl-top">
+        <div class="cl-sub">
+          <a href="/v2/" class="cl-logo" aria-label="Fintegre home">
+            <img decoding="async" src="/v2/assets/closing-logo-mark.svg" alt="" width="32.1605" height="23.0769" style="left:3.77px; top:3.46px;">
+            <img decoding="async" src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
+          </a>
+          <h3>Get trade-in insights</h3>
+          <p>Market reports and program benchmarks. No spam.</p>
+          <form class="cl-form" novalidate>
+            <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+          <p class="cl-msg" role="status" aria-live="polite"></p>
+        </div>
+        <div class="cl-cols">
+          <nav aria-label="Platform"><span>Platform</span>
+            <a href="#flow">Trade-in orchestration</a><a href="/v2/intelligence/">Device value intelligence</a><a href="#modules">Vendor network</a><a href="#integrations">Integrations</a>
+          </nav>
+          <nav aria-label="Solutions"><span>Solutions</span>
+            <a href="/v2/solutions/">Retailers</a><a href="/v2/solutions/">Telecom operators</a><a href="/v2/solutions/">OEM and ecosystems</a><a href="/v2/solutions/">Apple and premium retail</a>
+          </nav>
+          <nav aria-label="Company"><span>Company</span>
+            <a href="/v2/customers/">Customers</a><a href="/v2/insights/">Insights</a><a href="/v2/company/">About</a><a href="/v2/design-your-program/">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="cl-bottom">
+        <small>© 2026 Fintegre. All rights reserved.</small>
+        <nav class="cl-legal" aria-label="Legal"><a href="/v2/company/">Privacy</a><a href="/v2/company/">Cookies</a><a href="/v2/company/">Imprint</a></nav>
+      </div>
+    </footer>
+  </div>
+</section>
+</main>
+<script src="/v2/v2.js"></script>
+<script>
+// Platform closing footer: the newsletter form validates in the browser and confirms in place (no backend).
+(() => {
+  const sec = document.querySelector('[data-section="closing"]');
+  const form = sec && sec.querySelector('.cl-form');
+  if (!form) return;
+  const input = form.querySelector('input');
+  const btn = form.querySelector('button');
+  const msg = sec.querySelector('.cl-msg');
+  const say = (text, kind) => { if (!msg) return; msg.textContent = text; msg.className = 'cl-msg is-on ' + kind; };
+  const valid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (btn.disabled) return;
+    const v = input.value.trim();
+    if (!valid(v)) {
+      input.classList.add('is-bad');
+      input.setAttribute('aria-invalid', 'true');
+      say(v ? 'Please enter a valid work email.' : 'Please enter your work email.', 'is-err');
+      input.focus();
+      return;
+    }
+    input.classList.remove('is-bad');
+    input.removeAttribute('aria-invalid');
+    input.value = '';
+    input.placeholder = 'Thanks, you are on the list';
+    input.disabled = true;
+    btn.textContent = 'Subscribed';
+    btn.disabled = true;
+    say('Done. Watch your inbox for the next report.', 'is-ok');
+  });
+  input.addEventListener('input', () => {
+    input.classList.remove('is-bad');
+    input.removeAttribute('aria-invalid');
+    if (msg && msg.classList.contains('is-err')) msg.className = 'cl-msg';
+  });
+})();
+</script>
+</body>
+</html>

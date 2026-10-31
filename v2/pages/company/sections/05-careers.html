@@ -1,0 +1,119 @@
+<section data-section="careers" id="careers" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(720px * var(--s)) calc(321.43px * var(--s)) at calc(50% - 144px * var(--s)) calc(450px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="careers"] p, [data-section="careers"] h2 { margin: 0; }
+  [data-section="careers"] .cr-glow { position: absolute; max-width: none; pointer-events: none; }
+  [data-section="careers"] .cr-photo { position: absolute; left: 620px; top: 40px; width: 1200px; height: 633px; mix-blend-mode: lighten; pointer-events: none;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 60%, transparent 100%); }
+  [data-section="careers"] .cr-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  [data-section="careers"] .cr-copy { position: absolute; left: 120px; top: 150px; width: 560px; }
+  [data-section="careers"] h2 { font-weight: 400; font-size: 56px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="careers"] .cr-lede { margin-top: 19.3px; width: 440px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="careers"] .cr-btn { position: absolute; left: 120px; top: 462px; display: inline-flex; align-items: center; padding: 15px 24px; border: 0; border-radius: 999px; background: #F5F7FA; color: #0F1115;
+    font: 400 15px/normal 'Geologica', system-ui, sans-serif; white-space: nowrap; cursor: pointer; transition: background-color .25s; }
+  [data-section="careers"] .cr-btn:hover { background: #fff; }
+  [data-section="careers"] .cr-fibre { position: absolute; left: 306.3px; top: 485.8px; overflow: visible; pointer-events: none; }
+  [data-section="careers"] .cr-card { position: absolute; left: 760px; top: 470px; width: 560px; padding: 24px; }
+  [data-section="careers"] .cr-card.is-all .cr-list { max-height: 330px; }
+  [data-section="careers"] .cr-role__h { padding: 16px 18px; }
+  [data-section="careers"] .cr-role__t { font-size: 17px; }
+  [data-section="careers"] .cr-role__l { font-size: 14px; }
+  [data-section="careers"] .cr-role__d > div { padding: 0 18px; }
+  [data-section="careers"] .cr-role.is-open .cr-role__d > div { padding-bottom: 18px; }
+  /* Open roles card (shared by desktop and mobile; sizes set per page below) */
+  [data-section="careers"] .cr-card { display: flex; flex-direction: column; gap: 8px; border-radius: 26px; line-height: normal;
+    background: rgba(255,255,255,.07); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="careers"] .cr-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 16px; }
+  [data-section="careers"] .cr-head > span { font-size: 13px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="careers"] .cr-tabs { display: none; gap: 4px; }
+  [data-section="careers"] .cr-card.is-all .cr-tabs { display: flex; }
+  [data-section="careers"] .cr-tab { border: 0; cursor: pointer; padding: 6px 11px; border-radius: 999px; background: rgba(255,255,255,.06); color: #A7B0BE; font: 400 12px/normal 'Geologica', system-ui, sans-serif; white-space: nowrap; transition: background-color .2s, color .2s; }
+  [data-section="careers"] .cr-tab:hover { color: #F5F7FA; }
+  [data-section="careers"] .cr-tab[aria-selected="true"] { background: #F5F7FA; color: #0F1115; }
+  [data-section="careers"] .cr-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  [data-section="careers"] .cr-card.is-all .cr-list { overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: rgba(183,215,255,.25) transparent; padding-right: 2px; }
+  [data-section="careers"] .cr-role--more, [data-section="careers"] .cr-role[hidden] { display: none; }
+  [data-section="careers"] .cr-card.is-all .cr-role--more:not([hidden]) { display: block; }
+  [data-section="careers"] .cr-role { border-radius: 16px; background: rgba(255,255,255,.05); color: #F5F7FA; transition: background-color .25s; }
+  [data-section="careers"] .cr-role.is-hot { background: rgba(48,71,236,.9); }
+  [data-section="careers"] .cr-role__h { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 0; background: none; color: inherit; cursor: pointer; text-align: left; font-family: inherit; line-height: normal; }
+  [data-section="careers"] .cr-role__t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  [data-section="careers"] .cr-role__l { flex: none; color: #A7B0BE; white-space: nowrap; transition: color .25s; }
+  [data-section="careers"] .cr-role.is-hot .cr-role__l { color: #F5F7FA; }
+  [data-section="careers"] .cr-role__l i { font-style: normal; display: inline-block; transition: transform .35s var(--ease); }
+  [data-section="careers"] .cr-role__h[aria-expanded="true"] .cr-role__l i { transform: rotate(90deg); }
+  [data-section="careers"] .cr-role__d { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
+  [data-section="careers"] .cr-role__d > div { overflow: hidden; }
+  [data-section="careers"] .cr-role.is-open .cr-role__d { grid-template-rows: 1fr; }
+  [data-section="careers"] .cr-role__d p { margin: 0; font-weight: 300; font-size: 14px; line-height: 1.5; color: rgba(245,247,250,.8); }
+  [data-section="careers"] .cr-role__d a { display: inline-flex; margin-top: 12px; padding: 9px 16px; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 13px; transition: background-color .2s; }
+  [data-section="careers"] .cr-role__d a:hover { background: #fff; }
+  .motion [data-section="careers"] [data-m="up"] { translate: 0 var(--ty, 40px); }
+  .motion [data-section="careers"].is-in [data-m] { translate: none; }
+  .motion [data-section="careers"] .cr-photo { opacity: 0; transition: opacity 1.3s var(--ease) 150ms, translate 1.6s var(--ease) 150ms; translate: 40px 0; }
+  .motion [data-section="careers"].is-in .cr-photo { opacity: 1; translate: none; }
+</style>
+  <div class="v2-canvas">
+    <!-- Ground repeated inside the canvas so the lighten-blended photo has a backdrop (the scaled canvas is its own blend group). -->
+    <div style="position:absolute; left:-2000px; top:0; width:5440px; height:900px; pointer-events:none; background: radial-gradient(720px 321.43px at 2576px 450px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;"></div>
+    <img class="cr-glow" alt="" src="/v2/assets/company-careers-glow-1.svg" style="left:700px; top:-80px; width:1060px; height:960px;">
+    <img class="cr-glow" alt="" src="/v2/assets/company-careers-glow-2.svg" style="left:-420px; top:440px; width:980px; height:780px;">
+    <div class="cr-photo"><img alt="Corner of an iPhone with its camera module" src="/v2/assets/company-careers-iphone.webp" width="1800" height="950"></div>
+
+    <div class="cr-copy" data-m="up" style="--d:100ms">
+      <h2>Build what sits<br>behind every<br>trade-in.</h2>
+      <p class="cr-lede">We hire engineers, analysts and partner managers who like hard numbers and real devices. Nine roles are open across three offices.</p>
+    </div>
+    <button type="button" class="cr-btn" data-roles-toggle aria-expanded="false" aria-controls="cr-roles" data-m="up" style="--d:350ms; --ty:24px">See all 9 open roles</button>
+    <svg class="cr-fibre" width="454.4" height="44.9" viewBox="0 0 454.4 44.9" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:700ms" d="M0.7 0.7C293.7 0.7 343.7 44.2 453.7 44.2" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+
+    <div class="cr-card" id="cr-roles" data-m="up" style="--d:500ms">
+      <div class="cr-head">
+        <span data-roles-count>Open roles</span>
+        <div class="cr-tabs" role="tablist" aria-label="Filter roles by office">
+          <button type="button" class="cr-tab" role="tab" aria-selected="true" data-office="all">All</button>
+          <button type="button" class="cr-tab" role="tab" aria-selected="false" data-office="Vilnius">Vilnius</button>
+          <button type="button" class="cr-tab" role="tab" aria-selected="false" data-office="Warsaw">Warsaw</button>
+          <button type="button" class="cr-tab" role="tab" aria-selected="false" data-office="Riga">Riga</button>
+        </div>
+      </div>
+      <ul class="cr-list">
+          <li class="cr-role" data-office="Vilnius">
+            <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Senior Backend Engineer</span><span class="cr-role__l">Vilnius&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
+            <div class="cr-role__d"><div><p>Own the pricing and payout services in Go and Postgres. Five years of backend work, and you like reading the numbers your code produces.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Senior%20Backend%20Engineer">Apply for this role</a></div></div>
+          </li>
+          <li class="cr-role" data-office="Vilnius">
+            <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Pricing Analyst</span><span class="cr-role__l">Vilnius or remote&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
+            <div class="cr-role__d"><div><p>Keep device values right across 12 markets. Build the models that turn buyer bids and condition grades into one fair number.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Pricing%20Analyst">Apply for this role</a></div></div>
+          </li>
+          <li class="cr-role is-hot" data-office="Warsaw">
+            <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Partner Manager, Poland</span><span class="cr-role__l">Warsaw&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
+            <div class="cr-role__d"><div><p>Launch and grow trade-in programs with Polish retailers and operators. Polish and English, and time in stores every month.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Partner%20Manager%2C%20Poland">Apply for this role</a></div></div>
+          </li>
+          <li class="cr-role cr-role--more" data-office="Vilnius">
+            <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Frontend Engineer</span><span class="cr-role__l">Vilnius&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
+            <div class="cr-role__d"><div><p>Build the white-label flows customers see in stores and apps. TypeScript, design sense and care for slow phones.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Frontend%20Engineer">Apply for this role</a></div></div>
+          </li>
+          <li class="cr-role cr-role--more" data-office="Vilnius">
+            <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Data Engineer</span><span class="cr-role__l">Vilnius or remote&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
+            <div class="cr-role__d"><div><p>Run the pipelines behind our device value index: bids, grades and payouts from every market, clean and on time.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Data%20Engineer">Apply for this role</a></div></div>
+          </li>
+          <li class="cr-role cr-role--more" data-office="Vilnius">
+            <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Product Designer</span><span class="cr-role__l">Vilnius&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
+            <div class="cr-role__d"><div><p>Design the check, value and pay flow for store staff and customers. You test with real devices on real counters.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Product%20Designer">Apply for this role</a></div></div>
+          </li>
+          <li class="cr-role cr-role--more" data-office="Warsaw">
+            <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Operations Lead, Central Europe</span><span class="cr-role__l">Warsaw&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
+            <div class="cr-role__d"><div><p>Run pickups, buyer handovers and service levels across Poland and Czechia with our logistics partners.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Operations%20Lead%2C%20Central%20Europe">Apply for this role</a></div></div>
+          </li>
+          <li class="cr-role cr-role--more" data-office="Riga">
+            <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Buyer Network Manager</span><span class="cr-role__l">Riga&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
+            <div class="cr-role__d"><div><p>Bring new buyers and refurbishers onto the network and keep the best bid competitive in every Baltic market.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Buyer%20Network%20Manager">Apply for this role</a></div></div>
+          </li>
+          <li class="cr-role cr-role--more" data-office="Riga">
+            <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Logistics Coordinator</span><span class="cr-role__l">Riga&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
+            <div class="cr-role__d"><div><p>Plan device pickups and transfers between stores and buyers, and fix what goes wrong the same day.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Logistics%20Coordinator">Apply for this role</a></div></div>
+          </li>
+      </ul>
+    </div>
+  </div>
+</section>

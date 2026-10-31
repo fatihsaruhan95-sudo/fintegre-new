@@ -1,0 +1,117 @@
+<section data-section="download" id="download" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 392.73px * var(--s)) calc(510px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="download"] .dl-abs { position: absolute; }
+  [data-section="download"] p { margin: 0; }
+  [data-section="download"] .dl-glow { position: absolute; pointer-events: none; max-width: none; }
+  [data-section="download"] .dl-copy { left: 120px; top: 200px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  [data-section="download"] h2 { margin: 0; width: 520px; font-weight: 400; font-size: 64px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="download"] .dl-lede { width: 440px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="download"] .dl-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  [data-section="download"] .dl-list li { display: flex; align-items: center; gap: 12px; font-weight: 300; font-size: 16px; line-height: normal; color: rgba(245,247,250,.85); white-space: nowrap; }
+  [data-section="download"] .dl-list img { width: 20px; height: 20px; display: block; }
+
+  [data-section="download"] .dl-cover { position: absolute; overflow: clip; line-height: normal; white-space: nowrap; }
+  [data-section="download"] .dl-cover > * { position: absolute; display: block; max-width: none; }
+
+  [data-section="download"] .dl-card { left: 760px; top: 162px; width: 560px; height: 596px; border-radius: 28px; overflow: clip;
+    background: rgba(255,255,255,.07); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(183,215,255,.14); box-shadow: 0 30px 60px rgba(5,8,31,.5); color: #F5F7FA; }
+  [data-section="download"] .dl-card > * { position: absolute; }
+  [data-section="download"] .dl-kicker { left: 34px; top: 30px; font-size: 13px; color: #A7B0BE; line-height: normal; white-space: nowrap; }
+  [data-section="download"] .dl-card h3 { left: 34px; top: 54px; margin: 0; font-weight: 400; font-size: 28px; letter-spacing: -0.03em; line-height: normal; white-space: nowrap; }
+  [data-section="download"] form { left: 34px; top: 116px; width: 488px; height: 460px; }
+  [data-section="download"] .dl-fields { display: flex; flex-direction: column; gap: 12px; }
+  [data-section="download"] .dl-row { display: flex; gap: 12px; }
+  [data-section="download"] label, [data-section="download"] fieldset { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; border: 0; min-width: 0; }
+  [data-section="download"] label > span, [data-section="download"] legend { font-size: 13px; color: #A7B0BE; line-height: normal; padding: 0; margin-bottom: 8px; }
+  [data-section="download"] label > span { margin: 0; }
+  [data-section="download"] input, [data-section="download"] select {
+    height: 48px; padding: 0 18px; border-radius: 14px; border: 1px solid rgba(183,215,255,.14); background: rgba(255,255,255,.05); color: #F5F7FA;
+    font: 300 15px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s; -webkit-appearance: none; appearance: none; }
+  [data-section="download"] input::placeholder { color: rgba(245,247,250,.45); }
+  [data-section="download"] input:focus, [data-section="download"] select:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.08); }
+  [data-section="download"] .is-bad { border-color: rgba(255,120,120,.75) !important; }
+  [data-section="download"] .dl-sel { position: relative; }
+  [data-section="download"] .dl-sel select { width: 488px; cursor: pointer; }
+  [data-section="download"] .dl-sel select option { color: #0F1115; }
+  [data-section="download"] .dl-sel b { position: absolute; right: 18px; top: 13px; font-weight: 400; font-size: 15px; color: rgba(245,247,250,.6); pointer-events: none; }
+  [data-section="download"] .dl-chips { display: flex; gap: 8px; }
+  [data-section="download"] .dl-chip { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; border: 0; cursor: pointer; background: rgba(15,17,21,.55);
+    font: 400 13px/normal 'Geologica', system-ui, sans-serif; color: #F5F7FA; transition: background-color .25s; }
+  [data-section="download"] .dl-chip img { width: 7px; height: 7px; display: none; }
+  [data-section="download"] .dl-chip[aria-pressed="true"] { background: #3047EC; }
+  [data-section="download"] .dl-chip[aria-pressed="true"] img { display: block; }
+  [data-section="download"] .dl-submit { position: absolute; left: 0; top: 341px; width: 488px; height: 52px; border: 0; border-radius: 999px; background: #fff; color: #0F1115; cursor: pointer;
+    font: 400 15px/normal 'Geologica', system-ui, sans-serif; white-space: pre; transition: background-color .25s; }
+  [data-section="download"] .dl-submit:hover { background: #B7D7FF; }
+  [data-section="download"] .dl-fine { position: absolute; left: 0; top: 411px; width: 488px; font-weight: 300; font-size: 12px; line-height: 1.5; color: rgba(245,247,250,.5); }
+  [data-section="download"] .dl-fine.is-bad-msg { color: #FFB4B4; }
+  [data-section="download"] .dl-done { left: 34px; top: 116px; width: 488px; display: flex; flex-direction: column; gap: 16px; opacity: 0; visibility: hidden; transition: opacity .5s var(--ease); }
+  [data-section="download"] .dl-card.is-sent form { visibility: hidden; }
+  [data-section="download"] .dl-card.is-sent .dl-done { opacity: 1; visibility: visible; }
+  [data-section="download"] .dl-done strong { font-weight: 300; font-size: 56px; letter-spacing: -0.03em; line-height: 1; }
+  [data-section="download"] .dl-done p { font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.75); }
+
+  .motion [data-section="download"] [data-m][data-ty] { translate: 0 var(--ty); }
+  .motion [data-section="download"].is-in [data-m][data-ty] { translate: none; }
+</style>
+  <div class="v2-canvas">
+    <img class="dl-glow" alt="" src="/v2/assets/report-dl-glow.svg" style="left:520px; top:-60px; width:1120px; height:960px;">
+    <img class="dl-glow" alt="" src="/v2/assets/insights-hero-glow-2.svg" style="left:-380px; top:420px; width:960px; height:780px;">
+
+    <div class="dl-abs dl-copy">
+      <h2 data-m="up">Get the full report.</h2>
+      <p class="dl-lede" data-m="up" style="--d:100ms">28 pages with model-level tables. Free for retail, telecom and device brand teams.</p>
+      <ul class="dl-list" data-m="up" style="--d:200ms">
+        <li><img alt="" src="/v2/assets/report-check.svg">Median bids for 140 models in five markets</li>
+        <li><img alt="" src="/v2/assets/report-check.svg">Weekly index, July to September</li>
+        <li><img alt="" src="/v2/assets/report-check.svg">Price factors: screen, battery, casing</li>
+        <li><img alt="" src="/v2/assets/report-check.svg">Buyer competition by market and model age</li>
+      </ul>
+    </div>
+
+    <div class="dl-cover" aria-hidden="true" data-m="up" data-ty="80px" style="--ty:80px; --d:100ms; left:970.71px; top:114.93px; width:300px; height:400px; transform:rotate(8deg); border:1px solid rgba(183,215,255,.25); border-radius:18px; box-shadow:0 30px 60px -10px rgba(5,8,31,.6); background:linear-gradient(135deg, #5D74FF 0%, #3047EC 71.429%); color:#F5F7FA; font-size:12px;">
+      <p style="left:24px; top:24px;">Fintegre intelligence · Report</p>
+      <img alt="" src="/v2/assets/insights-nbar-1.svg" width="72.642" height="70" style="left:24px; top:128px;">
+      <img alt="" src="/v2/assets/insights-nbar-2.svg" width="91.294" height="110" style="left:82px; top:88px;">
+      <img alt="" src="/v2/assets/insights-nbar-3.svg" width="109.946" height="150" style="left:140px; top:48px;">
+      <img alt="" src="/v2/assets/insights-nbar-4.svg" width="84.299" height="95" style="left:198px; top:103px;">
+      <p style="left:24px; top:280px; width:248px; white-space:normal; font-size:30px; line-height:1.04; letter-spacing:-0.03em;">European Device Value Index</p>
+      <p style="left:24px; top:358px;">Q3 · 2026</p>
+    </div>
+
+    <div class="dl-abs dl-card" data-m="up" data-ty="60px" style="--ty:60px; --d:300ms;">
+      <p class="dl-kicker">Download · PDF, 6.2 MB</p>
+      <h3>Where should we send it?</h3>
+      <form class="dl-form" novalidate>
+        <div class="dl-fields">
+          <div class="dl-row">
+            <label><span>Full name</span><input name="name" type="text" placeholder="Name and surname" autocomplete="name" required style="width:238px;"></label>
+            <label><span>Company</span><input name="company" type="text" placeholder="Company name" autocomplete="organization" required style="width:238px;"></label>
+          </div>
+          <label><span>Work email</span><input name="email" type="email" placeholder="name@company.com" autocomplete="email" required style="width:488px;"></label>
+          <label class="dl-sel"><span>Your team</span>
+            <select name="team">
+              <option>Trade-in and pricing</option><option>Category and merchandising</option><option>Retail operations</option><option>Finance</option><option>Other</option>
+            </select><b aria-hidden="true">⌄</b>
+          </label>
+          <fieldset>
+            <legend>Markets you run programs in</legend>
+            <div class="dl-chips">
+              <button type="button" class="dl-chip" aria-pressed="true"><img alt="" src="/v2/assets/insights-dot.svg">Baltics</button>
+              <button type="button" class="dl-chip" aria-pressed="true"><img alt="" src="/v2/assets/insights-dot.svg">Poland</button>
+              <button type="button" class="dl-chip" aria-pressed="false"><img alt="" src="/v2/assets/insights-dot.svg">Czechia</button>
+              <button type="button" class="dl-chip" aria-pressed="false"><img alt="" src="/v2/assets/insights-dot.svg">Other</button>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="dl-submit">Send me the report  ↓</button>
+        <p class="dl-fine" aria-live="polite">We use these details to send the report and the next quarterly edition. Unsubscribe any time.</p>
+      </form>
+      <div class="dl-done" role="status">
+        <strong>On its way.</strong>
+        <p>We sent the European Device Value Index, Q3 2026 to <span data-dl-email>your inbox</span>. The Q4 edition follows on 3 December.</p>
+      </div>
+    </div>
+  </div>
+</section>

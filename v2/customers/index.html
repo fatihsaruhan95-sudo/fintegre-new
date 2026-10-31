@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customers — Fintegre (v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  // Phones get the mobile layout.
+  if (innerWidth < 768) location.replace('/v2/mobile/customers/' + location.hash);
+  // Hide the page until fonts, Tailwind and images are ready, so the hero entrance is seen from its first frame.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="/v2/v2.css">
+</head>
+<body>
+<nav class="ver-switch" aria-label="Site version">
+  <a href="/">V1</a>
+  <a href="/v2/" aria-current="page">V2</a>
+</nav>
+
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="/v2/" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="/assets/header-mark.svg">Fintegre</a>
+    <nav class="v2-nav">
+      <a href="/v2/platform/">Platform</a>
+      <a href="/v2/solutions/">Solutions</a>
+      <a href="/v2/intelligence/">Intelligence</a>
+      <a href="/v2/customers/">Customers</a>
+      <a href="/v2/insights/">Insights</a>
+      <a href="/v2/company/">Company</a>
+    </nav>
+    <a href="/v2/design-your-program/" class="v2-cta">Design your program</a>
+  </div>
+</header>
+
+<main class="page">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 327.27px * var(--s)) calc(480px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 22.5%, rgba(18,26,90,.9) 45%, rgba(17,22,55,.45) 72.5%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  /* Page-wide helpers for the Customers page (this file is the first section, so these load first). */
+  .page .v2-canvas { line-height: normal; }
+  .page .v2-canvas p { margin: 0; }
+  .cu-abs { position: absolute; }
+  .cu-glow { position: absolute; pointer-events: none; max-width: none; display: block; }
+  .cu-img { position: absolute; display: block; max-width: none; object-fit: contain; pointer-events: none; }
+  .cu-glass { background: rgba(255,255,255,.06); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  .cu-btn { display: inline-flex; align-items: center; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; padding: 14px 22px; transition: background-color .25s, box-shadow .25s, color .25s; }
+  .cu-btn--white { background: #fff; color: #0F1115; }
+  .cu-btn--white:hover { background: #B7D7FF; }
+  .cu-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  .cu-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.6); }
+  .cu-h2 { font-weight: 400; font-size: 60px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  .cu-lede { font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  .cu-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px 10px 14px; border-radius: 999px; white-space: nowrap; font-size: 14px; color: #F5F7FA; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .cu-chip img { width: 6px; height: 6px; display: block; }
+  svg.cu-abs { overflow: visible; }
+
+  @property --x { syntax: '*'; inherits: false; }
+  @property --y { syntax: '*'; inherits: false; }
+  @property --sc { syntax: '*'; inherits: false; }
+  @property --op { syntax: '*'; inherits: false; }
+  /* Entrance system for this page: data-k + --x/--y/--sc offsets, --d delay, --o/--t durations (Figma timeline). */
+  .motion [data-k] { opacity: 0; translate: var(--x, 0px) var(--y, 0px); scale: var(--sc, 1);
+    transition: opacity var(--o, .7s) var(--ease) var(--d, 0ms), translate var(--t, 1s) var(--ease) var(--d, 0ms), scale var(--t, .7s) var(--spring) var(--d, 0ms); }
+  .motion .is-in [data-k] { opacity: var(--op, 1); translate: none; scale: 1; }
+  .motion [data-w] { transform: scaleX(0); transform-origin: 0 50%; transition: transform var(--t, 1.4s) var(--inout) var(--d, 0ms); }
+  .motion .is-in [data-w] { transform: none; }
+
+  /* Top bar (part of the hero design) */
+  [data-section="hero"] .cu-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; }
+  [data-section="hero"] .cu-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .cu-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .cu-mark img { position: absolute; left: 2.49px; top: 2.33px; width: 21.38px; height: 15.34px; max-width: none; }
+  [data-section="hero"] .cu-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .cu-nav a { transition: color .2s; }
+  [data-section="hero"] .cu-nav a:hover, [data-section="hero"] .cu-nav a[aria-current] { color: #F5F7FA; }
+  [data-section="hero"] .cu-top .cu-btn { padding: 10px 18px; background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .cu-top .cu-btn:hover { background: #fff; }
+
+  [data-section="hero"] h1 { position: absolute; left: 120px; top: 200px; margin: 0; font-weight: 400; font-size: 72px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .cu-res { position: absolute; top: 610px; height: 150px; width: 260px; white-space: nowrap; }
+  [data-section="hero"] .cu-res b { position: absolute; left: 0; top: 0; font-weight: 300; font-size: 84px; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .cu-res span { position: absolute; left: 2px; top: 104px; font-size: 14px; color: #B7D7FF; }
+  [data-section="hero"] .cu-res i { position: absolute; left: -30px; top: 12px; width: 1px; height: 110px; background: rgba(183,215,255,.18); }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="cu-glow" alt="" src="/v2/assets/customers-glow-hero-r.svg" style="left:680px; top:-120px; width:1120px; height:960px;">
+    <img decoding="async" class="cu-glow" alt="" src="/v2/assets/customers-glow-hero-l.svg" style="left:-400px; top:380px; width:1000px; height:820px;">
+    <img decoding="async" class="cu-glow" alt="" src="/v2/assets/customers-room-light-hero.svg" style="left:816.5px; top:250px; width:797px; height:748px;">
+    <img decoding="async" class="cu-img" alt="Two iPhone 17 in Mist Blue" src="/v2/assets/customers-iphone17-mist.webp" data-k style="left:1010px; top:300px; width:410px; height:720px; --x:60px; --o:1.4s; --t:1.6s;">
+    <div class="cu-abs" style="left:0; top:560px; width:1440px; height:340px; background:linear-gradient(180deg, rgba(15,17,21,0), #0F1115);"></div>
+
+    <div class="cu-abs cu-top">
+      <a href="/v2/" class="cu-logo" aria-label="Fintegre home"><span class="cu-mark"><img decoding="async" alt="" src="/v2/assets/case-study-logo-mark.svg"></span>Fintegre</a>
+      <nav class="cu-nav" aria-label="Hero">
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/customers/" aria-current="page">Customers</a>
+        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/design-your-program/" class="cu-btn">Design your program</a>
+    </div>
+
+    <h1 data-k style="--y:60px; --d:200ms; --o:.63s; --t:.9s;">Measured in<br>every store.</h1>
+    <p class="cu-abs cu-lede" data-k style="left:120px; top:378px; width:440px; --y:40px; --d:450ms; --o:.63s; --t:.9s;">Retailers, telecom operators and device brands run trade-in on Fintegre. These are the numbers they report back to us.</p>
+
+    <div class="cu-res" data-k style="left:120px; --y:50px; --d:800ms; --o:.63s; --t:.9s;"><b>+38%</b><span>Trade-in participation</span></div>
+    <div class="cu-res" data-k style="left:390px; --y:50px; --d:980ms; --o:.63s; --t:.9s;"><i></i><b>+14%</b><span>Value per device</span></div>
+    <div class="cu-res" data-k style="left:660px; --y:50px; --d:1160ms; --o:.63s; --t:.9s;"><i></i><b>58 s</b><span>Time to offer</span></div>
+    <p class="cu-abs" style="left:120px; top:790px; font-size:13px; color:#A7B0BE; white-space:nowrap;">Median across 14 live programs, first six months after launch.</p>
+
+    <svg class="cu-abs" style="left:1079.3px; top:276px;" width="41.4" height="56" viewBox="0 0 41.4 56" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1400ms; transition-duration:.8s;" d="M0.7 0C0.7 30 40.7 20 40.7 56" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <svg class="cu-abs" style="left:1129.3px; top:510px;" width="81.4" height="92" viewBox="0 0 81.4 92" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1600ms; transition-duration:.9s;" d="M0.7 0C0.7 50 80.7 40 80.7 92" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <div class="cu-abs cu-chip" data-k style="left:1040px; top:236px; background:rgba(15,17,21,.55); --sc:.6; --d:1900ms; --o:.25s; --t:.7s;"><img decoding="async" alt="" src="/v2/assets/case-study-dot.svg">Store 9, Kaunas · iPhone 13 · Grade A</div>
+    <div class="cu-abs cu-chip" data-k style="left:1170px; top:600px; background:#3047EC; --sc:.6; --d:2300ms; --o:.25s; --t:.7s;"><img decoding="async" alt="" src="/v2/assets/case-study-dot.svg">€612 credit · best of 3 buyers</div>
+  </div>
+</section>
+
+<section data-section="featured" id="featured" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% + 392.7px * var(--s)) calc(480px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 22.5%, rgba(18,26,90,.9) 45%, rgba(17,22,55,.45) 72.5%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="featured"] .fe-step { position: absolute; border-radius: 26px; box-shadow: 0 30px 30px rgba(0,0,0,.45); white-space: nowrap; }
+  [data-section="featured"] .fe-step p { position: absolute; }
+  [data-section="featured"] .fe-k { font-size: 13px; color: #A7B0BE; }
+  [data-section="featured"] .fe-t { font-weight: 300; font-size: 22px; color: #F5F7FA; }
+  [data-section="featured"] .fe-pills { position: absolute; left: 115px; top: 103px; display: flex; gap: 8px; }
+  [data-section="featured"] .fe-pills span { padding: 6px 12px; border-radius: 999px; font-size: 13px; background: rgba(255,255,255,.1); color: #F5F7FA; }
+  [data-section="featured"] .fe-pills span:first-child { background: rgba(183,215,255,.95); color: #0F1115; }
+  [data-section="featured"] .fe-bid { position: absolute; left: 27px; width: 364px; height: 52px; border-radius: 16px; background: rgba(255,255,255,.05); }
+  [data-section="featured"] .fe-bid p:first-child { left: 18px; top: 16px; font-size: 15px; color: #A7B0BE; white-space: pre; }
+  [data-section="featured"] .fe-bid p:last-child { top: 14px; font-size: 18px; color: rgba(245,247,250,.6); }
+  [data-section="featured"] .fe-bid--best { background: rgba(48,71,236,.9); }
+  [data-section="featured"] .fe-bid--best p:first-child, [data-section="featured"] .fe-bid--best p:last-child { color: #F5F7FA; }
+  [data-section="featured"] .fe-copy { position: absolute; left: 820px; top: 200px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  [data-section="featured"] .fe-stats { display: flex; gap: 48px; white-space: nowrap; }
+  [data-section="featured"] .fe-stats div { display: flex; flex-direction: column; gap: 8px; }
+  [data-section="featured"] .fe-stats b { font-weight: 300; font-size: 40px; letter-spacing: -0.03em; color: #F5F7FA; }
+  [data-section="featured"] .fe-stats span { font-size: 12px; color: #B7D7FF; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="cu-glow" alt="" src="/v2/assets/customers-glow-featured.svg" style="left:-340px; top:-60px; width:1120px; height:980px;">
+
+    <div class="fe-step cu-glass" data-k style="left:120px; top:110px; width:400px; height:168px; --y:50px; --d:200ms; --o:.63s; --t:.9s;">
+      <img decoding="async" alt="iPhone 13" src="/v2/assets/case-study-iphone13-tall.webp" style="position:absolute; left:25px; top:19px; width:62px; height:127px; object-fit:cover; border-radius:11px; box-shadow:0 10px 20px rgba(0,0,0,.5); max-width:none;">
+      <p class="fe-k" style="left:115px; top:29px;">16:02 · Store 6, Riga</p>
+      <p class="fe-t" style="left:115px; top:53px;">iPhone 13 checked</p>
+      <div class="fe-pills"><span>Grade B</span><span>Battery 84 %</span><span>61 s</span></div>
+    </div>
+    <svg class="cu-abs" style="left:219.25px; top:278px;" width="111.5" height="54" viewBox="0 0 111.5 54" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:900ms; transition-duration:.6s;" d="M0.75 0C0.75 32 110.75 22 110.75 54" stroke-width="1.5" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+
+    <div class="fe-step cu-glass" data-k style="left:240px; top:332px; width:420px; height:256px; --y:50px; --d:1200ms; --o:.63s; --t:.9s;">
+      <p class="fe-k" style="left:27px; top:25px;">Three buyers compete</p>
+      <div class="fe-bid" data-k style="top:57px; --x:16px; --d:1600ms; --o:.42s; --t:.6s;"><p>Buyer A · Estonia</p><p style="left:301px;">€402</p></div>
+      <div class="fe-bid" data-k style="top:117px; --x:16px; --d:1850ms; --o:.42s; --t:.6s;"><p>Buyer B · Poland</p><p style="left:306px;">€417</p></div>
+      <div class="fe-bid fe-bid--best" data-k style="top:177px; --x:16px; --d:2100ms; --o:.42s; --t:.6s;"><p>Buyer C · Latvia  ·  Best</p><p style="left:305px;">€431</p></div>
+    </div>
+    <svg class="cu-abs" style="left:339.25px; top:588px;" width="61.5" height="54" viewBox="0 0 61.5 54" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:2500ms; transition-duration:.6s;" d="M60.75 0C60.75 30 0.75 24 0.75 54" stroke-width="1.5" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
+
+    <div class="fe-step cu-glass" data-k style="left:160px; top:642px; width:400px; height:168px; --y:50px; --d:2800ms; --o:.63s; --t:.9s;">
+      <img decoding="async" alt="iPhone 18 Pro in Silver" src="/v2/assets/customers-iphone18pro-silver.webp" class="cu-img" style="left:17px; top:27px; width:93px; height:112px;">
+      <p class="fe-k" style="left:115px; top:29px;">Credit at the till</p>
+      <p class="fe-t" style="left:115px; top:53px;">iPhone 18 Pro</p>
+      <div style="position:absolute; left:115px; top:103px; display:flex; gap:10px; align-items:baseline;"><span style="font-size:15px; color:rgba(167,176,190,.7);">€1,199</span><span style="font-size:20px; color:#B7D7FF;">You pay €768</span></div>
+    </div>
+
+    <div class="fe-copy" data-k style="--y:40px; --d:300ms; --o:.7s; --t:1s;">
+      <p style="font-size:15px; color:#A7B0BE; white-space:nowrap;">A Baltic electronics retailer · 40 stores</p>
+      <h2 class="cu-h2" style="margin:0; width:560px; white-space:normal;">Trade-in at every till, in about a minute.</h2>
+      <p class="cu-lede" style="width:460px;">Store staff check the device, three local buyers bid, and the best price goes straight onto the new iPhone. Same flow online.</p>
+      <div class="fe-stats">
+        <div><b>40</b><span>Stores live</span></div>
+        <div><b>3</b><span>Buyers per device</span></div>
+        <div><b>9 wk</b><span>Pilot to rollout</span></div>
+      </div>
+      <a href="/v2/case-study/" class="cu-btn cu-btn--ghost" style="white-space:pre;">Read the case  →</a>
+    </div>
+  </div>
+</section>
+
+<section data-section="cases" id="cases" class="v2-sec" data-tone="dark" style="--h:1260px; background:#0F1115;">
+<style>
+  [data-section="cases"] .ca-card { position: absolute; display: block; overflow: clip; border-radius: 28px; box-shadow: 0 30px 60px rgba(0,0,0,.45); transition: box-shadow .4s var(--ease); }
+  [data-section="cases"] .ca-card:hover { box-shadow: 0 40px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(183,215,255,.3); }
+  [data-section="cases"] .ca-card .cu-img { transition: transform .8s var(--ease); }
+  [data-section="cases"] .ca-card:hover .cu-img { transform: translateY(-8px); }
+  [data-section="cases"] .ca-copy { position: absolute; display: flex; flex-direction: column; gap: 10px; align-items: flex-start; white-space: nowrap; }
+  [data-section="cases"] .ca-who { font-size: 15px; color: #A7B0BE; }
+  [data-section="cases"] .ca-num { font-weight: 300; font-size: 88px; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="cases"] .ca-num--s { font-size: 56px; }
+  [data-section="cases"] .ca-what { font-weight: 300; font-size: 17px; color: rgba(245,247,250,.75); }
+  [data-section="cases"] .ca-tag { margin-top: 8px; font-size: 13px; color: #B7D7FF; white-space: pre; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="cu-glow" alt="" src="/v2/assets/customers-glow-cases.svg" style="left:80px; top:80px; width:1240px; height:1140px;">
+    <h2 class="cu-abs cu-h2" data-k style="left:120px; top:130px; margin:0; --y:50px; --d:200ms; --o:.63s; --t:.9s;">Four kinds of customer.<br>One way of working.</h2>
+    <p class="cu-abs cu-lede" data-k style="left:900px; top:150px; width:400px; --y:30px; --d:400ms; --o:.63s; --t:.9s;">Each program is set up around how the business sells. The device check, the market and the payout stay the same.</p>
+
+    <a href="/v2/case-study/" class="ca-card" aria-label="A Polish mobile operator: 22% less churn at contract renewal" data-k style="left:120px; top:340px; width:560px; height:820px; border:1px solid rgba(183,215,255,.14); backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px); background: radial-gradient(280px 410px at 280px 123px, rgba(48,71,237,.55), rgba(48,71,237,0)), rgba(255,255,255,.05); --y:70px; --d:600ms; --o:.7s; --t:1s;">
+      <div class="ca-copy" style="left:35px; top:35px;">
+        <p class="ca-who">A Polish mobile operator</p><p class="ca-num">−22%</p><p class="ca-what">churn at contract renewal</p><p class="ca-tag">Early upgrade  ·  1,100 shops</p>
+      </div>
+      <img decoding="async" class="cu-glow" alt="" src="/v2/assets/customers-room-light-telecom.svg" style="left:-1.85px; top:269px; width:832.7px; height:568px;">
+      <div class="cu-abs" data-k style="left:199px; top:319px; width:431px; height:520px; --y:60px; --d:900ms; --o:.01s; --t:1.2s;"><img decoding="async" class="cu-img" alt="Two iPhone 18 Pro in Silver" src="/v2/assets/customers-iphone18pro-silver.webp" style="inset:0; width:100%; height:100%;"></div>
+      <p class="cu-abs" style="left:35px; top:759px; font-size:15px; color:#F5F7FA; white-space:pre;">Read the case  →</p>
+    </a>
+
+    <a href="/v2/case-study/" class="ca-card" aria-label="A Baltic electronics retailer: 3.1 times more trade-ins online" data-k style="left:710px; top:340px; width:610px; height:400px; border:1px solid rgba(183,215,255,.14); background:linear-gradient(146.75deg, #3047ED 0%, #141E6E 71.43%); --y:70px; --d:800ms; --o:.7s; --t:1s;">
+      <div class="ca-copy" style="left:35px; top:35px;">
+        <p class="ca-who">A Baltic electronics retailer</p><p class="ca-num">3.1×</p><p class="ca-what">more trade-ins online</p><p class="ca-tag">Trade-in  ·  40 stores and online</p>
+      </div>
+      <div class="cu-abs" data-k style="left:359px; top:39px; width:270px; height:452px; --y:60px; --d:1100ms; --o:.01s; --t:1.2s;"><img decoding="async" class="cu-img" alt="iPad Air" src="/v2/assets/customers-ipad-air.webp" style="inset:0; width:100%; height:100%; filter:drop-shadow(0 30px 25px rgba(0,0,0,.55));"></div>
+    </a>
+
+    <a href="/v2/case-study/" class="ca-card" aria-label="A European device brand: €4.2M residual value recovered" data-k style="left:710px; top:770px; width:290px; height:390px; background:#F5F7FA; --y:70px; --d:1000ms; --o:.7s; --t:1s;">
+      <div class="cu-abs" data-k style="left:40px; top:24px; width:300px; height:183px; --y:60px; --d:1300ms; --o:.01s; --t:1.2s;"><img decoding="async" class="cu-img" alt="MacBook Pro" src="/v2/assets/case-study-macbook.webp" style="inset:0; width:100%; height:100%; filter:drop-shadow(0 18px 15px rgba(15,18,51,.25));"></div>
+      <div class="ca-copy" style="left:36px; top:220px;">
+        <p class="ca-who" style="color:#545C6B;">A European device brand</p><p class="ca-num ca-num--s" style="color:#0F1115;">€4.2M</p><p class="ca-what" style="color:rgba(15,17,21,.8);">residual value recovered</p>
+      </div>
+    </a>
+
+    <a href="/v2/case-study/" class="ca-card cu-glass" aria-label="A premium Apple reseller: 61 second average device check" data-k style="left:1030px; top:770px; width:290px; height:390px; --y:70px; --d:1200ms; --o:.7s; --t:1s;">
+      <div class="cu-abs" data-k style="left:79px; top:19px; width:170px; height:196px; --y:60px; --d:1500ms; --o:.01s; --t:1.2s;"><img decoding="async" class="cu-img" alt="Apple Watch" src="/v2/assets/case-study-watch.webp" style="inset:0; width:100%; height:100%; filter:drop-shadow(0 30px 25px rgba(0,0,0,.55));"></div>
+      <div class="ca-copy" style="left:35px; top:219px;">
+        <p class="ca-who">A premium Apple reseller</p><p class="ca-num ca-num--s">61 s</p><p class="ca-what">average device check</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section data-section="quotes" id="quotes" class="v2-sec" data-tone="light" style="--h:900px; background:#F5F7FA;">
+<style>
+  [data-section="quotes"] blockquote { margin: 0; }
+  [data-section="quotes"] .qu-card { position: absolute; width: 400px; padding: 36px; border-radius: 26px; background: #fff; box-shadow: 0 24px 50px rgba(15,20,64,.08); display: flex; flex-direction: column; gap: 28px; }
+  [data-section="quotes"] .qu-card p { font-weight: 300; font-size: 22px; line-height: 1.4; color: #0F1115; }
+  [data-section="quotes"] .qu-card footer { display: flex; flex-direction: column; gap: 2px; font-size: 14px; white-space: nowrap; }
+  [data-section="quotes"] cite { font-style: normal; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="cu-glow" alt="" src="/v2/assets/customers-glow-ice.svg" style="left:-300px; top:0; width:1300px; height:1000px;">
+    <blockquote class="cu-abs" data-k style="left:120px; top:300px; display:flex; flex-direction:column; gap:40px; --y:50px; --d:200ms; --o:.7s; --t:1s;">
+      <p style="width:720px; font-size:52px; line-height:1.1; letter-spacing:-0.03em; color:#0F1115;">“We stopped arguing with buyers about prices. Now the market sets them.”</p>
+      <footer style="display:flex; flex-direction:column; gap:4px; white-space:nowrap;"><cite style="font-size:16px; color:#0F1115;">Head of Trade-in</cite><span style="font-weight:300; font-size:15px; color:#5C6373;">A Polish mobile operator</span></footer>
+    </blockquote>
+    <blockquote class="qu-card" data-k style="left:920px; top:200px; --x:80px; --d:700ms; --o:.63s; --t:.9s;">
+      <p>“Staff show the trade-in price first now. It changed how we sell phones.”</p>
+      <footer><cite style="color:#0F1115;">Retail Operations Director</cite><span style="font-weight:300; color:#5C6373;">A Baltic electronics retailer</span></footer>
+    </blockquote>
+    <blockquote class="qu-card" data-k style="left:980px; top:467px; --x:80px; --d:1000ms; --o:.63s; --t:.9s;">
+      <p>“We see residual values by model and market before we set the next price.”</p>
+      <footer><cite style="color:#0F1115;">Head of Circular Programs</cite><span style="font-weight:300; color:#5C6373;">A European device brand</span></footer>
+    </blockquote>
+  </div>
+</section>
+
+<section data-section="metrics" id="metrics" class="v2-sec" data-tone="dark" style="--h:900px; background:#0F1115;">
+<style>
+  [data-section="metrics"] .me-m { position: absolute; top: 330px; width: 280px; height: 170px; white-space: nowrap; }
+  [data-section="metrics"] .me-m i { position: absolute; left: 0; top: -1px; height: 3px; border-radius: 2px; background: #B7D7FF; }
+  [data-section="metrics"] .me-m b { position: absolute; left: 0; top: 36px; font-weight: 300; font-size: 64px; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="metrics"] .me-m span { position: absolute; left: 0; top: 124px; font-size: 14px; color: #B7D7FF; }
+</style>
+  <div class="v2-canvas">
+    <div class="cu-abs" style="inset:0; background:#0F1115;"></div>
+    <img decoding="async" class="cu-glow" alt="" src="/v2/assets/customers-glow-metrics.svg" style="left:0; top:300px; width:1440px; height:820px;">
+    <div class="cu-abs" style="left:-40px; top:600px; width:1520px; height:576px; mix-blend-mode:lighten;">
+      <img decoding="async" class="cu-img" alt="A MacBook keyboard glowing in blue light" src="/v2/assets/customers-glowing-macbook.webp" data-k style="inset:0; width:100%; height:100%; object-fit:cover; --op:.9; --y:80px; --d:600ms; --o:1.8s; --t:2s;">
+    </div>
+    <div class="cu-abs" style="left:0; top:0; width:1440px; height:700px; background:linear-gradient(180deg, #0F1115 60%, rgba(15,17,21,0));"></div>
+    <h2 class="cu-abs cu-h2" data-k style="left:120px; top:130px; margin:0; --y:50px; --d:200ms; --o:.63s; --t:.9s;">Across every live program.</h2>
+    <p class="cu-abs" data-k style="left:120px; top:212px; font-weight:300; font-size:17px; color:rgba(245,247,250,.68); white-space:nowrap; --y:30px; --d:400ms; --o:.63s; --t:.9s;">Numbers from the platform, last 12 months.</p>
+    <div class="cu-abs" style="left:120px; top:330px; width:1200px; height:1px; background:rgba(183,215,255,.18);"></div>
+    <div class="me-m" data-k style="left:120px; --y:30px; --d:600ms; --o:.63s; --t:.9s;"><i data-w style="width:161px; --d:800ms;"></i><b>1.9M</b><span>Devices checked</span></div>
+    <div class="me-m" data-k style="left:420px; --y:30px; --d:800ms; --o:.63s; --t:.9s;"><i data-w style="width:208px; --d:1000ms;"></i><b>€240M</b><span>Value orchestrated</span></div>
+    <div class="me-m" data-k style="left:720px; --y:30px; --d:1000ms; --o:.63s; --t:.9s;"><i data-w style="width:104px; --d:1200ms;"></i><b>12</b><span>Markets live</span></div>
+    <div class="me-m" data-k style="left:1020px; --y:30px; --d:1200ms; --o:.63s; --t:.9s;"><i data-w style="width:143px; --d:1400ms;"></i><b>58 s</b><span>Median time to offer</span></div>
+  </div>
+</section>
+
+<section data-section="start" id="start" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 327.27px * var(--s)) calc(480px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 22.5%, rgba(18,26,90,.9) 45%, rgba(17,22,55,.45) 72.5%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="start"] .st-card { position: absolute; left: 1000px; top: 500px; width: 360px; padding: 26px 28px 20px; border-radius: 26px; background: rgba(15,17,21,.62); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="start"] .st-row { display: flex; align-items: center; justify-content: space-between; padding: 13px 0; font-size: 15px; white-space: nowrap; border-bottom: 1px solid rgba(183,215,255,.1); }
+  [data-section="start"] .st-row:last-child { border-bottom: 0; }
+  [data-section="start"] .st-row span { display: flex; align-items: center; gap: 10px; font-weight: 300; color: #A7B0BE; }
+  [data-section="start"] .st-row img { width: 6px; height: 6px; }
+  [data-section="start"] .st-row b { font-weight: 400; color: #F5F7FA; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="cu-glow" alt="" src="/v2/assets/customers-glow-start.svg" style="left:640px; top:-40px; width:1060px; height:960px;">
+    <img decoding="async" class="cu-glow" alt="" src="/v2/assets/customers-room-light-start.svg" style="left:670.45px; top:70px; width:972.1px; height:910px;">
+    <img decoding="async" class="cu-img" alt="Two iPhone Air in Light Gold" src="/v2/assets/customers-iphone-air-gold.webp" data-k style="left:900px; top:120px; width:513px; height:900px; --y:90px; --d:300ms; --o:1.3s; --t:1.5s;">
+
+    <div class="cu-abs" data-k style="left:120px; top:260px; display:flex; flex-direction:column; gap:28px; align-items:flex-start; --y:50px; --d:200ms; --o:.7s; --t:1s;">
+      <h2 class="cu-h2" style="margin:0; width:520px; font-size:64px; white-space:normal;">Start with one program.</h2>
+      <p class="cu-lede" style="width:450px;">Most customers begin with trade-in in a few stores. We set up the buyers, prices and payouts with you, then you add stores and programs.</p>
+      <div style="display:flex; gap:12px;">
+        <a href="/v2/design-your-program/" class="cu-btn cu-btn--white">Design your program</a>
+        <a href="/v2/design-your-program/" class="cu-btn cu-btn--ghost">Talk to our team</a>
+      </div>
+    </div>
+
+    <div class="st-card" data-k style="--sc:.6; --d:1200ms; --o:.3s; --t:.7s;">
+      <p style="font-size:13px; color:#A7B0BE; margin-bottom:16px;">Typical pilot</p>
+      <div class="st-row" data-k style="--y:14px; --d:1700ms; --o:.42s; --t:.6s;"><span><img decoding="async" alt="" src="/v2/assets/case-study-dot.svg">Stores</span><b>3, one market</b></div>
+      <div class="st-row" data-k style="--y:14px; --d:1880ms; --o:.42s; --t:.6s;"><span><img decoding="async" alt="" src="/v2/assets/case-study-dot.svg">POS integration</span><b>2 weeks</b></div>
+      <div class="st-row" data-k style="--y:14px; --d:2060ms; --o:.42s; --t:.6s;"><span><img decoding="async" alt="" src="/v2/assets/case-study-dot.svg">Local buyers</span><b>3–5</b></div>
+      <div class="st-row" data-k style="--y:14px; --d:2240ms; --o:.42s; --t:.6s;"><span><img decoding="async" alt="" src="/v2/assets/case-study-dot.svg">First report</span><b>Week 6</b></div>
+    </div>
+  </div>
+</section>
+
+<section data-section="closing" id="closing" class="v2-sec" style="--h:900px; background: radial-gradient(calc(1080px * var(--s)) calc(560px * var(--s)) at 50% calc(330px * var(--s)), rgba(48,71,236,.42) 0%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), #0F1115;" data-tone="dark">
+  <style>
+    [data-section="closing"] .cl-head {
+      position: absolute; left: 70px; top: 284px; width: 1300px; margin: 0; text-align: center;
+      font-weight: 400; font-size: 150px; line-height: .92; letter-spacing: -4.5px;
+      background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    }
+    [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 168px; }
+    [data-section="closing"] .cl-foot {
+      position: absolute; left: 20px; top: 557px; width: 1400px; height: 343px; padding: 56px 56px 40px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: radial-gradient(700px 380px at 10% 0%, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 70%), linear-gradient(135deg, rgba(28,34,72,.92) 0%, rgba(17,20,34,.92) 100%); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 -20px 60px rgba(0,0,0,.45); border-radius: 32px; color: #F5F7FA; line-height: normal;
+    }
+    [data-section="closing"] .cl-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    [data-section="closing"] .cl-sub { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+    [data-section="closing"] .cl-logo { position: relative; display: block; width: 99.3px; height: 30px; }
+    [data-section="closing"] .cl-logo img { position: absolute; display: block; max-width: none; }
+    [data-section="closing"] .cl-sub h3 { margin: 0; font-weight: 500; font-size: 14px; color: #F5F7FA; }
+    [data-section="closing"] .cl-sub p { margin: 0; font-size: 13px; color: rgba(255,255,255,.6); }
+    [data-section="closing"] form { display: flex; gap: 8px; align-items: flex-start; }
+    [data-section="closing"] input {
+      width: 260px; height: 46px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08); color: #fff; font: 400 14px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s;
+    }
+    [data-section="closing"] input::placeholder { color: rgba(255,255,255,.5); }
+    [data-section="closing"] input:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.1); }
+    [data-section="closing"] button {
+      border: 0; cursor: pointer; padding: 12px 18px; border-radius: 10px; background: #fff; color: #0F1115;
+      font: 500 14px/18px 'Geologica', system-ui, sans-serif; transition: background-color .25s, transform .25s var(--ease);
+    }
+    [data-section="closing"] button:hover { background: #B7D7FF; }
+    [data-section="closing"] .cl-cols { display: flex; gap: 96px; white-space: nowrap; }
+    [data-section="closing"] .cl-cols nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    [data-section="closing"] .cl-cols span { font-size: 13px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-cols a, [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 14px; color: #fff; transition: opacity .2s; }
+    [data-section="closing"] .cl-cols a:hover, [data-section="closing"] .cl-legal a:hover { opacity: .7; }
+    [data-section="closing"] .cl-bottom { display: flex; justify-content: space-between; font-size: 12px; }
+    [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
+    [data-section="closing"] .cl-legal { display: flex; gap: 10px; }
+    [data-section="closing"] .cl-legal a { font-size: 12px; color: rgba(255,255,255,.8); }
+  </style>
+  <div class="v2-canvas">
+    <h2 class="cl-head" data-m="up">Your program<br>could be <em>next</em></h2>
+
+    <footer class="cl-foot" data-m="up" style="--d:250ms">
+      <div class="cl-top">
+        <div class="cl-sub">
+          <a href="/v2/" class="cl-logo" aria-label="Fintegre home">
+            <img decoding="async" src="/v2/assets/case-study-foot-mark.svg" alt="" width="32.1605" height="23.0769" style="left:3.77px; top:3.46px;">
+            <img decoding="async" src="/v2/assets/case-study-foot-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
+          </a>
+          <h3>Get trade-in insights</h3>
+          <p>Market reports and program benchmarks. No spam.</p>
+          <form class="cl-form" novalidate>
+            <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="cl-cols">
+          <nav aria-label="Platform"><span>Platform</span>
+            <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device value intelligence</a><a href="/v2/platform/">Vendor network</a><a href="/v2/platform/">Integrations</a>
+          </nav>
+          <nav aria-label="Solutions"><span>Solutions</span>
+            <a href="/v2/solutions/">Retailers</a><a href="/v2/solutions/">Telecom operators</a><a href="/v2/solutions/">OEM and ecosystems</a><a href="/v2/solutions/">Apple and premium retail</a>
+          </nav>
+          <nav aria-label="Company"><span>Company</span>
+            <a href="/v2/customers/">Customers</a><a href="/v2/insights/">Insights</a><a href="/v2/company/">About</a><a href="/v2/company/">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="cl-bottom">
+        <small>© 2026 Fintegre. All rights reserved.</small>
+        <nav class="cl-legal" aria-label="Legal"><a href="#closing">Privacy</a><a href="#closing">Cookies</a><a href="#closing">Imprint</a></nav>
+      </div>
+    </footer>
+  </div>
+</section>
+</main>
+<script src="/v2/v2.js"></script>
+<script>
+// Closing footer: newsletter form has no backend yet, so it validates locally and confirms in place.
+(() => {
+  const form = document.querySelector('[data-section="closing"] .cl-form');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input');
+    const btn = form.querySelector('button');
+    if (!input.checkValidity()) { input.focus(); input.style.borderColor = 'rgba(255,140,140,.7)'; return; }
+    input.style.borderColor = '';
+    input.value = '';
+    input.placeholder = 'Thanks, you are on the list';
+    btn.textContent = 'Subscribed';
+    btn.disabled = true;
+  });
+  form.querySelector('input').addEventListener('input', (e) => { e.target.style.borderColor = ''; });
+})();
+</script>
+</body>
+</html>

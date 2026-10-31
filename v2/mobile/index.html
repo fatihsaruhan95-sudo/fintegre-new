@@ -15,6 +15,7 @@
 <script src="https://cdn.tailwindcss.com/3.4.17"></script>
 <link rel="stylesheet" href="../v2.css">
 <link rel="stylesheet" href="mobile.css">
+<link rel="stylesheet" href="menu.css">
 </head>
 <body>
 <nav class="ver-switch" aria-label="Site version">
@@ -41,11 +42,11 @@
     display: flex; align-items: center; justify-content: space-between;
     background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     box-shadow: inset 0 0 0 1px rgba(183,215,255,.14), 0 16px 40px rgba(0,0,0,.35); }
-  [data-section="hero"] .h-logo, .m-menu .h-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
-  [data-section="hero"] .h-mark, .m-menu .h-mark { position: relative; width: 26.4px; height: 20px; }
-  [data-section="hero"] .h-mark img, .m-menu .h-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
-  [data-section="hero"] .h-actions, .m-menu .h-actions { display: flex; align-items: center; gap: 6px; }
-  [data-section="hero"] .h-pillbtn, .m-menu .h-pillbtn { height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .h-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .h-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .h-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .h-actions { display: flex; align-items: center; gap: 6px; }
+  [data-section="hero"] .h-pillbtn { height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
   [data-section="hero"] .h-burger { width: 44px; height: 44px; border: 0; padding: 0; border-radius: 999px; background: rgba(255,255,255,.08);
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; }
   [data-section="hero"] .h-burger i { display: block; height: 1.5px; border-radius: 1px; background: #F5F7FA; }
@@ -98,57 +99,6 @@
   .motion [data-section="hero"] .h-fill { width: 8px; transition: width 1.4s var(--inout) 2.8s; }
   .motion [data-section="hero"].is-in .h-fill { width: 288px; }
 
-  /* ---- Open mobile menu (Figma 221:42): fixed full-screen overlay, 390-wide design zoomed by --s ---- */
-  .m-menu { position: fixed; inset: 0; z-index: 90; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
-    background: #0F1115; color: #F5F7FA; opacity: 0; transition: opacity .35s var(--ease); }
-  .m-menu[hidden] { display: none; }
-  .m-menu.is-open { opacity: 1; }
-  .m-menu p { margin: 0; }
-  .m-menu__in { position: relative; width: 390px; zoom: var(--s); min-height: calc(100dvh / var(--s)); overflow: clip;
-    display: flex; flex-direction: column; padding: 0 20px 36px;
-    background: radial-gradient(177.27px 281.33px at 106.36px 63.33%, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
-  .m-menu .mm-glow { position: absolute; pointer-events: none; max-width: none; }
-  .m-menu .mm-top { position: relative; margin: 12px -8px 0; width: 366px; height: 60px; padding: 8px 8px 8px 18px; border-radius: 999px;
-    display: flex; align-items: center; justify-content: space-between;
-    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    box-shadow: inset 0 0 0 1px rgba(183,215,255,.14), 0 16px 40px rgba(0,0,0,.35); }
-  .m-menu .mm-close { width: 44px; height: 44px; border: 0; padding: 0; border-radius: 999px; background: rgba(255,255,255,.12); display: grid; place-content: center; cursor: pointer; }
-  .m-menu .mm-close img { display: block; width: 16px; height: 16px; }
-  .m-menu .mm-nav { position: relative; width: 350px; margin-top: 36px; display: flex; flex-direction: column; }
-  .m-menu .mm-row { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(245,247,250,.1); }
-  .m-menu .mm-row > a { flex: 1; padding: 11px 0; font-size: 26px; line-height: normal; letter-spacing: -0.03em; color: rgba(245,247,250,.92); white-space: nowrap; }
-  .m-menu .mm-row > img { width: 20px; height: 20px; display: block; }
-  .m-menu .mm-tog { width: 44px; height: 44px; margin-right: -12px; border: 0; padding: 0; background: none; display: grid; place-content: center; cursor: pointer; }
-  .m-menu .mm-tog img { width: 20px; height: 20px; display: block; }
-  .m-menu .mm-tog .is-up { display: none; }
-  .m-menu .mm-group.is-open .mm-row { border-bottom-color: transparent; }
-  .m-menu .mm-group.is-open .mm-row > a { color: #F5F7FA; }
-  .m-menu .mm-group.is-open .mm-tog .is-up { display: block; }
-  .m-menu .mm-group.is-open .mm-tog .is-down { display: none; }
-  .m-menu .mm-sub { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); border-bottom: 1px solid rgba(245,247,250,.1); }
-  .m-menu .mm-group:not(.is-open) .mm-sub { border-bottom-color: transparent; margin-top: -1px; }
-  .m-menu .mm-group.is-open .mm-sub { grid-template-rows: 1fr; }
-  .m-menu .mm-sub > div { overflow: hidden; min-height: 0; }
-  .m-menu .mm-sub ul { list-style: none; margin: 0; padding: 4px 0 14px; display: flex; flex-direction: column; gap: 10px; }
-  .m-menu .mm-sub a { display: flex; align-items: center; gap: 10px; font-weight: 300; font-size: 15px; line-height: normal; color: rgba(245,247,250,.72); white-space: nowrap; }
-  .m-menu .mm-sub a.is-current { color: #F5F7FA; }
-  .m-menu .mm-sub img { width: 6px; height: 6px; display: block; }
-  .m-menu .mm-foot { position: relative; margin-top: auto; padding-top: 43.5px; display: flex; flex-direction: column; }
-  .m-menu .mm-card { width: 350px; display: flex; align-items: center; gap: 14px; padding: 14px 18px 14px 16px; border-radius: 24px;
-    background: rgba(255,255,255,.07); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-    box-shadow: inset 0 0 0 1px rgba(183,215,255,.16), 0 30px 60px rgba(0,0,0,.5); }
-  .m-menu .mm-cover { position: relative; flex: none; width: 44px; height: 58px; border-radius: 8px; background: #3047EC; }
-  .m-menu .mm-cover img { position: absolute; left: 8px; top: 22px; width: 28px; height: 20px; }
-  .m-menu .mm-card__txt { display: flex; flex-direction: column; gap: 4px; line-height: normal; white-space: pre; }
-  .m-menu .mm-card__txt span { font-size: 13px; color: #A7B0BE; }
-  .m-menu .mm-card__txt b { font-weight: 400; font-size: 16px; color: #F5F7FA; }
-  .m-menu .mm-cta { margin-top: 16px; width: 350px; height: 52px; border-radius: 999px; background: #3047EC; color: #F5F7FA; font-size: 15px; display: flex; align-items: center; justify-content: center; white-space: pre; }
-  .m-menu .mm-legal { margin-top: 24px; font-size: 13px; line-height: normal; color: #A7B0BE; white-space: pre; }
-  /* Menu entrance (Figma 2 s timeline) */
-  .motion .m-menu [data-mm] { opacity: 0; translate: 0 var(--ty, 24px); transition: opacity .56s var(--ease) var(--d, 0ms), translate .7s var(--ease) var(--d, 0ms); }
-  .motion .m-menu.is-open [data-mm] { opacity: 1; translate: none; }
-  html.m-menu-lock, html.m-menu-lock body { overflow: hidden; }
-  @media (prefers-reduced-motion: reduce) { .m-menu, .m-menu [data-mm] { transition: none !important; } }
 </style>
   <div class="v2-canvas">
     <img decoding="async" class="h-glow" alt="" src="assets/hero-glow-1.svg" style="left:-80px; top:280px; width:740px; height:740px;">
@@ -217,59 +167,6 @@
     </div>
   </div>
 
-  <div class="m-menu" id="m-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
-    <div class="m-menu__in">
-      <img decoding="async" class="mm-glow" alt="" src="assets/hero-menu-glow-1.svg" style="left:-280px; top:-260px; width:700px; height:660px;">
-      <img decoding="async" class="mm-glow" alt="" src="assets/hero-menu-glow-2.svg" style="left:50px; bottom:-206px; width:620px; height:580px;">
-
-      <div class="mm-top">
-        <a href="#hero" class="h-logo" aria-label="Fintegre home"><span class="h-mark"><img decoding="async" alt="" src="assets/hero-logo.svg"></span>Fintegre</a>
-        <div class="h-actions">
-          <a href="#closing" class="h-pillbtn">Design your program</a>
-          <button type="button" class="mm-close" data-menu-close aria-label="Close menu"><img decoding="async" alt="" src="assets/hero-menu-close.svg"></button>
-        </div>
-      </div>
-
-      <nav class="mm-nav" aria-label="Main">
-        <div class="mm-group is-open">
-          <div class="mm-row" data-mm style="--d:150ms;">
-            <a href="#programs">Platform</a>
-            <button type="button" class="mm-tog" aria-expanded="true" aria-controls="mm-sub-platform" aria-label="Platform pages"><img decoding="async" class="is-up" alt="" src="assets/hero-menu-chevron-up.svg"><img decoding="async" class="is-down" alt="" src="assets/hero-menu-chevron-down.svg"></button>
-          </div>
-          <div class="mm-sub" id="mm-sub-platform" data-mm style="--d:250ms; --ty:12px;"><div><ul>
-            <li><a href="#programs" class="is-current"><img decoding="async" alt="" src="assets/hero-menu-dot-on.svg">Trade-in orchestration</a></li>
-            <li><a href="#intelligence"><img decoding="async" alt="" src="assets/hero-menu-dot.svg">Device value intelligence</a></li>
-            <li><a href="#ecosystem"><img decoding="async" alt="" src="assets/hero-menu-dot.svg">Vendor network</a></li>
-            <li><a href="#tools"><img decoding="async" alt="" src="assets/hero-menu-dot.svg">Integrations</a></li>
-          </ul></div></div>
-        </div>
-        <div class="mm-group">
-          <div class="mm-row" data-mm style="--d:210ms;">
-            <a href="#ecosystem">Solutions</a>
-            <button type="button" class="mm-tog" aria-expanded="false" aria-controls="mm-sub-solutions" aria-label="Solutions pages"><img decoding="async" class="is-up" alt="" src="assets/hero-menu-chevron-up.svg"><img decoding="async" class="is-down" alt="" src="assets/hero-menu-chevron-down.svg"></button>
-          </div>
-          <div class="mm-sub" id="mm-sub-solutions"><div><ul>
-            <li><a href="#ecosystem"><img decoding="async" alt="" src="assets/hero-menu-dot.svg">Retailers</a></li>
-            <li><a href="#ecosystem"><img decoding="async" alt="" src="assets/hero-menu-dot.svg">Telecom operators</a></li>
-            <li><a href="#ecosystem"><img decoding="async" alt="" src="assets/hero-menu-dot.svg">Device brands</a></li>
-          </ul></div></div>
-        </div>
-        <div class="mm-row" data-mm style="--d:270ms;"><a href="#intelligence">Intelligence</a><img decoding="async" alt="" src="assets/hero-menu-chevron-right.svg"></div>
-        <div class="mm-row" data-mm style="--d:330ms;"><a href="#case-study">Customers</a><img decoding="async" alt="" src="assets/hero-menu-chevron-right.svg"></div>
-        <div class="mm-row" data-mm style="--d:390ms;"><a href="#insights">Insights</a><img decoding="async" alt="" src="assets/hero-menu-chevron-right.svg"></div>
-        <div class="mm-row" data-mm style="--d:450ms;"><a href="../../brandbook.html">Brandbook</a><img decoding="async" alt="" src="assets/hero-menu-chevron-right.svg"></div>
-      </nav>
-
-      <div class="mm-foot">
-        <a href="#insights" class="mm-card" data-mm style="--d:700ms; --ty:30px;">
-          <span class="mm-cover"><img decoding="async" alt="" src="assets/hero-menu-report.svg"></span>
-          <span class="mm-card__txt"><span>Latest report · Q3 2026</span><b>European Device Value Index  ↗</b></span>
-        </a>
-        <a href="#closing" class="mm-cta" data-mm style="--d:800ms; --ty:30px;">Talk to Fintegre  →</a>
-        <p class="mm-legal">Privacy    Cookies    Imprint    ·    EN</p>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section data-section="measured" id="measured" class="v2-sec" data-tone="dark" style="--h:1090px; background: radial-gradient(calc(177.27px * var(--s)) calc(363.33px * var(--s)) at calc(88.64px * var(--s)) calc(545px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
@@ -527,95 +424,121 @@
   </div>
 </section>
 
-<section data-section="ecosystem" id="ecosystem" class="v2-sec" style="--h:1061px; background:#0B0C10" data-tone="dark">
+<section data-section="ecosystem" id="ecosystem" class="v2-sec" style="--h:1530px; background:#0F1115" data-tone="dark">
   <style>
-    [data-section="ecosystem"] .ecm-bg { position:absolute; inset:0; background:radial-gradient(216.67px 442.08px at 108.33px 486.29px, rgba(27,39,128,.5) 0%, rgba(19,26,72,.25) 50%, rgba(11,12,16,0) 100%); pointer-events:none; }
+    /* Phone adaptation of the desktop "04 · Ecosystem" (no Figma mobile frame): photo cropped on top,
+       headline, the channel → Fintegre → buyers diagram turned into an L (in from above, out to the right), then the bid card. */
     [data-section="ecosystem"] .ecm-abs { position:absolute; margin:0; }
-    [data-section="ecosystem"] .ecm-h { left:20px; top:96px; width:350px; font-weight:400; font-size:40px; line-height:1; letter-spacing:-0.04em; color:#F5F7FA; }
-    [data-section="ecosystem"] .ecm-sub { left:20px; top:236px; width:340px; font-weight:300; font-size:16px; line-height:1.55; color:rgba(245,247,250,.68); }
-    [data-section="ecosystem"] .ecm-lbl { font-size:15px; line-height:normal; white-space:nowrap; color:#F5F7FA; }
-    [data-section="ecosystem"] .ecm-lbl--c { top:927px; text-align:center; transform:translateX(-50%); }
-    [data-section="ecosystem"] .ecm-fibres { position:absolute; left:0; top:0; overflow:visible; }
-    [data-section="ecosystem"] .ecm-glow { left:-85px; top:377px; width:560px; height:560px; pointer-events:none; }
-    [data-section="ecosystem"] .ecm-glow img { display:block; width:560px; height:560px; }
-    [data-section="ecosystem"] .ecm-hub { left:135px; top:597px; width:120px; height:120px; border-radius:30.4px; overflow:hidden;
-      background:linear-gradient(135deg, #B7D7FF 0%, #3047EC 71.429%); box-shadow:0 0 48px rgba(48,71,237,.7); }
-    [data-section="ecosystem"] .ecm-hub img { position:absolute; inset:0; width:120px; height:120px; object-fit:cover; transform:scaleX(-1); }
-    [data-section="ecosystem"] .ecm-hub::after { content:""; position:absolute; inset:0; border-radius:inherit; box-shadow:inset 0 .8px 0 rgba(184,214,255,.45); }
-    [data-section="ecosystem"] .ecm-pill { left:151px; top:726px; padding:7px 14px; border-radius:999px; background:rgba(15,17,21,.7);
-      backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); font-size:15px; line-height:normal; color:#F5F7FA; white-space:nowrap; }
+    [data-section="ecosystem"] .ecm-photo { left:0; top:0; width:390px; height:540px; overflow:hidden; }
+    [data-section="ecosystem"] .ecm-photo img { display:block; width:390px; height:540px; max-width:none; object-fit:cover; }
+    [data-section="ecosystem"] .ecm-tint { left:0; top:0; width:390px; height:540px; background:rgba(48,71,236,.05); }
+    [data-section="ecosystem"] .ecm-fade-top { left:0; top:0; width:390px; height:120px; background:linear-gradient(180deg, rgba(15,17,21,.55) 0%, rgba(15,17,21,0) 100%); }
+    [data-section="ecosystem"] .ecm-fade-bot { left:0; top:300px; width:390px; height:242px;
+      background:linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.75) 55%, #0F1115 100%); }
+    [data-section="ecosystem"] .ecm-room { left:-325px; top:620px; width:1040px; height:860px; pointer-events:none; }
+    [data-section="ecosystem"] .ecm-room img { display:block; width:1040px; height:860px; max-width:none; }
+    [data-section="ecosystem"] .ecm-h { left:20px; top:496px; width:350px; font-weight:400; font-size:40px; line-height:44px; letter-spacing:-0.03em; color:#F5F7FA; }
+    [data-section="ecosystem"] .ecm-sub { left:20px; top:652px; width:350px; font-weight:300; font-size:16px; line-height:25px; color:#A7B0BE; }
+    [data-section="ecosystem"] .ecm-chip { display:flex; align-items:center; gap:8px; height:32px; padding:8px 14px 8px 12px; border-radius:999px; overflow:hidden;
+      background:rgba(15,17,21,.55); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+      font-size:13px; font-weight:400; line-height:normal; color:#F5F7FA; white-space:nowrap; box-sizing:border-box; }
+    [data-section="ecosystem"] .ecm-chip img { display:block; width:6px; height:6px; flex:none; }
+    [data-section="ecosystem"] .ecm-chip--on { background:rgba(48,71,236,.95); }
+    [data-section="ecosystem"] .ecm-hub { left:24px; top:922px; width:72px; height:72px; border-radius:20px; box-shadow:0 0 40px rgba(48,71,236,.7); }
+    /* The 3D mark is mirrored so it faces right, toward the buyers. */
+    [data-section="ecosystem"] .ecm-hub img { display:block; width:72px; height:72px; border-radius:20px; object-fit:cover; transform:scaleX(-1); }
+    [data-section="ecosystem"] .ecm-hub-lbl { left:0; top:1004px; width:120px; text-align:center; font-size:13px; line-height:16px; color:#F5F7FA; }
+    [data-section="ecosystem"] .ecm-fibres { position:absolute; left:0; top:0; overflow:visible; pointer-events:none; }
+    [data-section="ecosystem"] .ecm-node { left:180px; top:298px; width:34px; height:34px; }
+    [data-section="ecosystem"] .ecm-node img { display:block; width:34px; height:34px; }
+    [data-section="ecosystem"] .ecm-card { left:40px; top:1130px; width:310px; box-sizing:border-box; display:flex; flex-direction:column; gap:14px; padding:24px 26px;
+      border:1px solid rgba(183,215,255,.14); border-radius:26px; overflow:hidden; background:rgba(255,255,255,.08);
+      backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px); box-shadow:0 30px 60px rgba(0,0,0,.45); }
+    [data-section="ecosystem"] .ecm-card p { margin:0; line-height:normal; white-space:nowrap; }
+    [data-section="ecosystem"] .ecm-card__eyebrow { font-size:13px; color:#B7D7FF; }
+    [data-section="ecosystem"] .ecm-card__title { font-size:22px; font-weight:300; color:#F5F7FA; }
+    [data-section="ecosystem"] .ecm-card__rows { display:flex; flex-direction:column; gap:9px; margin:0; font-size:14px; line-height:normal; }
+    [data-section="ecosystem"] .ecm-card__rows div { display:flex; justify-content:space-between; }
+    [data-section="ecosystem"] .ecm-card__rows dt { font-weight:300; color:#A7B0BE; }
+    [data-section="ecosystem"] .ecm-card__rows dd { margin:0; color:#F5F7FA; }
+    [data-section="ecosystem"] .ecm-card__div { height:1px; background:rgba(183,215,255,.14); }
+    [data-section="ecosystem"] .ecm-card__bid { display:flex; align-items:center; justify-content:space-between; padding:13px 14px; border-radius:14px; background:rgba(48,71,236,.9); color:#F5F7FA; }
+    [data-section="ecosystem"] .ecm-card__bid span:first-child { font-size:13px; }
+    [data-section="ecosystem"] .ecm-card__bid span:last-child { font-size:17px; }
+    [data-section="ecosystem"] .ecm-card__foot { font-size:13px; font-weight:300; color:#A7B0BE; }
 
-    /* Diagram motion — Figma timeline (seconds), shifted .4 s earlier because it starts when the diagram is on screen. */
-    .motion [data-section="ecosystem"] .ecm-in { opacity:0; translate:0 10px; transition:opacity .5s var(--ease) calc(var(--d) - .4s), translate .6s var(--ease) calc(var(--d) - .4s); }
-    .motion [data-section="ecosystem"].ecm-go .ecm-in { opacity:1; translate:none; }
-    .motion [data-section="ecosystem"] .ecm-fib { stroke-dasharray:1 1; stroke-dashoffset:1; transition:stroke-dashoffset var(--t) var(--inout) calc(var(--d) - .4s); }
-    .motion [data-section="ecosystem"].ecm-go .ecm-fib { stroke-dashoffset:0; }
-    .motion [data-section="ecosystem"] .ecm-hub { opacity:0; scale:.6; transition:opacity .3s var(--ease) 1.5s, scale .5s var(--spring) 1.5s; }
-    .motion [data-section="ecosystem"].ecm-go .ecm-hub { opacity:1; scale:1; }
-    .motion [data-section="ecosystem"] .ecm-glow { opacity:0; transition:opacity .8s var(--ease) 1.5s; }
-    .motion [data-section="ecosystem"].ecm-go .ecm-glow { opacity:1; }
+    /* Motion (desktop Figma timing). Photo, headline, node + chip play on .is-in; the diagram on .ecm-go and the
+       card on .ecm-card-go, each when it is itself on screen (js/04-ecosystem.js). Delays inside a group are relative. */
+    .motion [data-section="ecosystem"] .ecm-photo img { opacity:0; scale:1.06; transition:opacity 1s var(--ease), scale 2.6s var(--ease); }
+    .motion [data-section="ecosystem"].is-in .ecm-photo img { opacity:1; scale:1; }
+    .motion [data-section="ecosystem"] .ecm-in { opacity:0; translate:0 var(--y, 20px);
+      transition:opacity var(--to, .48s) var(--ease) var(--d), translate var(--tt, .6s) var(--ease) var(--d); }
+    .motion [data-section="ecosystem"] .ecm-pop { opacity:0; scale:.6; transition:opacity .3s var(--ease) var(--d), scale .7s var(--spring) var(--d); }
+    .motion [data-section="ecosystem"] .ecm-fib { stroke-dasharray:1 1; stroke-dashoffset:1; visibility:hidden;
+      transition:stroke-dashoffset var(--t, .6s) var(--inout) var(--d), visibility 0s linear var(--d); }
+    .motion [data-section="ecosystem"].is-in .ecm-g-top .ecm-in,
+    .motion [data-section="ecosystem"].ecm-go .ecm-g-map .ecm-in,
+    .motion [data-section="ecosystem"].ecm-card-go .ecm-g-card.ecm-in { opacity:1; translate:none; }
+    .motion [data-section="ecosystem"].is-in .ecm-g-top .ecm-pop,
+    .motion [data-section="ecosystem"].ecm-go .ecm-g-map .ecm-pop { opacity:1; scale:1; }
+    .motion [data-section="ecosystem"].ecm-go .ecm-g-map .ecm-fib,
+    .motion [data-section="ecosystem"].ecm-card-go .ecm-fib.ecm-g-card { stroke-dashoffset:0; visibility:visible; }
+    .motion [data-section="ecosystem"] .ecm-room { opacity:0; transition:opacity 1.2s var(--ease); }
+    .motion [data-section="ecosystem"].ecm-go .ecm-room { opacity:1; }
     @media (prefers-reduced-motion: reduce) { [data-section="ecosystem"] * { transition:none !important; } }
   </style>
   <div class="v2-canvas">
-    <div class="ecm-bg"></div>
-    <h2 class="ecm-abs ecm-h" data-m="up" style="--d:100ms">One layer between every device and every buyer.</h2>
-    <p class="ecm-abs ecm-sub" data-m="fade" style="--d:400ms">Every trade-in arrives from a different channel. Fintegre values it once and routes it to the buyer that pays most.</p>
+    <div class="ecm-abs ecm-photo"><img decoding="async" alt="Fintegre team member scanning a returned iPhone at a warehouse intake desk" src="assets/ecosystem-warehouse.webp" width="390" height="540"></div>
+    <div class="ecm-abs ecm-tint" aria-hidden="true"></div>
+    <div class="ecm-abs ecm-fade-top" aria-hidden="true"></div>
+    <div class="ecm-abs ecm-fade-bot" aria-hidden="true"></div>
+    <div class="ecm-abs ecm-room" aria-hidden="true"><img decoding="async" alt="" src="assets/ecosystem-room-light.svg" width="1040" height="860"></div>
 
-    <div class="ecm-abs ecm-glow" aria-hidden="true"><img decoding="async" alt="" src="assets/ecosystem-hub-glow.svg" width="560" height="560"></div>
-    <svg class="ecm-fibres" width="390" height="1061" viewBox="0 0 390 1061" fill="none" aria-hidden="true"><defs><linearGradient id="ecm-g0" x1="70.41" y1="0" x2="70.41" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#B8D6FF" stop-opacity="0.15"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g1" x1="68.16" y1="0" x2="68.16" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#B8D6FF" stop-opacity="0.15"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g2" x1="65.91" y1="0" x2="65.91" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#B8D6FF" stop-opacity="0.15"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g3" x1="63.66" y1="0" x2="63.66" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#B8D6FF" stop-opacity="0.15"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g4" x1="61.41" y1="0" x2="61.41" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#B8D6FF" stop-opacity="0.15"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g5" x1="59.16" y1="0" x2="59.16" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#B8D6FF" stop-opacity="0.15"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g6" x1="56.91" y1="0" x2="56.91" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#B8D6FF" stop-opacity="0.15"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g7" x1="54.66" y1="0" x2="54.66" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#B8D6FF" stop-opacity="0.15"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g8" x1="52.41" y1="0" x2="52.41" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#B8D6FF" stop-opacity="0.15"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g9" x1="1.45" y1="0" x2="1.45" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#F5F7FA" stop-opacity="0.15"/><stop offset="0.5" stop-color="#F5F7FA" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g10" x1="0.95" y1="0" x2="0.95" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#F5F7FA" stop-opacity="0.15"/><stop offset="0.5" stop-color="#F5F7FA" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g11" x1="0.95" y1="0" x2="0.95" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#F5F7FA" stop-opacity="0.15"/><stop offset="0.5" stop-color="#F5F7FA" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g12" x1="0.95" y1="0" x2="0.95" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#F5F7FA" stop-opacity="0.15"/><stop offset="0.5" stop-color="#F5F7FA" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g13" x1="1.45" y1="0" x2="1.45" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#F5F7FA" stop-opacity="0.15"/><stop offset="0.5" stop-color="#F5F7FA" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g14" x1="54.41" y1="0" x2="54.41" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB547" stop-opacity="0.15"/><stop offset="0.5" stop-color="#FFB547" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g15" x1="56.41" y1="0" x2="56.41" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB547" stop-opacity="0.15"/><stop offset="0.5" stop-color="#FFB547" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g16" x1="58.41" y1="0" x2="58.41" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB547" stop-opacity="0.15"/><stop offset="0.5" stop-color="#FFB547" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g17" x1="60.41" y1="0" x2="60.41" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB547" stop-opacity="0.15"/><stop offset="0.5" stop-color="#FFB547" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g18" x1="62.41" y1="0" x2="62.41" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB547" stop-opacity="0.15"/><stop offset="0.5" stop-color="#FFB547" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g19" x1="64.41" y1="0" x2="64.41" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB547" stop-opacity="0.15"/><stop offset="0.5" stop-color="#FFB547" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g20" x1="66.41" y1="0" x2="66.41" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB547" stop-opacity="0.15"/><stop offset="0.5" stop-color="#FFB547" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g21" x1="68.41" y1="0" x2="68.41" y2="204" gradientUnits="userSpaceOnUse"><stop stop-color="#FFB547" stop-opacity="0.15"/><stop offset="0.5" stop-color="#FFB547" stop-opacity="0.45"/><stop offset="1" stop-color="white" stop-opacity="0.71"/></linearGradient><linearGradient id="ecm-g22" x1="66.775" y1="0" x2="66.775" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g23" x1="64.775" y1="0" x2="64.775" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g24" x1="62.775" y1="0" x2="62.775" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g25" x1="60.775" y1="0" x2="60.775" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g26" x1="58.775" y1="0" x2="58.775" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g27" x1="56.775" y1="0" x2="56.775" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g28" x1="54.775" y1="0" x2="54.775" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g29" x1="4.45" y1="0" x2="4.45" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g30" x1="2.85" y1="0" x2="2.85" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g31" x1="1.25" y1="0" x2="1.25" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g32" x1="1.25" y1="0" x2="1.25" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g33" x1="2.85" y1="0" x2="2.85" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g34" x1="4.45" y1="0" x2="4.45" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g35" x1="56.775" y1="0" x2="56.775" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g36" x1="58.375" y1="0" x2="58.375" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g37" x1="59.975" y1="0" x2="59.975" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g38" x1="61.575" y1="0" x2="61.575" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g39" x1="63.175" y1="0" x2="63.175" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient><linearGradient id="ecm-g40" x1="64.775" y1="0" x2="64.775" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="white" stop-opacity="0.85"/><stop offset="0.5" stop-color="#B8D6FF" stop-opacity="0.5"/><stop offset="1" stop-color="#5C73FF" stop-opacity="0.45"/></linearGradient></defs>
-<path class="ecm-fib" pathLength="1" transform="translate(35.55 401)" d="M0.45 0C0.45 120 140.37 84 140.37 204" stroke-width="0.9" stroke="url(#ecm-g0)" style="--d:0.600s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(43.55 401)" d="M0.45 0C0.45 120 135.87 84 135.87 204" stroke-width="0.9" stroke="url(#ecm-g1)" style="--d:0.635s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(51.55 401)" d="M0.45 0C0.45 120 131.37 84 131.37 204" stroke-width="0.9" stroke="url(#ecm-g2)" style="--d:0.670s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(59.55 401)" d="M0.45 0C0.45 120 126.87 84 126.87 204" stroke-width="0.9" stroke="url(#ecm-g3)" style="--d:0.705s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(67.55 401)" d="M0.45 0C0.45 120 122.37 84 122.37 204" stroke-width="0.9" stroke="url(#ecm-g4)" style="--d:0.740s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(75.55 401)" d="M0.45 0C0.45 120 117.87 84 117.87 204" stroke-width="0.9" stroke="url(#ecm-g5)" style="--d:0.775s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(83.55 401)" d="M0.45 0C0.45 120 113.37 84 113.37 204" stroke-width="0.9" stroke="url(#ecm-g6)" style="--d:0.810s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(91.55 401)" d="M0.45 0C0.45 120 108.87 84 108.87 204" stroke-width="0.9" stroke="url(#ecm-g7)" style="--d:0.845s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(99.55 401)" d="M0.45 0C0.45 120 104.37 84 104.37 204" stroke-width="0.9" stroke="url(#ecm-g8)" style="--d:0.880s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(178.55 401)" d="M0.45 0C0.45 120 2.45 84 2.45 204" stroke-width="0.9" stroke="url(#ecm-g9)" style="--d:0.915s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(186.55 401)" d="M0.45 0C0.45 120 1.45 84 1.45 204" stroke-width="0.9" stroke="url(#ecm-g10)" style="--d:0.950s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(194.55 401)" d="M0.45 0V204" stroke-width="0.9" stroke="url(#ecm-g11)" style="--d:0.985s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(201.55 401)" d="M1.45 0C1.45 120 0.45 84 0.45 204" stroke-width="0.9" stroke="url(#ecm-g12)" style="--d:1.020s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(208.55 401)" d="M2.45 0C2.45 120 0.45 84 0.45 204" stroke-width="0.9" stroke="url(#ecm-g13)" style="--d:1.055s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(185.63 401)" d="M108.37 0C108.37 120 0.45 84 0.45 204" stroke-width="0.9" stroke="url(#ecm-g14)" style="--d:1.090s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(189.63 401)" d="M112.37 0C112.37 120 0.45 84 0.45 204" stroke-width="0.9" stroke="url(#ecm-g15)" style="--d:1.125s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(193.63 401)" d="M116.37 0C116.37 120 0.45 84 0.45 204" stroke-width="0.9" stroke="url(#ecm-g16)" style="--d:1.160s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(197.63 401)" d="M120.37 0C120.37 120 0.45 84 0.45 204" stroke-width="0.9" stroke="url(#ecm-g17)" style="--d:1.195s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(201.63 401)" d="M124.37 0C124.37 120 0.45 84 0.45 204" stroke-width="0.9" stroke="url(#ecm-g18)" style="--d:1.230s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(205.63 401)" d="M128.37 0C128.37 120 0.45 84 0.45 204" stroke-width="0.9" stroke="url(#ecm-g19)" style="--d:1.265s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(209.63 401)" d="M132.37 0C132.37 120 0.45 84 0.45 204" stroke-width="0.9" stroke="url(#ecm-g20)" style="--d:1.300s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(213.63 401)" d="M136.37 0C136.37 120 0.45 84 0.45 204" stroke-width="0.9" stroke="url(#ecm-g21)" style="--d:1.335s;--t:1.4s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(43.55 711)" d="M133.1 0C133.1 110 0.45 90 0.45 200" stroke-width="0.9" stroke="url(#ecm-g22)" style="--d:2.200s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(51.55 711)" d="M129.1 0C129.1 110 0.45 90 0.45 200" stroke-width="0.9" stroke="url(#ecm-g23)" style="--d:2.235s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(59.55 711)" d="M125.1 0C125.1 110 0.45 90 0.45 200" stroke-width="0.9" stroke="url(#ecm-g24)" style="--d:2.270s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(67.55 711)" d="M121.1 0C121.1 110 0.45 90 0.45 200" stroke-width="0.9" stroke="url(#ecm-g25)" style="--d:2.305s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(75.55 711)" d="M117.1 0C117.1 110 0.45 90 0.45 200" stroke-width="0.9" stroke="url(#ecm-g26)" style="--d:2.340s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(83.55 711)" d="M113.1 0C113.1 110 0.45 90 0.45 200" stroke-width="0.9" stroke="url(#ecm-g27)" style="--d:2.375s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(91.55 711)" d="M109.1 0C109.1 110 0.45 90 0.45 200" stroke-width="0.9" stroke="url(#ecm-g28)" style="--d:2.410s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(174.55 711)" d="M8.45 0C8.45 110 0.45 90 0.45 200" stroke-width="0.9" stroke="url(#ecm-g29)" style="--d:2.445s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(182.55 711)" d="M5.25 0C5.25 110 0.45 90 0.45 200" stroke-width="0.9" stroke="url(#ecm-g30)" style="--d:2.480s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(190.55 711)" d="M2.05 0C2.05 110 0.45 90 0.45 200" stroke-width="0.9" stroke="url(#ecm-g31)" style="--d:2.515s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(196.95 711)" d="M0.45 0C0.45 110 2.05 90 2.05 200" stroke-width="0.9" stroke="url(#ecm-g32)" style="--d:2.550s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(201.75 711)" d="M0.45 0C0.45 110 5.25 90 5.25 200" stroke-width="0.9" stroke="url(#ecm-g33)" style="--d:2.585s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(206.55 711)" d="M0.45 0C0.45 110 8.45 90 8.45 200" stroke-width="0.9" stroke="url(#ecm-g34)" style="--d:2.620s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(188.90 711)" d="M0.45 0C0.45 110 113.1 90 113.1 200" stroke-width="0.9" stroke="url(#ecm-g35)" style="--d:2.655s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(193.70 711)" d="M0.45 0C0.45 110 116.3 90 116.3 200" stroke-width="0.9" stroke="url(#ecm-g36)" style="--d:2.690s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(198.50 711)" d="M0.45 0C0.45 110 119.5 90 119.5 200" stroke-width="0.9" stroke="url(#ecm-g37)" style="--d:2.725s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(203.30 711)" d="M0.45 0C0.45 110 122.7 90 122.7 200" stroke-width="0.9" stroke="url(#ecm-g38)" style="--d:2.760s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(208.10 711)" d="M0.45 0C0.45 110 125.9 90 125.9 200" stroke-width="0.9" stroke="url(#ecm-g39)" style="--d:2.795s;--t:1.2s"/>
-<path class="ecm-fib" pathLength="1" transform="translate(212.90 711)" d="M0.45 0C0.45 110 129.1 90 129.1 200" stroke-width="0.9" stroke="url(#ecm-g40)" style="--d:2.830s;--t:1.2s"/>
-<g class="ecm-dots"><circle cx="36" cy="401" r="2" fill="#B8D6FF" fill-opacity="0.8"/><circle cx="44" cy="401" r="2" fill="#B8D6FF" fill-opacity="0.8"/><circle cx="52" cy="401" r="2" fill="#B8D6FF" fill-opacity="0.8"/><circle cx="60" cy="401" r="2" fill="#B8D6FF" fill-opacity="0.8"/><circle cx="68" cy="401" r="2" fill="#B8D6FF" fill-opacity="0.8"/><circle cx="76" cy="401" r="2" fill="#B8D6FF" fill-opacity="0.8"/><circle cx="84" cy="401" r="2" fill="#B8D6FF" fill-opacity="0.8"/><circle cx="92" cy="401" r="2" fill="#B8D6FF" fill-opacity="0.8"/><circle cx="100" cy="401" r="2" fill="#B8D6FF" fill-opacity="0.8"/><circle cx="179" cy="401" r="2" fill="#F5F7FA" fill-opacity="0.8"/><circle cx="187" cy="401" r="2" fill="#F5F7FA" fill-opacity="0.8"/><circle cx="195" cy="401" r="2" fill="#F5F7FA" fill-opacity="0.8"/><circle cx="203" cy="401" r="2" fill="#F5F7FA" fill-opacity="0.8"/><circle cx="211" cy="401" r="2" fill="#F5F7FA" fill-opacity="0.8"/><circle cx="294" cy="401" r="2" fill="#FFB547" fill-opacity="0.8"/><circle cx="302" cy="401" r="2" fill="#FFB547" fill-opacity="0.8"/><circle cx="310" cy="401" r="2" fill="#FFB547" fill-opacity="0.8"/><circle cx="318" cy="401" r="2" fill="#FFB547" fill-opacity="0.8"/><circle cx="326" cy="401" r="2" fill="#FFB547" fill-opacity="0.8"/><circle cx="334" cy="401" r="2" fill="#FFB547" fill-opacity="0.8"/><circle cx="342" cy="401" r="2" fill="#FFB547" fill-opacity="0.8"/><circle cx="350" cy="401" r="2" fill="#FFB547" fill-opacity="0.8"/><circle cx="44" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="52" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="60" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="68" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="76" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="84" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="92" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="175" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="183" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="191" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="199" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="207" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="215" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="302" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="310" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="318" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="326" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="334" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/><circle cx="342" cy="911" r="2" fill="#B7D7FF" fill-opacity="0.8"/></g></svg>
+    <div class="ecm-g-top">
+      <div class="ecm-abs ecm-node ecm-pop" style="--d:1s" aria-hidden="true"><img decoding="async" alt="" src="assets/ecosystem-node.svg" width="34" height="34"></div>
+      <div class="ecm-abs ecm-chip ecm-in" style="left:137px; top:372px; --d:1.2s; --to:.72s; --tt:.9s"><img decoding="async" alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Scanned on arrival · 2 s</div>
+      <h2 class="ecm-abs ecm-h ecm-in" style="--y:40px; --d:.3s; --to:.72s; --tt:.9s">Behind every offer, a team that knows devices.</h2>
+      <p class="ecm-abs ecm-sub ecm-in" style="--y:30px; --d:.6s; --to:.72s; --tt:.9s">Every trade-in arrives from a different channel. Fintegre values it once and routes it to the buyer that pays most: refurbishers and recommerce partners who grade every device by hand.</p>
+    </div>
 
-    <p class="ecm-abs ecm-lbl ecm-in" style="left:48px;top:367px;--d:.5s">Store</p>
-    <p class="ecm-abs ecm-lbl ecm-in" style="left:171px;top:367px;--d:.5s">Online</p>
-    <p class="ecm-abs ecm-lbl ecm-in" style="left:286px;top:367px;--d:.5s">In the app</p>
+    <div class="ecm-g-map">
+      <svg class="ecm-fibres" width="390" height="1530" viewBox="0 0 390 1530" fill="none" aria-hidden="true">
+        <g stroke="#B7D7FF" stroke-width="1.4" stroke-linecap="round">
+          <path class="ecm-fib" pathLength="1" stroke-opacity=".5" d="M57.5 862.7C57.5 892 60 892 60 921.3" style="--d:.2s"/>
+          <path class="ecm-fib" pathLength="1" stroke-opacity=".5" d="M144 862.7C144 900 60 884 60 921.3" style="--d:.35s"/>
+          <path class="ecm-fib" pathLength="1" stroke-opacity=".5" d="M245 862.7C245 906 60 879 60 921.3" style="--d:.5s"/>
+          <path class="ecm-fib" pathLength="1" stroke-opacity=".5" d="M96.7 958C126 958 116 958 146.3 958" style="--d:.6s"/>
+          <path class="ecm-fib" pathLength="1" stroke-opacity=".5" d="M96.7 958C126 958 116 1012 146.3 1012" style="--d:.75s"/>
+          <path class="ecm-fib" pathLength="1" stroke-opacity=".5" d="M96.7 958C126 958 116 1066 146.3 1066" style="--d:.9s"/>
+        </g>
+      </svg>
+      <div class="ecm-abs ecm-chip ecm-in" style="left:20px; top:830px; --d:0s"><img decoding="async" alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Store</div>
+      <div class="ecm-abs ecm-chip ecm-in" style="left:103px; top:830px; --d:.15s"><img decoding="async" alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Online</div>
+      <div class="ecm-abs ecm-chip ecm-in" style="left:193px; top:830px; --d:.3s"><img decoding="async" alt="" src="assets/ecosystem-dot.svg" width="6" height="6">In the app</div>
+      <div class="ecm-abs ecm-hub ecm-pop" style="--d:.4s"><img decoding="async" alt="Fintegre" src="../assets/ecosystem-3d-mark.jpg" width="72" height="72"></div>
+      <p class="ecm-abs ecm-hub-lbl ecm-in" style="--d:.5s; --y:0px" aria-hidden="true">Fintegre</p>
+      <div class="ecm-abs ecm-chip ecm-in" style="left:150px; top:942px; --d:.9s"><img decoding="async" alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Buyers</div>
+      <div class="ecm-abs ecm-chip ecm-chip--on ecm-in" style="left:150px; top:996px; --d:1.05s"><img decoding="async" alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Refurbishers</div>
+      <div class="ecm-abs ecm-chip ecm-in" style="left:150px; top:1050px; --d:1.2s"><img decoding="async" alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Recommerce partners</div>
+    </div>
 
-    <div class="ecm-abs ecm-hub"><img decoding="async" alt="Fintegre" src="../assets/ecosystem-3d-mark.jpg" width="120" height="120"></div>
-    <p class="ecm-abs ecm-pill ecm-in" style="--d:2.1s">Fintegre</p>
-
-    <div class="ecm-abs ecm-lbl--c" style="left:68.5px"><p class="ecm-lbl ecm-in" style="--d:3s;margin:0">Buyers</p></div>
-    <div class="ecm-abs ecm-lbl--c" style="left:195px"><p class="ecm-lbl ecm-in" style="--d:3.15s;margin:0">Refurbishers</p></div>
-    <div class="ecm-abs ecm-lbl--c" style="left:322.5px"><p class="ecm-lbl ecm-in" style="--d:3.3s;margin:0">Recommerce<br>partners</p></div>
+    <!-- Refurbishers → bid card fibre, drawn after the card lands. -->
+    <svg class="ecm-fibres" width="390" height="1530" viewBox="0 0 390 1530" fill="none" aria-hidden="true">
+      <path class="ecm-fib ecm-g-card" pathLength="1" stroke="#B7D7FF" stroke-width="1.4" stroke-linecap="round" stroke-opacity=".55" d="M274 1012C318 1012 332 1062 322 1131" style="--d:.5s; --t:.8s"/>
+    </svg>
+    <article class="ecm-abs ecm-card ecm-in ecm-g-card" style="--y:40px; --d:0s; --to:.72s; --tt:.9s" aria-label="Example refurbisher bid">
+      <p class="ecm-card__eyebrow">Certified refurbisher · Vilnius</p>
+      <p class="ecm-card__title">iPhone 15 Pro · 256 GB</p>
+      <dl class="ecm-card__rows">
+        <div><dt>Screen</dt><dd>Grade A</dd></div>
+        <div><dt>Battery</dt><dd>91 %</dd></div>
+        <div><dt>Casing</dt><dd>Grade B</dd></div>
+        <div><dt>IMEI</dt><dd>Clean</dd></div>
+      </dl>
+      <div class="ecm-card__div" aria-hidden="true"></div>
+      <p class="ecm-card__bid"><span>Best of 4 bids</span><span>€486</span></p>
+      <p class="ecm-card__foot">Graded by hand in 6 min</p>
+    </article>
   </div>
 </section>
 
@@ -1452,7 +1375,63 @@
   </div>
 </section>
 </main>
+  <div class="m-menu" id="m-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <div class="m-menu__in">
+      <img decoding="async" class="mm-glow" alt="" src="/v2/mobile/assets/hero-menu-glow-1.svg" style="left:-280px; top:-260px; width:700px; height:660px;">
+      <img decoding="async" class="mm-glow" alt="" src="/v2/mobile/assets/hero-menu-glow-2.svg" style="left:50px; bottom:-206px; width:620px; height:580px;">
+
+      <div class="mm-top">
+        <a href="/v2/" class="h-logo" aria-label="Fintegre home"><span class="h-mark"><img decoding="async" alt="" src="/v2/mobile/assets/hero-logo.svg"></span>Fintegre</a>
+        <div class="h-actions">
+          <a href="/v2/design-your-program/" class="h-pillbtn">Design your program</a>
+          <button type="button" class="mm-close" data-menu-close aria-label="Close menu"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-close.svg"></button>
+        </div>
+      </div>
+
+      <nav class="mm-nav" aria-label="Main">
+        <div class="mm-group is-open">
+          <div class="mm-row" data-mm style="--d:150ms;">
+            <a href="/v2/platform/">Platform</a>
+            <button type="button" class="mm-tog" aria-expanded="true" aria-controls="mm-sub-platform" aria-label="Platform pages"><img decoding="async" class="is-up" alt="" src="/v2/mobile/assets/hero-menu-chevron-up.svg"><img decoding="async" class="is-down" alt="" src="/v2/mobile/assets/hero-menu-chevron-down.svg"></button>
+          </div>
+          <div class="mm-sub" id="mm-sub-platform" data-mm style="--d:250ms; --ty:12px;"><div><ul>
+            <li><a href="/v2/platform/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot-on.svg">Trade-in orchestration</a></li>
+            <li><a href="/v2/intelligence/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device value intelligence</a></li>
+            <li><a href="/v2/platform/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Vendor network</a></li>
+            <li><a href="/v2/platform/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Integrations</a></li>
+          </ul></div></div>
+        </div>
+        <div class="mm-group">
+          <div class="mm-row" data-mm style="--d:210ms;">
+            <a href="/v2/solutions/">Solutions</a>
+            <button type="button" class="mm-tog" aria-expanded="false" aria-controls="mm-sub-solutions" aria-label="Solutions pages"><img decoding="async" class="is-up" alt="" src="/v2/mobile/assets/hero-menu-chevron-up.svg"><img decoding="async" class="is-down" alt="" src="/v2/mobile/assets/hero-menu-chevron-down.svg"></button>
+          </div>
+          <div class="mm-sub" id="mm-sub-solutions"><div><ul>
+            <li><a href="/v2/solutions/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Retailers</a></li>
+            <li><a href="/v2/solutions/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Telecom operators</a></li>
+            <li><a href="/v2/solutions/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device brands</a></li>
+          </ul></div></div>
+        </div>
+        <div class="mm-row" data-mm style="--d:270ms;"><a href="/v2/intelligence/">Intelligence</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:330ms;"><a href="/v2/customers/">Customers</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:390ms;"><a href="/v2/insights/">Insights</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:450ms;"><a href="/v2/company/">Company</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:510ms;"><a href="/brandbook.html">Brandbook</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+      </nav>
+
+      <div class="mm-foot">
+        <a href="/v2/report/" class="mm-card" data-mm style="--d:700ms; --ty:30px;">
+          <span class="mm-cover"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-report.svg"></span>
+          <span class="mm-card__txt"><span>Latest report · Q3 2026</span><b>European Device Value Index  ↗</b></span>
+        </a>
+        <a href="/v2/design-your-program/" class="mm-cta" data-mm style="--d:800ms; --ty:30px;">Talk to Fintegre  →</a>
+        <p class="mm-legal">Privacy    Cookies    Imprint    ·    EN</p>
+      </div>
+    </div>
+  </div>
+
 <script src="../v2.js"></script>
+<script src="menu.js"></script>
 <script>
   // Marks the top of the page, where the version switch shows below the hero's top bar.
   V2.onScroll(() => document.documentElement.classList.toggle('m-top', scrollY < 200));

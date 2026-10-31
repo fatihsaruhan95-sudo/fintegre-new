@@ -1,0 +1,44 @@
+<section data-section="believe" id="believe" class="v2-sec" data-tone="light" style="--h:978px; background:#F5F7FA;">
+<style>
+  [data-section="believe"] p, [data-section="believe"] h2, [data-section="believe"] h3 { margin: 0; }
+  [data-section="believe"] .cb-col { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; padding: 96px 20px 88px; }
+  [data-section="believe"] h2 { width: 350px; font-weight: 400; font-size: 40px; line-height: 1.02; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="believe"] .cb-lede { width: 320px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.62); }
+  [data-section="believe"] .cb-list { width: 350px; margin: 0; padding: 0; list-style: none; }
+  [data-section="believe"] .cb-item { display: flex; gap: 16px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid rgba(15,17,21,.1); outline: none; -webkit-tap-highlight-color: transparent; }
+  [data-section="believe"] .cb-item:first-child { border-top: 1px solid rgba(15,17,21,.1); }
+  [data-section="believe"] .cb-dot { position: relative; flex: none; width: 10px; height: 10px; margin-top: 1px; }
+  [data-section="believe"] .cb-dot img { position: absolute; inset: 0; width: 10px; height: 10px; display: block; transition: opacity .35s var(--ease), scale .45s var(--spring); }
+  [data-section="believe"] .cb-dot img + img { opacity: 0; scale: .4; }
+  [data-section="believe"] .cb-item.is-active .cb-dot img + img { opacity: 1; scale: 1; }
+  [data-section="believe"] .cb-text { display: flex; flex-direction: column; gap: 10px; flex: 1; min-width: 0; }
+  [data-section="believe"] .cb-text h3 { font-weight: 400; font-size: 22px; line-height: normal; letter-spacing: -0.02em; color: #0F1115; }
+  [data-section="believe"] .cb-text p { font-weight: 300; font-size: 15px; line-height: 1.55; color: rgba(15,17,21,.62); }
+  .motion [data-section="believe"] [data-m="up"] { translate: 0 var(--ty, 30px); }
+  .motion [data-section="believe"].is-in [data-m] { translate: none; }
+</style>
+  <div class="v2-canvas">
+    <div class="cb-col">
+      <h2 data-m="up" style="--d:100ms">What we believe.</h2>
+      <p class="cb-lede" data-m="up" style="--d:200ms">Four ideas that decide how we build the product and who we work with.</p>
+      <ul class="cb-list">
+        <li class="cb-item is-active" tabindex="0" data-m="up" style="--d:350ms">
+          <span class="cb-dot"><img alt="" src="/v2/assets/company-believe-dot.svg"><img alt="" src="/v2/assets/company-believe-dot-on.svg"></span>
+          <div class="cb-text"><h3>A used device is stock, not waste.</h3><p>Every phone in a drawer has a price. Our job is to find it and pay it out while it is still high.</p></div>
+        </li>
+        <li class="cb-item" tabindex="0" data-m="up" style="--d:450ms">
+          <span class="cb-dot"><img alt="" src="/v2/assets/company-believe-dot.svg"><img alt="" src="/v2/assets/company-believe-dot-on.svg"></span>
+          <div class="cb-text"><h3>The customer should see one number.</h3><p>Checked, valued and paid in under a minute. No forms, no waiting for a quote by email.</p></div>
+        </li>
+        <li class="cb-item" tabindex="0" data-m="up" style="--d:550ms">
+          <span class="cb-dot"><img alt="" src="/v2/assets/company-believe-dot.svg"><img alt="" src="/v2/assets/company-believe-dot-on.svg"></span>
+          <div class="cb-text"><h3>Buyers compete. We do not pick them.</h3><p>Each device goes to the best bid in its market, not to a fixed partner with a fixed price.</p></div>
+        </li>
+        <li class="cb-item" tabindex="0" data-m="up" style="--d:650ms">
+          <span class="cb-dot"><img alt="" src="/v2/assets/company-believe-dot.svg"><img alt="" src="/v2/assets/company-believe-dot-on.svg"></span>
+          <div class="cb-text"><h3>Your brand stays in front.</h3><p>We work behind your store, your site and your app. Customers never need to know our name.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 327.27px * var(--s)) calc(480px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 22.5%, rgba(18,26,90,.9) 45%, rgba(17,22,55,.45) 72.5%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  /* Page-wide helpers for the Customers page (this file is the first section, so these load first). */
+  .page .v2-canvas { line-height: normal; }
+  .page .v2-canvas p { margin: 0; }
+  .cu-abs { position: absolute; }
+  .cu-glow { position: absolute; pointer-events: none; max-width: none; display: block; }
+  .cu-img { position: absolute; display: block; max-width: none; object-fit: contain; pointer-events: none; }
+  .cu-glass { background: rgba(255,255,255,.06); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  .cu-btn { display: inline-flex; align-items: center; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; padding: 14px 22px; transition: background-color .25s, box-shadow .25s, color .25s; }
+  .cu-btn--white { background: #fff; color: #0F1115; }
+  .cu-btn--white:hover { background: #B7D7FF; }
+  .cu-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  .cu-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.6); }
+  .cu-h2 { font-weight: 400; font-size: 60px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  .cu-lede { font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  .cu-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px 10px 14px; border-radius: 999px; white-space: nowrap; font-size: 14px; color: #F5F7FA; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+  .cu-chip img { width: 6px; height: 6px; display: block; }
+  svg.cu-abs { overflow: visible; }
+
+  @property --x { syntax: '*'; inherits: false; }
+  @property --y { syntax: '*'; inherits: false; }
+  @property --sc { syntax: '*'; inherits: false; }
+  @property --op { syntax: '*'; inherits: false; }
+  /* Entrance system for this page: data-k + --x/--y/--sc offsets, --d delay, --o/--t durations (Figma timeline). */
+  .motion [data-k] { opacity: 0; translate: var(--x, 0px) var(--y, 0px); scale: var(--sc, 1);
+    transition: opacity var(--o, .7s) var(--ease) var(--d, 0ms), translate var(--t, 1s) var(--ease) var(--d, 0ms), scale var(--t, .7s) var(--spring) var(--d, 0ms); }
+  .motion .is-in [data-k] { opacity: var(--op, 1); translate: none; scale: 1; }
+  .motion [data-w] { transform: scaleX(0); transform-origin: 0 50%; transition: transform var(--t, 1.4s) var(--inout) var(--d, 0ms); }
+  .motion .is-in [data-w] { transform: none; }
+
+  /* Top bar (part of the hero design) */
+  [data-section="hero"] .cu-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; }
+  [data-section="hero"] .cu-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .cu-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .cu-mark img { position: absolute; left: 2.49px; top: 2.33px; width: 21.38px; height: 15.34px; max-width: none; }
+  [data-section="hero"] .cu-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .cu-nav a { transition: color .2s; }
+  [data-section="hero"] .cu-nav a:hover, [data-section="hero"] .cu-nav a[aria-current] { color: #F5F7FA; }
+  [data-section="hero"] .cu-top .cu-btn { padding: 10px 18px; background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .cu-top .cu-btn:hover { background: #fff; }
+
+  [data-section="hero"] h1 { position: absolute; left: 120px; top: 200px; margin: 0; font-weight: 400; font-size: 72px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .cu-res { position: absolute; top: 610px; height: 150px; width: 260px; white-space: nowrap; }
+  [data-section="hero"] .cu-res b { position: absolute; left: 0; top: 0; font-weight: 300; font-size: 84px; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .cu-res span { position: absolute; left: 2px; top: 104px; font-size: 14px; color: #B7D7FF; }
+  [data-section="hero"] .cu-res i { position: absolute; left: -30px; top: 12px; width: 1px; height: 110px; background: rgba(183,215,255,.18); }
+</style>
+  <div class="v2-canvas">
+    <img class="cu-glow" alt="" src="/v2/assets/customers-glow-hero-r.svg" style="left:680px; top:-120px; width:1120px; height:960px;">
+    <img class="cu-glow" alt="" src="/v2/assets/customers-glow-hero-l.svg" style="left:-400px; top:380px; width:1000px; height:820px;">
+    <img class="cu-glow" alt="" src="/v2/assets/customers-room-light-hero.svg" style="left:816.5px; top:250px; width:797px; height:748px;">
+    <img class="cu-img" alt="Two iPhone 17 in Mist Blue" src="/v2/assets/customers-iphone17-mist.webp" data-k style="left:1010px; top:300px; width:410px; height:720px; --x:60px; --o:1.4s; --t:1.6s;">
+    <div class="cu-abs" style="left:0; top:560px; width:1440px; height:340px; background:linear-gradient(180deg, rgba(15,17,21,0), #0F1115);"></div>
+
+    <div class="cu-abs cu-top">
+      <a href="/v2/" class="cu-logo" aria-label="Fintegre home"><span class="cu-mark"><img alt="" src="/v2/assets/case-study-logo-mark.svg"></span>Fintegre</a>
+      <nav class="cu-nav" aria-label="Hero">
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/customers/" aria-current="page">Customers</a>
+        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/design-your-program/" class="cu-btn">Design your program</a>
+    </div>
+
+    <h1 data-k style="--y:60px; --d:200ms; --o:.63s; --t:.9s;">Measured in<br>every store.</h1>
+    <p class="cu-abs cu-lede" data-k style="left:120px; top:378px; width:440px; --y:40px; --d:450ms; --o:.63s; --t:.9s;">Retailers, telecom operators and device brands run trade-in on Fintegre. These are the numbers they report back to us.</p>
+
+    <div class="cu-res" data-k style="left:120px; --y:50px; --d:800ms; --o:.63s; --t:.9s;"><b>+38%</b><span>Trade-in participation</span></div>
+    <div class="cu-res" data-k style="left:390px; --y:50px; --d:980ms; --o:.63s; --t:.9s;"><i></i><b>+14%</b><span>Value per device</span></div>
+    <div class="cu-res" data-k style="left:660px; --y:50px; --d:1160ms; --o:.63s; --t:.9s;"><i></i><b>58 s</b><span>Time to offer</span></div>
+    <p class="cu-abs" style="left:120px; top:790px; font-size:13px; color:#A7B0BE; white-space:nowrap;">Median across 14 live programs, first six months after launch.</p>
+
+    <svg class="cu-abs" style="left:1079.3px; top:276px;" width="41.4" height="56" viewBox="0 0 41.4 56" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1400ms; transition-duration:.8s;" d="M0.7 0C0.7 30 40.7 20 40.7 56" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <svg class="cu-abs" style="left:1129.3px; top:510px;" width="81.4" height="92" viewBox="0 0 81.4 92" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1600ms; transition-duration:.9s;" d="M0.7 0C0.7 50 80.7 40 80.7 92" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <div class="cu-abs cu-chip" data-k style="left:1040px; top:236px; background:rgba(15,17,21,.55); --sc:.6; --d:1900ms; --o:.25s; --t:.7s;"><img alt="" src="/v2/assets/case-study-dot.svg">Store 9, Kaunas · iPhone 13 · Grade A</div>
+    <div class="cu-abs cu-chip" data-k style="left:1170px; top:600px; background:#3047EC; --sc:.6; --d:2300ms; --o:.25s; --t:.7s;"><img alt="" src="/v2/assets/case-study-dot.svg">€612 credit · best of 3 buyers</div>
+  </div>
+</section>

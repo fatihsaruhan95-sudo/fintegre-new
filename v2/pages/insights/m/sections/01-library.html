@@ -1,0 +1,152 @@
+<section data-section="library" id="library" class="v2-sec" data-tone="dark" style="--h:2197px; background: radial-gradient(calc(177.27px * var(--s)) calc(732.33px * var(--s)) at calc(88.64px * var(--s)) calc(1245px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="library"] p { margin: 0; }
+  [data-section="library"] .ml-glow { position: absolute; pointer-events: none; max-width: none; }
+  [data-section="library"] .ml-col { position: absolute; left: 20px; top: 96px; width: 350px; display: flex; flex-direction: column; align-items: flex-start; }
+  [data-section="library"] h2 { margin: 0 0 24px; font-weight: 400; font-size: 44px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="library"] .ml-filters { display: flex; gap: 8px; width: 390px; margin: 0 -20px; padding: 0 20px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  [data-section="library"] .ml-filters::-webkit-scrollbar { display: none; }
+  [data-section="library"] .ml-filters::after { content: ''; flex: 0 0 12px; }
+  [data-section="library"] .ml-chip { flex: none; scroll-snap-align: start; scroll-margin-left: 20px; display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap; border: 0; cursor: pointer;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font: 400 14px/normal 'Geologica', system-ui, sans-serif; color: #F5F7FA; transition: background-color .3s var(--ease); -webkit-tap-highlight-color: transparent; }
+  [data-section="library"] .ml-chip img { width: 7px; height: 7px; display: none; }
+  [data-section="library"] .ml-chip[aria-pressed="true"] { background: #3047EC; }
+  [data-section="library"] .ml-chip[aria-pressed="true"] img { display: block; }
+  [data-section="library"] .ml-count { margin: 14px 0 28px; font-size: 14px; color: #A7B0BE; line-height: normal; white-space: nowrap; }
+
+  [data-section="library"] .lb-item { transition: opacity .45s var(--ease), filter .45s var(--ease); }
+  [data-section="library"] .lb-item.is-off { opacity: .14 !important; filter: saturate(.3); pointer-events: none; }
+  [data-section="library"] .ml-cover { position: relative; display: block; flex: none; overflow: clip; line-height: normal; white-space: nowrap; }
+  [data-section="library"] .ml-cover > * { position: absolute; display: block; max-width: none; }
+  [data-section="library"] .ml-chip2 { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; color: #F5F7FA; }
+  [data-section="library"] .ml-chip2 img { width: 7px; height: 7px; display: block; }
+  [data-section="library"] .ml-meta { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  [data-section="library"] .ml-meta small { font-size: 13px; color: #B7D7FF; line-height: normal; }
+  [data-section="library"] .ml-meta a { color: #F5F7FA; line-height: 1.2; letter-spacing: -0.02em; }
+  [data-section="library"] .ml-meta time { font-size: 13px; color: #A7B0BE; line-height: normal; }
+
+  [data-section="library"] .ml-swipe { width: 390px; margin: 0 -20px; padding: 0 20px; display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 20px;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  [data-section="library"] .ml-swipe::-webkit-scrollbar { display: none; }
+  [data-section="library"] .ml-swipe::after { content: ''; flex: 0 0 6px; }
+  [data-section="library"] .ml-card { flex: none; width: 300px; display: flex; flex-direction: column; gap: 14px; scroll-snap-align: start; }
+  [data-section="library"] .ml-card .ml-cover { width: 300px; height: 265.63px; border-radius: 18.75px; border: .78px solid rgba(183,215,255,.14); box-shadow: 0 23.44px 46.88px -7.81px rgba(5,8,31,.55); }
+  [data-section="library"] .ml-pager { margin-top: 18px; display: flex; gap: 6px; }
+  [data-section="library"] .ml-pager i { display: block; width: 8px; height: 6px; border-radius: 3px; background: rgba(245,247,250,.25); transition: width .35s var(--ease), background-color .35s; }
+  [data-section="library"] .ml-pager i.on { width: 28px; background: #B7D7FF; }
+
+  [data-section="library"] .ml-list { width: 350px; margin-top: 56px; }
+  [data-section="library"] .ml-row { display: flex; flex-direction: column; gap: 8px; padding: 18px 0; border-top: 1px solid rgba(183,215,255,.16); }
+  [data-section="library"] .ml-row:last-child { border-bottom: 1px solid rgba(183,215,255,.16); }
+  [data-section="library"] .ml-row div { display: flex; justify-content: space-between; font-size: 12px; line-height: normal; white-space: nowrap; }
+  [data-section="library"] .ml-row div span { color: #B7D7FF; }
+  [data-section="library"] .ml-row div time { color: #A7B0BE; }
+  [data-section="library"] .ml-row p { font-size: 16px; line-height: 1.35; color: #F5F7FA; }
+  [data-section="library"] .ml-more { margin-top: 32px; padding: 14px 22px; border-radius: 999px; border: 0; background: transparent; cursor: pointer;
+    box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); font: 400 15px/normal 'Geologica', system-ui, sans-serif; color: #F5F7FA; }
+  [data-section="library"] .ml-more[disabled] { color: #A7B0BE; cursor: default; }
+
+  /* Tall section: each block reveals on its own as it scrolls in (JS adds .r-in). */
+  .motion [data-section="library"] .rv[data-rm], .motion [data-section="library"] .rv [data-rm] { opacity: 0; translate: 0 var(--ty, 40px);
+    transition: opacity .7s var(--ease) var(--d, 0ms), translate 1s var(--ease) var(--d, 0ms); }
+  .motion [data-section="library"] .rv.r-in[data-rm], .motion [data-section="library"] .rv.r-in [data-rm] { opacity: 1; translate: none; }
+</style>
+  <div class="v2-canvas">
+    <img class="ml-glow" alt="" src="/v2/mobile/assets/insights-glow-1.svg" style="left:-340px; top:-60px; width:780px; height:740px;">
+    <img class="ml-glow" alt="" src="/v2/mobile/assets/insights-glow-2.svg" style="left:-40px; top:1320px; width:780px; height:740px;">
+
+    <div class="ml-col">
+      <h2 data-m="up">Everything<br>we publish.</h2>
+      <div class="ml-filters" role="group" aria-label="Filter insights" data-m="up" style="--d:200ms;">
+        <button class="ml-chip" type="button" data-filter="all" aria-pressed="true"><img alt="" src="/v2/assets/insights-dot.svg">All</button>
+        <button class="ml-chip" type="button" data-filter="market" aria-pressed="false"><img alt="" src="/v2/assets/insights-dot.svg">Market reports</button>
+        <button class="ml-chip" type="button" data-filter="benchmark" aria-pressed="false"><img alt="" src="/v2/assets/insights-dot.svg">Benchmarks</button>
+        <button class="ml-chip" type="button" data-filter="guide" aria-pressed="false"><img alt="" src="/v2/assets/insights-dot.svg">Guides</button>
+        <button class="ml-chip" type="button" data-filter="update" aria-pressed="false"><img alt="" src="/v2/assets/insights-dot.svg">Product updates</button>
+      </div>
+      <p class="ml-count" aria-live="polite">9 insights · newest first</p>
+
+      <div class="lb-item rv" data-kind="benchmark">
+        <a href="/v2/report/" class="ml-cover" data-rm style="--ty:60px; --d:100ms; width:350px; height:240px; border-radius:24px; border:1px solid rgba(183,215,255,.14); box-shadow:0 30px 60px -10px rgba(5,8,31,.55); background:#000;" aria-label="Trade-in at retailers and telecom operators, compared">
+          <img alt="" src="/v2/mobile/assets/insights-room-light.svg" style="left:66px; top:-24px; width:372px; height:302px;">
+          <img alt="Two iPhone 17 in Lavender" src="/v2/assets/insights-iphone17-lavender.webp" style="left:178px; top:10px; width:148px; height:260px; object-fit:contain;">
+          <div class="ml-chip2" style="left:12px; top:186px;"><img alt="" src="/v2/assets/insights-dot.svg">Participation · retail 31 % · telecom 22 %</div>
+        </a>
+        <div class="ml-meta" style="margin-top:16px;">
+          <small>Benchmark · 12 min read</small>
+          <a href="/v2/report/" style="font-size:22px;">Trade-in at retailers and telecom operators, compared</a>
+          <time datetime="2026-10-14">14 Oct 2026</time>
+        </div>
+      </div>
+
+      <div class="lb-item rv" data-kind="market" style="margin-top:40px;">
+        <a href="/v2/report/" class="ml-cover" data-rm style="--ty:53px; --d:100ms; width:350px; height:388.89px; border-radius:21.21px; border:.884px solid rgba(183,215,255,.14); box-shadow:0 26.5px 53px -8.84px rgba(5,8,31,.55); background:linear-gradient(140.19deg, #5D74FF 0%, #3047EC 71.429%); color:#F5F7FA;" aria-label="iPhone residual values across five European markets">
+          <p style="left:21.2px; top:21.2px; font-size:10.606px;">Fintegre intelligence · Report</p>
+          <img alt="" src="/v2/mobile/assets/insights-cbar-1.svg" width="79.5455" height="61.8687" style="left:24.75px; top:157.33px;">
+          <img alt="" src="/v2/mobile/assets/insights-cbar-2.svg" width="79.5455" height="98.9899" style="left:83.08px; top:120.21px;">
+          <img alt="" src="/v2/mobile/assets/insights-cbar-3.svg" width="79.5455" height="132.576" style="left:141.42px; top:86.62px;">
+          <img alt="" src="/v2/mobile/assets/insights-cbar-4.svg" width="79.5455" height="84.8485" style="left:199.75px; top:134.35px;">
+          <p style="left:21.2px; top:289.9px; font-size:24.747px; line-height:1.04; letter-spacing:-0.03em;">iPhone residual<br>values, 5 markets</p>
+          <p style="left:21.2px; top:355.3px; font-size:10.606px;">Q3 · 2026</p>
+        </a>
+        <div class="ml-meta" style="margin-top:16px;">
+          <small>Market report · 9 min read</small>
+          <a href="/v2/report/" style="font-size:22px;">iPhone residual values across five European markets</a>
+          <time datetime="2026-10-02">2 Oct 2026</time>
+        </div>
+      </div>
+
+      <div class="ml-swipe rv" style="margin-top:48px;" aria-label="More insights">
+        <div class="ml-card lb-item" data-kind="benchmark">
+          <a href="/v2/report/" class="ml-cover" data-rm style="--ty:47px; --d:100ms; background:#F5F7FA; border-color:rgba(15,17,21,.08); color:#0F1115; font-size:9.375px;" aria-label="Grading accuracy at the counter">
+            <p style="left:17.2px; top:17.2px;">Benchmark</p>
+            <i style="left:17.2px; top:84.38px; width:262.5px; height:.78px; background:rgba(15,17,21,.07);"></i>
+            <i style="left:17.2px; top:118.75px; width:262.5px; height:.78px; background:rgba(15,17,21,.07);"></i>
+            <i style="left:17.2px; top:153.13px; width:262.5px; height:.78px; background:rgba(15,17,21,.07);"></i>
+            <i style="left:17.2px; top:187.5px; width:262.5px; height:.78px; background:rgba(15,17,21,.07);"></i>
+            <img alt="" src="/v2/mobile/assets/insights-line-accuracy.svg" width="264.844" height="85.1568" style="left:16px; top:91px;">
+            <img alt="" src="/v2/mobile/assets/insights-dot-end.svg" width="9.375" height="9.375" style="left:275px; top:98.44px;">
+            <p style="left:209.38px; top:70.31px; padding:3.9px 7.8px; border-radius:999px; background:#3047EC; color:#F5F7FA;">97.4 % match</p>
+            <p style="left:17.2px; top:232.8px; color:rgba(15,17,21,.6);">Screen · battery · casing, Q1–Q3</p>
+          </a>
+          <div class="ml-meta">
+            <small>Benchmark · 7 min read</small>
+            <a href="/v2/report/" style="font-size:18px;">Grading accuracy at the counter: screen, battery, casing</a>
+            <time datetime="2026-09-24">24 Sep 2026</time>
+          </div>
+        </div>
+        <div class="ml-card lb-item" data-kind="guide">
+          <a href="/v2/report/" class="ml-cover" data-rm style="--ty:47px; --d:250ms; background: radial-gradient(136.36px 88.54px at 68.18px 150.52px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; color:#F5F7FA; font-size:9.375px;" aria-label="Running iPad trade-in in business channels">
+            <img alt="iPad Pro" src="/v2/assets/insights-ipadpro.webp" style="left:70.3px; top:45.3px; width:234.38px; height:257.03px; object-fit:contain; filter:drop-shadow(0 23.4px 39px rgba(0,0,0,.6));">
+            <p style="left:17.2px; top:17.2px;">Guide</p>
+          </a>
+          <div class="ml-meta">
+            <small>Guide · 10 min read</small>
+            <a href="/v2/report/" style="font-size:18px;">Running iPad trade-in in business channels</a>
+            <time datetime="2026-09-11">11 Sep 2026</time>
+          </div>
+        </div>
+        <div class="ml-card lb-item" data-kind="update">
+          <a href="/v2/report/" class="ml-cover" data-rm style="--ty:47px; --d:400ms; background:#000; isolation:isolate;" aria-label="Apple Watch is now valued in every Fintegre market">
+            <img alt="Apple Watch close-up" src="/v2/assets/insights-watch-closeup.webp" style="left:-157.8px; top:-17.2px; width:562.5px; height:296.88px; object-fit:cover; mix-blend-mode:lighten;">
+            <div style="left:17.2px; top:17.2px; display:flex; align-items:center; gap:6.25px; padding:7.8px 12.5px; border-radius:999px; background:#3047EC; color:#F5F7FA; font-size:10.94px;"><img alt="" src="/v2/mobile/assets/insights-dot-sm.svg" width="5.47" height="5.47" style="display:block;">Now in 5 markets</div>
+          </a>
+          <div class="ml-meta">
+            <small>Product update · 3 min read</small>
+            <a href="/v2/report/" style="font-size:18px;">Apple Watch is now valued in every Fintegre market</a>
+            <time datetime="2026-08-29">29 Aug 2026</time>
+          </div>
+        </div>
+      </div>
+      <div class="ml-pager" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+
+      <div class="ml-list rv">
+        <a href="/v2/report/" class="ml-row lb-item" data-kind="market" data-rm style="--d:0ms"><div><span>Market report</span><time datetime="2026-08-12">12 Aug 2026</time></div><p>Android flagships hold value longer in Poland than in the Baltics ↗</p></a>
+        <a href="/v2/report/" class="ml-row lb-item" data-kind="guide" data-rm style="--d:100ms"><div><span>Guide</span><time datetime="2026-07-30">30 Jul 2026</time></div><p>Five checks that cut trade-in disputes at the counter ↗</p></a>
+        <a href="/v2/report/" class="ml-row lb-item" data-kind="update" data-rm style="--d:200ms"><div><span>Product update</span><time datetime="2026-07-16">16 Jul 2026</time></div><p>Instant payout to card, now live for Lithuanian programs ↗</p></a>
+      </div>
+      <button type="button" class="ml-more">Show older insights</button>
+    </div>
+  </div>
+</section>

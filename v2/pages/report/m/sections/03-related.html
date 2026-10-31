@@ -1,0 +1,61 @@
+<section data-section="related" id="related" class="v2-sec" data-tone="light" style="--h:842px; background:#F5F7FA;">
+<style>
+  [data-section="related"] p { margin: 0; }
+  [data-section="related"] .mr-col { position: absolute; left: 20px; top: 96px; width: 350px; display: flex; flex-direction: column; align-items: flex-start; }
+  [data-section="related"] h2 { margin: 0 0 32px; font-weight: 400; font-size: 44px; line-height: 1; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="related"] .mr-swipe { width: 390px; margin: 0 -20px; padding: 0 20px; display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 20px;
+    scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  [data-section="related"] .mr-swipe::-webkit-scrollbar { display: none; }
+  [data-section="related"] .mr-swipe::after { content: ''; flex: 0 0 6px; }
+  [data-section="related"] .mr-card { flex: none; width: 300px; display: flex; flex-direction: column; gap: 14px; scroll-snap-align: start; }
+  [data-section="related"] .mr-cover { position: relative; display: block; width: 300px; height: 312.5px; overflow: clip; border-radius: 18.75px; isolation: isolate;
+    box-shadow: 0 18.75px 39px -7.8px rgba(15,20,51,.16); line-height: normal; white-space: nowrap; color: #F5F7FA; font-size: 9.375px; }
+  [data-section="related"] .mr-cover > * { position: absolute; display: block; max-width: none; }
+  [data-section="related"] .mr-meta { display: flex; flex-direction: column; gap: 8px; }
+  [data-section="related"] .mr-meta small { font-size: 13px; color: #3047EC; line-height: normal; }
+  [data-section="related"] .mr-meta a { font-size: 19px; line-height: 1.22; letter-spacing: -0.02em; color: #0F1115; }
+  [data-section="related"] .mr-meta time { font-size: 13px; color: rgba(15,17,21,.5); line-height: normal; }
+  [data-section="related"] .mr-pager { margin-top: 18px; display: flex; gap: 6px; }
+  [data-section="related"] .mr-pager i { display: block; width: 8px; height: 6px; border-radius: 3px; background: rgba(15,17,21,.18); transition: width .35s var(--ease), background-color .35s; }
+  [data-section="related"] .mr-pager i.on { width: 28px; background: #3047EC; }
+  [data-section="related"] .mr-all { margin-top: 36px; padding: 14px 22px; border-radius: 999px; box-shadow: inset 0 0 0 1px rgba(15,17,21,.2); font-size: 15px; line-height: normal; color: #0F1115; white-space: pre; }
+  .motion [data-section="related"] .mr-card[data-m] { translate: 0 var(--ty); }
+  .motion [data-section="related"].is-in .mr-card[data-m] { translate: none; }
+</style>
+  <div class="v2-canvas">
+    <div class="mr-col">
+      <h2 data-m="up">Related<br>insights</h2>
+      <div class="mr-swipe" aria-label="Related insights">
+        <div class="mr-card" data-m="up" style="--d:100ms; --ty:47px;">
+          <a href="/v2/report/" class="mr-cover" style="background:#000;" aria-label="Trade-in at retailers and telecom operators, compared">
+            <img alt="iPhone camera lens close-up" src="/v2/assets/report-iphone-lens.webp" style="left:-203.13px; top:-15.63px; width:640.63px; height:338.28px; object-fit:cover; mix-blend-mode:lighten;">
+            <div style="left:18.75px; top:262.5px; display:flex; align-items:center; gap:6.25px; padding:7.8px 12.5px; border-radius:999px; background:rgba(15,17,21,.55); backdrop-filter:blur(9.4px); -webkit-backdrop-filter:blur(9.4px); font-size:10.94px;"><img alt="" src="/v2/mobile/assets/insights-dot-sm.svg" width="5.47" height="5.47" style="display:block;">Retail 31 % · telecom 22 %</div>
+          </a>
+          <div class="mr-meta"><small>Benchmark · 12 min read</small><a href="/v2/report/">Trade-in at retailers and telecom operators, compared</a><time datetime="2026-10-14">14 Oct 2026</time></div>
+        </div>
+        <div class="mr-card" data-m="up" style="--d:250ms; --ty:47px;">
+          <a href="/v2/report/" class="mr-cover" style="background: radial-gradient(136.36px 104.17px at 68.18px 177.08px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;" aria-label="How Apple resellers can raise trade-in participation">
+            <img alt="" src="/v2/mobile/assets/report-room-light-rel.svg" style="left:-45.8px; top:14px; width:391.6px; height:369px;">
+            <img alt="Two iPhone Air in Sky Blue" src="/v2/assets/report-iphoneair-skyblue.webp" style="left:56px; top:50px; width:188px; height:330px; object-fit:contain;">
+            <p style="left:18.75px; top:18.75px;">Guide</p>
+          </a>
+          <div class="mr-meta"><small>Guide · 8 min read</small><a href="/v2/report/">How Apple resellers can raise trade-in participation</a><time datetime="2026-09-19">19 Sep 2026</time></div>
+        </div>
+        <div class="mr-card" data-m="up" style="--d:400ms; --ty:47px;">
+          <a href="/v2/report/" class="mr-cover" style="background:linear-gradient(142deg, #5D74FF 0%, #3047EC 71.429%);" aria-label="European Device Value Index, Q2 2026">
+            <p style="left:18.75px; top:18.75px;">Fintegre intelligence · Report</p>
+            <img alt="" src="/v2/mobile/assets/report-rbar-1.svg" style="left:21.88px; top:132.81px; width:68.75px; height:46.875px;">
+            <img alt="" src="/v2/mobile/assets/report-rbar-2.svg" style="left:73.44px; top:101.56px; width:68.75px; height:78.125px;">
+            <img alt="" src="/v2/mobile/assets/report-rbar-3.svg" style="left:125px; top:70.31px; width:68.75px; height:109.375px;">
+            <img alt="" src="/v2/mobile/assets/report-rbar-4.svg" style="left:176.56px; top:114.06px; width:68.75px; height:65.625px;">
+            <p style="left:18.75px; top:226.56px; font-size:21.875px; line-height:1.04; letter-spacing:-0.03em;">European Device<br>Value Index</p>
+            <p style="left:18.75px; top:282.81px;">Q2 · 2026</p>
+          </a>
+          <div class="mr-meta"><small>Market report · 13 min read</small><a href="/v2/report/">European Device Value Index, Q2 2026</a><time datetime="2026-07-03">3 Jul 2026</time></div>
+        </div>
+      </div>
+      <div class="mr-pager" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+      <a href="/v2/insights/" class="mr-all">All insights  →</a>
+    </div>
+  </div>
+</section>

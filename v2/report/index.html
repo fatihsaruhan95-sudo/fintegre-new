@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>European Device Value Index — Fintegre (v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  // Phones get the mobile layout.
+  if (innerWidth < 768) location.replace('/v2/mobile/report/' + location.hash);
+  // Hide the page until fonts, Tailwind and images are ready, so the hero entrance is seen from its first frame.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="/v2/v2.css">
+</head>
+<body>
+<nav class="ver-switch" aria-label="Site version">
+  <a href="/">V1</a>
+  <a href="/v2/" aria-current="page">V2</a>
+</nav>
+
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="/v2/" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="/assets/header-mark.svg">Fintegre</a>
+    <nav class="v2-nav">
+      <a href="/v2/platform/">Platform</a>
+      <a href="/v2/solutions/">Solutions</a>
+      <a href="/v2/intelligence/">Intelligence</a>
+      <a href="/v2/customers/">Customers</a>
+      <a href="/v2/insights/">Insights</a>
+      <a href="/v2/company/">Company</a>
+    </nav>
+    <a href="/v2/design-your-program/" class="v2-cta">Design your program</a>
+  </div>
+</header>
+
+<main class="page">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 392.73px * var(--s)) calc(510px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="hero"] .rh-abs { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+  [data-section="hero"] .rh-glow { position: absolute; pointer-events: none; max-width: none; }
+
+  [data-section="hero"] .rh-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; z-index: 2; }
+  [data-section="hero"] .rh-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .rh-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .rh-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .rh-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .rh-nav a { transition: color .2s; }
+  [data-section="hero"] .rh-nav a:hover { color: #F5F7FA; }
+  [data-section="hero"] .rh-btn { display: inline-flex; align-items: center; border-radius: 999px; font: 400 15px/normal 'Geologica', system-ui, sans-serif; white-space: nowrap; border: 0; cursor: pointer; transition: background-color .25s, box-shadow .25s; }
+  [data-section="hero"] .rh-btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .rh-btn--white { background: #fff; color: #0F1115; }
+  [data-section="hero"] .rh-btn--light:hover, [data-section="hero"] .rh-btn--white:hover { background: #B7D7FF; }
+  [data-section="hero"] .rh-btn--ghost { background: transparent; color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="hero"] .rh-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+
+  [data-section="hero"] .rh-copy { left: 120px; top: 176px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  [data-section="hero"] .rh-crumb { font-size: 14px; color: #B7D7FF; line-height: normal; white-space: pre; }
+  [data-section="hero"] .rh-crumb a:hover { color: #F5F7FA; }
+  [data-section="hero"] h1 { margin: 0; font-weight: 400; font-size: 64px; line-height: 1.02; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .rh-lede { width: 540px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .rh-meta { font-size: 14px; color: #A7B0BE; line-height: normal; white-space: pre; }
+  [data-section="hero"] .rh-ctas { display: flex; gap: 12px; }
+  [data-section="hero"] .rh-ctas .rh-btn { padding: 14px 22px; }
+
+  [data-section="hero"] .rh-vis { left: 780px; top: 110px; width: 620px; height: 760px; }
+  [data-section="hero"] .rh-cover { position: absolute; overflow: clip; line-height: normal; white-space: nowrap; }
+  [data-section="hero"] .rh-cover p, [data-section="hero"] .rh-cover img { position: absolute; display: block; max-width: none; }
+
+  [data-section="hero"] .rh-card { left: 120px; top: 640px; width: 640px; height: 192px; border-radius: 26px; overflow: clip;
+    background: rgba(255,255,255,.07); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(183,215,255,.14); box-shadow: 0 30px 60px rgba(5,8,31,.5); }
+  [data-section="hero"] .rh-card > * { position: absolute; }
+  [data-section="hero"] .rh-big { top: 48px; font-weight: 300; font-size: 44px; line-height: normal; letter-spacing: -0.03em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .rh-small { top: 110px; width: 170px; font-weight: 300; font-size: 13px; line-height: 1.45; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .rh-div { top: 52px; width: 1px; height: 104px; background: rgba(245,247,250,.12); }
+  [data-section="hero"] svg.rh-abs { overflow: visible; }
+
+  .motion [data-section="hero"] [data-m][data-ty] { translate: 0 var(--ty); }
+  .motion [data-section="hero"] [data-m][data-tx] { translate: var(--tx) 0; }
+  .motion [data-section="hero"].is-in [data-m][data-ty], .motion [data-section="hero"].is-in [data-m][data-tx] { translate: none; }
+  .motion [data-section="hero"] [data-draw] { transition-duration: .7s; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="rh-glow" alt="" src="/v2/assets/insights-hero-glow-1.svg" style="left:720px; top:-100px; width:1060px; height:920px;">
+    <img decoding="async" class="rh-glow" alt="" src="/v2/assets/insights-hero-glow-2.svg" style="left:-380px; top:420px; width:960px; height:780px;">
+
+    <div class="rh-abs rh-vis" aria-hidden="true">
+      <img decoding="async" class="rh-glow" alt="" src="/v2/assets/report-room-light-hero.svg" style="left:136.05px; top:60px; width:944.9px; height:640px;">
+      <div class="rh-abs" data-m="right" data-tx="80px" style="--tx:80px; --d:200ms; left:304.13px; top:148.59px; width:497px; height:600px; transform:rotate(10deg);">
+        <img decoding="async" alt="" src="/v2/assets/report-iphone18pro-burgundy.webp" style="display:block; width:100%; height:100%; object-fit:contain;">
+      </div>
+      <div class="rh-cover" data-m="up" data-ty="90px" style="--ty:90px; --d:400ms; left:59.02px; top:54.67px; width:420px; height:560px; transform:rotate(-4deg); border:1.4px solid rgba(183,215,255,.25); border-radius:25.2px; box-shadow:0 42px 84px -14px rgba(5,8,31,.6); background:linear-gradient(135deg, #5D74FF 0%, #3047EC 71.429%); color:#F5F7FA;">
+        <p style="left:33.6px; top:33.6px; font-size:16.8px;">Fintegre intelligence · Report</p>
+        <img decoding="async" alt="" src="/v2/assets/report-hbar-1.svg" width="101.698" height="98" style="left:33.6px; top:179.2px;">
+        <img decoding="async" alt="" src="/v2/assets/report-hbar-2.svg" width="127.811" height="154" style="left:114.8px; top:123.2px;">
+        <img decoding="async" alt="" src="/v2/assets/report-hbar-3.svg" width="153.925" height="210" style="left:196px; top:67.2px;">
+        <img decoding="async" alt="" src="/v2/assets/report-hbar-4.svg" width="118.019" height="133" style="left:277.2px; top:144.2px;">
+        <p style="left:33.6px; top:392px; width:347.2px; white-space:normal; font-size:42px; line-height:1.04; letter-spacing:-0.03em;">European Device Value Index</p>
+        <p style="left:33.6px; top:501.2px; font-size:16.8px;">Q3 · 2026</p>
+      </div>
+    </div>
+
+    <div class="rh-abs rh-top">
+      <a href="/v2/" class="rh-logo" aria-label="Fintegre home"><span class="rh-mark"><img decoding="async" alt="" src="/v2/assets/insights-logo-mark.svg"></span>Fintegre</a>
+      <nav class="rh-nav" aria-label="Hero">
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/customers/">Customers</a>
+        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/design-your-program/" class="rh-btn rh-btn--light" style="padding:10px 18px;">Design your program</a>
+    </div>
+
+    <div class="rh-abs rh-copy" data-m="up">
+      <p class="rh-crumb"><a href="/v2/insights/">Insights</a>  /  Market report</p>
+      <h1>European Device<br>Value Index, Q3 2026</h1>
+      <p class="rh-lede">Residual values for 140 phone, tablet and watch models across five European markets, from 41,800 devices checked and valued between July and September.</p>
+      <p class="rh-meta">2 Oct 2026  ·  14 min read  ·  28 pages</p>
+      <div class="rh-ctas">
+        <a href="#download" class="rh-btn rh-btn--white">Download the report</a>
+        <button type="button" class="rh-btn rh-btn--ghost rh-share">Share&nbsp;&nbsp;↗</button>
+      </div>
+    </div>
+
+    <div class="rh-abs rh-card" data-m="up" style="--d:900ms;">
+      <p style="left:26px; top:22px; font-size:13px; color:#A7B0BE; line-height:normal;">Key takeaways</p>
+      <p class="rh-big" style="left:26px;">−9 %</p>
+      <p class="rh-small" style="left:26px;">Value drop in the 30 days after a new iPhone launch</p>
+      <i class="rh-div" style="left:210px;"></i>
+      <p class="rh-big" style="left:226px;">€612</p>
+      <p class="rh-small" style="left:226px;">Best median bid, iPhone 15 Pro 256 GB, Latvia</p>
+      <i class="rh-div" style="left:410px;"></i>
+      <p class="rh-big" style="left:426px;">+14 %</p>
+      <p class="rh-small" style="left:426px;">Value per device when three or more buyers compete</p>
+    </div>
+
+    <svg class="rh-abs" aria-hidden="true" style="left:759.35px; top:559.35px;" width="91.3" height="141.3" viewBox="0 0 91.3 141.3" fill="none"><path pathLength="1" data-draw style="--d:1500ms" d="M0.65 140.65C60.65 140.65 40.65 40.65 90.65 0.650024" stroke-width="1.3" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+  </div>
+</section>
+
+<section data-section="article" id="article" class="v2-sec" data-tone="light" style="--h:3231px; background:#F5F7FA;">
+<style>
+  [data-section="article"] .ar-abs { position: absolute; }
+  [data-section="article"] p { margin: 0; }
+  [data-section="article"] .ar-t { position: absolute; left: 360px; width: 720px; }
+  [data-section="article"] .ar-lead { font-weight: 300; font-size: 22px; line-height: 1.55; color: rgba(15,17,21,.9); }
+  [data-section="article"] h2 { margin: 0; font-weight: 400; font-size: 36px; line-height: 1.12; letter-spacing: -0.03em; color: #0F1115; }
+  [data-section="article"] .ar-p { font-weight: 300; font-size: 18px; line-height: 1.65; color: rgba(15,17,21,.78); }
+  [data-section="article"] .ar-cap { font-size: 14px; line-height: 1.5; color: rgba(15,17,21,.55); }
+  [data-section="article"] .ar-note { font-size: 13px; line-height: 1.55; color: rgba(15,17,21,.5); }
+
+  [data-section="article"] .ar-chart { left: 240px; width: 960px; border-radius: 28px; background: #fff; box-shadow: 0 20px 50px rgba(15,20,51,.08); overflow: clip; line-height: normal; white-space: nowrap; }
+  [data-section="article"] .ar-chart > * { position: absolute; display: block; max-width: none; }
+  [data-section="article"] .ar-ttl { top: 36px; font-size: 13px; color: rgba(15,17,21,.6); }
+  [data-section="article"] .ar-fig { top: 36px; left: 860px; font-size: 13px; color: rgba(15,17,21,.4); }
+  [data-section="article"] .ar-grid { left: 100px; width: 820px; height: 1px; background: rgba(15,17,21,.07); }
+  [data-section="article"] .ar-y { left: 40px; font-size: 12px; color: rgba(15,17,21,.4); }
+  [data-section="article"] .ar-v { font-size: 13px; color: #0F1115; }
+  [data-section="article"] .ar-x { top: 396px; font-size: 13px; color: rgba(15,17,21,.6); }
+  [data-section="article"] .ar-legend { left: 40px; top: 352px; display: flex; gap: 20px; font-size: 13px; color: rgba(15,17,21,.7); }
+  [data-section="article"] .ar-legend span { display: flex; align-items: center; gap: 8px; }
+  [data-section="article"] .ar-legend i { width: 16px; height: 3px; border-radius: 2px; }
+  [data-section="article"] svg { overflow: visible; }
+
+  [data-section="article"] .ar-quote { left: 292.5px; top: 1228px; width: 855px; height: 218px; }
+  [data-section="article"] .ar-quote i { position: absolute; left: 0; top: 24px; width: 3px; height: 170px; border-radius: 2px; background: #3047EC; }
+  [data-section="article"] .ar-quote blockquote { position: absolute; left: 35px; top: 24px; margin: 0; width: 820px; display: flex; flex-direction: column; gap: 20px; }
+  [data-section="article"] .ar-quote blockquote p { font-size: 36px; line-height: 1.22; letter-spacing: -0.03em; color: #0F1115; }
+  [data-section="article"] .ar-quote cite { font-style: normal; font-size: 14px; line-height: normal; color: rgba(15,17,21,.55); }
+
+  [data-section="article"] .ar-figure { left: 240px; top: 1750px; width: 960px; height: 520px; border-radius: 28px; overflow: clip;
+    background: radial-gradient(436.36px 173.33px at 218.18px 294.67px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="article"] .ar-figure > * { position: absolute; }
+  [data-section="article"] .ar-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; line-height: normal; color: #F5F7FA; }
+  [data-section="article"] .ar-chip img { width: 7px; height: 7px; display: block; }
+
+  /* Reveal per block (this section is tall): JS adds .r-in to each .rv as it scrolls in. */
+  .motion [data-section="article"] .rv [data-rm] { opacity: 0; translate: 0 var(--ty, 40px);
+    transition: opacity .7s var(--ease) var(--d, 0ms), translate 1s var(--ease) var(--d, 0ms), scale .8s var(--ease) var(--d, 0ms); }
+  .motion [data-section="article"] .rv [data-rm="bar"] { translate: none; scale: 1 .05; transform-origin: 50% 100%; }
+  .motion [data-section="article"] .rv [data-rm="pop"] { translate: none; scale: .6; transition-timing-function: var(--ease), var(--ease), var(--spring); transition-duration: .4s, .4s, .5s; }
+  .motion [data-section="article"] .rv.r-in [data-rm] { opacity: 1; translate: none; scale: 1; }
+  .motion [data-section="article"] .rv [data-rd] { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset var(--dur, .6s) var(--inout) var(--d, 0ms); }
+  .motion [data-section="article"] .rv.r-in [data-rd] { stroke-dashoffset: 0; }
+</style>
+  <div class="v2-canvas">
+    <p class="ar-t ar-lead" style="top:140px;">Trade-in values across Europe held steadier this quarter than last. The exception was the month after the new iPhone launch, when every older model lost value at once. Where three or more buyers bid on the same device, retailers and operators passed more of that value to their customers.</p>
+
+    <h2 class="ar-t" style="top:390px;">Values fall fastest in the first month</h2>
+    <p class="ar-t ar-p" style="top:462px;">Between 9 September and 9 October, the median bid for an iPhone 15 Pro 256 GB fell 9 % across the five markets. Latvia held best at €612, helped by two buyers who export to Nordic refurbishers. Poland and Lithuania followed within €30.</p>
+
+    <figure class="ar-abs ar-chart rv" style="top:584px; height:460px; margin:0;" aria-label="Figure 1, median bid by market">
+      <p class="ar-ttl" style="left:40px;">Median bid · iPhone 15 Pro · 256 GB · September 2026</p>
+      <p class="ar-fig">Figure 1</p>
+      <i class="ar-grid" style="top:110px;"></i><p class="ar-y" style="top:102px;">€650</p>
+      <i class="ar-grid" style="top:200px;"></i><p class="ar-y" style="top:192px;">€600</p>
+      <i class="ar-grid" style="top:290px;"></i><p class="ar-y" style="top:282px;">€550</p>
+      <i class="ar-grid" style="top:380px;"></i><p class="ar-y" style="top:372px;">€500</p>
+      <img decoding="async" data-rm="bar" alt="" src="/v2/assets/report-bar-lv.svg" width="100" height="201.6" style="--d:400ms; left:150px; top:178.4px;">
+      <p class="ar-v" data-rm style="--d:700ms; --ty:8px; left:184px; top:152.4px; color:#3047EC;">€612</p><p class="ar-x" style="left:170px;">LV</p>
+      <img decoding="async" data-rm="bar" alt="" src="/v2/assets/report-bar-lt.svg" width="100" height="176.4" style="--d:520ms; left:300px; top:203.6px;">
+      <p class="ar-v" data-rm style="--d:820ms; --ty:8px; left:334px; top:177.6px;">€598</p><p class="ar-x" style="left:320px;">LT</p>
+      <img decoding="async" data-rm="bar" alt="" src="/v2/assets/report-bar-pl.svg" width="100" height="153" style="--d:640ms; left:450px; top:227px;">
+      <p class="ar-v" data-rm style="--d:940ms; --ty:8px; left:484px; top:201px;">€585</p><p class="ar-x" style="left:470px;">PL</p>
+      <img decoding="async" data-rm="bar" alt="" src="/v2/assets/report-bar-ee.svg" width="100" height="136.8" style="--d:760ms; left:600px; top:243.2px;">
+      <p class="ar-v" data-rm style="--d:1060ms; --ty:8px; left:634px; top:217.2px;">€576</p><p class="ar-x" style="left:620px;">EE</p>
+      <img decoding="async" data-rm="bar" alt="" src="/v2/assets/report-bar-cz.svg" width="100" height="86.4" style="--d:880ms; left:750px; top:293.6px;">
+      <p class="ar-v" data-rm style="--d:1180ms; --ty:8px; left:784px; top:267.6px;">€548</p><p class="ar-x" style="left:770px;">CZ</p>
+    </figure>
+
+    <p class="ar-t ar-p" style="top:1076px;">The drop is not spread evenly. Models two generations old lost 11 %, while the newest flagship lost 6 %. Programs that priced from a fixed list in September paid customers less than the market offered, and the gap widened each week the list stayed unchanged.</p>
+
+    <div class="ar-abs ar-quote rv">
+      <div data-rm style="--d:300ms; position:absolute; inset:0;">
+        <i></i>
+        <blockquote>
+          <p>“We used to update prices once a month. Now the buyers do it for us, every hour, and our customers see it at the counter.”</p>
+          <cite>Head of trade-in, a Baltic electronics retailer</cite>
+        </blockquote>
+      </div>
+    </div>
+
+    <h2 class="ar-t" style="top:1526px;">Battery health now sets the price</h2>
+    <p class="ar-t ar-p" style="top:1598px;">Battery health became the single largest price factor after screen condition. Devices under 85 % battery health received a median bid €46 lower than the same model above 90 %. Buyers now replace batteries in-house and price the cost in at the first check.</p>
+
+    <div class="ar-abs ar-figure rv" role="img" aria-label="An iPhone 13 with 84 % battery health, screen grade A, median bid €46 lower">
+      <img decoding="async" alt="" src="/v2/assets/report-fig-glow.svg" style="left:100px; top:-100px; width:920px; height:780px; max-width:none; pointer-events:none;">
+      <img decoding="async" data-rm alt="" src="/v2/assets/report-iphone13.webp" style="--d:200ms; --ty:80px; left:200px; top:70px; width:300px; height:612px; object-fit:cover; border-radius:44px; box-shadow:0 40px 70px rgba(0,0,0,.6);">
+      <svg style="left:469.35px; top:139.35px;" width="151.3" height="31.3" viewBox="0 0 151.3 31.3" fill="none"><path pathLength="1" data-rd style="--d:1000ms" d="M0.65 30.65C70.65 30.65 90.65 0.65 150.65 0.65" stroke-width="1.3" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+      <svg style="left:469.35px; top:239.35px;" width="151.3" height="21.3" viewBox="0 0 151.3 21.3" fill="none"><path pathLength="1" data-rd style="--d:1200ms" d="M0.65 20.65C70.65 20.65 90.65 0.65 150.65 0.65" stroke-width="1.3" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+      <svg style="left:469.35px; top:339.35px;" width="151.3" height="11.3" viewBox="0 0 151.3 11.3" fill="none"><path pathLength="1" data-rd style="--d:1400ms" d="M0.65 10.65C70.65 10.65 90.65 0.65 150.65 0.65" stroke-width="1.3" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+      <div style="left:620px; top:121px;"><div class="ar-chip" data-rm="pop" style="--d:1500ms;"><img decoding="async" alt="" src="/v2/assets/insights-dot.svg">Battery · 84 %</div></div>
+      <div style="left:620px; top:221px;"><div class="ar-chip" data-rm="pop" style="--d:1700ms;"><img decoding="async" alt="" src="/v2/assets/insights-dot.svg">Screen · Grade A</div></div>
+      <div style="left:620px; top:321px;"><div class="ar-chip" data-rm="pop" style="--d:1900ms; background:#3047EC;"><img decoding="async" alt="" src="/v2/assets/insights-dot.svg">Median bid · €46 lower</div></div>
+    </div>
+    <p class="ar-t ar-cap" style="top:2302px;">Figure 2 · An iPhone 13 with 84 % battery health, checked at a store in Riga. Same grade, lower bid.</p>
+
+    <p class="ar-t ar-p" style="top:2355px;">Retailers that show battery health on the customer receipt saw fewer disputes. The customer sees the same number the buyer priced, and the conversation at the counter gets shorter.</p>
+
+    <figure class="ar-abs ar-chart rv" style="top:2477px; height:400px; margin:0;" aria-label="Figure 3, weekly Device Value Index, Baltics and Poland">
+      <p class="ar-ttl" style="left:40px;">Device Value Index · weekly · July–September 2026 · 100 = 1 July</p>
+      <p class="ar-fig">Figure 3</p>
+      <i class="ar-grid" style="top:110px;"></i><p class="ar-y" style="top:102px;">100</p>
+      <i class="ar-grid" style="top:180px;"></i><p class="ar-y" style="top:172px;">96</p>
+      <i class="ar-grid" style="top:250px;"></i><p class="ar-y" style="top:242px;">92</p>
+      <i class="ar-grid" style="top:320px;"></i><p class="ar-y" style="top:312px;">88</p>
+      <svg style="left:98.5px; top:110.5px;" width="823" height="117" viewBox="0 0 823 117" fill="none"><path pathLength="1" data-rd style="--d:400ms; --dur:1.4s" d="M1.50009 1.50009L71.5001 7.50009L141.5 5.50009L211.5 13.5001L281.5 11.5001L351.5 19.5001L421.5 23.5001L491.5 71.5001L561.5 97.5001L631.5 105.5L701.5 109.5L771.5 113.5L821.5 115.5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke="#3047EC"/></svg>
+      <svg style="left:98.5px; top:112.5px;" width="823" height="147" viewBox="0 0 823 147" fill="none"><path pathLength="1" data-rd style="--d:600ms; --dur:1.4s" d="M1.50019 1.50019L71.5002 11.5002L141.5 15.5002L211.5 21.5002L281.5 25.5002L351.5 31.5002L421.5 37.5002L491.5 93.5002L561.5 121.5L631.5 133.5L701.5 137.5L771.5 141.5L821.5 145.5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke="#B7D7FF"/></svg>
+      <i style="left:590px; top:100px; width:1px; height:250px; background:rgba(15,17,21,.2);"></i>
+      <p style="left:600px; top:330px; font-size:12px; color:rgba(15,17,21,.55);">iPhone launch · 9 Sep</p>
+      <div class="ar-legend"><span><i style="background:#3047EC"></i>Baltics</span><span><i style="background:#B7D7FF"></i>Poland</span></div>
+    </figure>
+
+    <p class="ar-t ar-p" style="top:2909px;">Poland recovered more slowly after the launch week, because fewer buyers compete there for older models. Programs that added a second buyer in Poland in August closed half of that gap by the end of the quarter.</p>
+    <p class="ar-t ar-note" style="top:3031px;">Method · Median of accepted bids for devices checked through Fintegre between 1 July and 30 September 2026. Five markets: Latvia, Lithuania, Estonia, Poland, Czechia. Values exclude VAT.</p>
+  </div>
+</section>
+
+<section data-section="download" id="download" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 392.73px * var(--s)) calc(510px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="download"] .dl-abs { position: absolute; }
+  [data-section="download"] p { margin: 0; }
+  [data-section="download"] .dl-glow { position: absolute; pointer-events: none; max-width: none; }
+  [data-section="download"] .dl-copy { left: 120px; top: 200px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  [data-section="download"] h2 { margin: 0; width: 520px; font-weight: 400; font-size: 64px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="download"] .dl-lede { width: 440px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="download"] .dl-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  [data-section="download"] .dl-list li { display: flex; align-items: center; gap: 12px; font-weight: 300; font-size: 16px; line-height: normal; color: rgba(245,247,250,.85); white-space: nowrap; }
+  [data-section="download"] .dl-list img { width: 20px; height: 20px; display: block; }
+
+  [data-section="download"] .dl-cover { position: absolute; overflow: clip; line-height: normal; white-space: nowrap; }
+  [data-section="download"] .dl-cover > * { position: absolute; display: block; max-width: none; }
+
+  [data-section="download"] .dl-card { left: 760px; top: 162px; width: 560px; height: 596px; border-radius: 28px; overflow: clip;
+    background: rgba(255,255,255,.07); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(183,215,255,.14); box-shadow: 0 30px 60px rgba(5,8,31,.5); color: #F5F7FA; }
+  [data-section="download"] .dl-card > * { position: absolute; }
+  [data-section="download"] .dl-kicker { left: 34px; top: 30px; font-size: 13px; color: #A7B0BE; line-height: normal; white-space: nowrap; }
+  [data-section="download"] .dl-card h3 { left: 34px; top: 54px; margin: 0; font-weight: 400; font-size: 28px; letter-spacing: -0.03em; line-height: normal; white-space: nowrap; }
+  [data-section="download"] form { left: 34px; top: 116px; width: 488px; height: 460px; }
+  [data-section="download"] .dl-fields { display: flex; flex-direction: column; gap: 12px; }
+  [data-section="download"] .dl-row { display: flex; gap: 12px; }
+  [data-section="download"] label, [data-section="download"] fieldset { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; border: 0; min-width: 0; }
+  [data-section="download"] label > span, [data-section="download"] legend { font-size: 13px; color: #A7B0BE; line-height: normal; padding: 0; margin-bottom: 8px; }
+  [data-section="download"] label > span { margin: 0; }
+  [data-section="download"] input, [data-section="download"] select {
+    height: 48px; padding: 0 18px; border-radius: 14px; border: 1px solid rgba(183,215,255,.14); background: rgba(255,255,255,.05); color: #F5F7FA;
+    font: 300 15px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s; -webkit-appearance: none; appearance: none; }
+  [data-section="download"] input::placeholder { color: rgba(245,247,250,.45); }
+  [data-section="download"] input:focus, [data-section="download"] select:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.08); }
+  [data-section="download"] .is-bad { border-color: rgba(255,120,120,.75) !important; }
+  [data-section="download"] .dl-sel { position: relative; }
+  [data-section="download"] .dl-sel select { width: 488px; cursor: pointer; }
+  [data-section="download"] .dl-sel select option { color: #0F1115; }
+  [data-section="download"] .dl-sel b { position: absolute; right: 18px; top: 13px; font-weight: 400; font-size: 15px; color: rgba(245,247,250,.6); pointer-events: none; }
+  [data-section="download"] .dl-chips { display: flex; gap: 8px; }
+  [data-section="download"] .dl-chip { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; border: 0; cursor: pointer; background: rgba(15,17,21,.55);
+    font: 400 13px/normal 'Geologica', system-ui, sans-serif; color: #F5F7FA; transition: background-color .25s; }
+  [data-section="download"] .dl-chip img { width: 7px; height: 7px; display: none; }
+  [data-section="download"] .dl-chip[aria-pressed="true"] { background: #3047EC; }
+  [data-section="download"] .dl-chip[aria-pressed="true"] img { display: block; }
+  [data-section="download"] .dl-submit { position: absolute; left: 0; top: 341px; width: 488px; height: 52px; border: 0; border-radius: 999px; background: #fff; color: #0F1115; cursor: pointer;
+    font: 400 15px/normal 'Geologica', system-ui, sans-serif; white-space: pre; transition: background-color .25s; }
+  [data-section="download"] .dl-submit:hover { background: #B7D7FF; }
+  [data-section="download"] .dl-fine { position: absolute; left: 0; top: 411px; width: 488px; font-weight: 300; font-size: 12px; line-height: 1.5; color: rgba(245,247,250,.5); }
+  [data-section="download"] .dl-fine.is-bad-msg { color: #FFB4B4; }
+  [data-section="download"] .dl-done { left: 34px; top: 116px; width: 488px; display: flex; flex-direction: column; gap: 16px; opacity: 0; visibility: hidden; transition: opacity .5s var(--ease); }
+  [data-section="download"] .dl-card.is-sent form { visibility: hidden; }
+  [data-section="download"] .dl-card.is-sent .dl-done { opacity: 1; visibility: visible; }
+  [data-section="download"] .dl-done strong { font-weight: 300; font-size: 56px; letter-spacing: -0.03em; line-height: 1; }
+  [data-section="download"] .dl-done p { font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.75); }
+
+  .motion [data-section="download"] [data-m][data-ty] { translate: 0 var(--ty); }
+  .motion [data-section="download"].is-in [data-m][data-ty] { translate: none; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="dl-glow" alt="" src="/v2/assets/report-dl-glow.svg" style="left:520px; top:-60px; width:1120px; height:960px;">
+    <img decoding="async" class="dl-glow" alt="" src="/v2/assets/insights-hero-glow-2.svg" style="left:-380px; top:420px; width:960px; height:780px;">
+
+    <div class="dl-abs dl-copy">
+      <h2 data-m="up">Get the full report.</h2>
+      <p class="dl-lede" data-m="up" style="--d:100ms">28 pages with model-level tables. Free for retail, telecom and device brand teams.</p>
+      <ul class="dl-list" data-m="up" style="--d:200ms">
+        <li><img decoding="async" alt="" src="/v2/assets/report-check.svg">Median bids for 140 models in five markets</li>
+        <li><img decoding="async" alt="" src="/v2/assets/report-check.svg">Weekly index, July to September</li>
+        <li><img decoding="async" alt="" src="/v2/assets/report-check.svg">Price factors: screen, battery, casing</li>
+        <li><img decoding="async" alt="" src="/v2/assets/report-check.svg">Buyer competition by market and model age</li>
+      </ul>
+    </div>
+
+    <div class="dl-cover" aria-hidden="true" data-m="up" data-ty="80px" style="--ty:80px; --d:100ms; left:970.71px; top:114.93px; width:300px; height:400px; transform:rotate(8deg); border:1px solid rgba(183,215,255,.25); border-radius:18px; box-shadow:0 30px 60px -10px rgba(5,8,31,.6); background:linear-gradient(135deg, #5D74FF 0%, #3047EC 71.429%); color:#F5F7FA; font-size:12px;">
+      <p style="left:24px; top:24px;">Fintegre intelligence · Report</p>
+      <img decoding="async" alt="" src="/v2/assets/insights-nbar-1.svg" width="72.642" height="70" style="left:24px; top:128px;">
+      <img decoding="async" alt="" src="/v2/assets/insights-nbar-2.svg" width="91.294" height="110" style="left:82px; top:88px;">
+      <img decoding="async" alt="" src="/v2/assets/insights-nbar-3.svg" width="109.946" height="150" style="left:140px; top:48px;">
+      <img decoding="async" alt="" src="/v2/assets/insights-nbar-4.svg" width="84.299" height="95" style="left:198px; top:103px;">
+      <p style="left:24px; top:280px; width:248px; white-space:normal; font-size:30px; line-height:1.04; letter-spacing:-0.03em;">European Device Value Index</p>
+      <p style="left:24px; top:358px;">Q3 · 2026</p>
+    </div>
+
+    <div class="dl-abs dl-card" data-m="up" data-ty="60px" style="--ty:60px; --d:300ms;">
+      <p class="dl-kicker">Download · PDF, 6.2 MB</p>
+      <h3>Where should we send it?</h3>
+      <form class="dl-form" novalidate>
+        <div class="dl-fields">
+          <div class="dl-row">
+            <label><span>Full name</span><input name="name" type="text" placeholder="Name and surname" autocomplete="name" required style="width:238px;"></label>
+            <label><span>Company</span><input name="company" type="text" placeholder="Company name" autocomplete="organization" required style="width:238px;"></label>
+          </div>
+          <label><span>Work email</span><input name="email" type="email" placeholder="name@company.com" autocomplete="email" required style="width:488px;"></label>
+          <label class="dl-sel"><span>Your team</span>
+            <select name="team">
+              <option>Trade-in and pricing</option><option>Category and merchandising</option><option>Retail operations</option><option>Finance</option><option>Other</option>
+            </select><b aria-hidden="true">⌄</b>
+          </label>
+          <fieldset>
+            <legend>Markets you run programs in</legend>
+            <div class="dl-chips">
+              <button type="button" class="dl-chip" aria-pressed="true"><img decoding="async" alt="" src="/v2/assets/insights-dot.svg">Baltics</button>
+              <button type="button" class="dl-chip" aria-pressed="true"><img decoding="async" alt="" src="/v2/assets/insights-dot.svg">Poland</button>
+              <button type="button" class="dl-chip" aria-pressed="false"><img decoding="async" alt="" src="/v2/assets/insights-dot.svg">Czechia</button>
+              <button type="button" class="dl-chip" aria-pressed="false"><img decoding="async" alt="" src="/v2/assets/insights-dot.svg">Other</button>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="dl-submit">Send me the report  ↓</button>
+        <p class="dl-fine" aria-live="polite">We use these details to send the report and the next quarterly edition. Unsubscribe any time.</p>
+      </form>
+      <div class="dl-done" role="status">
+        <strong>On its way.</strong>
+        <p>We sent the European Device Value Index, Q3 2026 to <span data-dl-email>your inbox</span>. The Q4 edition follows on 3 December.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="related" id="related" class="v2-sec" data-tone="light" style="--h:900px; background:#F5F7FA;">
+<style>
+  [data-section="related"] p { margin: 0; }
+  [data-section="related"] h2 { position: absolute; left: 120px; top: 140px; margin: 0; font-weight: 400; font-size: 56px; line-height: normal; letter-spacing: -0.04em; color: #0F1115; white-space: nowrap; }
+  [data-section="related"] .rl-all { position: absolute; left: 1174px; top: 150px; padding: 14px 22px; border-radius: 999px; box-shadow: inset 0 0 0 1px rgba(15,17,21,.2);
+    font-size: 15px; line-height: normal; color: #0F1115; white-space: pre; transition: background-color .25s, color .25s, box-shadow .25s; }
+  [data-section="related"] .rl-all:hover { background: #0F1115; color: #F5F7FA; box-shadow: none; }
+  [data-section="related"] .rl-cover { position: absolute; top: 260px; width: 384px; height: 400px; display: block; overflow: clip; border-radius: 24px;
+    box-shadow: 0 24px 50px -10px rgba(15,20,51,.16); line-height: normal; white-space: nowrap; color: #F5F7FA; font-size: 12px; isolation: isolate; }
+  [data-section="related"] .rl-cover > * { position: absolute; display: block; max-width: none; }
+  [data-section="related"] .rl-ph { transition: transform 1.2s var(--ease); }
+  [data-section="related"] .rl-cover:hover .rl-ph { transform: scale(1.03); }
+  [data-section="related"] .rl-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; }
+  [data-section="related"] .rl-chip img { width: 7px; height: 7px; display: block; }
+  [data-section="related"] .rl-meta { position: absolute; top: 684px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  [data-section="related"] .rl-meta small { font-size: 13px; color: #3047EC; line-height: normal; white-space: nowrap; }
+  [data-section="related"] .rl-meta a { width: 360px; font-size: 22px; line-height: 1.22; letter-spacing: -0.02em; color: #0F1115; transition: color .2s; }
+  [data-section="related"] .rl-meta a:hover { color: #3047EC; }
+  [data-section="related"] .rl-meta time { font-size: 13px; color: rgba(15,17,21,.5); line-height: normal; }
+</style>
+  <div class="v2-canvas">
+    <h2 data-m="up">Related insights</h2>
+    <a href="/v2/insights/" class="rl-all" data-m="up" style="--d:100ms">All insights  →</a>
+
+    <a href="/v2/report/" class="rl-cover" aria-label="Trade-in at retailers and telecom operators, compared" data-m="up" style="--d:200ms; left:120px; background:#000;">
+      <img decoding="async" class="rl-ph" alt="iPhone camera lens close-up" src="/v2/assets/report-iphone-lens.webp" style="left:-260px; top:-20px; width:820px; height:433px; object-fit:cover; mix-blend-mode:lighten;">
+      <div class="rl-chip" style="left:24px; top:336px;"><img decoding="async" alt="" src="/v2/assets/insights-dot.svg">Retail 31 % · telecom 22 %</div>
+    </a>
+    <a href="/v2/report/" class="rl-cover" aria-label="How Apple resellers can raise trade-in participation" data-m="up" style="--d:350ms; left:528px; background: radial-gradient(174.55px 133.33px at 87.27px 226.67px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+      <img decoding="async" alt="" src="/v2/assets/report-room-light-rel.svg" style="left:-53.65px; top:20px; width:506.3px; height:478px; pointer-events:none;">
+      <img decoding="async" class="rl-ph" alt="Two iPhone Air in Sky Blue" src="/v2/assets/report-iphoneair-skyblue.webp" style="left:80px; top:70px; width:239px; height:420px; object-fit:contain;">
+      <p style="left:24px; top:24px;">Guide</p>
+    </a>
+    <a href="/v2/report/" class="rl-cover" aria-label="European Device Value Index, Q2 2026" data-m="up" style="--d:500ms; left:936px; background:linear-gradient(142deg, #5D74FF 0%, #3047EC 71.429%);">
+      <p style="left:24px; top:24px;">Fintegre intelligence · Report</p>
+      <img decoding="async" alt="" src="/v2/assets/report-rbar-1.svg" width="88" height="60" style="left:28px; top:170px;">
+      <img decoding="async" alt="" src="/v2/assets/report-rbar-2.svg" width="88" height="100" style="left:94px; top:130px;">
+      <img decoding="async" alt="" src="/v2/assets/report-rbar-3.svg" width="88" height="140" style="left:160px; top:90px;">
+      <img decoding="async" alt="" src="/v2/assets/report-rbar-4.svg" width="88" height="84" style="left:226px; top:146px;">
+      <p style="left:24px; top:290px; font-size:28px; line-height:1.04; letter-spacing:-0.03em;">European Device<br>Value Index</p>
+      <p style="left:24px; top:362px;">Q2 · 2026</p>
+    </a>
+
+    <div class="rl-meta" style="left:120px; --d:300ms;" data-m="up">
+      <small>Benchmark · 12 min read</small>
+      <a href="/v2/report/">Trade-in at retailers and telecom operators, compared</a>
+      <time datetime="2026-10-14">14 Oct 2026</time>
+    </div>
+    <div class="rl-meta" style="left:528px; --d:450ms;" data-m="up">
+      <small>Guide · 8 min read</small>
+      <a href="/v2/report/">How Apple resellers can raise trade-in participation</a>
+      <time datetime="2026-09-19">19 Sep 2026</time>
+    </div>
+    <div class="rl-meta" style="left:936px; --d:600ms;" data-m="up">
+      <small>Market report · 13 min read</small>
+      <a href="/v2/report/">European Device Value Index, Q2 2026</a>
+      <time datetime="2026-07-03">3 Jul 2026</time>
+    </div>
+  </div>
+</section>
+
+<section data-section="closing" id="closing" class="v2-sec" style="--h:900px; background: radial-gradient(calc(1080px * var(--s)) calc(560px * var(--s)) at 50% calc(330px * var(--s)), rgba(48,71,236,.42) 0%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), #0F1115;" data-tone="dark">
+  <style>
+    [data-section="closing"] .cl-head {
+      position: absolute; left: 70px; top: 284px; width: 1300px; margin: 0; text-align: center;
+      font-weight: 400; font-size: 150px; line-height: .92; letter-spacing: -4.5px;
+      background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    }
+    [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 168px; }
+    [data-section="closing"] .cl-foot {
+      position: absolute; left: 20px; top: 557px; width: 1400px; height: 343px; padding: 56px 56px 40px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: radial-gradient(700px 380px at 10% 0%, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 70%), linear-gradient(135deg, rgba(28,34,72,.92) 0%, rgba(17,20,34,.92) 100%); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 -20px 60px rgba(0,0,0,.45); border-radius: 32px; color: #F5F7FA; line-height: normal;
+    }
+    [data-section="closing"] .cl-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    [data-section="closing"] .cl-sub { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+    [data-section="closing"] .cl-logo { position: relative; display: block; width: 99.3px; height: 30px; }
+    [data-section="closing"] .cl-logo img { position: absolute; display: block; max-width: none; }
+    [data-section="closing"] .cl-sub h3 { margin: 0; font-weight: 500; font-size: 14px; color: #F5F7FA; }
+    [data-section="closing"] .cl-sub p { margin: 0; font-size: 13px; color: rgba(255,255,255,.6); }
+    [data-section="closing"] form { display: flex; gap: 8px; align-items: flex-start; }
+    [data-section="closing"] input {
+      width: 260px; height: 46px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08); color: #fff; font: 400 14px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s;
+    }
+    [data-section="closing"] input::placeholder { color: rgba(255,255,255,.5); }
+    [data-section="closing"] input:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.1); }
+    [data-section="closing"] button {
+      border: 0; cursor: pointer; padding: 12px 18px; border-radius: 10px; background: #fff; color: #0F1115;
+      font: 500 14px/18px 'Geologica', system-ui, sans-serif; transition: background-color .25s, transform .25s var(--ease);
+    }
+    [data-section="closing"] button:hover { background: #B7D7FF; }
+    [data-section="closing"] .cl-cols { display: flex; gap: 96px; white-space: nowrap; }
+    [data-section="closing"] .cl-cols nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    [data-section="closing"] .cl-cols span { font-size: 13px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-cols a, [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 14px; color: #fff; transition: opacity .2s; }
+    [data-section="closing"] .cl-cols a:hover, [data-section="closing"] .cl-legal a:hover { opacity: .7; }
+    [data-section="closing"] .cl-bottom { display: flex; justify-content: space-between; font-size: 12px; }
+    [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
+    [data-section="closing"] .cl-legal { display: flex; gap: 10px; }
+    [data-section="closing"] .cl-legal a { font-size: 12px; color: rgba(255,255,255,.8); }
+  </style>
+  <div class="v2-canvas">
+    <h2 class="cl-head" data-m="up">Know what every<br>device is <em>worth</em></h2>
+
+    <footer class="cl-foot" data-m="up" style="--d:250ms">
+      <div class="cl-top">
+        <div class="cl-sub">
+          <a href="/v2/" class="cl-logo" aria-label="Fintegre home">
+            <img decoding="async" src="/v2/assets/closing-logo-mark.svg" alt="" width="32.1605" height="23.0769" style="left:3.77px; top:3.46px;">
+            <img decoding="async" src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
+          </a>
+          <h3>Get trade-in insights</h3>
+          <p>Market reports and program benchmarks. No spam.</p>
+          <form class="cl-form" novalidate>
+            <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="cl-cols">
+          <nav aria-label="Platform"><span>Platform</span>
+            <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device value intelligence</a><a href="/v2/platform/">Vendor network</a><a href="/v2/platform/">Integrations</a>
+          </nav>
+          <nav aria-label="Solutions"><span>Solutions</span>
+            <a href="/v2/solutions/">Retailers</a><a href="/v2/solutions/">Telecom operators</a><a href="/v2/solutions/">OEM and ecosystems</a><a href="/v2/solutions/">Apple and premium retail</a>
+          </nav>
+          <nav aria-label="Company"><span>Company</span>
+            <a href="/v2/customers/">Customers</a><a href="/v2/insights/">Insights</a><a href="/v2/company/">About</a><a href="/v2/company/">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="cl-bottom">
+        <small>© 2026 Fintegre. All rights reserved.</small>
+        <nav class="cl-legal" aria-label="Legal"><a href="#closing">Privacy</a><a href="#closing">Cookies</a><a href="#closing">Imprint</a></nav>
+      </div>
+    </footer>
+  </div>
+</section>
+</main>
+<script src="/v2/v2.js"></script>
+<script>
+// Report hero: Share uses the native share sheet when there is one, else copies the link.
+(() => {
+  const btn = document.querySelector('[data-section="hero"] .rh-share');
+  if (!btn) return;
+  const label = btn.innerHTML;
+  btn.addEventListener('click', async () => {
+    const data = { title: document.title, url: location.href.split('#')[0] };
+    try {
+      if (navigator.share) { await navigator.share(data); return; }
+      await navigator.clipboard.writeText(data.url);
+      btn.textContent = 'Link copied';
+    } catch (e) { if (e && e.name === 'AbortError') return; btn.textContent = 'Copy failed'; }
+    setTimeout(() => { btn.innerHTML = label; }, 2000);
+  });
+})();
+</script>
+<script>
+// Article: the section is ~3.6 screens tall, so each chart/figure/quote reveals on its own as it scrolls in.
+(() => {
+  const blocks = document.querySelectorAll('[data-section="article"] .rv');
+  if (!blocks.length) return;
+  const io = new IntersectionObserver((es) => {
+    for (const e of es) if (e.isIntersecting) { e.target.classList.add('r-in'); io.unobserve(e.target); }
+  }, { rootMargin: '0px 0px -20% 0px' });
+  blocks.forEach((b) => io.observe(b));
+})();
+</script>
+<script>
+// Download form: no backend yet. Validates in the browser, market chips toggle, then shows a sent state.
+(() => {
+  const sec = document.querySelector('[data-section="download"]');
+  if (!sec) return;
+  const card = sec.querySelector('.dl-card'), form = sec.querySelector('.dl-form'), fine = sec.querySelector('.dl-fine');
+  const fineText = fine.textContent;
+  sec.querySelectorAll('.dl-chip').forEach((c) => c.addEventListener('click', () => c.setAttribute('aria-pressed', String(c.getAttribute('aria-pressed') !== 'true'))));
+  form.querySelectorAll('input').forEach((i) => i.addEventListener('input', () => { i.classList.remove('is-bad'); fine.classList.remove('is-bad-msg'); fine.textContent = fineText; }));
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const bad = [...form.querySelectorAll('input')].filter((i) => !i.value.trim() || !i.checkValidity());
+    form.querySelectorAll('input').forEach((i) => i.classList.toggle('is-bad', bad.includes(i)));
+    if (!sec.querySelector('.dl-chip[aria-pressed="true"]')) { fine.classList.add('is-bad-msg'); fine.textContent = 'Pick at least one market.'; return; }
+    if (bad.length) { fine.classList.add('is-bad-msg'); fine.textContent = bad[0].type === 'email' && bad[0].value ? 'Please enter a valid work email.' : 'Please fill in the highlighted fields.'; bad[0].focus(); return; }
+    sec.querySelector('[data-dl-email]').textContent = form.email.value.trim();
+    card.classList.add('is-sent');
+  });
+})();
+</script>
+<script>
+// Closing footer: newsletter form has no backend yet, so it validates locally and confirms in place.
+(() => {
+  const form = document.querySelector('[data-section="closing"] .cl-form');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const input = form.querySelector('input');
+    const btn = form.querySelector('button');
+    if (!input.checkValidity()) { input.focus(); input.style.borderColor = 'rgba(255,140,140,.7)'; return; }
+    input.style.borderColor = '';
+    input.value = '';
+    input.placeholder = 'Thanks, you are on the list';
+    btn.textContent = 'Subscribed';
+    btn.disabled = true;
+  });
+  form.querySelector('input').addEventListener('input', (e) => { e.target.style.borderColor = ''; });
+})();
+</script>
+</body>
+</html>

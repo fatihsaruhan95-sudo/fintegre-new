@@ -48,7 +48,8 @@
 
   // Header: hidden over the hero, shown when scrolling up; switches to the light style over light sections.
   const header = document.querySelector('.v2-header');
-  const lights = [...document.querySelectorAll('.v2-sec[data-tone="light"]')];
+  // Read on every check: some pages switch a section's tone at runtime (e.g. the builder's light step).
+  const lights = () => document.querySelectorAll('.v2-sec[data-tone="light"]');
   let lastY = scrollY;
   window.V2.onScroll(() => {
     const y = scrollY, heroH = document.querySelector('.v2-sec')?.offsetHeight || 900;
@@ -57,7 +58,7 @@
     lastY = y;
     root.classList.toggle('v2-hdr-on', header.classList.contains('is-visible'));
     const probe = 60;
-    header.classList.toggle('on-light', lights.some((s) => { const r = s.getBoundingClientRect(); return r.top <= probe && r.bottom >= probe; }));
+    header.classList.toggle('on-light', [...lights()].some((s) => { const r = s.getBoundingClientRect(); return r.top <= probe && r.bottom >= probe; }));
   });
 
   // In-page links scroll smoothly.
