@@ -89,13 +89,60 @@
   [data-section="hero"] .h-card__price { font-weight: 300; font-size: 48px; line-height: normal; letter-spacing: -0.03em; color: #F5F7FA; }
   [data-section="hero"] .h-card__row { display: flex; gap: 8px; align-items: center; font-weight: 300; font-size: 13px; line-height: normal; color: rgba(245,247,250,.75); }
   [data-section="hero"] .chip--blue { background: #3047EC; }
+
+
+
+
+  /* Device screens: Fintegre UI laid over the device photo (natural image px, scaled with --k). */
+  .su-q { position: absolute; left: 0; top: 0; transform-origin: 0 0; pointer-events: none; }
+  .su { position: absolute; inset: 0; overflow: hidden; box-sizing: border-box; display: flex; flex-direction: column; gap: .55em; padding: 1em;
+    background: radial-gradient(120% 55% at 85% 0%, rgba(48,71,236,.34), rgba(48,71,236,0) 70%), #0F1115; color: #F5F7FA;
+    font-weight: 400; line-height: 1.2; letter-spacing: -.01em; white-space: nowrap; text-align: left; }
+  .su * { box-sizing: border-box; }
+  .su p { margin: 0; }
+  .su-top { display: flex; align-items: center; justify-content: space-between; gap: .6em; font-size: .62em; color: #A7B0BE; }
+  .su-top b { display: flex; align-items: center; gap: .45em; font-weight: 400; color: #F5F7FA; }
+  .su-top img { width: 1.4em; height: auto; display: block; }
+  .su-m { font-size: .62em; color: #A7B0BE; }
+  .su-t { font-size: .92em; }
+  .su-n { font-weight: 300; font-size: 2.6em; line-height: 1; letter-spacing: -.045em; }
+  .su-c { display: flex; flex-direction: column; gap: .35em; padding: .75em .85em; border-radius: .75em; background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 1px rgba(183,215,255,.14); }
+  .su-r { display: flex; align-items: center; justify-content: space-between; gap: .8em; font-size: .7em; padding: .62em .8em; border-radius: .6em;
+    background: rgba(255,255,255,.05); box-shadow: inset 0 0 0 1px rgba(183,215,255,.1); }
+  .su-r i { font-style: normal; color: #A7B0BE; }
+  .su-r.on { background: #3047EC; box-shadow: none; }
+  .su-r.on i { color: rgba(245,247,250,.82); }
+  .su-k { color: #B7D7FF; }
+  .su-row { display: flex; gap: .55em; }
+  .su-row > * { flex: 1; min-width: 0; }
+  .su-col { display: flex; flex-direction: column; gap: .45em; min-height: 0; }
+  .su-bars { display: flex; align-items: flex-end; gap: .4em; flex: 1; min-height: 0; }
+  .su-bars i { flex: 1; border-radius: .25em .25em 0 0; background: rgba(183,215,255,.3); }
+  .su-bars i.on { background: #3047EC; }
+  .su-pill { align-self: flex-start; font-size: .58em; padding: .4em .8em; border-radius: 999px; background: #B7D7FF; color: #0F1115; }
+  .su-ph { display: grid; grid-template-columns: repeat(3, 1fr); gap: .4em; }
+  .su-ph i { aspect-ratio: 1; border-radius: .45em; background: linear-gradient(150deg, rgba(183,215,255,.22), rgba(48,71,236,.12)); box-shadow: inset 0 0 0 1px rgba(183,215,255,.14); }
+  .su-isl { position: absolute; left: 50%; top: 1.5%; width: 30%; height: 3.4%; transform: translateX(-50%); border-radius: 999px; background: #000; }
+  .su-notch { position: absolute; left: 50%; top: 0; width: 17%; height: 3.2%; transform: translateX(-50%); border-radius: 0 0 .45em .45em; background: #000; }
+  .su-sp { flex: 1; }
+  .su--watch { align-items: center; text-align: center; padding: .6em; gap: .1em; background: #000; }
+  .su--light { background: radial-gradient(120% 55% at 85% 0%, rgba(184,214,255,.6), rgba(184,214,255,0) 70%), #F5F7FA; color: #0F1115; }
+  .su--light .su-top, .su--light .su-m, .su--light .su-r i { color: #6B7380; }
+  .su--light .su-top b { color: #0F1115; }
+  .su--light .su-top img { filter: brightness(0); }
+  .su--light .su-c, .su--light .su-r { background: #fff; box-shadow: inset 0 0 0 1px rgba(15,17,21,.08); }
+  .su--light .su-r.on { background: #3047EC; color: #F5F7FA; box-shadow: none; }
+  .su--light .su-r.on i { color: rgba(245,247,250,.82); }
+  .su--light .su-bars i { background: rgba(48,71,236,.16); }
+  .su--light .su-bars i.on { background: #3047EC; }
+  .su--light .su-k { color: #3047EC; }
 </style>
   <div class="v2-canvas">
     <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-hero-glow-1.svg" style="left:640px; top:-120px; width:1120px; height:960px;">
     <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-hero-glow-2.svg" style="left:-380px; top:420px; width:960px; height:780px;">
     <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-hero-room-light.svg" style="left:640px; top:210px; width:820px; height:540px;">
     <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-hero-floor-light.svg" style="left:580px; top:570px; width:960px; height:180px;">
-    <div class="a" style="left:0; top:660px; width:1440px; height:240px; background:linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.92) 70%, #0F1115 100%);"></div>
+    <div class="a" style="left:-1200px; top:660px; width:3840px; height:240px; background:linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.92) 70%, #0F1115 100%);"></div>
 
     <div class="a h-top">
       <a href="/v2/" class="h-logo" aria-label="Fintegre home"><span class="h-mark"><img decoding="async" alt="" src="/v2/assets/hero-logo.svg"></span>Fintegre</a>
@@ -127,10 +174,18 @@
     </nav>
 
     <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-hero-contact-shadow.svg" style="left:656px; top:626px; width:788px; height:54px;">
-    <div class="a" style="left:880px; top:385px; width:440px; height:267px; --ty:40px; --d:200ms; --to:.9s; --tt:1.2s;" data-sm><img decoding="async" class="dev" alt="MacBook Air in sky blue" src="/v2/assets/solutions-macbook-air.webp" width="440" height="267"></div>
-    <div class="a" style="left:690px; top:377px; width:220px; height:275px; --ty:40px; --d:350ms; --to:.9s; --tt:1.2s;" data-sm><img decoding="async" class="dev" alt="iPad mini in starlight" src="/v2/assets/solutions-ipad-mini-starlight.webp" width="220" height="275"></div>
-    <div class="a" style="left:1286px; top:427px; width:128px; height:225px; --ty:40px; --d:500ms; --to:.9s; --tt:1.2s;" data-sm><img decoding="async" class="dev" alt="iPhone 17 in lavender" src="/v2/assets/solutions-iphone17-lavender.webp" width="128" height="225"></div>
-    <div class="a" style="left:1222px; top:546px; width:92px; height:106px; --ty:30px; --d:650ms; --to:.9s; --tt:1.2s;" data-sm><img decoding="async" class="dev" alt="Apple Watch" src="/v2/assets/solutions-apple-watch.webp" width="92" height="106"></div>
+    <div class="a" style="left:880px; top:385px; width:440px; height:267px; --ty:40px; --d:200ms; --to:.9s; --tt:1.2s;" data-sm><img decoding="async" class="dev" alt="MacBook Air in sky blue" src="/v2/assets/solutions-macbook-air.webp" width="440" height="267">
+      <!--su:mac--><div class="su-q" aria-hidden="true" style="width:631px; height:409px; font-size:17px; transform:scale(0.555556) translate(81px,16px);"><div class="su" style="border-radius:12px 12px 3px 3px;"><div class="su-notch"></div><div class="su-top" style="margin-top:.6em"><b><img decoding="async" alt="" src="/assets/header-mark.svg">Trade-in program · overview</b><span style="margin-right:auto">Sample data</span></div><div class="su-row" style="--ty:14px; --d:1000ms; --to:.6s; --tt:.8s;" data-sm><div class="su-c"><p class="su-m">Trade-ins · 30 days</p><p class="su-n" style="font-size:1.7em">1,284</p></div><div class="su-c"><p class="su-m">Average credit</p><p class="su-n" style="font-size:1.7em">€412</p></div><div class="su-c"><p class="su-m">Assessed grade A</p><p class="su-n" style="font-size:1.7em">64 %</p></div></div><div class="su-row" style="flex:1; min-height:0;" style="--ty:14px; --d:1200ms; --to:.6s; --tt:.8s;" data-sm><div class="su-c" style="flex:1.15"><p class="su-m">Trade-ins by week</p><div class="su-bars"><i style="height:42%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:62%"></i><i style="height:58%"></i><i style="height:70%"></i><i style="height:66%"></i><i style="height:84%" class=on></i></div></div><div class="su-c" style="gap:.4em"><p class="su-m">Buyers by expected net recovery</p><div class="su-r on"><span>Buyer A</span><i>€498</i></div><div class="su-r"><span>Buyer B</span><i>€489</i></div><div class="su-r"><span>Buyer C</span><i>€474</i></div></div></div></div></div>
+      </div>
+    <div class="a" style="left:690px; top:377px; width:220px; height:275px; --ty:40px; --d:350ms; --to:.9s; --tt:1.2s;" data-sm><img decoding="async" class="dev" alt="iPad mini in starlight" src="/v2/assets/solutions-ipad-mini-starlight.webp" width="220" height="275">
+      <!--su:ipad-apr--><div class="su-q" aria-hidden="true" style="width:360px; height:553px; font-size:26px; transform:scale(0.458333) translate(96.5px,24px);"><div class="su" style="border-radius:20px;"><div class="su-top"><b><img decoding="async" alt="" src="/assets/header-mark.svg">Assisted trade-in</b><span>Sample data</span></div><div class="su-c" style="--ty:14px; --d:1100ms; --to:.6s; --tt:.8s;" data-sm><p class="su-m">Table 3 · device check</p><p class="su-t">iPhone 15 Pro · 256 GB</p></div><div class="su-r" style="--ty:14px; --d:1220ms; --to:.6s; --tt:.8s;" data-sm><span>Diagnostics</span><i class="su-k">Passed</i></div><div class="su-r" style="--ty:14px; --d:1320ms; --to:.6s; --tt:.8s;" data-sm><span>Condition</span><i>Grade A</i></div><div class="su-r" style="--ty:14px; --d:1420ms; --to:.6s; --tt:.8s;" data-sm><span>Battery</span><i>91 %</i></div><div class="su-sp"></div><p class="su-m">Trade-in credit</p><p class="su-n" style="--ty:14px; --d:1550ms; --to:.6s; --tt:.8s;" data-sm>€520</p><p class="su-m">Subject to inspection</p><div class="su-r on" style="--ty:14px; --d:1700ms; --to:.6s; --tt:.8s;" data-sm><span>Add to receipt</span><i>Table 3</i></div></div></div>
+      </div>
+    <div class="a" style="left:1286px; top:427px; width:128px; height:225px; --ty:40px; --d:500ms; --to:.9s; --tt:1.2s;" data-sm><img decoding="async" class="dev" alt="iPhone 17 in lavender" src="/v2/assets/solutions-iphone17-lavender.webp" width="128" height="225">
+      <!--su:hero-phone--><div class="su-q" aria-hidden="true" style="width:223px; height:484px; font-size:17px; transform:scale(0.457143) matrix3d(0.772741,0.206237,0,0.00042611,0,1,0,0,0,0,1,0,131,0,0,1);"><div class="su" style="border-radius:30px;"><div class="su-isl"></div><div class="su-top" style="margin-top:2.2em"><b><img decoding="async" alt="" src="/assets/header-mark.svg">Trade-in</b></div><p class="su-m" style="margin-top:.6em">Your quote</p><p class="su-n" style="--ty:14px; --d:1200ms; --to:.6s; --tt:.8s;" data-sm>€612</p><p class="su-m">Subject to inspection</p><div class="su-c" style="--ty:14px; --d:1350ms; --to:.6s; --tt:.8s;" data-sm><p class="su-m">Device</p><p class="su-t" style="font-size:.8em">iPhone 15 Pro</p><p class="su-m">Grade A</p></div><div class="su-sp"></div><div class="su-r on" style="--ty:14px; --d:1500ms; --to:.6s; --tt:.8s;" data-sm><span>Credit applied</span></div><p class="su-m" style="font-size:.5em">Sample data</p></div></div>
+      </div>
+    <div class="a" style="left:1222px; top:546px; width:92px; height:106px; --ty:30px; --d:650ms; --to:.9s; --tt:1.2s;" data-sm><img decoding="async" class="dev" alt="Apple Watch" src="/v2/assets/solutions-apple-watch.webp" width="92" height="106">
+      <!--su:watch-612--><div class="su-q" aria-hidden="true" style="width:152px; height:256px; font-size:22px; transform:scale(0.23) translate(24px,100px);"><div class="su su--watch" style="border-radius:34px;"><div class="su-sp"></div><p class="su-m">Credit</p><p class="su-n" style="font-size:2.3em">€612</p><p class="su-m" style="font-size:.42em; margin-top:.3em">Sample data</p><div class="su-sp"></div></div></div>
+      </div>
 
     <svg class="fib" style="left:799.8px; top:302px;" width="176.9" height="30" viewBox="0 0 176.9 30" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1600ms" d="M176.2 0C176.2 15 0.7 15 0.7 30" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
     <svg class="fib" style="left:1029.3px; top:302px;" width="31.4" height="38" viewBox="0 0 31.4 38" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1700ms" d="M0.7 0C0.7 19 30.7 19 30.7 38" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
@@ -158,7 +213,7 @@
   [data-section="apr"] .p-lede { width: 470px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
   [data-section="apr"] .p-lede--lead { color: #F5F7FA; font-weight: 400; }
   [data-section="apr"] .p-copy .btn { padding: 14px 22px; margin-top: 8px; }
-  [data-section="apr"] .p-photo { left: -260px; top: 640px; width: 1500px; height: 568px; mix-blend-mode: lighten; -webkit-mask-image: linear-gradient(90deg, #000 80%, transparent 100%); mask-image: linear-gradient(90deg, #000 80%, transparent 100%); }
+  [data-section="apr"] .p-photo { left: -260px; top: 640px; width: 1500px; height: 568px; mix-blend-mode: lighten; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 19%, #000 80%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 19%, #000 80%, transparent 100%); }
   [data-section="apr"] .p-photo img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .8; }
   [data-section="apr"] .p-card { left: 940px; top: 80px; width: 380px; height: 640px; border-radius: 26px; overflow: clip; background: rgba(255,255,255,.08);
     backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: inset 0 0 0 1px rgba(183,215,255,.14), 0 30px 60px rgba(0,0,0,.45); }
@@ -184,11 +239,14 @@
   [data-section="apr"] .w-note { left: 120px; top: 1294px; width: 1200px; font-weight: 300; font-size: 13px; line-height: 1.5; color: #A7B0BE; }
 </style>
   <div class="v2-canvas">
+    <!-- Room light repeated inside the canvas: the photo blends (lighten) against canvas content only. -->
+    <div class="a" aria-hidden="true" style="left:-1200px; top:0; width:3840px; height:1380px; background: radial-gradient(720px 321.43px at 1992px 800px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;"></div>
     <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-premium-glow.svg" style="left:20px; top:440px; width:1360px; height:780px;">
     <div class="a p-photo" style="--ty:60px; --d:100ms; --to:1.28s; --tt:1.6s;" data-sm>
       <img decoding="async" alt="" src="/v2/assets/solutions-glowing-macbook.webp" width="1500" height="568">
+      <!--su:apr--><div class="su-q" aria-hidden="true" style="width:1476px; height:952px; font-size:40px; transform:scale(0.694444) matrix3d(0.993902,0,0,0,0.230219,0.594285,0,0.000209569,0,0,1,0,347,22,0,1);"><div class="su" style="border-radius:26px 26px 8px 8px;"><div class="su-notch" style="width:5%; height:4.5%"></div><div class="su-top" style="margin-top:.4em"><b><img decoding="async" alt="" src="/assets/header-mark.svg">Assisted trade-in · Table 3</b><span style="margin-right:auto">Sample data</span></div><div class="su-row" style="flex:1; min-height:0; gap:.8em"><div class="su-c" style="flex:.9" style="--ty:14px; --d:900ms; --to:.6s; --tt:.8s;" data-sm><p class="su-m">Trade-ins this week</p><div class="su-bars"><i style="height:46%"></i><i style="height:60%"></i><i style="height:52%"></i><i style="height:72%"></i><i style="height:64%"></i><i style="height:88%" class=on></i><i style="height:40%"></i></div><p class="su-m">Mon · Sun</p></div><div class="su-c" style="justify-content:center" style="--ty:14px; --d:1050ms; --to:.6s; --tt:.8s;" data-sm><p class="su-m">iPhone 15 Pro · Grade A · battery 91 %</p><p class="su-n" style="font-size:3.4em">€520</p><p class="su-m">Trade-in credit · subject to inspection</p></div><div class="su-col" style="justify-content:center" style="--ty:14px; --d:1200ms; --to:.6s; --tt:.8s;" data-sm><p class="su-m">Qualified buyer offers</p><div class="su-r on"><span>Buyer A</span><i>€520</i></div><div class="su-r"><span>Buyer B</span><i>€505</i></div><div class="su-r"><span>Buyer C</span><i>€480</i></div></div></div></div></div>
     </div>
-    <div class="a" style="left:0; top:940px; width:1440px; height:440px; background:linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.7) 40%, #0F1115 100%);"></div>
+    <div class="a" style="left:-1200px; top:940px; width:3840px; height:440px; background:linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.7) 40%, #0F1115 100%);"></div>
 
     <div class="a p-copy" style="--ty:40px; --to:.8s; --tt:1s;" data-sm>
       <p class="eyebrow">Apple Premium Resellers</p>
@@ -221,6 +279,7 @@
     <svg class="fib" style="left:780px; top:598px;" width="60" height="62" viewBox="0 0 60 62" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1300ms" d="M30 0C30 30 0.7 30 0.7 62" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
     <div class="a p-watch" style="left:722px; top:400px; width:170px; height:196px; --sc:.6; --d:1200ms; --to:.3s;" data-sm>
       <img decoding="async" class="dev" alt="Apple Watch with a black sport band" src="/v2/assets/solutions-apple-watch.webp" width="170" height="196">
+      <!--su:watch-615--><div class="su-q" aria-hidden="true" style="width:152px; height:256px; font-size:22px; transform:scale(0.425) translate(24px,100px);"><div class="su su--watch" style="border-radius:34px;"><div class="su-sp"></div><p class="su-m">Credit</p><p class="su-n" style="font-size:2.3em">€615</p><p class="su-m" style="font-size:.42em; margin-top:.3em">Sample data</p><div class="su-sp"></div></div></div>
     </div>
     <div class="a" style="left:640px; top:660px;"><div class="chip" style="--sc:.6; --d:1600ms; --to:.3s;" data-sm><img decoding="async" alt="" src="/v2/assets/hero-dot.svg">Apple Trade In Kit diagnostics</div></div>
 
@@ -254,11 +313,12 @@
   [data-section="retailers"] .r-key { position: absolute; top: 185px; width: 8px; height: 8px; display: block; }
 </style>
   <div class="v2-canvas">
-    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-retail-glow.svg" style="left:-440px; top:-60px; width:1180px; height:1000px;">
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-retail-glow.svg" style="left:-440px; top:-60px; width:1180px; height:1000px; -webkit-mask-image: linear-gradient(180deg, transparent 60px, #000 320px); mask-image: linear-gradient(180deg, transparent 60px, #000 320px);">
     <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-retail-counter-light.svg" style="left:-30px; top:740px; width:780px; height:170px;">
     <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-retail-contact-shadow.svg" style="left:138px; top:796px; width:444px; height:46px;">
     <div class="a" style="left:170px; top:150px; width:380px; height:668px; --tx:-90px; --d:0ms; --to:1.28s; --tt:1.6s;" data-sm>
       <img decoding="async" class="dev" alt="Two iPhone 17 in sage, front and back" src="/v2/assets/solutions-iphone17-sage-pair.webp" width="380" height="668">
+      <!--su:sage--><div class="su-q" aria-hidden="true" style="width:620px; height:1349px; font-size:44px; transform:scale(0.487179) matrix3d(0.772935,0.206784,0,0.000153173,0,1,0,0,0,0,1,0,365,1,0,1);"><div class="su" style="border-radius:80px;"><div class="su-isl"></div><div class="su-top" style="margin-top:2.6em"><b><i style="display:block; width:1.1em; height:1.1em; border-radius:.3em; background:#F5F7FA;"></i>Your store</b><span>Store 14</span></div><p class="su-t" style="margin-top:.4em">Trade in your device</p><div class="su-c" style="--ty:14px; --d:900ms; --to:.6s; --tt:.8s;" data-sm><p class="su-m">Device check</p><p class="su-t" style="font-size:.8em">iPhone 13 · 128 GB</p></div><div class="su-r" style="--ty:14px; --d:1020ms; --to:.6s; --tt:.8s;" data-sm><span>Screen</span><i class="su-k">Grade A</i></div><div class="su-r" style="--ty:14px; --d:1120ms; --to:.6s; --tt:.8s;" data-sm><span>Battery</span><i class="su-k">88 %</i></div><div class="su-c" style="margin-top:.5em" style="--ty:14px; --d:1200ms; --to:.6s; --tt:.8s;" data-sm><p class="su-m">Eligible offers</p><p class="su-t" style="font-size:.8em">3 qualified buyer offers</p><p class="su-m">Compared for this device</p></div><div class="su-sp"></div><p class="su-m">Your quote</p><p class="su-n" style="--ty:14px; --d:1250ms; --to:.6s; --tt:.8s;" data-sm>€410</p><p class="su-m">Subject to inspection</p><div class="su-r on" style="margin-top:.4em" style="--ty:14px; --d:1400ms; --to:.6s; --tt:.8s;" data-sm><span>Apply as credit</span><i>Basket</i></div><p class="su-m" style="font-size:.5em; margin-bottom:1.2em">Sample data</p></div></div>
     </div>
 
     <div class="a r-copy" style="--ty:40px; --d:200ms;" data-sm>
@@ -297,7 +357,7 @@
 
 <section data-section="telecom" id="telecom" class="v2-sec" data-sol data-tone="dark" style="--h:900px; background:#0F1115;">
 <style>
-  [data-section="telecom"] .t-photo { left: -240px; top: 286px; width: 1244px; height: 700px; overflow: hidden; }
+  [data-section="telecom"] .t-photo { left: -240px; top: 286px; width: 1244px; height: 700px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 200px, #000 400px); mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.35) 200px, #000 400px); }
   [data-section="telecom"] .t-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
   [data-section="telecom"] .t-copy { left: 120px; top: 96px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; white-space: nowrap; }
   [data-section="telecom"] .t-copy .eyebrow { font-size: 18px; }
@@ -319,12 +379,11 @@
   <div class="v2-canvas">
     <div class="a t-photo" style="--sc:1.06; --to:1s; --tt:4s;" data-sm>
       <img decoding="async" alt="A telecom store advisor and a customer smiling at a tablet while he holds his phone" src="/v2/assets/solutions-telecom-store.webp" width="1244" height="700">
+      <i style="position:absolute; inset:0; background:rgba(20,30,110,.14);"></i>
     </div>
-    <div class="a" style="left:-240px; top:286px; width:1244px; height:700px; background:rgba(20,30,110,.14);"></div>
-    <div class="a" style="left:0; top:276px; width:1440px; height:130px; background:linear-gradient(180deg, #0F1115, rgba(15,17,21,0));"></div>
-    <div class="a" style="left:0; top:740px; width:1440px; height:160px; background:linear-gradient(180deg, rgba(15,17,21,0), #0F1115);"></div>
+        <div class="a" style="left:-1200px; top:276px; width:3840px; height:130px; background:linear-gradient(180deg, #0F1115, rgba(15,17,21,0));"></div>
+    <div class="a" style="left:-1200px; top:740px; width:3840px; height:160px; background:linear-gradient(180deg, rgba(15,17,21,0), #0F1115);"></div>
     <div class="a" style="left:640px; top:240px; width:380px; height:700px; background:linear-gradient(90deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.72) 55%, #0F1115 100%);"></div>
-    <div class="a" style="left:0; top:240px; width:140px; height:700px; background:linear-gradient(90deg, rgba(15,17,21,.7), rgba(15,17,21,0));"></div>
     <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-telecom-room-light.svg" style="left:600px; top:150px; width:1120px; height:920px;">
 
     <div class="a t-copy" style="--ty:30px; --d:100ms; --to:.72s; --tt:.9s;" data-sm>
@@ -403,6 +462,7 @@
     </div>
     <div class="a o-ipad" style="left:1130px; top:250px; width:440px; height:736px; --tx:80px; --d:200ms; --to:1.12s; --tt:1.4s;" data-sm>
       <img decoding="async" class="dev" alt="Two iPad Air, front and back, in blue" src="/v2/assets/solutions-ipad-air-pair.webp" width="440" height="736">
+      <!--su:air--><div class="su-q" aria-hidden="true" style="width:700px; height:1007px; font-size:34px; transform:scale(0.488889) matrix3d(0.425798,-0.380629,0,-0.000298291,0.200064,0.635982,0,-6.84218e-06,0,0,1,0,164,306,0,1);"><div class="su su--light" style="border-radius:28px;"><div class="su-top"><b><img decoding="async" alt="" src="/assets/header-mark.svg">Brand program · report</b><span>Sample data</span></div><div class="su-row" style="--ty:14px; --d:1000ms; --to:.6s; --tt:.8s;" data-sm><div class="su-c"><p class="su-m">Participating channels</p><p class="su-n" style="font-size:1.9em">5</p></div><div class="su-c"><p class="su-m">Devices · quarter</p><p class="su-n" style="font-size:1.9em">7,010</p></div></div><div class="su-c" style="flex:1; min-height:0" style="--ty:14px; --d:1150ms; --to:.6s; --tt:.8s;" data-sm><p class="su-m">Devices by channel</p><div class="su-bars" style="gap:.8em"><i style="height:92%" class=on></i><i style="height:80%"></i><i style="height:62%"></i><i style="height:44%"></i><i style="height:28%"></i></div><div class="su-row su-m" style="text-align:center"><span>Brand</span><span>Retail</span><span>Telecom</span><span>Online</span><span>Repair</span></div></div><div class="su-r on" style="--ty:14px; --d:1300ms; --to:.6s; --tt:.8s;" data-sm><span>Shared eligibility rules</span><i>Applied</i></div><div class="su-r"><span>Incentive</span><i>Per agreed terms</i></div></div></div>
     </div>
     <div class="a o-card" style="--ty:60px; --d:300ms; --to:.88s;" data-sm>
       <p style="left:36px; top:34px; font-size:13px; color:#6B7380;">Offers by channel</p>
@@ -537,11 +597,12 @@
   [data-section="vendor-network"] .v-copy .btn { padding: 14px 22px; margin-top: 8px; }
 </style>
   <div class="v2-canvas">
-    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-proof-glow.svg" style="left:520px; top:-140px; width:1160px; height:920px;">
+    <img decoding="async" class="glow" alt="" src="/v2/assets/solutions-proof-glow.svg" style="left:520px; top:-140px; width:1160px; height:920px; -webkit-mask-image: linear-gradient(180deg, transparent 140px, #000 400px); mask-image: linear-gradient(180deg, transparent 140px, #000 400px);">
     <div class="a" style="left:900px; top:110px; width:417px; height:520px; --ty:70px; --to:1s; --tt:1.4s;" data-sm>
       <img decoding="async" class="dev" alt="iPad mini in midnight" src="/v2/assets/solutions-ipad-mini-midnight.webp" width="417" height="520">
+      <!--su:vendor--><div class="su-q" aria-hidden="true" style="width:645px; height:990px; font-size:37px; transform:scale(0.484884) translate(173px,43px);"><div class="su" style="border-radius:36px;"><div class="su-top"><b><img decoding="async" alt="" src="/assets/header-mark.svg">Vendor app · opportunities</b><span>Sample data</span></div><div class="su-c" style="--ty:14px; --d:900ms; --to:.6s; --tt:.8s;" data-sm><p class="su-m">Lot 2418 · Warsaw</p><p class="su-t">iPhone 14 · 128 GB · Grade B</p></div><div class="su-ph" style="--ty:14px; --d:1020ms; --to:.6s; --tt:.8s;" data-sm><i></i><i></i><i></i></div><div class="su-r" style="--ty:14px; --d:1120ms; --to:.6s; --tt:.8s;" data-sm><span>Diagnostics</span><i class="su-k">Passed</i></div><div class="su-r" style="--ty:14px; --d:1200ms; --to:.6s; --tt:.8s;" data-sm><span>Battery</span><i>86 %</i></div><div class="su-sp"></div><p class="su-m">Your offer</p><p class="su-n" style="--ty:14px; --d:1380ms; --to:.6s; --tt:.8s;" data-sm>€265</p><div class="su-r on" style="--ty:14px; --d:1500ms; --to:.6s; --tt:.8s;" data-sm><span>Submit offer</span><i>€265</i></div></div></div>
     </div>
-    <div class="a" style="left:0; top:560px; width:1440px; height:200px; background:linear-gradient(180deg, rgba(15,17,21,0), #0F1115);"></div>
+    <div class="a" style="left:-1200px; top:560px; width:3840px; height:200px; background:linear-gradient(180deg, rgba(15,17,21,0), #0F1115);"></div>
     <div class="a v-copy" style="--ty:40px; --d:100ms;" data-sm>
       <p class="eyebrow">Vendor Network</p>
       <h2>Buying trade-in devices?<br><span>Explore the Fintegre<br>Vendor Network.</span></h2>

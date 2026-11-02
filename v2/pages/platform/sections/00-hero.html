@@ -29,17 +29,17 @@
   /* Visual */
   [data-section="hero"] .ph-photo { left: 823.45px; top: 131.1px; width: 911.47px; height: 1100px; }
   [data-section="hero"] .ph-photo img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 36px 70px rgba(0,0,0,.55)); }
-  [data-section="hero"] .ph-fade { left: 0; top: 640px; width: 1440px; height: 260px; pointer-events: none;
-    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.92) 70%, #0F1115 100%); }
+  [data-section="hero"] .ph-fade { left: -1200px; top: 640px; width: 3840px; height: 260px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.92) 62%, #0F1115 88%); }
   [data-section="hero"] .ph-fibre { position: absolute; overflow: visible; }
   [data-section="hero"] .ph-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap;
     background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; line-height: normal; color: #F5F7FA; }
   [data-section="hero"] .ph-chip img { width: 7px; height: 7px; display: block; }
 
-  [data-section="hero"] .ph-card { left: 1004px; top: 400px; width: 372px; height: 462px; border-radius: 26px; overflow: clip; line-height: normal;
+  [data-section="hero"] .ph-card { left: 1004px; top: 380px; width: 372px; height: 462px; border-radius: 26px; overflow: clip; line-height: normal;
     background: linear-gradient(rgba(255,255,255,.07), rgba(255,255,255,.07)), rgba(15,17,21,.72);
     backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
-    box-shadow: inset 0 0 0 1px rgba(183,215,255,.16), 0 30px 60px rgba(0,0,0,.5); }
+    box-shadow: inset 0 0 0 1px rgba(183,215,255,.16), 0 20px 40px rgba(0,0,0,.5); }
   [data-section="hero"] .ph-card__k { left: 25px; top: 23px; font-size: 13px; color: #A7B0BE; white-space: nowrap; }
   [data-section="hero"] .ph-card__s { right: 25px; top: 23px; font-size: 12px; color: #A7B0BE; white-space: nowrap; padding: 2px 8px; border-radius: 999px; box-shadow: inset 0 0 0 1px rgba(167,176,190,.3); line-height: 1.3; }
   [data-section="hero"] .ph-card__t { left: 25px; top: 45px; font-size: 22px; letter-spacing: -0.02em; color: #F5F7FA; white-space: nowrap; }
@@ -60,6 +60,49 @@
   .motion [data-section="hero"] [data-m="up"] { translate: 0 var(--y,40px); }
   .motion [data-section="hero"].is-in [data-m] { opacity: 1; translate: none; }
   .motion [data-section="hero"] [data-draw] { transition-duration: .6s; }
+  /* Device screen UI (Fintegre trade-in app, sample data). Sizes in cqw of the screen box so the UI scales with the device. */
+  .fx-dev { position: absolute; inset: 0; container-type: inline-size; pointer-events: none; }
+  .fx-dev > img.fx-back { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: contain; filter: none !important; clip-path: inset(0 41.85% 0 0 round 0 9.5cqw 9.5cqw 0); }
+  .fx-scr { position: absolute; overflow: hidden; container-type: size; line-height: 1.2; text-align: left; white-space: nowrap; }
+  .fx-scr--18 { left: 52.5%; top: 1.7%; width: 45.1%; height: 96.6%; border-radius: 5.6cqw; }
+  .fx-scr--13 { left: 4.8%; top: 2.3%; width: 89.8%; height: 95.1%; border-radius: 9.4cqw; }
+  .fx-scr p { margin: 0; }
+  .fx-ui { position: absolute; inset: 0; color: #F5F7FA; background: radial-gradient(110cqw 80cqw at 75% 0%, rgba(48,71,236,.42), rgba(48,71,236,0) 70%), #0F1115; }
+  .fx-ui--light { color: #0F1115; background: radial-gradient(110cqw 80cqw at 75% 0%, rgba(183,215,255,.55), rgba(183,215,255,0) 70%), #F5F7FA; }
+  .fx-island { position: absolute; left: 26.5cqw; top: 4.4cqw; width: 28cqw; height: 10.6cqw; border-radius: 99px; background: #000; }
+  .fx-notch { position: absolute; left: 29.7cqw; top: 0; width: 41.4cqw; height: 8.5cqw; border-radius: 0 0 5cqw 5cqw; background: #000; }
+  .fx-time { position: absolute; top: 6.6cqw; font-size: 4.2cqw; font-weight: 500; }
+  .fx-body { position: absolute; top: 22cqw; display: flex; flex-direction: column; }
+  .fx-head { display: flex; align-items: center; justify-content: space-between; }
+  .fx-brand { display: flex; align-items: center; gap: 2cqw; font-size: 4.6cqw; }
+  .fx-dev .fx-brand img { width: 6.2cqw; height: auto; display: block; filter: none; }
+  .fx-dev .fx-ui--light .fx-brand img { filter: brightness(0); opacity: .88; }
+  .fx-tag { font-size: 3.1cqw; color: #A7B0BE; padding: .8cqw 2.2cqw; border-radius: 99px; box-shadow: inset 0 0 0 .3cqw rgba(167,176,190,.35); }
+  .fx-ui--light .fx-tag { color: #5C6373; box-shadow: inset 0 0 0 .3cqw rgba(92,99,115,.3); }
+  .fx-k { font-size: 3.6cqw; font-weight: 300; color: #A7B0BE; }
+  .fx-ui--light .fx-k { color: #5C6373; }
+  .fx-t { margin-top: 1.2cqw !important; font-size: 6.6cqw; letter-spacing: -.02em; }
+  .fx-card { margin-top: 6cqw; padding: 5cqw; border-radius: 5cqw; background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 .3cqw rgba(183,215,255,.14); }
+  .fx-ui--light .fx-card { background: #fff; box-shadow: 0 3cqw 8cqw rgba(15,20,64,.08); }
+  .fx-big { margin-top: 2cqw !important; font-size: 17cqw; line-height: 1; letter-spacing: -.04em; }
+  .fx-pill { display: inline-flex; align-items: center; gap: 1.6cqw; margin-top: 3.6cqw; padding: 1.4cqw 3cqw; border-radius: 99px; background: rgba(183,215,255,.12); color: #B7D7FF; font-size: 3.4cqw; }
+  .fx-pill i { width: 1.6cqw; height: 1.6cqw; border-radius: 50%; background: currentColor; }
+  .fx-rows { margin-top: 4cqw; }
+  .fx-row { display: flex; justify-content: space-between; align-items: center; padding: 3.4cqw 0; font-size: 4.2cqw; border-bottom: .3cqw solid rgba(183,215,255,.12); }
+  .fx-ui--light .fx-row { border-bottom-color: #E3E8F0; }
+  .fx-row span { font-weight: 300; color: #A7B0BE; }
+  .fx-ui--light .fx-row span { color: #5C6373; }
+  .fx-row b { font-weight: 400; }
+  .fx-row b i { display: inline-block; width: 1.8cqw; height: 1.8cqw; margin-right: 1.6cqw; border-radius: 50%; background: #B7D7FF; vertical-align: .3cqw; }
+  .fx-ui--light .fx-row b i { background: #3047EC; }
+  .fx-row.is-on { margin-top: 3cqw; padding: 3.6cqw 3.4cqw; border: 0; border-radius: 3.4cqw; background: #3047EC; color: #fff; }
+  .fx-row.is-on span { color: rgba(255,255,255,.8); }
+  .fx-prog { margin-top: 6cqw; font-size: 3.4cqw; color: #A7B0BE; }
+  .fx-ui--light .fx-prog { color: #5C6373; }
+  .fx-bars { display: flex; gap: 1.6cqw; margin-top: 2.4cqw; }
+  .fx-bars i { flex: 1; height: 1cqw; border-radius: 99px; background: rgba(183,215,255,.16); }
+  .fx-bars i.on { background: #B7D7FF; }
+  .fx-btn { margin-top: 7cqw; height: 13cqw; border-radius: 99px; background: #3047EC; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 4.4cqw; }
 </style>
   <div class="v2-canvas">
     <img class="ph-glow" alt="" src="/v2/assets/platform-hero-glow.svg" style="left:700px; top:-120px; width:1080px; height:960px;">
@@ -68,6 +111,34 @@
 
     <div class="ph-a ph-photo" data-m="up" style="--d:200ms; --y:60px;">
       <img alt="Two iPhone 18 Pro in Glacier, back cameras" src="/v2/assets/platform-hero-phone.webp" width="1257" height="1517">
+      <div class="fx-dev">
+      <img class="fx-back" alt="" src="/v2/assets/platform-hero-phone.webp">
+      <div class="fx-scr fx-scr--18" aria-hidden="true">
+        <div class="fx-ui">
+          <span class="fx-island"></span>
+          <p class="fx-time" style="left:15cqw;">9:41</p>
+          <div class="fx-body" style="left:19cqw; right:7cqw;">
+            <div class="fx-head"><p class="fx-brand"><img alt="" src="/assets/header-mark.svg">Trade-in</p></div>
+            <p class="fx-k" style="margin-top:7cqw;">This device · Sample data</p>
+            <p class="fx-t">iPhone 18 Pro, 256 GB</p>
+            <div class="fx-card" data-m="fade" style="--d:900ms; --to:.6s;">
+              <p class="fx-k">Your quote</p>
+              <p class="fx-big">€612</p>
+              <p class="fx-k" style="margin-top:2.4cqw;">Subject to inspection</p>
+              <p class="fx-pill"><i></i>3 eligible offers</p>
+            </div>
+            <div class="fx-rows" data-m="fade" style="--d:1300ms; --to:.6s;">
+              <div class="fx-row"><span>Screen</span><b><i></i>Grade A</b></div>
+              <div class="fx-row"><span>Battery</span><b><i></i>91 %</b></div>
+              <div class="fx-row"><span>IMEI</span><b><i></i>Checked</b></div>
+            </div>
+            <p class="fx-prog">Step 4 of 6 · Accept your quote</p>
+            <div class="fx-bars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+            <p class="fx-btn">Accept quote</p>
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
 
     <div class="ph-a ph-fade"></div>

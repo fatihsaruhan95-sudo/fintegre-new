@@ -2,7 +2,7 @@
   <style>
     [data-section="white-label"] .wl-phone { position: absolute; width: 280px; height: 571.776px; }
     [data-section="white-label"] .wl-ph-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; border-radius: 50px; box-shadow: 0 36px 70px rgba(0,0,0,.6); max-width: none; pointer-events: none; }
-    [data-section="white-label"] .wl-screen { position: absolute; left: 13.41px; top: 13.74px; width: 249.907px; height: 542.991px; overflow: hidden; border-radius: 31.402px; background: var(--bg); line-height: normal; }
+    [data-section="white-label"] .wl-screen { position: absolute; left: 13.2px; top: 13.4px; width: 251.6px; height: 544px; overflow: hidden; border-radius: 31.402px; background: var(--bg); line-height: normal; }
     [data-section="white-label"] .wl-t { position: absolute; margin: 0; white-space: nowrap; font-weight: 400; }
     [data-section="white-label"] .wl-k { left: 18px; font-size: 12px; color: var(--mu); }
     [data-section="white-label"] .wl-v { right: 18px; font-size: 12px; color: var(--ink); }
@@ -23,14 +23,14 @@
     [data-section="white-label"] .wl-points img { width: 6px; height: 6px; flex: none; }
     .motion [data-section="white-label"] [data-m="up"] { translate: 0 var(--ty, 40px); }
     .motion [data-section="white-label"].is-in [data-m] { translate: none; }
-    [data-section="white-label"] .wl-glow { position: absolute; left: 500px; top: 0; width: 1100px; height: 920px; max-width: none; pointer-events: none; }
+    [data-section="white-label"] .wl-glow { position: absolute; left: 500px; top: 60px; width: 1100px; height: 780px; pointer-events: none; background: radial-gradient(closest-side, rgba(48,71,236,.3) 0%, rgba(48,71,236,.17) 45%, rgba(48,71,236,.04) 80%, rgba(48,71,236,0) 100%); }
     [data-section="white-label"] .wl-copy { position: absolute; left: 120px; top: 250px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
     [data-section="white-label"] .wl-copy h2 { font-size: 54px; letter-spacing: -1.89px; white-space: nowrap; }
     [data-section="white-label"] .wl-copy p { width: 380px; font-size: 17px; }
     [data-section="white-label"] .wl-copy .wl-sample, [data-section="white-label"] .wl-sample { margin: 0; font-size: 12px; line-height: normal; color: #A7B0BE; white-space: nowrap; }
   </style>
   <div class="v2-canvas">
-    <img class="wl-glow" src="/v2/assets/platform-white-label-glow.svg" alt="" width="1100" height="920">
+    <div class="wl-glow" aria-hidden="true"></div>
     <div class="wl-copy" data-m="up" style="--ty:30px;--d:100ms">
       <h2>Your brand<br>on every screen.</h2>
       <p>Customers see your colours, your words and your program terms. The same workflow runs underneath, in store, online and in the app.</p>

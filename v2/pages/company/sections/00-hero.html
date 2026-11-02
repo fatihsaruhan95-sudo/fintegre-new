@@ -4,7 +4,8 @@
   [data-section="hero"] p { margin: 0; }
 
   /* Photo: the Fintegre team at work, with an indigo tint and scrims for the copy side. */
-  [data-section="hero"] .ch-photo { left: 360px; top: 80px; width: 1600px; height: 900px; overflow: hidden; }
+  [data-section="hero"] .ch-photo { left: 360px; top: 80px; width: 1600px; height: 900px; overflow: hidden;
+    -webkit-mask-image: linear-gradient(180deg, #000 0, #000 600px, transparent 815px); mask-image: linear-gradient(180deg, #000 0, #000 600px, transparent 815px); }
   [data-section="hero"] .ch-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
   [data-section="hero"] .ch-tint { left: 360px; top: 80px; width: 1600px; height: 900px; background: rgba(20,30,110,.14); pointer-events: none; }
   [data-section="hero"] .ch-scrim { left: 0; top: 0; width: 960px; height: 900px; pointer-events: none;
@@ -14,8 +15,9 @@
   [data-section="hero"] .ch-fade-top { left: -1000px; top: 0; width: 3440px; height: 230px; pointer-events: none;
     background: linear-gradient(180deg, #0F1115 0%, #0F1115 42%, rgba(15,17,21,.55) 70%, rgba(15,17,21,0) 100%); }
   [data-section="hero"] .ch-fade-bot { left: -1000px; top: 640px; width: 3440px; height: 260px; pointer-events: none;
-    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.96) 100%); }
-  [data-section="hero"] .ch-room { left: -340px; top: 40px; width: 1120px; height: 920px; max-width: none; pointer-events: none; }
+    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.96) 88%, #0F1115 100%); }
+  [data-section="hero"] .ch-room { left: -340px; top: 40px; width: 1120px; height: 920px; max-width: none; pointer-events: none;
+    -webkit-mask-image: linear-gradient(180deg, #000 0, #000 560px, transparent 850px); mask-image: linear-gradient(180deg, #000 0, #000 560px, transparent 850px); }
 
   /* Top bar (part of the hero design) */
   [data-section="hero"] .ch-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; }

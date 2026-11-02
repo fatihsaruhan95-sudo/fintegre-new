@@ -4,10 +4,14 @@
     .motion [data-section="cta"].is-in [data-m] { translate: none; }
     /* the canvas is its own blend group, so give it the ground colour for the photo's lighten blend */
     [data-section="cta"] .v2-canvas { background: #0F1115; }
-    [data-section="cta"] .ct-photo { position: absolute; left: 200px; top: 90px; width: 1520px; height: 802px; object-fit: cover; mix-blend-mode: lighten; pointer-events: none; max-width: none; }
+    [data-section="cta"] .ct-photo { position: absolute; left: 200px; top: 90px; width: 1520px; height: 802px; object-fit: cover; mix-blend-mode: lighten; pointer-events: none; max-width: none;
+      -webkit-mask-image: linear-gradient(90deg, #000 78%, transparent 98%); mask-image: linear-gradient(90deg, #000 78%, transparent 98%); }
+    /* ground under the photo across the side bleed too, so the lighten blend never shows the photo's black */
+    [data-section="cta"] .ct-ground { position: absolute; left: -1600px; top: 0; width: 4640px; height: 900px; background: #0F1115; }
     [data-section="cta"] .ct-fade-l { position: absolute; left: 380px; top: 0; width: 640px; height: 900px; background: linear-gradient(90deg, #0F1115 0%, rgba(15,17,21,.85) 35%, rgba(15,17,21,0) 100%); pointer-events: none; }
-    [data-section="cta"] .ct-fade-b { position: absolute; left: 0; top: 700px; width: 1440px; height: 200px; background: linear-gradient(180deg, rgba(15,17,21,0) 0%, #0F1115 100%); pointer-events: none; }
-    [data-section="cta"] .ct-glow { position: absolute; left: -380px; top: 60px; width: 1120px; height: 920px; max-width: none; pointer-events: none; }
+    [data-section="cta"] .ct-fade-b { position: absolute; left: -1200px; top: 700px; width: 3840px; height: 200px; background: linear-gradient(180deg, rgba(15,17,21,0) 0%, #0F1115 100%); pointer-events: none; }
+    [data-section="cta"] .ct-glow { position: absolute; left: -380px; top: 40px; width: 1120px; height: 860px; pointer-events: none;
+      background: radial-gradient(closest-side, rgba(48,71,236,.42) 0%, rgba(48,71,236,.26) 40%, rgba(48,71,236,.08) 75%, rgba(48,71,236,0) 100%); }
     [data-section="cta"] .ct-copy { position: absolute; left: 120px; top: 280px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
     [data-section="cta"] .ct-copy h2 { margin: 0; font-weight: 400; font-size: 60px; line-height: 1; letter-spacing: -2.1px; color: #F5F7FA; white-space: nowrap; }
     [data-section="cta"] .ct-copy p { margin: 0; width: 440px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
@@ -19,10 +23,11 @@
     [data-section="cta"] .ct-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
   </style>
   <div class="v2-canvas">
+    <div class="ct-ground"></div>
     <img class="ct-photo" src="/v2/assets/platform-cta-iphone-camera.webp" alt="" width="1520" height="802" loading="lazy" data-m="fade" style="--d:100ms">
     <div class="ct-fade-l"></div>
     <div class="ct-fade-b"></div>
-    <img class="ct-glow" src="/v2/assets/platform-cta-glow.svg" alt="" width="1120" height="920">
+    <div class="ct-glow" aria-hidden="true"></div>
 
     <div class="ct-copy" data-m="up" style="--d:300ms">
       <h2>Plan your program<br>with Fintegre.</h2>

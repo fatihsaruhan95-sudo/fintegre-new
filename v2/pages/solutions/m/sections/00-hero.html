@@ -69,15 +69,70 @@
   [data-section="hero"] .h-seg span { position: absolute; left: 0; top: 40px; font-weight: 300; font-size: 13px; line-height: normal; color: #A7B0BE; white-space: nowrap; }
   [data-section="hero"] .h-seg.is-on i { background: #F5F7FA; }
   [data-section="hero"] .h-seg.is-on b { color: #F5F7FA; }
+
+
+
+
+  /* Device screens: Fintegre UI laid over the device photo (natural image px, scaled with --k). */
+  .su-q { position: absolute; left: 0; top: 0; transform-origin: 0 0; pointer-events: none; }
+  .su { position: absolute; inset: 0; overflow: hidden; box-sizing: border-box; display: flex; flex-direction: column; gap: .55em; padding: 1em;
+    background: radial-gradient(120% 55% at 85% 0%, rgba(48,71,236,.34), rgba(48,71,236,0) 70%), #0F1115; color: #F5F7FA;
+    font-weight: 400; line-height: 1.2; letter-spacing: -.01em; white-space: nowrap; text-align: left; }
+  .su * { box-sizing: border-box; }
+  .su p { margin: 0; }
+  .su-top { display: flex; align-items: center; justify-content: space-between; gap: .6em; font-size: .62em; color: #A7B0BE; }
+  .su-top b { display: flex; align-items: center; gap: .45em; font-weight: 400; color: #F5F7FA; }
+  .su-top img { width: 1.4em; height: auto; display: block; }
+  .su-m { font-size: .62em; color: #A7B0BE; }
+  .su-t { font-size: .92em; }
+  .su-n { font-weight: 300; font-size: 2.6em; line-height: 1; letter-spacing: -.045em; }
+  .su-c { display: flex; flex-direction: column; gap: .35em; padding: .75em .85em; border-radius: .75em; background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 1px rgba(183,215,255,.14); }
+  .su-r { display: flex; align-items: center; justify-content: space-between; gap: .8em; font-size: .7em; padding: .62em .8em; border-radius: .6em;
+    background: rgba(255,255,255,.05); box-shadow: inset 0 0 0 1px rgba(183,215,255,.1); }
+  .su-r i { font-style: normal; color: #A7B0BE; }
+  .su-r.on { background: #3047EC; box-shadow: none; }
+  .su-r.on i { color: rgba(245,247,250,.82); }
+  .su-k { color: #B7D7FF; }
+  .su-row { display: flex; gap: .55em; }
+  .su-row > * { flex: 1; min-width: 0; }
+  .su-col { display: flex; flex-direction: column; gap: .45em; min-height: 0; }
+  .su-bars { display: flex; align-items: flex-end; gap: .4em; flex: 1; min-height: 0; }
+  .su-bars i { flex: 1; border-radius: .25em .25em 0 0; background: rgba(183,215,255,.3); }
+  .su-bars i.on { background: #3047EC; }
+  .su-pill { align-self: flex-start; font-size: .58em; padding: .4em .8em; border-radius: 999px; background: #B7D7FF; color: #0F1115; }
+  .su-ph { display: grid; grid-template-columns: repeat(3, 1fr); gap: .4em; }
+  .su-ph i { aspect-ratio: 1; border-radius: .45em; background: linear-gradient(150deg, rgba(183,215,255,.22), rgba(48,71,236,.12)); box-shadow: inset 0 0 0 1px rgba(183,215,255,.14); }
+  .su-isl { position: absolute; left: 50%; top: 1.5%; width: 30%; height: 3.4%; transform: translateX(-50%); border-radius: 999px; background: #000; }
+  .su-notch { position: absolute; left: 50%; top: 0; width: 17%; height: 3.2%; transform: translateX(-50%); border-radius: 0 0 .45em .45em; background: #000; }
+  .su-sp { flex: 1; }
+  .su--watch { align-items: center; text-align: center; padding: .6em; gap: .1em; background: #000; }
+  .su--light { background: radial-gradient(120% 55% at 85% 0%, rgba(184,214,255,.6), rgba(184,214,255,0) 70%), #F5F7FA; color: #0F1115; }
+  .su--light .su-top, .su--light .su-m, .su--light .su-r i { color: #6B7380; }
+  .su--light .su-top b { color: #0F1115; }
+  .su--light .su-top img { filter: brightness(0); }
+  .su--light .su-c, .su--light .su-r { background: #fff; box-shadow: inset 0 0 0 1px rgba(15,17,21,.08); }
+  .su--light .su-r.on { background: #3047EC; color: #F5F7FA; box-shadow: none; }
+  .su--light .su-r.on i { color: rgba(245,247,250,.82); }
+  .su--light .su-bars i { background: rgba(48,71,236,.16); }
+  .su--light .su-bars i.on { background: #3047EC; }
+  .su--light .su-k { color: #3047EC; }
 </style>
   <div class="v2-canvas">
     <img class="glow" alt="" src="/v2/mobile/assets/solutions-glow.svg" style="left:-140px; top:290px; width:820px; height:780px;">
     <img class="glow" alt="" src="/v2/mobile/assets/solutions-floorlight.svg" style="left:-35px; top:865px; width:460px; height:110px;">
     <img class="glow" alt="" src="/v2/mobile/assets/solutions-contactshadow.svg" style="left:-3px; top:904px; width:396px; height:30px;">
-    <div class="a" style="left:8px; top:775px; width:116px; height:145px; --ty:40px; --d:350ms; --to:.9s; --tt:1.2s;" data-sm><img class="dev" alt="iPad mini in starlight" src="/v2/assets/solutions-ipad-mini-starlight.webp" width="116" height="145"></div>
-    <div class="a" style="left:100px; top:781px; width:230px; height:139px; --ty:40px; --d:200ms; --to:.9s; --tt:1.2s;" data-sm><img class="dev" alt="MacBook Air in sky blue" src="/v2/assets/solutions-macbook-air.webp" width="230" height="139"></div>
-    <div class="a" style="left:318px; top:804px; width:66px; height:116px; --ty:40px; --d:500ms; --to:.9s; --tt:1.2s;" data-sm><img class="dev" alt="iPhone 17 in lavender" src="/v2/assets/solutions-iphone17-lavender.webp" width="66" height="116"></div>
-    <div class="a" style="left:288px; top:862px; width:50px; height:58px; --ty:30px; --d:650ms; --to:.9s; --tt:1.2s;" data-sm><img class="dev" alt="Apple Watch" src="/v2/assets/solutions-apple-watch.webp" width="50" height="58"></div>
+    <div class="a" style="left:8px; top:775px; width:116px; height:145px; --ty:40px; --d:350ms; --to:.9s; --tt:1.2s;" data-sm><img class="dev" alt="iPad mini in starlight" src="/v2/assets/solutions-ipad-mini-starlight.webp" width="116" height="145">
+      <!--su:ipad-apr--><div class="su-q" aria-hidden="true" style="width:360px; height:553px; font-size:26px; transform:scale(0.241667) translate(96.5px,24px);"><div class="su" style="border-radius:20px;"><div class="su-top"><b><img alt="" src="/assets/header-mark.svg">Assisted trade-in</b><span>Sample data</span></div><div class="su-c" style="--ty:14px; --d:1100ms; --to:.6s; --tt:.8s;" data-sm><p class="su-m">Table 3 · device check</p><p class="su-t">iPhone 15 Pro · 256 GB</p></div><div class="su-r" style="--ty:14px; --d:1220ms; --to:.6s; --tt:.8s;" data-sm><span>Diagnostics</span><i class="su-k">Passed</i></div><div class="su-r" style="--ty:14px; --d:1320ms; --to:.6s; --tt:.8s;" data-sm><span>Condition</span><i>Grade A</i></div><div class="su-r" style="--ty:14px; --d:1420ms; --to:.6s; --tt:.8s;" data-sm><span>Battery</span><i>91 %</i></div><div class="su-sp"></div><p class="su-m">Trade-in credit</p><p class="su-n" style="--ty:14px; --d:1550ms; --to:.6s; --tt:.8s;" data-sm>€520</p><p class="su-m">Subject to inspection</p><div class="su-r on" style="--ty:14px; --d:1700ms; --to:.6s; --tt:.8s;" data-sm><span>Add to receipt</span><i>Table 3</i></div></div></div>
+      </div>
+    <div class="a" style="left:100px; top:781px; width:230px; height:139px; --ty:40px; --d:200ms; --to:.9s; --tt:1.2s;" data-sm><img class="dev" alt="MacBook Air in sky blue" src="/v2/assets/solutions-macbook-air.webp" width="230" height="139">
+      <!--su:mac--><div class="su-q" aria-hidden="true" style="width:631px; height:409px; font-size:17px; transform:scale(0.290404) translate(81px,16px);"><div class="su" style="border-radius:12px 12px 3px 3px;"><div class="su-notch"></div><div class="su-top" style="margin-top:.6em"><b><img alt="" src="/assets/header-mark.svg">Trade-in program · overview</b><span style="margin-right:auto">Sample data</span></div><div class="su-row" style="--ty:14px; --d:1000ms; --to:.6s; --tt:.8s;" data-sm><div class="su-c"><p class="su-m">Trade-ins · 30 days</p><p class="su-n" style="font-size:1.7em">1,284</p></div><div class="su-c"><p class="su-m">Average credit</p><p class="su-n" style="font-size:1.7em">€412</p></div><div class="su-c"><p class="su-m">Assessed grade A</p><p class="su-n" style="font-size:1.7em">64 %</p></div></div><div class="su-row" style="flex:1; min-height:0;" style="--ty:14px; --d:1200ms; --to:.6s; --tt:.8s;" data-sm><div class="su-c" style="flex:1.15"><p class="su-m">Trade-ins by week</p><div class="su-bars"><i style="height:42%"></i><i style="height:55%"></i><i style="height:48%"></i><i style="height:62%"></i><i style="height:58%"></i><i style="height:70%"></i><i style="height:66%"></i><i style="height:84%" class=on></i></div></div><div class="su-c" style="gap:.4em"><p class="su-m">Buyers by expected net recovery</p><div class="su-r on"><span>Buyer A</span><i>€498</i></div><div class="su-r"><span>Buyer B</span><i>€489</i></div><div class="su-r"><span>Buyer C</span><i>€474</i></div></div></div></div></div>
+      </div>
+    <div class="a" style="left:318px; top:804px; width:66px; height:116px; --ty:40px; --d:500ms; --to:.9s; --tt:1.2s;" data-sm><img class="dev" alt="iPhone 17 in lavender" src="/v2/assets/solutions-iphone17-lavender.webp" width="66" height="116">
+      <!--su:hero-phone--><div class="su-q" aria-hidden="true" style="width:223px; height:484px; font-size:17px; transform:scale(0.235714) matrix3d(0.772741,0.206237,0,0.00042611,0,1,0,0,0,0,1,0,131,0,0,1);"><div class="su" style="border-radius:30px;"><div class="su-isl"></div><div class="su-top" style="margin-top:2.2em"><b><img alt="" src="/assets/header-mark.svg">Trade-in</b></div><p class="su-m" style="margin-top:.6em">Your quote</p><p class="su-n" style="--ty:14px; --d:1200ms; --to:.6s; --tt:.8s;" data-sm>€612</p><p class="su-m">Subject to inspection</p><div class="su-c" style="--ty:14px; --d:1350ms; --to:.6s; --tt:.8s;" data-sm><p class="su-m">Device</p><p class="su-t" style="font-size:.8em">iPhone 15 Pro</p><p class="su-m">Grade A</p></div><div class="su-sp"></div><div class="su-r on" style="--ty:14px; --d:1500ms; --to:.6s; --tt:.8s;" data-sm><span>Credit applied</span></div><p class="su-m" style="font-size:.5em">Sample data</p></div></div>
+      </div>
+    <div class="a" style="left:288px; top:862px; width:50px; height:58px; --ty:30px; --d:650ms; --to:.9s; --tt:1.2s;" data-sm><img class="dev" alt="Apple Watch" src="/v2/assets/solutions-apple-watch.webp" width="50" height="58">
+      <!--su:watch-612--><div class="su-q" aria-hidden="true" style="width:152px; height:256px; font-size:22px; transform:scale(0.125) translate(24px,100px);"><div class="su su--watch" style="border-radius:34px;"><div class="su-sp"></div><p class="su-m">Credit</p><p class="su-n" style="font-size:2.3em">€612</p><p class="su-m" style="font-size:.42em; margin-top:.3em">Sample data</p><div class="su-sp"></div></div></div>
+      </div>
     <div class="a" style="left:0; top:900px; width:390px; height:250px; background:linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.92) 70%, #0F1115 100%);"></div>
 
     <h1 class="a" style="--ty:40px; --d:100ms; --to:.9s; --tt:.9s;" data-sm>Device programs built around your business.</h1>

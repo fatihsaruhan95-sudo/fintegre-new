@@ -36,10 +36,23 @@
   .motion [data-section="case-study"] [data-m="cs-pay"] { translate: -16px 0; transition: opacity .4s var(--ease) var(--d, 0ms), translate .5s var(--ease) var(--d, 0ms); }
   .motion [data-section="case-study"] [data-draw] { transition-duration: .6s; }
   .motion [data-section="case-study"].is-in [data-m] { opacity: 1; translate: none; scale: 1; }
+
+  /* Device-check screen on the small iPhone 13 (390 × 844 design scaled to the measured screen area). */
+  [data-section="case-study"] .css { position: absolute; left: 4.97%; top: 2.37%; width: 89.4%; height: 94.8%; border-radius: 12.4% / 5.7%; overflow: hidden; background: #0F1115; }
+  [data-section="case-study"] .css-ui { position: absolute; left: 0; top: 0; width: 390px; height: 844px; transform: scale(.1421); transform-origin: 0 0; color: #F5F7FA;
+    background: radial-gradient(420px 380px at 50% 100%, rgba(48,71,236,.5) 0%, rgba(48,71,236,0) 100%), #0F1115; }
+  [data-section="case-study"] .css-ui > * { position: absolute; margin: 0; white-space: nowrap; line-height: normal; }
+  [data-section="case-study"] .css-notch { left: 114px; top: 0; width: 165px; height: 34px; border-radius: 0 0 22px 22px; background: #000; }
+  [data-section="case-study"] .css-ring { left: 115px; top: 170px; width: 160px; height: 160px; box-sizing: border-box; border-radius: 50%; border: 8px solid #B7D7FF; }
+  [data-section="case-study"] .css-ring::after { content: ""; position: absolute; left: 44px; top: 30px; width: 40px; height: 72px; border: solid #B7D7FF; border-width: 0 12px 12px 0; transform: rotate(45deg); }
+  [data-section="case-study"] .css-h { left: 0; top: 380px; width: 390px; text-align: center; font-size: 64px; font-weight: 300; letter-spacing: -0.03em; }
+  [data-section="case-study"] .css-pill { left: 95px; top: 500px; width: 200px; height: 76px; border-radius: 38px; background: #3047EC; font-size: 36px; display: flex; align-items: center; justify-content: center; }
+  [data-section="case-study"] .css-home { left: 128px; top: 820px; width: 134px; height: 8px; border-radius: 4px; background: rgba(245,247,250,.55); }
 </style>
   <div class="v2-canvas">
-    <div class="cs-abs" style="left:720px; top:-100px; width:1060px; height:920px;" aria-hidden="true"><img alt="" src="assets/case-study-glow-right.svg" width="1060" height="920"></div>
-    <div class="cs-abs" style="left:-380px; top:420px; width:960px; height:780px;" aria-hidden="true"><img alt="" src="assets/case-study-glow-left.svg" width="960" height="780"></div>
+    <!-- Room glows: CSS radials that fade to 0 inside the section (no cut at the top or bottom edge). -->
+    <div class="cs-abs" style="left:720px; top:0; width:1060px; height:760px; pointer-events:none; background:radial-gradient(closest-side, rgba(48,71,236,.45) 0%, rgba(48,71,236,.41) 40%, rgba(48,71,236,.22) 66%, rgba(48,71,236,.06) 86%, rgba(48,71,236,0) 100%);" aria-hidden="true"></div>
+    <div class="cs-abs" style="left:-380px; top:360px; width:960px; height:540px; pointer-events:none; background:radial-gradient(closest-side, rgba(93,116,255,.18) 0%, rgba(93,116,255,.16) 40%, rgba(93,116,255,.09) 66%, rgba(93,116,255,.025) 86%, rgba(93,116,255,0) 100%);" aria-hidden="true"></div>
 
     <div class="cs-abs cs-intro" data-m="up">
       <p class="cs-eyebrow">Illustrative retailer journey<span class="cs-tag">Illustrative · not a customer result</span></p>
@@ -60,7 +73,7 @@
       </svg>
 
       <div class="cs-abs cs-card" data-m="cs-card" style="--d:400ms; left:40px; top:40px; height:168px;">
-        <div class="cs-abs cs-device" style="left:25px; top:19px; width:62px; height:127px; border-radius:11px; box-shadow:0 10px 20px rgba(0,0,0,.5);"><img alt="iPhone 13" src="assets/case-study-iphone13.webp"></div>
+        <div class="cs-abs cs-device" style="left:25px; top:19px; width:62px; height:127px; border-radius:11px; box-shadow:0 10px 20px rgba(0,0,0,.5);"><img alt="iPhone 13" src="assets/case-study-iphone13.webp"><div class="css" aria-hidden="true"><div class="css-ui"><div class="css-notch"></div><div class="css-ring"></div><p class="css-h">Checked</p><p class="css-pill">Grade A</p><div class="css-home"></div></div></div></div>
         <p class="cs-abs cs-meta" style="left:115px; top:29px;">11:43 · Store 14, Vilnius</p>
         <p class="cs-abs cs-big" style="left:115px; top:53px;">iPhone 13 checked</p>
         <div class="cs-abs cs-pills"><span class="cs-pill cs-pill--ice">Grade A</span><span class="cs-pill">Battery 88 %</span></div>

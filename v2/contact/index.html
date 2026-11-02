@@ -68,6 +68,53 @@
   [data-section="hero"] .dh-card li { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: rgba(255,255,255,.05); font-size: 14px; color: #F5F7FA; }
   [data-section="hero"] .dh-card li img { width: 6px; height: 6px; }
   [data-section="hero"] .dh-card li:first-child { background: rgba(48,71,236,.9); }
+
+
+
+
+  /* Device screens: Fintegre UI laid over the device photo (natural image px, scaled with --k). */
+  .su-q { position: absolute; left: 0; top: 0; transform-origin: 0 0; pointer-events: none; }
+  .su { position: absolute; inset: 0; overflow: hidden; box-sizing: border-box; display: flex; flex-direction: column; gap: .55em; padding: 1em;
+    background: radial-gradient(120% 55% at 85% 0%, rgba(48,71,236,.34), rgba(48,71,236,0) 70%), #0F1115; color: #F5F7FA;
+    font-weight: 400; line-height: 1.2; letter-spacing: -.01em; white-space: nowrap; text-align: left; }
+  .su * { box-sizing: border-box; }
+  .su p { margin: 0; }
+  .su-top { display: flex; align-items: center; justify-content: space-between; gap: .6em; font-size: .62em; color: #A7B0BE; }
+  .su-top b { display: flex; align-items: center; gap: .45em; font-weight: 400; color: #F5F7FA; }
+  .su-top img { width: 1.4em; height: auto; display: block; }
+  .su-m { font-size: .62em; color: #A7B0BE; }
+  .su-t { font-size: .92em; }
+  .su-n { font-weight: 300; font-size: 2.6em; line-height: 1; letter-spacing: -.045em; }
+  .su-c { display: flex; flex-direction: column; gap: .35em; padding: .75em .85em; border-radius: .75em; background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 1px rgba(183,215,255,.14); }
+  .su-r { display: flex; align-items: center; justify-content: space-between; gap: .8em; font-size: .7em; padding: .62em .8em; border-radius: .6em;
+    background: rgba(255,255,255,.05); box-shadow: inset 0 0 0 1px rgba(183,215,255,.1); }
+  .su-r i { font-style: normal; color: #A7B0BE; }
+  .su-r.on { background: #3047EC; box-shadow: none; }
+  .su-r.on i { color: rgba(245,247,250,.82); }
+  .su-k { color: #B7D7FF; }
+  .su-row { display: flex; gap: .55em; }
+  .su-row > * { flex: 1; min-width: 0; }
+  .su-col { display: flex; flex-direction: column; gap: .45em; min-height: 0; }
+  .su-bars { display: flex; align-items: flex-end; gap: .4em; flex: 1; min-height: 0; }
+  .su-bars i { flex: 1; border-radius: .25em .25em 0 0; background: rgba(183,215,255,.3); }
+  .su-bars i.on { background: #3047EC; }
+  .su-pill { align-self: flex-start; font-size: .58em; padding: .4em .8em; border-radius: 999px; background: #B7D7FF; color: #0F1115; }
+  .su-ph { display: grid; grid-template-columns: repeat(3, 1fr); gap: .4em; }
+  .su-ph i { aspect-ratio: 1; border-radius: .45em; background: linear-gradient(150deg, rgba(183,215,255,.22), rgba(48,71,236,.12)); box-shadow: inset 0 0 0 1px rgba(183,215,255,.14); }
+  .su-isl { position: absolute; left: 50%; top: 1.5%; width: 30%; height: 3.4%; transform: translateX(-50%); border-radius: 999px; background: #000; }
+  .su-notch { position: absolute; left: 50%; top: 0; width: 17%; height: 3.2%; transform: translateX(-50%); border-radius: 0 0 .45em .45em; background: #000; }
+  .su-sp { flex: 1; }
+  .su--watch { align-items: center; text-align: center; padding: .6em; gap: .1em; background: #000; }
+  .su--light { background: radial-gradient(120% 55% at 85% 0%, rgba(184,214,255,.6), rgba(184,214,255,0) 70%), #F5F7FA; color: #0F1115; }
+  .su--light .su-top, .su--light .su-m, .su--light .su-r i { color: #6B7380; }
+  .su--light .su-top b { color: #0F1115; }
+  .su--light .su-top img { filter: brightness(0); }
+  .su--light .su-c, .su--light .su-r { background: #fff; box-shadow: inset 0 0 0 1px rgba(15,17,21,.08); }
+  .su--light .su-r.on { background: #3047EC; color: #F5F7FA; box-shadow: none; }
+  .su--light .su-r.on i { color: rgba(245,247,250,.82); }
+  .su--light .su-bars i { background: rgba(48,71,236,.16); }
+  .su--light .su-bars i.on { background: #3047EC; }
+  .su--light .su-k { color: #3047EC; }
 </style>
   <div class="v2-canvas">
     <img decoding="async" class="dh-glow" alt="" src="/v2/assets/design-your-program-glow-hero-r.svg" style="left:680px; top:-140px; width:1120px; height:980px;">
@@ -87,7 +134,9 @@
     </div>
 
     <img decoding="async" class="dh-glow" alt="" src="/v2/assets/design-your-program-roomlight.svg" style="left:630px; top:10px; width:960px; height:960px;">
-    <div class="dh-a dh-photo" data-m="right" style="--d:300ms"><img decoding="async" alt="iPhone 17 in Lavender" src="/v2/assets/design-your-program-iphone17-lavender.webp"></div>
+    <div class="dh-a dh-photo" data-m="right" style="--d:300ms"><img decoding="async" alt="iPhone 17 in Lavender" src="/v2/assets/design-your-program-iphone17-lavender.webp">
+      <!--su:contact--><div class="su-q" aria-hidden="true" style="width:690px; height:1488px; font-size:46px; transform:scale(0.710648) matrix3d(0.763305,0.191782,0,0.000128283,0,1,0,0,0,0,1,0,404,7,0,1);"><div class="su" style="border-radius:88px;"><div class="su-isl"></div><div class="su-top" style="margin-top:2.1em"><b><i style="display:block; width:1.1em; height:1.1em; border-radius:.3em; background:#F5F7FA;"></i>Your brand</b><span>Sample data</span></div><p class="su-m" style="margin-top:.2em">Trade-in quote · iPhone 13</p><p class="su-n" style="--d:900ms" data-m="up">€410</p><p class="su-m">Subject to inspection</p><p class="su-t" style="margin-top:.8em">Your device options</p><div class="su-r on" style="--d:1050ms" data-m="up"><span>Trade-in</span></div><div class="su-r" style="--d:1150ms" data-m="up"><span>Early upgrade</span></div><div class="su-r" style="--d:1250ms" data-m="up"><span>Future trade-in</span></div><div class="su-r" style="--d:1350ms" data-m="up"><span>Device rental</span></div><div class="su-r" style="--d:1450ms" data-m="up"><span>Subscription</span></div></div></div>
+      </div>
     <div class="dh-a dh-fade"></div>
 
     <div class="dh-a dh-copy" data-m="up" style="--d:100ms">

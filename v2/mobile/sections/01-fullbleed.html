@@ -8,7 +8,7 @@
     [data-section="fullbleed"] .fb-phone { position: relative; flex: none; transform: rotate(32deg);
       box-shadow: 0 0 64.8px 0 rgba(48,71,236,.35), 17.28px 28.8px 50.4px 0 rgba(0,0,0,.65); }
     [data-section="fullbleed"] .fb-phone img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; border-radius: inherit; }
-    [data-section="fullbleed"] .fb-chip { left: 150px; top: 765px; display: flex; align-items: center; gap: 10px; padding: 13px 20px;
+    [data-section="fullbleed"] .fb-chip { left: 168px; top: 930px; display: flex; align-items: center; gap: 10px; padding: 13px 20px;
       border-radius: 999px; background: rgba(48,71,236,.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 16px 40px 0 rgba(0,0,0,.4); font-size: 16px; font-weight: 400; line-height: normal; color: #fff; white-space: nowrap; }
     [data-section="fullbleed"] .fb-pill { display: flex; align-items: center; height: 36px; padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,.12);
@@ -17,6 +17,33 @@
     [data-section="fullbleed"] .fb-cta { display: flex; align-items: center; height: 44px; padding: 12px 18px; border-radius: 10px; background: #fff; color: #0F1115;
       font-size: 14px; font-weight: 500; line-height: normal; }
 
+
+    /* Trade-in app on the iPhone 13 screen (390 × 844 design, scaled to the measured screen area). */
+    [data-section="fullbleed"] .fbs { position: absolute; left: 4.965%; top: 2.374%; width: 89.37%; height: 94.79%; border-radius: 20.9px; overflow: hidden; background: #0F1115; }
+    [data-section="fullbleed"] .fbs-ui { position: absolute; left: 0; top: 0; width: 390px; height: 844px; transform: scale(.4324); transform-origin: 0 0; color: #F5F7FA;
+      background: radial-gradient(420px 360px at 50% 100%, rgba(48,71,236,.42) 0%, rgba(48,71,236,0) 100%), linear-gradient(180deg, #14171D 0%, #0F1115 100%); }
+    [data-section="fullbleed"] .fbs-ui p { margin: 0; white-space: nowrap; line-height: normal; }
+    [data-section="fullbleed"] .fbs-a { position: absolute; }
+    [data-section="fullbleed"] .fbs-notch { left: 114px; top: 0; width: 165px; height: 34px; border-radius: 0 0 22px 22px; background: #000; }
+    [data-section="fullbleed"] .fbs-time { left: 40px; top: 12px; font-size: 16px; font-weight: 500; }
+    [data-section="fullbleed"] .fbs-head { left: 24px; top: 74px; width: 342px; display: flex; align-items: center; justify-content: space-between; }
+    [data-section="fullbleed"] .fbs-brand { display: flex; align-items: center; gap: 10px; font-size: 18px; }
+    [data-section="fullbleed"] .fbs-brand img { position: static; display: block; width: 24px; height: 17.2px; border-radius: 0; object-fit: contain; }
+    [data-section="fullbleed"] .fbs-sample { font-size: 13px; color: #A7B0BE; }
+    [data-section="fullbleed"] .fbs-title { left: 24px; top: 132px; font-size: 27px; letter-spacing: -0.02em; }
+    [data-section="fullbleed"] .fbs-ok { left: 24px; top: 172px; display: flex; align-items: center; gap: 8px; font-size: 15px; color: #A7B0BE; }
+    [data-section="fullbleed"] .fbs-ok i { width: 7px; height: 7px; border-radius: 50%; background: #B7D7FF; }
+    [data-section="fullbleed"] .fbs-card { left: 20px; top: 212px; width: 350px; padding: 4px 20px; box-sizing: border-box; border-radius: 22px;
+      background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 1px rgba(183,215,255,.14); }
+    [data-section="fullbleed"] .fbs-row { display: flex; justify-content: space-between; padding: 17px 0; font-size: 18px; }
+    [data-section="fullbleed"] .fbs-row + .fbs-row { border-top: 1px solid rgba(183,215,255,.12); }
+    [data-section="fullbleed"] .fbs-row span:first-child { font-weight: 300; color: #A7B0BE; }
+    [data-section="fullbleed"] .fbs-lbl { left: 24px; top: 418px; font-size: 17px; color: #A7B0BE; }
+    [data-section="fullbleed"] .fbs-big { left: 18px; top: 440px; font-size: 112px; font-weight: 300; letter-spacing: -0.045em; }
+    [data-section="fullbleed"] .fbs-tag { left: 24px; top: 586px; padding: 8px 14px; border-radius: 999px; background: rgba(183,215,255,.16); font-size: 15px; color: #B7D7FF; }
+    [data-section="fullbleed"] .fbs-btn { left: 20px; top: 660px; width: 350px; height: 66px; border-radius: 20px; background: #3047EC; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; box-sizing: border-box; font-size: 20px; box-shadow: 0 14px 30px rgba(48,71,236,.45); }
+    [data-section="fullbleed"] .fbs-note { left: 0; top: 746px; width: 390px; text-align: center; font-size: 15px; color: #A7B0BE; }
+    [data-section="fullbleed"] .fbs-home { left: 128px; top: 826px; width: 134px; height: 5px; border-radius: 3px; background: rgba(245,247,250,.55); }
     /* Motion (Figma mobile timeline, played once on arrival). */
     .motion [data-section="fullbleed"] .fb-glow { opacity: 0; transition: opacity 1.6s var(--ease) .3s; }
     .motion [data-section="fullbleed"].is-in .fb-glow { opacity: 1; }
@@ -51,6 +78,19 @@
       <div class="fb-abs fb-wrap fb-old" style="left:45.88px; top:490px; width:364.101px; height:426.632px;">
         <div class="fb-phone" style="width:188.64px; height:385.2px; border-radius:31.68px;">
           <img alt="iPhone 13, the device being traded in" src="../assets/fullbleed-iphone13.webp">
+          <div class="fbs" aria-hidden="true"><div class="fbs-ui">
+            <p class="fbs-a fbs-time">9:41</p><div class="fbs-a fbs-notch"></div>
+            <div class="fbs-a fbs-head"><p class="fbs-brand"><img alt="" src="/assets/header-mark.svg">Trade-in</p><p class="fbs-sample">Sample data</p></div>
+            <p class="fbs-a fbs-title">iPhone 13 · 128 GB</p>
+            <p class="fbs-a fbs-ok"><i></i>Device check complete</p>
+            <div class="fbs-a fbs-card"><div class="fbs-row"><span>Screen</span><span>Grade A</span></div><div class="fbs-row"><span>Battery</span><span>88 %</span></div><div class="fbs-row"><span>Casing</span><span>Good</span></div></div>
+            <p class="fbs-a fbs-lbl">Your trade-in quote</p>
+            <p class="fbs-a fbs-big">€240</p>
+            <p class="fbs-a fbs-tag">Subject to inspection</p>
+            <div class="fbs-a fbs-btn" data-m="scale" style="--d:2600ms;"><span>Apply €240 credit</span><span>→</span></div>
+            <p class="fbs-a fbs-note">Credit towards your next device</p>
+            <div class="fbs-a fbs-home"></div>
+          </div></div>
         </div>
       </div>
       <div class="fb-abs fb-wrap fb-new" style="left:-150.53px; top:790px; width:384.171px; height:455.177px;">

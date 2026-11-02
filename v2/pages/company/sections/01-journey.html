@@ -4,9 +4,11 @@
   [data-section="milestones"] .cm-glow { position: absolute; max-width: none; pointer-events: none; }
   /* Photo: a team member and a store associate at a trade-in counter, with indigo tint and scrims (as the hero). */
   [data-section="milestones"] .cm-a { position: absolute; pointer-events: none; }
-  [data-section="milestones"] .cm-photo { left: 290px; top: -30px; width: 1240px; height: 698px; overflow: hidden; }
+  [data-section="milestones"] .cm-photo { left: 290px; top: -30px; width: 1240px; height: 698px; overflow: hidden;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 150px), linear-gradient(90deg, #000 0, #000 60%, transparent 92%); mask-image: linear-gradient(180deg, transparent 0, #000 150px), linear-gradient(90deg, #000 0, #000 60%, transparent 92%); -webkit-mask-composite: source-in; mask-composite: intersect; }
   [data-section="milestones"] .cm-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
-  [data-section="milestones"] .cm-tint { left: 290px; top: -30px; width: 1240px; height: 698px; background: rgba(20,30,110,.08); }
+  [data-section="milestones"] .cm-tint { left: 290px; top: -30px; width: 1240px; height: 698px; background: rgba(20,30,110,.08);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 150px), linear-gradient(90deg, #000 0, #000 60%, transparent 92%); mask-image: linear-gradient(180deg, transparent 0, #000 150px), linear-gradient(90deg, #000 0, #000 60%, transparent 92%); -webkit-mask-composite: source-in; mask-composite: intersect; }
   [data-section="milestones"] .cm-scrim { left: 0; top: 0; width: 900px; height: 900px;
     background: linear-gradient(90deg, #0F1115 0%, rgba(15,17,21,.92) 42%, rgba(15,17,21,.55) 62%, rgba(15,17,21,.12) 82%, rgba(15,17,21,0) 100%); }
   [data-section="milestones"] .cm-scrim::before { content: ''; position: absolute; right: 100%; top: 0; width: 2000px; height: 100%; background: #0F1115; }
@@ -45,7 +47,7 @@
     <div class="cm-a cm-fade-top"></div>
     <div class="cm-a cm-fade-bot"></div>
     <div class="cm-a cm-room"></div>
-    <img class="cm-glow" alt="" src="/v2/assets/company-ms-glow-2.svg" style="left:-380px; top:-280px; width:960px; height:780px; opacity:.8;">
+    <img class="cm-glow" alt="" src="/v2/assets/company-ms-glow-2.svg" style="left:-380px; top:-280px; width:960px; height:780px; opacity:.8; -webkit-mask-image:linear-gradient(180deg, transparent 0, transparent 290px, #000 540px); mask-image:linear-gradient(180deg, transparent 0, transparent 290px, #000 540px);">
 
     <div class="cm-copy" data-m="up" style="--d:100ms">
       <h2>Our journey.</h2>
