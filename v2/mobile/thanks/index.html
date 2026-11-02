@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en" class="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thank you — Fintegre (v2)</title>
+<script>
+  // Phones get this page; wider screens go back to the desktop v2.
+  if (innerWidth >= 768) location.replace('/v2/thanks/' + location.search + location.hash);
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="/v2/v2.css">
+<link rel="stylesheet" href="/v2/mobile/mobile.css">
+<link rel="stylesheet" href="/v2/mobile/menu.css">
+</head>
+<body>
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="/v2/" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="/assets/header-mark.svg">Fintegre</a>
+    <button type="button" class="m-burger" data-menu-open aria-label="Open menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<main class="page">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:456px; background: radial-gradient(calc(177.27px * var(--s)) calc(306px * var(--s)) at calc(106.36px * var(--s)) calc(471px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(16,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="hero"] .lh-abs { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+  [data-section="hero"] .lh-top { left: 12px; top: 12px; width: 366px; height: 60px; padding: 8px 8px 8px 18px; border-radius: 999px; z-index: 3;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: inset 0 0 0 1px rgba(183,215,255,.14), 0 16px 40px rgba(0,0,0,.35); }
+  [data-section="hero"] .lh-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .lh-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .lh-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .lh-actions { display: flex; align-items: center; gap: 6px; }
+  [data-section="hero"] .lh-pillbtn { height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .lh-burger { width: 44px; height: 44px; border: 0; padding: 0; border-radius: 999px; background: rgba(255,255,255,.08);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; }
+  [data-section="hero"] .lh-burger i { display: block; height: 1.5px; border-radius: 1px; background: #F5F7FA; }
+  [data-section="hero"] .lh-copy { left: 20px; top: 124px; width: 350px; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+  [data-section="hero"] .lh-crumb { font-size: 14px; color: #B7D7FF; line-height: normal; white-space: pre; }
+  [data-section="hero"] h1 { margin: 0; font-weight: 400; font-size: 48px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .lh-lede { font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .lh-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+  [data-section="hero"] .lh-btn { display: inline-flex; align-items: center; padding: 12px 18px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); -webkit-tap-highlight-color: transparent; }
+  .motion [data-section="hero"] [data-m][data-ty] { translate: 0 var(--ty); }
+  .motion [data-section="hero"].is-in [data-m][data-ty] { translate: none; }
+</style>
+  <div class="v2-canvas">
+    <div class="lh-abs lh-top">
+      <a href="/v2/" class="lh-logo" aria-label="Fintegre home"><span class="lh-mark"><img decoding="async" alt="" src="/v2/assets/insights-logo-mark.svg"></span>Fintegre</a>
+      <div class="lh-actions">
+        <a href="/v2/contact/" class="lh-pillbtn">Discuss your program</a>
+        <button type="button" class="lh-burger" data-menu-open aria-label="Open menu" aria-controls="m-menu" aria-expanded="false"><i style="width:18px"></i><i style="width:12px"></i></button>
+      </div>
+    </div>
+    <div class="lh-abs lh-copy" data-fit="64" data-m="up">
+      <p class="lh-crumb"><a href="/v2/insights/">Insights</a>  /  Newsletter</p>
+      <h1>Thank you.</h1>
+      <p class="lh-lede">You are subscribed to guides and program notes from Fintegre. You can unsubscribe from any email.</p>
+      <div class="lh-ctas">
+        <a href="/v2/insights/" class="lh-btn">Read the guides</a>
+        <a href="/v2/" class="lh-btn">Back to home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="closing" id="closing" class="v2-sec" style="--h:1010px; background: linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), radial-gradient(calc(260px * var(--s)) calc(384px * var(--s)) at 50% calc(422.4px * var(--s)), rgba(48,71,236,.42) 0%, rgba(34,51,173,.32) 25%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), #0F1115;" data-tone="dark">
+  <style>
+    .motion [data-section="closing"] [data-m="up"] { translate: 0 var(--ty, 40px); }
+    .motion [data-section="closing"].is-in [data-m] { translate: none; }
+    [data-section="closing"] .cl-col { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 120px 0 10px; }
+    [data-section="closing"] .cl-head {
+      flex: none; width: 370px; margin: 0 0 -6px; text-align: center;
+      font-weight: 400; font-size: 60px; line-height: .92; letter-spacing: -1.8px;
+      background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    }
+    [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+    [data-section="closing"] .cl-foot {
+      position: relative; flex: none; width: 370px; margin-bottom: -6px; padding: 32px 24px 28px; display: flex; flex-direction: column; gap: 40px;
+      background: radial-gradient(115.62px 148.18px at 92.5px 88.91px, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 100%), linear-gradient(127.11deg, rgba(28,34,72,.92) 14.286%, rgba(17,20,34,.92) 85.714%);
+      border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 -20px 60px rgba(0,0,0,.45); border-radius: 32px; color: #F5F7FA; line-height: normal;
+    }
+    [data-section="closing"] .cl-sub { display: flex; flex-direction: column; gap: 16px; align-items: stretch; }
+    [data-section="closing"] .cl-logo { position: relative; display: block; width: 99.3px; height: 30px; }
+    [data-section="closing"] .cl-logo img { position: absolute; display: block; max-width: none; }
+    [data-section="closing"] .cl-sub h3 { margin: 0; font-weight: 500; font-size: 14px; color: #F5F7FA; }
+    [data-section="closing"] .cl-sub p { margin: 0; font-size: 13px; color: rgba(255,255,255,.6); }
+    [data-section="closing"] .cl-sub p a { color: #B7D7FF; text-decoration: underline; text-underline-offset: 2px; }
+    [data-section="closing"] .cl-sub p[data-state="bad"] { color: #FF9A9E; }
+    [data-section="closing"] .cl-sub p[data-state="ok"] { color: #B7D7FF; }
+    [data-section="closing"] form { display: flex; gap: 8px; align-items: center; }
+    [data-section="closing"] input {
+      flex: 1 1 0; min-width: 0; height: 48px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08); color: #fff; font: 400 16px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s;
+    }
+    [data-section="closing"] input::placeholder { color: rgba(255,255,255,.5); font-size: 14px; }
+    [data-section="closing"] input:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.1); }
+    [data-section="closing"] input[aria-invalid="true"] { border-color: rgba(255,140,140,.7); }
+    [data-section="closing"] button {
+      flex: none; width: 105px; height: 48px; border: 0; cursor: pointer; padding: 0; border-radius: 10px; background: #fff; color: #0F1115;
+      font: 500 14px/18px 'Geologica', system-ui, sans-serif; transition: background-color .25s; -webkit-tap-highlight-color: transparent;
+    }
+    [data-section="closing"] button:active { background: #B7D7FF; }
+    [data-section="closing"] .cl-cols { display: flex; flex-wrap: wrap; gap: 32px 40px; white-space: nowrap; margin-top: 40px; }
+    [data-section="closing"] .cl-cols nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    [data-section="closing"] .cl-cols span { font-size: 14px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-cols a { font-weight: 500; font-size: 14px; color: #fff; }
+    [data-section="closing"] .cl-bottom { display: flex; flex-direction: column; gap: 12px; font-size: 12px; }
+    [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
+    [data-section="closing"] .cl-legal { display: flex; gap: 9px; }
+    [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 12px; color: rgba(255,255,255,.8); }
+  </style>
+  <div class="v2-canvas">
+    <div class="cl-col">
+      <h2 class="cl-head" data-m="up">Make every device worth <em style="font-size:64px">more</em></h2>
+
+      <footer class="cl-foot" data-m="up" style="--ty:60px; --d:400ms">
+        <div>
+          <div class="cl-sub">
+            <a href="/v2/" class="cl-logo" aria-label="Fintegre home">
+              <img decoding="async" src="/v2/assets/closing-logo-mark.svg" alt="" width="32.1605" height="23.0769" style="left:3.77px; top:3.46px;">
+              <img decoding="async" src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
+            </a>
+            <h3>Get trade-in insights</h3>
+            <p>Guides and program notes from Fintegre. No spam.</p>
+            <form class="cl-form" name="newsletter" method="POST" action="/v2/thanks/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+              <input type="hidden" name="form-name" value="newsletter">
+              <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+            <p data-nl-msg aria-live="polite">See our <a href="/v2/legal/#privacy">privacy notice</a>.</p>
+          </div>
+          <div class="cl-cols">
+            <nav aria-label="Platform"><span>Platform</span>
+              <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device Value Intelligence</a><a href="/v2/vendor-network/">Vendor Network</a><a href="/v2/platform/#integrations">Integrations</a>
+            </nav>
+            <nav aria-label="Solutions"><span>Solutions</span>
+              <a href="/v2/solutions/#apr">Apple Premium Resellers</a><a href="/v2/solutions/#retailers">Electronics retailers</a><a href="/v2/solutions/#telecom">Telecom operators</a><a href="/v2/solutions/#brands">Device brands and OEM</a>
+            </nav>
+            <nav aria-label="Company"><span>Company</span>
+              <a href="/v2/company/">About</a><a href="/v2/insights/">Insights</a><a href="/v2/contact/">Contact</a>
+            </nav>
+          </div>
+        </div>
+        <div class="cl-bottom">
+          <small>© 2026 Fintegre. All rights reserved.</small>
+          <nav class="cl-legal" aria-label="Legal"><a href="/v2/legal/#privacy">Privacy</a><a href="/v2/legal/#cookies">Cookies</a><a href="/v2/legal/#imprint">Imprint</a></nav>
+        </div>
+      </footer>
+    </div>
+  </div>
+</section>
+</main>
+  <div class="m-menu" id="m-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <div class="m-menu__in">
+      <img decoding="async" class="mm-glow" alt="" src="/v2/mobile/assets/hero-menu-glow-1.svg" style="left:-280px; top:-260px; width:700px; height:660px;">
+      <img decoding="async" class="mm-glow" alt="" src="/v2/mobile/assets/hero-menu-glow-2.svg" style="left:50px; bottom:-206px; width:620px; height:580px;">
+
+      <div class="mm-top">
+        <a href="/v2/" class="h-logo" aria-label="Fintegre home"><span class="h-mark"><img decoding="async" alt="" src="/v2/mobile/assets/hero-logo.svg"></span>Fintegre</a>
+        <div class="h-actions">
+          <a href="/v2/contact/" class="h-pillbtn">Discuss your program</a>
+          <button type="button" class="mm-close" data-menu-close aria-label="Close menu"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-close.svg"></button>
+        </div>
+      </div>
+
+      <nav class="mm-nav" aria-label="Main">
+        <div class="mm-group is-open">
+          <div class="mm-row" data-mm style="--d:150ms;">
+            <a href="/v2/platform/">Platform</a>
+            <button type="button" class="mm-tog" aria-expanded="true" aria-controls="mm-sub-platform" aria-label="Platform pages"><img decoding="async" class="is-up" alt="" src="/v2/mobile/assets/hero-menu-chevron-up.svg"><img decoding="async" class="is-down" alt="" src="/v2/mobile/assets/hero-menu-chevron-down.svg"></button>
+          </div>
+          <div class="mm-sub" id="mm-sub-platform" data-mm style="--d:250ms; --ty:12px;"><div><ul>
+            <li><a href="/v2/platform/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot-on.svg">Trade-in orchestration</a></li>
+            <li><a href="/v2/intelligence/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device Value Intelligence</a></li>
+            <li><a href="/v2/vendor-network/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Vendor Network</a></li>
+            <li><a href="/v2/platform/#integrations"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Integrations</a></li>
+          </ul></div></div>
+        </div>
+        <div class="mm-group">
+          <div class="mm-row" data-mm style="--d:210ms;">
+            <a href="/v2/solutions/">Solutions</a>
+            <button type="button" class="mm-tog" aria-expanded="false" aria-controls="mm-sub-solutions" aria-label="Solutions pages"><img decoding="async" class="is-up" alt="" src="/v2/mobile/assets/hero-menu-chevron-up.svg"><img decoding="async" class="is-down" alt="" src="/v2/mobile/assets/hero-menu-chevron-down.svg"></button>
+          </div>
+          <div class="mm-sub" id="mm-sub-solutions"><div><ul>
+            <li><a href="/v2/solutions/#apr"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Apple Premium Resellers</a></li>
+            <li><a href="/v2/solutions/#retailers"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Electronics retailers</a></li>
+            <li><a href="/v2/solutions/#telecom"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Telecom operators</a></li>
+            <li><a href="/v2/solutions/#brands"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device brands and OEM</a></li>
+          </ul></div></div>
+        </div>
+        <div class="mm-row" data-mm style="--d:270ms;"><a href="/v2/vendor-network/">Vendor Network</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:330ms;"><a href="/v2/intelligence/">Intelligence</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:390ms;"><a href="/v2/insights/">Insights</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:450ms;"><a href="/v2/company/">Company</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+      </nav>
+
+      <div class="mm-foot">
+        <a href="/v2/vendor-network/" class="mm-cta mm-cta--ghost" data-mm style="--d:700ms; --ty:30px;">Buying trade-in devices? Join the vendor network  →</a>
+        <a href="/v2/contact/" class="mm-cta" data-mm style="--d:800ms; --ty:30px;">Discuss your program  →</a>
+        <p class="mm-legal"><a href="/v2/legal/#privacy">Privacy</a>    <a href="/v2/legal/#cookies">Cookies</a>    <a href="/v2/legal/#imprint">Imprint</a></p>
+      </div>
+    </div>
+  </div>
+
+<script src="/v2/v2.js"></script>
+<script src="/v2/mobile/menu.js"></script>
+<script>
+// Closing footer: newsletter sign-up.
+// Netlify form "newsletter": validates in the browser, posts with fetch and confirms in place (falls back to a normal POST).
+(() => {
+  const sec = document.querySelector('[data-section="closing"]');
+  if (!sec) return;
+  sec.querySelectorAll('form[name="newsletter"]').forEach((form) => {
+    const input = form.querySelector('input[type="email"]'), btn = form.querySelector('button');
+    const msg = form.parentElement.querySelector('[data-nl-msg]');
+    const base = msg ? msg.innerHTML : '';
+    const say = (html, kind) => { if (!msg) return; msg.innerHTML = html; msg.dataset.state = kind || ''; };
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!input.checkValidity()) {
+        input.setAttribute('aria-invalid', 'true'); say('Please enter a valid work email.', 'bad'); input.focus(); return;
+      }
+      if (!window.fetch) { form.submit(); return; }
+      btn.disabled = true;
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+        .then((r) => {
+          if (!r.ok) throw new Error(r.status);
+          input.value = ''; input.placeholder = 'You are subscribed'; input.disabled = true; btn.textContent = 'Subscribed';
+          say('Thank you. You are on the list.', 'ok');
+        })
+        .catch(() => { btn.disabled = false; say('Something went wrong. Please try again.', 'bad'); });
+    });
+    input.addEventListener('input', () => { input.removeAttribute('aria-invalid'); if (msg && msg.dataset.state === 'bad') say(base, ''); });
+  });
+})();
+</script>
+</body>
+</html>

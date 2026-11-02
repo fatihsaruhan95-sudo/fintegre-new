@@ -1,4 +1,4 @@
-<section data-section="newsletter" id="newsletter" class="v2-sec" data-tone="light" style="--h:948px; background:#F5F7FA;">
+<section data-section="newsletter" id="newsletter" class="v2-sec" data-tone="light" style="--h:887px; background:#F5F7FA;">
 <style>
   [data-section="newsletter"] .nl-abs { position: absolute; }
   [data-section="newsletter"] p { margin: 0; }
@@ -6,55 +6,63 @@
   [data-section="newsletter"] h2 { margin: 0; font-weight: 400; font-size: 44px; line-height: 1; letter-spacing: -0.04em; color: #0F1115; }
   [data-section="newsletter"] .nl-lede { font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.62); }
   [data-section="newsletter"] form { display: flex; flex-direction: column; gap: 10px; }
-  [data-section="newsletter"] input { width: 350px; height: 52px; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(15,17,21,.1); background: #fff; color: #0F1115;
+  [data-section="newsletter"] input { width: 350px; height: 52px; box-sizing: border-box; padding: 0 22px; border-radius: 999px; border: 1px solid rgba(15,17,21,.1); background: #fff; color: #0F1115;
     font: 400 16px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, box-shadow .25s; }
   [data-section="newsletter"] input::placeholder { color: rgba(15,17,21,.45); font-size: 15px; }
   [data-section="newsletter"] input:focus { border-color: #3047EC; box-shadow: 0 0 0 3px rgba(48,71,236,.15); }
-  [data-section="newsletter"] input.is-bad { border-color: #E5484D; }
+  [data-section="newsletter"] input[aria-invalid="true"] { border-color: #E5484D; }
   [data-section="newsletter"] button { width: 350px; height: 52px; border: 0; border-radius: 999px; background: #3047EC; color: #F5F7FA; cursor: pointer;
     font: 400 15px/normal 'Geologica', system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
   [data-section="newsletter"] button[disabled] { background: #0F1115; }
-  [data-section="newsletter"] .nl-note { font-size: 13px; color: rgba(15,17,21,.5); line-height: normal; }
-  [data-section="newsletter"] .nl-note.is-bad { color: #C4373C; }
-  [data-section="newsletter"] .nl-note.is-ok { color: #3047EC; }
-  [data-section="newsletter"] .nl-vis { left: -0.3px; top: 433px; width: 372px; height: 434px; }
-  [data-section="newsletter"] .nl-cover { position: absolute; overflow: clip; border-radius: 11.16px; line-height: normal; white-space: nowrap; box-shadow: 0 18.6px 37.2px -6.2px rgba(15,20,51,.22); }
-  [data-section="newsletter"] .nl-cover > * { position: absolute; display: block; max-width: none; }
+  [data-section="newsletter"] .nl-note { font-size: 13px; line-height: 1.5; color: rgba(15,17,21,.5); }
+  [data-section="newsletter"] .nl-note a { color: #3047EC; text-decoration: underline; text-underline-offset: 2px; }
+  [data-section="newsletter"] .nl-note[data-state="bad"] { color: #C4373C; }
+  [data-section="newsletter"] .nl-note[data-state="ok"] { color: #3047EC; }
+  [data-section="newsletter"] .nl-vis { position: relative; width: 372px; height: 400px; margin-left: -20px; }
+  [data-section="newsletter"] .gc { position: absolute; display: block; overflow: clip; isolation: isolate; line-height: normal; white-space: nowrap; }
+  [data-section="newsletter"] .gc > * { position: absolute; display: block; max-width: none; margin: 0; }
+  [data-section="newsletter"] .gc .lb-ph { transition: transform 1.2s var(--ease); }
+  [data-section="newsletter"] .gc:hover .lb-ph { transform: scale(1.03); }
+  [data-section="newsletter"] .gc-chip { display: flex !important; align-items: center; border-radius: 999px; color: #F5F7FA; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  [data-section="newsletter"] .gc-chip img { display: block; }
+  [data-section="newsletter"] .gc-chip { display: none !important; }
+  [data-section="newsletter"] .nl-cover { border-radius: 11.16px; box-shadow: 0 18.6px 37.2px -6.2px rgba(15,20,51,.22); }
   .motion [data-section="newsletter"] [data-m][data-ty] { translate: 0 var(--ty); }
   .motion [data-section="newsletter"].is-in [data-m][data-ty] { translate: none; }
 </style>
   <div class="v2-canvas">
-    <div class="nl-abs nl-copy">
-      <h2 data-m="up">One email,<br>every quarter.</h2>
-      <p class="nl-lede" data-m="up" style="--d:100ms">The Device Value Index and new benchmarks, sent to trade-in, pricing and category teams. No more than one email a month.</p>
-      <form class="nl-form" novalidate data-m="up" style="--d:200ms">
-        <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-      <p class="nl-note" data-m="up" style="--d:250ms" aria-live="polite">Unsubscribe in one click. We never share your address.</p>
-    </div>
-
-    <div class="nl-abs nl-vis" aria-hidden="true">
-      <div class="nl-cover" data-m="up" data-ty="43.4px" style="--ty:43.4px; --d:200ms; left:12.68px; top:107.34px; width:167.4px; height:223.2px; transform:rotate(6deg); background:#0F1115; color:#F5F7FA; font-size:7.44px;">
-        <p style="left:14.88px; top:14.88px;">Next edition</p>
-        <p style="left:14.88px; top:34.72px; font-size:17.36px; line-height:1.04; letter-spacing:-0.03em;">Ships<br>3 Dec</p>
-        <p style="left:14.88px; top:79.36px; color:#A7B0BE;">Q4 · 2026</p>
+    <div class="nl-abs nl-copy" data-fit="40">
+      <h2 data-m="up">New guides,<br>by email.</h2>
+      <p class="nl-lede" data-m="up" style="--d:100ms">Guides and program notes from Fintegre, for trade-in, pricing and category teams.</p>
+      <div data-m="up" style="--d:200ms; display:flex; flex-direction:column; gap:14px;">
+        <form class="nl-form" name="newsletter" method="POST" action="/v2/thanks/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+              <input type="hidden" name="form-name" value="newsletter">
+              <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+        <p class="nl-note" data-nl-msg aria-live="polite">Unsubscribe at any time. See our <a href="/v2/legal/#privacy">privacy notice</a>.</p>
       </div>
-      <div class="nl-cover" data-m="up" data-ty="43.4px" style="--ty:43.4px; --d:380ms; left:103.44px; top:75.84px; width:167.4px; height:223.2px; transform:rotate(1deg); background:#fff; border:.62px solid rgba(15,17,21,.08); color:#0F1115; font-size:7.44px;">
-        <p style="left:13.64px; top:13.64px;">Benchmark</p>
-        <p style="left:13.64px; top:153.76px; font-size:17.36px; line-height:1.04; letter-spacing:-0.03em;">Retail vs.<br>telecom</p>
-        <p style="left:13.64px; top:197.16px; color:rgba(15,17,21,.5);">Q3 · 2026</p>
+      <div class="nl-vis" aria-hidden="true">
+      <div class="gc nl-cover" data-m="up" data-ty="43.4px" style="--ty:43.4px; --d:200ms; left:12.68px; top:107.34px; width:167.4px; height:223.2px; transform:rotate(6deg); background:radial-gradient(75px 74px at 37px 125px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; border:1px solid rgba(183,215,255,.2);">
+        <img alt="" src="/v2/assets/insights-room-light.svg" style="left:-17px; top:-27px; width:201px; height:283px; pointer-events:none;">
+        <img class="lb-ph" alt="iPad Pro" src="/v2/assets/insights-ipadpro.webp" style="left:27px; top:36px; width:134px; height:147px; object-fit:contain; filter:drop-shadow(0 24px 40px rgba(0,0,0,.45));">
+        <p style="left:12.1px; top:12.1px; font-size:6.60px; color:#F5F7FA;">Fintegre · Guide</p>
+        <div class="gc-chip" style="left:12.1px; bottom:12.1px; padding:5.5px 8.8px; gap:4.4px; font-size:7.70px; background:rgba(15,17,21,.55);"><img alt="" src="/v2/assets/insights-dot.svg" style="width:3.9px; height:3.9px;">Access · term · return</div>
       </div>
-      <div class="nl-cover" data-m="up" data-ty="43.4px" style="--ty:43.4px; --d:560ms; left:190.25px; top:84.42px; width:186px; height:248px; transform:rotate(-5deg); border:.62px solid rgba(183,215,255,.25); background:linear-gradient(135deg, #5D74FF 0%, #3047EC 71.429%); color:#F5F7FA; font-size:7.44px;">
-        <p style="left:14.88px; top:14.88px;">Fintegre intelligence · Report</p>
-        <img alt="" src="/v2/mobile/assets/insights-nbar-1.svg" width="45.0378" height="43.4" style="left:14.88px; top:79.36px;">
-        <img alt="" src="/v2/mobile/assets/insights-nbar-2.svg" width="56.6022" height="68.2" style="left:50.84px; top:54.56px;">
-        <img alt="" src="/v2/mobile/assets/insights-nbar-3.svg" width="68.1666" height="93" style="left:86.8px; top:29.76px;">
-        <img alt="" src="/v2/mobile/assets/insights-nbar-4.svg" width="52.2655" height="58.9" style="left:122.76px; top:63.86px;">
-        <p style="left:14.88px; top:173.6px; width:153.76px; white-space:normal; font-size:18.6px; line-height:1.04; letter-spacing:-0.03em;">European Device Value Index</p>
-        <p style="left:14.88px; top:221.96px;">Q3 · 2026</p>
+      <div class="gc nl-cover" data-m="up" data-ty="43.4px" style="--ty:43.4px; --d:380ms; left:103.44px; top:75.84px; width:167.4px; height:223.2px; transform:rotate(1deg); background:#F5F7FA; border:1px solid rgba(15,17,21,.08);">
+        <img class="lb-ph" alt="iPad mini in midnight" src="/v2/assets/solutions-ipad-mini-midnight.webp" style="left:27px; top:36px; width:134px; height:167px; object-fit:contain; filter:drop-shadow(0 24px 40px rgba(0,0,0,.45));">
+        <p style="left:12.1px; top:12.1px; font-size:6.60px; color:#0F1115;">Fintegre · Guide</p>
+        <div class="gc-chip" style="left:12.1px; bottom:12.1px; padding:5.5px 8.8px; gap:4.4px; font-size:7.70px; background:rgba(15,17,21,.85);"><img alt="" src="/v2/assets/insights-dot.svg" style="width:3.9px; height:3.9px;">Timing vs value</div>
       </div>
-      <img class="nl-abs" data-m="up" data-ty="43.4px" alt="" src="/v2/assets/insights-applewatch.webp" style="--ty:43.4px; --d:740ms; left:37.2px; top:291.4px; width:130.2px; height:150.04px; object-fit:contain; filter:drop-shadow(0 14.88px 24.8px rgba(15,20,51,.3));">
+      <div class="gc nl-cover" data-m="up" data-ty="43.4px" style="--ty:43.4px; --d:560ms; left:190.25px; top:84.42px; width:186px; height:248px; transform:rotate(-5deg); background:#000; border:1px solid rgba(183,215,255,.2);">
+        <img alt="" src="/v2/assets/insights-room-light.svg" style="left:-19px; top:-30px; width:223px; height:315px; pointer-events:none;">
+        <img class="lb-ph" alt="MacBook Pro" src="/v2/assets/programs-macbookpro.webp" style="left:30px; top:84px; width:149px; height:91px; object-fit:contain; filter:drop-shadow(0 24px 40px rgba(0,0,0,.45));">
+        <p style="left:12.1px; top:12.1px; font-size:6.60px; color:#F5F7FA;">Fintegre · Guide</p>
+        <div class="gc-chip" style="left:12.1px; bottom:12.1px; padding:5.5px 8.8px; gap:4.4px; font-size:7.70px; background:rgba(15,17,21,.55);"><img alt="" src="/v2/assets/insights-dot.svg" style="width:3.9px; height:3.9px;">Qualification · terms</div>
+      </div>
+        <img data-m="up" data-ty="43.4px" alt="" src="/v2/assets/insights-applewatch.webp" style="position:absolute; --ty:43.4px; --d:740ms; left:37px; top:280px; width:120px; height:138px; object-fit:contain; filter:drop-shadow(0 14px 24px rgba(15,20,51,.3));">
+      </div>
     </div>
   </div>
 </section>

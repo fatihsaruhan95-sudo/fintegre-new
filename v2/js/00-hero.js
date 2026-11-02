@@ -1,4 +1,4 @@
-// Hero: live-valuation counter (€0 → €598 → €612) on arrival, and the Figma 5.2–7.4 s "scroll-out"
+// Hero: sample valuation counter (€0 → €598 → €612) on arrival, and the Figma 5.2–7.4 s "scroll-out"
 // segment mapped onto scrolling through the first ~70% of the hero.
 (() => {
   const sec = document.querySelector('[data-section="hero"]');

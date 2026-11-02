@@ -1,0 +1,117 @@
+<section data-section="ecosystem" id="vendor-network" class="v2-sec" style="--h:1720px; background:#0F1115" data-tone="dark">
+  <style>
+    /* Phone adaptation of the desktop "04 · Ecosystem" (no Figma mobile frame): photo cropped on top,
+       headline, the channel → Fintegre → buyers diagram turned into an L (in from above, out to the right), then the bid card. */
+    [data-section="ecosystem"] .ecm-abs { position:absolute; margin:0; }
+    [data-section="ecosystem"] .ecm-photo { left:0; top:0; width:390px; height:540px; overflow:hidden; }
+    [data-section="ecosystem"] .ecm-photo img { display:block; width:390px; height:540px; max-width:none; object-fit:cover; }
+    [data-section="ecosystem"] .ecm-tint { left:0; top:0; width:390px; height:540px; background:rgba(48,71,236,.05); }
+    [data-section="ecosystem"] .ecm-fade-top { left:0; top:0; width:390px; height:120px; background:linear-gradient(180deg, rgba(15,17,21,.55) 0%, rgba(15,17,21,0) 100%); }
+    [data-section="ecosystem"] .ecm-fade-bot { left:0; top:300px; width:390px; height:242px;
+      background:linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.75) 55%, #0F1115 100%); }
+    [data-section="ecosystem"] .ecm-room { left:-325px; top:810px; width:1040px; height:860px; pointer-events:none; }
+    [data-section="ecosystem"] .ecm-room img { display:block; width:1040px; height:860px; max-width:none; }
+    [data-section="ecosystem"] .ecm-h { left:20px; top:496px; width:350px; font-weight:400; font-size:40px; line-height:44px; letter-spacing:-0.03em; color:#F5F7FA; }
+    [data-section="ecosystem"] .ecm-sub { left:20px; top:690px; width:350px; font-weight:300; font-size:16px; line-height:25px; color:#A7B0BE; }
+    [data-section="ecosystem"] .ecm-chip { display:flex; align-items:center; gap:8px; height:32px; padding:8px 14px 8px 12px; border-radius:999px; overflow:hidden;
+      background:rgba(15,17,21,.55); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+      font-size:13px; font-weight:400; line-height:normal; color:#F5F7FA; white-space:nowrap; box-sizing:border-box; }
+    [data-section="ecosystem"] .ecm-chip img { display:block; width:6px; height:6px; flex:none; }
+    [data-section="ecosystem"] .ecm-chip--on { background:rgba(48,71,236,.95); }
+    [data-section="ecosystem"] .ecm-hub { left:24px; top:1112px; width:72px; height:72px; border-radius:20px; box-shadow:0 0 40px rgba(48,71,236,.7); }
+    /* The 3D mark is mirrored so it faces right, toward the buyers. */
+    [data-section="ecosystem"] .ecm-hub img { display:block; width:72px; height:72px; border-radius:20px; object-fit:cover; transform:scaleX(-1); }
+    [data-section="ecosystem"] .ecm-hub-lbl { left:0; top:1194px; width:120px; text-align:center; font-size:13px; line-height:16px; color:#F5F7FA; }
+    [data-section="ecosystem"] .ecm-fibres { position:absolute; left:0; top:0; overflow:visible; pointer-events:none; }
+    [data-section="ecosystem"] .ecm-node { left:180px; top:298px; width:34px; height:34px; }
+    [data-section="ecosystem"] .ecm-node img { display:block; width:34px; height:34px; }
+    [data-section="ecosystem"] .ecm-card { left:40px; top:1340px; width:310px; box-sizing:border-box; display:flex; flex-direction:column; gap:14px; padding:24px 26px;
+      border:1px solid rgba(183,215,255,.14); border-radius:26px; overflow:hidden; background:rgba(255,255,255,.08);
+      backdrop-filter:blur(15px); -webkit-backdrop-filter:blur(15px); box-shadow:0 30px 60px rgba(0,0,0,.45); }
+    [data-section="ecosystem"] .ecm-card p { margin:0; line-height:normal; white-space:nowrap; }
+    [data-section="ecosystem"] .ecm-card .ecm-card__body { white-space:normal; font-size:14px; font-weight:300; line-height:1.5; color:#A7B0BE; }
+    [data-section="ecosystem"] .ecm-card .ecm-card__title { white-space:normal; line-height:1.25; margin:0; }
+    [data-section="ecosystem"] .ecm-card__cta { align-self:flex-start; display:inline-flex; align-items:center; height:44px; padding:0 18px; border-radius:999px; background:#F5F7FA; color:#0F1115; font-size:14px; line-height:normal; white-space:nowrap; }
+    [data-section="ecosystem"] .ecm-cap { font-size:12px; color:#A7B0BE; white-space:nowrap; }
+    [data-section="ecosystem"] .ecm-card__eyebrow { font-size:13px; color:#B7D7FF; }
+    [data-section="ecosystem"] .ecm-card__title { font-size:22px; font-weight:300; color:#F5F7FA; }
+    [data-section="ecosystem"] .ecm-card__rows { display:flex; flex-direction:column; gap:9px; margin:0; font-size:14px; line-height:normal; }
+    [data-section="ecosystem"] .ecm-card__rows div { display:flex; justify-content:space-between; }
+    [data-section="ecosystem"] .ecm-card__rows dt { font-weight:300; color:#A7B0BE; }
+    [data-section="ecosystem"] .ecm-card__rows dd { margin:0; color:#F5F7FA; }
+    [data-section="ecosystem"] .ecm-card__div { height:1px; background:rgba(183,215,255,.14); }
+    [data-section="ecosystem"] .ecm-card__bid { display:flex; align-items:center; justify-content:space-between; padding:13px 14px; border-radius:14px; background:rgba(48,71,236,.9); color:#F5F7FA; }
+    [data-section="ecosystem"] .ecm-card__bid span:first-child { font-size:13px; }
+    [data-section="ecosystem"] .ecm-card__bid span:last-child { font-size:17px; }
+    [data-section="ecosystem"] .ecm-card__foot { font-size:13px; font-weight:300; color:#A7B0BE; }
+
+    /* Motion (desktop Figma timing). Photo, headline, node + chip play on .is-in; the diagram on .ecm-go and the
+       card on .ecm-card-go, each when it is itself on screen (js/04-ecosystem.js). Delays inside a group are relative. */
+    .motion [data-section="ecosystem"] .ecm-photo img { opacity:0; scale:1.06; transition:opacity 1s var(--ease), scale 2.6s var(--ease); }
+    .motion [data-section="ecosystem"].is-in .ecm-photo img { opacity:1; scale:1; }
+    .motion [data-section="ecosystem"] .ecm-in { opacity:0; translate:0 var(--y, 20px);
+      transition:opacity var(--to, .48s) var(--ease) var(--d), translate var(--tt, .6s) var(--ease) var(--d); }
+    .motion [data-section="ecosystem"] .ecm-pop { opacity:0; scale:.6; transition:opacity .3s var(--ease) var(--d), scale .7s var(--spring) var(--d); }
+    .motion [data-section="ecosystem"] .ecm-fib { stroke-dasharray:1 1; stroke-dashoffset:1; visibility:hidden;
+      transition:stroke-dashoffset var(--t, .6s) var(--inout) var(--d), visibility 0s linear var(--d); }
+    .motion [data-section="ecosystem"].is-in .ecm-g-top .ecm-in,
+    .motion [data-section="ecosystem"].ecm-go .ecm-g-map .ecm-in,
+    .motion [data-section="ecosystem"].ecm-card-go .ecm-g-card.ecm-in { opacity:1; translate:none; }
+    .motion [data-section="ecosystem"].is-in .ecm-g-top .ecm-pop,
+    .motion [data-section="ecosystem"].ecm-go .ecm-g-map .ecm-pop { opacity:1; scale:1; }
+    .motion [data-section="ecosystem"].ecm-go .ecm-g-map .ecm-fib,
+    .motion [data-section="ecosystem"].ecm-card-go .ecm-fib.ecm-g-card { stroke-dashoffset:0; visibility:visible; }
+    .motion [data-section="ecosystem"] .ecm-room { opacity:0; transition:opacity 1.2s var(--ease); }
+    .motion [data-section="ecosystem"].ecm-go .ecm-room { opacity:1; }
+    @media (prefers-reduced-motion: reduce) { [data-section="ecosystem"] * { transition:none !important; } }
+  </style>
+  <div class="v2-canvas">
+    <div class="ecm-abs ecm-photo"><img alt="A buyer's team member inspecting a traded-in iPhone at an intake desk" src="assets/ecosystem-warehouse.webp" width="390" height="540"></div>
+    <div class="ecm-abs ecm-tint" aria-hidden="true"></div>
+    <div class="ecm-abs ecm-fade-top" aria-hidden="true"></div>
+    <div class="ecm-abs ecm-fade-bot" aria-hidden="true"></div>
+    <div class="ecm-abs ecm-room" aria-hidden="true"><img alt="" src="assets/ecosystem-room-light.svg" width="1040" height="860"></div>
+
+    <div class="ecm-g-top">
+      <div class="ecm-abs ecm-node ecm-pop" style="--d:1s" aria-hidden="true"><img alt="" src="assets/ecosystem-node.svg" width="34" height="34"></div>
+      <div class="ecm-abs ecm-chip ecm-in" style="left:137px; top:372px; --d:1.2s; --to:.72s; --tt:.9s"><img alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Buyer inspection on arrival</div>
+      <h2 class="ecm-abs ecm-h ecm-in" style="--y:40px; --d:.3s; --to:.72s; --tt:.9s">Qualified buyers make stronger trade-in programs possible.</h2>
+      <p class="ecm-abs ecm-sub ecm-in" style="--y:30px; --d:.6s; --to:.72s; --tt:.9s">Fintegre connects enterprise trade-in journeys with buyers whose demand, capacity and operating capabilities fit the program. This buying network supports device recovery and the value offered to customers.</p>
+    </div>
+
+    <div class="ecm-g-map">
+      <svg class="ecm-fibres" width="390" height="1720" viewBox="0 0 390 1720" fill="none" aria-hidden="true">
+        <g stroke="#B7D7FF" stroke-width="1.4" stroke-linecap="round">
+          <path class="ecm-fib" pathLength="1" stroke-opacity=".5" d="M72 1052.7C72 1082 60 1082 60 1111.3" style="--d:.2s"/>
+          <path class="ecm-fib" pathLength="1" stroke-opacity=".5" d="M175 1052.7C175 1090 60 1074 60 1111.3" style="--d:.35s"/>
+          <path class="ecm-fib" pathLength="1" stroke-opacity=".5" d="M286 1052.7C286 1096 60 1069 60 1111.3" style="--d:.5s"/>
+          <path class="ecm-fib" pathLength="1" stroke-opacity=".5" d="M96.7 1148C126 1148 116 1148 146.3 1148" style="--d:.6s"/>
+          <path class="ecm-fib" pathLength="1" stroke-opacity=".5" d="M96.7 1148C126 1148 116 1202 146.3 1202" style="--d:.75s"/>
+          <path class="ecm-fib" pathLength="1" stroke-opacity=".5" d="M96.7 1148C126 1148 116 1256 146.3 1256" style="--d:.9s"/>
+        </g>
+      </svg>
+      <div class="ecm-abs ecm-chip ecm-in" style="left:20px; top:1020px; --d:0s"><img alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Retail stores</div>
+      <div class="ecm-abs ecm-chip ecm-in" style="left:133px; top:1020px; --d:.15s"><img alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Telecom</div>
+      <div class="ecm-abs ecm-chip ecm-in" style="left:226px; top:1020px; --d:.3s"><img alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Brand channels</div>
+      <div class="ecm-abs ecm-hub ecm-pop" style="--d:.4s"><img alt="Fintegre" src="../assets/ecosystem-3d-mark.jpg" width="72" height="72"></div>
+      <p class="ecm-abs ecm-hub-lbl ecm-in" style="--d:.5s; --y:0px">Fintegre<br>orchestration</p>
+      <p class="ecm-abs ecm-cap ecm-in" style="left:20px; top:994px; --d:0s">Enterprise channels</p>
+      <p class="ecm-abs ecm-cap ecm-in" style="left:150px; top:1106px; --d:.8s">Qualified buyers and recovery partners</p>
+      <div class="ecm-abs ecm-chip ecm-in" style="left:150px; top:1132px; --d:.9s"><img alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Qualified buyers</div>
+      <div class="ecm-abs ecm-chip ecm-chip--on ecm-in" style="left:150px; top:1186px; --d:1.05s"><img alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Refurbishers</div>
+      <div class="ecm-abs ecm-chip ecm-in" style="left:150px; top:1240px; --d:1.2s"><img alt="" src="assets/ecosystem-dot.svg" width="6" height="6">Recovery partners</div>
+    </div>
+
+    <!-- Refurbishers → bid card fibre, drawn after the card lands. -->
+    <svg class="ecm-fibres" width="390" height="1720" viewBox="0 0 390 1720" fill="none" aria-hidden="true">
+      <path class="ecm-fib ecm-g-card" pathLength="1" stroke="#B7D7FF" stroke-width="1.4" stroke-linecap="round" stroke-opacity=".55" d="M274 1202C318 1202 332 1262 322 1341" style="--d:.5s; --t:.8s"/>
+    </svg>
+    <article class="ecm-abs ecm-card ecm-in ecm-g-card" style="--y:40px; --d:0s; --to:.72s; --tt:.9s" aria-labelledby="ecm-buyers-h">
+      <p class="ecm-card__eyebrow">Vendor Network</p>
+      <h3 class="ecm-card__title" id="ecm-buyers-h">For device buyers, refurbishers and recommerce businesses</h3>
+      <p class="ecm-card__body">Bring your buying expertise to the Fintegre network. Tell us which devices and markets you serve, and explore opportunities to participate in suitable trade-in programs.</p>
+      <div class="ecm-card__div" aria-hidden="true"></div>
+      <a class="ecm-card__cta" href="/v2/vendor-network/#apply">Join the vendor network</a>
+    </article>
+  </div>
+</section>

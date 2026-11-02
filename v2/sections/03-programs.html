@@ -1,0 +1,200 @@
+<section data-section="programs" id="programs" class="v2-sec" data-tone="dark"
+  style="--h:900px; background: radial-gradient(55.56% 38.46% at 16.67% 53.85%, #1D2A8F 0%, #182271 27.5%, #121A52 55%, #111634 77.5%, #0F1115 100%), #0F1115;">
+  <style>
+    /* Scroll-linked: the section is several screens tall and one sticky screen shows the carousel,
+       so scrolling down walks through the cards before moving on. */
+    [data-section="programs"].v2-sec { height: calc(900px * var(--s) * 3.6); }
+    [data-section="programs"] .pg-sticky { position: sticky; top: 0; height: calc(900px * var(--s)); overflow: hidden; }
+    [data-section="programs"] .pg-abs { position: absolute; }
+    [data-section="programs"] .pg-arrow { width: 52px; height: 52px; border-radius: 999px; border: 0; display: flex; align-items: center; justify-content: center;
+      color: #F5F7FA; font: 400 18px/1 'Geologica', sans-serif; cursor: pointer; transition: background .25s, opacity .3s var(--inout); }
+    [data-section="programs"] .pg-arrow:hover { background: rgba(183,215,255,.24) !important; }
+    [data-section="programs"] .pg-arrow:disabled { opacity: .4; cursor: default; }
+    [data-section="programs"] .pg-arrow.is-flash { opacity: .6; }
+    [data-section="programs"] .pg-compare { font-size: 15px; font-weight: 400; color: #F5F7FA; white-space: pre; transition: opacity .2s; }
+    [data-section="programs"] .pg-compare:hover { opacity: .75; }
+
+    /* Scroller: starts at the canvas left edge (scroll-padding 120) and runs to the right edge of the viewport. */
+    [data-section="programs"] .pg-scroller { left: 0; top: 300px; height: 540px; width: calc(1440px + (100vw / var(--s) - 1440px) / 2);
+      overflow: hidden; scrollbar-width: none; -ms-overflow-style: none; }
+    [data-section="programs"] .pg-scroller::-webkit-scrollbar { display: none; }
+    [data-section="programs"] .pg-scroller.is-dragging { cursor: grabbing; }
+    [data-section="programs"] .pg-scroller.is-dragging * { pointer-events: none; }
+    [data-section="programs"] .pg-track { display: flex; gap: 24px; align-items: flex-start; padding: 0 920px 0 120px; width: max-content; }
+    [data-section="programs"] .pg-item { flex: none; width: 400px; display: flex; flex-direction: column; gap: 18px; user-select: none; -webkit-user-select: none; }
+    [data-section="programs"] .pg-card { position: relative; width: 400px; height: 340px; border-radius: 28px; overflow: hidden; }
+    [data-section="programs"] .pg-card img { -webkit-user-drag: none; user-select: none; }
+    [data-section="programs"] .pg-dark { background: radial-gradient(250px 262.5px at 200px 26.25px, rgba(48,71,236,.45) 0%, rgba(48,71,236,0) 100%), #161920; }
+    [data-section="programs"] .pg-indigo { background: linear-gradient(141.78deg, #3047EC 14.286%, #141E6E 85.714%); }
+    [data-section="programs"] .pg-light { background: radial-gradient(250px 262.5px at 200px 0px, rgba(183,215,255,.8) 0%, rgba(183,215,255,0) 100%), #F5F7FA; }
+    [data-section="programs"] .pg-chip { position: absolute; display: flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 999px;
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; font-weight: 400; white-space: nowrap; }
+    [data-section="programs"] .pg-chip--dark { background: rgba(15,17,21,.55); color: #F5F7FA; }
+    [data-section="programs"] .pg-chip--light { background: rgba(255,255,255,.9); color: #0F1115; }
+    [data-section="programs"] .pg-chip img { display: block; }
+    [data-section="programs"] .pg-device { position: absolute; }
+    [data-section="programs"] .pg-device img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+    [data-section="programs"] .pg-cap { margin: 0; width: 380px; font-size: 16px; line-height: 1.5; font-weight: 400; color: #F5F7FA; }
+    [data-section="programs"] .pg-cap b { display: block; margin-bottom: 4px; font-weight: 400; font-size: 19px; }
+    [data-section="programs"] .pg-cap span { font-weight: 300; color: #A7B0BE; }
+    [data-section="programs"] .pg-link { align-self: flex-start; font-size: 14px; color: #B7D7FF; white-space: nowrap; transition: opacity .2s; margin-top: -4px; }
+    [data-section="programs"] .pg-link:hover { opacity: .75; }
+    [data-section="programs"] .pg-sample { position: absolute; right: 24px; top: 22px; margin: 0; font-size: 12px; line-height: normal; white-space: nowrap; color: #A7B0BE; }
+    [data-section="programs"] .pg-light .pg-sample { color: rgba(15,17,21,.5); }
+    [data-section="programs"] .pg-tag { position: absolute; left: 32px; top: 22px; margin: 0; font-size: 13px; line-height: normal; white-space: nowrap; }
+    [data-section="programs"] .pg-glass { position: absolute; padding: 4px 20px; border-radius: 18px; background: rgba(255,255,255,.1); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      display: flex; flex-direction: column; white-space: nowrap; line-height: normal; }
+    [data-section="programs"] .pg-light .pg-glass { background: rgba(255,255,255,.75); box-shadow: inset 0 0 0 1px rgba(15,17,21,.06); }
+    [data-section="programs"] .pg-glass .pg-row { font-size: 14px; padding: 11px 0; }
+    [data-section="programs"] .pg-glass .pg-row + .pg-row { border-top: 1px solid rgba(255,255,255,.12); }
+    [data-section="programs"] .pg-light .pg-glass .pg-row + .pg-row { border-top-color: rgba(15,17,21,.08); }
+    [data-section="programs"] .pg-glass .k { font-weight: 300; color: rgba(255,255,255,.72); }
+    [data-section="programs"] .pg-light .pg-glass .k { color: rgba(15,17,21,.6); }
+    [data-section="programs"] .pg-glass .v { color: #fff; }
+    [data-section="programs"] .pg-light .pg-glass .v { color: #0F1115; }
+    [data-section="programs"] .pg-big { position: absolute; margin: 0; font-weight: 300; font-size: 96px; letter-spacing: -3.84px; line-height: normal; white-space: nowrap; }
+    [data-section="programs"] .pg-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; width: 100%; }
+    [data-section="programs"] .pg-check { display: flex; align-items: flex-start; justify-content: space-between; padding: 15px 0; width: 276px; }
+    [data-section="programs"] .pg-pager { left: 120px; top: 850px; display: flex; gap: 8px; align-items: center; }
+    [data-section="programs"] .pg-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; background: rgba(245,247,250,.3); cursor: pointer;
+      transition: width .6s var(--inout), background .6s var(--inout); }
+    [data-section="programs"] .pg-dot.is-active { width: 28px; background: #F5F7FA; }
+    /* Cards rise 60px (Figma) instead of the default 40px. */
+    .motion [data-section="programs"]:not(.is-in) .pg-item[data-m] { translate: 0 60px; }
+    .motion [data-section="programs"] .pg-item[data-m] { transition-duration: .9s, 1.1s, 1s, 1.4s; }
+    .motion [data-section="programs"]:not(.is-in) .pg-head[data-m] { translate: 0 24px; }
+  </style>
+
+  <div class="pg-sticky">
+  <div class="v2-canvas">
+    <h2 class="pg-abs pg-head" data-m="up" style="left:120px; top:92px; margin:0; font-weight:400; font-size:64px; line-height:1.04; letter-spacing:-2.56px; color:#F5F7FA; white-space:nowrap;">
+      One platform.<br>Seven programs.
+    </h2>
+    <p class="pg-abs pg-head" data-m="up" style="--d:50ms; left:780px; top:98px; width:540px; margin:0; font-weight:300; font-size:17px; line-height:1.5; color:rgba(245,247,250,.72);">
+      Build the device programs that fit your customers and channels – from trade-in and upgrades to subscriptions and rentals. Coordinate device assessment, value, recovery and settlement around each program's commercial rules.
+    </p>
+    <div class="pg-abs pg-head" data-m="up" style="--d:100ms; left:1216px; top:216px; display:flex; gap:12px;">
+      <button type="button" class="pg-arrow" data-dir="-1" aria-label="Previous program" style="background:rgba(183,215,255,.08);">←</button>
+      <button type="button" class="pg-arrow" data-dir="1" aria-label="Next program" style="background:rgba(183,215,255,.16);">→</button>
+    </div>
+    <a class="pg-abs pg-head pg-compare" data-m="up" href="/v2/solutions/#programs" style="--d:150ms; left:780px; top:232px;">Compare all programs  →</a>
+
+    <div class="pg-abs pg-scroller" role="region" aria-roledescription="carousel" aria-label="Programs" tabindex="0">
+      <div class="pg-track">
+        <!-- 01 Trade-in -->
+        <article class="pg-item" data-m="up" style="--d:150ms;" aria-label="1 of 7">
+          <div class="pg-card pg-dark">
+            <p class="pg-sample">Sample data</p>
+            <div class="pg-device" style="left:105px; top:30px; width:190px; height:230px;"><img alt="iPhone 18 Pro" src="assets/programs-iphone18pro.webp" draggable="false"></div>
+            <div class="pg-chip pg-chip--dark" style="left:32px; top:272px;"><img alt="" src="assets/programs-dot-ice.svg" width="7" height="7">Quote €612</div>
+            <div class="pg-chip pg-chip--dark" style="left:176px; top:272px; background:rgba(48,71,236,.92);"><img alt="" src="assets/programs-dot-ice.svg" width="7" height="7">€612 credit · next device</div>
+          </div>
+          <p class="pg-cap"><b>Trade-in</b><span>Turn an eligible device into credit towards the next purchase, using condition assessment and qualified buyer offers.</span></p>
+          <a class="pg-link" href="/v2/contact/?program=trade-in">Discuss this program →</a>
+        </article>
+        <!-- 02 Early upgrade -->
+        <article class="pg-item" data-m="up" style="--d:230ms;" aria-label="2 of 7">
+          <div class="pg-card pg-indigo">
+            <p class="pg-sample" style="color:rgba(255,255,255,.7);">Sample data</p>
+            <p class="pg-tag" style="color:rgba(255,255,255,.8);">Current agreement</p>
+            <p class="pg-abs" style="left:32px; top:52px; margin:0; font-weight:300; font-size:56px; letter-spacing:-2px; line-height:normal; color:#fff; white-space:nowrap;">Month 18 <span style="font-size:24px; letter-spacing:0; color:rgba(255,255,255,.7);">of 24</span></p>
+            <div class="pg-abs" style="left:32px; top:140px; width:336px; height:6px; border-radius:999px; background:rgba(255,255,255,.18);"></div>
+            <div class="pg-abs" style="left:32px; top:140px; width:252px; height:6px; border-radius:999px; background:#B7D7FF;"></div>
+            <div class="pg-glass" style="left:32px; top:172px; width:336px;">
+              <div class="pg-row"><span class="k">Eligibility</span><span class="v">Confirmed</span></div>
+              <div class="pg-row"><span class="k">Trade-in value</span><span class="v" style="color:#B7D7FF;">€240</span></div>
+              <div class="pg-row"><span class="k">Remaining agreement</span><span class="v">Program terms</span></div>
+            </div>
+          </div>
+          <p class="pg-cap"><b>Early upgrade</b><span>Help customers move to their next device before the end of their current agreement, subject to eligibility and the program's settlement terms.</span></p>
+          <a class="pg-link" href="/v2/contact/?program=early-upgrade">Discuss this program →</a>
+        </article>
+        <!-- 03 Deferred trade-in: handover timing -->
+        <article class="pg-item" data-m="up" style="--d:310ms;" aria-label="3 of 7">
+          <div class="pg-card pg-light">
+            <p class="pg-sample">Sample data</p>
+            <p class="pg-tag" style="color:rgba(15,17,21,.6);">Return window</p>
+            <p class="pg-big" style="left:30px; top:40px; color:#0F1115; font-size:80px;">Day 19</p>
+            <p class="pg-abs" style="left:32px; top:140px; margin:0; font-size:14px; color:rgba(15,17,21,.6); white-space:nowrap;">of 30 to hand over the existing device</p>
+            <div class="pg-abs" style="left:32px; top:178px; width:336px; height:8px; border-radius:999px; background:rgba(15,17,21,.08);"></div>
+            <div class="pg-abs" style="left:32px; top:178px; width:213px; height:8px; border-radius:999px; background:#3047EC;"></div>
+            <p class="pg-abs" style="left:32px; top:198px; margin:0; font-size:12px; color:rgba(15,17,21,.5); white-space:nowrap;">Day 0 · new device received</p>
+            <p class="pg-abs" style="right:32px; top:198px; margin:0; font-size:12px; color:rgba(15,17,21,.5); white-space:nowrap;">Day 30 · handover due</p>
+            <div class="pg-chip pg-chip--light" style="left:32px; top:262px;"><img alt="" src="assets/programs-dot-indigo.svg" width="7" height="7">New device first · old device later</div>
+          </div>
+          <p class="pg-cap"><b>Deferred trade-in</b><span>Let customers receive their new device first and hand over their existing device within an agreed return window.</span></p>
+          <a class="pg-link" href="/v2/contact/?program=deferred-trade-in">Discuss this program →</a>
+        </article>
+        <!-- 04 Future trade-in: value certainty -->
+        <article class="pg-item" data-m="up" style="--d:390ms;" aria-label="4 of 7">
+          <div class="pg-card pg-dark">
+            <p class="pg-sample">Sample data</p>
+            <p class="pg-tag" style="color:#B7D7FF;">Locked trade-in value</p>
+            <p class="pg-big" style="left:30px; top:40px; color:#F5F7FA; font-size:80px;">€420</p>
+            <p class="pg-abs" style="left:32px; top:140px; margin:0; font-size:14px; color:#A7B0BE; white-space:nowrap;">held until 30 Sep 2027 under agreed terms</p>
+            <div class="pg-glass" style="left:32px; top:176px; width:336px; background:rgba(255,255,255,.06);">
+              <div class="pg-row"><span class="k">Eligibility</span><span class="v">Agreed model list</span></div>
+              <div class="pg-row"><span class="k">Condition</span><span class="v">Grade B or better</span></div>
+              <div class="pg-row"><span class="k">Return</span><span class="v">Within the defined period</span></div>
+            </div>
+          </div>
+          <p class="pg-cap"><b>Future trade-in</b><span>Lock in a device's trade-in value for a defined period, subject to agreed eligibility, condition and return terms.</span></p>
+          <a class="pg-link" href="/v2/contact/?program=future-trade-in">Discuss this program →</a>
+        </article>
+        <!-- 05 Subscription programs -->
+        <article class="pg-item" data-m="up" style="--d:470ms;" aria-label="5 of 7">
+          <div class="pg-card pg-indigo">
+            <p class="pg-sample" style="color:rgba(255,255,255,.7);">Sample data</p>
+            <div class="pg-device" style="left:28px; top:34px; width:150px; height:174px;"><img alt="Apple Watch Series 12 in Night Blue" src="assets/programs-watch.png" draggable="false"></div>
+            <p class="pg-abs" style="left:196px; top:70px; margin:0; font-weight:300; font-size:44px; letter-spacing:-1.3px; line-height:normal; color:#fff; white-space:nowrap;">€19<span style="font-size:18px; letter-spacing:0; color:rgba(255,255,255,.75);"> / mo</span></p>
+            <p class="pg-abs" style="left:198px; top:130px; margin:0; font-weight:300; font-size:14px; line-height:1.4; color:rgba(255,255,255,.8); white-space:nowrap;">Recurring payment,<br>24-month agreement</p>
+            <p class="pg-abs" style="left:32px; top:232px; margin:0; font-size:13px; color:rgba(255,255,255,.75); white-space:nowrap;">At the end of the agreement</p>
+            <div class="pg-abs" style="left:32px; top:262px; display:flex; gap:8px;">
+              <span class="pg-chip pg-chip--dark" style="position:static;">Renew</span>
+              <span class="pg-chip pg-chip--dark" style="position:static;">Upgrade</span>
+              <span class="pg-chip pg-chip--dark" style="position:static;">Return</span>
+            </div>
+          </div>
+          <p class="pg-cap"><b>Subscription programs</b><span>Offer device access through recurring payments, with defined options for renewal, upgrade or return under the subscription agreement.</span></p>
+          <a class="pg-link" href="/v2/contact/?program=subscription">Discuss this program →</a>
+        </article>
+        <!-- 06 Device rental programs -->
+        <article class="pg-item" data-m="up" style="--d:550ms;" aria-label="6 of 7">
+          <div class="pg-card pg-dark">
+            <p class="pg-sample">Sample data</p>
+            <div class="pg-device" style="left:22px; top:40px; width:160px; height:176px;"><img alt="iPad Pro" src="assets/programs-ipadpro.webp" draggable="false"></div>
+            <div class="pg-glass" style="left:196px; top:56px; width:176px; padding:4px 16px; background:rgba(255,255,255,.06);">
+              <div class="pg-row"><span class="k">Term</span><span class="v">12 months</span></div>
+              <div class="pg-row"><span class="k">Rental</span><span class="v">€29 / mo</span></div>
+              <div class="pg-row"><span class="k">Usage</span><span class="v">As agreed</span></div>
+            </div>
+            <div class="pg-chip pg-chip--dark" style="left:32px; top:262px;"><img alt="" src="assets/programs-dot-ice.svg" width="7" height="7">End of term · return to the program</div>
+          </div>
+          <p class="pg-cap"><b>Device rental programs</b><span>Offer devices for an agreed rental term, with clear payment, usage and end-of-term return conditions.</span></p>
+          <a class="pg-link" href="/v2/contact/?program=device-rental">Discuss this program →</a>
+        </article>
+        <!-- 07 Return avoidance -->
+        <article class="pg-item" data-m="up" style="--d:630ms;" aria-label="7 of 7">
+          <div class="pg-card pg-light">
+            <p class="pg-sample">Sample data</p>
+            <div class="pg-device" style="left:50px; top:40px; width:300px; height:184px;"><img alt="MacBook Pro" src="assets/programs-macbookpro.webp" draggable="false"></div>
+            <div class="pg-chip pg-chip--light" style="left:32px; top:262px;"><img alt="" src="assets/programs-dot-indigo.svg" width="7" height="7">Exchange offered · return rights kept</div>
+          </div>
+          <p class="pg-cap"><b>Return avoidance</b><span>Offer eligible customers an alternative to returning their purchase, such as a supported exchange or upgrade journey, while preserving applicable return rights.</span></p>
+          <a class="pg-link" href="/v2/contact/?program=return-avoidance">Discuss this program →</a>
+        </article>
+      </div>
+    </div>
+
+    <div class="pg-abs pg-pager" role="tablist" aria-label="Choose a program">
+      <button type="button" class="pg-dot is-active" aria-label="Program 1"></button>
+      <button type="button" class="pg-dot" aria-label="Program 2"></button>
+      <button type="button" class="pg-dot" aria-label="Program 3"></button>
+      <button type="button" class="pg-dot" aria-label="Program 4"></button>
+      <button type="button" class="pg-dot" aria-label="Program 5"></button>
+      <button type="button" class="pg-dot" aria-label="Program 6"></button>
+      <button type="button" class="pg-dot" aria-label="Program 7"></button>
+    </div>
+  </div>
+  </div>
+</section>

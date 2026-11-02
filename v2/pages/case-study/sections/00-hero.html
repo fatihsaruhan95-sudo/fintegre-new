@@ -46,10 +46,10 @@
   [data-section="hero"] .hc-crumb a { transition: color .2s; }
   [data-section="hero"] .hc-crumb a:hover { color: #F5F7FA; }
   [data-section="hero"] h1 { margin: 0; width: 600px; font-weight: 400; font-size: 68px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
-  [data-section="hero"] .hc-kpis { display: flex; gap: 44px; white-space: nowrap; }
-  [data-section="hero"] .hc-kpis div { display: flex; flex-direction: column; gap: 8px; }
-  [data-section="hero"] .hc-kpis b { font-weight: 300; font-size: 44px; letter-spacing: -0.03em; color: #F5F7FA; }
-  [data-section="hero"] .hc-kpis span { font-size: 12px; color: #B7D7FF; }
+  /* Prominent evidence label: this page is an illustration, not a customer result. */
+  [data-section="hero"] .hc-label { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px 12px 16px; border-radius: 999px; background: rgba(48,71,236,.9); font-size: 15px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .hc-label img { width: 6px; height: 6px; display: block; }
+  [data-section="hero"] .hc-sample { margin-top: 10px; font-size: 12px; color: #A7B0BE; }
   [data-section="hero"] .hc-card { position: absolute; left: 1010px; top: 470px; width: 360px; padding: 26px 28px 18px; border-radius: 26px; background: rgba(15,17,21,.62); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
   [data-section="hero"] .hc-row { display: flex; justify-content: space-between; padding: 12px 0; font-size: 14px; white-space: nowrap; border-bottom: 1px solid rgba(183,215,255,.1); }
   [data-section="hero"] .hc-row:last-child { border-bottom: 0; }
@@ -65,39 +65,34 @@
 
     <div class="cs-abs cs-top">
       <a href="/v2/" class="cs-logo" aria-label="Fintegre home"><span class="cs-mark"><img alt="" src="/v2/assets/case-study-logo-mark.svg"></span>Fintegre</a>
-      <nav class="cs-nav" aria-label="Hero">
+      <nav class="cs-nav" aria-label="Main">
         <a href="/v2/platform/">Platform</a>
         <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/vendor-network/">Vendor Network</a>
         <a href="/v2/intelligence/">Intelligence</a>
-        <a href="/v2/customers/" aria-current="page">Customers</a>
-        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/insights/" aria-current="page">Insights</a>
         <a href="/v2/company/">Company</a>
       </nav>
-      <a href="/v2/design-your-program/" class="cs-btn">Design your program</a>
+      <a href="/v2/contact/" class="cs-btn">Discuss your program</a>
     </div>
 
     <div class="hc-copy" data-k style="--y:50px; --d:200ms; --o:.7s; --t:1s;">
-      <p class="hc-crumb"><a href="/v2/customers/">Customers</a>  /  A Baltic electronics retailer</p>
-      <h1>Trade-in became part of every iPhone sale.</h1>
-      <p class="cs-lede" style="width:470px;">40 stores and an online shop across Lithuania, Latvia and Estonia. Six months after launch, trade-in is part of most new iPhone sales.</p>
-      <div class="hc-kpis">
-        <div data-k style="--y:30px; --d:800ms; --o:.63s; --t:.9s;"><b>+38%</b><span>Trade-in participation</span></div>
-        <div data-k style="--y:30px; --d:950ms; --o:.63s; --t:.9s;"><b>+14%</b><span>Value per device</span></div>
-        <div data-k style="--y:30px; --d:1100ms; --o:.63s; --t:.9s;"><b>58 s</b><span>Time to offer</span></div>
-        <div data-k style="--y:30px; --d:1250ms; --o:.63s; --t:.9s;"><b>9 wk</b><span>Pilot to rollout</span></div>
-      </div>
+      <p class="hc-crumb"><a href="/v2/insights/">Insights</a>  /  Illustrative journey</p>
+      <h1>How an electronics retailer could run trade-in.</h1>
+      <p class="cs-lede" style="width:480px;">An illustrative journey for a multi-store electronics retailer with an online shop. It shows how a trade-in program could be set up and measured. It is not a customer case study.</p>
+      <p class="hc-label" data-k style="--y:30px; --d:800ms; --o:.63s; --t:.9s;"><img alt="" src="/v2/assets/case-study-dot.svg">Illustrative journey · sample data. Not a customer result.</p>
     </div>
 
     <div class="hc-card" data-k style="--sc:.6; --d:1200ms; --o:.3s; --t:.7s;">
-      <p style="font-size:13px; color:#A7B0BE; margin-bottom:12px;">Program at a glance</p>
-      <div class="hc-row" data-k style="--y:12px; --d:1600ms; --o:.42s; --t:.6s;"><span>Markets</span><b>LT · LV · EE</b></div>
-      <div class="hc-row" data-k style="--y:12px; --d:1750ms; --o:.42s; --t:.6s;"><span>Channels</span><b>40 stores, online</b></div>
-      <div class="hc-row" data-k style="--y:12px; --d:1900ms; --o:.42s; --t:.6s;"><span>Programs</span><b>Trade-in, early upgrade</b></div>
-      <div class="hc-row" data-k style="--y:12px; --d:2050ms; --o:.42s; --t:.6s;"><span>Buyers</span><b>3 local, live bids</b></div>
-      <div class="hc-row" data-k style="--y:12px; --d:2200ms; --o:.42s; --t:.6s;"><span>Live since</span><b>March 2026</b></div>
+      <p style="font-size:13px; color:#A7B0BE; margin-bottom:12px;">Illustrative setup</p>
+      <div class="hc-row" data-k style="--y:12px; --d:1600ms; --o:.42s; --t:.6s;"><span>Retailer</span><b>Multi-store electronics</b></div>
+      <div class="hc-row" data-k style="--y:12px; --d:1750ms; --o:.42s; --t:.6s;"><span>Channels</span><b>Stores and online</b></div>
+      <div class="hc-row" data-k style="--y:12px; --d:1900ms; --o:.42s; --t:.6s;"><span>Programs</span><b>Trade-in, Early upgrade</b></div>
+      <div class="hc-row" data-k style="--y:12px; --d:2050ms; --o:.42s; --t:.6s;"><span>Buyers</span><b>Qualified buyer network</b></div>
+      <p class="hc-sample">Sample data</p>
     </div>
 
     <svg class="cs-abs" style="left:986px; top:268.3px;" width="150.192" height="91.3731" viewBox="0 0 150.192 91.3731" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:2400ms; transition-duration:.8s;" d="M0 0.7C60 0.7 80 70.7 150 90.7" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
-    <div class="cs-abs cs-chip" data-k style="left:780px; top:250px; background:#3047EC; backdrop-filter:none; -webkit-backdrop-filter:none; --sc:.6; --d:2200ms; --o:.25s; --t:.7s;"><img alt="" src="/v2/assets/case-study-dot.svg">Checked · Grade A · 58 s</div>
+    <div class="cs-abs cs-chip" data-k style="left:780px; top:250px; background:#3047EC; backdrop-filter:none; -webkit-backdrop-filter:none; --sc:.6; --d:2200ms; --o:.25s; --t:.7s;"><img alt="" src="/v2/assets/case-study-dot.svg">Checked · Grade A · sample</div>
   </div>
 </section>

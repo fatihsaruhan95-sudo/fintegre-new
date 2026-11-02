@@ -41,10 +41,16 @@
     [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
     [data-section="closing"] .cl-legal { display: flex; gap: 9px; }
     [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 12px; color: rgba(255,255,255,.8); }
+    [data-section="closing"] .cl-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    [data-section="closing"] .cl-sub .cl-err { margin-top: -8px; font-size: 12px; color: #FFB3B3; }
+    [data-section="closing"] .cl-sub .cl-ok { margin-top: -8px; font-size: 12px; color: #B7D7FF; }
+    [data-section="closing"] .cl-sub .cl-ok:empty { display: none; }
+    [data-section="closing"] .cl-sub .cl-privacy { margin-top: -8px; font-size: 12px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-privacy a { color: rgba(255,255,255,.8); text-decoration: underline; text-underline-offset: 2px; }
   </style>
   <div class="v2-canvas">
     <div class="cl-col">
-      <h2 class="cl-head" data-m="up">Built in Vilnius, used across Europe</h2>
+      <h2 class="cl-head" data-m="up" style="font-size:42px; letter-spacing:-1.26px; margin-bottom:28px;">Make every device<br>worth <em>more</em></h2>
 
       <footer class="cl-foot" data-m="up" style="--ty:60px; --d:400ms">
         <div>
@@ -54,27 +60,33 @@
               <img src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
             </a>
             <h3>Get trade-in insights</h3>
-            <p>Market reports and program benchmarks. No spam.</p>
-            <form class="cl-form" novalidate>
-              <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+            <p>Guides and program notes from Fintegre. No spam.</p>
+            <form class="cl-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/v2/thanks/" novalidate>
+              <input type="hidden" name="form-name" value="newsletter">
+              <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <label for="nl-email" class="cl-sr">Work email</label>
+              <input id="nl-email" type="email" name="email" placeholder="Work email" autocomplete="email" required aria-describedby="nl-err nl-privacy">
               <button type="submit">Subscribe</button>
             </form>
+            <p class="cl-err" id="nl-err" role="alert" hidden>Enter a valid work email.</p>
+            <p class="cl-ok" role="status" aria-live="polite"></p>
+            <p class="cl-privacy" id="nl-privacy">See our <a href="/v2/legal/#privacy">privacy notice</a>.</p>
           </div>
           <div class="cl-cols">
                       <nav aria-label="Platform"><span>Platform</span>
-              <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device value intelligence</a><a href="/v2/platform/">Vendor network</a><a href="/v2/platform/">Integrations</a>
+              <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device Value Intelligence</a><a href="/v2/vendor-network/">Vendor Network</a><a href="/v2/platform/#integrations">Integrations</a>
             </nav>
             <nav aria-label="Solutions"><span>Solutions</span>
-              <a href="/v2/solutions/">Retailers</a><a href="/v2/solutions/">Telecom operators</a><a href="/v2/solutions/">OEM and ecosystems</a><a href="/v2/solutions/">Apple and premium retail</a>
+              <a href="/v2/solutions/#apr">Apple Premium Resellers</a><a href="/v2/solutions/#retailers">Electronics retailers</a><a href="/v2/solutions/#telecom">Telecom operators</a><a href="/v2/solutions/#brands">Device brands and OEM</a>
             </nav>
             <nav aria-label="Company"><span>Company</span>
-              <a href="/v2/customers/">Customers</a><a href="/v2/insights/">Insights</a><a href="/v2/company/">About</a><a href="/v2/design-your-program/">Contact</a>
+              <a href="/v2/company/">About</a><a href="/v2/insights/">Insights</a><a href="/v2/contact/">Contact</a>
             </nav>
           </div>
         </div>
         <div class="cl-bottom">
           <small>© 2026 Fintegre. All rights reserved.</small>
-          <nav class="cl-legal" aria-label="Legal"><a href="/v2/company/">Privacy</a><a href="/v2/company/">Cookies</a><a href="/v2/company/">Imprint</a></nav>
+          <nav class="cl-legal" aria-label="Legal"><a href="/v2/legal/#privacy">Privacy</a><a href="/v2/legal/#cookies">Cookies</a><a href="/v2/legal/#imprint">Imprint</a></nav>
         </div>
       </footer>
     </div>

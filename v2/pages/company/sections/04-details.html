@@ -1,0 +1,36 @@
+<section data-section="details" id="details" class="v2-sec" data-tone="light" style="--h:580px; background:#F5F7FA;">
+<style>
+  [data-section="details"] p, [data-section="details"] h2 { margin: 0; }
+  [data-section="details"] .cd-intro { position: absolute; left: 120px; top: 150px; width: 460px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+  [data-section="details"] h2 { font-weight: 400; font-size: 56px; line-height: 1.04; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="details"] .cd-lede { width: 400px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(15,17,21,.62); }
+  [data-section="details"] .cd-btn { display: inline-flex; margin-top: 10px; padding: 15px 24px; border-radius: 999px; background: #0F1115; color: #F5F7FA; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s; }
+  [data-section="details"] .cd-btn:hover { background: #3047EC; }
+  [data-section="details"] .cd-card { position: absolute; left: 700px; top: 150px; width: 620px; padding: 28px 32px 18px; border-radius: 26px; background: #fff; box-shadow: 0 30px 60px rgba(15,20,64,.1); }
+  [data-section="details"] .cd-card h3 { margin: 0 0 14px; font-weight: 400; font-size: 14px; line-height: normal; color: #5C6373; }
+  [data-section="details"] .cd-card dl { margin: 0; }
+  [data-section="details"] .cd-row { display: flex; justify-content: space-between; gap: 24px; padding: 16px 0; border-top: 1px solid #E3E8F0; font-size: 15px; line-height: normal; }
+  [data-section="details"] .cd-row dt { font-weight: 300; color: #5C6373; }
+  [data-section="details"] .cd-row dd { margin: 0; font-weight: 400; color: #0F1115; text-align: right; }
+  /* Placeholder values: clearly marked until Fintegre supplies the approved details. */
+  [data-section="details"] .cd-ph { color: #8A93A3; border-bottom: 1px dashed rgba(138,147,163,.6); }
+  .motion [data-section="details"] [data-m="up"] { translate: 0 var(--ty, 40px); }
+  .motion [data-section="details"].is-in [data-m] { translate: none; }
+</style>
+  <div class="v2-canvas">
+    <div class="cd-intro" data-m="up" style="--d:100ms">
+      <h2>Company details.</h2>
+      <p class="cd-lede">Registered company information and how to reach us about a program.</p>
+      <a href="/v2/contact/" class="cd-btn">Discuss your program</a>
+    </div>
+    <div class="cd-card" data-m="up" style="--d:300ms">
+      <h3>Legal entity and contact</h3>
+      <dl>
+        <div class="cd-row"><dt>Legal entity</dt><dd><span class="cd-ph">[Legal entity name]</span></dd></div>
+        <div class="cd-row"><dt>Registered address</dt><dd><span class="cd-ph">[Registered address]</span></dd></div>
+        <div class="cd-row"><dt>Company registration number</dt><dd><span class="cd-ph">[Company registration number]</span></dd></div>
+        <div class="cd-row"><dt>Contact</dt><dd><span class="cd-ph">[Contact e-mail]</span></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>

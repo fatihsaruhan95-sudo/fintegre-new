@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Intelligence — Fintegre (v2)</title>
+<title>Device Value Intelligence — Fintegre (v2)</title>
 <script>
   // Phones get this page; wider screens go back to the desktop v2.
-  if (innerWidth >= 768) location.replace('/v2/intelligence/' + location.hash);
+  if (innerWidth >= 768) location.replace('/v2/intelligence/' + location.search + location.hash);
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
 </header>
 
 <main class="page">
-<section data-section="hero" id="hero" class="v2-sec ip-sec" data-tone="dark" style="--h:1346px; background: radial-gradient(calc(177.27px * var(--s)) calc(448.67px * var(--s)) at calc(50% + -88.64px * var(--s)) calc(852.47px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<section data-section="hero" id="hero" class="v2-sec ip-sec" data-tone="dark" style="--h:1420px; background: radial-gradient(calc(177.27px * var(--s)) calc(448.67px * var(--s)) at calc(50% + -88.64px * var(--s)) calc(852.47px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
 <style>
   /* Intelligence page: per-element entrance distances from the Figma timeline (--y / --x). */
   .motion .ip-sec [data-m="up"][style*="--y"] { translate: 0 var(--y); }
@@ -49,55 +49,29 @@
       <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-glow1.svg">
     </div>
   </div>
-  <div class="absolute content-stretch flex flex-col gap-[24px] items-start left-[20px] overflow-clip top-[116px]" data-m="up" style="--d:100ms;--y:30px;">
-    <div class="[word-break:break-word] font-normal leading-[0] min-w-full not-italic relative shrink-0 text-[#f5f7fa] text-[0px] tracking-[-2.88px] w-[min-content]">
-      <p class="leading-[1.02] mb-0 text-[44px]">Know what every</p>
-      <p class="leading-[1.02] mb-0 text-[44px]">device is worth</p>
-      <p>
-        <span class="[word-break:break-word] font-['Instrument_Serif'] italic leading-[1.02] text-[#b7d7ff] text-[51px] tracking-[-0.51px]">today</span>
-        <span class="leading-[1.02] text-[44px]">.</span>
-      </p>
+  <div class="absolute content-stretch flex flex-col gap-[22px] items-start left-[20px] overflow-clip top-[100px] w-[350px]" data-m="up" style="--d:100ms;--y:30px;">
+    <div class="bg-[rgba(183,215,255,0.12)] content-stretch flex gap-[8px] items-center overflow-clip px-[14px] py-[7px] relative rounded-[999px] shrink-0">
+      <div class="relative shrink-0 size-[7px]">
+        <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse.svg">
+      </div>
+      <p class="font-normal leading-[normal] text-[#b7d7ff] text-[13px] whitespace-nowrap">Device Value Intelligence</p>
     </div>
+    <h1 class="[word-break:break-word] font-normal leading-[0] not-italic relative shrink-0 text-[#f5f7fa] text-[0px] tracking-[-1.52px] whitespace-nowrap m-0">
+      <span class="block leading-[1.05] text-[38px]">Understand where</span>
+      <span class="block leading-[1.05] text-[38px]">device value is</span>
+      <span class="block leading-[1.05] text-[38px]">created – and where</span>
+      <span class="block leading-[1.05] text-[38px]">it is <span class="font-['Instrument_Serif'] italic text-[#b7d7ff] text-[44px] tracking-[-0.44px]">lost</span>.</span>
+    </h1>
     <p class="[word-break:break-word] font-light leading-[1.55] not-italic relative shrink-0 text-[16px] text-[rgba(245,247,250,0.68)] w-[340px]">
-      Every trade-in on Fintegre feeds one data layer: residual values, buyer bids, grading outcomes and payout times across 12 European markets. Updated every morning.
+      Connect offers with inspection and settlement outcomes to evaluate buyer performance, investigate deductions and improve your trade-in program.
     </p>
-    <div class="content-stretch flex gap-[10px] items-start overflow-clip relative shrink-0">
-      <a href="/v2/design-your-program/" class="bg-[#f5f7fa] content-stretch flex h-[48px] items-center justify-center overflow-clip px-[18px] relative rounded-[999px] shrink-0 ip-btn">
-        <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[14px] whitespace-nowrap">
-          Request a data sample
-        </p>
+    <div class="content-stretch flex flex-wrap gap-[10px] items-start relative shrink-0 w-[350px]">
+      <a href="/v2/contact/?topic=data" class="bg-[#f5f7fa] content-stretch flex h-[48px] items-center justify-center overflow-clip px-[18px] relative rounded-[999px] shrink-0 ip-btn">
+        <p class="font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[14px] whitespace-nowrap">Discuss your data and reporting needs</p>
       </a>
-      <a href="#reports" class="border border-[rgba(245,247,250,0.24)] border-solid content-stretch flex h-[48px] items-center justify-center overflow-clip px-[18px] relative rounded-[999px] shrink-0 ip-btn">
-        <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[14px] whitespace-pre">API docs  →</p>
+      <a href="#buyers" class="border border-[rgba(245,247,250,0.24)] border-solid content-stretch flex h-[48px] items-center justify-center overflow-clip px-[18px] relative rounded-[999px] shrink-0 ip-btn">
+        <p class="font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[14px] whitespace-nowrap">Explore three questions</p>
       </a>
-    </div>
-    <div class="content-stretch flex gap-[18px] items-center overflow-clip relative shrink-0">
-      <div class="[word-break:break-word] content-stretch flex flex-col gap-[2px] items-start leading-[normal] not-italic overflow-clip relative shrink-0 whitespace-nowrap">
-        <p class="font-light relative shrink-0 text-[#f5f7fa] text-[22px] tracking-[-0.44px]">
-          1.4M
-        </p>
-        <p class="font-normal relative shrink-0 text-[#a7b0be] text-[13px]">
-          devices indexed
-        </p>
-      </div>
-      <div class="bg-[rgba(245,247,250,0.16)] h-[28px] relative shrink-0 w-px"></div>
-      <div class="[word-break:break-word] content-stretch flex flex-col gap-[2px] items-start leading-[normal] not-italic overflow-clip relative shrink-0 whitespace-nowrap">
-        <p class="font-light relative shrink-0 text-[#f5f7fa] text-[22px] tracking-[-0.44px]">
-          06:00
-        </p>
-        <p class="font-normal relative shrink-0 text-[#a7b0be] text-[13px]">
-          daily update
-        </p>
-      </div>
-      <div class="bg-[rgba(245,247,250,0.16)] h-[28px] relative shrink-0 w-px"></div>
-      <div class="[word-break:break-word] content-stretch flex flex-col gap-[2px] items-start leading-[normal] not-italic overflow-clip relative shrink-0 whitespace-nowrap">
-        <p class="font-light relative shrink-0 text-[#f5f7fa] text-[22px] tracking-[-0.44px]">
-          38k
-        </p>
-        <p class="font-normal relative shrink-0 text-[#a7b0be] text-[13px]">
-          variants
-        </p>
-      </div>
     </div>
   </div>
   <div class="absolute h-[360px] left-[150px] top-[580px] w-[260px]">
@@ -105,52 +79,52 @@
       <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-glow-ice-room-light.svg">
     </div>
   </div>
-  <div class="absolute flex h-[598.939px] items-center justify-center left-[122.06px] top-[640px] w-[393.78px]" data-m="up" style="--d:100ms;--y:90px;">
+  <div class="absolute flex h-[598.939px] items-center justify-center left-[122.06px] top-[700px] w-[393.78px]" data-m="up" style="--d:100ms;--y:90px;">
     <div class="flex-none rotate-[8deg]">
       <div class="h-[560px] relative [filter:drop-shadow(0px_36px_70px_rgba(0,0,0,0.55))] w-[318.947px]">
         <img decoding="async" alt="" class="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src="/v2/assets/intelligence-pg-photo-i-phone-air-sky-blue-pair.webp">
       </div>
     </div>
   </div>
-  <div class="absolute bg-gradient-to-b from-[rgba(15,17,21,0)] h-[300px] left-0 to-[#0f1115] top-[1002px] via-[70%] via-[rgba(15,17,21,0.92)] w-[390px]"></div>
+  <div class="absolute bg-gradient-to-b from-[rgba(15,17,21,0)] h-[300px] left-0 to-[#0f1115] top-[1062px] via-[70%] via-[rgba(15,17,21,0.92)] w-[390px]"></div>
   <div class="absolute h-[1200px] left-0 top-0 w-[390px]">
-    <div class="absolute h-[49px] left-[217px] top-[641px] w-[31px]" data-m="wipe" style="--d:1398ms;">
+    <div class="absolute h-[49px] left-[217px] top-[701px] w-[31px]" data-m="wipe" style="--d:1398ms;">
       <div class="absolute inset-[-1.22%_-1.94%_0_0]">
         <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-fibre.svg">
       </div>
     </div>
-    <div class="absolute h-[174px] left-[60px] top-[716px] w-[10px]" data-m="wipe" style="--d:1602ms;">
+    <div class="absolute h-[174px] left-[60px] top-[776px] w-[10px]" data-m="wipe" style="--d:1602ms;">
       <div class="absolute inset-[-0.34%_-6%]">
         <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-fibre1.svg">
       </div>
     </div>
   </div>
-  <div class="absolute backdrop-blur-[12px] bg-[rgba(15,17,21,0.55)] content-stretch flex gap-[8px] items-center left-[20px] overflow-clip px-[16px] py-[10px] rounded-[999px] top-[622px]" data-m="pop" style="--d:1000ms;">
+  <div class="absolute backdrop-blur-[12px] bg-[rgba(15,17,21,0.55)] content-stretch flex gap-[8px] items-center left-[20px] overflow-clip px-[16px] py-[10px] rounded-[999px] top-[682px]" data-m="pop" style="--d:1000ms;">
     <div class="relative shrink-0 size-[7px]">
       <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse.svg">
     </div>
     <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[14px] whitespace-nowrap">
-      Updated today, 06:00
+      Offer · inspection · settlement
     </p>
   </div>
-  <div class="absolute backdrop-blur-[12px] bg-[#3047ec] content-stretch flex gap-[8px] items-center left-[20px] overflow-clip px-[16px] py-[10px] rounded-[999px] top-[678px]" data-m="pop" style="--d:1200ms;">
+  <div class="absolute backdrop-blur-[12px] bg-[#3047ec] content-stretch flex gap-[8px] items-center left-[20px] overflow-clip px-[16px] py-[10px] rounded-[999px] top-[738px]" data-m="pop" style="--d:1200ms;">
     <div class="relative shrink-0 size-[7px]">
       <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse.svg">
     </div>
     <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[14px] whitespace-nowrap">
-      2,184 trade-ins this week
+      Deductions by reason
     </p>
   </div>
-  <div class="absolute backdrop-blur-[15px] border border-[rgba(183,215,255,0.16)] border-solid h-[424px] left-[20px] overflow-clip rounded-[26px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] top-[832px] w-[350px]" data-m="up" style="background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.07) 100%), linear-gradient(90deg, rgba(15, 17, 21, 0.72) 0%, rgba(15, 17, 21, 0.72) 100%);--d:500ms;--y:60px;">
+  <div class="absolute backdrop-blur-[15px] border border-[rgba(183,215,255,0.16)] border-solid h-[450px] left-[20px] overflow-clip rounded-[26px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] top-[892px] w-[350px]" data-m="up" style="background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.07) 100%), linear-gradient(90deg, rgba(15, 17, 21, 0.72) 0%, rgba(15, 17, 21, 0.72) 100%);--d:500ms;--y:60px;">
     <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[25px] not-italic text-[#a7b0be] text-[13px] top-[23px] whitespace-nowrap">
-      Residual value · iPhone 18 Pro · 256 GB · Grade A
+      Quote vs settled value · iPhone 18 Pro · 256 GB
     </p>
-    <p class="[word-break:break-word] absolute font-light leading-[normal] left-[23px] not-italic text-[#f5f7fa] text-[56px] top-[45px] tracking-[-2.24px] whitespace-nowrap">
-      €812
+    <p class="[word-break:break-word] absolute font-light leading-[normal] left-[23px] not-italic text-[#f5f7fa] text-[44px] top-[48px] tracking-[-1.76px] whitespace-nowrap">
+      €812 → €741
     </p>
     <div class="absolute bg-[rgba(183,215,255,0.16)] content-stretch flex items-start left-[25px] overflow-clip px-[10px] py-[5px] rounded-[999px] top-[121px]">
       <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#b7d7ff] text-[12px] whitespace-nowrap">
-        61 % of launch price · Latvia
+        −€71 between quote and settlement
       </p>
     </div>
     <div class="absolute bg-[rgba(183,215,255,0.12)] h-px left-[71px] top-[169px] w-[252px]"></div>
@@ -173,11 +147,6 @@
     <p class="[word-break:break-word] absolute font-light leading-[normal] left-[25px] not-italic text-[11px] text-[rgba(245,247,250,0.42)] top-[312px] whitespace-nowrap">
       €700
     </p>
-    <div class="absolute h-[111.7px] left-[73.71px] top-[202.8px] w-[245.226px]" data-m="wipe" style="--d:1362ms;">
-      <div class="absolute inset-[-0.63%_0]">
-        <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-line-ee.svg">
-      </div>
-    </div>
     <div class="absolute h-[107.6px] left-[73.71px] top-[191.5px] w-[245.226px]" data-m="wipe" style="--d:1242ms;">
       <div class="absolute inset-[-0.65%_0]">
         <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-line-pl.svg">
@@ -216,7 +185,7 @@
           <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse.svg">
         </div>
         <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[12px] text-[rgba(245,247,250,0.8)] whitespace-nowrap">
-          Latvia €812
+          Quoted €812
         </p>
       </div>
       <div class="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0">
@@ -224,7 +193,7 @@
           <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse1.svg">
         </div>
         <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[12px] text-[rgba(245,247,250,0.8)] whitespace-nowrap">
-          Lithuania €778
+          After inspection €778
         </p>
       </div>
       <div class="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0">
@@ -232,18 +201,11 @@
           <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse2.svg">
         </div>
         <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[12px] text-[rgba(245,247,250,0.8)] whitespace-nowrap">
-          Poland €741
-        </p>
-      </div>
-      <div class="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0">
-        <div class="relative shrink-0 size-[7px]">
-          <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse3.svg">
-        </div>
-        <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[12px] text-[rgba(245,247,250,0.8)] whitespace-nowrap">
-          Estonia €712
+          Settled €741
         </p>
       </div>
     </div>
+    <p class="absolute font-normal leading-[normal] left-[25px] text-[12px] text-[#a7b0be] top-[414px] whitespace-nowrap">Illustrative dashboard · sample data</p>
   </div>
   <div class="absolute backdrop-blur-[12px] bg-[rgba(15,17,21,0.55)] border border-[rgba(183,215,255,0.14)] border-solid content-stretch flex h-[60px] items-center justify-between left-[12px] overflow-clip pl-[18px] pr-[8px] py-[8px] rounded-[999px] shadow-[0px_16px_40px_0px_rgba(0,0,0,0.35)] top-[12px] w-[366px]">
     <div class="content-stretch flex gap-[10px] items-center overflow-clip relative shrink-0">
@@ -257,74 +219,142 @@
       </p></a>
     </div>
     <div class="content-stretch flex gap-[6px] items-center overflow-clip relative shrink-0">
-      <a href="/v2/design-your-program/" class="bg-[#f5f7fa] content-stretch flex h-[44px] items-center justify-center overflow-clip px-[16px] relative rounded-[999px] shrink-0 ip-btn">
+      <a href="/v2/contact/" class="bg-[#f5f7fa] content-stretch flex h-[44px] items-center justify-center overflow-clip px-[16px] relative rounded-[999px] shrink-0 ip-btn">
         <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[14px] whitespace-nowrap">
-          Design your program
+          Discuss your program
         </p>
       </a>
       <button type="button" data-menu-open aria-label="Open menu" class="bg-[rgba(255,255,255,0.08)] content-stretch flex flex-col gap-[6px] items-center justify-center overflow-clip relative rounded-[999px] shrink-0 size-[44px] border-0 p-0 cursor-pointer">
         <div class="bg-[#f5f7fa] h-[1.5px] relative rounded-[1px] shrink-0 w-[18px]"></div>
-        <div class="bg-[#f5f7fa] h-[1.5px] relative rounded-[1px] shrink-0 w-[12px]"></button>
+        <div class="bg-[#f5f7fa] h-[1.5px] relative rounded-[1px] shrink-0 w-[12px]"></div></button>
     </div>
-  </div>
   </div>
 </div>
 </section>
 
-<section data-section="value-index" id="value-index" class="v2-sec ip-sec" data-tone="dark" style="--h:1339px; background: radial-gradient(calc(243.75px * var(--s)) calc(557.92px * var(--s)) at calc(50% + -195px * var(--s)) calc(669.5px * var(--s)), rgba(38,48,74,1) 0%, rgba(30,36,53,1) 30%, rgba(21,24,32,1) 60%, #0F1115 100%), #0F1115;">
+<section data-section="buyers" id="buyers" class="v2-sec ip-sec" data-tone="dark" style="--h:1680px; background: #0F1115;">
 <div class="v2-canvas">
-  <div class="absolute h-[560px] left-[-40px] top-[420px] w-[470px]">
-    <div class="absolute inset-[-21.43%_-25.53%]">
-      <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-glow2.svg">
+<div class="absolute pointer-events-none" aria-hidden="true" style="left:-2000px; top:0; width:4390px; height:1680px; background:#0F1115;"></div>
+  <div class="absolute left-[-60px] size-[500px] top-[500px]"><div class="absolute inset-[-24%]"><img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-glow3.svg"></div></div>
+  <div class="absolute h-[348px] left-[-265px] mix-blend-lighten top-[1320px] w-[920px]" data-m="fade"><img decoding="async" alt="" class="absolute inset-0 max-w-none object-cover pointer-events-none size-full opacity-55" src="/v2/assets/intelligence-pg-photo-glowing-mac-book.webp"></div>
+  <div class="absolute bg-gradient-to-b from-[#0f1115] h-[90px] left-0 to-[rgba(15,17,21,0)] top-[1300px] w-[390px]"></div>
+  <div class="ip-flow absolute left-[20px] top-[96px] w-[350px] flex flex-col gap-[24px] items-start" data-m="up" style="--d:200ms;--y:30px;">
+    <p class="font-normal leading-[normal] text-[#b7d7ff] text-[14px]">Question 1 · Buyer performance</p>
+    <h2 class="font-normal leading-[1.06] text-[#f5f7fa] text-[36px] tracking-[-1.44px] w-[350px] m-0">Which eligible offer gives the strongest expected net recovery?</h2>
+    <p class="font-light leading-[1.55] text-[rgba(245,247,250,0.68)] text-[16px] w-[340px]">Compare each buyer's offer with the value finally settled after inspection. Deductions and settlement reliability sit next to the price, so you can see which offer is likely to recover more for your program.</p>
+    <div class="relative backdrop-blur-[25px] bg-[rgba(255,255,255,0.08)] border border-[rgba(183,215,255,0.16)] border-solid rounded-[28px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] w-[350px] overflow-clip px-[12px] pt-[20px] pb-[18px] flex flex-col gap-[8px]">
+      <p class="px-[6px] font-normal text-[#a7b0be] text-[13px] leading-[1.4]">Buyer performance · iPhone 15 Pro · 256 GB · last 90 days<br>Illustrative dashboard · sample data</p>
+      <div class="rounded-[12px] px-[14px] py-[12px] flex flex-col gap-[8px] bg-[rgba(48,71,236,0.22)]" data-m="up" style="--d:700ms;--y:16px;">
+        <div class="flex justify-between items-center h-[24px]"><p class="font-normal text-[#f5f7fa] text-[15px]">Buyer A · Lithuania</p><span class="bg-[#3047ec] px-[10px] py-[4px] rounded-[999px] text-[12px] text-[#f5f7fa]">Strongest</span></div>
+        <p class="font-light text-[rgba(245,247,250,0.7)] text-[13px]">Offer €520 · Deductions −€14 · Settled €506</p>
+        <div class="flex items-center gap-[10px]"><div class="relative h-[6px] w-[90px] rounded-[999px] bg-[rgba(255,255,255,0.08)]"><div class="absolute left-0 top-0 h-[6px] rounded-[999px] bg-gradient-to-r from-[#3047ec] to-[#b7d7ff]" style="width:81px"></div></div><p class="font-light text-[#f5f7fa] text-[13px]">98 % reliable</p><p class="!ml-auto font-normal text-[#f5f7fa] text-[15px]">Net €496</p></div>
+      </div><div class="bg-[rgba(183,215,255,0.1)] h-px mx-[14px]"></div><div class="rounded-[12px] px-[14px] py-[12px] flex flex-col gap-[8px]" data-m="up" style="--d:800ms;--y:16px;">
+        <div class="flex justify-between items-center h-[24px]"><p class="font-normal text-[#f5f7fa] text-[15px]">Buyer B · Latvia</p></div>
+        <p class="font-light text-[rgba(245,247,250,0.7)] text-[13px]">Offer €545 · Deductions −€48 · Settled €497</p>
+        <div class="flex items-center gap-[10px]"><div class="relative h-[6px] w-[90px] rounded-[999px] bg-[rgba(255,255,255,0.08)]"><div class="absolute left-0 top-0 h-[6px] rounded-[999px] bg-gradient-to-r from-[#3047ec] to-[#b7d7ff]" style="width:50px"></div></div><p class="font-light text-[#f5f7fa] text-[13px]">91 % reliable</p><p class="!ml-auto font-light text-[#f5f7fa] text-[15px]">Net €452</p></div>
+      </div><div class="bg-[rgba(183,215,255,0.1)] h-px mx-[14px]"></div><div class="rounded-[12px] px-[14px] py-[12px] flex flex-col gap-[8px]" data-m="up" style="--d:900ms;--y:16px;">
+        <div class="flex justify-between items-center h-[24px]"><p class="font-normal text-[#f5f7fa] text-[15px]">Buyer C · Poland</p></div>
+        <p class="font-light text-[rgba(245,247,250,0.7)] text-[13px]">Offer €512 · Deductions −€10 · Settled €502</p>
+        <div class="flex items-center gap-[10px]"><div class="relative h-[6px] w-[90px] rounded-[999px] bg-[rgba(255,255,255,0.08)]"><div class="absolute left-0 top-0 h-[6px] rounded-[999px] bg-gradient-to-r from-[#3047ec] to-[#b7d7ff]" style="width:76px"></div></div><p class="font-light text-[#f5f7fa] text-[13px]">97 % reliable</p><p class="!ml-auto font-light text-[#f5f7fa] text-[15px]">Net €487</p></div>
+      </div><div class="bg-[rgba(183,215,255,0.1)] h-px mx-[14px]"></div><div class="rounded-[12px] px-[14px] py-[12px] flex flex-col gap-[8px]" data-m="up" style="--d:1000ms;--y:16px;">
+        <div class="flex justify-between items-center h-[24px]"><p class="font-normal text-[#f5f7fa] text-[15px]">Buyer D · Estonia</p></div>
+        <p class="font-light text-[rgba(245,247,250,0.7)] text-[13px]">Offer €530 · Deductions −€31 · Settled €499</p>
+        <div class="flex items-center gap-[10px]"><div class="relative h-[6px] w-[90px] rounded-[999px] bg-[rgba(255,255,255,0.08)]"><div class="absolute left-0 top-0 h-[6px] rounded-[999px] bg-gradient-to-r from-[#3047ec] to-[#b7d7ff]" style="width:63px"></div></div><p class="font-light text-[#f5f7fa] text-[13px]">94 % reliable</p><p class="!ml-auto font-light text-[#f5f7fa] text-[15px]">Net €469</p></div>
+      </div><div class="bg-[rgba(183,215,255,0.1)] h-px mx-[14px]"></div><div class="rounded-[12px] px-[14px] py-[12px] flex flex-col gap-[8px]" data-m="up" style="--d:1100ms;--y:16px;">
+        <div class="flex justify-between items-center h-[24px]"><p class="font-normal text-[#f5f7fa] text-[15px]">Buyer E · Finland</p></div>
+        <p class="font-light text-[rgba(245,247,250,0.7)] text-[13px]">Offer €505 · Deductions −€9 · Settled €496</p>
+        <div class="flex items-center gap-[10px]"><div class="relative h-[6px] w-[90px] rounded-[999px] bg-[rgba(255,255,255,0.08)]"><div class="absolute left-0 top-0 h-[6px] rounded-[999px] bg-gradient-to-r from-[#3047ec] to-[#b7d7ff]" style="width:86px"></div></div><p class="font-light text-[#f5f7fa] text-[13px]">99 % reliable</p><p class="!ml-auto font-light text-[#f5f7fa] text-[15px]">Net €491</p></div>
+      </div>
+      <p class="px-[6px] pt-[6px] font-normal text-[rgba(245,247,250,0.5)] text-[12px] leading-[1.45]">Expected net = average final settled value × settlement reliability. The enterprise customer's view of its own program; buyer names anonymised.</p>
+    </div>
+    <div class="bg-[#3047ec] flex gap-[8px] items-center px-[16px] py-[10px] rounded-[999px] self-start"><img decoding="async" alt="" class="size-[7px]" src="/v2/mobile/assets/intelligence-pg-ellipse.svg"><p class="font-normal leading-[normal] text-[#f5f7fa] text-[14px]">Highest offer is not always the strongest net</p></div>
+    <div class="bg-[rgba(15,17,21,0.55)] backdrop-blur-[12px] flex gap-[8px] items-center px-[16px] py-[10px] rounded-[999px] self-start"><img decoding="async" alt="" class="size-[7px]" src="/v2/mobile/assets/intelligence-pg-ellipse.svg"><p class="font-normal leading-[normal] text-[#f5f7fa] text-[14px]">Offers, deductions and settlement tracked per buyer</p></div>
+  </div>
+</div>
+</section>
+
+<section data-section="value-changes" id="value-changes" class="v2-sec ip-sec" data-tone="dark" style="--h:1450px; background: radial-gradient(calc(177.27px * var(--s)) calc(524.33px * var(--s)) at calc(50% + -88.64px * var(--s)) calc(996.23px * var(--s)), rgba(34,54,196,.9) 0%, rgba(26,40,143,.875) 25%, rgba(18,26,90,.85) 50%, rgba(17,22,56,.425) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<div class="v2-canvas">
+<div class="absolute pointer-events-none" aria-hidden="true" style="left:-2000px; top:0; width:4390px; height:1450px; background:radial-gradient(calc(177.27px * var(--s)) calc(524.33px * var(--s)) at calc(50% + -88.64px * var(--s)) calc(996.23px * var(--s)), rgba(34,54,196,.9) 0%, rgba(26,40,143,.875) 25%, rgba(18,26,90,.85) 50%, rgba(17,22,56,.425) 75%, rgba(15,17,21,0) 100%), #0F1115;"></div>
+  <div class="absolute h-[520px] left-[-80px] top-[700px] w-[480px]"><div class="absolute inset-[-23.08%_-25%]"><img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-glow4.svg"></div></div>
+  <div class="absolute h-[581px] left-[-560px] mix-blend-lighten opacity-50 top-[890px] w-[1100px]"><img decoding="async" alt="" class="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src="/v2/mobile/assets/intelligence-pg-photo-i-phone-lens-close-up.webp"></div>
+  <div class="ip-flow absolute left-[20px] top-[96px] w-[350px] flex flex-col gap-[24px] items-start" data-m="up" style="--d:200ms;--y:30px;">
+    <p class="font-normal leading-[normal] text-[#b7d7ff] text-[14px]">Question 2 · Value differences</p>
+    <h2 class="font-normal leading-[1.06] text-[#f5f7fa] text-[36px] tracking-[-1.44px] w-[350px] m-0">Where does quoted value change?</h2>
+    <p class="font-light leading-[1.55] text-[rgba(245,247,250,0.68)] text-[16px] w-[340px]">Compare each quote with the inspection outcome. Group differences by reason, model, store or buyer, and see where checks or customer guidance need attention.</p>
+    <div class="relative backdrop-blur-[15px] bg-[rgba(255,255,255,0.07)] border border-[rgba(183,215,255,0.16)] border-solid rounded-[26px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] w-[350px] overflow-clip p-[20px] flex gap-[20px] items-start">
+      <img decoding="async" alt="iPhone 13" class="h-[106px] w-[52px] object-contain rounded-[9px] shrink-0" src="/v2/assets/intelligence-pg-photo-i-phone13.webp">
+      <div class="flex flex-col gap-[8px]"><p class="text-[#a7b0be] text-[12px]">Quote · Store 3, Riga</p><p class="text-[#f5f7fa] text-[19px] leading-[1.25]">iPhone 13 quoted at grade A</p>
+      <div class="flex flex-wrap gap-[6px] pt-[4px]"><span class="bg-[#b7d7ff] text-[#0f1115] text-[12px] px-[12px] py-[6px] rounded-[999px]">Screen A</span><span class="bg-[rgba(255,255,255,0.08)] text-[#f5f7fa] text-[12px] px-[12px] py-[6px] rounded-[999px]">Casing A</span><span class="bg-[rgba(255,255,255,0.08)] text-[#f5f7fa] text-[12px] px-[12px] py-[6px] rounded-[999px]">Battery 89 %</span></div></div>
+    </div>
+    <div class="relative backdrop-blur-[15px] bg-[rgba(255,255,255,0.07)] border border-[rgba(183,215,255,0.16)] border-solid rounded-[26px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] w-[350px] overflow-clip p-[22px] flex flex-col gap-[6px]">
+      <p class="text-[#a7b0be] text-[12px]">Inspection · Buyer B</p><p class="text-[#f5f7fa] text-[19px] pb-[10px]">Back glass cracked. Grade C.</p>
+      <div class="flex justify-between rounded-[10px] px-[10px] py-[7px] text-[13px]"><span class="text-[rgba(245,247,250,0.8)]">Quoted value · grade A</span><span class="text-[#f5f7fa]">€312</span></div><div class="flex justify-between rounded-[10px] px-[10px] py-[7px] text-[13px]"><span class="text-[rgba(245,247,250,0.8)]">Inspection outcome · grade C</span><span class="text-[#f5f7fa]">€188</span></div><div class="flex justify-between rounded-[10px] px-[10px] py-[7px] text-[13px] bg-[rgba(48,71,236,0.9)]"><span class="text-[#f5f7fa]">Deduction · back glass</span><span class="text-[#f5f7fa]">−€124</span></div>
+    </div>
+    <div class="relative backdrop-blur-[15px] bg-[rgba(255,255,255,0.07)] border border-[rgba(183,215,255,0.16)] border-solid rounded-[26px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] w-[350px] overflow-clip p-[22px] flex flex-col gap-[8px]">
+      <p class="text-[#a7b0be] text-[12px]">Pattern · last 30 days</p><p class="text-[#f5f7fa] text-[19px] leading-[1.25]">Store 3, Riga: 4 back-glass gaps in 30 days</p>
+      <div class="flex flex-wrap gap-[8px] pt-[8px]"><span class="bg-[#3047ec] text-[#f5f7fa] text-[12px] px-[12px] py-[6px] rounded-[999px]">Add a photo check</span><span class="bg-[rgba(255,255,255,0.08)] text-[#f5f7fa] text-[12px] px-[12px] py-[6px] rounded-[999px]">Review store guidance</span></div>
+    </div>
+    <p class="font-normal text-[#a7b0be] text-[12px]">Illustrative workflow · sample data</p>
+    <div class="flex flex-col w-[350px]"><p class="font-normal text-[#a7b0be] text-[13px] pb-[12px] leading-[1.4]">Deduction reasons · share of value differences · sample data</p>
+      <div class="border-[rgba(183,215,255,0.16)] border-solid border-t h-[44px] flex items-center gap-[12px]"><p class="w-[130px] text-[#f5f7fa] text-[15px]">Screen damage</p><div class="relative h-[6px] w-[150px] rounded-[999px] bg-[rgba(255,255,255,0.08)]"><div class="absolute left-0 top-0 h-[6px] rounded-[999px] bg-gradient-to-r from-[#3047ec] to-[#b7d7ff]" style="width:137px"></div></div><p class="!ml-auto font-light text-[#f5f7fa] text-[15px]">41 %</p></div>
+      <div class="border-[rgba(183,215,255,0.16)] border-solid border-t h-[44px] flex items-center gap-[12px]"><p class="w-[130px] text-[#f5f7fa] text-[15px]">Back glass</p><div class="relative h-[6px] w-[150px] rounded-[999px] bg-[rgba(255,255,255,0.08)]"><div class="absolute left-0 top-0 h-[6px] rounded-[999px] bg-gradient-to-r from-[#3047ec] to-[#b7d7ff]" style="width:77px"></div></div><p class="!ml-auto font-light text-[#f5f7fa] text-[15px]">23 %</p></div>
+      <div class="border-[rgba(183,215,255,0.16)] border-solid border-t h-[44px] flex items-center gap-[12px]"><p class="w-[130px] text-[#f5f7fa] text-[15px]">Battery health</p><div class="relative h-[6px] w-[150px] rounded-[999px] bg-[rgba(255,255,255,0.08)]"><div class="absolute left-0 top-0 h-[6px] rounded-[999px] bg-gradient-to-r from-[#3047ec] to-[#b7d7ff]" style="width:60px"></div></div><p class="!ml-auto font-light text-[#f5f7fa] text-[15px]">18 %</p></div>
+      <div class="border-[rgba(183,215,255,0.16)] border-solid border-t h-[44px] flex items-center gap-[12px]"><p class="w-[130px] text-[#f5f7fa] text-[15px]">Casing wear</p><div class="relative h-[6px] w-[150px] rounded-[999px] bg-[rgba(255,255,255,0.08)]"><div class="absolute left-0 top-0 h-[6px] rounded-[999px] bg-gradient-to-r from-[#3047ec] to-[#b7d7ff]" style="width:37px"></div></div><p class="!ml-auto font-light text-[#f5f7fa] text-[15px]">11 %</p></div>
+      <div class="border-[rgba(183,215,255,0.16)] border-solid border-t h-[44px] flex items-center gap-[12px]"><p class="w-[130px] text-[#f5f7fa] text-[15px]">Other</p><div class="relative h-[6px] w-[150px] rounded-[999px] bg-[rgba(255,255,255,0.08)]"><div class="absolute left-0 top-0 h-[6px] rounded-[999px] bg-gradient-to-r from-[#3047ec] to-[#b7d7ff]" style="width:23px"></div></div><p class="!ml-auto font-light text-[#f5f7fa] text-[15px]">7 %</p></div>
     </div>
   </div>
-  <div class="[word-break:break-word] absolute font-normal leading-[0] left-[20px] not-italic text-[#f5f7fa] text-[40px] top-[96px] tracking-[-1.6px] w-[350px]" data-m="up" style="--d:200ms;--y:30px;">
-    <p class="leading-[1.02] mb-0">Residual values by</p>
-    <p class="leading-[1.02] mb-0">model, condition</p>
-    <p class="leading-[1.02]">and market.</p>
+</div>
+</section>
+
+<section data-section="journey" id="journey" class="v2-sec ip-sec" data-tone="light" style="--h:1440px; background: #F5F7FA;">
+<div class="v2-canvas">
+<div class="absolute pointer-events-none" aria-hidden="true" style="left:-2000px; top:0; width:4390px; height:1440px; background:#F5F7FA;"></div>
+<div class="ip-flow absolute left-[20px] top-[96px] w-[350px] flex flex-col gap-[24px] items-start" data-m="up" style="--d:200ms;--y:30px;">
+    <p class="font-normal leading-[normal] text-[#3047ec] text-[14px]">Question 3 · Journey performance</p>
+    <h2 class="font-normal leading-[1.06] text-[#0f1115] text-[36px] tracking-[-1.44px] w-[350px] m-0">Where do customers leave the journey?</h2>
+    <p class="font-light leading-[1.55] text-[#5b6370] text-[16px] w-[340px]">Follow each trade-in from quote to settlement. See where customers drop out and which stores, channels or programs need attention.</p>
+    <div class="relative bg-white rounded-[24px] shadow-[0px_30px_60px_0px_rgba(15,17,21,0.08)] w-[350px] px-[8px] pt-[22px] pb-[20px] flex flex-col gap-[6px]">
+      <p class="px-[12px] text-[#0f1115] text-[16px]">Trade-in journey · all stores · last 90 days</p>
+      <p class="px-[12px] pb-[8px] text-[#5b6370] text-[13px]">Illustrative dashboard · sample data</p>
+      <div class="rounded-[14px] px-[12px] py-[12px] flex flex-col gap-[10px]" data-m="up" style="--d:400ms;--y:16px;">
+        <div class="flex items-baseline"><p class="text-[15px] text-[#0f1115]">Quote given</p><p class="!ml-auto font-light text-[#0f1115] text-[15px]">1,000</p><p class="w-[52px] text-right text-[14px] text-[#5b6370]">100 %</p></div>
+        <div class="relative h-[8px] w-full rounded-[999px] bg-[rgba(15,17,21,0.06)]"><div class="absolute left-0 top-0 h-[8px] rounded-[999px] bg-gradient-to-r from-[#b7d7ff] to-[#5d74ff]" style="width:100%"></div></div>
+      </div><div class="flex gap-[8px] items-center px-[12px]"><div class="bg-[rgba(15,17,21,0.18)] h-[20px] w-px"></div><p class="text-[#5b6370] text-[13px]">360 left after the quote</p></div><div class="rounded-[14px] px-[12px] py-[12px] flex flex-col gap-[10px]" data-m="up" style="--d:550ms;--y:16px;">
+        <div class="flex items-baseline"><p class="text-[15px] text-[#0f1115]">Offer accepted</p><p class="!ml-auto font-light text-[#0f1115] text-[15px]">640</p><p class="w-[52px] text-right text-[14px] text-[#5b6370]">64 %</p></div>
+        <div class="relative h-[8px] w-full rounded-[999px] bg-[rgba(15,17,21,0.06)]"><div class="absolute left-0 top-0 h-[8px] rounded-[999px] bg-gradient-to-r from-[#b7d7ff] to-[#5d74ff]" style="width:64%"></div></div>
+      </div><div class="flex gap-[8px] items-center px-[12px]"><div class="bg-[rgba(15,17,21,0.18)] h-[20px] w-px"></div><p class="text-[#5b6370] text-[13px]">120 accepted but did not hand over</p></div><div class="rounded-[14px] px-[12px] py-[12px] flex flex-col gap-[10px]" data-m="up" style="--d:700ms;--y:16px;">
+        <div class="flex items-baseline"><p class="text-[15px] text-[#0f1115]">Device handed over</p><p class="!ml-auto font-light text-[#0f1115] text-[15px]">520</p><p class="w-[52px] text-right text-[14px] text-[#5b6370]">52 %</p></div>
+        <div class="relative h-[8px] w-full rounded-[999px] bg-[rgba(15,17,21,0.06)]"><div class="absolute left-0 top-0 h-[8px] rounded-[999px] bg-gradient-to-r from-[#b7d7ff] to-[#5d74ff]" style="width:52%"></div></div>
+      </div><div class="flex gap-[8px] items-center px-[12px]"><div class="bg-[rgba(15,17,21,0.18)] h-[20px] w-px"></div><p class="text-[#5b6370] text-[13px]">26 stopped at inspection or settlement</p></div><div class="rounded-[14px] px-[12px] py-[12px] flex flex-col gap-[10px] bg-[rgba(48,71,236,0.08)]" data-m="up" style="--d:850ms;--y:16px;">
+        <div class="flex items-baseline"><p class="text-[15px] text-[#3047ec]">Settled with buyer</p><p class="!ml-auto font-light text-[#0f1115] text-[15px]">494</p><p class="w-[52px] text-right text-[14px] text-[#3047ec]">49 %</p></div>
+        <div class="relative h-[8px] w-full rounded-[999px] bg-[rgba(15,17,21,0.06)]"><div class="absolute left-0 top-0 h-[8px] rounded-[999px] bg-[#3047ec]" style="width:49%"></div></div>
+      </div>
+      <div class="mx-[12px] mt-[8px] bg-[rgba(15,17,21,0.07)] h-px"></div>
+      <div class="px-[12px] pt-[10px] flex flex-wrap gap-[8px]"><span class="bg-[#3047ec] text-white px-[14px] py-[8px] rounded-[999px] text-[13px]">By store</span><span class="bg-[rgba(15,17,21,0.06)] text-[#0f1115] px-[14px] py-[8px] rounded-[999px] text-[13px]">By channel</span><span class="bg-[rgba(15,17,21,0.06)] text-[#0f1115] px-[14px] py-[8px] rounded-[999px] text-[13px]">By program</span><span class="bg-[rgba(15,17,21,0.06)] text-[#0f1115] px-[14px] py-[8px] rounded-[999px] text-[13px]">By device model</span></div>
+      <p class="px-[12px] pt-[10px] text-[12px] leading-[1.5] text-[rgba(91,99,112,0.8)]">Illustrative workflow and sample data. Values, buyer availability, timing and supported features depend on the agreed program and market.</p>
+    </div>
+    <div class="flex flex-col w-[350px]">
+      <div class="border-[rgba(15,17,21,0.1)] border-solid border-t py-[14px] flex flex-col gap-[4px]"><p class="font-normal text-[#0f1115] text-[16px] leading-[normal]">Quote → acceptance</p><p class="font-light text-[#5b6370] text-[15px] leading-[1.45]">See which offers customers decline, and at what value.</p></div>
+      <div class="border-[rgba(15,17,21,0.1)] border-solid border-t py-[14px] flex flex-col gap-[4px]"><p class="font-normal text-[#0f1115] text-[16px] leading-[normal]">Acceptance → handover</p><p class="font-light text-[#5b6370] text-[15px] leading-[1.45]">Spot journeys that stall before the device is handed over.</p></div>
+      <div class="border-[rgba(15,17,21,0.1)] border-solid border-t py-[14px] flex flex-col gap-[4px]"><p class="font-normal text-[#0f1115] text-[16px] leading-[normal]">Handover → settlement</p><p class="font-light text-[#5b6370] text-[15px] leading-[1.45]">Find where inspection or settlement stops a journey.</p></div>
+    </div>
   </div>
-  <p class="[word-break:break-word] absolute font-light leading-[1.55] left-[20px] not-italic text-[16px] text-[rgba(245,247,250,0.68)] top-[239px] w-[340px]" data-m="up" style="--d:350ms;--y:30px;">
-    The device value index prices 38,000 model variants in every grade and every market we run. It is built from accepted bids, not list prices.
-  </p>
-  <div class="absolute h-[600px] left-[20px] top-[387px] w-[350px]">
-  <div class="ip-swipe absolute left-0 top-0 w-[350px] h-[42px] overflow-x-auto overflow-y-hidden snap-x snap-mandatory" style="scrollbar-width:none"><div class="relative h-[40px] w-[490px]">  <div class="snap-start absolute backdrop-blur-[12px] bg-[#3047ec] content-stretch flex gap-[8px] items-center left-0 overflow-clip px-[16px] py-[10px] rounded-[999px] top-0">
-      <div class="relative shrink-0 size-[7px]">
-        <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse.svg">
-      </div>
-      <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[14px] whitespace-nowrap">
-        Grade A
-      </p>
-    </div>
-    <div class="snap-start absolute backdrop-blur-[12px] bg-[rgba(15,17,21,0.55)] content-stretch flex gap-[8px] items-center left-[110px] overflow-clip px-[16px] py-[10px] rounded-[999px] top-0">
-      <div class="relative shrink-0 size-[7px]">
-        <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse4.svg">
-      </div>
-      <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[14px] text-[rgba(245,247,250,0.8)] whitespace-nowrap">
-        Grade B
-      </p>
-    </div>
-    <div class="snap-start absolute backdrop-blur-[12px] bg-[rgba(15,17,21,0.55)] content-stretch flex gap-[8px] items-center left-[219px] overflow-clip px-[16px] py-[10px] rounded-[999px] top-0">
-      <div class="relative shrink-0 size-[7px]">
-        <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse4.svg">
-      </div>
-      <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[14px] text-[rgba(245,247,250,0.8)] whitespace-nowrap">
-        Grade C
-      </p>
-    </div>
-    <div class="snap-start absolute backdrop-blur-[12px] bg-[rgba(15,17,21,0.55)] content-stretch flex gap-[8px] items-center left-[329px] overflow-clip px-[16px] py-[10px] rounded-[999px] top-0">
-      <div class="relative shrink-0 size-[7px]">
-        <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse4.svg">
-      </div>
-      <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[14px] text-[rgba(245,247,250,0.8)] whitespace-nowrap">
-        Poland · 256 GB
-      </p>
-    </div>
-</div></div>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-0 not-italic text-[12px] text-[rgba(245,247,250,0.68)] top-[76px] whitespace-nowrap">
-      Residual value · Grade A · Poland
-    </p>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[221px] not-italic text-[12px] text-[rgba(245,247,250,0.42)] top-[76px] whitespace-nowrap">
-      Updated today, 06:00
+</div>
+</section>
+
+<section data-section="residual-value" id="residual-value" class="v2-sec ip-sec" data-tone="dark" style="--h:1430px; background: radial-gradient(calc(243.75px * var(--s)) calc(557.92px * var(--s)) at calc(50% + -195px * var(--s)) calc(669.5px * var(--s)), rgba(38,48,74,1) 0%, rgba(30,36,53,1) 30%, rgba(21,24,32,1) 60%, #0F1115 100%), #0F1115;">
+<div class="v2-canvas">
+<div class="absolute pointer-events-none" aria-hidden="true" style="left:-2000px; top:0; width:4390px; height:1430px; background:radial-gradient(calc(243.75px * var(--s)) calc(557.92px * var(--s)) at calc(50% + -195px * var(--s)) calc(669.5px * var(--s)), rgba(38,48,74,1) 0%, rgba(30,36,53,1) 30%, rgba(21,24,32,1) 60%, #0F1115 100%), #0F1115;"></div>
+  <div class="absolute h-[560px] left-[-40px] top-[420px] w-[470px]"><div class="absolute inset-[-32.26%_-26.32%]"><img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-glow2.svg"></div></div>
+  <div class="ip-flow absolute left-[20px] top-[96px] w-[350px] flex flex-col gap-[24px] items-start" data-m="up" style="--d:200ms;--y:30px;">
+    <p class="font-normal leading-[normal] text-[#b7d7ff] text-[14px]">Residual-value estimate</p>
+    <h2 class="font-normal leading-[1.06] text-[#f5f7fa] text-[36px] tracking-[-1.44px] w-[350px] m-0">An estimate is not a value commitment.</h2>
+    <p class="font-light leading-[1.55] text-[rgba(245,247,250,0.68)] text-[16px] w-[340px]">Future trade-in, subscription and device rental programs need a view of value over the term. An analytical residual-value estimate supports that planning. It does not commit a value to the customer.</p>
+    <div class="flex flex-wrap gap-[8px] w-[350px] pt-[8px]"><div class="backdrop-blur-[12px] bg-[rgba(15,17,21,0.55)] flex gap-[8px] items-center px-[14px] py-[9px] rounded-[999px]"><img decoding="async" alt="" class="size-[7px]" src="/v2/mobile/assets/intelligence-pg-ellipse4.svg"><p class="text-[13px] text-[rgba(245,247,250,0.8)]">Lithuania</p></div><div class="backdrop-blur-[12px] bg-[rgba(15,17,21,0.55)] flex gap-[8px] items-center px-[14px] py-[9px] rounded-[999px]"><img decoding="async" alt="" class="size-[7px]" src="/v2/mobile/assets/intelligence-pg-ellipse4.svg"><p class="text-[13px] text-[rgba(245,247,250,0.8)]">Latvia</p></div><div class="backdrop-blur-[12px] bg-[rgba(15,17,21,0.55)] flex gap-[8px] items-center px-[14px] py-[9px] rounded-[999px]"><img decoding="async" alt="" class="size-[7px]" src="/v2/mobile/assets/intelligence-pg-ellipse4.svg"><p class="text-[13px] text-[rgba(245,247,250,0.8)]">Estonia</p></div><div class="backdrop-blur-[12px] bg-[#3047ec] flex gap-[8px] items-center px-[14px] py-[9px] rounded-[999px]"><img decoding="async" alt="" class="size-[7px]" src="/v2/mobile/assets/intelligence-pg-ellipse.svg"><p class="text-[13px] text-[#f5f7fa]">Poland</p></div><div class="backdrop-blur-[12px] bg-[rgba(15,17,21,0.55)] flex gap-[8px] items-center px-[14px] py-[9px] rounded-[999px]"><img decoding="async" alt="" class="size-[7px]" src="/v2/mobile/assets/intelligence-pg-ellipse4.svg"><p class="text-[13px] text-[rgba(245,247,250,0.8)]">Finland</p></div></div>
+    <div class="relative h-[606px] w-[350px] mt-[-70px]">
+  <p class="[word-break:break-word] absolute font-normal leading-[normal] left-0 not-italic text-[12px] text-[rgba(245,247,250,0.68)] top-[76px] whitespace-nowrap">
+      Estimated residual value at month 12 · Grade A · 256 GB · Poland
     </p>
     <div class="absolute bg-[rgba(183,215,255,0.12)] h-px left-[50px] top-[190px] w-[289.831px]"></div>
     <p class="[word-break:break-word] absolute font-light leading-[normal] left-0 not-italic text-[12px] text-[rgba(245,247,250,0.42)] top-[183px] whitespace-nowrap">
@@ -396,627 +426,46 @@
     <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[271.55px] not-italic text-[12px] text-[rgba(245,247,250,0.68)] top-[556px] whitespace-nowrap">
       14
     </p>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[50px] not-italic text-[12px] text-[rgba(245,247,250,0.42)] top-[584px] whitespace-nowrap">
-      Example data
-    </p>
-    <div class="[word-break:break-word] absolute backdrop-blur-[15px] bg-[rgba(255,255,255,0.07)] border border-[rgba(183,215,255,0.16)] border-solid h-[96px] leading-[normal] left-[130px] not-italic overflow-clip rounded-[24px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] top-[108px] w-[220px] whitespace-nowrap" data-m="pop" style="--d:1000ms;">
-      <p class="absolute font-normal left-[19px] text-[#a7b0be] text-[12px] top-[17px]">
-        iPhone 18 Pro · last 30 days
+    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[50px] not-italic text-[12px] text-[#a7b0be] top-[584px] whitespace-nowrap">Illustrative · sample data · not a value commitment</p>
+    <div class="[word-break:break-word] absolute backdrop-blur-[15px] bg-[rgba(255,255,255,0.07)] border border-[rgba(183,215,255,0.16)] border-solid h-[84px] leading-[normal] left-[170px] not-italic overflow-clip rounded-[24px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] top-[100px] w-[180px] whitespace-nowrap" data-m="pop" style="--d:1000ms;">
+      <p class="absolute font-normal left-[19px] text-[#a7b0be] text-[12px] top-[13px]">
+        18 Pro · month 24
       </p>
-      <p class="absolute font-light left-[19px] text-[#f5f7fa] text-[30px] top-[39px] tracking-[-0.9px]">
-        −3.4 %
-      </p>
-      <p class="absolute font-normal left-[139px] text-[#b7d7ff] text-[14px] top-[51px]">
-        −€28
+      <p class="absolute font-light left-[19px] text-[#f5f7fa] text-[30px] top-[33px] tracking-[-0.9px]">
+        €560–620
       </p>
     </div>
   </div>
-  <div class="[word-break:break-word] absolute content-stretch flex flex-col font-light items-start leading-[normal] left-[20px] not-italic overflow-clip top-[1027px] w-[350px]" data-m="up" style="--d:1600ms;--y:30px;">
-    <div class="border-[rgba(183,215,255,0.16)] border-solid border-t h-[72px] overflow-clip relative shrink-0 w-[350px]">
-      <p class="absolute left-0 text-[#f5f7fa] text-[24px] top-[17px] tracking-[-0.48px] whitespace-nowrap">
-        Daily
-      </p>
-      <p class="absolute left-[124px] text-[15px] text-[rgba(245,247,250,0.68)] top-[15px] w-[226px]">
-        Refreshed from live bids at 06:00 CET.
-      </p>
-    </div>
-    <div class="border-[rgba(183,215,255,0.16)] border-solid border-t h-[72px] overflow-clip relative shrink-0 w-[350px]">
-      <p class="absolute left-0 text-[#f5f7fa] text-[24px] top-[17px] tracking-[-0.48px] whitespace-nowrap">
-        5 grades
-      </p>
-      <p class="absolute left-[124px] text-[15px] text-[rgba(245,247,250,0.68)] top-[15px] w-[226px]">
-        Screen, battery and casing combined.
-      </p>
-    </div>
-    <div class="border-[rgba(183,215,255,0.16)] border-solid border-t h-[72px] overflow-clip relative shrink-0 w-[350px]">
-      <p class="absolute left-0 text-[#f5f7fa] text-[24px] top-[17px] tracking-[-0.48px] whitespace-nowrap">
-        ±2.1 %
-      </p>
-      <p class="absolute left-[124px] text-[15px] text-[rgba(245,247,250,0.68)] top-[15px] w-[226px]">
-        Median error against the final payout.
-      </p>
+    <div class="flex flex-col w-[350px]">
+      <div class="border-[rgba(183,215,255,0.16)] border-solid border-t py-[14px] flex flex-col gap-[4px]"><p class="font-normal text-[#f5f7fa] text-[16px] leading-[normal]">Analytical estimate</p><p class="font-light text-[rgba(245,247,250,0.68)] text-[15px] leading-[1.45]">How a device's value may develop, by model, condition and market.</p></div>
+      <div class="border-[rgba(183,215,255,0.16)] border-solid border-t py-[14px] flex flex-col gap-[4px]"><p class="font-normal text-[#f5f7fa] text-[16px] leading-[normal]">Commercial value commitment</p><p class="font-light text-[rgba(245,247,250,0.68)] text-[15px] leading-[1.45]">Set only in the agreed program terms, with eligibility, condition and return conditions.</p></div>
+      <div class="border-[rgba(183,215,255,0.16)] border-solid border-t py-[14px] flex flex-col gap-[4px]"><p class="font-normal text-[#f5f7fa] text-[16px] leading-[normal]">Markets in this example</p><p class="font-light text-[rgba(245,247,250,0.68)] text-[15px] leading-[1.45]">Lithuania, Latvia, Estonia, Poland and Finland.</p></div>
     </div>
   </div>
 </div>
 </section>
 
-<section data-section="benchmarks" id="benchmarks" class="v2-sec ip-sec" data-tone="light" style="--h:1272px; background: #F5F7FA;">
+<section data-section="reporting" id="reporting" class="v2-sec ip-sec" data-tone="light" style="--h:1560px; background: #F5F7FA;">
 <div class="v2-canvas">
-  <div class="[word-break:break-word] absolute font-normal leading-[0] left-[20px] not-italic text-[#0f1115] text-[40px] top-[96px] tracking-[-1.6px] w-[350px]" data-m="up" style="--d:200ms;--y:30px;">
-    <p class="leading-[1.02] mb-0">One device,</p>
-    <p class="leading-[1.02]">twelve markets.</p>
-  </div>
-  <p class="[word-break:break-word] absolute font-light leading-[1.55] left-[20px] not-italic text-[#5b6370] text-[16px] top-[198px] w-[340px]" data-m="up" style="--d:350ms;--y:30px;">
-    See where a device is worth most, how many buyers compete for it and how fast each market answers. Use it to set store prices and route stock.
-  </p>
-  <div class="absolute content-stretch flex gap-[8px] items-center left-[20px] overflow-clip top-[318px]">
-    <div class="relative shrink-0 size-[8px]">
-      <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse5.svg">
+<div class="absolute pointer-events-none" aria-hidden="true" style="left:-2000px; top:0; width:4390px; height:1560px; background:#F5F7FA;"></div>
+<div class="ip-flow absolute left-[20px] top-[96px] w-[350px] flex flex-col gap-[24px] items-start" data-m="up" style="--d:200ms;--y:30px;">
+    <p class="font-normal leading-[normal] text-[#3047ec] text-[14px]">Reporting</p>
+    <h2 class="font-normal leading-[1.06] text-[#0f1115] text-[36px] tracking-[-1.44px] w-[350px] m-0">Take the data where you work.</h2>
+    <p class="font-light leading-[1.55] text-[#5b6370] text-[16px] w-[340px]">Dashboards and exports are options agreed for each program, with your pricing, operations and finance teams.</p>
+    <div class="flex flex-col w-[350px]">
+      <div class="border-[rgba(15,17,21,0.1)] border-solid border-t py-[14px] flex flex-col gap-[4px]"><p class="font-normal text-[#0f1115] text-[16px] leading-[normal]">Dashboards</p><p class="font-light text-[#5b6370] text-[15px] leading-[1.45]">Buyer, value and journey views for your program.</p></div>
+      <div class="border-[rgba(15,17,21,0.1)] border-solid border-t py-[14px] flex flex-col gap-[4px]"><p class="font-normal text-[#0f1115] text-[16px] leading-[normal]">Scheduled reports</p><p class="font-light text-[#5b6370] text-[15px] leading-[1.45]">Formats, frequency and recipients agreed per program.</p></div>
+      <div class="border-[rgba(15,17,21,0.1)] border-solid border-t py-[14px] flex flex-col gap-[4px]"><p class="font-normal text-[#0f1115] text-[16px] leading-[normal]">Data exports and integration</p><p class="font-light text-[#5b6370] text-[15px] leading-[1.45]">Scope agreed with your systems team.</p></div>
     </div>
-    <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#5b6370] text-[13px] whitespace-nowrap">
-      Your market is highlighted
-    </p>
-  </div>
-  <div class="absolute bg-white content-stretch flex flex-col items-center left-[20px] overflow-clip pb-[20px] pt-[24px] px-[16px] rounded-[24px] shadow-[0px_30px_60px_0px_rgba(15,17,21,0.08)] top-[374px] w-[350px]" data-m="up" style="--d:600ms;--y:60px;">
-    <div class="[word-break:break-word] bg-white content-stretch flex flex-col font-normal gap-[4px] items-start leading-[normal] not-italic overflow-clip pb-[12px] px-[16px] relative shrink-0 w-full whitespace-nowrap">
-      <p class="relative shrink-0 text-[#0f1115] text-[16px]">
-        iPhone 16 Pro · 256 GB · Grade A
-      </p>
-      <p class="relative shrink-0 text-[#5b6370] text-[13px]">
-        Median accepted bid, last 7 days
-      </p>
-    </div>
-    <div class="h-[84px] overflow-clip relative rounded-[14px] shrink-0 w-full" data-m="up" style="--d:900ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[14px] whitespace-nowrap">
-        Germany
-      </p>
-      <div class="absolute bg-[rgba(15,17,21,0.06)] h-[6px] left-[16px] rounded-[999px] top-[44px] w-[286px]"></div>
-      <div class="absolute bg-gradient-to-r from-[#b7d7ff] h-[6px] left-[16px] rounded-[999px] to-[#5d74ff] top-[44px] w-[245.96px]" data-m="wipe" style="--d:500ms;"></div>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[262px] not-italic text-[#0f1115] text-[16px] top-[13px] whitespace-nowrap">
-        €858
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[58px] whitespace-nowrap">
-        11 buyers · offer in 36 s
-      </p>
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[249px] not-italic text-[#3047ec] text-[15px] top-[58px] whitespace-nowrap">
-        +0.8 %
-      </p>
-    </div>
-    <div class="bg-[rgba(15,17,21,0.07)] h-px relative shrink-0 w-[286px]"></div>
-    <div class="h-[84px] overflow-clip relative rounded-[14px] shrink-0 w-full" data-m="up" style="--d:980ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[14px] whitespace-nowrap">
-        Finland
-      </p>
-      <div class="absolute bg-[rgba(15,17,21,0.06)] h-[6px] left-[16px] rounded-[999px] top-[44px] w-[286px]"></div>
-      <div class="absolute bg-gradient-to-r from-[#b7d7ff] h-[6px] left-[16px] rounded-[999px] to-[#5d74ff] top-[44px] w-[224.51px]" data-m="wipe" style="--d:580ms;"></div>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[262px] not-italic text-[#0f1115] text-[16px] top-[13px] whitespace-nowrap">
-        €836
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[58px] whitespace-nowrap">
-        7 buyers · offer in 47 s
-      </p>
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[249px] not-italic text-[#3047ec] text-[15px] top-[58px] whitespace-nowrap">
-        +0.4 %
-      </p>
-    </div>
-    <div class="bg-[rgba(15,17,21,0.07)] h-px relative shrink-0 w-[286px]"></div>
-    <div class="bg-[rgba(48,71,236,0.08)] h-[84px] overflow-clip relative rounded-[14px] shrink-0 w-full" data-m="up" style="--d:1060ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#3047ec] text-[15px] top-[14px] whitespace-nowrap">
-        Latvia
-      </p>
-      <div class="absolute bg-[rgba(15,17,21,0.06)] h-[6px] left-[16px] rounded-[999px] top-[44px] w-[286px]"></div>
-      <div class="absolute bg-[#3047ec] h-[6px] left-[16px] rounded-[999px] top-[44px] w-[201.63px]" data-m="wipe" style="--d:660ms;"></div>
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[265px] not-italic text-[#3047ec] text-[16px] top-[13px] whitespace-nowrap">
-        €812
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[58px] whitespace-nowrap">
-        6 buyers · offer in 41 s
-      </p>
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[253px] not-italic text-[#3047ec] text-[15px] top-[58px] whitespace-nowrap">
-        +1.2 %
-      </p>
-    </div>
-    <div class="bg-[rgba(15,17,21,0.07)] h-px relative shrink-0 w-[286px]"></div>
-    <div class="h-[84px] overflow-clip relative rounded-[14px] shrink-0 w-full" data-m="up" style="--d:1140ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[14px] whitespace-nowrap">
-        Lithuania
-      </p>
-      <div class="absolute bg-[rgba(15,17,21,0.06)] h-[6px] left-[16px] rounded-[999px] top-[44px] w-[286px]"></div>
-      <div class="absolute bg-gradient-to-r from-[#b7d7ff] h-[6px] left-[16px] rounded-[999px] to-[#5d74ff] top-[44px] w-[170.17px]" data-m="wipe" style="--d:740ms;"></div>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[264px] not-italic text-[#0f1115] text-[16px] top-[13px] whitespace-nowrap">
-        €778
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[58px] whitespace-nowrap">
-        5 buyers · offer in 44 s
-      </p>
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[249px] not-italic text-[#5b6370] text-[15px] top-[58px] whitespace-nowrap">
-        −0.6 %
-      </p>
-    </div>
-    <div class="bg-[rgba(15,17,21,0.07)] h-px relative shrink-0 w-[286px]"></div>
-    <div class="h-[84px] overflow-clip relative rounded-[14px] shrink-0 w-full" data-m="up" style="--d:1220ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[14px] whitespace-nowrap">
-        Poland
-      </p>
-      <div class="absolute bg-[rgba(15,17,21,0.06)] h-[6px] left-[16px] rounded-[999px] top-[44px] w-[286px]"></div>
-      <div class="absolute bg-gradient-to-r from-[#b7d7ff] h-[6px] left-[16px] rounded-[999px] to-[#5d74ff] top-[44px] w-[134.42px]" data-m="wipe" style="--d:820ms;"></div>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[267px] not-italic text-[#0f1115] text-[16px] top-[13px] whitespace-nowrap">
-        €741
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[58px] whitespace-nowrap">
-        9 buyers · offer in 38 s
-      </p>
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[250px] not-italic text-[#3047ec] text-[15px] top-[58px] whitespace-nowrap">
-        +0.3 %
-      </p>
-    </div>
-    <div class="bg-[rgba(15,17,21,0.07)] h-px relative shrink-0 w-[286px]"></div>
-    <div class="h-[84px] overflow-clip relative rounded-[14px] shrink-0 w-full" data-m="up" style="--d:1300ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[14px] whitespace-nowrap">
-        Czechia
-      </p>
-      <div class="absolute bg-[rgba(15,17,21,0.06)] h-[6px] left-[16px] rounded-[999px] top-[44px] w-[286px]"></div>
-      <div class="absolute bg-gradient-to-r from-[#b7d7ff] h-[6px] left-[16px] rounded-[999px] to-[#5d74ff] top-[44px] w-[120.12px]" data-m="wipe" style="--d:900ms;"></div>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[263px] not-italic text-[#0f1115] text-[16px] top-[13px] whitespace-nowrap">
-        €726
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[58px] whitespace-nowrap">
-        6 buyers · offer in 50 s
-      </p>
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[257px] not-italic text-[#5b6370] text-[15px] top-[58px] whitespace-nowrap">
-        −1.1 %
-      </p>
-    </div>
-    <div class="bg-[rgba(15,17,21,0.07)] h-px relative shrink-0 w-[286px]"></div>
-    <div class="h-[84px] overflow-clip relative rounded-[14px] shrink-0 w-full" data-m="up" style="--d:1380ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[14px] whitespace-nowrap">
-        Estonia
-      </p>
-      <div class="absolute bg-[rgba(15,17,21,0.06)] h-[6px] left-[16px] rounded-[999px] top-[44px] w-[286px]"></div>
-      <div class="absolute bg-gradient-to-r from-[#b7d7ff] h-[6px] left-[16px] rounded-[999px] to-[#5d74ff] top-[44px] w-[107.25px]" data-m="wipe" style="--d:980ms;"></div>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[266px] not-italic text-[#0f1115] text-[16px] top-[13px] whitespace-nowrap">
-        €712
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[58px] whitespace-nowrap">
-        4 buyers · offer in 52 s
-      </p>
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[249px] not-italic text-[#5b6370] text-[15px] top-[58px] whitespace-nowrap">
-        −0.9 %
-      </p>
-    </div>
-    <div class="bg-[rgba(15,17,21,0.07)] h-px relative shrink-0 w-[286px]"></div>
-    <div class="h-[84px] overflow-clip relative rounded-[14px] shrink-0 w-full" data-m="up" style="--d:1460ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[14px] whitespace-nowrap">
-        Romania
-      </p>
-      <div class="absolute bg-[rgba(15,17,21,0.06)] h-[6px] left-[16px] rounded-[999px] top-[44px] w-[286px]"></div>
-      <div class="absolute bg-gradient-to-r from-[#b7d7ff] h-[6px] left-[16px] rounded-[999px] to-[#5d74ff] top-[44px] w-[85.8px]" data-m="wipe" style="--d:1060ms;"></div>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[260px] not-italic text-[#0f1115] text-[16px] top-[13px] whitespace-nowrap">
-        €690
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic text-[#0f1115] text-[15px] top-[58px] whitespace-nowrap">
-        5 buyers · offer in 58 s
-      </p>
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[253px] not-italic text-[#5b6370] text-[15px] top-[58px] whitespace-nowrap">
-        −1.6 %
-      </p>
-    </div>
-    <div class="h-[12px] relative shrink-0 w-[10px]"></div>
-    <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[12px] text-[rgba(91,99,112,0.8)] w-[286px]">
-      Example data
-    </p>
+    <a href="/v2/contact/?topic=data" class="bg-[#0f1115] flex h-[48px] items-center px-[20px] rounded-[999px] ip-btn"><p class="font-normal text-[#f5f7fa] text-[14px] whitespace-nowrap">Discuss your data and reporting needs</p></a>
+    <div class="relative h-[214px] w-[350px] [filter:drop-shadow(0px_30px_60px_rgba(15,17,21,0.18))]"><img decoding="async" alt="" class="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src="/v2/assets/intelligence-pg-photo-mac-book-pro.webp"></div>
+    <div class="relative bg-white rounded-[24px] shadow-[0px_30px_60px_0px_rgba(15,17,21,0.14)] w-[350px] p-[24px] flex flex-col gap-[0px]"><p class="text-[#0f1115] text-[16px]">Monthly program report</p><p class="text-[#5b6370] text-[13px] pt-[4px] pb-[14px]">Example contents · agreed per program</p><div class="flex justify-between py-[8px] text-[13px] "><span class="text-[#5b6370]">Buyer performance</span><span class="text-[#0f1115]">Dashboard</span></div><div class="flex justify-between py-[8px] text-[13px] border-t border-[rgba(15,17,21,0.07)]"><span class="text-[#5b6370]">Deduction reasons</span><span class="text-[#0f1115]">Export</span></div><div class="flex justify-between py-[8px] text-[13px] border-t border-[rgba(15,17,21,0.07)]"><span class="text-[#5b6370]">Journey funnel</span><span class="text-[#0f1115]">Summary</span></div><p class="pt-[10px] text-[12px] text-[rgba(91,99,112,0.8)]">Sample data</p></div>
+    <div class="relative bg-[rgba(15,17,21,0.96)] border border-[rgba(183,215,255,0.16)] rounded-[24px] shadow-[0px_30px_60px_0px_rgba(15,17,21,0.3)] w-[350px] p-[22px] flex flex-col"><p class="text-[#a7b0be] text-[13px] pb-[12px]">Availability per option</p><div class="flex justify-between py-[8px] "><span class="text-[#f5f7fa] text-[14px]">Dashboards</span><span class="text-[#b7d7ff] text-[13px]">To be confirmed</span></div><div class="flex justify-between py-[8px] border-t border-[rgba(183,215,255,0.12)]"><span class="text-[#f5f7fa] text-[14px]">Scheduled reports</span><span class="text-[#b7d7ff] text-[13px]">To be confirmed</span></div><div class="flex justify-between py-[8px] border-t border-[rgba(183,215,255,0.12)]"><span class="text-[#f5f7fa] text-[14px]">Data exports</span><span class="text-[#b7d7ff] text-[13px]">To be confirmed</span></div><div class="flex justify-between py-[8px] border-t border-[rgba(183,215,255,0.12)]"><span class="text-[#f5f7fa] text-[14px]">System integration</span><span class="text-[#b7d7ff] text-[13px]">To be confirmed</span></div><p class="pt-[12px] text-[12px] leading-[1.45] text-[#a7b0be]">Available, pilot or planned: to be confirmed with Fintegre for each program.</p></div>
   </div>
 </div>
 </section>
 
-<section data-section="vendors" id="vendors" class="v2-sec ip-sec" data-tone="dark" style="--h:1317px; background: #0F1115;">
-<div class="v2-canvas">
-<div class="absolute pointer-events-none" aria-hidden="true" style="left:-2000px; top:0; width:4390px; height:1317px; background:#0F1115;"></div>
-  <div class="absolute left-[-60px] size-[500px] top-[500px]">
-    <div class="absolute inset-[-24%]">
-      <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-glow3.svg">
-    </div>
-  </div>
-  <div class="absolute h-[348px] left-[-265px] mix-blend-lighten top-[827px] w-[920px]" data-m="fade">
-    <img decoding="async" alt="" class="absolute inset-0 max-w-none object-cover pointer-events-none size-full opacity-55" src="/v2/assets/intelligence-pg-photo-glowing-mac-book.webp">
-  </div>
-  <div class="absolute bg-gradient-to-b from-[#0f1115] h-[90px] left-0 to-[rgba(15,17,21,0)] top-[807px] w-[390px]"></div>
-  <div class="[word-break:break-word] absolute font-normal leading-[0] left-[20px] not-italic text-[#f5f7fa] text-[40px] top-[96px] tracking-[-1.6px] w-[350px]" data-m="up" style="--d:200ms;--y:30px;">
-    <p class="leading-[1.02] mb-0">Know which buyers</p>
-    <p class="leading-[1.02]">keep their word.</p>
-  </div>
-  <p class="[word-break:break-word] absolute font-light leading-[1.55] left-[20px] not-italic text-[16px] text-[rgba(245,247,250,0.68)] top-[198px] w-[340px]" data-m="up" style="--d:350ms;--y:30px;">
-    Every bid, payout and regrade is tracked per buyer. Win rates, payout speed and quote accuracy decide who sees your devices first.
-  </p>
-  <div class="absolute h-[10px] left-0 top-0 w-[390px]">
-    <div class="absolute h-[44px] left-[176px] top-[339px] w-[30px]" data-m="wipe" style="--d:1602ms;">
-      <div class="absolute inset-[-1.36%_-2%]">
-        <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-fibre2.svg">
-      </div>
-    </div>
-    <div class="absolute h-[266px] left-[80px] top-[1834px] w-[8px]" data-m="wipe" style="--d:1998ms;">
-      <div class="absolute inset-[0_-7.49%_0_-7.5%]">
-        <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-fibre3.svg">
-      </div>
-    </div>
-  </div>
-  <div class="absolute backdrop-blur-[25px] bg-[rgba(255,255,255,0.08)] border border-[rgba(183,215,255,0.16)] border-solid content-stretch flex flex-col items-center left-[20px] overflow-clip pb-[20px] pt-[24px] px-[16px] rounded-[28px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.55)] top-[381px] w-[350px]" data-m="up" style="--d:600ms;--y:60px;">
-    <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#a7b0be] text-[13px] w-[286px]">
-      Buyer scorecard · Baltic network · last 90 days
-    </p>
-    <div class="relative shrink-0 size-[10px]"></div>
-    <div class="bg-[rgba(48,71,236,0.22)] h-[88px] overflow-clip relative rounded-[12px] shrink-0 w-full" data-m="up" style="--d:900ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#f5f7fa] text-[15px] top-[14px] whitespace-nowrap">
-        Buyer A · Lithuania
-      </p>
-      <div class="absolute bg-[rgba(255,255,255,0.08)] h-[6px] left-[16px] rounded-[999px] top-[48px] w-[210px]"></div>
-      <div class="absolute bg-gradient-to-r from-[#3047ec] h-[6px] left-[16px] rounded-[999px] to-[#b7d7ff] top-[48px] w-[178.5px]" data-m="wipe" style="--d:900ms;"></div>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[204px] not-italic text-[#f5f7fa] text-[15px] top-[42px] whitespace-nowrap">
-        34 % win rate
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic opacity-70 text-[#f5f7fa] text-[13px] top-[64px] whitespace-nowrap">
-        Payout 1.4 days · Quote accuracy 99.1 %
-      </p>
-      <div class="absolute bg-[#3047ec] content-stretch flex items-start left-[226px] overflow-clip px-[10px] py-[5px] rounded-[999px] top-[11px]">
-        <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[12px] whitespace-nowrap">
-          Preferred
-        </p>
-      </div>
-    </div>
-    <div class="h-[88px] overflow-clip relative rounded-[12px] shrink-0 w-full" data-m="up" style="--d:1000ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#f5f7fa] text-[15px] top-[14px] whitespace-nowrap">
-        Buyer B · Latvia
-      </p>
-      <div class="absolute bg-[rgba(255,255,255,0.08)] h-[6px] left-[16px] rounded-[999px] top-[48px] w-[210px]"></div>
-      <div class="absolute bg-gradient-to-r from-[#3047ec] h-[6px] left-[16px] rounded-[999px] to-[#b7d7ff] top-[48px] w-[153px]" data-m="wipe" style="--d:1000ms;"></div>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[203px] not-italic text-[#f5f7fa] text-[15px] top-[42px] whitespace-nowrap">
-        29 % win rate
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic opacity-70 text-[#f5f7fa] text-[13px] top-[64px] whitespace-nowrap">
-        Payout 1.8 days · Quote accuracy 98.4 %
-      </p>
-      <div class="absolute bg-[rgba(255,255,255,0.08)] content-stretch flex items-start left-[246px] overflow-clip px-[10px] py-[5px] rounded-[999px] top-[11px]">
-        <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[12px] whitespace-nowrap">
-          Active
-        </p>
-      </div>
-    </div>
-    <div class="h-[88px] overflow-clip relative rounded-[12px] shrink-0 w-full" data-m="up" style="--d:1100ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#f5f7fa] text-[15px] top-[14px] whitespace-nowrap">
-        Buyer C · Poland
-      </p>
-      <div class="absolute bg-[rgba(255,255,255,0.08)] h-[6px] left-[16px] rounded-[999px] top-[48px] w-[210px]"></div>
-      <div class="absolute bg-gradient-to-r from-[#3047ec] h-[6px] left-[16px] rounded-[999px] to-[#b7d7ff] top-[48px] w-[111px]" data-m="wipe" style="--d:1100ms;"></div>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[206px] not-italic text-[#f5f7fa] text-[15px] top-[42px] whitespace-nowrap">
-        21 % win rate
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic opacity-70 text-[#f5f7fa] text-[13px] top-[64px] whitespace-nowrap">
-        Payout 2.2 days · Quote accuracy 97.6 %
-      </p>
-      <div class="absolute bg-[rgba(255,255,255,0.08)] content-stretch flex items-start left-[246px] overflow-clip px-[10px] py-[5px] rounded-[999px] top-[11px]">
-        <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[12px] whitespace-nowrap">
-          Active
-        </p>
-      </div>
-    </div>
-    <div class="h-[88px] overflow-clip relative rounded-[12px] shrink-0 w-full" data-m="up" style="--d:1200ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#f5f7fa] text-[15px] top-[14px] whitespace-nowrap">
-        Buyer D · Estonia
-      </p>
-      <div class="absolute bg-[rgba(255,255,255,0.08)] h-[6px] left-[16px] rounded-[999px] top-[48px] w-[210px]"></div>
-      <div class="absolute bg-gradient-to-r from-[#3047ec] h-[6px] left-[16px] rounded-[999px] to-[#b7d7ff] top-[48px] w-[58.5px]" data-m="wipe" style="--d:1200ms;"></div>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[209px] not-italic text-[#f5f7fa] text-[15px] top-[42px] whitespace-nowrap">
-        11 % win rate
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic opacity-70 text-[#f5f7fa] text-[13px] top-[64px] whitespace-nowrap">
-        Payout 3.1 days · Quote accuracy 94.2 %
-      </p>
-      <div class="absolute bg-[rgba(183,215,255,0.16)] content-stretch flex items-start left-[241px] overflow-clip px-[10px] py-[5px] rounded-[999px] top-[11px]">
-        <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#b7d7ff] text-[12px] whitespace-nowrap">
-          Review
-        </p>
-      </div>
-    </div>
-    <div class="h-[88px] overflow-clip relative rounded-[12px] shrink-0 w-full" data-m="up" style="--d:1300ms;--y:16px;">
-      <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[16px] not-italic text-[#f5f7fa] text-[15px] top-[14px] whitespace-nowrap">
-        Buyer E · Finland
-      </p>
-      <div class="absolute bg-[rgba(255,255,255,0.08)] h-[6px] left-[16px] rounded-[999px] top-[48px] w-[210px]"></div>
-      <div class="absolute bg-gradient-to-r from-[#3047ec] h-[6px] left-[16px] rounded-[999px] to-[#b7d7ff] top-[48px] w-[27px]" data-m="wipe" style="--d:1300ms;"></div>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[213px] not-italic text-[#f5f7fa] text-[15px] top-[42px] whitespace-nowrap">
-        5 % win rate
-      </p>
-      <p class="[word-break:break-word] absolute font-light leading-[normal] left-[16px] not-italic opacity-70 text-[#f5f7fa] text-[13px] top-[64px] whitespace-nowrap">
-        Payout 2.6 days · Quote accuracy 96.8 %
-      </p>
-      <div class="absolute bg-[rgba(255,255,255,0.08)] content-stretch flex items-start left-[246px] overflow-clip px-[10px] py-[5px] rounded-[999px] top-[11px]">
-        <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[12px] whitespace-nowrap">
-          Active
-        </p>
-      </div>
-    </div>
-    <div class="h-[8px] relative shrink-0 w-[10px]"></div>
-    <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[13px] text-[rgba(245,247,250,0.42)] w-[286px]">
-      Example data
-    </p>
-  </div>
-  <div class="absolute backdrop-blur-[12px] bg-[#3047ec] content-stretch flex gap-[8px] items-center left-[166px] overflow-clip px-[16px] py-[10px] rounded-[999px] top-[301px]" data-m="pop" style="--d:1400ms;">
-    <div class="relative shrink-0 size-[7px]">
-      <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse.svg">
-    </div>
-    <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[14px] whitespace-nowrap">
-      Median payout 1.6 days
-    </p>
-  </div>
-  <div class="absolute backdrop-blur-[12px] bg-[rgba(15,17,21,0.55)] content-stretch flex gap-[8px] items-center left-[20px] overflow-clip px-[16px] py-[10px] rounded-[999px] top-[1183px]" data-m="pop" style="--d:2200ms;">
-    <div class="relative shrink-0 size-[7px]">
-      <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse.svg">
-    </div>
-    <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[14px] whitespace-nowrap">
-      Regrade disputes −42 % since Q1
-    </p>
-  </div>
-</div>
-</section>
-
-<section data-section="signals" id="signals" class="v2-sec ip-sec" data-tone="dark" style="--h:1573px; background: radial-gradient(calc(177.27px * var(--s)) calc(524.33px * var(--s)) at calc(50% + -88.64px * var(--s)) calc(996.23px * var(--s)), rgba(34,54,196,.9) 0%, rgba(26,40,143,.875) 25%, rgba(18,26,90,.85) 50%, rgba(17,22,56,.425) 75%, rgba(15,17,21,0) 100%), #0F1115;">
-<div class="v2-canvas">
-<div class="absolute pointer-events-none" aria-hidden="true" style="left:-2000px; top:0; width:4390px; height:1573px; background:radial-gradient(177.27px 524.33px at 2106.36px 996.23px, rgba(34,54,196,.9) 0%, rgba(26,40,143,.875) 25%, rgba(18,26,90,.85) 50%, rgba(17,22,56,.425) 75%, rgba(15,17,21,0) 100%), #0F1115;"></div>
-  <div class="absolute h-[520px] left-[-80px] top-[700px] w-[480px]">
-    <div class="absolute inset-[-23.08%_-25%]">
-      <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-glow4.svg">
-    </div>
-  </div>
-  <div class="[word-break:break-word] absolute font-normal leading-[0] left-[20px] not-italic text-[#f5f7fa] text-[40px] top-[96px] tracking-[-1.6px] w-[350px]" data-m="up" style="--d:200ms;--y:30px;">
-    <p class="leading-[1.02] mb-0">Catch the gap</p>
-    <p class="leading-[1.02] mb-0">between graded</p>
-    <p class="leading-[1.02]">and received.</p>
-  </div>
-  <p class="[word-break:break-word] absolute font-light leading-[1.55] left-[20px] not-italic text-[16px] text-[rgba(245,247,250,0.68)] top-[239px] w-[340px]" data-m="up" style="--d:350ms;--y:30px;">
-    When a buyer regrades a device, Fintegre compares it with the store check, photo by photo. Repeated gaps point to a store, a model or a person. IMEI checks run before any money moves.
-  </p>
-  <div class="[word-break:break-word] absolute content-stretch flex gap-[40px] items-start leading-[normal] left-[20px] not-italic overflow-clip top-[392px] whitespace-nowrap" data-m="up" style="--d:500ms;--y:30px;">
-    <div class="content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0">
-      <p class="font-light relative shrink-0 text-[#f5f7fa] text-[40px] tracking-[-1.2px]">
-        0.8 %
-      </p>
-      <p class="font-normal relative shrink-0 text-[#a7b0be] text-[13px]">
-        devices regraded
-      </p>
-    </div>
-    <div class="content-stretch flex flex-col gap-[4px] items-start overflow-clip relative shrink-0">
-      <p class="font-light relative shrink-0 text-[#f5f7fa] text-[40px] tracking-[-1.2px]">
-        312
-      </p>
-      <p class="font-normal relative shrink-0 text-[#a7b0be] text-[13px]">
-        IMEI flags stopped this quarter
-      </p>
-    </div>
-  </div>
-  <div class="absolute h-[581px] left-[-560px] mix-blend-lighten top-[1180px] w-[1100px]">
-    <img decoding="async" alt="" class="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src="/v2/mobile/assets/intelligence-pg-photo-i-phone-lens-close-up.webp">
-  </div>
-  <div class="absolute bg-gradient-to-b from-[#0f1115] h-[220px] left-0 to-[rgba(15,17,21,0)] top-[1176px] w-[390px]"></div>
-  <div class="absolute h-[10px] left-0 top-0 w-[390px]">
-    <div class="absolute h-[56px] left-[600px] top-[1411px] w-[30px]" data-m="wipe" style="--d:1398ms;">
-      <div class="absolute inset-[0_-2%]">
-        <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-fibre4.svg">
-      </div>
-    </div>
-    <div class="absolute h-[56px] left-[80px] top-[1923px] w-[20px]" data-m="wipe" style="--d:2400ms;">
-      <div class="absolute inset-[0_-3%]">
-        <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-fibre5.svg">
-      </div>
-    </div>
-    <div class="absolute h-[40px] left-[600px] top-[2375px] w-[20px]" data-m="wipe" style="--d:3402ms;">
-      <div class="absolute inset-[0_-3%]">
-        <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-fibre6.svg">
-      </div>
-    </div>
-  </div>
-  <div class="absolute backdrop-blur-[15px] bg-[rgba(255,255,255,0.07)] border border-[rgba(183,215,255,0.16)] border-solid h-[189px] left-[20px] overflow-clip rounded-[26px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] top-[526px] w-[350px]" data-m="up" style="--d:800ms;--y:50px;">
-    <div class="absolute h-[106px] left-[21px] rounded-[9px] top-[21px] w-[52px]">
-      <img decoding="async" alt="" class="absolute inset-0 max-w-none object-contain pointer-events-none rounded-[9px] size-full" src="/v2/assets/intelligence-pg-photo-i-phone13.webp">
-    </div>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[95px] not-italic text-[#a7b0be] text-[12px] top-[25px] w-[236px]">
-      10:12 · Store 3, Riga
-    </p>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[95px] not-italic text-[#f5f7fa] text-[19px] top-[45px] w-[236px]">
-      iPhone 13 graded A in store
-    </p>
-    <div class="absolute bg-[#b7d7ff] content-stretch flex items-start left-[95px] overflow-clip px-[12px] py-[6px] rounded-[999px] top-[105px]">
-      <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[12px] whitespace-nowrap">
-        Screen A
-      </p>
-    </div>
-    <div class="absolute bg-[rgba(255,255,255,0.08)] content-stretch flex items-start left-[178px] overflow-clip px-[12px] py-[6px] rounded-[999px] top-[105px]">
-      <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[12px] whitespace-nowrap">
-        Casing A
-      </p>
-    </div>
-    <div class="absolute bg-[rgba(255,255,255,0.08)] content-stretch flex items-start left-[95px] overflow-clip px-[12px] py-[6px] rounded-[999px] top-[139px]">
-      <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[12px] whitespace-nowrap">
-        Battery 89 %
-      </p>
-    </div>
-  </div>
-  <div class="[word-break:break-word] absolute backdrop-blur-[15px] bg-[rgba(255,255,255,0.07)] border border-[rgba(183,215,255,0.16)] border-solid font-normal h-[200px] leading-[normal] left-[20px] not-italic overflow-clip rounded-[26px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] top-[771px] w-[350px] whitespace-nowrap" data-m="up" style="--d:1800ms;--y:50px;">
-    <p class="absolute left-[25px] text-[#a7b0be] text-[12px] top-[23px]">
-      2 days later · Buyer B, Latvia
-    </p>
-    <p class="absolute left-[25px] text-[#f5f7fa] text-[19px] top-[43px]">
-      Back glass cracked. Grade C.
-    </p>
-    <div class="absolute h-[30px] left-[25px] overflow-clip rounded-[10px] text-[13px] top-[87px] w-[298px]">
-      <p class="absolute left-[10px] text-[rgba(245,247,250,0.8)] top-[7px]">
-        Store grade A
-      </p>
-      <p class="absolute left-[258px] text-[#f5f7fa] top-[7px]">
-        €312
-      </p>
-    </div>
-    <div class="absolute h-[30px] left-[25px] overflow-clip rounded-[10px] text-[13px] top-[121px] w-[298px]">
-      <p class="absolute left-[10px] text-[rgba(245,247,250,0.8)] top-[7px]">
-        Buyer grade C
-      </p>
-      <p class="absolute left-[257px] text-[#f5f7fa] top-[7px]">
-        €188
-      </p>
-    </div>
-    <div class="absolute bg-[rgba(48,71,236,0.9)] h-[30px] left-[25px] overflow-clip rounded-[10px] text-[#f5f7fa] text-[13px] top-[155px] w-[298px]">
-      <p class="absolute left-[10px] top-[7px]">
-        Difference
-      </p>
-      <p class="absolute left-[250px] top-[7px]">
-        −€124
-      </p>
-    </div>
-  </div>
-  <div class="absolute backdrop-blur-[15px] bg-[rgba(255,255,255,0.07)] border border-[rgba(183,215,255,0.16)] border-solid h-[170px] left-[20px] overflow-clip rounded-[26px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] top-[1027px] w-[350px]" data-m="up" style="--d:2800ms;--y:50px;">
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[25px] not-italic text-[#a7b0be] text-[12px] top-[23px] whitespace-nowrap">
-      Signal · this week
-    </p>
-    <div class="[word-break:break-word] absolute font-normal leading-[0] left-[25px] not-italic text-[#f5f7fa] text-[19px] top-[43px] whitespace-nowrap">
-      <p class="leading-[1.25] mb-0">Store 3, Riga: 4 back-glass gaps</p>
-      <p class="leading-[1.25]">in 30 days</p>
-    </div>
-    <div class="absolute bg-[#3047ec] content-stretch flex items-start left-[25px] overflow-clip px-[12px] py-[6px] rounded-[999px] top-[115px]">
-      <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[12px] whitespace-nowrap">
-        Photo check added
-      </p>
-    </div>
-    <div class="absolute bg-[rgba(255,255,255,0.08)] content-stretch flex items-start left-[169px] overflow-clip px-[12px] py-[6px] rounded-[999px] top-[115px]">
-      <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[12px] whitespace-nowrap">
-        Staff refresher booked
-      </p>
-    </div>
-  </div>
-  <div class="absolute backdrop-blur-[15px] bg-[rgba(255,255,255,0.07)] border border-[rgba(183,215,255,0.16)] border-solid h-[76px] left-[40px] overflow-clip rounded-[24px] shadow-[0px_30px_60px_0px_rgba(0,0,0,0.5)] top-[1237px] w-[330px]" data-m="pop" style="--d:3800ms;">
-    <div class="absolute left-[21px] size-[8px] top-[33px]">
-      <div class="absolute inset-[-125%]">
-        <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse6.svg">
-      </div>
-    </div>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[41px] not-italic text-[#f5f7fa] text-[14px] top-[17px] whitespace-nowrap">
-      IMEI 35 •••• 4417 reported lost
-    </p>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[41px] not-italic text-[#a7b0be] text-[12px] top-[39px] whitespace-nowrap">
-      Trade-in stopped before payout
-    </p>
-  </div>
-</div>
-</section>
-
-<section data-section="reports" id="reports" class="v2-sec ip-sec" data-tone="light" style="--h:1413px; background: #F5F7FA;">
-<div class="v2-canvas">
-  <div class="absolute h-[420px] left-[-80px] top-[640px] w-[520px]">
-    <div class="absolute inset-[-42.86%_-34.62%]">
-      <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-glow5.svg">
-    </div>
-  </div>
-  <div class="[word-break:break-word] absolute font-normal leading-[0] left-[20px] not-italic text-[#0f1115] text-[40px] top-[96px] tracking-[-1.6px] w-[350px]" data-m="up" style="--d:200ms;--y:30px;">
-    <p class="leading-[1.02] mb-0">Take the data</p>
-    <p class="leading-[1.02]">where you work.</p>
-  </div>
-  <p class="[word-break:break-word] absolute font-light leading-[1.55] left-[20px] not-italic text-[#5b6370] text-[16px] top-[198px] w-[340px]" data-m="up" style="--d:350ms;--y:30px;">
-    Open the dashboard, schedule a report for your pricing team or pull values straight into your own systems.
-  </p>
-  <div class="[word-break:break-word] absolute content-stretch flex flex-col items-start leading-[normal] left-[20px] not-italic overflow-clip top-[297px] w-[350px]" data-m="up" style="--d:500ms;--y:30px;">
-    <div class="border-[rgba(15,17,21,0.1)] border-solid border-t h-[78px] overflow-clip relative shrink-0 w-[350px]">
-      <p class="absolute font-normal left-0 text-[#0f1115] text-[17px] top-[27.5px] whitespace-nowrap">
-        Dashboard
-      </p>
-      <p class="absolute font-light left-[110px] text-[#5b6370] text-[15px] top-[19px] w-[240px]">
-        Filter by model, grade, market and buyer.
-      </p>
-    </div>
-    <div class="border-[rgba(15,17,21,0.1)] border-solid border-t h-[78px] overflow-clip relative shrink-0 w-[350px]">
-      <p class="absolute font-normal left-0 text-[#0f1115] text-[17px] top-[27.5px] whitespace-nowrap">
-        Reports
-      </p>
-      <p class="absolute font-light left-[110px] text-[#5b6370] text-[15px] top-[19px] w-[240px]">
-        PDF and CSV, scheduled to email or SFTP.
-      </p>
-    </div>
-    <div class="border-[rgba(15,17,21,0.1)] border-solid border-t h-[60px] overflow-clip relative shrink-0 w-[350px]">
-      <p class="absolute font-normal left-0 text-[#0f1115] text-[17px] top-[18.5px] whitespace-nowrap">
-        API
-      </p>
-      <p class="absolute font-light left-[110px] text-[#5b6370] text-[15px] top-[19.5px] w-[240px]">
-        REST and JSON, 99.95 % uptime.
-      </p>
-    </div>
-  </div>
-  <div class="absolute h-[342px] left-[70px] [filter:drop-shadow(0px_40px_80px_rgba(15,17,21,0.18))] top-[569px] w-[560px]" data-m="right" style="--x:90px;">
-    <img decoding="async" alt="" class="absolute inset-0 max-w-none object-contain pointer-events-none size-full" src="/v2/assets/intelligence-pg-photo-mac-book-pro.webp">
-  </div>
-  <div class="absolute h-[10px] left-0 top-0 w-[390px]">
-    <div class="absolute h-[28px] left-[310px] top-[1075px] w-[10px]" data-m="wipe" style="--d:1998ms;">
-      <div class="absolute inset-[-2.14%_-6%]">
-        <img decoding="async" alt="" class="block max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-fibre7.svg">
-      </div>
-    </div>
-  </div>
-  <div class="absolute bg-white h-[256px] left-[20px] overflow-clip rounded-[24px] shadow-[0px_30px_60px_0px_rgba(15,17,21,0.14)] top-[819px] w-[340px]" data-m="up" style="--d:500ms;--y:50px;">
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[24px] not-italic text-[#0f1115] text-[16px] top-[24px] whitespace-nowrap">
-      Monthly residual value report
-    </p>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[24px] not-italic text-[#5b6370] text-[13px] top-[48px] whitespace-nowrap">
-      October 2026 · 12 markets
-    </p>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[24px] not-italic text-[#5b6370] text-[13px] top-[93px] whitespace-nowrap">
-      Summary
-    </p>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[227px] not-italic text-[#0f1115] text-[13px] top-[93px] whitespace-nowrap">
-      PDF · 14 pages
-    </p>
-    <div class="absolute bg-[rgba(15,17,21,0.07)] h-px left-[24px] top-[118px] w-[292px]"></div>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[24px] not-italic text-[#5b6370] text-[13px] top-[127px] whitespace-nowrap">
-      Raw values
-    </p>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[207px] not-italic text-[#0f1115] text-[13px] top-[127px] whitespace-nowrap">
-      CSV · 38,214 rows
-    </p>
-    <div class="absolute bg-[rgba(15,17,21,0.07)] h-px left-[24px] top-[152px] w-[292px]"></div>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[24px] not-italic text-[#5b6370] text-[13px] top-[161px] whitespace-nowrap">
-      Next run
-    </p>
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[238px] not-italic text-[#0f1115] text-[13px] top-[161px] whitespace-nowrap">
-      1 Nov, 06:00
-    </p>
-    <a href="/v2/report/" class="absolute bg-[#3047ec] content-stretch flex items-start left-[24px] overflow-clip px-[18px] py-[10px] rounded-[999px] top-[196px] ip-btn">
-      <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[14px] text-white whitespace-nowrap">
-        Export report
-      </p>
-    </a>
-  </div>
-  <div class="absolute backdrop-blur-[15px] bg-[rgba(15,17,21,0.96)] border border-[rgba(183,215,255,0.16)] border-solid h-[214px] left-[20px] overflow-clip rounded-[24px] shadow-[0px_30px_60px_0px_rgba(15,17,21,0.3)] top-[1103px] w-[350px]" data-m="up" style="--d:800ms;--y:50px;">
-    <p class="[word-break:break-word] absolute font-normal leading-[normal] left-[23px] not-italic text-[#a7b0be] text-[13px] top-[21px] whitespace-nowrap">
-      Value index API
-    </p>
-    <div class="absolute content-stretch flex gap-[6px] items-center left-[244px] overflow-clip top-[21px]" data-m="pop" style="--d:1600ms;">
-      <div class="relative shrink-0 size-[7px]">
-        <img decoding="async" alt="" class="absolute block inset-0 max-w-none size-full" src="/v2/mobile/assets/intelligence-pg-ellipse.svg">
-      </div>
-      <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#b7d7ff] text-[12px] whitespace-nowrap">
-        200 · 84 ms
-      </p>
-    </div>
-    <div class="[word-break:break-word] absolute font-mono font-normal leading-[0] left-[23px] text-[#f5f7fa] text-[12.5px] top-[55px] whitespace-nowrap">
-      <p class="mb-0 whitespace-pre"><span class="leading-[1.6] text-[#b7d7ff]">GET</span><span class="leading-[1.6]"> /v1/values?model=iphone-16-pro</span></p>
-      <p class="leading-[1.6] whitespace-pre">    &amp;storage=256&amp;grade=A&amp;market=PL</p>
-    </div>
-    <div class="[word-break:break-word] absolute font-mono font-normal leading-[0] left-[23px] text-[12.5px] text-[rgba(245,247,250,0.72)] top-[115px] whitespace-nowrap">
-      <p class="leading-[1.6] mb-0 whitespace-pre">{</p>
-      <p class="leading-[1.6] mb-0 whitespace-pre">  "median": 741, "currency": "EUR",</p>
-      <p class="leading-[1.6] mb-0 whitespace-pre">  "buyers": 9, "updated": "06:00"</p>
-      <p class="leading-[1.6] whitespace-pre">}</p>
-    </div>
-  </div>
-</div>
-</section>
-
-<section data-section="closing" id="closing" class="v2-sec ip-sec" data-tone="dark" style="--h:1200px; background: linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), radial-gradient(calc(260px * var(--s)) calc(480px * var(--s)) at calc(50% + 0px * var(--s)) calc(528px * var(--s)), rgba(48,71,236,.42) 0%, rgba(34,51,173,.32) 25%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), #0F1115;">
+<section data-section="closing" id="closing" class="v2-sec ip-sec" data-tone="dark" style="--h:1240px; background: linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), radial-gradient(calc(260px * var(--s)) calc(480px * var(--s)) at calc(50% + 0px * var(--s)) calc(528px * var(--s)), rgba(48,71,236,.42) 0%, rgba(34,51,173,.32) 25%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), #0F1115;">
 <style>
   [data-section="closing"] .ip-link:hover, [data-section="closing"] .ip-flink:hover { opacity: .7; color: inherit; }
   [data-section="closing"] input.is-bad { border-color: rgba(255,140,140,.7); }
@@ -1025,25 +474,26 @@
 <div class="absolute inset-0 flex flex-col items-center overflow-clip pb-[10px] pt-[120px]">
   <div class="content-stretch flex flex-col gap-[24px] items-center mb-[-6px] overflow-clip relative shrink-0 w-[350px]" data-m="up" style="--d:300ms;--y:30px;">
     <p class="[word-break:break-word] font-light leading-[1.55] not-italic relative shrink-0 text-[16px] text-[rgba(245,247,250,0.68)] text-center w-full">
-      Get a free benchmark of your market: residual values, buyer depth and regrade rates for your top 20 models.
+      Tell us which decisions you want to support: buyer selection, deduction review or journey performance.
     </p>
     <div class="content-start flex flex-wrap gap-[10px_12px] items-start justify-center overflow-clip relative shrink-0 w-full">
-      <a href="/v2/design-your-program/" class="bg-[#f5f7fa] content-stretch flex items-start overflow-clip px-[22px] py-[14px] relative rounded-[999px] shrink-0 ip-btn">
+      <a href="/v2/contact/?topic=data" class="bg-[#f5f7fa] content-stretch flex items-start overflow-clip px-[22px] py-[14px] relative rounded-[999px] shrink-0 ip-btn">
         <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#0f1115] text-[15px] whitespace-nowrap">
-          Request your benchmark
+          Discuss your data and reporting needs
         </p>
       </a>
-      <a href="/v2/design-your-program/" class="border border-[rgba(245,247,250,0.24)] border-solid content-stretch flex items-start overflow-clip px-[22px] py-[14px] relative rounded-[999px] shrink-0 ip-btn">
+      <a href="/v2/contact/" class="border border-[rgba(245,247,250,0.24)] border-solid content-stretch flex items-start overflow-clip px-[22px] py-[14px] relative rounded-[999px] shrink-0 ip-btn">
         <p class="[word-break:break-word] font-normal leading-[normal] not-italic relative shrink-0 text-[#f5f7fa] text-[15px] whitespace-nowrap">
-          Talk to the data team
+          Discuss your program
         </p>
       </a>
     </div>
   </div>
   <div class="h-[48px] mb-[-6px] relative shrink-0 w-[10px]"></div>
-  <p class="[word-break:break-word] bg-clip-text bg-gradient-to-b font-normal from-[rgba(245,247,250,0.95)] leading-[0.92] mb-[-6px] not-italic relative shrink-0 text-[60px] text-[transparent] text-center to-[rgba(245,247,250,0.1)] tracking-[-1.8px] w-[370px]" data-m="up" style="--d:100ms;--y:40px;">
-    Price every device on evidence
+  <p class="[word-break:break-word] bg-clip-text bg-gradient-to-b font-normal from-[rgba(245,247,250,0.95)] leading-[0.92] mb-[-6px] not-italic relative shrink-0 text-[50px] text-[transparent] text-center to-[rgba(245,247,250,0.1)] tracking-[-1.5px] w-[370px]" data-m="up" style="--d:100ms;--y:40px;">
+    Follow value<br>to settlement
   </p>
+  <div class="h-[28px] relative shrink-0 w-[10px]"></div>
   <div class="backdrop-blur-[15px] border border-[rgba(183,215,255,0.14)] border-solid content-stretch flex flex-col gap-[40px] items-start mb-[-6px] overflow-clip pb-[28px] pt-[32px] px-[24px] relative rounded-[32px] shadow-[0px_-20px_60px_0px_rgba(0,0,0,0.45)] shrink-0 w-[370px]" data-m="up" style="--d:500ms;--y:60px;background: radial-gradient(115.62px 148.18px at 92.5px 88.91px, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 100%), linear-gradient(127.11deg, rgba(28,34,72,.92) 14.29%, rgba(17,20,34,.92) 85.71%)">
     <div class="content-stretch flex flex-col gap-[40px] items-start overflow-clip relative shrink-0 w-full">
       <div class="content-stretch flex flex-col gap-[16px] items-start overflow-clip relative shrink-0 w-full">
@@ -1058,61 +508,38 @@
           Get trade-in insights
         </p>
         <p class="[word-break:break-word] font-normal leading-[normal] min-w-full not-italic relative shrink-0 text-[13px] text-[rgba(255,255,255,0.6)] w-[min-content]">
-          Market reports and program benchmarks. No spam.
+          Guides and program notes from Fintegre. No spam.
         </p>
-        <form class="cl-form content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0 w-full" novalidate><input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required class="bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.16)] border-solid content-stretch flex flex-[1_0_0] h-[48px] items-center min-w-px overflow-clip px-[16px] relative rounded-[10px] w-0 text-[14px] text-white placeholder:text-[rgba(255,255,255,0.5)] outline-none focus:border-[rgba(183,215,255,0.6)]"><button type="submit" class="bg-white content-stretch flex h-[48px] items-center justify-center overflow-clip px-[18px] py-[12px] relative rounded-[10px] shrink-0 w-[105px] border-0 cursor-pointer text-[14px] font-medium text-[#0f1115] hover:bg-[#b7d7ff] transition-colors">Subscribe</button></form>
+        <form class="cl-form content-stretch flex gap-[8px] items-center relative shrink-0 w-full" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/v2/thanks/" novalidate>
+          <input type="hidden" name="form-name" value="newsletter">
+          <p hidden><label>Leave empty <input name="bot-field"></label></p>
+          <label for="nl-email-m" class="sr-only">Work email</label>
+          <input id="nl-email-m" type="email" name="email" placeholder="Work email" autocomplete="email" required aria-describedby="nl-err-m" class="bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.16)] border-solid flex-[1_0_0] h-[48px] min-w-px px-[16px] rounded-[10px] w-0 text-[14px] text-white placeholder:text-[rgba(255,255,255,0.5)] outline-none focus:border-[rgba(183,215,255,0.6)]">
+          <button type="submit" class="bg-white flex h-[48px] items-center justify-center px-[18px] rounded-[10px] shrink-0 w-[105px] border-0 cursor-pointer text-[14px] font-medium text-[#0f1115] hover:bg-[#b7d7ff] transition-colors">Subscribe</button>
+        </form>
+        <p id="nl-err-m" role="alert" hidden class="text-[12px] text-[#ffb4b4] m-0">Enter a valid work email.</p>
+        <p class="text-[12px] text-[rgba(255,255,255,0.5)] m-0">We use your email only to send these notes. <a href="/v2/legal/#privacy" class="text-[rgba(255,255,255,0.8)] underline underline-offset-2">Privacy notice</a></p>
       </div>
       <div class="[word-break:break-word] content-start flex flex-wrap gap-[32px_40px] items-start leading-[normal] not-italic overflow-clip relative shrink-0 text-[14px] w-full whitespace-nowrap">
         <div class="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0">
-          <p class="font-normal relative shrink-0 text-[rgba(255,255,255,0.5)]">
-            Platform
-          </p>
-          <a href="/v2/platform/" class="font-medium relative shrink-0 text-white ip-link">
-            Trade-in orchestration
-          </a>
-          <a href="/v2/intelligence/" class="font-medium relative shrink-0 text-white ip-link">
-            Device value intelligence
-          </a>
-          <a href="/v2/platform/" class="font-medium relative shrink-0 text-white ip-link">
-            Vendor network
-          </a>
-          <a href="/v2/platform/" class="font-medium relative shrink-0 text-white ip-link">
-            Integrations
-          </a>
+          <p class="font-normal relative shrink-0 text-[rgba(255,255,255,0.5)]">Platform</p>
+          <a href="/v2/platform/" class="font-medium relative shrink-0 text-white ip-link">Trade-in orchestration</a>
+          <a href="/v2/intelligence/" class="font-medium relative shrink-0 text-white ip-link">Device Value Intelligence</a>
+          <a href="/v2/vendor-network/" class="font-medium relative shrink-0 text-white ip-link">Vendor Network</a>
+          <a href="/v2/platform/#integrations" class="font-medium relative shrink-0 text-white ip-link">Integrations</a>
         </div>
         <div class="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0">
-          <p class="font-normal relative shrink-0 text-[rgba(255,255,255,0.5)]">
-            Solutions
-          </p>
-          <a href="/v2/solutions/" class="font-medium relative shrink-0 text-white ip-link">
-            Retailers
-          </a>
-          <a href="/v2/solutions/" class="font-medium relative shrink-0 text-white ip-link">
-            Telecom operators
-          </a>
-          <a href="/v2/solutions/" class="font-medium relative shrink-0 text-white ip-link">
-            OEM and ecosystems
-          </a>
-          <a href="/v2/solutions/" class="font-medium relative shrink-0 text-white ip-link">
-            Apple and premium retail
-          </a>
+          <p class="font-normal relative shrink-0 text-[rgba(255,255,255,0.5)]">Solutions</p>
+          <a href="/v2/solutions/#apr" class="font-medium relative shrink-0 text-white ip-link">Apple Premium Resellers</a>
+          <a href="/v2/solutions/#retailers" class="font-medium relative shrink-0 text-white ip-link">Electronics retailers</a>
+          <a href="/v2/solutions/#telecom" class="font-medium relative shrink-0 text-white ip-link">Telecom operators</a>
+          <a href="/v2/solutions/#brands" class="font-medium relative shrink-0 text-white ip-link">Device brands and OEM</a>
         </div>
         <div class="content-stretch flex flex-col gap-[10px] items-start overflow-clip relative shrink-0">
-          <p class="font-normal relative shrink-0 text-[rgba(255,255,255,0.5)]">
-            Company
-          </p>
-          <a href="/v2/customers/" class="font-medium relative shrink-0 text-white ip-link">
-            Customers
-          </a>
-          <a href="/v2/insights/" class="font-medium relative shrink-0 text-white ip-link">
-            Insights
-          </a>
-          <a href="/v2/company/" class="font-medium relative shrink-0 text-white ip-link">
-            About
-          </a>
-          <a href="/v2/design-your-program/" class="font-medium relative shrink-0 text-white ip-link">
-            Contact
-          </a>
+          <p class="font-normal relative shrink-0 text-[rgba(255,255,255,0.5)]">Company</p>
+          <a href="/v2/company/" class="font-medium relative shrink-0 text-white ip-link">About</a>
+          <a href="/v2/insights/" class="font-medium relative shrink-0 text-white ip-link">Insights</a>
+          <a href="/v2/contact/" class="font-medium relative shrink-0 text-white ip-link">Contact</a>
         </div>
       </div>
     </div>
@@ -1120,7 +547,7 @@
       <p class="font-normal relative shrink-0 text-[rgba(255,255,255,0.45)] whitespace-nowrap">
         © 2026 Fintegre. All rights reserved.
       </p>
-      <nav class="font-medium relative shrink-0 text-[rgba(255,255,255,0.8)] flex gap-[10px]" aria-label="Legal"><a href="/v2/company/" class="ip-flink">Privacy</a><a href="/v2/company/" class="ip-flink">Cookies</a><a href="/v2/company/" class="ip-flink">Imprint</a></nav>
+      <nav class="font-medium relative shrink-0 text-[rgba(255,255,255,0.8)] flex gap-[10px]" aria-label="Legal"><a href="/v2/legal/#privacy" class="ip-flink">Privacy</a><a href="/v2/legal/#cookies" class="ip-flink">Cookies</a><a href="/v2/legal/#imprint" class="ip-flink">Imprint</a></nav>
     </div>
   </div>
   <div class="h-[24px] relative shrink-0 w-[10px]"></div>
@@ -1136,7 +563,7 @@
       <div class="mm-top">
         <a href="/v2/" class="h-logo" aria-label="Fintegre home"><span class="h-mark"><img decoding="async" alt="" src="/v2/mobile/assets/hero-logo.svg"></span>Fintegre</a>
         <div class="h-actions">
-          <a href="/v2/design-your-program/" class="h-pillbtn">Design your program</a>
+          <a href="/v2/contact/" class="h-pillbtn">Discuss your program</a>
           <button type="button" class="mm-close" data-menu-close aria-label="Close menu"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-close.svg"></button>
         </div>
       </div>
@@ -1149,9 +576,9 @@
           </div>
           <div class="mm-sub" id="mm-sub-platform" data-mm style="--d:250ms; --ty:12px;"><div><ul>
             <li><a href="/v2/platform/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot-on.svg">Trade-in orchestration</a></li>
-            <li><a href="/v2/intelligence/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device value intelligence</a></li>
-            <li><a href="/v2/platform/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Vendor network</a></li>
-            <li><a href="/v2/platform/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Integrations</a></li>
+            <li><a href="/v2/intelligence/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device Value Intelligence</a></li>
+            <li><a href="/v2/vendor-network/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Vendor Network</a></li>
+            <li><a href="/v2/platform/#integrations"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Integrations</a></li>
           </ul></div></div>
         </div>
         <div class="mm-group">
@@ -1160,25 +587,22 @@
             <button type="button" class="mm-tog" aria-expanded="false" aria-controls="mm-sub-solutions" aria-label="Solutions pages"><img decoding="async" class="is-up" alt="" src="/v2/mobile/assets/hero-menu-chevron-up.svg"><img decoding="async" class="is-down" alt="" src="/v2/mobile/assets/hero-menu-chevron-down.svg"></button>
           </div>
           <div class="mm-sub" id="mm-sub-solutions"><div><ul>
-            <li><a href="/v2/solutions/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Retailers</a></li>
-            <li><a href="/v2/solutions/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Telecom operators</a></li>
-            <li><a href="/v2/solutions/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device brands</a></li>
+            <li><a href="/v2/solutions/#apr"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Apple Premium Resellers</a></li>
+            <li><a href="/v2/solutions/#retailers"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Electronics retailers</a></li>
+            <li><a href="/v2/solutions/#telecom"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Telecom operators</a></li>
+            <li><a href="/v2/solutions/#brands"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device brands and OEM</a></li>
           </ul></div></div>
         </div>
-        <div class="mm-row" data-mm style="--d:270ms;"><a href="/v2/intelligence/">Intelligence</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
-        <div class="mm-row" data-mm style="--d:330ms;"><a href="/v2/customers/">Customers</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:270ms;"><a href="/v2/vendor-network/">Vendor Network</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:330ms;"><a href="/v2/intelligence/">Intelligence</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
         <div class="mm-row" data-mm style="--d:390ms;"><a href="/v2/insights/">Insights</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
         <div class="mm-row" data-mm style="--d:450ms;"><a href="/v2/company/">Company</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
-        <div class="mm-row" data-mm style="--d:510ms;"><a href="/brandbook.html">Brandbook</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
       </nav>
 
       <div class="mm-foot">
-        <a href="/v2/report/" class="mm-card" data-mm style="--d:700ms; --ty:30px;">
-          <span class="mm-cover"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-report.svg"></span>
-          <span class="mm-card__txt"><span>Latest report · Q3 2026</span><b>European Device Value Index  ↗</b></span>
-        </a>
-        <a href="/v2/design-your-program/" class="mm-cta" data-mm style="--d:800ms; --ty:30px;">Talk to Fintegre  →</a>
-        <p class="mm-legal">Privacy    Cookies    Imprint    ·    EN</p>
+        <a href="/v2/vendor-network/" class="mm-cta mm-cta--ghost" data-mm style="--d:700ms; --ty:30px;">Buying trade-in devices? Join the vendor network  →</a>
+        <a href="/v2/contact/" class="mm-cta" data-mm style="--d:800ms; --ty:30px;">Discuss your program  →</a>
+        <p class="mm-legal"><a href="/v2/legal/#privacy">Privacy</a>    <a href="/v2/legal/#cookies">Cookies</a>    <a href="/v2/legal/#imprint">Imprint</a></p>
       </div>
     </div>
   </div>
@@ -1186,22 +610,30 @@
 <script src="/v2/v2.js"></script>
 <script src="/v2/mobile/menu.js"></script>
 <script>
-// Intelligence closing footer: the newsletter form validates in the browser and confirms in place (no backend).
+// Intelligence closing footer: newsletter is a Netlify form ("newsletter"). JS posts it with fetch and confirms in place;
+// without JS, or if the request fails, the form falls back to a normal POST.
 (() => {
-  const form = document.querySelector('[data-section="closing"] .cl-form');
+  const form = document.querySelector('[data-section="closing"] form[name="newsletter"]');
   if (!form) return;
-  const input = form.querySelector('input');
+  const input = form.querySelector('input[type="email"]');
   const btn = form.querySelector('button');
+  const err = document.getElementById(input.getAttribute('aria-describedby'));
+  const bad = (on) => { input.classList.toggle('is-bad', on); input.setAttribute('aria-invalid', on ? 'true' : 'false'); if (err) err.hidden = !on; };
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    if (!input.value.trim() || !input.checkValidity()) { input.classList.add('is-bad'); input.focus(); return; }
-    input.classList.remove('is-bad');
-    input.value = '';
-    input.placeholder = 'Thanks, you are on the list';
-    btn.textContent = 'Subscribed';
+    if (!input.value.trim() || !input.checkValidity()) { bad(true); input.focus(); return; }
+    bad(false);
     btn.disabled = true;
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+      .then((r) => {
+        if (!r.ok) throw new Error(r.status);
+        input.value = '';
+        input.placeholder = 'Thanks, you are on the list';
+        btn.textContent = 'Subscribed';
+      })
+      .catch(() => { HTMLFormElement.prototype.submit.call(form); });
   });
-  input.addEventListener('input', () => input.classList.remove('is-bad'));
+  input.addEventListener('input', () => bad(false));
 })();
 </script>
 </body>

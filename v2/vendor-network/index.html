@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vendor Network — Fintegre (v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  // Phones get the mobile layout.
+  if (innerWidth < 768) location.replace('/v2/mobile/vendor-network/' + location.search + location.hash);
+  // Hide the page until fonts, Tailwind and images are ready, so the hero entrance is seen from its first frame.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="/v2/v2.css">
+</head>
+<body>
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="/v2/" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="/assets/header-mark.svg">Fintegre</a>
+    <nav class="v2-nav">
+      <a href="/v2/platform/">Platform</a>
+      <a href="/v2/solutions/">Solutions</a>
+      <a href="/v2/vendor-network/">Vendor Network</a>
+      <a href="/v2/intelligence/">Intelligence</a>
+      <a href="/v2/insights/">Insights</a>
+      <a href="/v2/company/">Company</a>
+    </nav>
+    <a href="/v2/contact/" class="v2-cta">Discuss your program</a>
+  </div>
+</header>
+
+<main class="page">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:900px; background:#0F1115;">
+<style>
+  [data-section="hero"] .vh-a { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+
+  /* Photo: a buyer's intake desk in a warehouse, indigo tint, scrims toward the copy. */
+  [data-section="hero"] .vh-photo { left: 600px; top: 0; width: 1376px; height: 900px; overflow: hidden; }
+  [data-section="hero"] .vh-photo img { display: block; width: 1376px; height: 900px; max-width: none; object-fit: cover; transform-origin: 50% 50%; }
+  [data-section="hero"] .vh-tint { left: 600px; top: 0; width: 1376px; height: 900px; background: rgba(20,30,110,.14); pointer-events: none; }
+  [data-section="hero"] .vh-scrim { left: 0; top: 0; width: 1100px; height: 900px; pointer-events: none;
+    background: linear-gradient(90deg, #0F1115 0%, #0F1115 50%, rgba(15,17,21,.85) 64%, rgba(15,17,21,.3) 84%, rgba(15,17,21,0) 100%); }
+  [data-section="hero"] .vh-scrim::before { content: ''; position: absolute; right: 100%; top: 0; width: 2000px; height: 100%; background: #0F1115; }
+  [data-section="hero"] .vh-fade-top { left: -1000px; top: 0; width: 3440px; height: 200px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(15,17,21,.9) 0%, rgba(15,17,21,.45) 55%, rgba(15,17,21,0) 100%); }
+  [data-section="hero"] .vh-fade-bot { left: -1000px; top: 660px; width: 3440px; height: 240px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.96) 100%); }
+  [data-section="hero"] .vh-room { left: -340px; top: 120px; width: 1120px; height: 920px; max-width: none; pointer-events: none; }
+
+  /* Top bar (part of the hero design) */
+  [data-section="hero"] .vh-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; z-index: 2; }
+  [data-section="hero"] .vh-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .vh-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .vh-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .vh-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); white-space: nowrap; }
+  [data-section="hero"] .vh-nav a { transition: color .2s; }
+  [data-section="hero"] .vh-nav a:hover, [data-section="hero"] .vh-nav a[aria-current] { color: #F5F7FA; }
+  [data-section="hero"] .vh-pill { display: inline-flex; align-items: center; padding: 10px 18px; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s; }
+  [data-section="hero"] .vh-pill:hover { background: #fff; }
+
+  /* Copy */
+  [data-section="hero"] .vh-copy { left: 120px; top: 168px; width: 600px; display: flex; flex-direction: column; align-items: flex-start; }
+  [data-section="hero"] .vh-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px 8px 12px; border-radius: 999px; font-size: 13px; line-height: normal; color: #F5F7FA; white-space: nowrap;
+    background: rgba(48,71,236,.92); }
+  [data-section="hero"] .vh-eyebrow img { width: 6px; height: 6px; display: block; }
+  [data-section="hero"] h1 { margin: 24px 0 0; width: 600px; font-weight: 400; font-size: 64px; line-height: 1.02; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .vh-lede { margin-top: 24px; width: 500px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.78); }
+  [data-section="hero"] .vh-body { margin-top: 14px; width: 500px; font-weight: 300; font-size: 15px; line-height: 1.55; color: rgba(245,247,250,.6); }
+  [data-section="hero"] .vh-ctas { margin-top: 32px; display: flex; gap: 12px; }
+  [data-section="hero"] .vh-btn { display: inline-flex; align-items: center; padding: 15px 24px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s, box-shadow .25s; }
+  [data-section="hero"] .vh-btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .vh-btn--light:hover { background: #fff; }
+  [data-section="hero"] .vh-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="hero"] .vh-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.55); }
+
+  /* Buyer-side opportunity card (sample data) + fibre from the phone in hand */
+  [data-section="hero"] .vh-card { left: 790px; top: 372px; width: 300px; display: flex; flex-direction: column; gap: 14px; padding: 24px 26px; border-radius: 26px; line-height: normal;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="hero"] .vh-card__k { font-size: 13px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="hero"] .vh-card__t { font-weight: 300; font-size: 22px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .vh-card dl { display: flex; flex-direction: column; gap: 9px; margin: 0; font-size: 14px; }
+  [data-section="hero"] .vh-card dl div { display: flex; justify-content: space-between; gap: 12px; white-space: nowrap; }
+  [data-section="hero"] .vh-card dt { font-weight: 300; color: #A7B0BE; }
+  [data-section="hero"] .vh-card dd { margin: 0; color: #F5F7FA; }
+  [data-section="hero"] .vh-card__div { height: 1px; background: rgba(183,215,255,.14); }
+  [data-section="hero"] .vh-card__fit { display: flex; align-items: center; justify-content: space-between; padding: 13px 14px; border-radius: 14px; background: rgba(48,71,236,.9); color: #F5F7FA; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .vh-card__s { font-size: 12px; font-weight: 300; color: #A7B0BE; }
+  [data-section="hero"] .vh-fibre { left: 1090px; top: 470px; overflow: visible; pointer-events: none; }
+  [data-section="hero"] .vh-node { left: 1268px; top: 499px; width: 34px; height: 34px; }
+  [data-section="hero"] .vh-node img { display: block; width: 34px; height: 34px; }
+
+  .motion [data-section="hero"] .vh-photo { opacity: 0; transition: opacity 1.2s var(--ease); }
+  .motion [data-section="hero"] .vh-photo img { scale: 1.06; transition: scale 4.5s var(--ease); }
+  .motion [data-section="hero"].is-in .vh-photo { opacity: 1; }
+  .motion [data-section="hero"].is-in .vh-photo img { scale: 1; }
+</style>
+  <div class="v2-canvas">
+    <div class="vh-a vh-photo"><img decoding="async" alt="A device buyer's team member checking a trade-in iPhone at a warehouse intake desk" src="/v2/assets/ecosystem-warehouse.webp" width="1376" height="900"></div>
+    <div class="vh-a vh-tint" aria-hidden="true"></div>
+    <div class="vh-a vh-scrim" aria-hidden="true"></div>
+    <div class="vh-a vh-fade-top" aria-hidden="true"></div>
+    <div class="vh-a vh-fade-bot" aria-hidden="true"></div>
+    <img decoding="async" class="vh-a vh-room" alt="" src="/v2/assets/company-hero-roomlight.svg">
+
+    <div class="vh-a vh-top" data-m="down">
+      <a href="/v2/" class="vh-logo" aria-label="Fintegre home"><span class="vh-mark"><img decoding="async" alt="" src="/v2/assets/hero-logo.svg"></span>Fintegre</a>
+      <nav class="vh-nav" aria-label="Main">
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/vendor-network/" aria-current="page">Vendor Network</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/contact/" class="vh-pill">Discuss your program</a>
+    </div>
+
+    <div class="vh-a vh-copy" data-m="up" style="--d:150ms">
+      <p class="vh-eyebrow"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">For businesses that buy trade-in devices</p>
+      <h1>Join the network<br>behind better<br>trade‑in value.</h1>
+      <p class="vh-lede">Connect your buying capacity with device supply from participating retailers, telecom operators and device brands.</p>
+      <p class="vh-body">Fintegre coordinates trade-in opportunities, device information and transaction workflows so qualified buyers can assess opportunities against their purchasing criteria. In Fintegre, a vendor is a business that buys trade-in devices: refurbishers, recommerce businesses and other device buyers.</p>
+      <div class="vh-ctas">
+        <a href="#apply" class="vh-btn vh-btn--light">Apply to join the vendor network</a>
+        <a href="#apply" class="vh-btn vh-btn--ghost">Discuss your buying requirements</a>
+      </div>
+    </div>
+
+    <svg class="vh-a vh-fibre" width="190" height="60" viewBox="0 0 190 60" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1900ms" d="M0.7 0.7C70 0.7 110 45.7 180 45.7" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.6"/></svg>
+    <div class="vh-a vh-node" data-m="pop" style="--d:1700ms" aria-hidden="true"><img decoding="async" alt="" src="/v2/assets/ecosystem-node.svg"></div>
+
+    <article class="vh-a vh-card" data-m="up" style="--d:1100ms" aria-label="Example opportunity as a buyer sees it, sample data">
+      <p class="vh-card__k">Opportunity · retail trade-in</p>
+      <p class="vh-card__t">iPhone 15 Pro · 256 GB</p>
+      <dl>
+        <div><dt>Screen</dt><dd>Grade A</dd></div>
+        <div><dt>Battery health</dt><dd>91 %</dd></div>
+        <div><dt>Casing</dt><dd>Grade B</dd></div>
+        <div><dt>Diagnostics report</dt><dd>Available</dd></div>
+        <div><dt>Photos</dt><dd>6 attached</dd></div>
+      </dl>
+      <div class="vh-card__div" aria-hidden="true"></div>
+      <p class="vh-card__fit"><span>Fits your buying criteria</span><span>Yes</span></p>
+      <p class="vh-card__s">Sample data</p>
+    </article>
+  </div>
+</section>
+
+<section data-section="value" id="value" class="v2-sec" data-tone="light" style="--h:900px; background: radial-gradient(calc(640px * var(--s)) calc(340px * var(--s)) at calc(50% + 360px * var(--s)) calc(260px * var(--s)), rgba(184,214,255,.55) 0%, rgba(245,247,250,0) 100%), #F5F7FA;">
+<style>
+  [data-section="value"] .vv-a { position: absolute; }
+  [data-section="value"] p, [data-section="value"] h2, [data-section="value"] h3 { margin: 0; }
+  [data-section="value"] .vv-copy { left: 120px; top: 130px; width: 1200px; display: flex; justify-content: space-between; align-items: flex-end; }
+  [data-section="value"] .vv-k { font-size: 15px; color: #3047EC; }
+  [data-section="value"] h2 { margin-top: 14px; font-weight: 400; font-size: 60px; line-height: 1.02; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="value"] .vv-lede { width: 420px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(15,17,21,.65); }
+  [data-section="value"] .vv-grid { left: 120px; top: 382px; width: 1200px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+  [data-section="value"] .vv-card { grid-column: span 2; position: relative; min-height: 168px; padding: 28px 28px 30px; border-radius: 24px; background: #fff; box-shadow: 0 24px 60px rgba(15,20,51,.10); display: flex; flex-direction: column; gap: 10px; }
+  [data-section="value"] .vv-card:nth-child(4), [data-section="value"] .vv-card:nth-child(5) { grid-column: span 3; }
+  [data-section="value"] .vv-card i { font-style: normal; font-size: 13px; color: #3047EC; }
+  [data-section="value"] .vv-card h3 { font-weight: 400; font-size: 22px; letter-spacing: -0.02em; line-height: 1.2; color: #0F1115; }
+  [data-section="value"] .vv-card p { font-weight: 300; font-size: 15px; line-height: 1.55; color: rgba(15,17,21,.65); max-width: 470px; }
+  [data-section="value"] .vv-card--on { background: #3047EC; box-shadow: 0 24px 50px rgba(18,26,115,.35); }
+  [data-section="value"] .vv-card--on i { color: #B7D7FF; }
+  [data-section="value"] .vv-card--on h3 { color: #F5F7FA; }
+  [data-section="value"] .vv-card--on p { color: rgba(245,247,250,.8); }
+  [data-section="value"] .vv-note { left: 120px; top: 812px; display: flex; align-items: center; gap: 10px; font-size: 13px; color: #6B7380; white-space: nowrap; }
+  [data-section="value"] .vv-note img { width: 7px; height: 7px; }
+</style>
+  <div class="v2-canvas">
+    <div class="vv-a vv-copy">
+      <div data-m="up" style="--d:100ms">
+        <p class="vv-k">What participation offers</p>
+        <h2>Buy with better<br>information.</h2>
+      </div>
+      <p class="vv-lede" data-m="up" style="--d:250ms">Fintegre connects enterprise trade-in journeys with buyers whose demand, capacity and operating capabilities fit the program.</p>
+    </div>
+    <div class="vv-a vv-grid">
+      <article class="vv-card vv-card--on" data-m="up" style="--d:350ms"><i>01</i><h3>Relevant device supply</h3><p>Connect with trade-in opportunities originating through participating enterprise channels.</p></article>
+      <article class="vv-card" data-m="up" style="--d:430ms"><i>02</i><h3>Fit with your buying criteria</h3><p>Define the markets, device categories, models and conditions you buy, together with your purchasing capacity.</p></article>
+      <article class="vv-card" data-m="up" style="--d:510ms"><i>03</i><h3>Clearer offer decisions</h3><p>Review device information and available condition evidence before making an offer.</p></article>
+      <article class="vv-card" data-m="up" style="--d:590ms"><i>04</i><h3>Coordinated execution</h3><p>Work within agreed processes for offers, collection, inspection, discrepancies and settlement.</p></article>
+      <article class="vv-card" data-m="up" style="--d:670ms"><i>05</i><h3>Repeat-business potential</h3><p>Build relationships through competitive offers, reliable execution and consistent settlement performance.</p></article>
+    </div>
+    <p class="vv-a vv-note" data-m="up" style="--d:800ms"><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">Participation does not guarantee volumes, margins, allocation or exclusivity.</p>
+  </div>
+</section>
+
+<section data-section="journey" id="journey" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(760px * var(--s)) calc(330px * var(--s)) at calc(50% - 120px * var(--s)) calc(560px * var(--s)), rgba(34,54,196,.85) 0%, rgba(26,40,143,.7) 25%, rgba(18,26,90,.6) 50%, rgba(17,22,55,.3) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="journey"] .vj-a { position: absolute; }
+  [data-section="journey"] p, [data-section="journey"] h2, [data-section="journey"] h3, [data-section="journey"] ol { margin: 0; }
+  [data-section="journey"] .vj-copy { left: 120px; top: 130px; width: 1200px; display: flex; justify-content: space-between; align-items: flex-end; }
+  [data-section="journey"] .vj-k { font-size: 15px; color: #B7D7FF; }
+  [data-section="journey"] h2 { margin-top: 14px; font-weight: 400; font-size: 60px; line-height: 1.02; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="journey"] .vj-lede { width: 420px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="journey"] .vj-line { left: 137px; top: 416px; width: 973px; overflow: visible; pointer-events: none; }
+  [data-section="journey"] .vj-steps { left: 120px; top: 400px; width: 1200px; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  [data-section="journey"] .vj-step { display: flex; flex-direction: column; gap: 16px; }
+  [data-section="journey"] .vj-node { position: relative; width: 34px; height: 34px; }
+  [data-section="journey"] .vj-node img { display: block; width: 34px; height: 34px; }
+  [data-section="journey"] .vj-card { flex: 1; padding: 24px 22px 26px; border-radius: 22px; min-height: 250px; display: flex; flex-direction: column; gap: 12px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); }
+  [data-section="journey"] .vj-step:last-child .vj-card { background: rgba(48,71,236,.88); border-color: transparent; box-shadow: 0 24px 50px rgba(13,20,102,.5); }
+  [data-section="journey"] .vj-card i { font-style: normal; font-size: 13px; color: #B7D7FF; }
+  [data-section="journey"] .vj-card h3 { font-weight: 400; font-size: 19px; line-height: 1.25; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="journey"] .vj-card p { font-weight: 300; font-size: 14px; line-height: 1.55; color: rgba(245,247,250,.62); }
+  [data-section="journey"] .vj-step:last-child .vj-card p { color: rgba(245,247,250,.82); }
+  [data-section="journey"] .vj-note { left: 120px; top: 786px; display: flex; align-items: center; gap: 10px; font-size: 13px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="journey"] .vj-note img { width: 6px; height: 6px; }
+</style>
+  <div class="v2-canvas">
+    <div class="vj-a vj-copy">
+      <div data-m="up" style="--d:100ms">
+        <p class="vj-k">Participation journey</p>
+        <h2>From application<br>to completed trades.</h2>
+      </div>
+      <p class="vj-lede" data-m="up" style="--d:250ms">Five steps take a buyer from first contact to regular participation. Each step depends on qualification and agreed terms.</p>
+    </div>
+
+    <svg class="vj-a vj-line" width="973" height="2" viewBox="0 0 973 2" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:500ms" d="M0 1H973" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.45"/></svg>
+    <ol class="vj-a vj-steps">
+      <li class="vj-step" data-m="up" style="--d:450ms"><span class="vj-node"><img decoding="async" alt="" src="/v2/assets/ecosystem-node.svg"></span><div class="vj-card"><i>Step 1</i><h3>Tell us what you buy.</h3><p>Markets, device categories, models, conditions and purchasing capacity.</p></div></li>
+      <li class="vj-step" data-m="up" style="--d:550ms"><span class="vj-node"><img decoding="async" alt="" src="/v2/assets/ecosystem-node.svg"></span><div class="vj-card"><i>Step 2</i><h3>Complete business and operational qualification.</h3><p>Company details, operating capabilities and the onboarding documents requested after the initial review.</p></div></li>
+      <li class="vj-step" data-m="up" style="--d:650ms"><span class="vj-node"><img decoding="async" alt="" src="/v2/assets/ecosystem-node.svg"></span><div class="vj-card"><i>Step 3</i><h3>Agree commercial and operational responsibilities.</h3><p>Terms for offers, collection, inspection, discrepancies and settlement.</p></div></li>
+      <li class="vj-step" data-m="up" style="--d:750ms"><span class="vj-node"><img decoding="async" alt="" src="/v2/assets/ecosystem-node.svg"></span><div class="vj-card"><i>Step 4</i><h3>Connect to suitable opportunities following approval.</h3><p>Review the device information and condition evidence available for each opportunity, then decide whether to make an offer.</p></div></li>
+      <li class="vj-step" data-m="up" style="--d:850ms"><span class="vj-node"><img decoding="async" alt="" src="/v2/assets/ecosystem-node.svg"></span><div class="vj-card"><i>Step 5</i><h3>Build a performance record through completed transactions.</h3><p>Competitive offers, reliable execution and consistent settlement shape the relationship over time.</p></div></li>
+    </ol>
+    <p class="vj-a vj-note" data-m="up" style="--d:1000ms"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Fintegre's operational team confirms the final process, requirements and terms with each buyer.</p>
+  </div>
+</section>
+
+<section data-section="apply" id="apply" class="v2-sec" data-tone="light" style="--h:1270px; background: radial-gradient(calc(620px * var(--s)) calc(360px * var(--s)) at calc(50% - 380px * var(--s)) calc(820px * var(--s)), rgba(184,214,255,.55) 0%, rgba(245,247,250,0) 100%), #F5F7FA;">
+<style>
+  [data-section="apply"] .va-a { position: absolute; }
+  [data-section="apply"] p, [data-section="apply"] h2, [data-section="apply"] h3 { margin: 0; }
+  [data-section="apply"] [hidden] { display: none !important; }
+
+  /* Left column */
+  [data-section="apply"] .va-copy { left: 120px; top: 130px; width: 400px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  [data-section="apply"] .va-k { font-size: 15px; color: #3047EC; }
+  [data-section="apply"] h2 { margin-top: -10px; font-weight: 400; font-size: 56px; line-height: 1.04; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="apply"] .va-lede { font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(15,17,21,.68); }
+  [data-section="apply"] .va-list { margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  [data-section="apply"] .va-list li { display: flex; gap: 12px; align-items: baseline; font-weight: 300; font-size: 15px; line-height: 1.5; color: #0F1115; }
+  [data-section="apply"] .va-list img { flex: none; width: 8px; height: 8px; translate: 0 -1px; }
+
+  /* Form card */
+  [data-section="apply"] .va-card { left: 600px; top: 120px; width: 720px; padding: 40px 40px 36px; border-radius: 28px; background: #fff; box-shadow: 0 30px 60px rgba(15,20,64,.12); color: #0F1115; overflow: clip; }
+  [data-section="apply"] .va-title { font-weight: 400; font-size: 26px; letter-spacing: -0.02em; line-height: normal; }
+  [data-section="apply"] .va-req { margin-top: 6px; font-weight: 300; font-size: 13px; color: #6B7380; }
+  [data-section="apply"] .va-grid { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 14px; row-gap: 18px; }
+  [data-section="apply"] .va-wide { grid-column: 1 / -1; }
+  [data-section="apply"] .va-field { position: relative; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  [data-section="apply"] .va-field label, [data-section="apply"] legend { font-size: 14px; color: rgba(15,17,21,.75); padding: 0; }
+  [data-section="apply"] .va-field label small, [data-section="apply"] legend small { font-size: 12px; color: #6B7380; }
+  [data-section="apply"] .va-field input, [data-section="apply"] .va-field textarea { width: 100%; height: 52px; padding: 0 16px; border-radius: 14px; border: 1px solid rgba(15,17,21,.12); background: #fff; outline: none;
+    font: 300 15px/1.4 'Geologica', system-ui, sans-serif; color: #0F1115; transition: border-color .2s, box-shadow .2s; }
+  [data-section="apply"] .va-field textarea { height: 92px; padding: 14px 16px; resize: none; }
+  [data-section="apply"] .va-field ::placeholder { color: rgba(15,17,21,.38); }
+  [data-section="apply"] .va-field input:focus, [data-section="apply"] .va-field textarea:focus { border-color: #3047EC; box-shadow: 0 0 0 .5px #3047EC, 0 0 0 5px rgba(48,71,237,.12); }
+  [data-section="apply"] .is-bad input, [data-section="apply"] .is-bad textarea { border-color: #D93F4C; box-shadow: 0 0 0 .5px #D93F4C; }
+  [data-section="apply"] .va-err { position: absolute; right: 2px; top: 1px; font-size: 12px; color: #D93F4C; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  [data-section="apply"] .is-bad .va-err { opacity: 1; }
+  [data-section="apply"] fieldset { position: relative; margin: 0; padding: 0; border: 0; min-width: 0; }
+  [data-section="apply"] .va-chips { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+  [data-section="apply"] .va-chips .va-chip { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; font-size: 14px; line-height: normal; color: #0F1115; cursor: pointer; white-space: nowrap;
+    box-shadow: inset 0 0 0 1px rgba(15,17,21,.12); transition: background-color .25s, box-shadow .25s, color .25s; }
+  [data-section="apply"] .va-chips .va-chip:hover { box-shadow: inset 0 0 0 1px rgba(48,71,236,.45); }
+  [data-section="apply"] .va-chips .va-chip input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+  [data-section="apply"] .va-chips .va-chip img { width: 7px; height: 7px; display: none; }
+  [data-section="apply"] .va-chips .va-chip:has(input:checked) { background: #3047EC; color: #F5F7FA; box-shadow: none; }
+  [data-section="apply"] .va-chips .va-chip:has(input:checked) img { display: block; }
+  [data-section="apply"] .va-chips .va-chip:has(input:focus-visible) { outline: 2px solid #3047EC; outline-offset: 2px; }
+  [data-section="apply"] .is-bad .va-chip { box-shadow: inset 0 0 0 1px rgba(217,63,76,.6); }
+  [data-section="apply"] .va-sep { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; margin-top: 6px; font-size: 13px; color: #6B7380; white-space: nowrap; }
+  [data-section="apply"] .va-sep::after { content: ''; flex: 1; height: 1px; background: rgba(15,17,21,.08); }
+  [data-section="apply"] .va-foot { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  [data-section="apply"] .va-submit { border: 0; cursor: pointer; padding: 16px 26px; border-radius: 999px; background: #3047EC; color: #F5F7FA; font: 400 15px/normal 'Geologica', system-ui, sans-serif; transition: background-color .25s, opacity .25s; }
+  [data-section="apply"] .va-submit:hover { background: #2238d6; }
+  [data-section="apply"] .va-submit:disabled { opacity: .6; cursor: default; }
+  [data-section="apply"] .va-note { font-weight: 300; font-size: 13px; line-height: 1.5; color: #6B7380; }
+  [data-section="apply"] .va-note a { color: #3047EC; text-decoration: underline; text-underline-offset: 2px; }
+  [data-section="apply"] .va-status { font-size: 13px; color: #D93F4C; min-height: 18px; }
+
+  /* Success state, in place of the form */
+  [data-section="apply"] .va-done { position: absolute; inset: 0; padding: 72px 56px; background: #fff; display: flex; flex-direction: column; gap: 18px; align-items: flex-start;
+    opacity: 0; visibility: hidden; transition: opacity .5s var(--ease), visibility 0s .5s; }
+  [data-section="apply"] .va-card.is-sent .va-done { opacity: 1; visibility: visible; transition: opacity .5s var(--ease); }
+  [data-section="apply"] .va-sent { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #3047EC; font-size: 14px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="apply"] .va-sent img { width: 7px; height: 7px; display: block; }
+  [data-section="apply"] .va-done h3 { font-weight: 400; font-size: 40px; line-height: 1.08; letter-spacing: -0.03em; outline: none; }
+  [data-section="apply"] .va-done p { max-width: 520px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.7); }
+  [data-section="apply"] .va-steps { margin: 10px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  [data-section="apply"] .va-steps li { display: flex; gap: 14px; align-items: baseline; font-weight: 300; font-size: 15px; line-height: 1.5; color: #0F1115; }
+  [data-section="apply"] .va-steps b { flex: none; width: 22px; font-weight: 400; font-size: 13px; color: #3047EC; }
+  [data-section="apply"] .va-back { margin-top: 10px; display: inline-flex; padding: 15px 24px; border-radius: 999px; font-size: 15px; color: #0F1115; box-shadow: inset 0 0 0 1px rgba(15,17,21,.2); }
+  [data-section="apply"] .va-done .va-sent { color: #F5F7FA; }
+  [data-section="apply"] fieldset .va-err { top: -19px; }
+</style>
+  <div class="v2-canvas">
+    <div class="va-a va-copy" data-m="up" style="--d:100ms">
+      <p class="va-k">Vendor application</p>
+      <h2>Apply to join the vendor network.</h2>
+      <p class="va-lede">For device buyers, refurbishers and recommerce businesses. Tell us which devices and markets you serve, and how you buy.</p>
+      <ul class="va-list">
+        <li><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">Applications are reviewed for suitability.</li>
+        <li><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">Participation depends on qualification, program requirements and agreed terms.</li>
+        <li><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">Detailed onboarding documents are requested after the initial review.</li>
+      </ul>
+    </div>
+
+    <div class="va-a va-card" data-m="up" style="--d:250ms" data-va-card>
+      <form name="vendor-application" method="POST" action="/v2/vendor-network/?sent=1" data-netlify="true" netlify-honeypot="bot-field" novalidate data-va-form aria-labelledby="va-title">
+        <input type="hidden" name="form-name" value="vendor-application">
+        <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <input type="hidden" name="source_page" value="" data-source-page>
+        <h3 class="va-title" id="va-title">Your buying business</h3>
+        <p class="va-req">All fields are required unless marked optional.</p>
+        <div class="va-grid">
+          <div class="va-field"><label for="va-name">Contact name</label><input id="va-name" name="contact_name" type="text" autocomplete="name" required aria-describedby="va-name-err"><span class="va-err" id="va-name-err">Enter your name</span></div>
+          <div class="va-field"><label for="va-email">Work email</label><input id="va-email" name="email" type="email" autocomplete="email" placeholder="name@company.com" required aria-describedby="va-email-err"><span class="va-err" id="va-email-err">Enter a work email</span></div>
+          <div class="va-field"><label for="va-company">Company</label><input id="va-company" name="company" type="text" autocomplete="organization" required aria-describedby="va-company-err"><span class="va-err" id="va-company-err">Enter your company</span></div>
+          <div class="va-field"><label for="va-web">Website or company profile</label><input id="va-web" name="website" type="text" autocomplete="url" placeholder="company.com" required aria-describedby="va-web-err"><span class="va-err" id="va-web-err">Enter a link</span></div>
+          <div class="va-field va-wide"><label for="va-markets">Markets served</label><input id="va-markets" name="markets_served" type="text" placeholder="Countries or regions where you buy" required aria-describedby="va-markets-err"><span class="va-err" id="va-markets-err">Enter the markets you serve</span></div>
+          <fieldset class="va-field va-wide" data-va-group aria-describedby="va-cat-err">
+            <legend>Device categories purchased</legend>
+            <span class="va-err" id="va-cat-err">Choose at least one category</span>
+            <div class="va-chips">
+              <label class="va-chip"><input type="checkbox" name="device_categories[]" value="Smartphones"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Smartphones</label>
+              <label class="va-chip"><input type="checkbox" name="device_categories[]" value="Tablets"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Tablets</label>
+              <label class="va-chip"><input type="checkbox" name="device_categories[]" value="Laptops"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Laptops</label>
+              <label class="va-chip"><input type="checkbox" name="device_categories[]" value="Smartwatches"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Smartwatches</label>
+              <label class="va-chip"><input type="checkbox" name="device_categories[]" value="Other"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Other</label>
+            </div>
+          </fieldset>
+          <p class="va-sep">Optional</p>
+          <div class="va-field"><label for="va-cap">Purchasing capacity <small>(optional)</small></label><input id="va-cap" name="purchasing_capacity" type="text" placeholder="e.g. devices per month"></div>
+          <div class="va-field"><label for="va-loc">Collection locations <small>(optional)</small></label><input id="va-loc" name="collection_locations" type="text" placeholder="Where you can collect from"></div>
+          <div class="va-field"><label for="va-models">Preferred models and conditions <small>(optional)</small></label><input id="va-models" name="preferred_models" type="text" placeholder="e.g. models and grades"></div>
+          <div class="va-field"><label for="va-int">Integration capabilities <small>(optional)</small></label><input id="va-int" name="integration_capabilities" type="text" placeholder="e.g. API, file exchange"></div>
+          <div class="va-field va-wide"><label for="va-info">Additional information <small>(optional)</small></label><textarea id="va-info" name="additional_information"></textarea></div>
+        </div>
+        <div class="va-foot">
+          <button type="submit" class="va-submit">Apply to join the vendor network</button>
+          <p class="va-status" role="status" aria-live="polite" data-va-status></p>
+          <p class="va-note">Applications are reviewed for suitability. Participation depends on qualification, program requirements and agreed terms. We use these details to review your application, as described in our <a href="/v2/legal/#privacy">privacy notice</a>.</p>
+        </div>
+      </form>
+
+      <div class="va-done" role="region" aria-label="Application received" data-va-done>
+        <p class="va-sent"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Application received</p>
+        <h3 tabindex="-1" data-va-focus>Thanks. We have your application.</h3>
+        <p>Fintegre reviews each application for suitability. What happens next:</p>
+        <ol class="va-steps">
+          <li><b>01</b>We review your buying criteria, markets and capabilities.</li>
+          <li><b>02</b>If there is a fit, we contact you and request detailed onboarding documents.</li>
+          <li><b>03</b>Qualification and agreed terms come before any connection to opportunities.</li>
+        </ol>
+        <a class="va-back" href="/v2/platform/">Explore the platform</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="closing" id="closing" class="v2-sec" data-tone="dark" style="--h:881px; background: linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), radial-gradient(calc(960px * var(--s)) calc(352.4px * var(--s)) at 50% calc(387.64px * var(--s)), rgba(48,71,236,.42) 0%, rgba(34,51,173,.32) 25%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), #0F1115;">
+  <style>
+    [data-section="closing"] .cl-head {
+      position: absolute; left: 70px; top: 284px; width: 1300px; margin: 0; text-align: center;
+      font-weight: 400; font-size: 150px; line-height: .92; letter-spacing: -4.5px;
+      background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    }
+    [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+    [data-section="closing"] .cl-foot {
+      position: absolute; left: 20px; top: 538px; width: 1400px; height: 343px; padding: 56px 56px 40px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: radial-gradient(437.5px 77.96px at 350px 46.77px, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 100%), linear-gradient(169.59deg, rgba(28,34,72,.92) 14.29%, rgba(17,20,34,.92) 85.71%);
+      border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 -20px 60px rgba(0,0,0,.45); border-radius: 32px; color: #F5F7FA; line-height: normal;
+    }
+    [data-section="closing"] .cl-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    [data-section="closing"] .cl-sub { position: relative; display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+    [data-section="closing"] .cl-logo { position: relative; display: block; width: 99.3px; height: 30px; }
+    [data-section="closing"] .cl-logo img { position: absolute; display: block; max-width: none; }
+    [data-section="closing"] .cl-sub h3 { margin: 0; font-weight: 500; font-size: 14px; color: #F5F7FA; }
+    [data-section="closing"] .cl-sub p { margin: 0; font-size: 13px; color: rgba(255,255,255,.6); }
+    [data-section="closing"] form { display: flex; gap: 8px; align-items: flex-start; }
+    [data-section="closing"] input {
+      width: 260px; height: 46px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08); color: #fff; font: 400 14px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s;
+    }
+    [data-section="closing"] input::placeholder { color: rgba(255,255,255,.5); }
+    [data-section="closing"] input:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.1); }
+    [data-section="closing"] input.is-bad { border-color: rgba(255,140,140,.7); }
+    [data-section="closing"] button {
+      border: 0; cursor: pointer; padding: 12px 18px; border-radius: 10px; background: #fff; color: #0F1115;
+      font: 500 14px/18px 'Geologica', system-ui, sans-serif; transition: background-color .25s;
+    }
+    [data-section="closing"] button:hover:not(:disabled) { background: #B7D7FF; }
+    [data-section="closing"] button:disabled { cursor: default; background: #B7D7FF; }
+    [data-section="closing"] .cl-msg { position: absolute; left: 0; top: 166px; margin: 0; font-size: 12px; white-space: nowrap; color: rgba(255,255,255,.6); opacity: 0; transition: opacity .3s; }
+    [data-section="closing"] .cl-msg.is-on { opacity: 1; }
+    [data-section="closing"] .cl-msg.is-err { color: #FFB4B4; }
+    [data-section="closing"] .cl-msg.is-ok { color: #B7D7FF; }
+    [data-section="closing"] .cl-cols { display: flex; gap: 96px; white-space: nowrap; }
+    [data-section="closing"] .cl-cols nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    [data-section="closing"] .cl-cols span { font-size: 13px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-cols a, [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 14px; color: #fff; transition: opacity .2s; }
+    [data-section="closing"] .cl-cols a:hover, [data-section="closing"] .cl-legal a:hover { opacity: .7; }
+    [data-section="closing"] .cl-bottom { display: flex; justify-content: space-between; font-size: 12px; }
+    [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
+    [data-section="closing"] .cl-legal { display: flex; gap: 10px; }
+    [data-section="closing"] .cl-legal a { font-size: 12px; color: rgba(255,255,255,.8); }
+  </style>
+  <div class="v2-canvas">
+    <h2 class="cl-head" data-m="up">Join the buying<br><em>network</em></h2>
+
+    <footer class="cl-foot" data-m="up" style="--d:250ms">
+      <div class="cl-top">
+        <div class="cl-sub">
+          <a href="/v2/" class="cl-logo" aria-label="Fintegre home">
+            <img decoding="async" src="/v2/assets/closing-logo-mark.svg" alt="" width="32.1605" height="23.0769" style="left:3.77px; top:3.46px;">
+            <img decoding="async" src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
+          </a>
+          <h3>Get trade-in insights</h3>
+          <p>Guides and program notes from Fintegre. No spam.</p>
+          <form class="cl-form" name="newsletter" method="POST" action="/v2/thanks/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+              <input type="hidden" name="form-name" value="newsletter">
+              <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+            <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+          <p class="cl-msg" role="status" aria-live="polite"></p>
+        </div>
+        <div class="cl-cols">
+          <nav aria-label="Platform"><span>Platform</span>
+            <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device Value Intelligence</a><a href="/v2/vendor-network/">Vendor Network</a><a href="/v2/platform/#integrations">Integrations</a>
+          </nav>
+          <nav aria-label="Solutions"><span>Solutions</span>
+            <a href="/v2/solutions/#apr">Apple Premium Resellers</a><a href="/v2/solutions/#retailers">Electronics retailers</a><a href="/v2/solutions/#telecom">Telecom operators</a><a href="/v2/solutions/#brands">Device brands and OEM</a>
+          </nav>
+          <nav aria-label="Company"><span>Company</span>
+            <a href="/v2/company/">About</a><a href="/v2/insights/">Insights</a><a href="/v2/contact/">Contact</a>
+          </nav>
+        </div>
+      </div>
+      <div class="cl-bottom">
+        <small>© 2026 Fintegre. All rights reserved.</small>
+        <nav class="cl-legal" aria-label="Legal"><a href="/v2/legal/#privacy">Privacy</a><a href="/v2/legal/#cookies">Cookies</a><a href="/v2/legal/#imprint">Imprint</a></nav>
+      </div>
+    </footer>
+  </div>
+</section>
+</main>
+<script src="/v2/v2.js"></script>
+<script>
+// Vendor application (Netlify form "vendor-application"): validates in the browser, posts with fetch and shows
+// the success state in place. Without JS the form posts normally and returns to ?sent=1, which shows the same state.
+(() => {
+  const sec = document.querySelector('[data-section="apply"]');
+  const form = sec && sec.querySelector('[data-va-form]');
+  if (!form) return;
+  const card = sec.querySelector('[data-va-card]');
+  const status = sec.querySelector('[data-va-status]');
+  const btn = form.querySelector('button[type="submit"]');
+  const group = form.querySelector('[data-va-group]');
+  const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+
+  // Where the visitor came from (path only).
+  const src = form.querySelector('[data-source-page]');
+  try {
+    if (src && document.referrer) {
+      const u = new URL(document.referrer);
+      if (u.origin !== location.origin) src.value = u.origin + u.pathname;
+      else if (!/^\/v2\/(mobile\/)?vendor-network\/$/.test(u.pathname)) src.value = u.pathname;
+    }
+  } catch (e) {}
+
+  const showDone = (focus) => {
+    card.classList.add('is-sent');
+    form.setAttribute('aria-hidden', 'true');
+    form.inert = true;
+    if (window.V2fit) window.V2fit();
+    if (focus) {
+      sec.querySelector('[data-va-focus]')?.focus({ preventScroll: true });
+      scrollTo({ top: card.getBoundingClientRect().top + scrollY - 110 * (window.V2 ? V2.scale() : 1), behavior: 'smooth' });
+    }
+  };
+  if (new URLSearchParams(location.search).get('sent') === '1') {
+    showDone(false);
+    addEventListener('load', () => setTimeout(() => sec.scrollIntoView(), 50), { once: true });
+  }
+
+  const mark = (el, bad) => {
+    const field = el.closest('.va-field');
+    if (field.classList.contains('is-bad') !== bad) { field.classList.toggle('is-bad', bad); if (window.V2fit) requestAnimationFrame(window.V2fit); }
+    if (el.matches('input, textarea')) bad ? el.setAttribute('aria-invalid', 'true') : el.removeAttribute('aria-invalid');
+  };
+  const check = () => {
+    let first = null;
+    form.querySelectorAll('input[required], textarea[required]').forEach((el) => {
+      const v = el.value.trim();
+      const bad = !v || (el.type === 'email' && !emailOk(v));
+      mark(el, bad);
+      if (bad && !first) first = el;
+    });
+    const anyCat = group.querySelector('input:checked');
+    mark(group, !anyCat);
+    if (!anyCat && !first) first = group.querySelector('input');
+    if (window.V2fit) window.V2fit();
+    return first;
+  };
+
+  form.addEventListener('input', (e) => {
+    const f = e.target.closest('.va-field');
+    if (f && f.classList.contains('is-bad')) {
+      if (f === group) { if (group.querySelector('input:checked')) mark(group, false); }
+      else { const v = e.target.value.trim(); if (v && (e.target.type !== 'email' || emailOk(v))) mark(e.target, false); }
+    }
+  });
+  form.addEventListener('change', (e) => { if (e.target.closest('[data-va-group]') && group.querySelector('input:checked')) mark(group, false); });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const first = check();
+    if (first) {
+      status.textContent = 'Please complete the highlighted fields.';
+      first.focus();
+      return;
+    }
+    status.textContent = '';
+    btn.disabled = true;
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+      .then((r) => { if (!r.ok) throw new Error(r.status); showDone(true); })
+      .catch(() => { btn.disabled = false; status.textContent = 'Sending failed. Please try again.'; });
+  });
+})();
+</script>
+<script>
+// Closing footer newsletter (Netlify form "newsletter"): validates, posts with fetch and confirms in place.
+// Without JS the form posts normally and comes back with ?subscribed=1.
+(() => {
+  const sec = document.querySelector('[data-section="closing"]');
+  const form = sec && sec.querySelector('.cl-form');
+  if (!form) return;
+  const input = form.querySelector('input[type="email"]');
+  const btn = form.querySelector('button');
+  const msg = sec.querySelector('.cl-msg');
+  const say = (text, kind) => { if (!msg) return; msg.textContent = text; msg.className = 'cl-msg is-on ' + kind; };
+  const valid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  const done = () => {
+    input.value = '';
+    input.placeholder = 'Thanks, you are on the list';
+    input.disabled = true;
+    btn.textContent = 'Subscribed';
+    btn.disabled = true;
+    say('Thanks. You are subscribed.', 'is-ok');
+  };
+  if (new URLSearchParams(location.search).get('subscribed') === '1') done();
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (btn.disabled) return;
+    const v = input.value.trim();
+    if (!valid(v)) {
+      input.classList.add('is-bad');
+      input.setAttribute('aria-invalid', 'true');
+      say(v ? 'Enter a valid work email.' : 'Enter a work email.', 'is-err');
+      input.focus();
+      return;
+    }
+    input.classList.remove('is-bad');
+    input.removeAttribute('aria-invalid');
+    btn.disabled = true;
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+      .then((r) => { if (!r.ok) throw new Error(r.status); done(); })
+      .catch(() => { btn.disabled = false; say('Sending failed. Please try again.', 'is-err'); });
+  });
+  input.addEventListener('input', () => {
+    input.classList.remove('is-bad');
+    input.removeAttribute('aria-invalid');
+    if (msg && msg.classList.contains('is-err')) msg.className = 'cl-msg';
+  });
+})();
+</script>
+</body>
+</html>

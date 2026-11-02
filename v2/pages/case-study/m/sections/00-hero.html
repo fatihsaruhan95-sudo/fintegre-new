@@ -1,4 +1,4 @@
-<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:1298px; background: radial-gradient(calc(162.5px * var(--s)) calc(927.14px * var(--s)) at 50% calc(1019.9px * var(--s)), rgba(34,54,196,.7) 0%, rgba(26,40,143,.595) 25%, rgba(18,26,90,.49) 50%, rgba(15,17,21,0) 100%), #0F1115;">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:1368px; background: radial-gradient(calc(162.5px * var(--s)) calc(927.14px * var(--s)) at 50% calc(1019.9px * var(--s)), rgba(34,54,196,.7) 0%, rgba(26,40,143,.595) 25%, rgba(18,26,90,.49) 50%, rgba(15,17,21,0) 100%), #0F1115;">
 <style>
   /* Page-wide helpers for the mobile Case study page (first section, so these load first). */
   .page .v2-canvas { line-height: normal; }
@@ -14,10 +14,6 @@
   .mc-lede { font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
   .mc-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px 10px 14px; border-radius: 999px; white-space: nowrap; font-size: 14px; color: #F5F7FA; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
   .mc-chip img { width: 6px; height: 6px; display: block; }
-  .mc-kpis { display: flex; gap: 28px; white-space: nowrap; }
-  .mc-kpis div { display: flex; flex-direction: column; gap: 8px; }
-  .mc-kpis b { font-weight: 300; font-size: 34px; letter-spacing: -0.03em; color: #F5F7FA; }
-  .mc-kpis span { font-size: 12px; color: #B7D7FF; }
   svg.mc-abs { overflow: visible; }
 
   @property --x { syntax: '*'; inherits: false; }
@@ -43,7 +39,7 @@
   [data-section="hero"] .mc-mark { position: relative; width: 26.4px; height: 20px; }
   [data-section="hero"] .mc-mark img { position: absolute; left: 2.49px; top: 2.33px; width: 21.38px; height: 15.34px; max-width: none; }
   [data-section="hero"] .mc-actions { display: flex; align-items: center; gap: 6px; }
-  [data-section="hero"] .mc-pillbtn { height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .mc-pillbtn { height: 44px; padding: 0 14px; display: inline-flex; align-items: center; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
   [data-section="hero"] .mc-burger { width: 44px; height: 44px; border: 0; padding: 0; border-radius: 999px; background: rgba(255,255,255,.08);
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; }
   [data-section="hero"] .mc-burger i { display: block; height: 1.5px; border-radius: 1px; background: #F5F7FA; }
@@ -52,9 +48,10 @@
   [data-section="hero"] .mh-row:last-child { border-bottom: 0; }
   [data-section="hero"] .mh-row span { font-weight: 300; color: #A7B0BE; }
   [data-section="hero"] .mh-row b { font-weight: 400; color: #F5F7FA; }
-  [data-section="hero"] .mh-kpis { display: flex; flex-wrap: wrap; gap: 22px 20px; width: 350px; }
-  [data-section="hero"] .mh-kpis div { width: 165px; }
-  [data-section="hero"] .mh-kpis b { font-size: 44px; }
+  /* Prominent evidence label: this page is an illustration, not a customer result. */
+  [data-section="hero"] .mh-label { display: flex; align-items: flex-start; gap: 10px; width: 350px; padding: 14px 18px 14px 16px; border-radius: 20px; background: rgba(48,71,236,.9); font-size: 15px; line-height: 1.4; color: #F5F7FA; }
+  [data-section="hero"] .mh-label img { flex: none; width: 6px; height: 6px; margin-top: 8px; display: block; }
+  [data-section="hero"] .mh-sample { margin-top: 10px; font-size: 12px; color: #A7B0BE; }
 </style>
   <div class="v2-canvas">
     <img class="mc-glow" alt="" src="/v2/mobile/assets/case-study-glow-hero.svg" style="left:-120px; top:380px; width:820px; height:780px;">
@@ -64,36 +61,31 @@
     <div class="mc-abs mc-top">
       <a href="/v2/" class="mc-logo" aria-label="Fintegre home"><span class="mc-mark"><img alt="" src="/v2/assets/case-study-logo-mark.svg"></span>Fintegre</a>
       <div class="mc-actions">
-        <a href="/v2/design-your-program/" class="mc-pillbtn">Design your program</a>
+        <a href="/v2/contact/" class="mc-pillbtn">Discuss your program</a>
         <button type="button" class="mc-burger" data-menu-open aria-label="Open menu" aria-controls="m-menu" aria-expanded="false"><i style="width:18px"></i><i style="width:12px"></i></button>
       </div>
     </div>
 
 
     <div class="mc-abs" data-k style="left:20px; top:116px; width:350px; display:flex; flex-direction:column; gap:24px; align-items:flex-start; --y:50px; --d:200ms; --o:.7s; --t:1s;">
-      <p style="font-size:13px; color:#A7B0BE; white-space:pre;"><a href="/v2/customers/">Customers</a>  /  A Baltic electronics retailer</p>
-      <h1 class="mc-h2" style="font-size:44px; line-height:.96;">Trade-in became part of every iPhone sale.</h1>
-      <p class="mc-lede" style="width:340px;">40 stores and an online shop across Lithuania, Latvia and Estonia. Six months after launch, trade-in is part of most new iPhone sales.</p>
-      <div class="mc-kpis mh-kpis">
-        <div data-k style="--y:30px; --d:800ms; --o:.63s; --t:.9s;"><b>+38%</b><span>Trade-in participation</span></div>
-        <div data-k style="--y:30px; --d:950ms; --o:.63s; --t:.9s;"><b>+14%</b><span>Value per device</span></div>
-        <div data-k style="--y:30px; --d:1100ms; --o:.63s; --t:.9s;"><b>58 s</b><span>Time to offer</span></div>
-        <div data-k style="--y:30px; --d:1250ms; --o:.63s; --t:.9s;"><b>9 wk</b><span>Pilot to rollout</span></div>
-      </div>
+      <p style="font-size:13px; color:#A7B0BE; white-space:pre;"><a href="/v2/insights/">Insights</a>  /  Illustrative journey</p>
+      <h1 class="mc-h2" style="font-size:44px; line-height:.96;">How an electronics retailer could run trade-in.</h1>
+      <p class="mc-lede" style="width:340px;">An illustrative journey for a multi-store electronics retailer with an online shop. It shows how a trade-in program could be set up and measured. It is not a customer case study.</p>
+      <p class="mh-label" data-k style="--y:30px; --d:800ms; --o:.63s; --t:.9s;"><img alt="" src="/v2/assets/case-study-dot.svg">Illustrative journey · sample data. Not a customer result.</p>
     </div>
 
-    <div class="mc-abs" data-sub style="left:0; top:640px; width:390px; height:658px;">
+    <div class="mc-abs" data-sub style="left:0; top:710px; width:390px; height:658px;">
       <img class="mc-img" alt="Two iPhone 18 Pro in Glacier" src="/v2/assets/case-study-iphone18pro-glacier.webp" data-k style="left:60px; top:50px; width:348px; height:420px; --x:60px; --o:1.4s; --t:1.6s;">
       <div class="mc-abs" style="left:0; top:290px; width:390px; height:200px; background:linear-gradient(180deg, rgba(15,17,21,0), #0F1115);"></div>
       <svg class="mc-abs" style="left:59.3px; top:50px;" width="131.364" height="110.221" viewBox="0 0 131.364 110.221" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:900ms; transition-duration:.8s;" d="M0.7 0C0.7 60 110.7 50 130.7 110" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
-      <div class="mc-abs mc-chip" data-k style="left:20px; top:12px; background:#3047EC; backdrop-filter:none; -webkit-backdrop-filter:none; --sc:.6; --d:700ms; --o:.25s; --t:.7s;"><img alt="" src="/v2/assets/case-study-dot.svg">Checked · Grade A · 58 s</div>
+      <div class="mc-abs mc-chip" data-k style="left:20px; top:12px; background:#3047EC; backdrop-filter:none; -webkit-backdrop-filter:none; --sc:.6; --d:700ms; --o:.25s; --t:.7s;"><img alt="" src="/v2/assets/case-study-dot.svg">Checked · Grade A · sample</div>
       <div class="mh-card" data-k style="--sc:.6; --d:500ms; --o:.3s; --t:.7s;">
-        <p style="font-size:13px; color:#A7B0BE; margin-bottom:12px;">Program at a glance</p>
-        <div class="mh-row" data-k style="--y:12px; --d:900ms; --o:.42s; --t:.6s;"><span>Markets</span><b>LT · LV · EE</b></div>
-        <div class="mh-row" data-k style="--y:12px; --d:1050ms; --o:.42s; --t:.6s;"><span>Channels</span><b>40 stores, online</b></div>
-        <div class="mh-row" data-k style="--y:12px; --d:1200ms; --o:.42s; --t:.6s;"><span>Programs</span><b>Trade-in, early upgrade</b></div>
-        <div class="mh-row" data-k style="--y:12px; --d:1350ms; --o:.42s; --t:.6s;"><span>Buyers</span><b>3 local, live bids</b></div>
-        <div class="mh-row" data-k style="--y:12px; --d:1500ms; --o:.42s; --t:.6s;"><span>Live since</span><b>March 2026</b></div>
+        <p style="font-size:13px; color:#A7B0BE; margin-bottom:12px;">Illustrative setup</p>
+        <div class="mh-row" data-k style="--y:12px; --d:900ms; --o:.42s; --t:.6s;"><span>Retailer</span><b>Multi-store electronics</b></div>
+        <div class="mh-row" data-k style="--y:12px; --d:1050ms; --o:.42s; --t:.6s;"><span>Channels</span><b>Stores and online</b></div>
+        <div class="mh-row" data-k style="--y:12px; --d:1200ms; --o:.42s; --t:.6s;"><span>Programs</span><b>Trade-in, Early upgrade</b></div>
+        <div class="mh-row" data-k style="--y:12px; --d:1350ms; --o:.42s; --t:.6s;"><span>Buyers</span><b>Qualified buyer network</b></div>
+        <p class="mh-sample">Sample data</p>
       </div>
     </div>
   </div>

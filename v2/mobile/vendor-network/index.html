@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en" class="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vendor Network — Fintegre (v2)</title>
+<script>
+  // Phones get this page; wider screens go back to the desktop v2.
+  if (innerWidth >= 768) location.replace('/v2/vendor-network/' + location.search + location.hash);
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="/v2/v2.css">
+<link rel="stylesheet" href="/v2/mobile/mobile.css">
+<link rel="stylesheet" href="/v2/mobile/menu.css">
+</head>
+<body>
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="/v2/" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="/assets/header-mark.svg">Fintegre</a>
+    <button type="button" class="m-burger" data-menu-open aria-label="Open menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<main class="page">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" data-fit style="--h:1400px; background:#0F1115;">
+<style>
+  [data-section="hero"] p, [data-section="hero"] h1 { margin: 0; }
+  /* Top bar (drawn in the hero, like the other mobile heroes) */
+  [data-section="hero"] .mv-top { position: absolute; left: 12px; top: 12px; width: 366px; height: 60px; padding: 8px 8px 8px 18px; border-radius: 999px; z-index: 3;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: inset 0 0 0 1px rgba(183,215,255,.14), 0 16px 40px rgba(0,0,0,.35); }
+  [data-section="hero"] .mv-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .mv-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .mv-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .mv-act { display: flex; align-items: center; gap: 6px; }
+  [data-section="hero"] .mv-pill { height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .mv-burger { width: 44px; height: 44px; border: 0; padding: 0; border-radius: 999px; background: rgba(255,255,255,.08);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  [data-section="hero"] .mv-burger i { display: block; height: 1.5px; border-radius: 1px; background: #F5F7FA; }
+
+  [data-section="hero"] .mv-flow { position: relative; padding: 112px 0 40px; }
+  [data-section="hero"] .mv-room { position: absolute; left: -300px; top: 40px; width: 900px; height: 760px; max-width: none; pointer-events: none; }
+  [data-section="hero"] .mv-copy { position: relative; padding: 0 20px; display: flex; flex-direction: column; align-items: flex-start; }
+  [data-section="hero"] .mv-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px 8px 12px; border-radius: 999px; font-size: 13px; line-height: normal; color: #F5F7FA; white-space: nowrap; background: rgba(48,71,236,.92); }
+  [data-section="hero"] .mv-eyebrow img { width: 6px; height: 6px; display: block; }
+  [data-section="hero"] h1 { margin-top: 20px; width: 350px; font-weight: 400; font-size: 42px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .mv-lede { margin-top: 20px; width: 350px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.78); }
+  [data-section="hero"] .mv-body { margin-top: 12px; width: 350px; font-weight: 300; font-size: 15px; line-height: 1.55; color: rgba(245,247,250,.6); }
+  [data-section="hero"] .mv-ctas { margin-top: 28px; width: 350px; display: flex; flex-direction: column; gap: 10px; }
+  [data-section="hero"] .mv-btn { display: flex; justify-content: center; align-items: center; height: 52px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; }
+  [data-section="hero"] .mv-btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .mv-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+
+  [data-section="hero"] .mv-vis { position: relative; margin-top: 36px; width: 390px; height: 790px; }
+  [data-section="hero"] .mv-photo { position: absolute; left: 0; top: 0; width: 390px; height: 540px; overflow: hidden; }
+  [data-section="hero"] .mv-photo img { display: block; width: 390px; height: 540px; object-fit: cover; }
+  [data-section="hero"] .mv-shade { position: absolute; left: 0; top: 0; width: 390px; height: 540px; pointer-events: none;
+    background: linear-gradient(180deg, #0F1115 0%, rgba(15,17,21,0) 22%, rgba(15,17,21,0) 55%, rgba(15,17,21,.85) 85%, #0F1115 100%), rgba(20,30,110,.12); }
+  [data-section="hero"] .mv-node { position: absolute; left: 183px; top: 298px; width: 34px; height: 34px; }
+  [data-section="hero"] .mv-node img { display: block; width: 34px; height: 34px; }
+  [data-section="hero"] .mv-fibre { position: absolute; left: 199px; top: 332px; overflow: visible; pointer-events: none; }
+  [data-section="hero"] .mv-card { position: absolute; left: 30px; top: 400px; width: 330px; display: flex; flex-direction: column; gap: 14px; padding: 22px 24px; border-radius: 26px; line-height: normal;
+    background: rgba(15,17,21,.55); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="hero"] .mv-card__k { font-size: 13px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="hero"] .mv-card__t { font-weight: 300; font-size: 21px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .mv-card dl { display: flex; flex-direction: column; gap: 9px; margin: 0; font-size: 14px; }
+  [data-section="hero"] .mv-card dl div { display: flex; justify-content: space-between; gap: 12px; white-space: nowrap; }
+  [data-section="hero"] .mv-card dt { font-weight: 300; color: #A7B0BE; }
+  [data-section="hero"] .mv-card dd { margin: 0; color: #F5F7FA; }
+  [data-section="hero"] .mv-card__div { height: 1px; background: rgba(183,215,255,.14); }
+  [data-section="hero"] .mv-card__fit { display: flex; align-items: center; justify-content: space-between; padding: 13px 14px; border-radius: 14px; background: rgba(48,71,236,.9); color: #F5F7FA; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .mv-card__s { font-size: 12px; font-weight: 300; color: #A7B0BE; }
+</style>
+  <div class="v2-canvas">
+    <div class="mv-top" data-m="down">
+      <a href="/v2/" class="mv-logo" aria-label="Fintegre home"><span class="mv-mark"><img decoding="async" alt="" src="/v2/assets/hero-logo.svg"></span>Fintegre</a>
+      <div class="mv-act">
+        <a href="/v2/contact/" class="mv-pill">Discuss your program</a>
+        <button type="button" class="mv-burger" data-menu-open aria-label="Open menu" aria-controls="m-menu" aria-expanded="false"><i style="width:18px"></i><i style="width:12px"></i></button>
+      </div>
+    </div>
+    <div class="mv-flow" data-fit-flow>
+      <img decoding="async" class="mv-room" alt="" src="/v2/assets/company-hero-roomlight.svg">
+      <div class="mv-copy">
+        <p class="mv-eyebrow" data-m="up" style="--d:80ms"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">For businesses that buy trade-in devices</p>
+        <h1 data-m="up" style="--d:140ms">Join the network behind better trade‑in value.</h1>
+        <p class="mv-lede" data-m="up" style="--d:220ms">Connect your buying capacity with device supply from participating retailers, telecom operators and device brands.</p>
+        <p class="mv-body" data-m="up" style="--d:280ms">Fintegre coordinates trade-in opportunities, device information and transaction workflows so qualified buyers can assess opportunities against their purchasing criteria. In Fintegre, a vendor is a business that buys trade-in devices: refurbishers, recommerce businesses and other device buyers.</p>
+        <div class="mv-ctas" data-m="up" style="--d:340ms">
+          <a href="#apply" class="mv-btn mv-btn--light">Apply to join the vendor network</a>
+          <a href="#apply" class="mv-btn mv-btn--ghost">Discuss your buying requirements</a>
+        </div>
+      </div>
+      <div class="mv-vis">
+        <div class="mv-photo" data-m="scale" style="--d:300ms"><img decoding="async" alt="A device buyer's team member checking a trade-in iPhone at a warehouse intake desk" src="/v2/mobile/assets/ecosystem-warehouse.webp" width="390" height="540"></div>
+        <div class="mv-shade" aria-hidden="true"></div>
+        <svg class="mv-fibre" width="2" height="70" viewBox="0 0 2 70" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1200ms" d="M1 0.7V69" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.6"/></svg>
+        <div class="mv-node" data-m="pop" style="--d:1000ms" aria-hidden="true"><img decoding="async" alt="" src="/v2/assets/ecosystem-node.svg"></div>
+        <article class="mv-card" data-m="up" style="--d:700ms" aria-label="Example opportunity as a buyer sees it, sample data">
+          <p class="mv-card__k">Opportunity · retail trade-in</p>
+          <p class="mv-card__t">iPhone 15 Pro · 256 GB</p>
+          <dl>
+            <div><dt>Screen</dt><dd>Grade A</dd></div>
+            <div><dt>Battery health</dt><dd>91 %</dd></div>
+            <div><dt>Casing</dt><dd>Grade B</dd></div>
+            <div><dt>Diagnostics report</dt><dd>Available</dd></div>
+            <div><dt>Photos</dt><dd>6 attached</dd></div>
+          </dl>
+          <div class="mv-card__div" aria-hidden="true"></div>
+          <p class="mv-card__fit"><span>Fits your buying criteria</span><span>Yes</span></p>
+          <p class="mv-card__s">Sample data</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="value" id="value" class="v2-sec" data-tone="light" data-fit style="--h:1500px; background: radial-gradient(calc(260px * var(--s)) calc(300px * var(--s)) at calc(50% + 80px * var(--s)) calc(200px * var(--s)), rgba(184,214,255,.6) 0%, rgba(245,247,250,0) 100%), #F5F7FA;">
+<style>
+  [data-section="value"] p, [data-section="value"] h2, [data-section="value"] h3 { margin: 0; }
+  [data-section="value"] .mv-flow { position: relative; padding: 100px 20px 72px; display: flex; flex-direction: column; gap: 20px; }
+  [data-section="value"] .mv-k { font-size: 14px; color: #3047EC; }
+  [data-section="value"] h2 { margin-top: -8px; font-weight: 400; font-size: 40px; line-height: 1.04; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="value"] .mv-lede { font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.65); }
+  [data-section="value"] .mv-cards { margin-top: 12px; display: flex; flex-direction: column; gap: 12px; }
+  [data-section="value"] .mv-card { padding: 24px 22px 26px; border-radius: 22px; background: #fff; box-shadow: 0 20px 50px rgba(15,20,51,.09); display: flex; flex-direction: column; gap: 8px; }
+  [data-section="value"] .mv-card i { font-style: normal; font-size: 13px; color: #3047EC; }
+  [data-section="value"] .mv-card h3 { font-weight: 400; font-size: 20px; letter-spacing: -0.02em; line-height: 1.2; color: #0F1115; }
+  [data-section="value"] .mv-card p { font-weight: 300; font-size: 15px; line-height: 1.55; color: rgba(15,17,21,.65); }
+  [data-section="value"] .mv-card--on { background: #3047EC; box-shadow: 0 20px 44px rgba(18,26,115,.35); }
+  [data-section="value"] .mv-card--on i { color: #B7D7FF; }
+  [data-section="value"] .mv-card--on h3 { color: #F5F7FA; }
+  [data-section="value"] .mv-card--on p { color: rgba(245,247,250,.8); }
+  [data-section="value"] .mv-note { margin-top: 8px; display: flex; gap: 10px; align-items: baseline; font-size: 13px; line-height: 1.5; color: #6B7380; }
+  [data-section="value"] .mv-note img { flex: none; width: 7px; height: 7px; }
+</style>
+  <div class="v2-canvas">
+    <div class="mv-flow" data-fit-flow>
+      <p class="mv-k" data-m="up">What participation offers</p>
+      <h2 data-m="up" style="--d:80ms">Buy with better information.</h2>
+      <p class="mv-lede" data-m="up" style="--d:160ms">Fintegre connects enterprise trade-in journeys with buyers whose demand, capacity and operating capabilities fit the program.</p>
+      <div class="mv-cards">
+        <article class="mv-card mv-card--on" data-m="up" style="--d:220ms"><i>01</i><h3>Relevant device supply</h3><p>Connect with trade-in opportunities originating through participating enterprise channels.</p></article>
+        <article class="mv-card" data-m="up" style="--d:280ms"><i>02</i><h3>Fit with your buying criteria</h3><p>Define the markets, device categories, models and conditions you buy, together with your purchasing capacity.</p></article>
+        <article class="mv-card" data-m="up" style="--d:340ms"><i>03</i><h3>Clearer offer decisions</h3><p>Review device information and available condition evidence before making an offer.</p></article>
+        <article class="mv-card" data-m="up" style="--d:400ms"><i>04</i><h3>Coordinated execution</h3><p>Work within agreed processes for offers, collection, inspection, discrepancies and settlement.</p></article>
+        <article class="mv-card" data-m="up" style="--d:460ms"><i>05</i><h3>Repeat-business potential</h3><p>Build relationships through competitive offers, reliable execution and consistent settlement performance.</p></article>
+      </div>
+      <p class="mv-note" data-m="up" style="--d:520ms"><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">Participation does not guarantee volumes, margins, allocation or exclusivity.</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="journey" id="journey" class="v2-sec" data-tone="dark" data-fit style="--h:1500px; background: radial-gradient(calc(260px * var(--s)) calc(520px * var(--s)) at calc(50% - 60px * var(--s)) calc(760px * var(--s)), rgba(34,54,196,.8) 0%, rgba(26,40,143,.6) 25%, rgba(18,26,90,.5) 50%, rgba(17,22,55,.25) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="journey"] p, [data-section="journey"] h2, [data-section="journey"] h3, [data-section="journey"] ol { margin: 0; }
+  [data-section="journey"] .mj-flow { position: relative; padding: 100px 20px 72px; display: flex; flex-direction: column; gap: 20px; }
+  [data-section="journey"] .mj-k { font-size: 14px; color: #B7D7FF; }
+  [data-section="journey"] h2 { margin-top: -8px; font-weight: 400; font-size: 40px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="journey"] .mj-lede { font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="journey"] .mj-steps { position: relative; margin-top: 12px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  [data-section="journey"] .mj-step:not(:last-child)::before { content: ''; position: absolute; left: 16.5px; top: 54px; bottom: -32px; width: 1px; background: rgba(183,215,255,.4); }
+  [data-section="journey"] .mj-step { position: relative; display: flex; gap: 14px; align-items: flex-start; }
+  [data-section="journey"] .mj-node { flex: none; position: relative; width: 34px; height: 34px; margin-top: 20px; }
+  [data-section="journey"] .mj-node img { display: block; width: 34px; height: 34px; }
+  [data-section="journey"] .mj-card { flex: 1; min-width: 0; padding: 20px 20px 22px; border-radius: 20px; display: flex; flex-direction: column; gap: 8px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); }
+  [data-section="journey"] .mj-step:last-child .mj-card { background: rgba(48,71,236,.88); border-color: transparent; }
+  [data-section="journey"] .mj-card i { font-style: normal; font-size: 13px; color: #B7D7FF; }
+  [data-section="journey"] .mj-card h3 { font-weight: 400; font-size: 18px; line-height: 1.25; color: #F5F7FA; }
+  [data-section="journey"] .mj-card p { font-weight: 300; font-size: 14px; line-height: 1.55; color: rgba(245,247,250,.62); }
+  [data-section="journey"] .mj-step:last-child .mj-card p { color: rgba(245,247,250,.82); }
+  [data-section="journey"] .mj-note { margin-top: 8px; display: flex; gap: 10px; align-items: baseline; font-size: 13px; line-height: 1.5; color: #A7B0BE; }
+  [data-section="journey"] .mj-note img { flex: none; width: 6px; height: 6px; }
+</style>
+  <div class="v2-canvas">
+    <div class="mj-flow" data-fit-flow>
+      <p class="mj-k" data-m="up">Participation journey</p>
+      <h2 data-m="up" style="--d:80ms">From application to completed trades.</h2>
+      <p class="mj-lede" data-m="up" style="--d:160ms">Five steps take a buyer from first contact to regular participation. Each step depends on qualification and agreed terms.</p>
+      <ol class="mj-steps">
+        <li class="mj-step" data-m="up" style="--d:220ms"><span class="mj-node"><img decoding="async" alt="" src="/v2/assets/ecosystem-node.svg"></span><div class="mj-card"><i>Step 1</i><h3>Tell us what you buy.</h3><p>Markets, device categories, models, conditions and purchasing capacity.</p></div></li>
+        <li class="mj-step" data-m="up" style="--d:280ms"><span class="mj-node"><img decoding="async" alt="" src="/v2/assets/ecosystem-node.svg"></span><div class="mj-card"><i>Step 2</i><h3>Complete business and operational qualification.</h3><p>Company details, operating capabilities and the onboarding documents requested after the initial review.</p></div></li>
+        <li class="mj-step" data-m="up" style="--d:340ms"><span class="mj-node"><img decoding="async" alt="" src="/v2/assets/ecosystem-node.svg"></span><div class="mj-card"><i>Step 3</i><h3>Agree commercial and operational responsibilities.</h3><p>Terms for offers, collection, inspection, discrepancies and settlement.</p></div></li>
+        <li class="mj-step" data-m="up" style="--d:400ms"><span class="mj-node"><img decoding="async" alt="" src="/v2/assets/ecosystem-node.svg"></span><div class="mj-card"><i>Step 4</i><h3>Connect to suitable opportunities following approval.</h3><p>Review the device information and condition evidence available for each opportunity, then decide whether to make an offer.</p></div></li>
+        <li class="mj-step" data-m="up" style="--d:460ms"><span class="mj-node"><img decoding="async" alt="" src="/v2/assets/ecosystem-node.svg"></span><div class="mj-card"><i>Step 5</i><h3>Build a performance record through completed transactions.</h3><p>Competitive offers, reliable execution and consistent settlement shape the relationship over time.</p></div></li>
+      </ol>
+      <p class="mj-note" data-m="up" style="--d:520ms"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Fintegre's operational team confirms the final process, requirements and terms with each buyer.</p>
+    </div>
+  </div>
+</section>
+
+<section data-section="apply" id="apply" class="v2-sec" data-tone="light" data-fit style="--h:2100px; background: radial-gradient(calc(260px * var(--s)) calc(320px * var(--s)) at calc(50% - 60px * var(--s)) calc(1200px * var(--s)), rgba(184,214,255,.6) 0%, rgba(245,247,250,0) 100%), #F5F7FA;">
+<style>
+  [data-section="apply"] .va-a { position: absolute; }
+  [data-section="apply"] p, [data-section="apply"] h2, [data-section="apply"] h3 { margin: 0; }
+  [data-section="apply"] [hidden] { display: none !important; }
+
+  /* Left column */
+  [data-section="apply"] .va-copy { position: relative; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+  [data-section="apply"] .va-k { font-size: 15px; color: #3047EC; }
+  [data-section="apply"] h2 { margin-top: -8px; font-weight: 400; font-size: 40px; line-height: 1.04; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="apply"] .va-lede { font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.68); }
+  [data-section="apply"] .va-list { margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  [data-section="apply"] .va-list li { display: flex; gap: 12px; align-items: baseline; font-weight: 300; font-size: 15px; line-height: 1.5; color: #0F1115; }
+  [data-section="apply"] .va-list img { flex: none; width: 8px; height: 8px; translate: 0 -1px; }
+
+  /* Form card */
+  [data-section="apply"] .va-card { position: relative; margin-top: 32px; padding: 28px 20px 28px; border-radius: 26px; background: #fff; box-shadow: 0 24px 50px rgba(15,20,64,.12); color: #0F1115; overflow: clip; }
+  [data-section="apply"] .va-title { font-weight: 400; font-size: 22px; letter-spacing: -0.02em; line-height: normal; }
+  [data-section="apply"] .va-req { margin-top: 6px; font-weight: 300; font-size: 13px; color: #6B7380; }
+  [data-section="apply"] .va-grid { margin-top: 26px; display: grid; grid-template-columns: 1fr; column-gap: 14px; row-gap: 18px; }
+  [data-section="apply"] .va-wide { grid-column: 1 / -1; }
+  [data-section="apply"] .va-field { position: relative; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  [data-section="apply"] .va-field label, [data-section="apply"] legend { font-size: 14px; color: rgba(15,17,21,.75); padding: 0; }
+  [data-section="apply"] .va-field label small, [data-section="apply"] legend small { font-size: 12px; color: #6B7380; }
+  [data-section="apply"] .va-field input, [data-section="apply"] .va-field textarea { width: 100%; height: 52px; padding: 0 16px; border-radius: 14px; border: 1px solid rgba(15,17,21,.12); background: #fff; outline: none;
+    font: 300 16px/1.4 'Geologica', system-ui, sans-serif; color: #0F1115; transition: border-color .2s, box-shadow .2s; }
+  [data-section="apply"] .va-field textarea { height: 92px; padding: 14px 16px; resize: none; }
+  [data-section="apply"] .va-field ::placeholder { color: rgba(15,17,21,.38); }
+  [data-section="apply"] .va-field input:focus, [data-section="apply"] .va-field textarea:focus { border-color: #3047EC; box-shadow: 0 0 0 .5px #3047EC, 0 0 0 5px rgba(48,71,237,.12); }
+  [data-section="apply"] .is-bad input, [data-section="apply"] .is-bad textarea { border-color: #D93F4C; box-shadow: 0 0 0 .5px #D93F4C; }
+  [data-section="apply"] .va-err { position: absolute; right: 2px; top: 1px; font-size: 12px; color: #D93F4C; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  [data-section="apply"] .is-bad .va-err { opacity: 1; }
+  [data-section="apply"] fieldset { position: relative; margin: 0; padding: 0; border: 0; min-width: 0; }
+  [data-section="apply"] .va-chips { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+  [data-section="apply"] .va-chips .va-chip { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; font-size: 14px; line-height: normal; color: #0F1115; cursor: pointer; white-space: nowrap;
+    box-shadow: inset 0 0 0 1px rgba(15,17,21,.12); transition: background-color .25s, box-shadow .25s, color .25s; }
+  [data-section="apply"] .va-chips .va-chip:hover { box-shadow: inset 0 0 0 1px rgba(48,71,236,.45); }
+  [data-section="apply"] .va-chips .va-chip input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+  [data-section="apply"] .va-chips .va-chip img { width: 7px; height: 7px; display: none; }
+  [data-section="apply"] .va-chips .va-chip:has(input:checked) { background: #3047EC; color: #F5F7FA; box-shadow: none; }
+  [data-section="apply"] .va-chips .va-chip:has(input:checked) img { display: block; }
+  [data-section="apply"] .va-chips .va-chip:has(input:focus-visible) { outline: 2px solid #3047EC; outline-offset: 2px; }
+  [data-section="apply"] .is-bad .va-chip { box-shadow: inset 0 0 0 1px rgba(217,63,76,.6); }
+  [data-section="apply"] .va-sep { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; margin-top: 6px; font-size: 13px; color: #6B7380; white-space: nowrap; }
+  [data-section="apply"] .va-sep::after { content: ''; flex: 1; height: 1px; background: rgba(15,17,21,.08); }
+  [data-section="apply"] .va-foot { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  [data-section="apply"] .va-submit { width: 100%; height: 54px; padding: 0 20px !important; border: 0; cursor: pointer; padding: 16px 26px; border-radius: 999px; background: #3047EC; color: #F5F7FA; font: 400 15px/normal 'Geologica', system-ui, sans-serif; transition: background-color .25s, opacity .25s; }
+  [data-section="apply"] .va-submit:hover { background: #2238d6; }
+  [data-section="apply"] .va-submit:disabled { opacity: .6; cursor: default; }
+  [data-section="apply"] .va-note { font-weight: 300; font-size: 13px; line-height: 1.5; color: #6B7380; }
+  [data-section="apply"] .va-note a { color: #3047EC; text-decoration: underline; text-underline-offset: 2px; }
+  [data-section="apply"] .va-status { font-size: 13px; color: #D93F4C; min-height: 18px; }
+
+  /* Success state, in place of the form */
+  [data-section="apply"] .va-done { position: absolute; inset: 0; padding: 40px 22px; background: #fff; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;
+    opacity: 0; visibility: hidden; transition: opacity .5s var(--ease), visibility 0s .5s; }
+  [data-section="apply"] .va-card.is-sent .va-done { opacity: 1; visibility: visible; transition: opacity .5s var(--ease); }
+  [data-section="apply"] .va-sent { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #3047EC; font-size: 14px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="apply"] .va-sent img { width: 7px; height: 7px; display: block; }
+  [data-section="apply"] .va-done h3 { font-weight: 400; font-size: 32px; line-height: 1.08; letter-spacing: -0.03em; outline: none; }
+  [data-section="apply"] .va-done p { max-width: 520px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.7); }
+  [data-section="apply"] .va-steps { margin: 10px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  [data-section="apply"] .va-steps li { display: flex; gap: 14px; align-items: baseline; font-weight: 300; font-size: 15px; line-height: 1.5; color: #0F1115; }
+  [data-section="apply"] .va-steps b { flex: none; width: 22px; font-weight: 400; font-size: 13px; color: #3047EC; }
+  [data-section="apply"] .va-back { margin-top: 10px; display: inline-flex; padding: 15px 24px; border-radius: 999px; font-size: 15px; color: #0F1115; box-shadow: inset 0 0 0 1px rgba(15,17,21,.2); }
+  [data-section="apply"] .va-flow { position: relative; padding: 100px 20px 72px; }
+  [data-section="apply"] .va-foot { align-items: stretch; }
+  [data-section="apply"] .va-err { position: static; order: 3; display: none; }
+  [data-section="apply"] .is-bad .va-err { display: block; }
+  [data-section="apply"] fieldset .va-err { margin-top: 8px; }
+  [data-section="apply"] .va-done .va-sent { color: #F5F7FA; }
+  [data-section="apply"] .va-card.is-sent form { display: none; }
+  [data-section="apply"] .va-card.is-sent .va-done { position: relative; inset: auto; }
+</style>
+  <div class="v2-canvas">
+    <div class="va-flow" data-fit-flow>
+    <div class="va-copy" data-m="up" style="--d:100ms">
+      <p class="va-k">Vendor application</p>
+      <h2>Apply to join the vendor network.</h2>
+      <p class="va-lede">For device buyers, refurbishers and recommerce businesses. Tell us which devices and markets you serve, and how you buy.</p>
+      <ul class="va-list">
+        <li><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">Applications are reviewed for suitability.</li>
+        <li><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">Participation depends on qualification, program requirements and agreed terms.</li>
+        <li><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">Detailed onboarding documents are requested after the initial review.</li>
+      </ul>
+    </div>
+
+    <div class="va-card" data-m="up" style="--d:250ms" data-va-card>
+      <form name="vendor-application" method="POST" action="/v2/vendor-network/?sent=1" data-netlify="true" netlify-honeypot="bot-field" novalidate data-va-form aria-labelledby="va-title">
+        <input type="hidden" name="form-name" value="vendor-application">
+        <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <input type="hidden" name="source_page" value="" data-source-page>
+        <h3 class="va-title" id="va-title">Your buying business</h3>
+        <p class="va-req">All fields are required unless marked optional.</p>
+        <div class="va-grid">
+          <div class="va-field"><label for="va-name">Contact name</label><input id="va-name" name="contact_name" type="text" autocomplete="name" required aria-describedby="va-name-err"><span class="va-err" id="va-name-err">Enter your name</span></div>
+          <div class="va-field"><label for="va-email">Work email</label><input id="va-email" name="email" type="email" autocomplete="email" placeholder="name@company.com" required aria-describedby="va-email-err"><span class="va-err" id="va-email-err">Enter a work email</span></div>
+          <div class="va-field"><label for="va-company">Company</label><input id="va-company" name="company" type="text" autocomplete="organization" required aria-describedby="va-company-err"><span class="va-err" id="va-company-err">Enter your company</span></div>
+          <div class="va-field"><label for="va-web">Website or company profile</label><input id="va-web" name="website" type="text" autocomplete="url" placeholder="company.com" required aria-describedby="va-web-err"><span class="va-err" id="va-web-err">Enter a link</span></div>
+          <div class="va-field va-wide"><label for="va-markets">Markets served</label><input id="va-markets" name="markets_served" type="text" placeholder="Countries or regions where you buy" required aria-describedby="va-markets-err"><span class="va-err" id="va-markets-err">Enter the markets you serve</span></div>
+          <fieldset class="va-field va-wide" data-va-group aria-describedby="va-cat-err">
+            <legend>Device categories purchased</legend>
+            <span class="va-err" id="va-cat-err">Choose at least one category</span>
+            <div class="va-chips">
+              <label class="va-chip"><input type="checkbox" name="device_categories[]" value="Smartphones"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Smartphones</label>
+              <label class="va-chip"><input type="checkbox" name="device_categories[]" value="Tablets"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Tablets</label>
+              <label class="va-chip"><input type="checkbox" name="device_categories[]" value="Laptops"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Laptops</label>
+              <label class="va-chip"><input type="checkbox" name="device_categories[]" value="Smartwatches"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Smartwatches</label>
+              <label class="va-chip"><input type="checkbox" name="device_categories[]" value="Other"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Other</label>
+            </div>
+          </fieldset>
+          <p class="va-sep">Optional</p>
+          <div class="va-field"><label for="va-cap">Purchasing capacity <small>(optional)</small></label><input id="va-cap" name="purchasing_capacity" type="text" placeholder="e.g. devices per month"></div>
+          <div class="va-field"><label for="va-loc">Collection locations <small>(optional)</small></label><input id="va-loc" name="collection_locations" type="text" placeholder="Where you can collect from"></div>
+          <div class="va-field"><label for="va-models">Preferred models and conditions <small>(optional)</small></label><input id="va-models" name="preferred_models" type="text" placeholder="e.g. models and grades"></div>
+          <div class="va-field"><label for="va-int">Integration capabilities <small>(optional)</small></label><input id="va-int" name="integration_capabilities" type="text" placeholder="e.g. API, file exchange"></div>
+          <div class="va-field va-wide"><label for="va-info">Additional information <small>(optional)</small></label><textarea id="va-info" name="additional_information"></textarea></div>
+        </div>
+        <div class="va-foot">
+          <button type="submit" class="va-submit">Apply to join the vendor network</button>
+          <p class="va-status" role="status" aria-live="polite" data-va-status></p>
+          <p class="va-note">Applications are reviewed for suitability. Participation depends on qualification, program requirements and agreed terms. We use these details to review your application, as described in our <a href="/v2/legal/#privacy">privacy notice</a>.</p>
+        </div>
+      </form>
+
+      <div class="va-done" role="region" aria-label="Application received" data-va-done>
+        <p class="va-sent"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Application received</p>
+        <h3 tabindex="-1" data-va-focus>Thanks. We have your application.</h3>
+        <p>Fintegre reviews each application for suitability. What happens next:</p>
+        <ol class="va-steps">
+          <li><b>01</b>We review your buying criteria, markets and capabilities.</li>
+          <li><b>02</b>If there is a fit, we contact you and request detailed onboarding documents.</li>
+          <li><b>03</b>Qualification and agreed terms come before any connection to opportunities.</li>
+        </ol>
+        <a class="va-back" href="/v2/platform/">Explore the platform</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="closing" id="closing" class="v2-sec" style="--h:960px; background: linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), radial-gradient(calc(260px * var(--s)) calc(384px * var(--s)) at 50% calc(422.4px * var(--s)), rgba(48,71,236,.42) 0%, rgba(34,51,173,.32) 25%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), #0F1115;" data-tone="dark">
+  <style>
+    .motion [data-section="closing"] [data-m="up"] { translate: 0 var(--ty, 40px); }
+    .motion [data-section="closing"].is-in [data-m] { translate: none; }
+    [data-section="closing"] .cl-col { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; padding: 120px 0 10px; }
+    [data-section="closing"] .cl-head {
+      flex: none; width: 370px; margin: 0 0 -6px; text-align: center;
+      font-weight: 400; font-size: 60px; line-height: .92; letter-spacing: -1.8px;
+      background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    }
+    [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+    [data-section="closing"] .cl-foot {
+      position: relative; flex: none; width: 370px; margin-bottom: -6px; padding: 32px 24px 28px; display: flex; flex-direction: column; gap: 40px;
+      background: radial-gradient(115.62px 148.18px at 92.5px 88.91px, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 100%), linear-gradient(127.11deg, rgba(28,34,72,.92) 14.286%, rgba(17,20,34,.92) 85.714%);
+      border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 -20px 60px rgba(0,0,0,.45); border-radius: 32px; color: #F5F7FA; line-height: normal;
+    }
+    [data-section="closing"] .cl-sub { position: relative; display: flex; flex-direction: column; gap: 16px; align-items: stretch; }
+    [data-section="closing"] .cl-logo { position: relative; display: block; width: 99.3px; height: 30px; }
+    [data-section="closing"] .cl-logo img { position: absolute; display: block; max-width: none; }
+    [data-section="closing"] .cl-sub h3 { margin: 0; font-weight: 500; font-size: 14px; color: #F5F7FA; }
+    [data-section="closing"] .cl-sub p { margin: 0; font-size: 13px; color: rgba(255,255,255,.6); }
+    [data-section="closing"] form { display: flex; gap: 8px; align-items: center; }
+    [data-section="closing"] input {
+      flex: 1 1 0; min-width: 0; height: 48px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08); color: #fff; font: 400 14px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s;
+    }
+    [data-section="closing"] input::placeholder { color: rgba(255,255,255,.5); }
+    [data-section="closing"] input:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.1); }
+    [data-section="closing"] button {
+      flex: none; width: 105px; height: 48px; border: 0; cursor: pointer; padding: 0; border-radius: 10px; background: #fff; color: #0F1115;
+      font: 500 14px/18px 'Geologica', system-ui, sans-serif; transition: background-color .25s; -webkit-tap-highlight-color: transparent;
+    }
+    [data-section="closing"] button:active, [data-section="closing"] button:disabled { background: #B7D7FF; }
+    [data-section="closing"] input.is-bad { border-color: rgba(255,140,140,.7); }
+    [data-section="closing"] .cl-msg { position: absolute; left: 0; bottom: -24px; margin: 0; font-size: 12px; color: rgba(255,255,255,.6); opacity: 0; transition: opacity .3s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+    [data-section="closing"] .cl-msg.is-on { opacity: 1; }
+    [data-section="closing"] .cl-msg.is-err { color: #FFB4B4; }
+    [data-section="closing"] .cl-msg.is-ok { color: #B7D7FF; }
+    [data-section="closing"] .cl-cols { display: flex; flex-wrap: wrap; gap: 32px 40px; white-space: nowrap; margin-top: 40px; }
+    [data-section="closing"] .cl-cols nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    [data-section="closing"] .cl-cols span { font-size: 14px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-cols a { font-weight: 500; font-size: 14px; color: #fff; }
+    [data-section="closing"] .cl-bottom { display: flex; flex-direction: column; gap: 12px; font-size: 12px; }
+    [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
+    [data-section="closing"] .cl-legal { display: flex; gap: 9px; }
+    [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 12px; color: rgba(255,255,255,.8); }
+  </style>
+  <div class="v2-canvas">
+    <div class="cl-col">
+      <h2 class="cl-head" data-m="up">Join the <em>network</em></h2>
+
+      <footer class="cl-foot" data-m="up" style="--ty:60px; --d:400ms">
+        <div>
+          <div class="cl-sub">
+            <a href="/v2/" class="cl-logo" aria-label="Fintegre home">
+              <img decoding="async" src="/v2/assets/closing-logo-mark.svg" alt="" width="32.1605" height="23.0769" style="left:3.77px; top:3.46px;">
+              <img decoding="async" src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
+            </a>
+            <h3>Get trade-in insights</h3>
+            <p>Guides and program notes from Fintegre. No spam.</p>
+            <form class="cl-form" name="newsletter" method="POST" action="/v2/thanks/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+              <input type="hidden" name="form-name" value="newsletter">
+              <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+            <p class="cl-msg" role="status" aria-live="polite"></p>
+          </div>
+          <div class="cl-cols">
+            <nav aria-label="Platform"><span>Platform</span>
+              <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device Value Intelligence</a><a href="/v2/vendor-network/">Vendor Network</a><a href="/v2/platform/#integrations">Integrations</a>
+            </nav>
+            <nav aria-label="Solutions"><span>Solutions</span>
+              <a href="/v2/solutions/#apr">Apple Premium Resellers</a><a href="/v2/solutions/#retailers">Electronics retailers</a><a href="/v2/solutions/#telecom">Telecom operators</a><a href="/v2/solutions/#brands">Device brands and OEM</a>
+            </nav>
+            <nav aria-label="Company"><span>Company</span>
+              <a href="/v2/company/">About</a><a href="/v2/insights/">Insights</a><a href="/v2/contact/">Contact</a>
+            </nav>
+          </div>
+        </div>
+        <div class="cl-bottom">
+          <small>© 2026 Fintegre. All rights reserved.</small>
+          <nav class="cl-legal" aria-label="Legal"><a href="/v2/legal/#privacy">Privacy</a><a href="/v2/legal/#cookies">Cookies</a><a href="/v2/legal/#imprint">Imprint</a></nav>
+        </div>
+      </footer>
+    </div>
+  </div>
+</section>
+</main>
+  <div class="m-menu" id="m-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <div class="m-menu__in">
+      <img decoding="async" class="mm-glow" alt="" src="/v2/mobile/assets/hero-menu-glow-1.svg" style="left:-280px; top:-260px; width:700px; height:660px;">
+      <img decoding="async" class="mm-glow" alt="" src="/v2/mobile/assets/hero-menu-glow-2.svg" style="left:50px; bottom:-206px; width:620px; height:580px;">
+
+      <div class="mm-top">
+        <a href="/v2/" class="h-logo" aria-label="Fintegre home"><span class="h-mark"><img decoding="async" alt="" src="/v2/mobile/assets/hero-logo.svg"></span>Fintegre</a>
+        <div class="h-actions">
+          <a href="/v2/contact/" class="h-pillbtn">Discuss your program</a>
+          <button type="button" class="mm-close" data-menu-close aria-label="Close menu"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-close.svg"></button>
+        </div>
+      </div>
+
+      <nav class="mm-nav" aria-label="Main">
+        <div class="mm-group is-open">
+          <div class="mm-row" data-mm style="--d:150ms;">
+            <a href="/v2/platform/">Platform</a>
+            <button type="button" class="mm-tog" aria-expanded="true" aria-controls="mm-sub-platform" aria-label="Platform pages"><img decoding="async" class="is-up" alt="" src="/v2/mobile/assets/hero-menu-chevron-up.svg"><img decoding="async" class="is-down" alt="" src="/v2/mobile/assets/hero-menu-chevron-down.svg"></button>
+          </div>
+          <div class="mm-sub" id="mm-sub-platform" data-mm style="--d:250ms; --ty:12px;"><div><ul>
+            <li><a href="/v2/platform/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot-on.svg">Trade-in orchestration</a></li>
+            <li><a href="/v2/intelligence/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device Value Intelligence</a></li>
+            <li><a href="/v2/vendor-network/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Vendor Network</a></li>
+            <li><a href="/v2/platform/#integrations"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Integrations</a></li>
+          </ul></div></div>
+        </div>
+        <div class="mm-group">
+          <div class="mm-row" data-mm style="--d:210ms;">
+            <a href="/v2/solutions/">Solutions</a>
+            <button type="button" class="mm-tog" aria-expanded="false" aria-controls="mm-sub-solutions" aria-label="Solutions pages"><img decoding="async" class="is-up" alt="" src="/v2/mobile/assets/hero-menu-chevron-up.svg"><img decoding="async" class="is-down" alt="" src="/v2/mobile/assets/hero-menu-chevron-down.svg"></button>
+          </div>
+          <div class="mm-sub" id="mm-sub-solutions"><div><ul>
+            <li><a href="/v2/solutions/#apr"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Apple Premium Resellers</a></li>
+            <li><a href="/v2/solutions/#retailers"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Electronics retailers</a></li>
+            <li><a href="/v2/solutions/#telecom"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Telecom operators</a></li>
+            <li><a href="/v2/solutions/#brands"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device brands and OEM</a></li>
+          </ul></div></div>
+        </div>
+        <div class="mm-row" data-mm style="--d:270ms;"><a href="/v2/vendor-network/">Vendor Network</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:330ms;"><a href="/v2/intelligence/">Intelligence</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:390ms;"><a href="/v2/insights/">Insights</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:450ms;"><a href="/v2/company/">Company</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+      </nav>
+
+      <div class="mm-foot">
+        <a href="/v2/vendor-network/" class="mm-cta mm-cta--ghost" data-mm style="--d:700ms; --ty:30px;">Buying trade-in devices? Join the vendor network  →</a>
+        <a href="/v2/contact/" class="mm-cta" data-mm style="--d:800ms; --ty:30px;">Discuss your program  →</a>
+        <p class="mm-legal"><a href="/v2/legal/#privacy">Privacy</a>    <a href="/v2/legal/#cookies">Cookies</a>    <a href="/v2/legal/#imprint">Imprint</a></p>
+      </div>
+    </div>
+  </div>
+
+<script src="/v2/v2.js"></script>
+<script src="/v2/mobile/menu.js"></script>
+<script>
+// Flow-laid sections ([data-fit]) take their height from their content, so longer copy, form errors or the
+// success state never get clipped. The inline --h stays as the no-JS fallback.
+(() => {
+  const fit = () => document.querySelectorAll('.v2-sec[data-fit]').forEach((s) => {
+    const flow = s.querySelector('[data-fit-flow]');
+    if (flow) s.style.setProperty('--h', Math.ceil(flow.offsetHeight) + 'px');
+  });
+  fit();
+  addEventListener('load', fit);
+  addEventListener('resize', fit);
+  if (document.fonts) document.fonts.ready.then(fit);
+  window.V2fit = fit;
+})();
+</script>
+<script>
+// Vendor application (Netlify form "vendor-application"): validates in the browser, posts with fetch and shows
+// the success state in place. Without JS the form posts normally and returns to ?sent=1, which shows the same state.
+(() => {
+  const sec = document.querySelector('[data-section="apply"]');
+  const form = sec && sec.querySelector('[data-va-form]');
+  if (!form) return;
+  const card = sec.querySelector('[data-va-card]');
+  const status = sec.querySelector('[data-va-status]');
+  const btn = form.querySelector('button[type="submit"]');
+  const group = form.querySelector('[data-va-group]');
+  const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+
+  // Where the visitor came from (path only).
+  const src = form.querySelector('[data-source-page]');
+  try {
+    if (src && document.referrer) {
+      const u = new URL(document.referrer);
+      if (u.origin !== location.origin) src.value = u.origin + u.pathname;
+      else if (!/^\/v2\/(mobile\/)?vendor-network\/$/.test(u.pathname)) src.value = u.pathname;
+    }
+  } catch (e) {}
+
+  const showDone = (focus) => {
+    card.classList.add('is-sent');
+    form.setAttribute('aria-hidden', 'true');
+    form.inert = true;
+    if (window.V2fit) window.V2fit();
+    if (focus) {
+      sec.querySelector('[data-va-focus]')?.focus({ preventScroll: true });
+      scrollTo({ top: card.getBoundingClientRect().top + scrollY - 110 * (window.V2 ? V2.scale() : 1), behavior: 'smooth' });
+    }
+  };
+  if (new URLSearchParams(location.search).get('sent') === '1') {
+    showDone(false);
+    addEventListener('load', () => setTimeout(() => sec.scrollIntoView(), 50), { once: true });
+  }
+
+  const mark = (el, bad) => {
+    const field = el.closest('.va-field');
+    if (field.classList.contains('is-bad') !== bad) { field.classList.toggle('is-bad', bad); if (window.V2fit) requestAnimationFrame(window.V2fit); }
+    if (el.matches('input, textarea')) bad ? el.setAttribute('aria-invalid', 'true') : el.removeAttribute('aria-invalid');
+  };
+  const check = () => {
+    let first = null;
+    form.querySelectorAll('input[required], textarea[required]').forEach((el) => {
+      const v = el.value.trim();
+      const bad = !v || (el.type === 'email' && !emailOk(v));
+      mark(el, bad);
+      if (bad && !first) first = el;
+    });
+    const anyCat = group.querySelector('input:checked');
+    mark(group, !anyCat);
+    if (!anyCat && !first) first = group.querySelector('input');
+    if (window.V2fit) window.V2fit();
+    return first;
+  };
+
+  form.addEventListener('input', (e) => {
+    const f = e.target.closest('.va-field');
+    if (f && f.classList.contains('is-bad')) {
+      if (f === group) { if (group.querySelector('input:checked')) mark(group, false); }
+      else { const v = e.target.value.trim(); if (v && (e.target.type !== 'email' || emailOk(v))) mark(e.target, false); }
+    }
+  });
+  form.addEventListener('change', (e) => { if (e.target.closest('[data-va-group]') && group.querySelector('input:checked')) mark(group, false); });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const first = check();
+    if (first) {
+      status.textContent = 'Please complete the highlighted fields.';
+      first.focus();
+      return;
+    }
+    status.textContent = '';
+    btn.disabled = true;
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+      .then((r) => { if (!r.ok) throw new Error(r.status); showDone(true); })
+      .catch(() => { btn.disabled = false; status.textContent = 'Sending failed. Please try again.'; });
+  });
+})();
+</script>
+<script>
+// Closing footer newsletter (Netlify form "newsletter"): validates, posts with fetch and confirms in place.
+// Without JS the form posts normally and comes back with ?subscribed=1.
+(() => {
+  const sec = document.querySelector('[data-section="closing"]');
+  const form = sec && sec.querySelector('.cl-form');
+  if (!form) return;
+  const input = form.querySelector('input[type="email"]');
+  const btn = form.querySelector('button');
+  const msg = sec.querySelector('.cl-msg');
+  const say = (text, kind) => { if (!msg) return; msg.textContent = text; msg.className = 'cl-msg is-on ' + kind; };
+  const valid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  const done = () => {
+    input.value = '';
+    input.placeholder = 'Thanks, you are on the list';
+    input.disabled = true;
+    btn.textContent = 'Subscribed';
+    btn.disabled = true;
+    say('Thanks. You are subscribed.', 'is-ok');
+  };
+  if (new URLSearchParams(location.search).get('subscribed') === '1') done();
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (btn.disabled) return;
+    const v = input.value.trim();
+    if (!valid(v)) {
+      input.classList.add('is-bad');
+      input.setAttribute('aria-invalid', 'true');
+      say(v ? 'Enter a valid work email.' : 'Enter a work email.', 'is-err');
+      input.focus();
+      return;
+    }
+    input.classList.remove('is-bad');
+    input.removeAttribute('aria-invalid');
+    btn.disabled = true;
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+      .then((r) => { if (!r.ok) throw new Error(r.status); done(); })
+      .catch(() => { btn.disabled = false; say('Sending failed. Please try again.', 'is-err'); });
+  });
+  input.addEventListener('input', () => {
+    input.classList.remove('is-bad');
+    input.removeAttribute('aria-invalid');
+    if (msg && msg.classList.contains('is-err')) msg.className = 'cl-msg';
+  });
+})();
+</script>
+</body>
+</html>

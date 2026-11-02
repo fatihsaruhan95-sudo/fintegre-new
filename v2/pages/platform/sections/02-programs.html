@@ -1,0 +1,86 @@
+<section data-section="programs" id="programs" class="v2-sec" data-tone="dark" style="--h:1120px; background: radial-gradient(calc(700px * var(--s)) calc(420px * var(--s)) at calc(50% - 300px * var(--s)) calc(620px * var(--s)), rgba(34,54,196,.55) 0%, rgba(26,40,143,.4) 30%, rgba(18,26,90,.25) 55%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="programs"] .pg-a { position: absolute; margin: 0; }
+  [data-section="programs"] h2 { left: 120px; top: 112px; font-weight: 400; font-size: 60px; line-height: 1; letter-spacing: -0.035em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="programs"] .pg-lede { left: 860px; top: 120px; width: 460px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="programs"] .pg-grid { left: 120px; top: 330px; width: 1200px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  [data-section="programs"] .pg-card { position: relative; height: 340px; box-sizing: border-box; padding: 24px 24px 22px; border-radius: 26px; overflow: hidden; display: flex; flex-direction: column;
+    background: rgba(255,255,255,.07); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    box-shadow: inset 0 0 0 1px rgba(183,215,255,.16), 0 30px 60px rgba(0,0,0,.4); }
+  [data-section="programs"] .pg-card h3 { margin: 22px 0 0; font-weight: 400; font-size: 21px; line-height: 1.15; letter-spacing: -0.02em; color: #F5F7FA; }
+  [data-section="programs"] .pg-card p { margin: 10px 0 0; font-weight: 300; font-size: 13.5px; line-height: 1.5; color: rgba(245,247,250,.64); }
+  [data-section="programs"] .pg-cta { margin-top: auto; align-self: flex-start; font-size: 14px; line-height: normal; color: #B7D7FF; white-space: pre; transition: color .2s; }
+  [data-section="programs"] .pg-cta:hover { color: #F5F7FA; }
+  [data-section="programs"] .pg-cta::after { content: ''; position: absolute; inset: 0; border-radius: inherit; }
+  [data-section="programs"] .pg-card:has(.pg-cta:hover) { box-shadow: inset 0 0 0 1px rgba(183,215,255,.36), 0 30px 60px rgba(0,0,0,.4); }
+  /* Mini journey */
+  [data-section="programs"] .pg-j { position: relative; height: 74px; box-sizing: border-box; display: flex; justify-content: space-between; border-radius: 16px; padding: 14px 10px 0; background: rgba(15,17,21,.4); box-shadow: inset 0 0 0 1px rgba(183,215,255,.08); }
+  [data-section="programs"] .pg-j__line { position: absolute; left: 40px; right: 40px; top: 21px; height: 1px; background: linear-gradient(90deg, rgba(183,215,255,.25), rgba(183,215,255,.7)); }
+  [data-section="programs"] .pg-j__s { position: relative; width: 80px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  [data-section="programs"] .pg-j__s i { width: 9px; height: 9px; border-radius: 999px; background: #0F1115; box-shadow: inset 0 0 0 1.5px #B7D7FF; }
+  [data-section="programs"] .pg-j__s.is-on i { background: #3047EC; box-shadow: 0 0 0 3px rgba(48,71,236,.35), inset 0 0 0 1.5px #B7D7FF; }
+  [data-section="programs"] .pg-j__s small { font-size: 11px; line-height: 1.25; text-align: center; color: #A7B0BE; }
+  [data-section="programs"] .pg-j__s.is-on small { color: #F5F7FA; }
+  [data-section="programs"] .pg-note { position: relative; height: 340px; box-sizing: border-box; padding: 26px 24px; border-radius: 26px; display: flex; flex-direction: column; gap: 14px; justify-content: flex-end;
+    box-shadow: inset 0 0 0 1px rgba(183,215,255,.14); background: linear-gradient(160deg, rgba(48,71,236,.18), rgba(48,71,236,0) 70%); }
+  [data-section="programs"] .pg-note b { font-weight: 400; font-size: 18px; line-height: 1.3; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="programs"] .pg-note span { font-weight: 300; font-size: 13px; line-height: 1.5; color: #A7B0BE; }
+  [data-section="programs"] .pg-mark { position: absolute; left: 24px; top: 26px; width: 56px; height: 56px; border-radius: 16px; box-shadow: 0 0 40px rgba(48,71,236,.8); overflow: hidden; }
+  [data-section="programs"] .pg-mark img { display: block; width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); }
+  .motion [data-section="programs"] [data-m="up"] { translate: 0 var(--y, 36px); }
+  .motion [data-section="programs"].is-in [data-m] { translate: none; }
+</style>
+  <div class="v2-canvas">
+    <h2 class="pg-a" data-m="up" style="--d:100ms;">One platform.<br>Seven programs.</h2>
+    <p class="pg-a pg-lede" data-m="up" style="--d:200ms;">Build the device programs that fit your customers and channels – from trade-in and upgrades to subscriptions and rentals. Coordinate device assessment, value, recovery and settlement around each program's commercial rules.</p>
+    <div class="pg-a pg-grid">
+      <article class="pg-card" data-m="up" style="--d:300ms;">
+        <div class="pg-j" aria-hidden="true"><i class="pg-j__line"></i><span class="pg-j__s"><i></i><small>Assess</small></span><span class="pg-j__s"><i></i><small>Offer</small></span><span class="pg-j__s is-on"><i></i><small>Credit</small></span></div>
+        <h3>Trade-in</h3>
+        <p>Turn an eligible device into credit towards the next purchase, using condition assessment and qualified buyer offers.</p>
+        <a class="pg-cta" href="/v2/contact/?program=trade-in" aria-label="Discuss this program: Trade-in">Discuss this program  →</a>
+      </article>
+      <article class="pg-card" data-m="up" style="--d:390ms;">
+        <div class="pg-j" aria-hidden="true"><i class="pg-j__line"></i><span class="pg-j__s"><i></i><small>Eligibility</small></span><span class="pg-j__s"><i></i><small>Upgrade</small></span><span class="pg-j__s is-on"><i></i><small>Settle agreement</small></span></div>
+        <h3>Early upgrade</h3>
+        <p>Help customers move to their next device before the end of their current agreement, subject to eligibility and the program's settlement terms.</p>
+        <a class="pg-cta" href="/v2/contact/?program=early-upgrade" aria-label="Discuss this program: Early upgrade">Discuss this program  →</a>
+      </article>
+      <article class="pg-card" data-m="up" style="--d:480ms;">
+        <div class="pg-j" aria-hidden="true"><i class="pg-j__line"></i><span class="pg-j__s"><i></i><small>New device</small></span><span class="pg-j__s"><i></i><small>Return window</small></span><span class="pg-j__s is-on"><i></i><small>Handover</small></span></div>
+        <h3>Deferred trade-in</h3>
+        <p>Let customers receive their new device first and hand over their existing device within an agreed return window.</p>
+        <a class="pg-cta" href="/v2/contact/?program=deferred-trade-in" aria-label="Discuss this program: Deferred trade-in">Discuss this program  →</a>
+      </article>
+      <article class="pg-card" data-m="up" style="--d:570ms;">
+        <div class="pg-j" aria-hidden="true"><i class="pg-j__line"></i><span class="pg-j__s"><i></i><small>Lock value</small></span><span class="pg-j__s"><i></i><small>Defined period</small></span><span class="pg-j__s is-on"><i></i><small>Trade in</small></span></div>
+        <h3>Future trade-in</h3>
+        <p>Lock in a device's trade-in value for a defined period, subject to agreed eligibility, condition and return terms.</p>
+        <a class="pg-cta" href="/v2/contact/?program=future-trade-in" aria-label="Discuss this program: Future trade-in">Discuss this program  →</a>
+      </article>
+      <article class="pg-card" data-m="up" style="--d:660ms;">
+        <div class="pg-j" aria-hidden="true"><i class="pg-j__line"></i><span class="pg-j__s"><i></i><small>Subscribe</small></span><span class="pg-j__s"><i></i><small>Recurring payments</small></span><span class="pg-j__s is-on"><i></i><small>Renew, upgrade, return</small></span></div>
+        <h3>Subscription programs</h3>
+        <p>Offer device access through recurring payments, with defined options for renewal, upgrade or return under the subscription agreement.</p>
+        <a class="pg-cta" href="/v2/contact/?program=subscription" aria-label="Discuss this program: Subscription programs">Discuss this program  →</a>
+      </article>
+      <article class="pg-card" data-m="up" style="--d:750ms;">
+        <div class="pg-j" aria-hidden="true"><i class="pg-j__line"></i><span class="pg-j__s"><i></i><small>Rent</small></span><span class="pg-j__s"><i></i><small>Agreed term</small></span><span class="pg-j__s is-on"><i></i><small>Return</small></span></div>
+        <h3>Device rental programs</h3>
+        <p>Offer devices for an agreed rental term, with clear payment, usage and end-of-term return conditions.</p>
+        <a class="pg-cta" href="/v2/contact/?program=device-rental" aria-label="Discuss this program: Device rental programs">Discuss this program  →</a>
+      </article>
+      <article class="pg-card" data-m="up" style="--d:840ms;">
+        <div class="pg-j" aria-hidden="true"><i class="pg-j__line"></i><span class="pg-j__s"><i></i><small>Return request</small></span><span class="pg-j__s"><i></i><small>Alternative offer</small></span><span class="pg-j__s is-on"><i></i><small>Exchange or upgrade</small></span></div>
+        <h3>Return avoidance</h3>
+        <p>Offer eligible customers an alternative to returning their purchase, such as a supported exchange or upgrade journey, while preserving applicable return rights.</p>
+        <a class="pg-cta" href="/v2/contact/?program=return-avoidance" aria-label="Discuss this program: Return avoidance">Discuss this program  →</a>
+      </article>
+      <div class="pg-note" data-m="up" style="--d:930ms;">
+        <span class="pg-mark"><img alt="" src="/v2/assets/platform-modules-mark.webp" width="56" height="56"></span>
+        <b>Additional programs build on shared orchestration capabilities while requiring their own commercial and operational arrangements.</b>
+        <span>Availability, markets, partners and responsibilities are confirmed for each program.</span>
+      </div>
+    </div>
+  </div>
+</section>

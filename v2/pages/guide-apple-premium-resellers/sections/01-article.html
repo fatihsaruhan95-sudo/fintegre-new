@@ -1,0 +1,141 @@
+<section data-section="article" id="article" class="v2-sec" data-tone="light" style="--h:4105px; background:#F5F7FA;">
+<style>
+  [data-section="article"] p { margin: 0; }
+  [data-section="article"] .ga-col { position: absolute; left: 360px; top: 120px; width: 720px; display: flex; flex-direction: column; gap: 24px; }
+  [data-section="article"] .ga-lead { font-weight: 300; font-size: 22px; line-height: 1.55; color: rgba(15,17,21,.9); margin-bottom: 8px; }
+  [data-section="article"] h2 { margin: 32px 0 0; font-weight: 400; font-size: 36px; line-height: 1.12; letter-spacing: -0.03em; color: #0F1115; }
+  [data-section="article"] .ga-p { font-weight: 300; font-size: 18px; line-height: 1.65; color: rgba(15,17,21,.78); }
+  [data-section="article"] .ga-cap { font-size: 14px; line-height: 1.5; color: rgba(15,17,21,.55); margin-top: -4px; }
+  [data-section="article"] .ga-list, [data-section="article"] .ga-olist { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  [data-section="article"] .ga-list li, [data-section="article"] .ga-olist li { position: relative; padding-left: 30px; font-weight: 300; font-size: 18px; line-height: 1.6; color: rgba(15,17,21,.78); }
+  [data-section="article"] .ga-list li b, [data-section="article"] .ga-olist li b { font-weight: 400; color: #0F1115; }
+  [data-section="article"] .ga-list li::before { content: ''; position: absolute; left: 4px; top: .7em; width: 7px; height: 7px; border-radius: 50%; background: #3047EC; }
+  [data-section="article"] .ga-olist { counter-reset: o; gap: 16px; }
+  [data-section="article"] .ga-olist li { counter-increment: o; padding-left: 44px; }
+  [data-section="article"] .ga-olist li::before { content: counter(o); position: absolute; left: 0; top: 2px; width: 28px; height: 28px; border-radius: 50%; background: #3047EC; color: #F5F7FA; font-size: 13px; font-weight: 400; line-height: 28px; text-align: center; }
+
+  [data-section="article"] .gf { position: relative; flex: none; margin: 8px 0 8px -120px; width: 960px; padding: 36px 40px 36px; box-sizing: border-box; border-radius: 28px; background: #fff; box-shadow: 0 20px 50px rgba(15,20,51,.08); line-height: normal; }
+  [data-section="article"] .gf-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 30px; }
+  [data-section="article"] .gf-ttl { font-size: 13px; color: rgba(15,17,21,.6); }
+  [data-section="article"] .gf-tag { flex: none; font-size: 12px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="article"] ol.gf-steps, [data-section="article"] ol.gt-track { margin: 0; padding: 0; list-style: none; }
+  [data-section="article"] .gs small, [data-section="article"] .gt-track small { display: block; font-size: 13px; color: rgba(15,17,21,.55); }
+  [data-section="article"] .gs span, [data-section="article"] .gt-track span { display: block; color: #0F1115; letter-spacing: -0.02em; }
+  [data-section="article"] .gs i, [data-section="article"] .gt-track i { display: block; width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 2px #3047EC; position: relative; z-index: 1; }
+  [data-section="article"] .gs.is-hi i { background: #3047EC; box-shadow: 0 0 0 5px rgba(48,71,236,.15); }
+  [data-section="article"] .gs.is-hi span { color: #3047EC; }
+  [data-section="article"] .gf-steps--nv .gs small { color: #3047EC; }
+  [data-section="article"] .gb-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(15,17,21,.07); }
+  [data-section="article"] .gb-row:first-child { border-top: 0; }
+  [data-section="article"] .gb-lab { font-size: 15px; color: #0F1115; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+  [data-section="article"] .gb-lab em { font-style: normal; font-size: 12px; padding: 4px 10px; border-radius: 999px; background: #3047EC; color: #F5F7FA; white-space: nowrap; }
+  [data-section="article"] .gb-bars { display: flex; flex-direction: column; gap: 8px; }
+  [data-section="article"] .gb-bar { display: flex; align-items: center; gap: 12px; }
+  [data-section="article"] .gb-bar i { display: block; height: 14px; border-radius: 7px; transform-origin: 0 50%; }
+  [data-section="article"] .gb-bar span { font-size: 13px; color: #0F1115; white-space: nowrap; }
+  [data-section="article"] .gb-legend { display: flex; gap: 20px; margin-top: 18px; font-size: 13px; color: rgba(15,17,21,.7); }
+  [data-section="article"] .gb-legend span { display: flex; align-items: center; gap: 8px; }
+  [data-section="article"] .gb-legend i { width: 16px; height: 3px; border-radius: 2px; }
+  [data-section="article"] .gt-name p { font-size: 18px; color: #0F1115; letter-spacing: -0.02em; }
+  [data-section="article"] .gt-name small { display: block; margin-top: 4px; font-size: 13px; color: #3047EC; }
+
+  [data-section="article"] .ga-dark { position: relative; flex: none; margin: 8px 0 8px -120px; width: 960px; height: 520px; border-radius: 28px; overflow: clip;
+    background: radial-gradient(436.36px 173.33px at 218.18px 294.67px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="article"] .ga-dark > * { position: absolute; }
+  [data-section="article"] .ga-dark svg { overflow: visible; }
+  [data-section="article"] .ga-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; line-height: normal; color: #F5F7FA; }
+  [data-section="article"] .ga-chip img { width: 7px; height: 7px; display: block; }
+  [data-section="article"] .ga-dtag { right: 24px; bottom: 20px; font-size: 12px; color: #A7B0BE; line-height: normal; }
+
+  [data-section="article"] .ga-cta { position: relative; flex: none; margin: 56px 0 0 -120px; width: 960px; box-sizing: border-box; padding: 56px 64px 60px; border-radius: 28px; overflow: clip; color: #F5F7FA;
+    background: radial-gradient(520px 260px at 180px 300px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="article"] .ga-cta-k { font-size: 14px; color: #B7D7FF; line-height: normal; }
+  [data-section="article"] .ga-cta h3 { margin: 16px 0 0; font-weight: 400; font-size: 40px; line-height: 1.08; letter-spacing: -0.03em; }
+  [data-section="article"] .ga-cta-p { margin-top: 16px; max-width: 600px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.7); }
+  [data-section="article"] .ga-cta-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  [data-section="article"] .ga-btn { display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s, box-shadow .25s; }
+  [data-section="article"] .ga-btn--white { background: #fff; color: #0F1115; }
+  [data-section="article"] .ga-btn--white:hover { background: #B7D7FF; }
+  [data-section="article"] .ga-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="article"] .ga-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+  [data-section="article"] .ga-std { font-size: 13px; line-height: 1.55; color: rgba(15,17,21,.5); }
+
+  .motion [data-section="article"] .rv [data-rm] { opacity: 0; translate: 0 var(--ty, 40px);
+    transition: opacity .7s var(--ease) var(--d, 0ms), translate 1s var(--ease) var(--d, 0ms), scale .8s var(--ease) var(--d, 0ms); }
+  .motion [data-section="article"] .rv [data-rm="pop"] { translate: none; scale: .6; transition-timing-function: var(--ease), var(--ease), var(--spring); transition-duration: .4s, .4s, .5s; }
+  .motion [data-section="article"] .rv.r-in [data-rm] { opacity: 1; translate: none; scale: 1; }
+  .motion [data-section="article"] .rv [data-rd] { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset var(--dur, .6s) var(--inout) var(--d, 0ms); }
+  .motion [data-section="article"] .rv.r-in [data-rd] { stroke-dashoffset: 0; }
+  .motion [data-section="article"] .rv .gb-bar i { scale: .02 1; transition: scale 1s var(--ease) .3s; }
+  .motion [data-section="article"] .rv.r-in .gb-bar i { scale: 1; }
+  [data-section="article"] .gf-steps { display: flex; position: relative; }
+  [data-section="article"] .gf-steps::before { content: ''; position: absolute; left: 6px; right: 40px; top: 6px; height: 1px; background: rgba(48,71,236,.25); }
+  [data-section="article"] .gs { flex: 1 1 0; display: flex; flex-direction: column; gap: 10px; padding-right: 16px; }
+  [data-section="article"] .gs i { margin-bottom: 8px; }
+  [data-section="article"] .gs span { font-size: 24px; }
+  [data-section="article"] .gf-steps--nv .gs .gs-lab { font-size: 18px; line-height: 1.25; }
+  [data-section="article"] .gt-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 24px 0; border-top: 1px solid rgba(15,17,21,.07); }
+  [data-section="article"] .gt-row:first-child { border-top: 0; padding-top: 4px; }
+  [data-section="article"] .gt-track { display: grid; grid-template-columns: repeat(3, 1fr); position: relative; }
+  [data-section="article"] .gt-track::before { content: ''; position: absolute; left: 6px; right: 60px; top: 6px; height: 1px; background: rgba(48,71,236,.25); }
+  [data-section="article"] .gt-track li { display: flex; flex-direction: column; gap: 8px; padding-right: 16px; }
+  [data-section="article"] .gt-track i { margin-bottom: 6px; }
+  [data-section="article"] .gt-track span { font-size: 18px; line-height: 1.3; }
+  [data-section="article"] table.gf-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.45; }
+  [data-section="article"] .gf-table th, [data-section="article"] .gf-table td { text-align: left; vertical-align: top; padding: 16px 20px 16px 0; border-top: 1px solid rgba(15,17,21,.07); }
+  [data-section="article"] .gf-table thead th { border-top: 0; padding-top: 0; font-weight: 400; font-size: 13px; color: #3047EC; }
+  [data-section="article"] .gf-table tbody th { width: 200px; font-weight: 400; font-size: 13px; color: rgba(15,17,21,.55); }
+  [data-section="article"] .gf-table td { font-weight: 300; color: #0F1115; }
+</style>
+  <div class="v2-canvas">
+    <div class="ga-col" data-fit="140">
+      <p class="ga-lead">In an Apple Premium Reseller store, trade-in is usually part of a wider conversation about a new device. An assisted journey keeps that conversation clear: staff assess the device with the customer, present the credit and apply it within the same visit.</p>
+      <h2>What assisted means</h2>
+      <p class="ga-p">In an assisted journey, a trained member of staff guides the customer through each step, instead of leaving them to complete an online form alone. The staff member checks the device, explains the result and answers questions about the credit. This suits customers who are upgrading in store and want an answer before they buy.</p>
+      <p class="ga-p">Assisted does not have to mean slow. A clear sequence of steps, and a record that staff complete as they go, keeps the conversation focused on the customer’s purchase.</p>
+      <h2>The four steps</h2>
+      <ol class="ga-olist"><li><b>Assess the device.</b> Use Apple Trade In Kit diagnostics and a consistent condition checklist to record the device’s state.</li><li><b>Compare eligible offers.</b> Match the assessed device with qualified buyer offers that are valid for that model, condition and market.</li><li><b>Present trade-in credit.</b> Show the customer the credit value, what it is based on and how it applies to the purchase.</li><li><b>Coordinate handover and settlement.</b> Record the handover, prepare the device for collection and settle with the buyer under the agreed terms.</li></ol>
+      <figure class="gf rv" aria-label="Figure 1, Assisted trade-in journey in store. Illustrative · sample data.">
+        <div data-rm><div class="gf-head"><p class="gf-ttl">Assisted trade-in journey in store</p><p class="gf-tag">Illustrative · sample data</p></div>
+        <ol class="gf-steps"><li class="gs"><i></i><small>Assess the device</small><span>Diagnostics</span></li><li class="gs"><i></i><small>Compare eligible offers</small><span>Offer selected</span></li><li class="gs is-hi"><i></i><small>Present trade-in credit</small><span>€480</span></li><li class="gs"><i></i><small>Handover and settlement</small><span>Recorded</span></li></ol></div>
+      </figure>
+      <p class="ga-cap">Figure 1 · The four steps of an assisted journey. Sample values only.</p>
+      <p class="ga-p">Each step adds to one trade-in record that links the device, its assessment, the offer used, the credit and the handover. This record supports reporting and helps answer questions after the visit.</p>
+      <h2>Clear condition assessment</h2>
+      <p class="ga-p">Customers accept a value more readily when they understand how it was reached. Use the same checklist in every store, show the customer what was checked and record the result in the trade-in record. When the assessed condition differs from what the customer expected, staff should be able to point to the check that changed the value.</p>
+      <p class="ga-p">Where diagnostics and the visual check point to different results, follow a clear rule for which one applies, and explain it to the customer before presenting the credit.</p>
+      <div class="ga-dark rv" role="img" aria-label="An iPhone being assessed in store: Diagnostics · complete, Condition · Grade A, Trade-in credit · €480. Illustrative · sample data.">
+        <img alt="" src="/v2/assets/report-fig-glow.svg" style="left:100px; top:-100px; width:920px; height:780px; max-width:none; pointer-events:none;">
+        <img data-rm alt="" src="/v2/assets/report-iphone13.webp" style="--d:200ms; --ty:80px; left:200px; top:70px; width:300px; height:612px; object-fit:cover; border-radius:44px; box-shadow:0 40px 70px rgba(0,0,0,.6);">
+        <svg style="left:469.35px; top:139.35px;" width="151.3" height="31.3" viewBox="0 0 151.3 31.3" fill="none"><path pathLength="1" data-rd style="--d:1000ms" d="M0.65 30.65C70.65 30.65 90.65 0.65 150.65 0.65" stroke-width="1.3" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+        <svg style="left:469.35px; top:239.35px;" width="151.3" height="21.3" viewBox="0 0 151.3 21.3" fill="none"><path pathLength="1" data-rd style="--d:1200ms" d="M0.65 20.65C70.65 20.65 90.65 0.65 150.65 0.65" stroke-width="1.3" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+        <svg style="left:469.35px; top:339.35px;" width="151.3" height="11.3" viewBox="0 0 151.3 11.3" fill="none"><path pathLength="1" data-rd style="--d:1400ms" d="M0.65 10.65C70.65 10.65 90.65 0.65 150.65 0.65" stroke-width="1.3" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+        <div style="left:620px; top:121px;"><div class="ga-chip" data-rm="pop" style="--d:1500ms;"><img alt="" src="/v2/assets/insights-dot.svg">Diagnostics · complete</div></div>
+        <div style="left:620px; top:221px;"><div class="ga-chip" data-rm="pop" style="--d:1700ms;"><img alt="" src="/v2/assets/insights-dot.svg">Condition · Grade A</div></div>
+        <div style="left:620px; top:321px;"><div class="ga-chip" data-rm="pop" style="--d:1900ms; background:#3047EC;"><img alt="" src="/v2/assets/insights-dot.svg">Trade-in credit · €480</div></div>
+        <p class="ga-dtag">Illustrative · sample data</p>
+      </div>
+      <p class="ga-cap">Figure 2 · What the customer sees after assessment. Illustrative · sample data.</p>
+      <h2>Transparent credit terms</h2>
+      <p class="ga-p">Before the assessment, explain what the credit can be used for, how long the offer is valid and what happens if the device does not match its description. Keep the terms short and the same across stores. Do not present the quote as a guaranteed value; make clear that the final credit follows the assessment.</p>
+      <p class="ga-p">Keep quote, credit and payout distinct. A customer who receives credit towards a purchase should not be told that they are being paid for their device, and the credit should not be described as a cash value.</p>
+      <h2>Under your brand and program rules</h2>
+      <p class="ga-p">The journey should look and feel like your store. Your program rules decide which devices are eligible, how credit is applied and how exceptions are handled. Fintegre coordinates the assessment record, buyer offers and settlement around those rules.</p>
+      <p class="ga-p">Customer-facing materials, receipts and messages should carry your brand. Agree in advance who the customer contacts with a question after the visit, and how quickly that question can be answered.</p>
+      <h2>Preparing staff and stores</h2>
+      <ul class="ga-list"><li>A short script for introducing trade-in during the sales conversation.</li><li>A set place in the store for assessment.</li><li>Clear guidance for devices that are locked, damaged or not eligible.</li><li>A simple way to check the status of a handover.</li></ul>
+      <p class="ga-p">Use the agreed wording when you refer to Apple programs and tools, and do not suggest any endorsement beyond what has been agreed.</p>
+      <p class="ga-p">Review the journey with store teams after launch. The questions customers ask most often usually show where the explanation or the process needs to change.</p>
+      <p class="ga-std">Illustrative workflow and sample data. Values, buyer availability, timing and supported features depend on the agreed program and market.</p>
+      <div class="ga-cta rv">
+        <div data-rm>
+          <p class="ga-cta-k">Next step</p>
+          <h3>Trade-in built for Apple Premium Resellers.</h3>
+          <p class="ga-cta-p">Tell us about your stores and markets. We will discuss how an assisted journey could work under your brand and program rules.</p>
+          <div class="ga-cta-btns"><a href="/v2/contact/?type=apr" class="ga-btn ga-btn--white">Discuss your Apple trade-in program</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

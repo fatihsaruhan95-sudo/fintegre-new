@@ -1,0 +1,134 @@
+<section data-section="article" id="article" class="v2-sec" data-tone="light" style="--h:4222px; background:#F5F7FA;">
+<style>
+  [data-section="article"] p { margin: 0; }
+  [data-section="article"] .ga-col { position: absolute; left: 360px; top: 120px; width: 720px; display: flex; flex-direction: column; gap: 24px; }
+  [data-section="article"] .ga-lead { font-weight: 300; font-size: 22px; line-height: 1.55; color: rgba(15,17,21,.9); margin-bottom: 8px; }
+  [data-section="article"] h2 { margin: 32px 0 0; font-weight: 400; font-size: 36px; line-height: 1.12; letter-spacing: -0.03em; color: #0F1115; }
+  [data-section="article"] .ga-p { font-weight: 300; font-size: 18px; line-height: 1.65; color: rgba(15,17,21,.78); }
+  [data-section="article"] .ga-cap { font-size: 14px; line-height: 1.5; color: rgba(15,17,21,.55); margin-top: -4px; }
+  [data-section="article"] .ga-list, [data-section="article"] .ga-olist { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  [data-section="article"] .ga-list li, [data-section="article"] .ga-olist li { position: relative; padding-left: 30px; font-weight: 300; font-size: 18px; line-height: 1.6; color: rgba(15,17,21,.78); }
+  [data-section="article"] .ga-list li b, [data-section="article"] .ga-olist li b { font-weight: 400; color: #0F1115; }
+  [data-section="article"] .ga-list li::before { content: ''; position: absolute; left: 4px; top: .7em; width: 7px; height: 7px; border-radius: 50%; background: #3047EC; }
+  [data-section="article"] .ga-olist { counter-reset: o; gap: 16px; }
+  [data-section="article"] .ga-olist li { counter-increment: o; padding-left: 44px; }
+  [data-section="article"] .ga-olist li::before { content: counter(o); position: absolute; left: 0; top: 2px; width: 28px; height: 28px; border-radius: 50%; background: #3047EC; color: #F5F7FA; font-size: 13px; font-weight: 400; line-height: 28px; text-align: center; }
+
+  [data-section="article"] .gf { position: relative; flex: none; margin: 8px 0 8px -120px; width: 960px; padding: 36px 40px 36px; box-sizing: border-box; border-radius: 28px; background: #fff; box-shadow: 0 20px 50px rgba(15,20,51,.08); line-height: normal; }
+  [data-section="article"] .gf-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 30px; }
+  [data-section="article"] .gf-ttl { font-size: 13px; color: rgba(15,17,21,.6); }
+  [data-section="article"] .gf-tag { flex: none; font-size: 12px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="article"] ol.gf-steps, [data-section="article"] ol.gt-track { margin: 0; padding: 0; list-style: none; }
+  [data-section="article"] .gs small, [data-section="article"] .gt-track small { display: block; font-size: 13px; color: rgba(15,17,21,.55); }
+  [data-section="article"] .gs span, [data-section="article"] .gt-track span { display: block; color: #0F1115; letter-spacing: -0.02em; }
+  [data-section="article"] .gs i, [data-section="article"] .gt-track i { display: block; width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 2px #3047EC; position: relative; z-index: 1; }
+  [data-section="article"] .gs.is-hi i { background: #3047EC; box-shadow: 0 0 0 5px rgba(48,71,236,.15); }
+  [data-section="article"] .gs.is-hi span { color: #3047EC; }
+  [data-section="article"] .gf-steps--nv .gs small { color: #3047EC; }
+  [data-section="article"] .gb-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(15,17,21,.07); }
+  [data-section="article"] .gb-row:first-child { border-top: 0; }
+  [data-section="article"] .gb-lab { font-size: 15px; color: #0F1115; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+  [data-section="article"] .gb-lab em { font-style: normal; font-size: 12px; padding: 4px 10px; border-radius: 999px; background: #3047EC; color: #F5F7FA; white-space: nowrap; }
+  [data-section="article"] .gb-bars { display: flex; flex-direction: column; gap: 8px; }
+  [data-section="article"] .gb-bar { display: flex; align-items: center; gap: 12px; }
+  [data-section="article"] .gb-bar i { display: block; height: 14px; border-radius: 7px; transform-origin: 0 50%; }
+  [data-section="article"] .gb-bar span { font-size: 13px; color: #0F1115; white-space: nowrap; }
+  [data-section="article"] .gb-legend { display: flex; gap: 20px; margin-top: 18px; font-size: 13px; color: rgba(15,17,21,.7); }
+  [data-section="article"] .gb-legend span { display: flex; align-items: center; gap: 8px; }
+  [data-section="article"] .gb-legend i { width: 16px; height: 3px; border-radius: 2px; }
+  [data-section="article"] .gt-name p { font-size: 18px; color: #0F1115; letter-spacing: -0.02em; }
+  [data-section="article"] .gt-name small { display: block; margin-top: 4px; font-size: 13px; color: #3047EC; }
+
+  [data-section="article"] .ga-dark { position: relative; flex: none; margin: 8px 0 8px -120px; width: 960px; height: 520px; border-radius: 28px; overflow: clip;
+    background: radial-gradient(436.36px 173.33px at 218.18px 294.67px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="article"] .ga-dark > * { position: absolute; }
+  [data-section="article"] .ga-dark svg { overflow: visible; }
+  [data-section="article"] .ga-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; line-height: normal; color: #F5F7FA; }
+  [data-section="article"] .ga-chip img { width: 7px; height: 7px; display: block; }
+  [data-section="article"] .ga-dtag { right: 24px; bottom: 20px; font-size: 12px; color: #A7B0BE; line-height: normal; }
+
+  [data-section="article"] .ga-cta { position: relative; flex: none; margin: 56px 0 0 -120px; width: 960px; box-sizing: border-box; padding: 56px 64px 60px; border-radius: 28px; overflow: clip; color: #F5F7FA;
+    background: radial-gradient(520px 260px at 180px 300px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="article"] .ga-cta-k { font-size: 14px; color: #B7D7FF; line-height: normal; }
+  [data-section="article"] .ga-cta h3 { margin: 16px 0 0; font-weight: 400; font-size: 40px; line-height: 1.08; letter-spacing: -0.03em; }
+  [data-section="article"] .ga-cta-p { margin-top: 16px; max-width: 600px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.7); }
+  [data-section="article"] .ga-cta-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  [data-section="article"] .ga-btn { display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s, box-shadow .25s; }
+  [data-section="article"] .ga-btn--white { background: #fff; color: #0F1115; }
+  [data-section="article"] .ga-btn--white:hover { background: #B7D7FF; }
+  [data-section="article"] .ga-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="article"] .ga-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+  [data-section="article"] .ga-std { font-size: 13px; line-height: 1.55; color: rgba(15,17,21,.5); }
+
+  .motion [data-section="article"] .rv [data-rm] { opacity: 0; translate: 0 var(--ty, 40px);
+    transition: opacity .7s var(--ease) var(--d, 0ms), translate 1s var(--ease) var(--d, 0ms), scale .8s var(--ease) var(--d, 0ms); }
+  .motion [data-section="article"] .rv [data-rm="pop"] { translate: none; scale: .6; transition-timing-function: var(--ease), var(--ease), var(--spring); transition-duration: .4s, .4s, .5s; }
+  .motion [data-section="article"] .rv.r-in [data-rm] { opacity: 1; translate: none; scale: 1; }
+  .motion [data-section="article"] .rv [data-rd] { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset var(--dur, .6s) var(--inout) var(--d, 0ms); }
+  .motion [data-section="article"] .rv.r-in [data-rd] { stroke-dashoffset: 0; }
+  .motion [data-section="article"] .rv .gb-bar i { scale: .02 1; transition: scale 1s var(--ease) .3s; }
+  .motion [data-section="article"] .rv.r-in .gb-bar i { scale: 1; }
+  [data-section="article"] .gf-steps { display: flex; position: relative; }
+  [data-section="article"] .gf-steps::before { content: ''; position: absolute; left: 6px; right: 40px; top: 6px; height: 1px; background: rgba(48,71,236,.25); }
+  [data-section="article"] .gs { flex: 1 1 0; display: flex; flex-direction: column; gap: 10px; padding-right: 16px; }
+  [data-section="article"] .gs i { margin-bottom: 8px; }
+  [data-section="article"] .gs span { font-size: 24px; }
+  [data-section="article"] .gf-steps--nv .gs .gs-lab { font-size: 18px; line-height: 1.25; }
+  [data-section="article"] .gt-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 24px 0; border-top: 1px solid rgba(15,17,21,.07); }
+  [data-section="article"] .gt-row:first-child { border-top: 0; padding-top: 4px; }
+  [data-section="article"] .gt-track { display: grid; grid-template-columns: repeat(3, 1fr); position: relative; }
+  [data-section="article"] .gt-track::before { content: ''; position: absolute; left: 6px; right: 60px; top: 6px; height: 1px; background: rgba(48,71,236,.25); }
+  [data-section="article"] .gt-track li { display: flex; flex-direction: column; gap: 8px; padding-right: 16px; }
+  [data-section="article"] .gt-track i { margin-bottom: 6px; }
+  [data-section="article"] .gt-track span { font-size: 18px; line-height: 1.3; }
+  [data-section="article"] table.gf-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.45; }
+  [data-section="article"] .gf-table th, [data-section="article"] .gf-table td { text-align: left; vertical-align: top; padding: 16px 20px 16px 0; border-top: 1px solid rgba(15,17,21,.07); }
+  [data-section="article"] .gf-table thead th { border-top: 0; padding-top: 0; font-weight: 400; font-size: 13px; color: #3047EC; }
+  [data-section="article"] .gf-table tbody th { width: 200px; font-weight: 400; font-size: 13px; color: rgba(15,17,21,.55); }
+  [data-section="article"] .gf-table td { font-weight: 300; color: #0F1115; }
+</style>
+  <div class="v2-canvas">
+    <div class="ga-col" data-fit="140">
+      <p class="ga-lead">A trade-in has more than one value. The customer sees a quote, receives credit or a payout, and a buyer later settles for the device. To measure a program, track each of these stages separately and record why they differ.</p>
+      <h2>Four values, four moments</h2>
+      <p class="ga-p">Each value belongs to a different moment in the journey and is agreed with a different party.</p>
+      <ul class="ga-list"><li><b>Quote:</b> the value shown to the customer before the device is assessed, based on the declared model, storage and condition.</li><li><b>Credit:</b> the value applied towards the customer’s next purchase after condition assessment, under the program’s terms.</li><li><b>Payout:</b> where the program pays the customer money instead of credit, the amount paid and how it is paid.</li><li><b>Buyer settlement:</b> the amount a buyer pays for the device once it has been received and checked, under the agreed buyer terms.</li></ul>
+      <p class="ga-p">These values are related, but they are not the same number. Reporting them as one figure hides where value changes and who carries the difference.</p>
+      <p class="ga-p">In some programs the customer can choose between credit and a payout; in others only one is offered. Record which applies to each trade-in, because the two can carry different terms and costs.</p>
+      <figure class="gf rv" aria-label="Figure 1, One trade-in, from quote to buyer settlement. Illustrative · sample data.">
+        <div data-rm><div class="gf-head"><p class="gf-ttl">One trade-in, from quote to buyer settlement</p><p class="gf-tag">Illustrative · sample data</p></div>
+        <ol class="gf-steps"><li class="gs"><i></i><small>Quote</small><span>€420</span></li><li class="gs"><i></i><small>Assessment</small><span>Grade B</span></li><li class="gs"><i></i><small>Credit</small><span>€390</span></li><li class="gs"><i></i><small>Handover</small><span>In store</span></li><li class="gs is-hi"><i></i><small>Buyer settlement</small><span>€405</span></li></ol></div>
+      </figure>
+      <p class="ga-cap">Figure 1 · Each stage produces its own value. Sample values only.</p>
+      <h2>Where value changes</h2>
+      <p class="ga-p">Value usually moves at three points. Between quote and credit, when the assessed condition differs from what the customer declared. Between credit and buyer settlement, when the buyer’s check finds a different condition, or when the offer has expired before the device arrives. And over time, as market values for a model change between the quote date and the handover date.</p>
+      <p class="ga-p">Each change has a cause you can record: a condition difference, a timing difference or a pricing difference. Recording the cause is what makes the number useful.</p>
+      <h2>What to record for each trade-in</h2>
+      <ul class="ga-list"><li>Model, storage and colour where relevant.</li><li>Declared condition and assessed condition.</li><li>Quote value and date.</li><li>Credit or payout value and date.</li><li>The buyer offer used and how long it was valid.</li><li>Handover date and channel.</li><li>Buyer settlement value and date.</li><li>The reason for any adjustment.</li></ul>
+      <p class="ga-p">Much of this data often sits in separate systems. The work is to link it to one trade-in record, so the stages can be compared.</p>
+      <p class="ga-p">Review the measures by channel, store and device category. A difference that looks small across the whole program can be concentrated in one store, one model or one buyer.</p>
+      <h2>Measures that support decisions</h2>
+      <ul class="ga-list"><li><b>Quote-to-credit difference:</b> shows how closely declared condition matches assessed condition, and whether assessment guidance is clear.</li><li><b>Credit-to-settlement difference:</b> shows whether the value given to customers is recovered from buyers, and where the program absorbs a gap.</li><li><b>Completion by stage:</b> shows where customers leave the journey, for example after the quote or after assessment.</li><li><b>Time between stages:</b> shows whether offer validity matches how long handover and logistics actually take.</li></ul>
+      <figure class="gf rv" aria-label="Figure 2, Trade-ins remaining at each stage. Illustrative · sample data.">
+        <div data-rm><div class="gf-head"><p class="gf-ttl">Trade-ins remaining at each stage</p><p class="gf-tag">Illustrative · sample data</p></div>
+        <div class="gf-bars"><div class="gb-row"><p class="gb-lab">Quote shown</p><div class="gb-bars"><div class="gb-bar"><i style="width:100.0%; background:#3047EC;"></i><span>100</span></div></div></div><div class="gb-row"><p class="gb-lab">Assessment started</p><div class="gb-bars"><div class="gb-bar"><i style="width:72.0%; background:#3047EC;"></i><span>72</span></div></div></div><div class="gb-row"><p class="gb-lab">Credit accepted</p><div class="gb-bars"><div class="gb-bar"><i style="width:61.0%; background:#3047EC;"></i><span>61</span></div></div></div><div class="gb-row"><p class="gb-lab">Device handed over</p><div class="gb-bars"><div class="gb-bar"><i style="width:58.0%; background:#3047EC;"></i><span>58</span></div></div></div></div></div>
+      </figure>
+      <p class="ga-cap">Figure 2 · A completion view shows where customers leave the journey. Sample data, not program results.</p>
+      <h2>Common measurement mistakes</h2>
+      <p class="ga-p">Comparing quotes across programs without checking the condition mix. Reporting credit as if it were the amount recovered from buyers. Leaving out offers that expired before handover. Mixing values with and without tax. Each of these makes a program look better or worse than it is.</p>
+      <h2>Getting started</h2>
+      <p class="ga-p">Start with one channel and one device category. Agree the definitions of quote, credit, payout and buyer settlement with finance, operations and the buyer side. Then link the records and review the differences regularly. The aim is not a single headline number, but a clear view of where value is created, kept or lost.</p>
+      <p class="ga-p">Agree who owns each measure and how often it is reviewed. When a measure moves, the recorded reasons should point to an action: clearer condition guidance, a shorter offer window or a review of buyer terms.</p>
+      <p class="ga-std">Illustrative workflow and sample data. Values, buyer availability, timing and supported features depend on the agreed program and market.</p>
+      <div class="ga-cta rv">
+        <div data-rm>
+          <p class="ga-cta-k">Next step</p>
+          <h3>Plan how your program measures value.</h3>
+          <p class="ga-cta-p">Tell us about your channels, devices and current reporting. We will look at how quote, credit and settlement data can be linked for your program.</p>
+          <div class="ga-cta-btns"><a href="/v2/contact/?program=trade-in" class="ga-btn ga-btn--white">Discuss your trade-in program</a><a href="/v2/contact/?topic=data" class="ga-btn ga-btn--ghost">Discuss your data and reporting needs</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

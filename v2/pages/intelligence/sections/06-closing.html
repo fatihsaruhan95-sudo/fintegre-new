@@ -1,4 +1,4 @@
-<section data-section="closing" id="closing" class="v2-sec ip-sec" data-tone="dark" style="--h:900px; background: linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), radial-gradient(calc(960px * var(--s)) calc(360px * var(--s)) at 50% calc(396px * var(--s)), rgba(48,71,236,.42) 0%, rgba(34,51,173,.32) 25%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), #0F1115;">
+<section data-section="closing" id="closing" class="v2-sec ip-sec" data-tone="dark" style="--h:937px; background: linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), radial-gradient(calc(960px * var(--s)) calc(360px * var(--s)) at 50% calc(396px * var(--s)), rgba(48,71,236,.42) 0%, rgba(34,51,173,.32) 25%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), #0F1115;">
   <style>
     [data-section="closing"] .cl-cta { position: absolute; left: 440px; top: 110px; width: 560px; display: flex; flex-direction: column; gap: 24px; align-items: center; }
     [data-section="closing"] .cl-cta p { width: 560px; text-align: center; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
@@ -15,7 +15,7 @@
       -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
     }
     [data-section="closing"] .cl-foot {
-      position: absolute; left: 20px; top: 557px; width: 1400px; height: 343px; padding: 56px 56px 40px;
+      position: absolute; left: 20px; top: 557px; width: 1400px; height: 380px; padding: 56px 56px 40px;
       display: flex; flex-direction: column; justify-content: space-between;
       background: radial-gradient(437.5px 77.96px at 350px 46.77px, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 100%), linear-gradient(169.59deg, rgba(28,34,72,.92) 14.29%, rgba(17,20,34,.92) 85.71%);
       border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
@@ -49,16 +49,21 @@
     [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
     [data-section="closing"] .cl-legal { display: flex; gap: 10px; }
     [data-section="closing"] .cl-legal a { font-size: 12px; color: rgba(255,255,255,.8); }
+    [data-section="closing"] .cl-sub .cl-note { font-size: 12px; color: rgba(255,255,255,.5); margin: 0; }
+    [data-section="closing"] .cl-sub .cl-note a { color: rgba(255,255,255,.8); text-decoration: underline; text-underline-offset: 2px; }
+    [data-section="closing"] .cl-sub .cl-err { font-size: 12px; color: #FFB4B4; margin: 0; }
+    [data-section="closing"] .cl-sub .cl-ok { font-size: 13px; color: #B7D7FF; margin: 0; }
+    [data-section="closing"] .cl-vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   </style>
   <div class="v2-canvas">
     <div class="cl-cta" data-m="up" style="--y:30px">
-      <p>Get a free benchmark of your market: residual values, buyer depth and regrade rates for your top 20 models.</p>
+      <p>Tell us which decisions you want to support: buyer selection, deduction review or journey performance.</p>
       <div class="cl-btns">
-        <a href="/v2/design-your-program/" class="cl-btn cl-btn--light">Request your benchmark</a>
-        <a href="/v2/design-your-program/" class="cl-btn cl-btn--ghost">Talk to the data team</a>
+        <a href="/v2/contact/?topic=data" class="cl-btn cl-btn--light">Discuss your data and reporting needs</a>
+        <a href="/v2/contact/" class="cl-btn cl-btn--ghost">Discuss your program</a>
       </div>
     </div>
-    <h2 class="cl-head">Price every device<br>on evidence</h2>
+    <h2 class="cl-head">Follow value<br>to settlement</h2>
 
     <footer class="cl-foot">
       <div class="cl-top">
@@ -68,27 +73,32 @@
             <img src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
           </a>
           <h3>Get trade-in insights</h3>
-          <p>Market reports and program benchmarks. No spam.</p>
-          <form class="cl-form" novalidate>
-            <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+          <p>Guides and program notes from Fintegre. No spam.</p>
+          <form class="cl-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/v2/thanks/" novalidate>
+            <input type="hidden" name="form-name" value="newsletter">
+            <p hidden><label>Leave empty <input name="bot-field"></label></p>
+            <label for="nl-email-d" class="cl-vh">Work email</label>
+            <input id="nl-email-d" type="email" name="email" placeholder="Work email" autocomplete="email" required aria-describedby="nl-err-d">
             <button type="submit">Subscribe</button>
           </form>
+          <p class="cl-err" id="nl-err-d" role="alert" hidden>Enter a valid work email.</p>
+          <p class="cl-note">We use your email only to send these notes. <a href="/v2/legal/#privacy">Privacy notice</a></p>
         </div>
         <div class="cl-cols">
           <nav aria-label="Platform"><span>Platform</span>
-            <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device value intelligence</a><a href="/v2/platform/">Vendor network</a><a href="/v2/platform/">Integrations</a>
+            <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device Value Intelligence</a><a href="/v2/vendor-network/">Vendor Network</a><a href="/v2/platform/#integrations">Integrations</a>
           </nav>
           <nav aria-label="Solutions"><span>Solutions</span>
-            <a href="/v2/solutions/">Retailers</a><a href="/v2/solutions/">Telecom operators</a><a href="/v2/solutions/">OEM and ecosystems</a><a href="/v2/solutions/">Apple and premium retail</a>
+            <a href="/v2/solutions/#apr">Apple Premium Resellers</a><a href="/v2/solutions/#retailers">Electronics retailers</a><a href="/v2/solutions/#telecom">Telecom operators</a><a href="/v2/solutions/#brands">Device brands and OEM</a>
           </nav>
           <nav aria-label="Company"><span>Company</span>
-            <a href="/v2/customers/">Customers</a><a href="/v2/insights/">Insights</a><a href="/v2/company/">About</a><a href="/v2/design-your-program/">Contact</a>
+            <a href="/v2/company/">About</a><a href="/v2/insights/">Insights</a><a href="/v2/contact/">Contact</a>
           </nav>
         </div>
       </div>
       <div class="cl-bottom">
         <small>© 2026 Fintegre. All rights reserved.</small>
-        <nav class="cl-legal" aria-label="Legal"><a href="/v2/company/">Privacy</a><a href="/v2/company/">Cookies</a><a href="/v2/company/">Imprint</a></nav>
+        <nav class="cl-legal" aria-label="Legal"><a href="/v2/legal/#privacy">Privacy</a><a href="/v2/legal/#cookies">Cookies</a><a href="/v2/legal/#imprint">Imprint</a></nav>
       </div>
     </footer>
   </div>

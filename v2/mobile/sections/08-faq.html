@@ -1,0 +1,64 @@
+<section data-section="faq" id="faq" class="v2-sec" style="--h:950px; background:#F5F7FA;" data-tone="light">
+  <style>
+    .motion [data-section="faq"] [data-m="up"] { translate: 0 var(--ty, 20px); }
+    .motion [data-section="faq"].is-in [data-m] { translate: none; }
+    [data-section="faq"] h2 { position: absolute; left: 20px; top: 96px; width: 350px; margin: 0; font-weight: 400; font-size: 26px; line-height: 1.25; letter-spacing: -0.01em; color: rgba(15,17,21,.46); }
+    [data-section="faq"] h2 span { color: #0F1115; }
+    [data-section="faq"] .faq-list { position: absolute; left: 20px; top: 231px; width: 350px; display: flex; flex-direction: column; gap: 10px; }
+    [data-section="faq"] .faq-item { border-radius: 16px; background: rgba(255,255,255,.6); transition: background-color .4s var(--ease); }
+    [data-section="faq"] .faq-item.is-open { background: #fff; }
+    [data-section="faq"] .faq-item h3 { margin: 0; font: inherit; }
+    [data-section="faq"] .faq-q {
+      all: unset; box-sizing: border-box; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 16px 18px; border-radius: 16px; -webkit-tap-highlight-color: transparent;
+      font-family: 'Geologica', system-ui, sans-serif; font-weight: 500; font-size: 15px; line-height: normal; color: #0F1115;
+      transition: padding-bottom .5s var(--ease);
+    }
+    [data-section="faq"] .is-open .faq-q { padding-bottom: 12px; }
+    [data-section="faq"] .faq-q:focus-visible { outline: 2px solid #3047EC; outline-offset: 2px; }
+    [data-section="faq"] .faq-icon { position: relative; flex: none; width: 24px; height: 24px; border-radius: 6px; background: rgba(15,17,21,.06); }
+    [data-section="faq"] .faq-icon img { position: absolute; left: 4px; top: 4px; display: block; transition: opacity .3s var(--ease), transform .45s var(--ease); }
+    [data-section="faq"] .faq-icon .minus { opacity: 0; transform: rotate(-90deg); }
+    [data-section="faq"] .is-open .faq-icon .plus { opacity: 0; transform: rotate(90deg); }
+    [data-section="faq"] .is-open .faq-icon .minus { opacity: 1; transform: none; }
+    [data-section="faq"] .faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .5s var(--ease); }
+    [data-section="faq"] .is-open .faq-a { grid-template-rows: 1fr; }
+    [data-section="faq"] .faq-a > div { overflow: hidden; min-height: 0; }
+    [data-section="faq"] .faq-a p {
+      margin: 0; padding: 0 18px 16px; font-weight: 400; font-size: 15px; line-height: 1.55; color: rgba(15,17,21,.68);
+      opacity: 0; transform: translateY(-6px); transition: opacity .35s var(--ease), transform .5s var(--ease);
+    }
+    [data-section="faq"] .is-open .faq-a p { opacity: 1; transform: none; transition-delay: .08s; }
+    [data-section="faq"] .faq-a a { color: #3047EC; white-space: nowrap; }
+    [data-section="faq"] .faq-a a:hover { text-decoration: underline; }
+  </style>
+  <div class="v2-canvas">
+    <h2 data-m="up" style="--ty:24px"><span>We are here to help.</span> If your question is not answered here, discuss it with us.</h2>
+    <div class="faq-list">
+      <div class="faq-item is-open" data-m="up" style="--d:300ms">
+        <h3><button class="faq-q" type="button" aria-expanded="true" aria-controls="mfaq-a1" id="mfaq-q1">Is Fintegre a consumer trade-in site?<span class="faq-icon" aria-hidden="true"><img class="plus" src="../assets/faq-icon-add.svg" alt="" width="16" height="16"><img class="minus" src="../assets/faq-icon-subtract.svg" alt="" width="16" height="16"></span></button></h3>
+        <div class="faq-a" id="mfaq-a1" role="region" aria-labelledby="mfaq-q1"><div><p>No. Fintegre is a B2B, white-label platform. Your customers see your brand, your stores and your channels. Fintegre coordinates device assessment, qualified buyer offers and settlement behind the journey.</p></div></div>
+      </div>
+      <div class="faq-item" data-m="up" style="--d:380ms">
+        <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="mfaq-a2" id="mfaq-q2">Does Fintegre buy devices itself?<span class="faq-icon" aria-hidden="true"><img class="plus" src="../assets/faq-icon-add.svg" alt="" width="16" height="16"><img class="minus" src="../assets/faq-icon-subtract.svg" alt="" width="16" height="16"></span></button></h3>
+        <div class="faq-a" id="mfaq-a2" role="region" aria-labelledby="mfaq-q2" inert><div><p>No. Fintegre runs the orchestration platform. Devices go to qualified buyers and recovery partners in the program, so Fintegre does not compete with your buyers on price.</p></div></div>
+      </div>
+      <div class="faq-item" data-m="up" style="--d:460ms">
+        <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="mfaq-a3" id="mfaq-q3">Which programs can we run?<span class="faq-icon" aria-hidden="true"><img class="plus" src="../assets/faq-icon-add.svg" alt="" width="16" height="16"><img class="minus" src="../assets/faq-icon-subtract.svg" alt="" width="16" height="16"></span></button></h3>
+        <div class="faq-a" id="mfaq-a3" role="region" aria-labelledby="mfaq-q3" inert><div><p>Seven programs: Trade-in, Early upgrade, Deferred trade-in, Future trade-in, Subscription programs, Device rental programs and Return avoidance. Availability, markets, partners and responsibilities are confirmed with you for each program.</p></div></div>
+      </div>
+      <div class="faq-item" data-m="up" style="--d:540ms">
+        <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="mfaq-a4" id="mfaq-q4">Do we need new hardware in our stores?<span class="faq-icon" aria-hidden="true"><img class="plus" src="../assets/faq-icon-add.svg" alt="" width="16" height="16"><img class="minus" src="../assets/faq-icon-subtract.svg" alt="" width="16" height="16"></span></button></h3>
+        <div class="faq-a" id="mfaq-a4" role="region" aria-labelledby="mfaq-q4" inert><div><p>Not necessarily. Many journeys run on the devices store teams already use. The setup depends on the agreed program and the assessment method, for example guided checks or diagnostics.</p></div></div>
+      </div>
+      <div class="faq-item" data-m="up" style="--d:620ms">
+        <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="mfaq-a5" id="mfaq-q5">How long does it take to launch a program?<span class="faq-icon" aria-hidden="true"><img class="plus" src="../assets/faq-icon-add.svg" alt="" width="16" height="16"><img class="minus" src="../assets/faq-icon-subtract.svg" alt="" width="16" height="16"></span></button></h3>
+        <div class="faq-a" id="mfaq-a5" role="region" aria-labelledby="mfaq-q5" inert><div><p>It depends on the program, channels, integrations and markets involved. Programs often start in one channel and add others later. We agree the plan and responsibilities with you before launch.</p></div></div>
+      </div>
+      <div class="faq-item" data-m="up" style="--d:700ms">
+        <h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="mfaq-a6" id="mfaq-q6">Is Fintegre for device buyers too?<span class="faq-icon" aria-hidden="true"><img class="plus" src="../assets/faq-icon-add.svg" alt="" width="16" height="16"><img class="minus" src="../assets/faq-icon-subtract.svg" alt="" width="16" height="16"></span></button></h3>
+        <div class="faq-a" id="mfaq-a6" role="region" aria-labelledby="mfaq-q6" inert><div><p>Yes. Device buyers, refurbishers and recommerce businesses can apply to join the Fintegre vendor network. Tell us which devices and markets you serve. <a href="/v2/vendor-network/#apply">Join the vendor network</a></p></div></div>
+      </div>
+    </div>
+  </div>
+</section>

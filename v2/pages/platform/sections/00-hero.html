@@ -25,11 +25,6 @@
   [data-section="hero"] .ph-ctas { display: flex; gap: 12px; }
   [data-section="hero"] .ph-ctas .ph-btn { padding: 14px 22px; }
 
-  [data-section="hero"] .ph-stats { left: 120px; top: 752px; display: flex; gap: 28px; align-items: center; }
-  [data-section="hero"] .ph-stat { display: flex; flex-direction: column; gap: 2px; white-space: nowrap; }
-  [data-section="hero"] .ph-stat b { font-weight: 300; font-size: 22px; letter-spacing: -0.02em; color: #F5F7FA; }
-  [data-section="hero"] .ph-stat span { font-size: 13px; color: #A7B0BE; }
-  [data-section="hero"] .ph-div { width: 1px; height: 28px; background: rgba(245,247,250,.16); }
 
   /* Visual */
   [data-section="hero"] .ph-photo { left: 823.45px; top: 131.1px; width: 911.47px; height: 1100px; }
@@ -41,11 +36,12 @@
     background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; line-height: normal; color: #F5F7FA; }
   [data-section="hero"] .ph-chip img { width: 7px; height: 7px; display: block; }
 
-  [data-section="hero"] .ph-card { left: 1004px; top: 410px; width: 372px; height: 413px; border-radius: 26px; overflow: clip; line-height: normal;
+  [data-section="hero"] .ph-card { left: 1004px; top: 400px; width: 372px; height: 462px; border-radius: 26px; overflow: clip; line-height: normal;
     background: linear-gradient(rgba(255,255,255,.07), rgba(255,255,255,.07)), rgba(15,17,21,.72);
     backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
     box-shadow: inset 0 0 0 1px rgba(183,215,255,.16), 0 30px 60px rgba(0,0,0,.5); }
   [data-section="hero"] .ph-card__k { left: 25px; top: 23px; font-size: 13px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="hero"] .ph-card__s { right: 25px; top: 23px; font-size: 12px; color: #A7B0BE; white-space: nowrap; padding: 2px 8px; border-radius: 999px; box-shadow: inset 0 0 0 1px rgba(167,176,190,.3); line-height: 1.3; }
   [data-section="hero"] .ph-card__t { left: 25px; top: 45px; font-size: 22px; letter-spacing: -0.02em; color: #F5F7FA; white-space: nowrap; }
   [data-section="hero"] .ph-steps { left: 19px; top: 91px; display: flex; flex-direction: column; gap: 4px; }
   [data-section="hero"] .ph-step { width: 332px; padding: 11px 12px; border-radius: 12px; display: flex; gap: 12px; align-items: center; white-space: nowrap; }
@@ -81,30 +77,23 @@
       <nav class="ph-nav" aria-label="Main">
         <a href="/v2/platform/" aria-current="page">Platform</a>
         <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/vendor-network/">Vendor Network</a>
         <a href="/v2/intelligence/">Intelligence</a>
-        <a href="/v2/customers/">Customers</a>
         <a href="/v2/insights/">Insights</a>
         <a href="/v2/company/">Company</a>
       </nav>
-      <a href="/v2/design-your-program/" class="ph-btn ph-btn--light" style="padding:10px 18px;">Design your program</a>
+      <a href="/v2/contact/" class="ph-btn ph-btn--light" style="padding:10px 18px;">Discuss your program</a>
     </div>
 
     <div class="ph-a ph-copy" data-m="up" style="--d:100ms; --y:40px;">
       <h1>One layer for<br>every trade-in.</h1>
-      <p class="ph-lede">Fintegre sits between your sales channels, the device and the buyers. It checks, values, routes and pays out, the same way in every store, website and app.</p>
+      <p class="ph-lede">Fintegre connects your sales channels with device assessment, qualified buyers and transaction coordination. Bring offers, handover, inspection and settlement into one workflow, configured around your program's rules.</p>
       <div class="ph-ctas">
-        <a href="/v2/design-your-program/" class="ph-btn ph-btn--light">Design your program</a>
-        <a href="#integrations" class="ph-btn ph-btn--ghost">See the API docs  →</a>
+        <a href="/v2/contact/" class="ph-btn ph-btn--light">Discuss your program</a>
+        <a href="/v2/contact/?topic=integration" class="ph-btn ph-btn--ghost">Discuss your integration</a>
       </div>
     </div>
 
-    <div class="ph-a ph-stats" data-m="up" style="--d:600ms; --y:24px;">
-      <div class="ph-stat"><b>5 steps</b><span>one record per device</span></div>
-      <div class="ph-div"></div>
-      <div class="ph-stat"><b>1.2 s</b><span>to a valuation</span></div>
-      <div class="ph-div"></div>
-      <div class="ph-stat"><b>40+</b><span>connected buyers</span></div>
-    </div>
 
     <img class="ph-glow" alt="" src="/v2/assets/platform-hero-scan-ring.svg" data-m="fade" style="left:849px; top:180px; width:164px; height:164px; --d:1100ms; --to:.3s;">
 
@@ -112,19 +101,21 @@
     <svg class="ph-fibre" aria-hidden="true" style="left:995px; top:245.35px;" width="231" height="17.3" viewBox="0 0 231 17.3" fill="none"><path pathLength="1" data-draw style="--d:1600ms" d="M0 16.65C115.5 16.65 115.5 0.65 231 0.65" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
     <svg class="ph-fibre" aria-hidden="true" style="left:995px; top:261.35px;" width="181" height="65.3" viewBox="0 0 181 65.3" fill="none"><path pathLength="1" data-draw style="--d:1800ms" d="M0 0.65C90.5 0.65 90.5 64.65 181 64.65" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
 
-    <div class="ph-a ph-chip" data-m="up" style="left:1150px; top:147px; --d:1900ms; --y:16px;"><img alt="" src="/v2/assets/platform-hero-dot.svg">IMEI verified</div>
+    <div class="ph-a ph-chip" data-m="up" style="left:1150px; top:147px; --d:1900ms; --y:16px;"><img alt="" src="/v2/assets/platform-hero-dot.svg">IMEI checked</div>
     <div class="ph-a ph-chip" data-m="up" style="left:1200px; top:227px; --d:2100ms; --y:16px;"><img alt="" src="/v2/assets/platform-hero-dot.svg">Screen · Grade A</div>
-    <div class="ph-a ph-chip" data-m="up" style="left:1150px; top:307px; --d:2300ms; --y:16px;"><img alt="" src="/v2/assets/platform-hero-dot.svg">Live market · 4 buyers</div>
+    <div class="ph-a ph-chip" data-m="up" style="left:1150px; top:307px; --d:2300ms; --y:16px;"><img alt="" src="/v2/assets/platform-hero-dot.svg">3 eligible offers</div>
 
     <div class="ph-a ph-card" data-m="up" style="--d:2400ms; --y:50px;">
-      <p class="ph-a ph-card__k">Trade-in 48213 · Store 14, Riga</p>
+      <p class="ph-a ph-card__k">Trade-in 48213 · Store 14</p>
+      <p class="ph-a ph-card__s">Sample data</p>
       <p class="ph-a ph-card__t">iPhone 18 Pro, 256 GB</p>
       <div class="ph-a ph-steps">
-        <div class="ph-step" data-m="fade" style="--d:2800ms; --to:.3s;"><i>1</i><div><b>Discover</b><small>Store POS · iPhone 18 Pro</small></div><em>0.4 s</em></div>
-        <div class="ph-step" data-m="fade" style="--d:3150ms; --to:.3s;"><i>2</i><div><b>Assess</b><small>Grade A · battery 91 %</small></div><em>41 s</em></div>
-        <div class="ph-step" data-m="fade" style="--d:3500ms; --to:.3s;"><i>3</i><div><b>Value</b><small>€612 · Latvian market</small></div><em>1.2 s</em></div>
-        <div class="ph-step" data-m="fade" style="--d:3850ms; --to:.3s;"><i>4</i><div><b>Route</b><small>Buyer B wins of 4</small></div><em>3.0 s</em></div>
-        <div class="ph-step is-on" data-m="fade" style="--d:4200ms; --to:.3s;"><i>5</i><div><b>Transact</b><small>Credit applied to basket</small></div><em>€612</em></div>
+        <div class="ph-step" data-m="fade" style="--d:2800ms; --to:.3s;"><i>1</i><div><b>Identify</b><small>Store POS · iPhone 18 Pro</small></div><em>Eligible</em></div>
+        <div class="ph-step" data-m="fade" style="--d:3100ms; --to:.3s;"><i>2</i><div><b>Assess</b><small>Grade A · battery 91 %</small></div><em>Recorded</em></div>
+        <div class="ph-step" data-m="fade" style="--d:3400ms; --to:.3s;"><i>3</i><div><b>Compare offers</b><small>3 eligible offers · net recovery</small></div><em>€612</em></div>
+        <div class="ph-step" data-m="fade" style="--d:3700ms; --to:.3s;"><i>4</i><div><b>Customer acceptance</b><small>Quote accepted in store</small></div><em>Quote</em></div>
+        <div class="ph-step" data-m="fade" style="--d:4000ms; --to:.3s;"><i>5</i><div><b>Collect and inspect</b><small>Inspection matches assessment</small></div><em>Match</em></div>
+        <div class="ph-step is-on" data-m="fade" style="--d:4300ms; --to:.3s;"><i>6</i><div><b>Settle and report</b><small>Credit applied · buyer settlement due</small></div><em>Credit</em></div>
       </div>
     </div>
   </div>

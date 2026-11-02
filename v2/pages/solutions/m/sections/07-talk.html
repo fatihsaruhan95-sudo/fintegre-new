@@ -1,118 +1,35 @@
-<section data-section="talk" id="talk" class="v2-sec" data-sol data-tone="light" style="--h:1234px; background: radial-gradient(calc(162.5px * var(--s)) calc(440.71px * var(--s)) at calc(50% + 81.25px * var(--s)) calc(661.07px * var(--s)), rgba(184,214,255,.6) 0%, rgba(245,247,250,0) 100%), #F5F7FA;">
+<section data-section="talk" id="talk" class="v2-sec" data-sol data-tone="light" style="--h:1080px; background: radial-gradient(calc(162.5px * var(--s)) calc(440.71px * var(--s)) at calc(50% + 81.25px * var(--s)) calc(661.07px * var(--s)), rgba(184,214,255,.6) 0%, rgba(245,247,250,0) 100%), #F5F7FA;">
 <style>
-  [data-section="talk"] .k-copy { left: 120px; top: 170px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
-  [data-section="talk"] h2 { margin: 0; font-weight: 400; font-size: 72px; line-height: 1; letter-spacing: -0.04em; color: #0F1115; white-space: nowrap; }
-  [data-section="talk"] .k-lede { width: 440px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(15,17,21,.7); }
-  [data-section="talk"] .k-list { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
-  [data-section="talk"] .k-list li { display: flex; gap: 12px; align-items: center; font-size: 15px; line-height: normal; color: #0F1115; white-space: nowrap; }
-  [data-section="talk"] .k-list img { width: 8px; height: 8px; }
-  [data-section="talk"] .k-card { left: 700px; top: 110px; width: 620px; height: 680px; border-radius: 28px; overflow: clip; background: #fff; box-shadow: 0 30px 60px rgba(15,20,64,.12); color: #0F1115; }
-  [data-section="talk"] .k-card .lbl { position: absolute; left: 40px; font-size: 13px; line-height: normal; color: #6B7380; white-space: nowrap; }
-  [data-section="talk"] .k-title { position: absolute; left: 40px; top: 40px; margin: 0; font-weight: 400; font-size: 26px; line-height: normal; letter-spacing: -0.02em; white-space: nowrap; }
-  [data-section="talk"] fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
-  [data-section="talk"] .k-opt { position: absolute; left: 40px; width: 540px; height: 54px; border-radius: 16px; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(15,17,21,.1); transition: background-color .25s, box-shadow .25s, color .25s; }
-  [data-section="talk"] .k-opt:hover { box-shadow: inset 0 0 0 1px rgba(48,71,236,.45); }
-  [data-section="talk"] .k-opt input { position: absolute; opacity: 0; pointer-events: none; }
-  [data-section="talk"] .k-opt img { position: absolute; left: 17px; top: 18px; width: 16px; height: 16px; }
-  [data-section="talk"] .k-opt .on { display: none; left: 18px; top: 19px; }
-  [data-section="talk"] .k-opt span { position: absolute; left: 47px; top: 15px; font-size: 15px; line-height: normal; white-space: nowrap; }
-  [data-section="talk"] .k-opt:has(input:checked) { background: #3047EC; color: #fff; box-shadow: none; }
-  [data-section="talk"] .k-opt:has(input:checked) .off { display: none; }
-  [data-section="talk"] .k-opt:has(input:checked) .on { display: block; }
-  [data-section="talk"] .k-opt:has(input:checked) span { left: 48px; top: 16px; }
-  [data-section="talk"] .k-opt:has(input:focus-visible) { outline: 2px solid #3047EC; outline-offset: 2px; }
-  [data-section="talk"] .k-mk { position: absolute; left: 40px; top: 416px; display: flex; gap: 8px; }
-  [data-section="talk"] .k-mk button { border: 0; padding: 8px 14px; border-radius: 999px; background: rgba(15,17,21,.05); color: #0F1115; font: inherit; font-size: 13px; line-height: normal; white-space: nowrap; cursor: pointer; transition: background-color .2s; }
-  [data-section="talk"] .k-mk button:hover { background: rgba(15,17,21,.1); }
-  [data-section="talk"] .k-mk button[aria-pressed="true"] { background: #B7D7FF; }
-  [data-section="talk"] .k-slider { position: absolute; left: 40px; top: 498px; width: 540px; height: 34px; }
-  [data-section="talk"] .k-track, [data-section="talk"] .k-fill { position: absolute; left: 0; top: 14px; height: 6px; border-radius: 999px; }
-  [data-section="talk"] .k-track { width: 540px; background: rgba(15,17,21,.08); }
-  [data-section="talk"] .k-fill { width: calc(var(--p, .5556) * 540px); background: #3047EC; transform-origin: 0 50%; }
-  [data-section="talk"] .k-knob { position: absolute; top: 7px; left: calc(var(--p, .5556) * 540px - 10px); width: 20px; height: 20px; pointer-events: none; }
-  [data-section="talk"] .k-slider input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
-  [data-section="talk"] .k-slider:has(input:focus-visible) .k-knob { outline: 2px solid #3047EC; outline-offset: 2px; border-radius: 50%; }
-  [data-section="talk"] .k-val { position: absolute; left: 40px; top: 532px; font-weight: 300; font-size: 15px; line-height: normal; white-space: nowrap; }
-  [data-section="talk"] .k-submit { position: absolute; left: 40px; top: 590px; border: 0; padding: 16px 24px; font: inherit; font-size: 15px; cursor: pointer; white-space: pre; }
-  [data-section="talk"] .k-note { position: absolute; left: 310px; top: 607px; font-weight: 300; font-size: 13px; line-height: normal; color: #6B7380; white-space: nowrap; }
-  [data-section="talk"] .k-note.is-err { color: #C2372B; }
-  [data-section="talk"] .k-done { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 16px; padding: 0 60px; background: #fff;
-    opacity: 0; visibility: hidden; transition: opacity .5s var(--ease), visibility 0s .5s; }
-  [data-section="talk"] .k-card.is-sent .k-done { opacity: 1; visibility: visible; transition: opacity .5s var(--ease); }
-  [data-section="talk"] .k-done b { font-weight: 400; font-size: 34px; letter-spacing: -0.03em; }
-  [data-section="talk"] .k-done p { font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.7); max-width: 440px; }
-  [data-section="talk"] .k-done img { width: 42px; height: 42px; }
-  .motion [data-section="talk"] .k-fill { transform: scaleX(.2); transition: transform .8s var(--ease) .9s; }
-  .motion [data-section="talk"].is-in .k-card:is(.is-seen, :not([data-seen])) .k-fill { transform: none; }
-  /* Phone layout */
-  [data-section="talk"] .k-copy { left: 20px; top: 80px; gap: 0; }
-  [data-section="talk"] h2 { font-size: 48px; }
-  [data-section="talk"] .k-lede { position: absolute; left: 0; top: 116px; width: 340px; font-size: 16px; }
-  [data-section="talk"] .k-list { position: absolute; left: 0; top: 240px; }
-  [data-section="talk"] .k-card { left: 20px; top: 441px; width: 350px; height: 703px; }
-  [data-section="talk"] .k-card .lbl { left: 24px; }
-  [data-section="talk"] .k-title { left: 24px; top: 28px; font-size: 22px; }
-  [data-section="talk"] .k-opt { left: 24px; width: 302px; height: 52px; }
-  [data-section="talk"] .k-opt img { top: 17px; }
-  [data-section="talk"] .k-opt .on { top: 18px; }
-  [data-section="talk"] .k-opt span { top: 14px; }
-  [data-section="talk"] .k-opt:has(input:checked) span { top: 15px; }
-  [data-section="talk"] .k-mk { left: 24px; top: 388px; width: 302px; flex-wrap: wrap; }
-  [data-section="talk"] .k-slider { left: 24px; top: 506px; width: 302px; }
-  [data-section="talk"] .k-track { width: 302px; }
-  [data-section="talk"] .k-fill { width: calc(var(--p, .5556) * 302px); }
-  [data-section="talk"] .k-knob { left: calc(var(--p, .5556) * 302px - 10px); }
-  [data-section="talk"] .k-val { left: 24px; top: 540px; }
-  [data-section="talk"] .k-submit { left: 24px; top: 589px; width: 302px; height: 54px; justify-content: center; box-shadow: 0 12px 30px rgba(15,20,64,.25); }
-  [data-section="talk"] .k-note { left: 24px; top: 659px; width: 302px; text-align: center; }
-  [data-section="talk"] .k-done { padding: 0 28px; }
-  [data-section="talk"] .k-done b { font-size: 28px; }
+  [data-section="talk"] h2 { left: 20px; top: 80px; margin: 0; font-weight: 400; font-size: 48px; line-height: 1; letter-spacing: -0.04em; color: #0F1115; white-space: nowrap; }
+  [data-section="talk"] .k-list { left: 20px; top: 318px; display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
+  [data-section="talk"] .k-list li { display: flex; gap: 12px; align-items: center; font-size: 15px; line-height: 1.4; color: #0F1115; }
+  [data-section="talk"] .k-list img { width: 8px; height: 8px; flex: none; }
+  [data-section="talk"] .k-card { left: 20px; top: 500px; width: 350px; height: 510px; border-radius: 28px; overflow: clip; background: #fff; box-shadow: 0 30px 60px rgba(15,20,64,.12); color: #0F1115; }
+  [data-section="talk"] .k-title { position: absolute; left: 24px; top: 28px; margin: 0; font-weight: 400; font-size: 22px; line-height: normal; letter-spacing: -0.02em; white-space: nowrap; }
+  [data-section="talk"] .k-sub { position: absolute; left: 24px; top: 66px; width: 302px; font-weight: 300; font-size: 14px; line-height: 1.5; color: #6B7380; }
+  [data-section="talk"] .k-opt { position: absolute; left: 24px; width: 302px; height: 56px; border-radius: 16px; box-shadow: inset 0 0 0 1px rgba(15,17,21,.1); color: #0F1115; transition: background-color .25s, box-shadow .25s, color .25s; }
+  [data-section="talk"] .k-opt:active, [data-section="talk"] .k-opt:focus-visible { background: #3047EC; color: #fff; box-shadow: none; outline: none; }
+  [data-section="talk"] .k-opt span { position: absolute; left: 20px; top: 18px; font-size: 15px; line-height: normal; white-space: nowrap; }
+  [data-section="talk"] .k-opt i { position: absolute; right: 20px; top: 17px; font-style: normal; font-size: 16px; line-height: normal; }
+  [data-section="talk"] .k-all { position: absolute; left: 24px; top: 424px; width: 302px; height: 54px; justify-content: center; box-shadow: 0 12px 30px rgba(15,20,64,.25); }
 </style>
   <div class="v2-canvas">
-    <div class="a k-copy" style="width:350px; height:340px; --ty:40px; --d:100ms; --to:.9s; --tt:.9s;" data-sm>
-      <h2>Tell us how<br>you sell.</h2>
-      <p class="k-lede" style="--ty:30px; --d:200ms;" data-sm>Pick your business and markets. We come back within one working day with a program outline and example numbers for your devices.</p>
-      <ul class="k-list" style="--ty:24px; --d:400ms;" data-sm>
-        <li><img alt="" src="/v2/assets/solutions-dot-indigo.svg">Live in six to eight weeks</li>
-        <li><img alt="" src="/v2/assets/solutions-dot-indigo.svg">White-label, under your brand</li>
-        <li><img alt="" src="/v2/assets/solutions-dot-indigo.svg">No devices on your balance sheet</li>
-      </ul>
-    </div>
+    <h2 class="a" style="--ty:40px; --d:100ms; --to:.9s; --tt:.9s;" data-sm>Tell us how<br>you sell.</h2>
+    <p class="a m-lede" style="top:196px; --ty:30px; --d:200ms;" data-sm>Share your business type, markets and the programs you are considering. One enquiry form covers all audiences and programs.</p>
+    <ul class="a k-list" style="--ty:24px; --d:400ms;" data-sm>
+      <li><img alt="" src="/v2/assets/solutions-dot-indigo.svg">Under your brand and program rules</li>
+      <li><img alt="" src="/v2/assets/solutions-dot-indigo.svg">Seven programs on one platform</li>
+      <li><img alt="" src="/v2/assets/solutions-dot-indigo.svg">Assessment, value, recovery and settlement coordinated</li>
+    </ul>
 
-    <form class="a k-card" novalidate style="--ty:60px; --d:100ms; --to:.9s;" data-sm data-seen aria-labelledby="talk-title">
-      <h3 class="k-title" id="talk-title">Design your program</h3>
-      <fieldset>
-        <legend class="lbl" style="top:78px;">Your business</legend>
-        <label class="k-opt" style="top:104px; --ty:16px; --d:350ms; --to:.48s; --tt:.6s;" data-sm><input type="radio" name="business" value="Electronics retail chain"><img class="off" alt="" src="/v2/assets/solutions-radio.svg"><img class="on" alt="" src="/v2/assets/solutions-radio-on.svg"><span>Electronics retail chain</span></label>
-        <label class="k-opt" style="top:164px; --ty:16px; --d:430ms; --to:.48s; --tt:.6s;" data-sm><input type="radio" name="business" value="Telecom operator" checked><img class="off" alt="" src="/v2/assets/solutions-radio.svg"><img class="on" alt="" src="/v2/assets/solutions-radio-on.svg"><span>Telecom operator</span></label>
-        <label class="k-opt" style="top:224px; --ty:16px; --d:510ms; --to:.48s; --tt:.6s;" data-sm><input type="radio" name="business" value="Device brand or ecosystem"><img class="off" alt="" src="/v2/assets/solutions-radio.svg"><img class="on" alt="" src="/v2/assets/solutions-radio-on.svg"><span>Device brand or ecosystem</span></label>
-        <label class="k-opt" style="top:284px; --ty:16px; --d:590ms; --to:.48s; --tt:.6s;" data-sm><input type="radio" name="business" value="Apple or premium reseller"><img class="off" alt="" src="/v2/assets/solutions-radio.svg"><img class="on" alt="" src="/v2/assets/solutions-radio-on.svg"><span>Apple or premium reseller</span></label>
-      </fieldset>
-      <p class="lbl" style="top:362px;" id="talk-markets">Markets</p>
-      <div class="k-mk" role="group" aria-labelledby="talk-markets">
-        <button type="button" aria-pressed="true">Estonia</button>
-        <button type="button" aria-pressed="true">Latvia</button>
-        <button type="button" aria-pressed="true">Lithuania</button>
-        <button type="button" aria-pressed="false">Poland</button>
-        <button type="button" aria-pressed="false">Finland</button>
-        <button type="button" aria-pressed="false" data-more>+ 7 more</button>
-      </div>
-      <label class="lbl" style="top:486px;" for="talk-devices">Devices per month</label>
-      <div class="k-slider">
-        <div class="k-track"></div>
-        <div class="k-fill"></div>
-        <img class="k-knob" alt="" src="/v2/assets/solutions-slider-knob.svg" style="--tx:-134px; --to:.2s; --tt:.8s; --d:900ms;" data-sm>
-        <input id="talk-devices" type="range" min="0" max="1000" value="556" aria-valuetext="about 4,000 devices">
-      </div>
-      <p class="k-val" aria-live="polite">about 4,000</p>
-      <button type="submit" class="btn btn--dark k-submit" style="--sc:.6; --d:1200ms; --to:.3s;" data-sm>Book a 30-minute call  →</button>
-      <p class="k-note" aria-live="polite">Reply within one working day</p>
-      <div class="k-done" role="status">
-        <img alt="" src="/v2/assets/solutions-mark-core.svg" style="width:42px; height:42px; margin-left:-14px;">
-        <b>Thanks, we’re on it.</b>
-        <p data-done-text>We come back within one working day with a program outline and example numbers for your devices.</p>
-        <button type="button" class="btn btn--ghost" data-reset style="padding:12px 20px; border:0; font:inherit; font-size:15px; color:#0F1115; box-shadow: inset 0 0 0 1px rgba(15,17,21,.2); cursor:pointer;">Change answers</button>
-      </div>
-    </form>
+    <nav class="a k-card" style="--ty:60px; --d:250ms; --to:.88s;" data-sm data-seen aria-labelledby="talk-title">
+      <h3 class="k-title" id="talk-title">Start with your business</h3>
+      <p class="k-sub">Pick the closest match. The enquiry form opens with it selected.</p>
+      <a class="k-opt" href="/v2/contact/?type=apr" style="top:140px;"><span>Apple Premium Reseller</span><i aria-hidden="true">→</i></a>
+      <a class="k-opt" href="/v2/contact/?type=retailer" style="top:208px;"><span>Electronics retailer</span><i aria-hidden="true">→</i></a>
+      <a class="k-opt" href="/v2/contact/?type=telecom" style="top:276px;"><span>Telecom operator</span><i aria-hidden="true">→</i></a>
+      <a class="k-opt" href="/v2/contact/?type=brand" style="top:344px;"><span>Device brand or OEM ecosystem</span><i aria-hidden="true">→</i></a>
+      <a class="btn btn--dark k-all" href="/v2/contact/">Discuss your program  →</a>
+    </nav>
   </div>
 </section>

@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <script>
   // Phones get the mobile layout.
-  if (innerWidth < 768) location.replace('/v2/mobile/{{SLUG}}/' + location.hash);
+  if (innerWidth < 768) location.replace('/v2/mobile/{{SLUG}}/' + location.search + location.hash);
   // Hide the page until fonts, Tailwind and images are ready, so the hero entrance is seen from its first frame.
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
 </script>
@@ -23,12 +23,12 @@
     <nav class="v2-nav">
       <a href="/v2/platform/">Platform</a>
       <a href="/v2/solutions/">Solutions</a>
+      <a href="/v2/vendor-network/">Vendor Network</a>
       <a href="/v2/intelligence/">Intelligence</a>
-      <a href="/v2/customers/">Customers</a>
       <a href="/v2/insights/">Insights</a>
       <a href="/v2/company/">Company</a>
     </nav>
-    <a href="/v2/design-your-program/" class="v2-cta">Design your program</a>
+    <a href="/v2/contact/" class="v2-cta">Discuss your program</a>
   </div>
 </header>
 

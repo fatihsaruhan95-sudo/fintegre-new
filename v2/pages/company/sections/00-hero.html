@@ -3,7 +3,7 @@
   [data-section="hero"] .ch-a { position: absolute; }
   [data-section="hero"] p { margin: 0; }
 
-  /* Photo: the Fintegre team in the Vilnius office, with an indigo tint and scrims for the copy side. */
+  /* Photo: the Fintegre team at work, with an indigo tint and scrims for the copy side. */
   [data-section="hero"] .ch-photo { left: 360px; top: 80px; width: 1600px; height: 900px; overflow: hidden; }
   [data-section="hero"] .ch-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
   [data-section="hero"] .ch-tint { left: 360px; top: 80px; width: 1600px; height: 900px; background: rgba(20,30,110,.14); pointer-events: none; }
@@ -33,21 +33,17 @@
   [data-section="hero"] h1 { margin: 0; font-weight: 400; font-size: 72px; line-height: 1.02; letter-spacing: -0.04em; color: #F5F7FA; }
   [data-section="hero"] .ch-lede { margin-top: 24.6px; width: 470px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
 
-  /* Stat chips */
-  [data-section="hero"] .ch-chip { top: 716px; display: flex; align-items: center; gap: 12px; padding: 14px 24px 14px 22px; border-radius: 999px; white-space: nowrap; line-height: normal;
-    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-  [data-section="hero"] .ch-chip img { width: 6px; height: 6px; display: block; }
-  [data-section="hero"] .ch-chip b { font-weight: 400; font-size: 28px; color: #F5F7FA; font-variant-numeric: tabular-nums; }
-  [data-section="hero"] .ch-chip span { font-weight: 300; font-size: 14px; color: #A7B0BE; }
-  [data-section="hero"] .ch-chip--indigo { background: rgba(48,71,236,.92); }
-  [data-section="hero"] .ch-chip--indigo span { color: rgba(245,247,250,.85); }
+  /* CTA under the intro */
+  [data-section="hero"] .ch-cta { display: inline-flex; margin-top: 36px; padding: 15px 24px; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s; }
+  [data-section="hero"] .ch-cta:hover { background: #B7D7FF; }
 
-  /* Ops card + fibre to the laptop */
+  /* "What we bring together" card + fibre to the node */
   [data-section="hero"] .ch-card { left: 1120px; top: 150px; width: 260px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; padding: 18px 22px; border-radius: 22px; line-height: normal; white-space: nowrap;
     background: rgba(255,255,255,.08); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
   [data-section="hero"] .ch-card__k { font-size: 13px; color: #B7D7FF; }
-  [data-section="hero"] .ch-card__v { font-weight: 300; font-size: 20px; color: #F5F7FA; font-variant-numeric: tabular-nums; }
-  [data-section="hero"] .ch-card__s { font-weight: 300; font-size: 13px; color: #A7B0BE; }
+  [data-section="hero"] .ch-card__list { margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  [data-section="hero"] .ch-card__list li { display: flex; align-items: center; gap: 10px; font-weight: 300; font-size: 17px; color: #F5F7FA; }
+  [data-section="hero"] .ch-card__list img { width: 6px; height: 6px; display: block; }
   [data-section="hero"] .ch-fibre { left: 1249.3px; top: 204.8px; overflow: visible; pointer-events: none; }
   [data-section="hero"] .ch-node { left: 1233px; top: 723px; width: 34px; height: 34px; }
   [data-section="hero"] .ch-node img { display: block; width: 34px; height: 34px; }
@@ -64,7 +60,7 @@
   .motion [data-section="hero"] [data-draw] { transition-duration: 1s; }
 </style>
   <div class="v2-canvas">
-    <div class="ch-a ch-photo"><img alt="The Fintegre team at work in the Vilnius office" src="/v2/assets/company-hero-team.webp" width="1536" height="864"></div>
+    <div class="ch-a ch-photo"><img alt="Members of the Fintegre team at work" src="/v2/assets/company-hero-team.webp" width="1536" height="864"></div>
     <div class="ch-a ch-tint"></div>
     <div class="ch-a ch-scrim"></div>
     <div class="ch-a ch-fade-top"></div>
@@ -76,31 +72,32 @@
       <nav class="ch-nav" aria-label="Main">
         <a href="/v2/platform/">Platform</a>
         <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/vendor-network/">Vendor Network</a>
         <a href="/v2/intelligence/">Intelligence</a>
-        <a href="/v2/customers/">Customers</a>
         <a href="/v2/insights/">Insights</a>
         <a href="/v2/company/" aria-current="page">Company</a>
       </nav>
-      <a href="/v2/design-your-program/" class="ch-btn">Design your program</a>
+      <a href="/v2/contact/" class="ch-btn">Discuss your program</a>
     </div>
 
     <div class="ch-a ch-copy" data-cm style="--d:200ms; --to:.8s; --tt:1s; --ty:40px;">
-      <h1>Make every<br>device worth<br>more.</h1>
-      <p class="ch-lede">Fintegre is the platform behind trade-in and device programs at retailers, telecom operators and device brands. We keep devices in use longer and put their value back in the customer’s hand.</p>
+      <h1>The team behind your trade-in program.</h1>
+      <p class="ch-lede">Fintegre brings together retail journeys, device assessment, buying partners and transaction coordination. We work with your teams to define a program that fits your channels, markets and operating requirements.</p>
+      <a href="/v2/contact/" class="ch-cta">Discuss your program</a>
     </div>
 
-    <div class="ch-a ch-chip" style="left:120px; --d:1200ms; --to:.56s; --tt:.7s; --ty:24px;" data-cm><img alt="" src="/v2/assets/company-dot-ice.svg"><b>2019</b><span>Founded in Vilnius</span></div>
-    <div class="ch-a ch-chip" style="left:395px; --d:1320ms; --to:.56s; --tt:.7s; --ty:24px;" data-cm><img alt="" src="/v2/assets/company-dot-ice.svg"><b>12</b><span>Markets</span></div>
-    <div class="ch-a ch-chip" style="left:566px; --d:1440ms; --to:.56s; --tt:.7s; --ty:24px;" data-cm><img alt="" src="/v2/assets/company-dot-ice.svg"><b>1.2M</b><span>Devices checked</span></div>
-    <div class="ch-a ch-chip ch-chip--indigo" style="left:825px; --d:1560ms; --to:.56s; --tt:.7s; --ty:24px;" data-cm><img alt="" src="/v2/assets/company-dot-ice.svg"><b>90</b><span>People</span></div>
 
     <svg class="ch-a ch-fibre" width="157.515" height="535.9" viewBox="0 0 157.515 535.9" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:2300ms" d="M130.7 0.700114C200.7 120.7 120.7 315.2 0.700132 535.2" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
     <div class="ch-a ch-node" data-cm="pop" style="--d:2200ms; --to:.3s;" aria-hidden="true"><img alt="" src="/v2/assets/company-hero-node.svg"></div>
 
     <div class="ch-a ch-card" data-cm style="--d:1800ms; --to:.72s; --tt:.9s; --ty:40px;">
-      <p class="ch-card__k">Vilnius ops · today</p>
-      <p class="ch-card__v"><span data-ops-count>4,812</span> devices checked</p>
-      <p class="ch-card__s">across 12 markets · avg. 41 s</p>
+      <p class="ch-card__k">What we bring together</p>
+      <ul class="ch-card__list">
+        <li><img alt="" src="/v2/assets/company-dot-ice.svg">Retail journeys</li>
+        <li><img alt="" src="/v2/assets/company-dot-ice.svg">Device assessment</li>
+        <li><img alt="" src="/v2/assets/company-dot-ice.svg">Buying partners</li>
+        <li><img alt="" src="/v2/assets/company-dot-ice.svg">Transaction coordination</li>
+      </ul>
     </div>
   </div>
 </section>

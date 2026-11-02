@@ -19,18 +19,17 @@
   [data-section="hero"] .h-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
 
   /* Copy */
-  [data-section="hero"] .h-copy { left: 120px; top: 230px; }
+  [data-section="hero"] .h-copy { left: 120px; top: 168px; }
   [data-section="hero"] .h-copy__in { display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
   [data-section="hero"] h1 { margin: 0; font-weight: 400; font-size: 92px; line-height: .96; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
-  [data-section="hero"] .h-lede { width: 460px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .h-text { display: flex; flex-direction: column; gap: 14px; }
+  [data-section="hero"] .h-sub { width: 540px; font-weight: 400; font-size: 26px; line-height: 1.25; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .h-lede { width: 520px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .h-proof { left: 120px; top: 790px; font-size: 13px; color: #A7B0BE; white-space: nowrap; display: flex; align-items: center; gap: 10px; }
+  [data-section="hero"] .h-proof i { display: block; width: 18px; height: 1px; background: rgba(245,247,250,.3); }
   [data-section="hero"] .h-ctas { display: flex; gap: 12px; }
   [data-section="hero"] .h-ctas .h-btn { padding: 14px 22px; }
 
-  [data-section="hero"] .h-stats { left: 120px; top: 752px; display: flex; gap: 28px; align-items: center; }
-  [data-section="hero"] .h-stat { display: flex; flex-direction: column; gap: 2px; white-space: nowrap; }
-  [data-section="hero"] .h-stat b { font-weight: 300; font-size: 22px; letter-spacing: -0.02em; color: #F5F7FA; }
-  [data-section="hero"] .h-stat span { font-size: 13px; color: #A7B0BE; }
-  [data-section="hero"] .h-div { width: 1px; height: 28px; background: rgba(245,247,250,.16); }
 
   /* Visual */
   [data-section="hero"] .h-phone { left: 760px; top: 190px; width: 700px; height: 845px; transform-origin: 50% 50%; }
@@ -50,6 +49,7 @@
     box-shadow: inset 0 0 0 1px rgba(183,215,255,.16), 0 30px 60px rgba(0,0,0,.5); }
   [data-section="hero"] .h-card__label { left: 25px; top: 23px; font-size: 13px; color: #A7B0BE; white-space: nowrap; }
   [data-section="hero"] .h-price { left: 23px; top: 49px; font-weight: 300; font-size: 72px; line-height: normal; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  [data-section="hero"] .h-sample { right: 25px; top: 23px; font-size: 12px; color: #A7B0BE; white-space: nowrap; padding: 0 0 0 0; }
   [data-section="hero"] .h-delta { left: 25px; top: 127px; padding: 5px 10px; border-radius: 999px; background: rgba(183,215,255,.16); font-size: 12px; color: #B7D7FF; white-space: nowrap; }
   [data-section="hero"] .h-track, [data-section="hero"] .h-fill { left: 25px; top: 167px; height: 6px; border-radius: 999px; }
   [data-section="hero"] .h-track { width: 288px; background: rgba(255,255,255,.08); }
@@ -79,14 +79,14 @@
     <div class="h-abs h-top">
       <a href="#hero" class="h-logo" aria-label="Fintegre home"><span class="h-mark"><img alt="" src="assets/hero-logo.svg"></span>Fintegre</a>
       <nav class="h-nav" aria-label="Hero">
-        <a href="#programs">Platform</a>
-        <a href="#ecosystem">Solutions</a>
-        <a href="#intelligence">Intelligence</a>
-        <a href="#case-study">Customers</a>
-        <a href="#insights">Insights</a>
-        <a href="../brandbook.html">Brandbook</a>
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/vendor-network/">Vendor Network</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/company/">Company</a>
       </nav>
-      <a href="#closing" class="h-btn h-btn--light" style="padding:10px 18px;">Design your program</a>
+      <a href="/v2/contact/" class="h-btn h-btn--light" style="padding:10px 18px;">Discuss your program</a>
     </div>
 
     <div class="h-abs h-phone" data-hs="phone">
@@ -108,17 +108,18 @@
     </div>
 
     <div class="h-abs" data-hs="chip-buyers" style="left:1050px; top:330px;">
-      <div class="h-chip" data-hm="pop" style="--d:2800ms; --to:.3s;"><img alt="" src="assets/hero-dot.svg">4 buyers competing</div>
+      <div class="h-chip" data-hm="pop" style="--d:2800ms; --to:.3s;"><img alt="" src="assets/hero-dot.svg">Eligible offers compared</div>
     </div>
 
     <div class="h-abs h-card" data-hs="card" data-hm style="--d:2400ms; --to:.5s; --tt:.7s; --ty:40px;">
-      <p class="h-abs h-card__label">Live valuation · iPhone 18 Pro</p>
+      <p class="h-abs h-card__label">Valuation · iPhone 18 Pro</p>
+      <p class="h-abs h-sample">Sample data</p>
       <p class="h-abs h-price" data-hero-price>€612</p>
       <div class="h-abs h-track"></div>
       <div class="h-abs h-fill"></div>
-      <p class="h-abs h-delta" data-hm style="--d:4100ms; --to:.4s; --eo:var(--inout);">+€38 vs. store price</p>
+      <p class="h-abs h-delta" data-hm style="--d:4100ms; --to:.4s; --eo:var(--inout);">Quote · subject to inspection</p>
       <div class="h-abs h-bids">
-        <div class="h-bid h-bid--best" data-hm style="--d:3000ms; --to:.4s; --eo:var(--inout);"><span>Best · Latvia</span><span>€612</span></div>
+        <div class="h-bid h-bid--best" data-hm style="--d:3000ms; --to:.4s; --eo:var(--inout);"><span>Strongest expected net · Latvia</span><span>€612</span></div>
         <div class="h-bid" data-hm style="--d:3150ms; --to:.4s; --eo:var(--inout);"><span>Lithuania</span><span>€598</span></div>
         <div class="h-bid" data-hm style="--d:3300ms; --to:.4s; --eo:var(--inout);"><span>Poland</span><span>€585</span></div>
         <div class="h-bid" data-hm style="--d:3450ms; --to:.4s; --eo:var(--inout);"><span>Estonia</span><span>€571</span></div>
@@ -135,22 +136,19 @@
     <div class="h-abs h-copy" data-hs="copy">
       <div class="h-copy__in" data-hm style="--d:100ms; --to:.9s; --tt:1s; --ty:30px;">
         <h1>Make every<br>device worth<br>more.</h1>
-        <p class="h-lede">The intelligence and orchestration platform behind trade-in programs at retailers, telecom operators and device brands.</p>
+        <div class="h-text">
+          <p class="h-sub">Trade-in orchestration for retailers, telcos and device brands.</p>
+          <p class="h-lede">Connect your customer journey with qualified buyers, device assessment and settlement through one vendor-neutral platform. Keep your brand and customer relationship at the centre of the program.</p>
+        </div>
         <div class="h-ctas">
-          <a href="#closing" class="h-btn h-btn--light">Design your program</a>
-          <a href="#fullbleed" class="h-btn h-btn--ghost">Watch the film&nbsp;&nbsp;▷</a>
+          <a href="/v2/contact/" class="h-btn h-btn--light">Discuss your program</a>
+          <a href="#how" class="h-btn h-btn--ghost">See how it works&nbsp;&nbsp;↓</a>
         </div>
       </div>
     </div>
 
     <div class="h-abs" data-hs="stats" style="left:0; top:0;">
-      <div class="h-abs h-stats" data-hm style="--d:1000ms; --to:.8s; --eo:var(--inout);">
-        <div class="h-stat"><b>12</b><span>markets</span></div>
-        <div class="h-div"></div>
-        <div class="h-stat"><b>€240M</b><span>traded</span></div>
-        <div class="h-div"></div>
-        <div class="h-stat"><b>58 s</b><span>to an offer</span></div>
-      </div>
+      <p class="h-abs h-proof" data-hm style="--d:1000ms; --to:.8s; --eo:var(--inout);"><i aria-hidden="true"></i>More than one million devices checked across three regions.</p>
     </div>
   </div>
 </section>

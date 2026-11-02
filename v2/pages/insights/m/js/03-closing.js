@@ -1,17 +1,28 @@
-// Closing footer: newsletter form has no backend yet, so it validates locally and confirms in place.
+// Closing footer: newsletter sign-up.
+// Netlify form "newsletter": validates in the browser, posts with fetch and confirms in place (falls back to a normal POST).
 (() => {
-  const form = document.querySelector('[data-section="closing"] .cl-form');
-  if (!form) return;
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const input = form.querySelector('input');
-    const btn = form.querySelector('button');
-    if (!input.checkValidity()) { input.focus(); input.style.borderColor = 'rgba(255,140,140,.7)'; return; }
-    input.style.borderColor = '';
-    input.value = '';
-    input.placeholder = 'Thanks, you are on the list';
-    btn.textContent = 'Subscribed';
-    btn.disabled = true;
+  const sec = document.querySelector('[data-section="closing"]');
+  if (!sec) return;
+  sec.querySelectorAll('form[name="newsletter"]').forEach((form) => {
+    const input = form.querySelector('input[type="email"]'), btn = form.querySelector('button');
+    const msg = form.parentElement.querySelector('[data-nl-msg]');
+    const base = msg ? msg.innerHTML : '';
+    const say = (html, kind) => { if (!msg) return; msg.innerHTML = html; msg.dataset.state = kind || ''; };
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!input.checkValidity()) {
+        input.setAttribute('aria-invalid', 'true'); say('Please enter a valid work email.', 'bad'); input.focus(); return;
+      }
+      if (!window.fetch) { form.submit(); return; }
+      btn.disabled = true;
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+        .then((r) => {
+          if (!r.ok) throw new Error(r.status);
+          input.value = ''; input.placeholder = 'You are subscribed'; input.disabled = true; btn.textContent = 'Subscribed';
+          say('Thank you. You are on the list.', 'ok');
+        })
+        .catch(() => { btn.disabled = false; say('Something went wrong. Please try again.', 'bad'); });
+    });
+    input.addEventListener('input', () => { input.removeAttribute('aria-invalid'); if (msg && msg.dataset.state === 'bad') say(base, ''); });
   });
-  form.querySelector('input').addEventListener('input', (e) => { e.target.style.borderColor = ''; });
 })();

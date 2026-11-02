@@ -1,0 +1,44 @@
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:456px; background: radial-gradient(calc(177.27px * var(--s)) calc(306px * var(--s)) at calc(106.36px * var(--s)) calc(471px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(16,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="hero"] .lh-abs { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+  [data-section="hero"] .lh-top { left: 12px; top: 12px; width: 366px; height: 60px; padding: 8px 8px 8px 18px; border-radius: 999px; z-index: 3;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: inset 0 0 0 1px rgba(183,215,255,.14), 0 16px 40px rgba(0,0,0,.35); }
+  [data-section="hero"] .lh-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .lh-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .lh-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .lh-actions { display: flex; align-items: center; gap: 6px; }
+  [data-section="hero"] .lh-pillbtn { height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .lh-burger { width: 44px; height: 44px; border: 0; padding: 0; border-radius: 999px; background: rgba(255,255,255,.08);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; }
+  [data-section="hero"] .lh-burger i { display: block; height: 1.5px; border-radius: 1px; background: #F5F7FA; }
+  [data-section="hero"] .lh-copy { left: 20px; top: 124px; width: 350px; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+  [data-section="hero"] .lh-crumb { font-size: 14px; color: #B7D7FF; line-height: normal; white-space: pre; }
+  [data-section="hero"] h1 { margin: 0; font-weight: 400; font-size: 48px; line-height: 1; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .lh-lede { font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .lh-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+  [data-section="hero"] .lh-btn { display: inline-flex; align-items: center; padding: 12px 18px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); -webkit-tap-highlight-color: transparent; }
+  .motion [data-section="hero"] [data-m][data-ty] { translate: 0 var(--ty); }
+  .motion [data-section="hero"].is-in [data-m][data-ty] { translate: none; }
+</style>
+  <div class="v2-canvas">
+    <div class="lh-abs lh-top">
+      <a href="/v2/" class="lh-logo" aria-label="Fintegre home"><span class="lh-mark"><img alt="" src="/v2/assets/insights-logo-mark.svg"></span>Fintegre</a>
+      <div class="lh-actions">
+        <a href="/v2/contact/" class="lh-pillbtn">Discuss your program</a>
+        <button type="button" class="lh-burger" data-menu-open aria-label="Open menu" aria-controls="m-menu" aria-expanded="false"><i style="width:18px"></i><i style="width:12px"></i></button>
+      </div>
+    </div>
+    <div class="lh-abs lh-copy" data-fit="64" data-m="up">
+      <p class="lh-crumb"><a href="/v2/insights/">Insights</a>  /  Newsletter</p>
+      <h1>Thank you.</h1>
+      <p class="lh-lede">You are subscribed to guides and program notes from Fintegre. You can unsubscribe from any email.</p>
+      <div class="lh-ctas">
+        <a href="/v2/insights/" class="lh-btn">Read the guides</a>
+        <a href="/v2/" class="lh-btn">Back to home</a>
+      </div>
+    </div>
+  </div>
+</section>

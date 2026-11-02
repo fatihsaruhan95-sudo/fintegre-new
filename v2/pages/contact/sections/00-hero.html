@@ -1,0 +1,76 @@
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(720px * var(--s)) calc(321.43px * var(--s)) at calc(50% - 72px * var(--s)) calc(450px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="hero"] .dh-a { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+  [data-section="hero"] .dh-glow { position: absolute; pointer-events: none; max-width: none; display: block; }
+  [data-section="hero"] .dh-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; z-index: 2; }
+  [data-section="hero"] .dh-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .dh-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .dh-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .dh-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); white-space: nowrap; }
+  [data-section="hero"] .dh-nav a { transition: color .2s; }
+  [data-section="hero"] .dh-nav a:hover { color: #F5F7FA; }
+  [data-section="hero"] .dh-btn { display: inline-flex; align-items: center; border-radius: 999px; font-size: 15px; white-space: nowrap; transition: background-color .25s, box-shadow .25s; cursor: pointer; line-height: normal; }
+  [data-section="hero"] .dh-btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .dh-btn--light:hover { background: #fff; }
+  [data-section="hero"] .dh-top .dh-btn { padding: 10px 18px; }
+
+  [data-section="hero"] .dh-photo { left: 790px; top: 150px; width: 614px; height: 1080px; }
+  [data-section="hero"] .dh-photo img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  [data-section="hero"] .dh-fade { left: 700px; top: 640px; width: 760px; height: 260px; background: linear-gradient(180deg, rgba(15,17,21,0), rgba(15,17,21,.92)); pointer-events: none; }
+
+  [data-section="hero"] .dh-copy { left: 120px; top: 212px; width: 640px; display: flex; flex-direction: column; align-items: flex-start; }
+  [data-section="hero"] h1 { margin: 0; width: 640px; font-weight: 400; font-size: 72px; line-height: 1.02; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .dh-lede { margin-top: 28px; width: 500px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .dh-copy .dh-btn { margin-top: 40px; padding: 15px 24px; }
+
+  [data-section="hero"] .dh-card { left: 1040px; top: 430px; width: 300px; padding: 26px 28px 28px; border-radius: 26px; display: flex; flex-direction: column; gap: 14px; white-space: nowrap;
+    background: linear-gradient(rgba(255,255,255,.05), rgba(255,255,255,.05)), rgba(15,17,21,.62); border: 1px solid rgba(183,215,255,.14);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="hero"] .dh-card .lbl { font-size: 13px; color: #B7D7FF; }
+  [data-section="hero"] .dh-card .ttl { font-weight: 300; font-size: 22px; color: #F5F7FA; }
+  [data-section="hero"] .dh-card ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  [data-section="hero"] .dh-card li { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: rgba(255,255,255,.05); font-size: 14px; color: #F5F7FA; }
+  [data-section="hero"] .dh-card li img { width: 6px; height: 6px; }
+  [data-section="hero"] .dh-card li:first-child { background: rgba(48,71,236,.9); }
+</style>
+  <div class="v2-canvas">
+    <img class="dh-glow" alt="" src="/v2/assets/design-your-program-glow-hero-r.svg" style="left:680px; top:-140px; width:1120px; height:980px;">
+    <img class="dh-glow" alt="" src="/v2/assets/design-your-program-glow-hero-l.svg" style="left:-440px; top:440px; width:1000px; height:780px;">
+
+    <div class="dh-a dh-top" data-m="down" style="--d:0ms">
+      <a href="/v2/" class="dh-logo" aria-label="Fintegre home"><span class="dh-mark"><img alt="" src="/v2/assets/hero-logo.svg"></span>Fintegre</a>
+      <nav class="dh-nav" aria-label="Main">
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/vendor-network/">Vendor Network</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/contact/" class="dh-btn dh-btn--light" aria-current="page">Discuss your program</a>
+    </div>
+
+    <img class="dh-glow" alt="" src="/v2/assets/design-your-program-roomlight.svg" style="left:630px; top:10px; width:960px; height:960px;">
+    <div class="dh-a dh-photo" data-m="right" style="--d:300ms"><img alt="iPhone 17 in Lavender" src="/v2/assets/design-your-program-iphone17-lavender.webp"></div>
+    <div class="dh-a dh-fade"></div>
+
+    <div class="dh-a dh-copy" data-m="up" style="--d:100ms">
+      <h1>Let’s discuss your device program.</h1>
+      <p class="dh-lede">Tell us about your business and the markets you want to serve. We will review your objectives, channels, eligible devices, commercial model, integrations and operating requirements.</p>
+      <a href="#enquiry" class="dh-btn dh-btn--light">Start your enquiry</a>
+    </div>
+
+    <div class="dh-a dh-card" data-m="pop" style="--d:900ms" aria-label="What we review together">
+      <p class="lbl">What we review together</p>
+      <ul>
+        <li><img alt="" src="/v2/assets/ecosystem-dot.svg">Objectives</li>
+        <li><img alt="" src="/v2/assets/ecosystem-dot.svg">Channels</li>
+        <li><img alt="" src="/v2/assets/ecosystem-dot.svg">Eligible devices</li>
+        <li><img alt="" src="/v2/assets/ecosystem-dot.svg">Commercial model</li>
+        <li><img alt="" src="/v2/assets/ecosystem-dot.svg">Integrations</li>
+        <li><img alt="" src="/v2/assets/ecosystem-dot.svg">Operating requirements</li>
+      </ul>
+    </div>
+  </div>
+</section>

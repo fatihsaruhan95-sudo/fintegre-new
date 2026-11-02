@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Case study — Fintegre (v2)</title>
+<title>Illustrative retailer journey — Fintegre (v2)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <script>
   // Phones get the mobile layout.
-  if (innerWidth < 768) location.replace('/v2/mobile/case-study/' + location.hash);
+  if (innerWidth < 768) location.replace('/v2/mobile/case-study/' + location.search + location.hash);
   // Hide the page until fonts, Tailwind and images are ready, so the hero entrance is seen from its first frame.
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
 </script>
@@ -23,12 +23,12 @@
     <nav class="v2-nav">
       <a href="/v2/platform/">Platform</a>
       <a href="/v2/solutions/">Solutions</a>
+      <a href="/v2/vendor-network/">Vendor Network</a>
       <a href="/v2/intelligence/">Intelligence</a>
-      <a href="/v2/customers/">Customers</a>
       <a href="/v2/insights/">Insights</a>
       <a href="/v2/company/">Company</a>
     </nav>
-    <a href="/v2/design-your-program/" class="v2-cta">Design your program</a>
+    <a href="/v2/contact/" class="v2-cta">Discuss your program</a>
   </div>
 </header>
 
@@ -81,10 +81,10 @@
   [data-section="hero"] .hc-crumb a { transition: color .2s; }
   [data-section="hero"] .hc-crumb a:hover { color: #F5F7FA; }
   [data-section="hero"] h1 { margin: 0; width: 600px; font-weight: 400; font-size: 68px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
-  [data-section="hero"] .hc-kpis { display: flex; gap: 44px; white-space: nowrap; }
-  [data-section="hero"] .hc-kpis div { display: flex; flex-direction: column; gap: 8px; }
-  [data-section="hero"] .hc-kpis b { font-weight: 300; font-size: 44px; letter-spacing: -0.03em; color: #F5F7FA; }
-  [data-section="hero"] .hc-kpis span { font-size: 12px; color: #B7D7FF; }
+  /* Prominent evidence label: this page is an illustration, not a customer result. */
+  [data-section="hero"] .hc-label { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px 12px 16px; border-radius: 999px; background: rgba(48,71,236,.9); font-size: 15px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .hc-label img { width: 6px; height: 6px; display: block; }
+  [data-section="hero"] .hc-sample { margin-top: 10px; font-size: 12px; color: #A7B0BE; }
   [data-section="hero"] .hc-card { position: absolute; left: 1010px; top: 470px; width: 360px; padding: 26px 28px 18px; border-radius: 26px; background: rgba(15,17,21,.62); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
   [data-section="hero"] .hc-row { display: flex; justify-content: space-between; padding: 12px 0; font-size: 14px; white-space: nowrap; border-bottom: 1px solid rgba(183,215,255,.1); }
   [data-section="hero"] .hc-row:last-child { border-bottom: 0; }
@@ -100,40 +100,35 @@
 
     <div class="cs-abs cs-top">
       <a href="/v2/" class="cs-logo" aria-label="Fintegre home"><span class="cs-mark"><img decoding="async" alt="" src="/v2/assets/case-study-logo-mark.svg"></span>Fintegre</a>
-      <nav class="cs-nav" aria-label="Hero">
+      <nav class="cs-nav" aria-label="Main">
         <a href="/v2/platform/">Platform</a>
         <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/vendor-network/">Vendor Network</a>
         <a href="/v2/intelligence/">Intelligence</a>
-        <a href="/v2/customers/" aria-current="page">Customers</a>
-        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/insights/" aria-current="page">Insights</a>
         <a href="/v2/company/">Company</a>
       </nav>
-      <a href="/v2/design-your-program/" class="cs-btn">Design your program</a>
+      <a href="/v2/contact/" class="cs-btn">Discuss your program</a>
     </div>
 
     <div class="hc-copy" data-k style="--y:50px; --d:200ms; --o:.7s; --t:1s;">
-      <p class="hc-crumb"><a href="/v2/customers/">Customers</a>  /  A Baltic electronics retailer</p>
-      <h1>Trade-in became part of every iPhone sale.</h1>
-      <p class="cs-lede" style="width:470px;">40 stores and an online shop across Lithuania, Latvia and Estonia. Six months after launch, trade-in is part of most new iPhone sales.</p>
-      <div class="hc-kpis">
-        <div data-k style="--y:30px; --d:800ms; --o:.63s; --t:.9s;"><b>+38%</b><span>Trade-in participation</span></div>
-        <div data-k style="--y:30px; --d:950ms; --o:.63s; --t:.9s;"><b>+14%</b><span>Value per device</span></div>
-        <div data-k style="--y:30px; --d:1100ms; --o:.63s; --t:.9s;"><b>58 s</b><span>Time to offer</span></div>
-        <div data-k style="--y:30px; --d:1250ms; --o:.63s; --t:.9s;"><b>9 wk</b><span>Pilot to rollout</span></div>
-      </div>
+      <p class="hc-crumb"><a href="/v2/insights/">Insights</a>  /  Illustrative journey</p>
+      <h1>How an electronics retailer could run trade-in.</h1>
+      <p class="cs-lede" style="width:480px;">An illustrative journey for a multi-store electronics retailer with an online shop. It shows how a trade-in program could be set up and measured. It is not a customer case study.</p>
+      <p class="hc-label" data-k style="--y:30px; --d:800ms; --o:.63s; --t:.9s;"><img decoding="async" alt="" src="/v2/assets/case-study-dot.svg">Illustrative journey · sample data. Not a customer result.</p>
     </div>
 
     <div class="hc-card" data-k style="--sc:.6; --d:1200ms; --o:.3s; --t:.7s;">
-      <p style="font-size:13px; color:#A7B0BE; margin-bottom:12px;">Program at a glance</p>
-      <div class="hc-row" data-k style="--y:12px; --d:1600ms; --o:.42s; --t:.6s;"><span>Markets</span><b>LT · LV · EE</b></div>
-      <div class="hc-row" data-k style="--y:12px; --d:1750ms; --o:.42s; --t:.6s;"><span>Channels</span><b>40 stores, online</b></div>
-      <div class="hc-row" data-k style="--y:12px; --d:1900ms; --o:.42s; --t:.6s;"><span>Programs</span><b>Trade-in, early upgrade</b></div>
-      <div class="hc-row" data-k style="--y:12px; --d:2050ms; --o:.42s; --t:.6s;"><span>Buyers</span><b>3 local, live bids</b></div>
-      <div class="hc-row" data-k style="--y:12px; --d:2200ms; --o:.42s; --t:.6s;"><span>Live since</span><b>March 2026</b></div>
+      <p style="font-size:13px; color:#A7B0BE; margin-bottom:12px;">Illustrative setup</p>
+      <div class="hc-row" data-k style="--y:12px; --d:1600ms; --o:.42s; --t:.6s;"><span>Retailer</span><b>Multi-store electronics</b></div>
+      <div class="hc-row" data-k style="--y:12px; --d:1750ms; --o:.42s; --t:.6s;"><span>Channels</span><b>Stores and online</b></div>
+      <div class="hc-row" data-k style="--y:12px; --d:1900ms; --o:.42s; --t:.6s;"><span>Programs</span><b>Trade-in, Early upgrade</b></div>
+      <div class="hc-row" data-k style="--y:12px; --d:2050ms; --o:.42s; --t:.6s;"><span>Buyers</span><b>Qualified buyer network</b></div>
+      <p class="hc-sample">Sample data</p>
     </div>
 
     <svg class="cs-abs" style="left:986px; top:268.3px;" width="150.192" height="91.3731" viewBox="0 0 150.192 91.3731" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:2400ms; transition-duration:.8s;" d="M0 0.7C60 0.7 80 70.7 150 90.7" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
-    <div class="cs-abs cs-chip" data-k style="left:780px; top:250px; background:#3047EC; backdrop-filter:none; -webkit-backdrop-filter:none; --sc:.6; --d:2200ms; --o:.25s; --t:.7s;"><img decoding="async" alt="" src="/v2/assets/case-study-dot.svg">Checked · Grade A · 58 s</div>
+    <div class="cs-abs cs-chip" data-k style="left:780px; top:250px; background:#3047EC; backdrop-filter:none; -webkit-backdrop-filter:none; --sc:.6; --d:2200ms; --o:.25s; --t:.7s;"><img decoding="async" alt="" src="/v2/assets/case-study-dot.svg">Checked · Grade A · sample</div>
   </div>
 </section>
 
@@ -152,24 +147,23 @@
   <div class="v2-canvas">
     <img decoding="async" class="cs-glow" alt="" src="/v2/assets/case-study-glow-ice.svg" style="left:560px; top:-80px; width:1200px; height:1040px;">
     <div class="ch-copy" data-k style="--y:50px; --d:200ms; --o:.7s; --t:1s;">
-      <h2 class="cs-h2" style="margin:0; width:640px; color:#0F1115;">Trade-in was a side<br>desk.</h2>
-      <p class="cs-lede" style="width:470px; color:#5C6373;">Prices came from a printed list, updated once a month. One buyer took every device at a fixed margin. An offer took six minutes, so staff rarely brought it up, and customers rarely said yes.</p>
+      <h2 class="cs-h2" style="margin:0; width:640px; color:#0F1115;">Trade-in at a side<br>desk.</h2>
+      <p class="cs-lede" style="width:470px; color:#5C6373;">In this illustrative starting point, prices come from a printed list, updated once a month. A single buyer takes trade-ins at a fixed margin. An offer takes several minutes, so staff rarely bring it up.</p>
       <div class="ch-list">
-        <div data-k style="--y:16px; --d:800ms; --o:.42s; --t:.6s;"><b>Prices a month old</b><span>Lost value on every new model launch</span></div>
+        <div data-k style="--y:16px; --d:800ms; --o:.42s; --t:.6s;"><b>Prices a month old</b><span>Value drops when new models launch</span></div>
         <div data-k style="--y:16px; --d:950ms; --o:.42s; --t:.6s;"><b>One buyer, fixed margin</b><span>No competition for the device</span></div>
-        <div data-k style="--y:16px; --d:1100ms; --o:.42s; --t:.6s;"><b>Six minutes per offer</b><span>Queues at the till, low uptake</span></div>
+        <div data-k style="--y:16px; --d:1100ms; --o:.42s; --t:.6s;"><b>Slow offers</b><span>Queues at the till, low uptake</span></div>
       </div>
     </div>
     <img decoding="async" class="cs-img" alt="iPhone 13" src="/v2/assets/case-study-iphone13-tall.webp" data-k style="left:1080px; top:150px; width:330px; height:674px; border-radius:48px; box-shadow:0 36px 60px rgba(15,20,64,.22); --y:80px; --d:300ms; --o:1s; --t:1.3s;">
     <div class="ch-card" data-k style="--y:60px; --d:900ms; --o:.7s; --t:1s;">
-      <p style="font-size:13px; color:#5C6373;">Before · Store 6, Riga · 2025</p>
+      <p style="font-size:13px; color:#5C6373;">Before · sample store</p>
       <p style="font-weight:300; font-size:22px; color:#0F1115; margin-bottom:14px;">iPhone 13, 128 GB</p>
-      <div class="ch-row" data-k style="--d:1300ms; --o:.3s;"><span>Time to offer</span><b>6 min</b></div>
+      <div class="ch-row" data-k style="--d:1300ms; --o:.3s;"><span>Time to offer</span><b>Several minutes</b></div>
       <div class="ch-row" data-k style="--d:1420ms; --o:.3s;"><span>Price source</span><b>Monthly list</b></div>
       <div class="ch-row" data-k style="--d:1540ms; --o:.3s;"><span>Buyers</span><b>1</b></div>
       <div class="ch-row" data-k style="--d:1660ms; --o:.3s;"><span>Offer</span><b>€362</b></div>
-      <div class="ch-row" data-k style="--d:1780ms; --o:.3s;"><span>Payout</span><b>5 days</b></div>
-      <div class="ch-row" data-k style="--d:1900ms; --o:.3s;"><span>Participation</span><b>11 %</b></div>
+      <p data-k style="padding-top:12px; border-top:1px solid #E3E8F0; font-size:12px; color:#8A93A3; --d:1900ms; --o:.3s;">Sample data</p>
     </div>
   </div>
 </section>
@@ -184,152 +178,91 @@
 </style>
   <div class="v2-canvas">
     <img decoding="async" class="cs-glow" alt="" src="/v2/assets/case-study-glow-setup.svg" style="left:100px; top:180px; width:1300px; height:720px;">
-    <h2 class="cs-abs cs-h2" data-k style="left:120px; top:130px; margin:0; --y:50px; --d:100ms; --o:.63s; --t:.9s;">Live in nine weeks.</h2>
-    <p class="cs-abs cs-lede" data-k style="left:880px; top:142px; width:440px; --y:30px; --d:300ms; --o:.63s; --t:.9s;">A pilot in three Vilnius stores first. Then the rest of the chain and the online shop, on the same prices and buyers.</p>
+    <h2 class="cs-abs cs-h2" data-k style="left:120px; top:130px; margin:0; --y:50px; --d:100ms; --o:.63s; --t:.9s;">From pilot to rollout.</h2>
+    <p class="cs-abs cs-lede" data-k style="left:880px; top:142px; width:440px; --y:30px; --d:300ms; --o:.63s; --t:.9s;">A pilot in selected stores first. Then the remaining stores and the online shop, on the same assessment flow and buyer rules. Timing depends on the agreed program.</p>
 
     <svg class="cs-abs" style="left:120px; top:549.25px;" width="1200.09" height="15.3564" viewBox="0 0 1200.09 15.3564" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:300ms; transition-duration:2.6s;" d="M0.0449192 7.67819C400.045 -16.3218 800.045 31.6782 1200.04 7.67819" stroke-width="1.5" stroke="#B7D7FF" stroke-opacity="0.55"/></svg>
 
     <img decoding="async" class="su-node" alt="" src="/v2/assets/case-study-node-12.svg" data-k style="left:303px; top:538px; --sc:.4; --d:600ms; --o:.2s; --t:.6s;">
     <svg class="cs-abs" style="left:309.3px; top:490px;" width="1.4" height="52" viewBox="0 0 1.4 52" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:750ms; transition-duration:.4s;" d="M0.7 52V0" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.4"/></svg>
-    <div class="su-step cs-glass" data-k style="left:175px; top:317px; --y:-30px; --d:850ms; --o:.56s; --t:.8s;"><small>Weeks 1–2</small><b>Connected to the till</b><span>Checkout in stores and online integrated. Staff app on store iPhones.</span></div>
+    <div class="su-step cs-glass" data-k style="left:175px; top:317px; --y:-30px; --d:850ms; --o:.56s; --t:.8s;"><small>Step 1</small><b>Connect to checkout</b><span>Trade-in is integrated into checkout in stores and online. Staff use a guided device check.</span></div>
 
     <img decoding="async" class="su-node" alt="" src="/v2/assets/case-study-node-34.svg" data-k style="left:603px; top:546px; --sc:.4; --d:1200ms; --o:.2s; --t:.6s;">
     <svg class="cs-abs" style="left:609.3px; top:558px;" width="1.4" height="52" viewBox="0 0 1.4 52" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1350ms; transition-duration:.4s;" d="M0.7 0V52" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.4"/></svg>
-    <div class="su-step cs-glass" data-k style="left:475px; top:610px; --y:30px; --d:1450ms; --o:.56s; --t:.8s;"><small>Weeks 3–4</small><b>Buyer network set up</b><span>Three local buyers in Lithuania, Latvia and Estonia bid live on every device.</span></div>
+    <div class="su-step cs-glass" data-k style="left:475px; top:610px; --y:30px; --d:1450ms; --o:.56s; --t:.8s;"><small>Step 2</small><b>Set up buyers</b><span>Qualified buyers are onboarded and submit offers under the agreed program rules.</span></div>
 
     <img decoding="async" class="su-node" alt="" src="/v2/assets/case-study-node-56.svg" data-k style="left:903px; top:545px; --sc:.4; --d:1800ms; --o:.2s; --t:.6s;">
     <svg class="cs-abs" style="left:909.3px; top:490px;" width="1.4" height="52" viewBox="0 0 1.4 52" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1950ms; transition-duration:.4s;" d="M0.7 52V0" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.4"/></svg>
-    <div class="su-step cs-glass" data-k style="left:775px; top:312px; --y:-30px; --d:2050ms; --o:.56s; --t:.8s;"><small>Weeks 5–6</small><b>Pilot in 3 Vilnius stores</b><span>1,240 devices checked. An offer in 58 seconds on average.</span></div>
+    <div class="su-step cs-glass" data-k style="left:775px; top:312px; --y:-30px; --d:2050ms; --o:.56s; --t:.8s;"><small>Step 3</small><b>Pilot in a few stores</b><span>Staff, assessment and handover are tested with customers before rollout.</span></div>
 
     <img decoding="async" class="su-node" alt="" src="/v2/assets/case-study-node-79.svg" data-k style="left:1183px; top:518px; width:54px; height:54px; --sc:.4; --d:2400ms; --o:.2s; --t:.6s;">
     <svg class="cs-abs" style="left:1209.3px; top:558px;" width="1.4" height="52" viewBox="0 0 1.4 52" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:2550ms; transition-duration:.4s;" d="M0.7 0V52" stroke-width="1.4" stroke="#B7D7FF" stroke-opacity="0.4"/></svg>
-    <div class="su-step cs-glass" data-k style="left:1075px; top:610px; background:rgba(48,71,236,.9); --y:30px; --d:2650ms; --o:.56s; --t:.8s;"><small style="color:#F5F7FA;">Weeks 7–9</small><b>40 stores and online</b><span>Same flow and the same prices in every channel.</span></div>
+    <div class="su-step cs-glass" data-k style="left:1075px; top:610px; background:rgba(48,71,236,.9); --y:30px; --d:2650ms; --o:.56s; --t:.8s;"><small style="color:#F5F7FA;">Step 4</small><b>Roll out</b><span>Remaining stores and the online shop use the same flow.</span></div>
   </div>
 </section>
 
-<section data-section="results" id="results" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% + 327.3px * var(--s)) calc(480px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 22.5%, rgba(18,26,90,.9) 45%, rgba(17,22,55,.45) 72.5%, rgba(15,17,21,0) 100%), #0F1115;">
+<section data-section="measure" id="measure" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% + 327.3px * var(--s)) calc(480px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 22.5%, rgba(18,26,90,.9) 45%, rgba(17,22,55,.45) 72.5%, rgba(15,17,21,0) 100%), #0F1115;">
 <style>
-  [data-section="results"] .rs-card { position: absolute; border-radius: 26px; white-space: nowrap; }
-  [data-section="results"] .rs-card p, [data-section="results"] .rs-card i { position: absolute; }
-  [data-section="results"] .rs-card > i:not(.rs-track):not(.rs-bar) { left: 71px; width: 596px; height: 1px; }
-  [data-section="results"] .rs-g { left: 31px; font-size: 11px; color: #A7B0BE; }
-  [data-section="results"] .rs-v { font-size: 12px; color: #F5F7FA; }
-  [data-section="results"] .rs-m { top: 451px; font-size: 12px; color: #A7B0BE; }
-  [data-section="results"] .rs-delta { padding: 6px 12px; border-radius: 999px; background: #3047EC; font-size: 13px; color: #F5F7FA; }
-  [data-section="results"] .rs-track, [data-section="results"] .rs-bar { left: 149px; height: 8px; border-radius: 4px; }
-  [data-section="results"] .rs-track { width: 220px; background: rgba(255,255,255,.06); }
+  [data-section="measure"] .ms-grid { position: absolute; left: 120px; top: 300px; width: 1200px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  [data-section="measure"] .ms-card { min-height: 168px; padding: 26px 30px; border-radius: 26px; display: flex; flex-direction: column; gap: 10px; }
+  [data-section="measure"] .ms-card small { font-size: 13px; color: #B7D7FF; }
+  [data-section="measure"] .ms-card h3 { margin: 0; font-weight: 300; font-size: 26px; letter-spacing: -0.02em; color: #F5F7FA; }
+  [data-section="measure"] .ms-card p { width: 480px; font-weight: 300; font-size: 15px; line-height: 1.5; color: rgba(245,247,250,.7); }
+  [data-section="measure"] .ms-cta { position: absolute; left: 120px; top: 716px; display: flex; gap: 12px; }
+  [data-section="measure"] .ms-note { position: absolute; left: 120px; top: 796px; width: 900px; font-size: 13px; line-height: 1.5; color: #A7B0BE; }
 </style>
   <div class="v2-canvas">
-    <h2 class="cs-abs cs-h2" data-k style="left:120px; top:120px; margin:0; --y:50px; --d:100ms; --o:.63s; --t:.9s;">Six months in.</h2>
-    <p class="cs-abs cs-lede" data-k style="left:120px; top:200px; width:520px; --y:30px; --d:300ms; --o:.63s; --t:.9s;">Measured against the same months a year earlier, in the same 40 stores.</p>
-
-    <div class="rs-card cs-glass" data-k style="left:120px; top:300px; width:700px; height:500px; --y:60px; --d:300ms; --o:.7s; --t:1s;" role="img" aria-label="Trade-in participation rose from 11% in March to 49% in August">
-      <p style="left:31px; top:27px; font-size:13px; color:#A7B0BE;">Trade-in participation · share of iPhone sales</p>
-      <p style="left:31px; top:51px; font-weight:300; font-size:44px; letter-spacing:-0.03em; color:#F5F7FA;">49 %</p>
-      <p style="left:150px; top:73px; font-size:14px; color:#B7D7FF;">from 11 % before launch</p>
-      <i style="top:439px; background:rgba(183,215,255,.22);"></i><p class="rs-g" style="top:431px;">0%</p>
-      <i style="top:342.33px; background:rgba(183,215,255,.08);"></i><p class="rs-g" style="top:334.33px;">20%</p>
-      <i style="top:245.67px; background:rgba(183,215,255,.08);"></i><p class="rs-g" style="top:237.67px;">40%</p>
-      <i style="top:149px; background:rgba(183,215,255,.08);"></i><p class="rs-g" style="top:141px;">60%</p>
-      <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-bar-mar.svg" data-k style="left:95px; top:385.83px; width:74px; height:53.167px; --y:31.9px; --d:600ms; --o:.4s; --t:.9s;">
-      <p class="rs-v" data-k style="left:119px; top:361.83px; --d:1200ms; --o:.3s;">11%</p>
-      <p class="rs-m" style="left:103px;">Mar</p>
-      <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-bar-apr.svg" data-k style="left:189px; top:347.17px; width:74px; height:91.833px; --y:55.1px; --d:750ms; --o:.4s; --t:.9s;">
-      <p class="rs-v" data-k style="left:213px; top:323.17px; --d:1350ms; --o:.3s;">19%</p>
-      <p class="rs-m" style="left:197px;">Apr</p>
-      <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-bar-may.svg" data-k style="left:283px; top:308.5px; width:74px; height:130.5px; --y:78.3px; --d:900ms; --o:.4s; --t:.9s;">
-      <p class="rs-v" data-k style="left:307px; top:284.5px; --d:1500ms; --o:.3s;">27%</p>
-      <p class="rs-m" style="left:291px;">May</p>
-      <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-bar-jun.svg" data-k style="left:377px; top:269.83px; width:74px; height:169.167px; --y:101.5px; --d:1050ms; --o:.4s; --t:.9s;">
-      <p class="rs-v" data-k style="left:401px; top:245.83px; --d:1650ms; --o:.3s;">35%</p>
-      <p class="rs-m" style="left:385px;">Jun</p>
-      <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-bar-jul.svg" data-k style="left:471px; top:226.33px; width:74px; height:212.667px; --y:127.6px; --d:1200ms; --o:.4s; --t:.9s;">
-      <p class="rs-v" data-k style="left:495px; top:202.33px; --d:1800ms; --o:.3s;">44%</p>
-      <p class="rs-m" style="left:479px;">Jul</p>
-      <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-bar-aug.svg" data-k style="left:565px; top:202.17px; width:74px; height:236.833px; --y:142.1px; --d:1350ms; --o:.4s; --t:.9s;">
-      <p class="rs-v" data-k style="left:589px; top:178.17px; --d:1950ms; --o:.3s;">49%</p>
-      <p class="rs-m" style="left:573px;">Aug</p>
+    <h2 class="cs-abs cs-h2" data-k style="left:120px; top:120px; margin:0; --y:50px; --d:100ms; --o:.63s; --t:.9s;">What to measure.</h2>
+    <p class="cs-abs cs-lede" data-k style="left:120px; top:200px; width:620px; --y:30px; --d:300ms; --o:.63s; --t:.9s;">Agree the metric definitions before launch, so the pilot and the rollout are judged on the same basis.</p>
+    <div class="ms-grid">
+      <div class="ms-card cs-glass" data-k style="--y:50px; --d:400ms; --o:.6s; --t:.9s;"><small>01</small><h3>Participation</h3><p>Share of eligible device sales in which the customer completes a trade-in.</p></div>
+      <div class="ms-card cs-glass" data-k style="--y:50px; --d:550ms; --o:.6s; --t:.9s;"><small>02</small><h3>Value per device</h3><p>Average customer credit per accepted device, tracked from quote to buyer settlement.</p></div>
+      <div class="ms-card cs-glass" data-k style="--y:50px; --d:700ms; --o:.6s; --t:.9s;"><small>03</small><h3>Time to offer</h3><p>Time from the start of the device check to the offer shown to the customer.</p></div>
+      <div class="ms-card cs-glass" data-k style="--y:50px; --d:850ms; --o:.6s; --t:.9s;"><small>04</small><h3>Discrepancies</h3><p>Devices where the buyer's inspection differs from the assessment made at the point of trade-in.</p></div>
     </div>
-    <div class="rs-card cs-glass" data-k style="left:860px; top:300px; width:460px; height:240px; --y:60px; --d:600ms; --o:.7s; --t:1s;">
-      <p style="left:29px; top:25px; font-size:13px; color:#A7B0BE;">Value per device · average credit</p>
-      <p style="left:29px; top:47px; font-weight:300; font-size:40px; letter-spacing:-0.03em; color:#F5F7FA;">€612</p>
-      <p class="rs-delta" style="left:131px; top:61px;">+14%</p>
-      <p style="left:29px; top:129px; font-size:13px; color:#A7B0BE;">Before</p>
-      <i class="rs-track" style="top:134px;"></i><i class="rs-bar" data-w style="top:134px; width:184px; background:rgba(167,176,190,.45); --d:1200ms; --t:1.2s;"></i>
-      <p style="left:383px; top:127px; font-size:15px; color:#A7B0BE;">€536</p>
-      <p style="left:29px; top:177px; font-size:13px; color:#F5F7FA;">After</p>
-      <i class="rs-track" style="top:182px;"></i><i class="rs-bar" data-w style="top:182px; width:210px; background:#B7D7FF; --d:1500ms; --t:1.2s;"></i>
-      <p style="left:383px; top:175px; font-size:15px; color:#F5F7FA;">€612</p>
+    <div class="ms-cta" data-k style="--y:30px; --d:1000ms; --o:.6s; --t:.9s;">
+      <a href="/v2/contact/?type=retailer" class="cs-btn cs-btn--white">Discuss your program</a>
     </div>
-    <div class="rs-card cs-glass" data-k style="left:860px; top:560px; width:460px; height:240px; --y:60px; --d:800ms; --o:.7s; --t:1s;">
-      <p style="left:29px; top:25px; font-size:13px; color:#A7B0BE;">Time to offer · store median</p>
-      <p style="left:29px; top:47px; font-weight:300; font-size:40px; letter-spacing:-0.03em; color:#F5F7FA;">58 s</p>
-      <p class="rs-delta" style="left:117px; top:61px;">−84%</p>
-      <p style="left:29px; top:129px; font-size:13px; color:#A7B0BE;">Before</p>
-      <i class="rs-track" style="top:134px;"></i><i class="rs-bar" data-w style="top:134px; width:220px; background:rgba(167,176,190,.45); --d:1200ms; --t:1.2s;"></i>
-      <p style="left:383px; top:127px; font-size:15px; color:#A7B0BE;">6 min</p>
-      <p style="left:29px; top:177px; font-size:13px; color:#F5F7FA;">After</p>
-      <i class="rs-track" style="top:182px;"></i><i class="rs-bar" data-w style="top:182px; width:35px; background:#B7D7FF; --d:1500ms; --t:1.2s;"></i>
-      <p style="left:383px; top:175px; font-size:15px; color:#F5F7FA;">58 s</p>
-    </div>
+    <p class="ms-note" data-k style="--d:1100ms; --o:.6s;">Illustrative workflow and sample data. Values, buyer availability, timing and supported features depend on the agreed program and market.</p>
   </div>
 </section>
 
-<section data-section="quote" id="quote" class="v2-sec" data-tone="dark" style="--h:900px; background:#0F1115;">
+<section data-section="next" id="next" class="v2-sec" data-tone="light" style="--h:860px; background:#F5F7FA;">
 <style>
-  .motion [data-section="quote"] .qt-photo { opacity: 0; scale: 1.08; transition: opacity 1.6s var(--ease), scale 2.4s var(--ease); }
-  .motion [data-section="quote"].is-in .qt-photo { opacity: 1; scale: 1; }
-</style>
-  <div class="v2-canvas">
-    <div class="cs-abs" style="inset:0; background:#0F1115;"></div>
-    <img decoding="async" class="cs-glow" alt="" src="/v2/assets/case-study-glow-quote.svg" style="left:600px; top:0; width:1100px; height:900px;">
-    <div class="cs-abs" style="left:0; top:0; width:1706px; height:900px; mix-blend-mode:lighten;">
-      <img decoding="async" class="cs-img qt-photo" alt="Close-up of an iPhone camera lens" src="/v2/assets/case-study-lens.webp" style="inset:0; width:100%; height:100%; object-fit:cover;">
-    </div>
-    <div class="cs-abs" style="left:0; top:0; width:1000px; height:900px; background:linear-gradient(90deg, #0F1115 50%, rgba(15,17,21,0));"></div>
-    <blockquote class="cs-abs" data-k style="left:120px; top:290px; margin:0; display:flex; flex-direction:column; gap:40px; --y:50px; --d:300ms; --o:.77s; --t:1.1s;">
-      <p style="width:700px; font-size:56px; line-height:1.08; letter-spacing:-0.03em; color:#F5F7FA;">“The trade-in offer is now the first thing staff show, not the last.”</p>
-      <footer style="display:flex; flex-direction:column; gap:4px; white-space:nowrap;"><cite style="font-style:normal; font-size:16px; color:#F5F7FA;">Retail Operations Director</cite><span style="font-weight:300; font-size:15px; color:#A7B0BE;">A Baltic electronics retailer</span></footer>
-    </blockquote>
-  </div>
-</section>
-
-<section data-section="related" id="related" class="v2-sec" data-tone="light" style="--h:900px; background:#F5F7FA;">
-<style>
-  [data-section="related"] .re-card { position: absolute; top: 300px; height: 440px; display: block; overflow: clip; border-radius: 28px; transition: box-shadow .4s var(--ease); }
-  [data-section="related"] .re-card:hover { box-shadow: 0 40px 80px rgba(15,20,64,.22), 0 0 0 1px rgba(48,71,236,.25) !important; }
-  [data-section="related"] .re-card .cs-img { transition: transform .8s var(--ease); }
-  [data-section="related"] .re-card:hover .cs-img { transform: translateY(-8px); }
-  [data-section="related"] .re-copy { position: absolute; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; white-space: nowrap; }
-  [data-section="related"] .re-copy p:nth-child(1) { font-size: 14px; color: #A7B0BE; }
-  [data-section="related"] .re-copy p:nth-child(2) { font-weight: 300; font-size: 52px; letter-spacing: -0.04em; color: #F5F7FA; }
-  [data-section="related"] .re-copy p:nth-child(3) { font-weight: 300; font-size: 16px; color: rgba(245,247,250,.8); }
-  [data-section="related"] .re-all { position: absolute; left: 1201px; top: 178px; font-size: 15px; color: #0F1115; white-space: pre; transition: color .2s; }
-  [data-section="related"] .re-all:hover { color: #3047EC; }
+  [data-section="next"] .nx-card { position: absolute; top: 290px; width: 585px; height: 420px; display: block; overflow: clip; border-radius: 28px; transition: box-shadow .4s var(--ease); }
+  [data-section="next"] .nx-card:hover { box-shadow: 0 40px 80px rgba(15,20,64,.22), 0 0 0 1px rgba(48,71,236,.25) !important; }
+  [data-section="next"] .nx-card .cs-img { transition: transform .8s var(--ease); }
+  [data-section="next"] .nx-card:hover .cs-img { transform: translateY(-8px); }
+  [data-section="next"] .nx-copy { position: absolute; left: 34px; top: 36px; width: 300px; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+  [data-section="next"] .nx-copy small { font-size: 14px; }
+  [data-section="next"] .nx-copy b { font-weight: 300; font-size: 36px; line-height: 1.08; letter-spacing: -0.03em; }
+  [data-section="next"] .nx-copy span { font-weight: 300; font-size: 15px; line-height: 1.5; }
+  [data-section="next"] .nx-go { position: absolute; left: 34px; bottom: 34px; font-size: 15px; white-space: pre; }
 </style>
   <div class="v2-canvas">
     <img decoding="async" class="cs-glow" alt="" src="/v2/assets/case-study-glow-ice-related.svg" style="left:0; top:100px; width:1400px; height:900px;">
-    <h2 class="cs-abs cs-h2" data-k style="left:120px; top:150px; margin:0; color:#0F1115; --y:50px; --d:100ms; --o:.63s; --t:.9s;">More from customers.</h2>
-    <a class="re-all" href="/v2/customers/">All customers  →</a>
+    <h2 class="cs-abs cs-h2" data-k style="left:120px; top:140px; margin:0; color:#0F1115; --y:50px; --d:100ms; --o:.63s; --t:.9s;">Plan your own program.</h2>
 
-    <a href="/v2/case-study/" class="re-card" aria-label="A Polish mobile operator: 22% less churn at contract renewal" data-k style="left:120px; width:560px; background:#fff; box-shadow:0 30px 60px rgba(15,20,64,.1); --y:70px; --d:400ms; --o:.7s; --t:1s;">
-      <div class="re-copy" style="left:32px; top:36px;">
-        <p style="color:#5C6373;">A Polish mobile operator</p><p style="color:#0F1115; font-size:72px;">−22%</p><p style="color:rgba(15,17,21,.8);">churn at contract renewal</p>
+    <a href="/v2/solutions/#retailers" class="nx-card" data-k style="left:120px; background:#fff; box-shadow:0 30px 60px rgba(15,20,64,.1); --y:70px; --d:400ms; --o:.7s; --t:1s;">
+      <div class="nx-copy">
+        <small style="color:#5C6373;">Solutions</small>
+        <b style="color:#0F1115;">Trade-in for electronics retailers</b>
+        <span style="color:rgba(15,17,21,.7);">How Fintegre supports store and online trade-in journeys.</span>
       </div>
-      <p class="cs-abs" style="left:32px; top:380px; font-size:15px; color:#0F1115; white-space:pre;">Read the case  →</p>
-      <div class="cs-abs" data-k style="left:244.33px; top:90px; width:281.45px; height:427.84px; --y:50px; --d:700ms; --o:.01s; --t:1.2s;">
-        <img decoding="async" class="cs-img" alt="Two iPhone 17 in Sage" src="/v2/assets/case-study-iphone17-sage.webp" style="left:26.72px; top:13.92px; width:228px; height:400px; rotate:8deg;">
+      <p class="nx-go" style="color:#0F1115;">See retail solutions  →</p>
+      <div class="cs-abs" data-k style="left:330px; top:90px; width:281.45px; height:427.84px; --y:50px; --d:700ms; --o:.01s; --t:1.2s;">
+        <img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-iphone17-sage.webp" style="left:26.72px; top:13.92px; width:228px; height:400px; rotate:8deg;">
       </div>
     </a>
 
-    <a href="/v2/case-study/" class="re-card" aria-label="A European device brand: €4.2M residual value recovered" data-k style="left:710px; width:290px; background:#0F1115; border:1px solid rgba(183,215,255,.14); box-shadow:0 30px 60px rgba(15,20,64,.25); --y:70px; --d:600ms; --o:.7s; --t:1s;">
-      <div class="cs-abs" data-k style="left:29px; top:39px; width:300px; height:183px; --y:50px; --d:900ms; --o:.01s; --t:1.2s;"><img decoding="async" class="cs-img" alt="MacBook Pro" src="/v2/assets/case-study-macbook.webp" style="inset:0; width:100%; height:100%;"></div>
-      <div class="re-copy" style="left:31px; top:269px;"><p>A European device brand</p><p>€4.2M</p><p>residual value recovered</p></div>
-    </a>
-
-    <a href="/v2/case-study/" class="re-card" aria-label="A premium Apple reseller: 61 second average device check" data-k style="left:1030px; width:290px; background:linear-gradient(123.39deg, #3047ED 0%, #141E6E 71.43%); box-shadow:0 30px 60px rgba(15,20,64,.25); --y:70px; --d:800ms; --o:.7s; --t:1s;">
-      <div class="cs-abs" data-k style="left:70px; top:34px; width:170px; height:196px; --y:50px; --d:1100ms; --o:.01s; --t:1.2s;"><img decoding="async" class="cs-img" alt="Apple Watch" src="/v2/assets/case-study-watch.webp" style="inset:0; width:100%; height:100%; filter:drop-shadow(0 20px 20px rgba(0,0,0,.45));"></div>
-      <div class="re-copy" style="left:32px; top:270px;"><p>A premium Apple reseller</p><p>61 s</p><p>average device check</p></div>
+    <a href="/v2/contact/?type=retailer" class="nx-card" data-k style="left:735px; background:linear-gradient(123.39deg, #3047ED 0%, #141E6E 71.43%); box-shadow:0 30px 60px rgba(15,20,64,.25); --y:70px; --d:600ms; --o:.7s; --t:1s;">
+      <div class="nx-copy">
+        <small style="color:#B7D7FF;">Enterprise enquiry</small>
+        <b style="color:#F5F7FA;">Discuss your retail program</b>
+        <span style="color:rgba(245,247,250,.8);">Tell us about your stores, channels and the programs you want to offer.</span>
+      </div>
+      <p class="nx-go" style="color:#F5F7FA;">Discuss your program  →</p>
+      <div class="cs-abs" data-k style="left:360px; top:150px; width:200px; height:230px; --y:50px; --d:900ms; --o:.01s; --t:1.2s;"><img decoding="async" class="cs-img" alt="" src="/v2/assets/case-study-watch.webp" style="inset:0; width:100%; height:100%; filter:drop-shadow(0 20px 20px rgba(0,0,0,.45));"></div>
     </a>
   </div>
 </section>
@@ -337,14 +270,14 @@
 <section data-section="closing" id="closing" class="v2-sec" style="--h:900px; background: radial-gradient(calc(1080px * var(--s)) calc(560px * var(--s)) at 50% calc(330px * var(--s)), rgba(48,71,236,.42) 0%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), #0F1115;" data-tone="dark">
   <style>
     [data-section="closing"] .cl-head {
-      position: absolute; left: 70px; top: 284px; width: 1300px; margin: 0; text-align: center;
+      position: absolute; left: 70px; top: 232px; width: 1300px; margin: 0; text-align: center;
       font-weight: 400; font-size: 150px; line-height: .92; letter-spacing: -4.5px;
       background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
     }
     [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 168px; }
     [data-section="closing"] .cl-foot {
-      position: absolute; left: 20px; top: 557px; width: 1400px; height: 343px; padding: 56px 56px 40px;
+      position: absolute; left: 20px; top: 527px; width: 1400px; height: 373px; padding: 56px 56px 40px;
       display: flex; flex-direction: column; justify-content: space-between;
       background: radial-gradient(700px 380px at 10% 0%, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 70%), linear-gradient(135deg, rgba(28,34,72,.92) 0%, rgba(17,20,34,.92) 100%); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 -20px 60px rgba(0,0,0,.45); border-radius: 32px; color: #F5F7FA; line-height: normal;
     }
@@ -375,6 +308,12 @@
     [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
     [data-section="closing"] .cl-legal { display: flex; gap: 10px; }
     [data-section="closing"] .cl-legal a { font-size: 12px; color: rgba(255,255,255,.8); }
+    [data-section="closing"] .cl-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    [data-section="closing"] .cl-sub .cl-err { margin-top: -8px; font-size: 12px; color: #FFB3B3; }
+    [data-section="closing"] .cl-sub .cl-ok { margin-top: -8px; font-size: 12px; color: #B7D7FF; }
+    [data-section="closing"] .cl-sub .cl-ok:empty { display: none; }
+    [data-section="closing"] .cl-sub .cl-privacy { margin-top: -8px; font-size: 12px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-privacy a { color: rgba(255,255,255,.8); text-decoration: underline; text-underline-offset: 2px; }
   </style>
   <div class="v2-canvas">
     <h2 class="cl-head" data-m="up">Run it in<br>your own <em>stores</em></h2>
@@ -387,27 +326,33 @@
             <img decoding="async" src="/v2/assets/case-study-foot-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
           </a>
           <h3>Get trade-in insights</h3>
-          <p>Market reports and program benchmarks. No spam.</p>
-          <form class="cl-form" novalidate>
-            <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+          <p>Guides and program notes from Fintegre. No spam.</p>
+          <form class="cl-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/v2/thanks/" novalidate>
+            <input type="hidden" name="form-name" value="newsletter">
+            <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+            <label for="nl-email" class="cl-sr">Work email</label>
+            <input id="nl-email" type="email" name="email" placeholder="Work email" autocomplete="email" required aria-describedby="nl-err nl-privacy">
             <button type="submit">Subscribe</button>
           </form>
+          <p class="cl-err" id="nl-err" role="alert" hidden>Enter a valid work email.</p>
+          <p class="cl-ok" role="status" aria-live="polite"></p>
+          <p class="cl-privacy" id="nl-privacy">See our <a href="/v2/legal/#privacy">privacy notice</a>.</p>
         </div>
         <div class="cl-cols">
           <nav aria-label="Platform"><span>Platform</span>
-            <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device value intelligence</a><a href="/v2/platform/">Vendor network</a><a href="/v2/platform/">Integrations</a>
+            <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device Value Intelligence</a><a href="/v2/vendor-network/">Vendor Network</a><a href="/v2/platform/#integrations">Integrations</a>
           </nav>
           <nav aria-label="Solutions"><span>Solutions</span>
-            <a href="/v2/solutions/">Retailers</a><a href="/v2/solutions/">Telecom operators</a><a href="/v2/solutions/">OEM and ecosystems</a><a href="/v2/solutions/">Apple and premium retail</a>
+            <a href="/v2/solutions/#apr">Apple Premium Resellers</a><a href="/v2/solutions/#retailers">Electronics retailers</a><a href="/v2/solutions/#telecom">Telecom operators</a><a href="/v2/solutions/#brands">Device brands and OEM</a>
           </nav>
           <nav aria-label="Company"><span>Company</span>
-            <a href="/v2/customers/">Customers</a><a href="/v2/insights/">Insights</a><a href="/v2/company/">About</a><a href="/v2/company/">Contact</a>
+            <a href="/v2/company/">About</a><a href="/v2/insights/">Insights</a><a href="/v2/contact/">Contact</a>
           </nav>
         </div>
       </div>
       <div class="cl-bottom">
         <small>© 2026 Fintegre. All rights reserved.</small>
-        <nav class="cl-legal" aria-label="Legal"><a href="#closing">Privacy</a><a href="#closing">Cookies</a><a href="#closing">Imprint</a></nav>
+        <nav class="cl-legal" aria-label="Legal"><a href="/v2/legal/#privacy">Privacy</a><a href="/v2/legal/#cookies">Cookies</a><a href="/v2/legal/#imprint">Imprint</a></nav>
       </div>
     </footer>
   </div>
@@ -415,22 +360,38 @@
 </main>
 <script src="/v2/v2.js"></script>
 <script>
-// Closing footer: newsletter form has no backend yet, so it validates locally and confirms in place.
+// Closing footer: Netlify newsletter form. Validates inline, posts with fetch and confirms in place; without JS it posts normally.
 (() => {
-  const form = document.querySelector('[data-section="closing"] .cl-form');
+  const form = document.querySelector('[data-section="closing"] form[name="newsletter"]');
   if (!form) return;
-  form.addEventListener('submit', (e) => {
+  const box = form.parentElement;
+  const input = form.querySelector('input[type="email"]');
+  const btn = form.querySelector('button[type="submit"]');
+  const err = box.querySelector('.cl-err');
+  const ok = box.querySelector('.cl-ok');
+  const mark = (bad, msg) => {
+    input.setAttribute('aria-invalid', bad ? 'true' : 'false');
+    input.style.borderColor = bad ? 'rgba(255,140,140,.7)' : '';
+    if (msg) err.textContent = msg;
+    err.hidden = !bad;
+  };
+  input.addEventListener('input', () => mark(false));
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const input = form.querySelector('input');
-    const btn = form.querySelector('button');
-    if (!input.checkValidity()) { input.focus(); input.style.borderColor = 'rgba(255,140,140,.7)'; return; }
-    input.style.borderColor = '';
-    input.value = '';
-    input.placeholder = 'Thanks, you are on the list';
-    btn.textContent = 'Subscribed';
+    if (!input.checkValidity()) { mark(true, 'Enter a valid work email.'); input.focus(); return; }
+    mark(false);
     btn.disabled = true;
+    try {
+      const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() });
+      if (!res.ok) throw new Error(String(res.status));
+      input.value = '';
+      btn.textContent = 'Subscribed';
+      ok.textContent = 'Thanks, you are on the list.';
+    } catch (_) {
+      btn.disabled = false;
+      mark(true, 'Something went wrong. Please try again.');
+    }
   });
-  form.querySelector('input').addEventListener('input', (e) => { e.target.style.borderColor = ''; });
 })();
 </script>
 </body>

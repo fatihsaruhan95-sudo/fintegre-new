@@ -1,4 +1,4 @@
-<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:1150px; background: radial-gradient(calc(177.27px * var(--s)) calc(383.33px * var(--s)) at calc(106.36px * var(--s)) calc(728.33px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:1330px; background: radial-gradient(calc(177.27px * var(--s)) calc(383.33px * var(--s)) at calc(106.36px * var(--s)) calc(898.33px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
 <style>
   [data-section="hero"] .h-abs { position: absolute; }
   [data-section="hero"] p { margin: 0; }
@@ -21,34 +21,33 @@
   /* Copy */
   [data-section="hero"] .h-copy { left: 20px; top: 116px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
   [data-section="hero"] h1 { margin: 0; width: 350px; font-weight: 400; font-size: 44px; line-height: .96; letter-spacing: -0.04em; color: #F5F7FA; }
-  [data-section="hero"] .h-lede { width: 340px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
-  [data-section="hero"] .h-ctas { display: flex; gap: 10px; }
+  [data-section="hero"] .h-text { display: flex; flex-direction: column; gap: 12px; }
+  [data-section="hero"] .h-sub { width: 350px; font-weight: 400; font-size: 22px; line-height: 1.25; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .h-lede { width: 345px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .h-proof { width: 330px; font-size: 13px; line-height: 1.45; color: #A7B0BE; }
+  [data-section="hero"] .h-ctas { display: flex; flex-wrap: wrap; gap: 10px; width: 350px; }
   [data-section="hero"] .h-btn { height: 48px; padding: 0 18px; display: inline-flex; align-items: center; border-radius: 999px; font-size: 14px; white-space: pre; }
   [data-section="hero"] .h-btn--light { background: #F5F7FA; color: #0F1115; }
   [data-section="hero"] .h-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
-  [data-section="hero"] .h-stats { display: flex; gap: 28px; align-items: center; }
-  [data-section="hero"] .h-stat { display: flex; flex-direction: column; gap: 2px; white-space: nowrap; }
-  [data-section="hero"] .h-stat b { font-weight: 300; font-size: 22px; letter-spacing: -0.02em; color: #F5F7FA; }
-  [data-section="hero"] .h-stat span { font-size: 13px; color: #A7B0BE; }
-  [data-section="hero"] .h-div { width: 1px; height: 28px; background: rgba(245,247,250,.16); }
 
   /* Visual */
-  [data-section="hero"] .h-phone { left: 60px; top: 540px; width: 420px; height: 507px; }
+  [data-section="hero"] .h-phone { left: 60px; top: 710px; width: 420px; height: 507px; }
   [data-section="hero"] .h-phone img { display: block; width: 100%; height: 100%; object-fit: contain; }
-  [data-section="hero"] .h-fade { left: 0; top: 920px; width: 390px; height: 230px; pointer-events: none;
+  [data-section="hero"] .h-fade { left: 0; top: 1090px; width: 390px; height: 230px; pointer-events: none;
     background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.92) 70%, #0F1115 100%); }
   [data-section="hero"] .h-fibres svg { position: absolute; overflow: visible; }
-  [data-section="hero"] .h-scan { left: 91.0px; top: 560px; width: 107px; height: 107px; }
+  [data-section="hero"] .h-scan { left: 91.0px; top: 730px; width: 107px; height: 107px; }
   [data-section="hero"] .h-scan img { display: block; width: 107px; height: 107px; }
   [data-section="hero"] .h-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap; transform-origin: 50% 50%;
     background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; line-height: normal; color: #F5F7FA; }
   [data-section="hero"] .h-chip img { width: 7px; height: 7px; display: block; }
 
-  [data-section="hero"] .h-card { left: 25px; top: 760px; width: 340px; height: 330px; border-radius: 26px; overflow: clip;
+  [data-section="hero"] .h-card { left: 25px; top: 930px; width: 340px; height: 330px; border-radius: 26px; overflow: clip;
     background: rgba(255,255,255,.07); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
     box-shadow: inset 0 0 0 1px rgba(183,215,255,.16), 0 30px 60px rgba(0,0,0,.5); }
   [data-section="hero"] .h-card__label { left: 25px; top: 23px; font-size: 13px; color: #A7B0BE; white-space: nowrap; }
   [data-section="hero"] .h-price { left: 23px; top: 49px; font-weight: 300; font-size: 72px; line-height: normal; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  [data-section="hero"] .h-sample { right: 25px; top: 23px; font-size: 12px; color: #A7B0BE; white-space: nowrap; }
   [data-section="hero"] .h-delta { left: 25px; top: 127px; padding: 5px 10px; border-radius: 999px; background: rgba(183,215,255,.16); font-size: 12px; color: #B7D7FF; white-space: nowrap; }
   [data-section="hero"] .h-track, [data-section="hero"] .h-fill { left: 25px; top: 167px; height: 6px; border-radius: 999px; }
   [data-section="hero"] .h-track { width: 288px; background: rgba(255,255,255,.08); }
@@ -68,7 +67,7 @@
 
 </style>
   <div class="v2-canvas">
-    <img class="h-glow" alt="" src="assets/hero-glow-1.svg" style="left:-80px; top:280px; width:740px; height:740px;">
+    <img class="h-glow" alt="" src="assets/hero-glow-1.svg" style="left:-80px; top:450px; width:740px; height:740px;">
     <img class="h-glow" alt="" src="assets/hero-glow-2.svg" style="left:-280px; top:-80px; width:600px; height:540px;">
 
     <div class="h-abs h-phone" data-hm style="--d:200ms; --to:.8s; --tt:1.3s; --ty:90px;">
@@ -78,31 +77,32 @@
     <div class="h-abs h-fade"></div>
 
     <div class="h-abs h-fibres" style="left:0; top:0;" aria-hidden="true">
-      <svg style="left:180px; top:566.35px;" width="18" height="47.3" viewBox="0 0 18 47.3" fill="none"><path pathLength="1" data-draw style="--d:1600ms" d="M0 46.65C8 46.65 8 0.65 18 0.65" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
-      <svg style="left:180px; top:612.35px;" width="36" height="3.3" viewBox="0 0 36 3.3" fill="none"><path pathLength="1" data-draw style="--d:2000ms" d="M0 0.65C16 0.65 20 2.65 36 2.65" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
-      <svg style="left:180px; top:612.35px;" width="18" height="51.3" viewBox="0 0 18 51.3" fill="none"><path pathLength="1" data-draw style="--d:2400ms" d="M0 0.65C8 0.65 8 50.65 18 50.65" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+      <svg style="left:180px; top:736.35px;" width="18" height="47.3" viewBox="0 0 18 47.3" fill="none"><path pathLength="1" data-draw style="--d:1600ms" d="M0 46.65C8 46.65 8 0.65 18 0.65" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+      <svg style="left:180px; top:782.35px;" width="36" height="3.3" viewBox="0 0 36 3.3" fill="none"><path pathLength="1" data-draw style="--d:2000ms" d="M0 0.65C16 0.65 20 2.65 36 2.65" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+      <svg style="left:180px; top:782.35px;" width="18" height="51.3" viewBox="0 0 18 51.3" fill="none"><path pathLength="1" data-draw style="--d:2400ms" d="M0 0.65C8 0.65 8 50.65 18 50.65" stroke-width="1.3" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
     </div>
 
     <div class="h-abs h-scan" aria-hidden="true" data-hm="pop" style="--d:1200ms; --to:.3s;"><img alt="" src="assets/hero-scan-ring.svg"></div>
 
-    <div class="h-abs" style="left:198px; top:548px;">
+    <div class="h-abs" style="left:198px; top:718px;">
       <div class="h-chip" data-hm="pop" style="--d:2000ms; --to:.3s;"><img alt="" src="assets/hero-dot.svg">Screen · Grade A</div>
     </div>
-    <div class="h-abs" style="left:216px; top:596px;">
+    <div class="h-abs" style="left:216px; top:766px;">
       <div class="h-chip" data-hm="pop" style="--d:2400ms; --to:.3s;"><img alt="" src="assets/hero-dot.svg">Battery · 91 %</div>
     </div>
-    <div class="h-abs" style="left:198px; top:644px;">
-      <div class="h-chip" data-hm="pop" style="--d:2800ms; --to:.3s;"><img alt="" src="assets/hero-dot.svg">4 buyers competing</div>
+    <div class="h-abs" style="left:198px; top:814px;">
+      <div class="h-chip" data-hm="pop" style="--d:2800ms; --to:.3s;"><img alt="" src="assets/hero-dot.svg">Offers compared</div>
     </div>
 
     <div class="h-abs h-card" data-hm style="--d:2400ms; --to:.64s; --tt:.8s; --ty:40px;">
-      <p class="h-abs h-card__label">Live valuation · iPhone 18 Pro</p>
+      <p class="h-abs h-card__label">Valuation · iPhone 18 Pro</p>
+      <p class="h-abs h-sample">Sample data</p>
       <p class="h-abs h-price" data-hero-price>€612</p>
       <div class="h-abs h-track"></div>
       <div class="h-abs h-fill"></div>
-      <p class="h-abs h-delta" data-hm style="--d:4100ms; --to:.4s; --eo:var(--inout);">+€38 vs. store price</p>
+      <p class="h-abs h-delta" data-hm style="--d:4100ms; --to:.4s; --eo:var(--inout);">Quote · subject to inspection</p>
       <div class="h-abs h-bids">
-        <div class="h-bid h-bid--best" data-hm style="--d:3000ms; --to:.4s; --eo:var(--inout);"><span>Best · Latvia</span><span>€612</span></div>
+        <div class="h-bid h-bid--best" data-hm style="--d:3000ms; --to:.4s; --eo:var(--inout);"><span>Strongest expected net · Latvia</span><span>€612</span></div>
         <div class="h-bid" data-hm style="--d:3150ms; --to:.4s; --eo:var(--inout);"><span>Lithuania</span><span>€598</span></div>
         <div class="h-bid" data-hm style="--d:3300ms; --to:.4s; --eo:var(--inout);"><span>Poland</span><span>€585</span></div>
         <div class="h-bid" data-hm style="--d:3450ms; --to:.4s; --eo:var(--inout);"><span>Estonia</span><span>€571</span></div>
@@ -112,25 +112,22 @@
     <div class="h-abs h-top">
       <a href="#hero" class="h-logo" aria-label="Fintegre home"><span class="h-mark"><img alt="" src="assets/hero-logo.svg"></span>Fintegre</a>
       <div class="h-actions">
-        <a href="#closing" class="h-pillbtn">Design your program</a>
+        <a href="/v2/contact/" class="h-pillbtn">Discuss your program</a>
         <button type="button" class="h-burger" data-menu-open aria-label="Open menu" aria-controls="m-menu" aria-expanded="false"><i style="width:18px"></i><i style="width:12px"></i></button>
       </div>
     </div>
 
     <div class="h-abs h-copy" data-hm style="--d:100ms; --to:.8s; --tt:1s; --ty:30px;">
       <h1>Make every<br>device worth<br>more.</h1>
-      <p class="h-lede">The intelligence and orchestration platform behind trade-in programs at retailers, telecom operators and device brands.</p>
+      <div class="h-text">
+        <p class="h-sub">Trade-in orchestration for retailers, telcos and device brands.</p>
+        <p class="h-lede">Connect your customer journey with qualified buyers, device assessment and settlement through one vendor-neutral platform. Keep your brand and customer relationship at the centre of the program.</p>
+      </div>
       <div class="h-ctas">
-        <a href="#closing" class="h-btn h-btn--light">Design your program</a>
-        <a href="#fullbleed" class="h-btn h-btn--ghost">Watch the film  ▷</a>
+        <a href="/v2/contact/" class="h-btn h-btn--light">Discuss your program</a>
+        <a href="#how" class="h-btn h-btn--ghost">See how it works  ↓</a>
       </div>
-      <div class="h-stats">
-        <div class="h-stat"><b>12</b><span>markets</span></div>
-        <div class="h-div"></div>
-        <div class="h-stat"><b>€240M</b><span>traded</span></div>
-        <div class="h-div"></div>
-        <div class="h-stat"><b>58 s</b><span>to an offer</span></div>
-      </div>
+      <p class="h-proof">More than one million devices checked across three regions.</p>
     </div>
   </div>
 

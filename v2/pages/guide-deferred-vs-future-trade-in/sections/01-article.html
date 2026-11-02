@@ -1,0 +1,134 @@
+<section data-section="article" id="article" class="v2-sec" data-tone="light" style="--h:4045px; background:#F5F7FA;">
+<style>
+  [data-section="article"] p { margin: 0; }
+  [data-section="article"] .ga-col { position: absolute; left: 360px; top: 120px; width: 720px; display: flex; flex-direction: column; gap: 24px; }
+  [data-section="article"] .ga-lead { font-weight: 300; font-size: 22px; line-height: 1.55; color: rgba(15,17,21,.9); margin-bottom: 8px; }
+  [data-section="article"] h2 { margin: 32px 0 0; font-weight: 400; font-size: 36px; line-height: 1.12; letter-spacing: -0.03em; color: #0F1115; }
+  [data-section="article"] .ga-p { font-weight: 300; font-size: 18px; line-height: 1.65; color: rgba(15,17,21,.78); }
+  [data-section="article"] .ga-cap { font-size: 14px; line-height: 1.5; color: rgba(15,17,21,.55); margin-top: -4px; }
+  [data-section="article"] .ga-list, [data-section="article"] .ga-olist { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  [data-section="article"] .ga-list li, [data-section="article"] .ga-olist li { position: relative; padding-left: 30px; font-weight: 300; font-size: 18px; line-height: 1.6; color: rgba(15,17,21,.78); }
+  [data-section="article"] .ga-list li b, [data-section="article"] .ga-olist li b { font-weight: 400; color: #0F1115; }
+  [data-section="article"] .ga-list li::before { content: ''; position: absolute; left: 4px; top: .7em; width: 7px; height: 7px; border-radius: 50%; background: #3047EC; }
+  [data-section="article"] .ga-olist { counter-reset: o; gap: 16px; }
+  [data-section="article"] .ga-olist li { counter-increment: o; padding-left: 44px; }
+  [data-section="article"] .ga-olist li::before { content: counter(o); position: absolute; left: 0; top: 2px; width: 28px; height: 28px; border-radius: 50%; background: #3047EC; color: #F5F7FA; font-size: 13px; font-weight: 400; line-height: 28px; text-align: center; }
+
+  [data-section="article"] .gf { position: relative; flex: none; margin: 8px 0 8px -120px; width: 960px; padding: 36px 40px 36px; box-sizing: border-box; border-radius: 28px; background: #fff; box-shadow: 0 20px 50px rgba(15,20,51,.08); line-height: normal; }
+  [data-section="article"] .gf-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 30px; }
+  [data-section="article"] .gf-ttl { font-size: 13px; color: rgba(15,17,21,.6); }
+  [data-section="article"] .gf-tag { flex: none; font-size: 12px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="article"] ol.gf-steps, [data-section="article"] ol.gt-track { margin: 0; padding: 0; list-style: none; }
+  [data-section="article"] .gs small, [data-section="article"] .gt-track small { display: block; font-size: 13px; color: rgba(15,17,21,.55); }
+  [data-section="article"] .gs span, [data-section="article"] .gt-track span { display: block; color: #0F1115; letter-spacing: -0.02em; }
+  [data-section="article"] .gs i, [data-section="article"] .gt-track i { display: block; width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 2px #3047EC; position: relative; z-index: 1; }
+  [data-section="article"] .gs.is-hi i { background: #3047EC; box-shadow: 0 0 0 5px rgba(48,71,236,.15); }
+  [data-section="article"] .gs.is-hi span { color: #3047EC; }
+  [data-section="article"] .gf-steps--nv .gs small { color: #3047EC; }
+  [data-section="article"] .gb-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(15,17,21,.07); }
+  [data-section="article"] .gb-row:first-child { border-top: 0; }
+  [data-section="article"] .gb-lab { font-size: 15px; color: #0F1115; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+  [data-section="article"] .gb-lab em { font-style: normal; font-size: 12px; padding: 4px 10px; border-radius: 999px; background: #3047EC; color: #F5F7FA; white-space: nowrap; }
+  [data-section="article"] .gb-bars { display: flex; flex-direction: column; gap: 8px; }
+  [data-section="article"] .gb-bar { display: flex; align-items: center; gap: 12px; }
+  [data-section="article"] .gb-bar i { display: block; height: 14px; border-radius: 7px; transform-origin: 0 50%; }
+  [data-section="article"] .gb-bar span { font-size: 13px; color: #0F1115; white-space: nowrap; }
+  [data-section="article"] .gb-legend { display: flex; gap: 20px; margin-top: 18px; font-size: 13px; color: rgba(15,17,21,.7); }
+  [data-section="article"] .gb-legend span { display: flex; align-items: center; gap: 8px; }
+  [data-section="article"] .gb-legend i { width: 16px; height: 3px; border-radius: 2px; }
+  [data-section="article"] .gt-name p { font-size: 18px; color: #0F1115; letter-spacing: -0.02em; }
+  [data-section="article"] .gt-name small { display: block; margin-top: 4px; font-size: 13px; color: #3047EC; }
+
+  [data-section="article"] .ga-dark { position: relative; flex: none; margin: 8px 0 8px -120px; width: 960px; height: 520px; border-radius: 28px; overflow: clip;
+    background: radial-gradient(436.36px 173.33px at 218.18px 294.67px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="article"] .ga-dark > * { position: absolute; }
+  [data-section="article"] .ga-dark svg { overflow: visible; }
+  [data-section="article"] .ga-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; line-height: normal; color: #F5F7FA; }
+  [data-section="article"] .ga-chip img { width: 7px; height: 7px; display: block; }
+  [data-section="article"] .ga-dtag { right: 24px; bottom: 20px; font-size: 12px; color: #A7B0BE; line-height: normal; }
+
+  [data-section="article"] .ga-cta { position: relative; flex: none; margin: 56px 0 0 -120px; width: 960px; box-sizing: border-box; padding: 56px 64px 60px; border-radius: 28px; overflow: clip; color: #F5F7FA;
+    background: radial-gradient(520px 260px at 180px 300px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="article"] .ga-cta-k { font-size: 14px; color: #B7D7FF; line-height: normal; }
+  [data-section="article"] .ga-cta h3 { margin: 16px 0 0; font-weight: 400; font-size: 40px; line-height: 1.08; letter-spacing: -0.03em; }
+  [data-section="article"] .ga-cta-p { margin-top: 16px; max-width: 600px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.7); }
+  [data-section="article"] .ga-cta-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  [data-section="article"] .ga-btn { display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s, box-shadow .25s; }
+  [data-section="article"] .ga-btn--white { background: #fff; color: #0F1115; }
+  [data-section="article"] .ga-btn--white:hover { background: #B7D7FF; }
+  [data-section="article"] .ga-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="article"] .ga-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+  [data-section="article"] .ga-std { font-size: 13px; line-height: 1.55; color: rgba(15,17,21,.5); }
+
+  .motion [data-section="article"] .rv [data-rm] { opacity: 0; translate: 0 var(--ty, 40px);
+    transition: opacity .7s var(--ease) var(--d, 0ms), translate 1s var(--ease) var(--d, 0ms), scale .8s var(--ease) var(--d, 0ms); }
+  .motion [data-section="article"] .rv [data-rm="pop"] { translate: none; scale: .6; transition-timing-function: var(--ease), var(--ease), var(--spring); transition-duration: .4s, .4s, .5s; }
+  .motion [data-section="article"] .rv.r-in [data-rm] { opacity: 1; translate: none; scale: 1; }
+  .motion [data-section="article"] .rv [data-rd] { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset var(--dur, .6s) var(--inout) var(--d, 0ms); }
+  .motion [data-section="article"] .rv.r-in [data-rd] { stroke-dashoffset: 0; }
+  .motion [data-section="article"] .rv .gb-bar i { scale: .02 1; transition: scale 1s var(--ease) .3s; }
+  .motion [data-section="article"] .rv.r-in .gb-bar i { scale: 1; }
+  [data-section="article"] .gf-steps { display: flex; position: relative; }
+  [data-section="article"] .gf-steps::before { content: ''; position: absolute; left: 6px; right: 40px; top: 6px; height: 1px; background: rgba(48,71,236,.25); }
+  [data-section="article"] .gs { flex: 1 1 0; display: flex; flex-direction: column; gap: 10px; padding-right: 16px; }
+  [data-section="article"] .gs i { margin-bottom: 8px; }
+  [data-section="article"] .gs span { font-size: 24px; }
+  [data-section="article"] .gf-steps--nv .gs .gs-lab { font-size: 18px; line-height: 1.25; }
+  [data-section="article"] .gt-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 24px 0; border-top: 1px solid rgba(15,17,21,.07); }
+  [data-section="article"] .gt-row:first-child { border-top: 0; padding-top: 4px; }
+  [data-section="article"] .gt-track { display: grid; grid-template-columns: repeat(3, 1fr); position: relative; }
+  [data-section="article"] .gt-track::before { content: ''; position: absolute; left: 6px; right: 60px; top: 6px; height: 1px; background: rgba(48,71,236,.25); }
+  [data-section="article"] .gt-track li { display: flex; flex-direction: column; gap: 8px; padding-right: 16px; }
+  [data-section="article"] .gt-track i { margin-bottom: 6px; }
+  [data-section="article"] .gt-track span { font-size: 18px; line-height: 1.3; }
+  [data-section="article"] table.gf-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.45; }
+  [data-section="article"] .gf-table th, [data-section="article"] .gf-table td { text-align: left; vertical-align: top; padding: 16px 20px 16px 0; border-top: 1px solid rgba(15,17,21,.07); }
+  [data-section="article"] .gf-table thead th { border-top: 0; padding-top: 0; font-weight: 400; font-size: 13px; color: #3047EC; }
+  [data-section="article"] .gf-table tbody th { width: 200px; font-weight: 400; font-size: 13px; color: rgba(15,17,21,.55); }
+  [data-section="article"] .gf-table td { font-weight: 300; color: #0F1115; }
+</style>
+  <div class="v2-canvas">
+    <div class="ga-col" data-fit="140">
+      <p class="ga-lead">Deferred trade-in and future trade-in are often confused, because both involve a device that is handed over later. They solve different problems. Deferred trade-in is about handover timing. Future trade-in is about value certainty.</p>
+      <h2>Deferred trade-in: handover timing</h2>
+      <p class="ga-p">Deferred trade-in lets customers receive their new device first and hand over their existing device within an agreed return window. The customer keeps using the old device while they set up the new one, then hands it over.</p>
+      <p class="ga-p">This can help when customers need their current device until the new one is set up, or when the new device is delivered rather than collected in store.</p>
+      <p class="ga-p">During the window, the program should be able to see which devices are still due, remind customers and apply the agreed terms if a device is not handed over.</p>
+      <p class="ga-p">The program defines the return window, the condition expected at handover and what happens if the device is not returned or does not match its assessment. Deferred trade-in does not by itself fix a value for a long period; the agreed value applies to a handover within the window, under the program’s terms.</p>
+      <h2>Future trade-in: value certainty</h2>
+      <p class="ga-p">Future trade-in locks in a device’s trade-in value for a defined period, subject to agreed eligibility, condition and return terms. The customer knows at purchase what the device can be traded in for later, if the conditions are met.</p>
+      <p class="ga-p">Future trade-in can be linked to a purchase or financing agreement, so the customer can plan the next upgrade. The locked value applies only when the device meets the agreed eligibility and condition terms at return.</p>
+      <p class="ga-p">Terms should also cover what happens if the device is lost, damaged beyond the agreed condition or no longer eligible at the end of the period.</p>
+      <p class="ga-p">Because the value is committed in advance, the program needs a clear view of how values may change during the period, and of who carries that risk.</p>
+      <figure class="gf rv" aria-label="Figure 1, What is agreed, and when. Illustrative · sample data.">
+        <div data-rm><div class="gf-head"><p class="gf-ttl">What is agreed, and when</p><p class="gf-tag">Illustrative · sample data</p></div>
+        <div class="gf-tl"><div class="gt-row"><div class="gt-name"><p>Deferred trade-in</p><small>Handover timing</small></div><ol class="gt-track"><li><i></i><small>New device</small><span>Day 0</span></li><li><i></i><small>Return window</small><span>14 days</span></li><li><i></i><small>Handover</small><span>Old device returned</span></li></ol></div><div class="gt-row"><div class="gt-name"><p>Future trade-in</p><small>Value certainty</small></div><ol class="gt-track"><li><i></i><small>Value locked</small><span>€300</span></li><li><i></i><small>Defined period</small><span>24 months</span></li><li><i></i><small>Trade-in</small><span>At locked value, if terms are met</span></li></ol></div></div></div>
+      </figure>
+      <p class="ga-cap">Figure 1 · Deferred trade-in agrees a return window; future trade-in agrees a value for a period. Sample values only.</p>
+      <h2>Side by side</h2>
+      <p class="ga-p">The table below sets out the main differences. Both programs still need condition assessment at handover and a route to a qualified buyer.</p>
+      <figure class="gf rv" aria-label="Figure 2, Deferred and future trade-in compared. Illustrative comparison.">
+        <div data-rm><div class="gf-head"><p class="gf-ttl">Deferred and future trade-in compared</p><p class="gf-tag">Illustrative comparison</p></div>
+        <table class="gf-table"><thead><tr><th scope="col"></th><th scope="col">Deferred trade-in</th><th scope="col">Future trade-in</th></tr></thead><tbody><tr><th scope="row">What is agreed</th><td>A window to hand over the existing device</td><td>A trade-in value for a defined period</td></tr><tr><th scope="row">Customer benefit</th><td>No gap between old and new device</td><td>Knowing the trade-in value in advance</td></tr><tr><th scope="row">Main program question</th><td>How to manage returns and non-returns</td><td>How to manage value changes over the period</td></tr><tr><th scope="row">Timing</th><td>Short window, set in program terms</td><td>Defined period, set in program terms</td></tr></tbody></table></div>
+      </figure>
+      <h2>Choosing between them</h2>
+      <p class="ga-p">If customers hesitate because they do not want to be without a device, deferred trade-in addresses the timing. If they hesitate because they are unsure what their device will be worth later, future trade-in addresses the value. Some programs offer both, each with its own terms. Avoid describing deferred trade-in as a value guarantee, and avoid describing future trade-in as simply a later handover.</p>
+      <p class="ga-p">Describe each program in its own words. Customers should be able to tell from the name and one sentence what is agreed: a later handover, or a value for a period.</p>
+      <p class="ga-p">A practical test is the question customers raise at the point of sale. ‘What do I use in the meantime?’ points to deferred trade-in. ‘What will my device be worth later?’ points to future trade-in.</p>
+      <h2>Terms to define before launch</h2>
+      <ul class="ga-list"><li>Eligible devices and markets.</li><li>The return window or the value period.</li><li>The condition required at handover and how it is assessed.</li><li>How credit or payout is applied.</li><li>What happens if the device is not returned, is damaged or does not match.</li><li>Who carries value and settlement risk.</li><li>How customers are reminded before the window or period ends.</li></ul>
+      <p class="ga-p">Write these terms once and use them everywhere: in marketing, at the point of sale and in the customer agreement. Keep deferred and future trade-in terms separate, even when both are offered.</p>
+      <p class="ga-p">The two programs also differ in what they ask of operations. Deferred trade-in mainly needs a reliable way to track devices still to be handed over. Future trade-in mainly needs a way to estimate and manage value changes over the period.</p>
+      <p class="ga-std">Illustrative workflow and sample data. Values, buyer availability, timing and supported features depend on the agreed program and market.</p>
+      <div class="ga-cta rv">
+        <div data-rm>
+          <p class="ga-cta-k">Next step</p>
+          <h3>Choose the program that fits your customers.</h3>
+          <p class="ga-cta-p">Tell us what holds your customers back at the point of upgrade. We will discuss which program terms could address it.</p>
+          <div class="ga-cta-btns"><a href="/v2/contact/?program=deferred-trade-in" class="ga-btn ga-btn--white">Discuss deferred trade-in</a><a href="/v2/contact/?program=future-trade-in" class="ga-btn ga-btn--ghost">Discuss future trade-in</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+<section data-section="case-study" id="case-study" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 327.27px * var(--s)) calc(480px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="case-study"] .cs-abs { position: absolute; }
+  [data-section="case-study"] .cs-abs > img { display: block; }
+  [data-section="case-study"] .cs-intro { left: 120px; top: 170px; display: flex; flex-direction: column; gap: 28px; align-items: flex-start; }
+  [data-section="case-study"] .cs-eyebrow { margin: 0; display: flex; align-items: center; gap: 10px; font-size: 14px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="case-study"] .cs-tag { padding: 5px 10px; border-radius: 999px; background: rgba(183,215,255,.14); font-size: 12px; color: #B7D7FF; }
+  [data-section="case-study"] .cs-note { margin: 0; width: 440px; font-size: 13px; line-height: 1.5; color: #A7B0BE; }
+  [data-section="case-study"] .cs-sample { left: 40px; top: 0; font-size: 12px; color: #A7B0BE; white-space: nowrap; margin: 0; }
+  [data-section="case-study"] h2 { margin: 0; font-weight: 400; font-size: 60px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; white-space: nowrap; }
+  [data-section="case-study"] .cs-lead { margin: 0; width: 440px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="case-study"] .cs-btn { display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 999px; border: 1px solid rgba(245,247,250,.24); font-size: 15px; color: #F5F7FA; white-space: pre; transition: background-color .3s, border-color .3s; }
+  [data-section="case-study"] .cs-btn:hover { background: rgba(245,247,250,.08); border-color: rgba(245,247,250,.4); }
+  [data-section="case-study"] .cs-visual { left: 760px; top: 110px; width: 620px; height: 700px; }
+  [data-section="case-study"] .cs-card {
+    width: 400px; border-radius: 26px; overflow: hidden; border: 1px solid rgba(183,215,255,.14);
+    background: rgba(255,255,255,.06); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,.45);
+  }
+  [data-section="case-study"] .cs-card p { margin: 0; white-space: nowrap; }
+  [data-section="case-study"] .cs-meta { font-size: 13px; color: #A7B0BE; }
+  [data-section="case-study"] .cs-big { font-weight: 300; font-size: 22px; color: #F5F7FA; }
+  [data-section="case-study"] .cs-device { overflow: hidden; }
+  [data-section="case-study"] .cs-device img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  [data-section="case-study"] .cs-pills { left: 115px; top: 103px; display: flex; gap: 8px; }
+  [data-section="case-study"] .cs-pill { padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.1); font-size: 13px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="case-study"] .cs-pill--ice { background: rgba(183,215,255,.95); color: #0F1115; }
+  [data-section="case-study"] .cs-bid { left: 27px; width: 344px; height: 52px; border-radius: 16px; overflow: hidden; }
+  [data-section="case-study"] .cs-pay { left: 115px; top: 103px; display: flex; gap: 10px; align-items: baseline; white-space: nowrap; }
+  [data-section="case-study"] .cs-fibre { overflow: visible; }
+
+  /* Figma timeline: cards rise in from lower left one by one, fibres draw between them, Buyer B lights up,
+     then the price lands. */
+  .motion [data-section="case-study"] [data-m="cs-card"] { translate: -30px 40px; transition: opacity .6s var(--ease) var(--d, 0ms), translate .9s var(--ease) var(--d, 0ms); }
+  .motion [data-section="case-study"] [data-m="cs-bid"] { opacity: .25; scale: .96; transition: opacity .4s var(--inout) var(--d, 0ms), scale .5s var(--spring) var(--d, 0ms); }
+  .motion [data-section="case-study"] [data-m="cs-pay"] { translate: -16px 0; transition: opacity .4s var(--ease) var(--d, 0ms), translate .5s var(--ease) var(--d, 0ms); }
+  .motion [data-section="case-study"] [data-draw] { transition-duration: .6s; }
+  .motion [data-section="case-study"].is-in [data-m] { opacity: 1; translate: none; scale: 1; }
+</style>
+  <div class="v2-canvas">
+    <div class="cs-abs" style="left:720px; top:-100px; width:1060px; height:920px;" aria-hidden="true"><img alt="" src="assets/case-study-glow-right.svg" width="1060" height="920"></div>
+    <div class="cs-abs" style="left:-380px; top:420px; width:960px; height:780px;" aria-hidden="true"><img alt="" src="assets/case-study-glow-left.svg" width="960" height="780"></div>
+
+    <div class="cs-abs cs-intro" data-m="up">
+      <p class="cs-eyebrow">Illustrative retailer journey<span class="cs-tag">Illustrative · not a customer result</span></p>
+      <h2>How trade-in can<br>fit into an<br>iPhone sale.</h2>
+      <p class="cs-lead">An illustrative journey for a Baltic electronics retailer: the device is assessed in store, eligible offers are compared and the accepted quote becomes credit towards the new iPhone.</p>
+      <a class="cs-btn" href="/v2/case-study/">See the illustrative journey  →</a>
+      <p class="cs-note">Approved customer references will be published here once available.</p>
+    </div>
+
+    <div class="cs-abs cs-visual" aria-label="Illustrative trade-in flow, sample data">
+      <p class="cs-abs cs-sample">Illustrative workflow · sample data</p>
+      <!-- Fibres (drawn in sequence) -->
+      <svg class="cs-abs cs-fibre" style="left:99.25px; top:207.25px;" width="91.5" height="55.5" viewBox="0 0 91.5 55.5" fill="none" aria-hidden="true">
+        <path pathLength="1" data-draw style="--d:1100ms;" d="M0.75 0.75C0.75 32.75 90.75 22.75 90.75 54.75" stroke-width="1.5" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.55"/>
+      </svg>
+      <svg class="cs-abs cs-fibre" style="left:199.25px; top:457.25px;" width="71.5" height="55.5" viewBox="0 0 71.5 55.5" fill="none" aria-hidden="true">
+        <path pathLength="1" data-draw style="--d:2300ms;" d="M0.75 0.75C0.75 32.75 70.75 22.75 70.75 54.75" stroke-width="1.5" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.55"/>
+      </svg>
+
+      <div class="cs-abs cs-card" data-m="cs-card" style="--d:400ms; left:40px; top:40px; height:168px;">
+        <div class="cs-abs cs-device" style="left:25px; top:19px; width:62px; height:127px; border-radius:11px; box-shadow:0 10px 20px rgba(0,0,0,.5);"><img alt="iPhone 13" src="assets/case-study-iphone13.webp"></div>
+        <p class="cs-abs cs-meta" style="left:115px; top:29px;">11:43 · Store 14, Vilnius</p>
+        <p class="cs-abs cs-big" style="left:115px; top:53px;">iPhone 13 checked</p>
+        <div class="cs-abs cs-pills"><span class="cs-pill cs-pill--ice">Grade A</span><span class="cs-pill">Battery 88 %</span></div>
+      </div>
+
+      <div class="cs-abs cs-card" data-m="cs-card" style="--d:1600ms; left:140px; top:262px; height:196px;">
+        <p class="cs-abs cs-meta" style="left:27px; top:25px;">Eligible offers compared · expected net</p>
+        <div class="cs-abs cs-bid" style="top:57px; background:rgba(255,255,255,.05);">
+          <p class="cs-abs" style="left:18px; top:16px; font-size:15px; color:#A7B0BE;">Buyer A · Lithuania</p>
+          <p class="cs-abs" style="left:281px; top:14px; font-size:18px; color:rgba(245,247,250,.6);">€598</p>
+        </div>
+        <div class="cs-abs cs-bid" data-m="cs-bid" style="--d:2200ms; top:117px; background:rgba(48,71,236,.9); color:#F5F7FA;">
+          <p class="cs-abs" style="left:18px; top:16px; font-size:15px; white-space:pre;">Buyer B · Latvia  ·  Strongest net</p>
+          <p class="cs-abs" style="left:284px; top:14px; font-size:18px;">€612</p>
+        </div>
+      </div>
+
+      <div class="cs-abs cs-card" data-m="cs-card" style="--d:2800ms; left:220px; top:512px; height:168px;">
+        <div class="cs-abs cs-device" style="left:25px; top:19px; width:60px; height:129px; border-radius:10px; box-shadow:0 10px 20px rgba(0,0,0,.5);"><img alt="iPhone 18 Pro" src="assets/case-study-iphone18pro.webp"></div>
+        <p class="cs-abs cs-meta" style="left:115px; top:29px;">Applied to the new iPhone</p>
+        <p class="cs-abs cs-big" style="left:115px; top:53px;">iPhone 18 Pro</p>
+        <div class="cs-abs cs-pay" data-m="cs-pay" style="--d:3500ms;">
+          <p style="font-size:15px; color:rgba(167,176,190,.7);">€1,199</p>
+          <p style="font-size:20px; color:#B7D7FF;">You pay €587</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

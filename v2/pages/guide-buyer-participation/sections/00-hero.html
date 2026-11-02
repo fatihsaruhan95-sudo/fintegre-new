@@ -1,0 +1,98 @@
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:918px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 392.73px * var(--s)) calc(510px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="hero"] .gh-abs { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+  [data-section="hero"] .gh-glow { position: absolute; pointer-events: none; max-width: none; }
+  [data-section="hero"] .gh-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; z-index: 2; }
+  [data-section="hero"] .gh-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .gh-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .gh-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .gh-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .gh-nav a { transition: color .2s; }
+  [data-section="hero"] .gh-nav a:hover, [data-section="hero"] .gh-nav a[aria-current] { color: #F5F7FA; }
+  [data-section="hero"] .gh-btn { display: inline-flex; align-items: center; border-radius: 999px; font: 400 15px/normal 'Geologica', system-ui, sans-serif; white-space: nowrap; border: 0; cursor: pointer; transition: background-color .25s, box-shadow .25s; }
+  [data-section="hero"] .gh-btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .gh-btn--white { background: #fff; color: #0F1115; }
+  [data-section="hero"] .gh-btn--light:hover, [data-section="hero"] .gh-btn--white:hover { background: #B7D7FF; }
+  [data-section="hero"] .gh-btn--ghost { background: transparent; color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="hero"] .gh-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+
+  [data-section="hero"] .gh-copy { left: 120px; top: 168px; width: 610px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start; z-index: 1; }
+  [data-section="hero"] .gh-crumb { font-size: 14px; color: #B7D7FF; line-height: normal; white-space: pre; }
+  [data-section="hero"] .gh-crumb a:hover { color: #F5F7FA; }
+  [data-section="hero"] h1 { margin: 0; font-weight: 400; font-size: 52px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; text-wrap: balance; }
+  [data-section="hero"] .gh-lede { width: 560px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .gh-meta { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #A7B0BE; line-height: normal; }
+  [data-section="hero"] .gh-draft { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #A7B0BE; }
+  [data-section="hero"] .gh-draft i { width: 7px; height: 7px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px #A7B0BE; }
+  [data-section="hero"] .gh-ctas { display: flex; gap: 12px; }
+  [data-section="hero"] .gh-ctas .gh-btn { padding: 14px 22px; }
+
+  [data-section="hero"] .gh-card { position: relative; width: 610px; margin-top: 10px; padding: 22px 26px 24px; border-radius: 26px;
+    background: rgba(255,255,255,.07); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(183,215,255,.14); box-shadow: 0 30px 60px rgba(5,8,31,.5); }
+  [data-section="hero"] .gh-card > p { font-size: 13px; color: #A7B0BE; line-height: normal; margin-bottom: 14px; }
+  [data-section="hero"] .gh-card ol { margin: 0; padding: 0; list-style: none; counter-reset: t; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; }
+  [data-section="hero"] .gh-card li { counter-increment: t; display: flex; gap: 10px; font-weight: 300; font-size: 14px; line-height: 1.4; color: rgba(245,247,250,.86); }
+  [data-section="hero"] .gh-card li::before { content: counter(t, decimal-leading-zero); flex: none; font-size: 12px; line-height: 1.6; color: #B7D7FF; }
+
+  [data-section="hero"] .gh-vis { left: 780px; top: 110px; width: 620px; height: 760px; }
+  [data-section="hero"] .gh-cover { position: absolute; overflow: clip; line-height: normal; }
+  [data-section="hero"] .gh-cover p, [data-section="hero"] .gh-cover img { position: absolute; display: block; max-width: none; }
+
+  .motion [data-section="hero"] [data-m][data-ty] { translate: 0 var(--ty); }
+  .motion [data-section="hero"] [data-m][data-tx] { translate: var(--tx) 0; }
+  .motion [data-section="hero"].is-in [data-m][data-ty], .motion [data-section="hero"].is-in [data-m][data-tx] { translate: none; }
+</style>
+  <div class="v2-canvas">
+    <img class="gh-glow" alt="" src="/v2/assets/insights-hero-glow-1.svg" style="left:720px; top:-100px; width:1060px; height:920px;">
+    <img class="gh-glow" alt="" src="/v2/assets/insights-hero-glow-2.svg" style="left:-380px; top:420px; width:960px; height:780px;">
+
+    <div class="gh-abs gh-vis" aria-hidden="true">
+      <img class="gh-glow" alt="" src="/v2/assets/report-room-light-hero.svg" style="left:136.05px; top:60px; width:944.9px; height:640px;">
+      <div class="gh-abs" data-m="right" data-tx="80px" style="--tx:80px; --d:200ms; left:200px; top:420px; width:560px; height:344px; transform:rotate(-6deg);">
+        <img alt="" src="/v2/assets/programs-macbookpro.webp" style="display:block; width:100%; height:100%; object-fit:contain;">
+      </div>
+      <div class="gh-cover" data-m="up" data-ty="90px" style="--ty:90px; --d:400ms; left:59.02px; top:54.67px; width:420px; height:560px; transform:rotate(-4deg); border:1.4px solid rgba(183,215,255,.25); border-radius:25.2px; box-shadow:0 42px 84px -14px rgba(5,8,31,.6); background:linear-gradient(135deg, #5D74FF 0%, #3047EC 71.429%); color:#F5F7FA;">
+        <p style="left:33.6px; top:33.6px; font-size:16.8px; white-space:nowrap;">Fintegre · Guide</p>
+        <img alt="" src="/v2/assets/report-hbar-1.svg" width="101.698" height="98" style="left:33.6px; top:179.2px; opacity:.55;">
+        <img alt="" src="/v2/assets/report-hbar-2.svg" width="127.811" height="154" style="left:114.8px; top:123.2px; opacity:.55;">
+        <img alt="" src="/v2/assets/report-hbar-3.svg" width="153.925" height="210" style="left:196px; top:67.2px; opacity:.55;">
+        <img alt="" src="/v2/assets/report-hbar-4.svg" width="118.019" height="133" style="left:277.2px; top:144.2px; opacity:.55;">
+        <p style="left:33.6px; bottom:76px; width:350px; font-size:32px; line-height:1.06; letter-spacing:-0.03em;">Buyer participation</p>
+        <p style="left:33.6px; bottom:34px; font-size:15px; color:rgba(245,247,250,.8); white-space:nowrap;">Draft · 3 min read</p>
+      </div>
+    </div>
+
+    <div class="gh-abs gh-top">
+      <a href="/v2/" class="gh-logo" aria-label="Fintegre home"><span class="gh-mark"><img alt="" src="/v2/assets/insights-logo-mark.svg"></span>Fintegre</a>
+      <nav class="gh-nav" aria-label="Hero">
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/vendor-network/">Vendor Network</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/insights/" aria-current="page">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/contact/" class="gh-btn gh-btn--light" style="padding:10px 18px;">Discuss your program</a>
+    </div>
+
+    <div class="gh-abs gh-copy" data-fit="64" data-m="up">
+      <p class="gh-crumb"><a href="/v2/insights/">Insights</a>  /  Guide</p>
+      <h1>What buyers need to participate in an enterprise trade-in program</h1>
+      <p class="gh-lede">Enterprise trade-in programs depend on qualified buyers. This guide sets out the business, operational and commercial requirements a buyer should expect before devices are offered.</p>
+      <div class="gh-meta">
+        <span>Guide  ·  3 min read</span>
+        <span class="gh-draft"><i></i>Draft guide · pending Fintegre review</span>
+      </div>
+      <div class="gh-ctas">
+        <a href="#article" class="gh-btn gh-btn--white">Read the guide</a>
+        <button type="button" class="gh-btn gh-btn--ghost gh-share">Share&nbsp;&nbsp;↗</button>
+      </div>
+      <div class="gh-card" data-m="up" style="--d:700ms;">
+        <p>In this guide</p>
+        <ol><li>Who the buyers are</li><li>Business qualification</li><li>Operational requirements</li><li>Commercial responsibilities</li><li>The path to participation</li><li>Preparing an application</li></ol>
+      </div>
+    </div>
+  </div>
+</section>

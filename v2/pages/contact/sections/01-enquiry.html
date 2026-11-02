@@ -1,0 +1,158 @@
+<section data-section="enquiry" id="enquiry" class="v2-sec" data-tone="light" style="--h:1210px; background: radial-gradient(calc(620px * var(--s)) calc(360px * var(--s)) at calc(50% - 380px * var(--s)) calc(820px * var(--s)), rgba(184,214,255,.55) 0%, rgba(245,247,250,0) 100%), #F5F7FA;">
+<style>
+  [data-section="enquiry"] .va-a { position: absolute; }
+  [data-section="enquiry"] p, [data-section="enquiry"] h2, [data-section="enquiry"] h3 { margin: 0; }
+  [data-section="enquiry"] [hidden] { display: none !important; }
+
+  /* Left column */
+  [data-section="enquiry"] .va-copy { left: 120px; top: 130px; width: 400px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  [data-section="enquiry"] .va-k { font-size: 15px; color: #3047EC; }
+  [data-section="enquiry"] h2 { margin-top: -10px; font-weight: 400; font-size: 56px; line-height: 1.04; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="enquiry"] .va-lede { font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(15,17,21,.68); }
+  [data-section="enquiry"] .va-list { margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  [data-section="enquiry"] .va-list a { color: #3047EC; text-decoration: underline; text-underline-offset: 2px; }
+  [data-section="enquiry"] .va-list li { display: flex; gap: 12px; align-items: baseline; font-weight: 300; font-size: 15px; line-height: 1.5; color: #0F1115; }
+  [data-section="enquiry"] .va-list img { flex: none; width: 8px; height: 8px; translate: 0 -1px; }
+
+  /* Form card */
+  [data-section="enquiry"] .va-card { left: 600px; top: 120px; width: 720px; padding: 40px 40px 36px; border-radius: 28px; background: #fff; box-shadow: 0 30px 60px rgba(15,20,64,.12); color: #0F1115; overflow: clip; }
+  [data-section="enquiry"] .va-title { font-weight: 400; font-size: 26px; letter-spacing: -0.02em; line-height: normal; }
+  [data-section="enquiry"] .va-req { margin-top: 6px; font-weight: 300; font-size: 13px; color: #6B7380; }
+  [data-section="enquiry"] .va-grid { margin-top: 26px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 14px; row-gap: 18px; }
+  [data-section="enquiry"] .va-wide { grid-column: 1 / -1; }
+  [data-section="enquiry"] .va-field { position: relative; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  [data-section="enquiry"] .va-field label, [data-section="enquiry"] legend { font-size: 14px; color: rgba(15,17,21,.75); padding: 0; }
+  [data-section="enquiry"] .va-field label small, [data-section="enquiry"] legend small { font-size: 12px; color: #6B7380; }
+  [data-section="enquiry"] .va-field input, [data-section="enquiry"] .va-field textarea { width: 100%; height: 52px; padding: 0 16px; border-radius: 14px; border: 1px solid rgba(15,17,21,.12); background: #fff; outline: none;
+    font: 300 15px/1.4 'Geologica', system-ui, sans-serif; color: #0F1115; transition: border-color .2s, box-shadow .2s; }
+  [data-section="enquiry"] .va-field textarea { height: 92px; padding: 14px 16px; resize: none; }
+  [data-section="enquiry"] .va-field ::placeholder { color: rgba(15,17,21,.38); }
+  [data-section="enquiry"] .va-field input:focus, [data-section="enquiry"] .va-field textarea:focus { border-color: #3047EC; box-shadow: 0 0 0 .5px #3047EC, 0 0 0 5px rgba(48,71,237,.12); }
+  [data-section="enquiry"] .is-bad input, [data-section="enquiry"] .is-bad textarea { border-color: #D93F4C; box-shadow: 0 0 0 .5px #D93F4C; }
+  [data-section="enquiry"] .va-err { position: absolute; right: 2px; top: 1px; font-size: 12px; color: #D93F4C; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  [data-section="enquiry"] .is-bad .va-err { opacity: 1; }
+  [data-section="enquiry"] fieldset { position: relative; margin: 0; padding: 0; border: 0; min-width: 0; }
+  [data-section="enquiry"] .va-chips { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+  [data-section="enquiry"] .va-chips .va-chip { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; font-size: 14px; line-height: normal; color: #0F1115; cursor: pointer; white-space: nowrap;
+    box-shadow: inset 0 0 0 1px rgba(15,17,21,.12); transition: background-color .25s, box-shadow .25s, color .25s; }
+  [data-section="enquiry"] .va-chips .va-chip:hover { box-shadow: inset 0 0 0 1px rgba(48,71,236,.45); }
+  [data-section="enquiry"] .va-chips .va-chip input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+  [data-section="enquiry"] .va-chips .va-chip img { width: 7px; height: 7px; display: none; }
+  [data-section="enquiry"] .va-chips .va-chip:has(input:checked) { background: #3047EC; color: #F5F7FA; box-shadow: none; }
+  [data-section="enquiry"] .va-chips .va-chip:has(input:checked) img { display: block; }
+  [data-section="enquiry"] .va-chips .va-chip:has(input:focus-visible) { outline: 2px solid #3047EC; outline-offset: 2px; }
+  [data-section="enquiry"] .is-bad .va-chip { box-shadow: inset 0 0 0 1px rgba(217,63,76,.6); }
+  [data-section="enquiry"] .va-sep { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; margin-top: 6px; font-size: 13px; color: #6B7380; white-space: nowrap; }
+  [data-section="enquiry"] .va-sep::after { content: ''; flex: 1; height: 1px; background: rgba(15,17,21,.08); }
+  [data-section="enquiry"] .va-foot { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  [data-section="enquiry"] .va-submit { border: 0; cursor: pointer; padding: 16px 26px; border-radius: 999px; background: #3047EC; color: #F5F7FA; font: 400 15px/normal 'Geologica', system-ui, sans-serif; transition: background-color .25s, opacity .25s; }
+  [data-section="enquiry"] .va-submit:hover { background: #2238d6; }
+  [data-section="enquiry"] .va-submit:disabled { opacity: .6; cursor: default; }
+  [data-section="enquiry"] .va-note { font-weight: 300; font-size: 13px; line-height: 1.5; color: #6B7380; }
+  [data-section="enquiry"] .va-note a { color: #3047EC; text-decoration: underline; text-underline-offset: 2px; }
+  [data-section="enquiry"] .va-status { font-size: 13px; color: #D93F4C; min-height: 18px; }
+
+  /* Success state, in place of the form */
+  [data-section="enquiry"] .va-done { position: absolute; inset: 0; padding: 72px 56px; background: #fff; display: flex; flex-direction: column; gap: 18px; align-items: flex-start;
+    opacity: 0; visibility: hidden; transition: opacity .5s var(--ease), visibility 0s .5s; }
+  [data-section="enquiry"] .va-card.is-sent .va-done { opacity: 1; visibility: visible; transition: opacity .5s var(--ease); }
+  [data-section="enquiry"] .va-sent { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #3047EC; font-size: 14px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="enquiry"] .va-sent img { width: 7px; height: 7px; display: block; }
+  [data-section="enquiry"] .va-done h3 { font-weight: 400; font-size: 40px; line-height: 1.08; letter-spacing: -0.03em; outline: none; }
+  [data-section="enquiry"] .va-done p { max-width: 520px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.7); }
+  [data-section="enquiry"] .va-steps { margin: 10px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  [data-section="enquiry"] .va-steps li { display: flex; gap: 14px; align-items: baseline; font-weight: 300; font-size: 15px; line-height: 1.5; color: #0F1115; }
+  [data-section="enquiry"] .va-steps b { flex: none; width: 22px; font-weight: 400; font-size: 13px; color: #3047EC; }
+  [data-section="enquiry"] .va-back { margin-top: 10px; display: inline-flex; padding: 15px 24px; border-radius: 999px; font-size: 15px; color: #0F1115; box-shadow: inset 0 0 0 1px rgba(15,17,21,.2); }
+  [data-section="enquiry"] .va-ctx { margin-top: 14px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(48,71,236,.08); font-size: 13px; color: #3047EC; }
+  [data-section="enquiry"] .va-ctx::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #3047EC; }
+  [data-section="enquiry"] .va-select { position: relative; display: block; }
+  [data-section="enquiry"] .va-select::after { content: ''; position: absolute; right: 18px; top: 50%; width: 8px; height: 8px; margin-top: -6px; border-right: 1.5px solid #0F1115; border-bottom: 1.5px solid #0F1115; transform: rotate(45deg); pointer-events: none; }
+  [data-section="enquiry"] .va-select select { appearance: none; -webkit-appearance: none; width: 100%; height: 52px; padding: 0 44px 0 16px; border-radius: 14px; border: 1px solid rgba(15,17,21,.12); background: #fff; outline: none; cursor: pointer;
+    font: 300 15px/1.4 'Geologica', system-ui, sans-serif; color: #0F1115; transition: border-color .2s, box-shadow .2s; }
+  [data-section="enquiry"] .va-select select:focus { border-color: #3047EC; box-shadow: 0 0 0 .5px #3047EC, 0 0 0 5px rgba(48,71,237,.12); }
+  [data-section="enquiry"] .va-done .va-sent { color: #F5F7FA; }
+  [data-section="enquiry"] fieldset .va-err { top: -19px; }
+</style>
+  <div class="v2-canvas">
+    <div class="va-a va-copy" data-m="up" style="--d:100ms">
+      <p class="va-k">Enterprise enquiry</p>
+      <h2>Tell us about your business.</h2>
+      <p class="va-lede">One short form for Apple Premium Resellers, electronics retailers, telecom operators and device brands.</p>
+      <ul class="va-list">
+        <li><img alt="" src="/v2/assets/solutions-dot-indigo.svg">Four required fields. Everything else helps us prepare.</li>
+        <li><img alt="" src="/v2/assets/solutions-dot-indigo.svg">Your enquiry is reviewed by the Fintegre team.</li>
+        <li><img alt="" src="/v2/assets/solutions-dot-indigo.svg"><span>Buying trade-in devices? <a href="/v2/vendor-network/#apply">Apply to join the vendor network</a>.</span></li>
+      </ul>
+    </div>
+
+    <div class="va-a va-card" data-m="up" style="--d:250ms" data-va-card>
+      <form name="enterprise-enquiry" method="POST" action="/v2/contact/?sent=1" data-netlify="true" netlify-honeypot="bot-field" novalidate data-va-form aria-labelledby="va-title">
+        <input type="hidden" name="form-name" value="enterprise-enquiry">
+        <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <input type="hidden" name="topic" value="" data-topic>
+        <input type="hidden" name="source_page" value="" data-source-page>
+        <h3 class="va-title" id="va-title">Your business</h3>
+        <p class="va-req">Name, work email, company and markets are required. Everything else is optional.</p>
+        <p class="va-ctx" hidden data-ctx></p>
+        <div class="va-grid">
+          <div class="va-field"><label for="ce-name">Name</label><input id="ce-name" name="name" type="text" autocomplete="name" required aria-describedby="ce-name-err"><span class="va-err" id="ce-name-err">Enter your name</span></div>
+          <div class="va-field"><label for="ce-email">Work email</label><input id="ce-email" name="email" type="email" autocomplete="email" placeholder="name@company.com" required aria-describedby="ce-email-err"><span class="va-err" id="ce-email-err">Enter a work email</span></div>
+          <div class="va-field"><label for="ce-company">Company</label><input id="ce-company" name="company" type="text" autocomplete="organization" required aria-describedby="ce-company-err"><span class="va-err" id="ce-company-err">Enter your company</span></div>
+          <div class="va-field"><label for="ce-markets">Market(s)</label><input id="ce-markets" name="markets" type="text" placeholder="Countries or regions you serve" required aria-describedby="ce-markets-err"><span class="va-err" id="ce-markets-err">Enter at least one market</span></div>
+          <fieldset class="va-field va-wide">
+            <legend>Business type <small>(optional)</small></legend>
+            <div class="va-chips">
+              <label class="va-chip"><input type="radio" name="business_type" value="Apple Premium Reseller" data-type="apr"><img alt="" src="/v2/assets/ecosystem-dot.svg">Apple Premium Reseller</label>
+              <label class="va-chip"><input type="radio" name="business_type" value="Electronics retailer" data-type="retailer"><img alt="" src="/v2/assets/ecosystem-dot.svg">Electronics retailer</label>
+              <label class="va-chip"><input type="radio" name="business_type" value="Telecom operator" data-type="telecom"><img alt="" src="/v2/assets/ecosystem-dot.svg">Telecom operator</label>
+              <label class="va-chip"><input type="radio" name="business_type" value="Device brand or OEM" data-type="brand"><img alt="" src="/v2/assets/ecosystem-dot.svg">Device brand or OEM</label>
+              <label class="va-chip"><input type="radio" name="business_type" value="Other" data-type="other"><img alt="" src="/v2/assets/ecosystem-dot.svg">Other</label>
+            </div>
+          </fieldset>
+          <fieldset class="va-field va-wide">
+            <legend>Program interest <small>(optional, choose any)</small></legend>
+            <div class="va-chips">
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Trade-in" data-program="trade-in"><img alt="" src="/v2/assets/ecosystem-dot.svg">Trade-in</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Early upgrade" data-program="early-upgrade"><img alt="" src="/v2/assets/ecosystem-dot.svg">Early upgrade</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Deferred trade-in" data-program="deferred-trade-in"><img alt="" src="/v2/assets/ecosystem-dot.svg">Deferred trade-in</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Future trade-in" data-program="future-trade-in"><img alt="" src="/v2/assets/ecosystem-dot.svg">Future trade-in</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Subscription" data-program="subscription"><img alt="" src="/v2/assets/ecosystem-dot.svg">Subscription</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Device rental" data-program="device-rental"><img alt="" src="/v2/assets/ecosystem-dot.svg">Device rental</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Return avoidance" data-program="return-avoidance"><img alt="" src="/v2/assets/ecosystem-dot.svg">Return avoidance</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Not sure yet" data-program="not-sure"><img alt="" src="/v2/assets/ecosystem-dot.svg">Not sure yet</label>
+            </div>
+          </fieldset>
+          <div class="va-field"><label for="ce-volume">Monthly volume range <small>(optional)</small></label>
+            <span class="va-select"><select id="ce-volume" name="monthly_volume">
+              <option value="" selected>Select a range</option>
+              <option>Under 500 devices</option>
+              <option>500–2,000 devices</option>
+              <option>2,000–10,000 devices</option>
+              <option>Over 10,000 devices</option>
+              <option>Not sure</option>
+            </select></span>
+          </div>
+          <div class="va-field va-wide"><label for="ce-msg">What would you like to achieve? <small>(optional)</small></label><textarea id="ce-msg" name="message"></textarea></div>
+        </div>
+        <div class="va-foot">
+          <button type="submit" class="va-submit">Request a conversation</button>
+          <p class="va-status" role="status" aria-live="polite" data-va-status></p>
+          <p class="va-note">We use these details to reply to your enquiry, as described in our <a href="/v2/legal/#privacy">privacy notice</a>.</p>
+        </div>
+      </form>
+
+      <div class="va-done" role="region" aria-label="Enquiry received" data-va-done>
+        <p class="va-sent"><img alt="" src="/v2/assets/ecosystem-dot.svg">Enquiry received</p>
+        <h3 tabindex="-1" data-va-focus>Thanks. We have your details.</h3>
+        <p>What happens next:</p>
+        <ol class="va-steps">
+          <li><b>01</b>We review your business, markets and objectives.</li>
+          <li><b>02</b>A member of the Fintegre team contacts you to arrange a conversation.</li>
+          <li><b>03</b>Together we look at channels, eligible devices, commercial model, integrations and operating requirements.</li>
+        </ol>
+        <a class="va-back" href="/v2/platform/">Explore the platform</a>
+      </div>
+    </div>
+  </div>
+</section>

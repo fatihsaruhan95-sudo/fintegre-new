@@ -41,6 +41,11 @@
     [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
     [data-section="closing"] .cl-legal { display: flex; gap: 9px; }
     [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 12px; color: rgba(255,255,255,.8); }
+    [data-section="closing"] .cl-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    [data-section="closing"] .cl-sub p.cl-note { margin-top: -8px; font-size: 12px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-note a { color: rgba(255,255,255,.8); text-decoration: underline; text-underline-offset: 2px; }
+    [data-section="closing"] .cl-err { color: #FF9C9C; }
+    [data-section="closing"] .cl-err:not(:empty)::after { content: " "; }
   </style>
   <div class="v2-canvas">
     <div class="cl-col">
@@ -54,27 +59,31 @@
               <img src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
             </a>
             <h3>Get trade-in insights</h3>
-            <p>Market reports and program benchmarks. No spam.</p>
-            <form class="cl-form" novalidate>
-              <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+            <p>Guides and program notes from Fintegre. No spam.</p>
+            <form class="cl-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/v2/thanks/" novalidate>
+              <input type="hidden" name="form-name" value="newsletter">
+              <p hidden><label>Leave empty <input name="bot-field"></label></p>
+              <label class="cl-sr" for="nl-email">Work email</label>
+              <input id="nl-email" type="email" name="email" placeholder="Work email" autocomplete="email" required aria-describedby="nl-note">
               <button type="submit">Subscribe</button>
             </form>
+            <p class="cl-note" id="nl-note"><span class="cl-err" aria-live="polite"></span>We use your email for these notes only. <a href="/v2/legal/#privacy">Privacy</a></p>
           </div>
           <div class="cl-cols">
             <nav aria-label="Platform"><span>Platform</span>
-              <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device value intelligence</a><a href="/v2/platform/">Vendor network</a><a href="/v2/platform/">Integrations</a>
+              <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device Value Intelligence</a><a href="/v2/vendor-network/">Vendor Network</a><a href="/v2/platform/#integrations">Integrations</a>
             </nav>
             <nav aria-label="Solutions"><span>Solutions</span>
-              <a href="#retailers">Retailers</a><a href="#telecom">Telecom operators</a><a href="#oem">OEM and ecosystems</a><a href="#premium">Apple and premium retail</a>
+              <a href="/v2/solutions/#apr">Apple Premium Resellers</a><a href="/v2/solutions/#retailers">Electronics retailers</a><a href="/v2/solutions/#telecom">Telecom operators</a><a href="/v2/solutions/#brands">Device brands and OEM</a>
             </nav>
             <nav aria-label="Company"><span>Company</span>
-              <a href="/v2/customers/">Customers</a><a href="/v2/insights/">Insights</a><a href="/v2/company/">About</a><a href="/v2/design-your-program/">Contact</a>
+              <a href="/v2/company/">About</a><a href="/v2/insights/">Insights</a><a href="/v2/contact/">Contact</a>
             </nav>
           </div>
         </div>
         <div class="cl-bottom">
           <small>© 2026 Fintegre. All rights reserved.</small>
-          <nav class="cl-legal" aria-label="Legal"><a href="#closing">Privacy</a><a href="#closing">Cookies</a><a href="#closing">Imprint</a></nav>
+          <nav class="cl-legal" aria-label="Legal"><a href="/v2/legal/#privacy">Privacy</a><a href="/v2/legal/#cookies">Cookies</a><a href="/v2/legal/#imprint">Imprint</a></nav>
         </div>
       </footer>
     </div>

@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en" class="m">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Discuss your device program — Fintegre (v2)</title>
+<script>
+  // Phones get this page; wider screens go back to the desktop v2.
+  if (innerWidth >= 768) location.replace('/v2/contact/' + location.search + location.hash);
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="/v2/v2.css">
+<link rel="stylesheet" href="/v2/mobile/mobile.css">
+<link rel="stylesheet" href="/v2/mobile/menu.css">
+</head>
+<body>
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="/v2/" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="/assets/header-mark.svg">Fintegre</a>
+    <button type="button" class="m-burger" data-menu-open aria-label="Open menu"><i></i><i></i></button>
+  </div>
+</header>
+
+<main class="page">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" data-fit style="--h:1180px; background: radial-gradient(calc(195px * var(--s)) calc(440px * var(--s)) at calc(50% - 19.5px * var(--s)) calc(616px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="hero"] p, [data-section="hero"] h1 { margin: 0; }
+  [data-section="hero"] .mh-glow { position: absolute; pointer-events: none; max-width: none; display: block; }
+  [data-section="hero"] .mh-flow { position: relative; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; padding: 116px 20px 48px; }
+  [data-section="hero"] .mh-top { position: absolute; left: 12px; top: 12px; width: 366px; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 8px 8px 8px 18px; border-radius: 999px; z-index: 2;
+    background: rgba(15,17,21,.55); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+  [data-section="hero"] .mh-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .mh-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .mh-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .mh-act { display: flex; gap: 6px; align-items: center; }
+  [data-section="hero"] .mh-cta { height: 44px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .mh-burger { width: 44px; height: 44px; border: 0; padding: 0; border-radius: 999px; background: rgba(255,255,255,.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; }
+  [data-section="hero"] .mh-burger i { display: block; height: 1.5px; border-radius: 1px; background: #F5F7FA; }
+  [data-section="hero"] h1 { width: 350px; font-weight: 400; font-size: 44px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .mh-lede { width: 345px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .mh-btn { display: flex; justify-content: center; align-items: center; width: 350px; height: 52px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .mh-vis { position: relative; width: 350px; height: 600px; }
+  [data-section="hero"] .mh-vis > * { position: absolute; }
+  [data-section="hero"] .mh-phone { left: 40px; top: 10px; width: 319px; height: 560px; object-fit: contain; display: block; }
+  [data-section="hero"] .mh-card { left: 0; top: 200px; width: 300px; padding: 24px 24px 26px; border-radius: 26px; display: flex; flex-direction: column; gap: 14px; white-space: nowrap;
+    background: linear-gradient(rgba(255,255,255,.05), rgba(255,255,255,.05)), rgba(15,17,21,.62); border: 1px solid rgba(183,215,255,.14);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="hero"] .mh-card .lbl { font-size: 13px; color: #B7D7FF; }
+  [data-section="hero"] .mh-card ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  [data-section="hero"] .mh-card li { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: rgba(255,255,255,.05); font-size: 14px; color: #F5F7FA; }
+  [data-section="hero"] .mh-card li img { width: 6px; height: 6px; }
+  [data-section="hero"] .mh-card li:first-child { background: rgba(48,71,236,.9); }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="mh-glow" alt="" src="/v2/mobile/assets/design-your-program-glow-1.svg" style="left:-340px; top:-140px; width:720px; height:660px;">
+    <img decoding="async" class="mh-glow" alt="" src="/v2/mobile/assets/design-your-program-glow-2.svg" style="left:-120px; top:380px; width:820px; height:820px;">
+    <div class="mh-top" data-m="down">
+      <a href="/v2/" class="mh-logo" aria-label="Fintegre home"><span class="mh-mark"><img decoding="async" alt="" src="/v2/assets/hero-logo.svg"></span>Fintegre</a>
+      <div class="mh-act">
+        <a href="/v2/contact/" class="mh-cta" aria-current="page">Discuss your program</a>
+        <button type="button" class="mh-burger" data-menu-open aria-label="Open menu" aria-controls="m-menu" aria-expanded="false"><i style="width:18px"></i><i style="width:12px"></i></button>
+      </div>
+    </div>
+    <div class="mh-flow" data-fit-flow>
+      <h1 data-m="up" style="--d:100ms">Let’s discuss your device program.</h1>
+      <p class="mh-lede" data-m="up" style="--d:180ms">Tell us about your business and the markets you want to serve. We will review your objectives, channels, eligible devices, commercial model, integrations and operating requirements.</p>
+      <a href="#enquiry" class="mh-btn" data-m="up" style="--d:260ms">Start your enquiry</a>
+      <div class="mh-vis">
+        <img decoding="async" alt="" src="/v2/mobile/assets/design-your-program-roomlight.svg" style="left:-80px; top:-70px; width:580px; height:580px; max-width:none;">
+        <img decoding="async" class="mh-phone" data-m="right" style="--d:300ms" alt="iPhone 17 in Lavender" src="/v2/assets/design-your-program-iphone17-lavender.webp">
+        <div class="mh-card" data-m="pop" style="--d:800ms" aria-label="What we review together">
+          <p class="lbl">What we review together</p>
+          <ul>
+            <li><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Objectives</li>
+            <li><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Channels</li>
+            <li><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Eligible devices</li>
+            <li><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Commercial model</li>
+            <li><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Integrations</li>
+            <li><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Operating requirements</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="enquiry" id="enquiry" class="v2-sec" data-tone="light" data-fit style="--h:2100px; background: radial-gradient(calc(260px * var(--s)) calc(320px * var(--s)) at calc(50% - 60px * var(--s)) calc(1200px * var(--s)), rgba(184,214,255,.6) 0%, rgba(245,247,250,0) 100%), #F5F7FA;">
+<style>
+  [data-section="enquiry"] .va-a { position: absolute; }
+  [data-section="enquiry"] p, [data-section="enquiry"] h2, [data-section="enquiry"] h3 { margin: 0; }
+  [data-section="enquiry"] [hidden] { display: none !important; }
+
+  /* Left column */
+  [data-section="enquiry"] .va-copy { position: relative; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+  [data-section="enquiry"] .va-k { font-size: 15px; color: #3047EC; }
+  [data-section="enquiry"] h2 { margin-top: -8px; font-weight: 400; font-size: 40px; line-height: 1.04; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="enquiry"] .va-lede { font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.68); }
+  [data-section="enquiry"] .va-list { margin: 8px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  [data-section="enquiry"] .va-list a { color: #3047EC; text-decoration: underline; text-underline-offset: 2px; }
+  [data-section="enquiry"] .va-list li { display: flex; gap: 12px; align-items: baseline; font-weight: 300; font-size: 15px; line-height: 1.5; color: #0F1115; }
+  [data-section="enquiry"] .va-list img { flex: none; width: 8px; height: 8px; translate: 0 -1px; }
+
+  /* Form card */
+  [data-section="enquiry"] .va-card { position: relative; margin-top: 32px; padding: 28px 20px 28px; border-radius: 26px; background: #fff; box-shadow: 0 24px 50px rgba(15,20,64,.12); color: #0F1115; overflow: clip; }
+  [data-section="enquiry"] .va-title { font-weight: 400; font-size: 22px; letter-spacing: -0.02em; line-height: normal; }
+  [data-section="enquiry"] .va-req { margin-top: 6px; font-weight: 300; font-size: 13px; color: #6B7380; }
+  [data-section="enquiry"] .va-grid { margin-top: 26px; display: grid; grid-template-columns: 1fr; column-gap: 14px; row-gap: 18px; }
+  [data-section="enquiry"] .va-wide { grid-column: 1 / -1; }
+  [data-section="enquiry"] .va-field { position: relative; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  [data-section="enquiry"] .va-field label, [data-section="enquiry"] legend { font-size: 14px; color: rgba(15,17,21,.75); padding: 0; }
+  [data-section="enquiry"] .va-field label small, [data-section="enquiry"] legend small { font-size: 12px; color: #6B7380; }
+  [data-section="enquiry"] .va-field input, [data-section="enquiry"] .va-field textarea { width: 100%; height: 52px; padding: 0 16px; border-radius: 14px; border: 1px solid rgba(15,17,21,.12); background: #fff; outline: none;
+    font: 300 16px/1.4 'Geologica', system-ui, sans-serif; color: #0F1115; transition: border-color .2s, box-shadow .2s; }
+  [data-section="enquiry"] .va-field textarea { height: 92px; padding: 14px 16px; resize: none; }
+  [data-section="enquiry"] .va-field ::placeholder { color: rgba(15,17,21,.38); }
+  [data-section="enquiry"] .va-field input:focus, [data-section="enquiry"] .va-field textarea:focus { border-color: #3047EC; box-shadow: 0 0 0 .5px #3047EC, 0 0 0 5px rgba(48,71,237,.12); }
+  [data-section="enquiry"] .is-bad input, [data-section="enquiry"] .is-bad textarea { border-color: #D93F4C; box-shadow: 0 0 0 .5px #D93F4C; }
+  [data-section="enquiry"] .va-err { position: absolute; right: 2px; top: 1px; font-size: 12px; color: #D93F4C; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  [data-section="enquiry"] .is-bad .va-err { opacity: 1; }
+  [data-section="enquiry"] fieldset { position: relative; margin: 0; padding: 0; border: 0; min-width: 0; }
+  [data-section="enquiry"] .va-chips { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+  [data-section="enquiry"] .va-chips .va-chip { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; font-size: 14px; line-height: normal; color: #0F1115; cursor: pointer; white-space: nowrap;
+    box-shadow: inset 0 0 0 1px rgba(15,17,21,.12); transition: background-color .25s, box-shadow .25s, color .25s; }
+  [data-section="enquiry"] .va-chips .va-chip:hover { box-shadow: inset 0 0 0 1px rgba(48,71,236,.45); }
+  [data-section="enquiry"] .va-chips .va-chip input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+  [data-section="enquiry"] .va-chips .va-chip img { width: 7px; height: 7px; display: none; }
+  [data-section="enquiry"] .va-chips .va-chip:has(input:checked) { background: #3047EC; color: #F5F7FA; box-shadow: none; }
+  [data-section="enquiry"] .va-chips .va-chip:has(input:checked) img { display: block; }
+  [data-section="enquiry"] .va-chips .va-chip:has(input:focus-visible) { outline: 2px solid #3047EC; outline-offset: 2px; }
+  [data-section="enquiry"] .is-bad .va-chip { box-shadow: inset 0 0 0 1px rgba(217,63,76,.6); }
+  [data-section="enquiry"] .va-sep { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; margin-top: 6px; font-size: 13px; color: #6B7380; white-space: nowrap; }
+  [data-section="enquiry"] .va-sep::after { content: ''; flex: 1; height: 1px; background: rgba(15,17,21,.08); }
+  [data-section="enquiry"] .va-foot { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+  [data-section="enquiry"] .va-submit { width: 100%; height: 54px; padding: 0 20px !important; border: 0; cursor: pointer; padding: 16px 26px; border-radius: 999px; background: #3047EC; color: #F5F7FA; font: 400 15px/normal 'Geologica', system-ui, sans-serif; transition: background-color .25s, opacity .25s; }
+  [data-section="enquiry"] .va-submit:hover { background: #2238d6; }
+  [data-section="enquiry"] .va-submit:disabled { opacity: .6; cursor: default; }
+  [data-section="enquiry"] .va-note { font-weight: 300; font-size: 13px; line-height: 1.5; color: #6B7380; }
+  [data-section="enquiry"] .va-note a { color: #3047EC; text-decoration: underline; text-underline-offset: 2px; }
+  [data-section="enquiry"] .va-status { font-size: 13px; color: #D93F4C; min-height: 18px; }
+
+  /* Success state, in place of the form */
+  [data-section="enquiry"] .va-done { position: absolute; inset: 0; padding: 40px 22px; background: #fff; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;
+    opacity: 0; visibility: hidden; transition: opacity .5s var(--ease), visibility 0s .5s; }
+  [data-section="enquiry"] .va-card.is-sent .va-done { opacity: 1; visibility: visible; transition: opacity .5s var(--ease); }
+  [data-section="enquiry"] .va-sent { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; background: #3047EC; font-size: 14px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="enquiry"] .va-sent img { width: 7px; height: 7px; display: block; }
+  [data-section="enquiry"] .va-done h3 { font-weight: 400; font-size: 32px; line-height: 1.08; letter-spacing: -0.03em; outline: none; }
+  [data-section="enquiry"] .va-done p { max-width: 520px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.7); }
+  [data-section="enquiry"] .va-steps { margin: 10px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  [data-section="enquiry"] .va-steps li { display: flex; gap: 14px; align-items: baseline; font-weight: 300; font-size: 15px; line-height: 1.5; color: #0F1115; }
+  [data-section="enquiry"] .va-steps b { flex: none; width: 22px; font-weight: 400; font-size: 13px; color: #3047EC; }
+  [data-section="enquiry"] .va-back { margin-top: 10px; display: inline-flex; padding: 15px 24px; border-radius: 999px; font-size: 15px; color: #0F1115; box-shadow: inset 0 0 0 1px rgba(15,17,21,.2); }
+  [data-section="enquiry"] .va-flow { position: relative; padding: 100px 20px 72px; }
+  [data-section="enquiry"] .va-foot { align-items: stretch; }
+  [data-section="enquiry"] .va-err { position: static; order: 3; display: none; }
+  [data-section="enquiry"] .is-bad .va-err { display: block; }
+  [data-section="enquiry"] fieldset .va-err { margin-top: 8px; }
+  [data-section="enquiry"] .va-ctx { margin-top: 14px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(48,71,236,.08); font-size: 13px; color: #3047EC; }
+  [data-section="enquiry"] .va-ctx::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #3047EC; }
+  [data-section="enquiry"] .va-select { position: relative; display: block; }
+  [data-section="enquiry"] .va-select::after { content: ''; position: absolute; right: 18px; top: 50%; width: 8px; height: 8px; margin-top: -6px; border-right: 1.5px solid #0F1115; border-bottom: 1.5px solid #0F1115; transform: rotate(45deg); pointer-events: none; }
+  [data-section="enquiry"] .va-select select { appearance: none; -webkit-appearance: none; width: 100%; height: 52px; padding: 0 44px 0 16px; border-radius: 14px; border: 1px solid rgba(15,17,21,.12); background: #fff; outline: none; cursor: pointer;
+    font: 300 16px/1.4 'Geologica', system-ui, sans-serif; color: #0F1115; transition: border-color .2s, box-shadow .2s; }
+  [data-section="enquiry"] .va-select select:focus { border-color: #3047EC; box-shadow: 0 0 0 .5px #3047EC, 0 0 0 5px rgba(48,71,237,.12); }
+  [data-section="enquiry"] .va-done .va-sent { color: #F5F7FA; }
+  [data-section="enquiry"] .va-card.is-sent form { display: none; }
+  [data-section="enquiry"] .va-card.is-sent .va-done { position: relative; inset: auto; }
+</style>
+  <div class="v2-canvas">
+    <div class="va-flow" data-fit-flow>
+    <div class="va-copy" data-m="up" style="--d:100ms">
+      <p class="va-k">Enterprise enquiry</p>
+      <h2>Tell us about your business.</h2>
+      <p class="va-lede">One short form for Apple Premium Resellers, electronics retailers, telecom operators and device brands.</p>
+      <ul class="va-list">
+        <li><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">Four required fields. Everything else helps us prepare.</li>
+        <li><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg">Your enquiry is reviewed by the Fintegre team.</li>
+        <li><img decoding="async" alt="" src="/v2/assets/solutions-dot-indigo.svg"><span>Buying trade-in devices? <a href="/v2/vendor-network/#apply">Apply to join the vendor network</a>.</span></li>
+      </ul>
+    </div>
+
+    <div class="va-card" data-m="up" style="--d:250ms" data-va-card>
+      <form name="enterprise-enquiry" method="POST" action="/v2/contact/?sent=1" data-netlify="true" netlify-honeypot="bot-field" novalidate data-va-form aria-labelledby="va-title">
+        <input type="hidden" name="form-name" value="enterprise-enquiry">
+        <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <input type="hidden" name="topic" value="" data-topic>
+        <input type="hidden" name="source_page" value="" data-source-page>
+        <h3 class="va-title" id="va-title">Your business</h3>
+        <p class="va-req">Name, work email, company and markets are required. Everything else is optional.</p>
+        <p class="va-ctx" hidden data-ctx></p>
+        <div class="va-grid">
+          <div class="va-field"><label for="ce-name">Name</label><input id="ce-name" name="name" type="text" autocomplete="name" required aria-describedby="ce-name-err"><span class="va-err" id="ce-name-err">Enter your name</span></div>
+          <div class="va-field"><label for="ce-email">Work email</label><input id="ce-email" name="email" type="email" autocomplete="email" placeholder="name@company.com" required aria-describedby="ce-email-err"><span class="va-err" id="ce-email-err">Enter a work email</span></div>
+          <div class="va-field"><label for="ce-company">Company</label><input id="ce-company" name="company" type="text" autocomplete="organization" required aria-describedby="ce-company-err"><span class="va-err" id="ce-company-err">Enter your company</span></div>
+          <div class="va-field"><label for="ce-markets">Market(s)</label><input id="ce-markets" name="markets" type="text" placeholder="Countries or regions you serve" required aria-describedby="ce-markets-err"><span class="va-err" id="ce-markets-err">Enter at least one market</span></div>
+          <fieldset class="va-field va-wide">
+            <legend>Business type <small>(optional)</small></legend>
+            <div class="va-chips">
+              <label class="va-chip"><input type="radio" name="business_type" value="Apple Premium Reseller" data-type="apr"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Apple Premium Reseller</label>
+              <label class="va-chip"><input type="radio" name="business_type" value="Electronics retailer" data-type="retailer"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Electronics retailer</label>
+              <label class="va-chip"><input type="radio" name="business_type" value="Telecom operator" data-type="telecom"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Telecom operator</label>
+              <label class="va-chip"><input type="radio" name="business_type" value="Device brand or OEM" data-type="brand"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Device brand or OEM</label>
+              <label class="va-chip"><input type="radio" name="business_type" value="Other" data-type="other"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Other</label>
+            </div>
+          </fieldset>
+          <fieldset class="va-field va-wide">
+            <legend>Program interest <small>(optional, choose any)</small></legend>
+            <div class="va-chips">
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Trade-in" data-program="trade-in"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Trade-in</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Early upgrade" data-program="early-upgrade"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Early upgrade</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Deferred trade-in" data-program="deferred-trade-in"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Deferred trade-in</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Future trade-in" data-program="future-trade-in"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Future trade-in</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Subscription" data-program="subscription"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Subscription</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Device rental" data-program="device-rental"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Device rental</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Return avoidance" data-program="return-avoidance"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Return avoidance</label>
+              <label class="va-chip"><input type="checkbox" name="program_interest[]" value="Not sure yet" data-program="not-sure"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Not sure yet</label>
+            </div>
+          </fieldset>
+          <div class="va-field"><label for="ce-volume">Monthly volume range <small>(optional)</small></label>
+            <span class="va-select"><select id="ce-volume" name="monthly_volume">
+              <option value="" selected>Select a range</option>
+              <option>Under 500 devices</option>
+              <option>500–2,000 devices</option>
+              <option>2,000–10,000 devices</option>
+              <option>Over 10,000 devices</option>
+              <option>Not sure</option>
+            </select></span>
+          </div>
+          <div class="va-field va-wide"><label for="ce-msg">What would you like to achieve? <small>(optional)</small></label><textarea id="ce-msg" name="message"></textarea></div>
+        </div>
+        <div class="va-foot">
+          <button type="submit" class="va-submit">Request a conversation</button>
+          <p class="va-status" role="status" aria-live="polite" data-va-status></p>
+          <p class="va-note">We use these details to reply to your enquiry, as described in our <a href="/v2/legal/#privacy">privacy notice</a>.</p>
+        </div>
+      </form>
+
+      <div class="va-done" role="region" aria-label="Enquiry received" data-va-done>
+        <p class="va-sent"><img decoding="async" alt="" src="/v2/assets/ecosystem-dot.svg">Enquiry received</p>
+        <h3 tabindex="-1" data-va-focus>Thanks. We have your details.</h3>
+        <p>What happens next:</p>
+        <ol class="va-steps">
+          <li><b>01</b>We review your business, markets and objectives.</li>
+          <li><b>02</b>A member of the Fintegre team contacts you to arrange a conversation.</li>
+          <li><b>03</b>Together we look at channels, eligible devices, commercial model, integrations and operating requirements.</li>
+        </ol>
+        <a class="va-back" href="/v2/platform/">Explore the platform</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="closing" id="closing" class="v2-sec" style="--h:960px; background: linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), radial-gradient(calc(260px * var(--s)) calc(384px * var(--s)) at 50% calc(422.4px * var(--s)), rgba(48,71,236,.42) 0%, rgba(34,51,173,.32) 25%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), #0F1115;" data-tone="dark">
+  <style>
+    .motion [data-section="closing"] [data-m="up"] { translate: 0 var(--ty, 40px); }
+    .motion [data-section="closing"].is-in [data-m] { translate: none; }
+    [data-section="closing"] .cl-col { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; padding: 120px 0 10px; }
+    [data-section="closing"] .cl-head {
+      flex: none; width: 370px; margin: 0 0 -6px; text-align: center;
+      font-weight: 400; font-size: 60px; line-height: .92; letter-spacing: -1.8px;
+      background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    }
+    [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+    [data-section="closing"] .cl-foot {
+      position: relative; flex: none; width: 370px; margin-bottom: -6px; padding: 32px 24px 28px; display: flex; flex-direction: column; gap: 40px;
+      background: radial-gradient(115.62px 148.18px at 92.5px 88.91px, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 100%), linear-gradient(127.11deg, rgba(28,34,72,.92) 14.286%, rgba(17,20,34,.92) 85.714%);
+      border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 -20px 60px rgba(0,0,0,.45); border-radius: 32px; color: #F5F7FA; line-height: normal;
+    }
+    [data-section="closing"] .cl-sub { position: relative; display: flex; flex-direction: column; gap: 16px; align-items: stretch; }
+    [data-section="closing"] .cl-logo { position: relative; display: block; width: 99.3px; height: 30px; }
+    [data-section="closing"] .cl-logo img { position: absolute; display: block; max-width: none; }
+    [data-section="closing"] .cl-sub h3 { margin: 0; font-weight: 500; font-size: 14px; color: #F5F7FA; }
+    [data-section="closing"] .cl-sub p { margin: 0; font-size: 13px; color: rgba(255,255,255,.6); }
+    [data-section="closing"] form { display: flex; gap: 8px; align-items: center; }
+    [data-section="closing"] input {
+      flex: 1 1 0; min-width: 0; height: 48px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08); color: #fff; font: 400 14px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s;
+    }
+    [data-section="closing"] input::placeholder { color: rgba(255,255,255,.5); }
+    [data-section="closing"] input:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.1); }
+    [data-section="closing"] button {
+      flex: none; width: 105px; height: 48px; border: 0; cursor: pointer; padding: 0; border-radius: 10px; background: #fff; color: #0F1115;
+      font: 500 14px/18px 'Geologica', system-ui, sans-serif; transition: background-color .25s; -webkit-tap-highlight-color: transparent;
+    }
+    [data-section="closing"] button:active, [data-section="closing"] button:disabled { background: #B7D7FF; }
+    [data-section="closing"] input.is-bad { border-color: rgba(255,140,140,.7); }
+    [data-section="closing"] .cl-msg { position: absolute; left: 0; bottom: -24px; margin: 0; font-size: 12px; color: rgba(255,255,255,.6); opacity: 0; transition: opacity .3s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+    [data-section="closing"] .cl-msg.is-on { opacity: 1; }
+    [data-section="closing"] .cl-msg.is-err { color: #FFB4B4; }
+    [data-section="closing"] .cl-msg.is-ok { color: #B7D7FF; }
+    [data-section="closing"] .cl-cols { display: flex; flex-wrap: wrap; gap: 32px 40px; white-space: nowrap; margin-top: 40px; }
+    [data-section="closing"] .cl-cols nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    [data-section="closing"] .cl-cols span { font-size: 14px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-cols a { font-weight: 500; font-size: 14px; color: #fff; }
+    [data-section="closing"] .cl-bottom { display: flex; flex-direction: column; gap: 12px; font-size: 12px; }
+    [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
+    [data-section="closing"] .cl-legal { display: flex; gap: 9px; }
+    [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 12px; color: rgba(255,255,255,.8); }
+  </style>
+  <div class="v2-canvas">
+    <div class="cl-col">
+      <h2 class="cl-head" data-m="up">Make every device worth <em>more</em></h2>
+
+      <footer class="cl-foot" data-m="up" style="--ty:60px; --d:400ms">
+        <div>
+          <div class="cl-sub">
+            <a href="/v2/" class="cl-logo" aria-label="Fintegre home">
+              <img decoding="async" src="/v2/assets/closing-logo-mark.svg" alt="" width="32.1605" height="23.0769" style="left:3.77px; top:3.46px;">
+              <img decoding="async" src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
+            </a>
+            <h3>Get trade-in insights</h3>
+            <p>Guides and program notes from Fintegre. No spam.</p>
+            <form class="cl-form" name="newsletter" method="POST" action="/v2/thanks/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+              <input type="hidden" name="form-name" value="newsletter">
+              <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+            <p class="cl-msg" role="status" aria-live="polite"></p>
+          </div>
+          <div class="cl-cols">
+            <nav aria-label="Platform"><span>Platform</span>
+              <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device Value Intelligence</a><a href="/v2/vendor-network/">Vendor Network</a><a href="/v2/platform/#integrations">Integrations</a>
+            </nav>
+            <nav aria-label="Solutions"><span>Solutions</span>
+              <a href="/v2/solutions/#apr">Apple Premium Resellers</a><a href="/v2/solutions/#retailers">Electronics retailers</a><a href="/v2/solutions/#telecom">Telecom operators</a><a href="/v2/solutions/#brands">Device brands and OEM</a>
+            </nav>
+            <nav aria-label="Company"><span>Company</span>
+              <a href="/v2/company/">About</a><a href="/v2/insights/">Insights</a><a href="/v2/contact/">Contact</a>
+            </nav>
+          </div>
+        </div>
+        <div class="cl-bottom">
+          <small>© 2026 Fintegre. All rights reserved.</small>
+          <nav class="cl-legal" aria-label="Legal"><a href="/v2/legal/#privacy">Privacy</a><a href="/v2/legal/#cookies">Cookies</a><a href="/v2/legal/#imprint">Imprint</a></nav>
+        </div>
+      </footer>
+    </div>
+  </div>
+</section>
+</main>
+  <div class="m-menu" id="m-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <div class="m-menu__in">
+      <img decoding="async" class="mm-glow" alt="" src="/v2/mobile/assets/hero-menu-glow-1.svg" style="left:-280px; top:-260px; width:700px; height:660px;">
+      <img decoding="async" class="mm-glow" alt="" src="/v2/mobile/assets/hero-menu-glow-2.svg" style="left:50px; bottom:-206px; width:620px; height:580px;">
+
+      <div class="mm-top">
+        <a href="/v2/" class="h-logo" aria-label="Fintegre home"><span class="h-mark"><img decoding="async" alt="" src="/v2/mobile/assets/hero-logo.svg"></span>Fintegre</a>
+        <div class="h-actions">
+          <a href="/v2/contact/" class="h-pillbtn">Discuss your program</a>
+          <button type="button" class="mm-close" data-menu-close aria-label="Close menu"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-close.svg"></button>
+        </div>
+      </div>
+
+      <nav class="mm-nav" aria-label="Main">
+        <div class="mm-group is-open">
+          <div class="mm-row" data-mm style="--d:150ms;">
+            <a href="/v2/platform/">Platform</a>
+            <button type="button" class="mm-tog" aria-expanded="true" aria-controls="mm-sub-platform" aria-label="Platform pages"><img decoding="async" class="is-up" alt="" src="/v2/mobile/assets/hero-menu-chevron-up.svg"><img decoding="async" class="is-down" alt="" src="/v2/mobile/assets/hero-menu-chevron-down.svg"></button>
+          </div>
+          <div class="mm-sub" id="mm-sub-platform" data-mm style="--d:250ms; --ty:12px;"><div><ul>
+            <li><a href="/v2/platform/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot-on.svg">Trade-in orchestration</a></li>
+            <li><a href="/v2/intelligence/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device Value Intelligence</a></li>
+            <li><a href="/v2/vendor-network/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Vendor Network</a></li>
+            <li><a href="/v2/platform/#integrations"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Integrations</a></li>
+          </ul></div></div>
+        </div>
+        <div class="mm-group">
+          <div class="mm-row" data-mm style="--d:210ms;">
+            <a href="/v2/solutions/">Solutions</a>
+            <button type="button" class="mm-tog" aria-expanded="false" aria-controls="mm-sub-solutions" aria-label="Solutions pages"><img decoding="async" class="is-up" alt="" src="/v2/mobile/assets/hero-menu-chevron-up.svg"><img decoding="async" class="is-down" alt="" src="/v2/mobile/assets/hero-menu-chevron-down.svg"></button>
+          </div>
+          <div class="mm-sub" id="mm-sub-solutions"><div><ul>
+            <li><a href="/v2/solutions/#apr"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Apple Premium Resellers</a></li>
+            <li><a href="/v2/solutions/#retailers"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Electronics retailers</a></li>
+            <li><a href="/v2/solutions/#telecom"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Telecom operators</a></li>
+            <li><a href="/v2/solutions/#brands"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device brands and OEM</a></li>
+          </ul></div></div>
+        </div>
+        <div class="mm-row" data-mm style="--d:270ms;"><a href="/v2/vendor-network/">Vendor Network</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:330ms;"><a href="/v2/intelligence/">Intelligence</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:390ms;"><a href="/v2/insights/">Insights</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:450ms;"><a href="/v2/company/">Company</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+      </nav>
+
+      <div class="mm-foot">
+        <a href="/v2/vendor-network/" class="mm-cta mm-cta--ghost" data-mm style="--d:700ms; --ty:30px;">Buying trade-in devices? Join the vendor network  →</a>
+        <a href="/v2/contact/" class="mm-cta" data-mm style="--d:800ms; --ty:30px;">Discuss your program  →</a>
+        <p class="mm-legal"><a href="/v2/legal/#privacy">Privacy</a>    <a href="/v2/legal/#cookies">Cookies</a>    <a href="/v2/legal/#imprint">Imprint</a></p>
+      </div>
+    </div>
+  </div>
+
+<script src="/v2/v2.js"></script>
+<script src="/v2/mobile/menu.js"></script>
+<script>
+// Flow-laid sections ([data-fit]) take their height from their content, so longer copy, form errors or the
+// success state never get clipped. The inline --h stays as the no-JS fallback.
+(() => {
+  const fit = () => document.querySelectorAll('.v2-sec[data-fit]').forEach((s) => {
+    const flow = s.querySelector('[data-fit-flow]');
+    if (flow) s.style.setProperty('--h', Math.ceil(flow.offsetHeight) + 'px');
+  });
+  fit();
+  addEventListener('load', fit);
+  addEventListener('resize', fit);
+  if (document.fonts) document.fonts.ready.then(fit);
+  window.V2fit = fit;
+})();
+</script>
+<script>
+// Enterprise enquiry (Netlify form "enterprise-enquiry").
+// Context from the originating CTA: ?type=apr|retailer|telecom|brand preselects the business type,
+// ?program=<slug> preselects that one program, ?topic=integration|data fills the hidden topic field and shows a
+// context line. Nothing else is preselected. The form validates in the browser, posts with fetch and shows the
+// success state in place; without JS it posts normally and returns to ?sent=1, which shows the same state.
+(() => {
+  const sec = document.querySelector('[data-section="enquiry"]');
+  const form = sec && sec.querySelector('[data-va-form]');
+  if (!form) return;
+  const card = sec.querySelector('.va-card');
+  const status = sec.querySelector('[data-va-status]');
+  const btn = form.querySelector('button[type="submit"]');
+  const q = new URLSearchParams(location.search);
+  const emailOk = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  const fit = () => { if (window.V2fit) window.V2fit(); };
+
+  // Query-string context
+  const type = (q.get('type') || '').toLowerCase();
+  const typeInput = type && form.querySelector(`input[name="business_type"][data-type="${CSS.escape(type)}"]`);
+  if (typeInput && type !== 'other') typeInput.checked = true;
+  const program = (q.get('program') || '').toLowerCase();
+  const progInput = program && program !== 'not-sure' && form.querySelector(`input[name="program_interest[]"][data-program="${CSS.escape(program)}"]`);
+  if (progInput) progInput.checked = true;
+  const topics = { integration: 'integration', data: 'data and reporting' };
+  const topic = (q.get('topic') || '').toLowerCase();
+  if (topics[topic]) {
+    form.querySelector('[data-topic]').value = topic;
+    const ctx = form.querySelector('[data-ctx]');
+    ctx.textContent = 'Topic: ' + topics[topic];
+    ctx.hidden = false;
+  }
+  const src = form.querySelector('[data-source-page]');
+  try {
+    if (src && document.referrer) {
+      const u = new URL(document.referrer);
+      if (u.origin === location.origin && !/^\/v2\/(mobile\/)?contact\/$/.test(u.pathname)) src.value = u.pathname;
+      else if (u.origin !== location.origin) src.value = u.origin + u.pathname;
+    }
+  } catch (e) {}
+
+  const showDone = (focus) => {
+    card.classList.add('is-sent');
+    form.setAttribute('aria-hidden', 'true');
+    form.inert = true;
+    fit();
+    if (window.V2fit) window.V2fit();
+    if (focus) {
+      sec.querySelector('[data-va-focus]')?.focus({ preventScroll: true });
+      scrollTo({ top: card.getBoundingClientRect().top + scrollY - 110 * (window.V2 ? V2.scale() : 1), behavior: 'smooth' });
+    }
+  };
+  if (q.get('sent') === '1') {
+    showDone(false);
+    addEventListener('load', () => setTimeout(() => sec.scrollIntoView(), 50), { once: true });
+  }
+
+  const mark = (el, bad) => {
+    const field = el.closest('.va-field');
+    if (field.classList.contains('is-bad') !== bad) { field.classList.toggle('is-bad', bad); requestAnimationFrame(fit); }
+    bad ? el.setAttribute('aria-invalid', 'true') : el.removeAttribute('aria-invalid');
+  };
+  const check = () => {
+    let first = null;
+    form.querySelectorAll('input[required]').forEach((el) => {
+      const v = el.value.trim();
+      const bad = !v || (el.type === 'email' && !emailOk(v));
+      mark(el, bad);
+      if (bad && !first) first = el;
+    });
+    return first;
+  };
+  form.addEventListener('input', (e) => {
+    const el = e.target;
+    if (el.matches('input[required]') && el.closest('.va-field').classList.contains('is-bad')) {
+      const v = el.value.trim();
+      if (v && (el.type !== 'email' || emailOk(v))) mark(el, false);
+    }
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const first = check();
+    if (first) {
+      status.textContent = 'Please complete the highlighted fields.';
+      first.focus();
+      return;
+    }
+    status.textContent = '';
+    btn.disabled = true;
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+      .then((r) => { if (!r.ok) throw new Error(r.status); showDone(true); })
+      .catch(() => { btn.disabled = false; status.textContent = 'Sending failed. Please try again.'; });
+  });
+})();
+</script>
+<script>
+// Closing footer newsletter (Netlify form "newsletter"): validates, posts with fetch and confirms in place.
+// Without JS the form posts normally and comes back with ?subscribed=1.
+(() => {
+  const sec = document.querySelector('[data-section="closing"]');
+  const form = sec && sec.querySelector('.cl-form');
+  if (!form) return;
+  const input = form.querySelector('input[type="email"]');
+  const btn = form.querySelector('button');
+  const msg = sec.querySelector('.cl-msg');
+  const say = (text, kind) => { if (!msg) return; msg.textContent = text; msg.className = 'cl-msg is-on ' + kind; };
+  const valid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  const done = () => {
+    input.value = '';
+    input.placeholder = 'Thanks, you are on the list';
+    input.disabled = true;
+    btn.textContent = 'Subscribed';
+    btn.disabled = true;
+    say('Thanks. You are subscribed.', 'is-ok');
+  };
+  if (new URLSearchParams(location.search).get('subscribed') === '1') done();
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (btn.disabled) return;
+    const v = input.value.trim();
+    if (!valid(v)) {
+      input.classList.add('is-bad');
+      input.setAttribute('aria-invalid', 'true');
+      say(v ? 'Enter a valid work email.' : 'Enter a work email.', 'is-err');
+      input.focus();
+      return;
+    }
+    input.classList.remove('is-bad');
+    input.removeAttribute('aria-invalid');
+    btn.disabled = true;
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+      .then((r) => { if (!r.ok) throw new Error(r.status); done(); })
+      .catch(() => { btn.disabled = false; say('Sending failed. Please try again.', 'is-err'); });
+  });
+  input.addEventListener('input', () => {
+    input.classList.remove('is-bad');
+    input.removeAttribute('aria-invalid');
+    if (msg && msg.classList.contains('is-err')) msg.className = 'cl-msg';
+  });
+})();
+</script>
+</body>
+</html>

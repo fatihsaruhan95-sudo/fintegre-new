@@ -1,0 +1,44 @@
+<section data-section="founders" id="founders" class="v2-sec" data-tone="light" style="--h:900px; background:#F5F7FA;">
+<style>
+  [data-section="founders"] p, [data-section="founders"] h2, [data-section="founders"] h3 { margin: 0; }
+  [data-section="founders"] .cf-intro { position: absolute; left: 120px; top: 130px; width: 1200px; display: flex; justify-content: space-between; align-items: flex-end; }
+  [data-section="founders"] h2 { font-weight: 400; font-size: 64px; line-height: 1.02; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="founders"] .cf-lede { width: 400px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(15,17,21,.62); }
+  [data-section="founders"] .cf-list { position: absolute; left: 120px; top: 290px; width: 1200px; margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, 360px); justify-content: space-between; }
+  [data-section="founders"] .cf-item { display: flex; flex-direction: column; gap: 0; }
+  /* Portrait placeholder: dark glass frame in the brand language until Fintegre supplies authentic portraits. */
+  [data-section="founders"] .cf-frame { position: relative; width: 360px; height: 420px; border-radius: 28px; overflow: hidden;
+    background: radial-gradient(260px 220px at 50% 38%, rgba(48,71,236,.42) 0%, rgba(48,71,236,0) 100%), linear-gradient(135deg, rgba(28,34,72,.96) 0%, rgba(17,20,34,.96) 100%);
+    border: 1px solid rgba(183,215,255,.14); box-shadow: 0 30px 60px rgba(15,20,64,.18); }
+  [data-section="founders"] .cf-initials { position: absolute; left: 0; right: 0; top: 150px; text-align: center; font-weight: 300; font-size: 88px; line-height: 1; letter-spacing: -0.03em; color: #B7D7FF; }
+  [data-section="founders"] .cf-caption { position: absolute; left: 24px; bottom: 22px; display: flex; align-items: center; gap: 8px; font-size: 13px; line-height: normal; color: #A7B0BE; white-space: nowrap; }
+  [data-section="founders"] .cf-caption img { width: 6px; height: 6px; display: block; }
+  [data-section="founders"] .cf-item h3 { margin-top: 26px; font-weight: 400; font-size: 28px; line-height: normal; letter-spacing: -0.02em; color: #0F1115; }
+  [data-section="founders"] .cf-role { margin-top: 6px; font-weight: 300; font-size: 16px; line-height: normal; color: #5C6373; }
+  .motion [data-section="founders"] [data-m="up"] { translate: 0 var(--ty, 40px); }
+  .motion [data-section="founders"].is-in [data-m] { translate: none; }
+</style>
+  <div class="v2-canvas">
+    <div class="cf-intro" data-m="up" style="--d:100ms">
+      <h2>Our co-founders.</h2>
+      <p class="cf-lede">Fintegre is led by its three co-founders.</p>
+    </div>
+    <ul class="cf-list">
+      <li class="cf-item" data-m="up" style="--d:300ms">
+        <div class="cf-frame" role="img" aria-label="Portrait of Ali Nihat Tirkeş to be supplied by Fintegre"><span class="cf-initials" aria-hidden="true">AT</span><p class="cf-caption" aria-hidden="true"><img alt="" src="/v2/assets/company-dot-ice.svg">Portrait to be supplied by Fintegre</p></div>
+        <h3>Ali Nihat Tirkeş</h3>
+        <p class="cf-role">Co-founder</p>
+      </li>
+      <li class="cf-item" data-m="up" style="--d:450ms">
+        <div class="cf-frame" role="img" aria-label="Portrait of Ali Salcı to be supplied by Fintegre"><span class="cf-initials" aria-hidden="true">AS</span><p class="cf-caption" aria-hidden="true"><img alt="" src="/v2/assets/company-dot-ice.svg">Portrait to be supplied by Fintegre</p></div>
+        <h3>Ali Salcı</h3>
+        <p class="cf-role">Co-founder</p>
+      </li>
+      <li class="cf-item" data-m="up" style="--d:600ms">
+        <div class="cf-frame" role="img" aria-label="Portrait of Fatih Yıldırım to be supplied by Fintegre"><span class="cf-initials" aria-hidden="true">FY</span><p class="cf-caption" aria-hidden="true"><img alt="" src="/v2/assets/company-dot-ice.svg">Portrait to be supplied by Fintegre</p></div>
+        <h3>Fatih Yıldırım</h3>
+        <p class="cf-role">Co-founder</p>
+      </li>
+    </ul>
+  </div>
+</section>

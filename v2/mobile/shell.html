@@ -6,7 +6,7 @@
 <title>Fintegre — Make every device worth more (v2)</title>
 <script>
   // Phones get this page; wider screens go back to the desktop v2.
-  if (innerWidth >= 768) location.replace('../' + location.hash);
+  if (innerWidth >= 768) location.replace('../' + location.search + location.hash);
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">

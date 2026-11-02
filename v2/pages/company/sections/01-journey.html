@@ -1,0 +1,80 @@
+<section data-section="milestones" id="milestones" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(720px * var(--s)) calc(281.25px * var(--s)) at 50% calc(562.5px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="milestones"] p, [data-section="milestones"] h2 { margin: 0; }
+  [data-section="milestones"] .cm-glow { position: absolute; max-width: none; pointer-events: none; }
+  /* Photo: a team member and a store associate at a trade-in counter, with indigo tint and scrims (as the hero). */
+  [data-section="milestones"] .cm-a { position: absolute; pointer-events: none; }
+  [data-section="milestones"] .cm-photo { left: 290px; top: -30px; width: 1240px; height: 698px; overflow: hidden; }
+  [data-section="milestones"] .cm-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
+  [data-section="milestones"] .cm-tint { left: 290px; top: -30px; width: 1240px; height: 698px; background: rgba(20,30,110,.08); }
+  [data-section="milestones"] .cm-scrim { left: 0; top: 0; width: 900px; height: 900px;
+    background: linear-gradient(90deg, #0F1115 0%, rgba(15,17,21,.92) 42%, rgba(15,17,21,.55) 62%, rgba(15,17,21,.12) 82%, rgba(15,17,21,0) 100%); }
+  [data-section="milestones"] .cm-scrim::before { content: ''; position: absolute; right: 100%; top: 0; width: 2000px; height: 100%; background: #0F1115; }
+  [data-section="milestones"] .cm-fade-top { left: -1000px; top: 0; width: 3440px; height: 120px;
+    background: linear-gradient(180deg, rgba(15,17,21,.9) 0%, rgba(15,17,21,.45) 50%, rgba(15,17,21,0) 100%); }
+  [data-section="milestones"] .cm-fade-bot { left: -1000px; top: 380px; width: 3440px; height: 520px;
+    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.55) 30%, rgba(15,17,21,.85) 55%, rgba(15,17,21,.96) 100%); }
+  [data-section="milestones"] .cm-room { left: 380px; top: 560px; width: 900px; height: 380px; border-radius: 50%; background: rgba(48,71,236,.38); opacity: .55; filter: blur(90px); }
+  [data-section="milestones"] .cm-copy { position: absolute; left: 120px; top: 130px; width: 560px; }
+  [data-section="milestones"] h2 { font-weight: 400; font-size: 56px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="milestones"] .cm-lede { margin-top: 19.5px; width: 440px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="milestones"] .cm-line { position: absolute; left: 119.3px; top: 599.3px; overflow: visible; pointer-events: none; }
+  [data-section="milestones"] .cm-tick { position: absolute; width: 1px; height: 18px; background: rgba(183,215,255,.3); }
+  [data-section="milestones"] .cm-dot { position: absolute; padding: 0; border: 0; background: none; cursor: pointer; line-height: 0; }
+  [data-section="milestones"] .cm-dot img { display: block; transition: scale .4s var(--spring), filter .3s; }
+  [data-section="milestones"] .cm-dot.is-hot img { scale: 1.35; filter: brightness(1.6); }
+  [data-section="milestones"] .cm-dot--now.is-hot img { scale: 1.1; filter: none; }
+  [data-section="milestones"] .cm-ms { position: absolute; width: 190px; font-weight: 300; cursor: default; }
+  [data-section="milestones"] .cm-ms b { display: block; font-weight: 300; font-size: 32px; line-height: normal; letter-spacing: -0.03em; color: #F5F7FA; transition: color .3s; }
+  [data-section="milestones"] .cm-ms p { margin-top: 9px; width: 180px; font-size: 14px; line-height: 1.5; color: rgba(245,247,250,.65); transition: color .3s; }
+  [data-section="milestones"] .cm-ms--now p { margin-left: auto; }
+  [data-section="milestones"] .cm-ms.is-hot b { color: #B7D7FF; }
+  [data-section="milestones"] .cm-ms.is-hot p { color: rgba(245,247,250,.85); }
+  .motion [data-section="milestones"] [data-m="up"] { translate: 0 var(--ty, 40px); }
+  .motion [data-section="milestones"].is-in [data-m] { translate: none; }
+  .motion [data-section="milestones"] .cm-photo { opacity: 0; transition: opacity 1.3s var(--ease) 100ms; }
+  .motion [data-section="milestones"] .cm-photo img { scale: 1.06; transition: scale 4.5s var(--ease) 100ms; }
+  .motion [data-section="milestones"].is-in .cm-photo { opacity: 1; }
+  .motion [data-section="milestones"].is-in .cm-photo img { scale: 1; }
+  .motion [data-section="milestones"] .cm-line path { transition-duration: 2.2s; }
+</style>
+  <div class="v2-canvas">
+    <div class="cm-a cm-photo"><img alt="A Fintegre team member and a store associate checking a phone with a laptop at a trade-in counter" src="/v2/assets/company-milestones-team.webp" width="1536" height="864" loading="lazy" decoding="async"></div>
+    <div class="cm-a cm-tint"></div>
+    <div class="cm-a cm-scrim"></div>
+    <div class="cm-a cm-fade-top"></div>
+    <div class="cm-a cm-fade-bot"></div>
+    <div class="cm-a cm-room"></div>
+    <img class="cm-glow" alt="" src="/v2/assets/company-ms-glow-2.svg" style="left:-380px; top:-280px; width:960px; height:780px; opacity:.8;">
+
+    <div class="cm-copy" data-m="up" style="--d:100ms">
+      <h2>Our journey.</h2>
+      <p class="cm-lede">From affordability solutions to trade-in programs with retailers, telecom operators and e-commerce partners.</p>
+    </div>
+
+    <div class="cm-timeline">
+      <svg class="cm-line" width="1201.4" height="1.4" viewBox="0 0 1201.4 1.4" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:400ms" d="M0.7 0.7H1200.7" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.35"/></svg>
+      <div class="cm-tick" style="left:120.0px; top:576px;"></div>
+      <button type="button" class="cm-dot" style="left:114.0px; top:594px; --d:500ms" data-m="pop" data-year="2017" aria-label="2017"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+      <div class="cm-ms" style="left:114.0px; bottom:334px; --d:600ms; --ty:24px" data-m="up" data-year="2017"><b>2017</b><p>Founded in Istanbul to provide affordability solutions.</p></div>
+      <div class="cm-tick" style="left:319.5px; top:608px;"></div>
+      <button type="button" class="cm-dot" style="left:313.5px; top:594px; --d:800ms" data-m="pop" data-year="2019" aria-label="2019"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+      <div class="cm-ms" style="left:313.5px; top:630px; --d:900ms; --ty:24px" data-m="up" data-year="2019"><b>2019</b><p>Launched our first trade-in counter in retail stores.</p></div>
+      <div class="cm-tick" style="left:519.0px; top:576px;"></div>
+      <button type="button" class="cm-dot" style="left:513.0px; top:594px; --d:1100ms" data-m="pop" data-year="2020" aria-label="2020"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+      <div class="cm-ms" style="left:513.0px; bottom:334px; --d:1200ms; --ty:24px" data-m="up" data-year="2020"><b>2020</b><p>Partnered with Apple to deliver a unified online experience.</p></div>
+      <div class="cm-tick" style="left:718.5px; top:608px;"></div>
+      <button type="button" class="cm-dot" style="left:712.5px; top:594px; --d:1400ms" data-m="pop" data-year="2023" aria-label="2023"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+      <div class="cm-ms" style="left:712.5px; top:630px; --d:1500ms; --ty:24px" data-m="up" data-year="2023"><b>2023</b><p>Became the first aggregator to implement Apple Trade In Kit.</p></div>
+      <div class="cm-tick" style="left:918.0px; top:576px;"></div>
+      <button type="button" class="cm-dot" style="left:912.0px; top:594px; --d:1700ms" data-m="pop" data-year="2024" aria-label="2024"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+      <div class="cm-ms" style="left:912.0px; bottom:334px; --d:1800ms; --ty:24px" data-m="up" data-year="2024"><b>2024</b><p>Expanded into telecom operator and e-commerce integrations.</p></div>
+      <div class="cm-tick" style="left:1117.5px; top:608px;"></div>
+      <button type="button" class="cm-dot" style="left:1111.5px; top:594px; --d:2000ms" data-m="pop" data-year="2025" aria-label="2025"><img alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+      <div class="cm-ms" style="left:1111.5px; top:630px; --d:2100ms; --ty:24px" data-m="up" data-year="2025"><b>2025</b><p>Launched our first European operations in the Baltics.</p></div>
+      <div class="cm-tick" style="left:1317.0px; top:576px;"></div>
+      <button type="button" class="cm-dot cm-dot--now is-hot" style="left:1293.0px; top:576px; --d:2300ms" data-m="pop" data-year="2026" aria-label="2026"><img alt="" src="/v2/assets/company-ms-dot-now.svg" width="49" height="49"></button>
+      <div class="cm-ms cm-ms--now is-hot" style="left:1140.0px; text-align:right; bottom:334px; --d:2400ms; --ty:24px" data-m="up" data-year="2026"><b>2026</b><p>Surpassed one million devices checked across three regions.</p></div>
+    </div>
+  </div>
+</section>

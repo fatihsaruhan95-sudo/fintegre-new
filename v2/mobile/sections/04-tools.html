@@ -1,0 +1,206 @@
+<section data-section="tools" id="how" class="v2-sec" style="--h:4030px; background:#0b0b12" data-tone="dark">
+  <style>
+    [data-section="tools"] { --ink:#0f1115; --ink2:rgba(15,17,21,.68); --ink3:rgba(15,17,21,.46); --subtle:#f5f7fa; --muted:#edf0f4; --line:#dfe3ea; --amber:#fff1d6; --brand:#3047ec; }
+    [data-section="tools"] p { margin:0; }
+    [data-section="tools"] .t-mesh { position:absolute; inset:0; overflow:visible; pointer-events:none; }
+    [data-section="tools"] .t-mesh img { position:absolute; display:block; max-width:none; }
+    [data-section="tools"] .t-shade { position:absolute; top:0; bottom:0; left:-400px; right:-400px; background:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.35)); }
+
+    [data-section="tools"] .t-top { position:absolute; left:20px; top:96px; width:350px; display:flex; flex-direction:column; gap:20px; align-items:flex-start; }
+    [data-section="tools"] .t-lede { width:345px; font-size:16px; line-height:1.55; font-weight:300; color:rgba(255,255,255,.75); }
+    [data-section="tools"] .t-h { width:350px; margin:0; font-size:40px; line-height:1.1; letter-spacing:-0.02em; font-weight:400; color:#fff; }
+    [data-section="tools"] .t-h em { font-family:'Instrument Serif', serif; font-style:italic; font-weight:400; }
+    [data-section="tools"] .t-foot { display:flex; flex-direction:column; gap:16px; align-items:flex-start; }
+    [data-section="tools"] .t-foot p { width:340px; font-size:15px; line-height:1.5; color:rgba(255,255,255,.85); }
+    [data-section="tools"] .t-cta { display:flex; align-items:center; height:44px; padding:0 18px; background:#fff; color:var(--ink); border-radius:10px; font-size:14px; font-weight:500; line-height:normal; }
+    [data-section="tools"] .t-cta:active { background:#e9edf3; }
+
+    /* Cards, stacked */
+    [data-section="tools"] .t-cards { margin-top:20px; width:350px; display:flex; flex-direction:column; gap:16px; }
+    [data-section="tools"] .t-card { padding:24px 20px; display:flex; flex-direction:column; gap:20px; overflow:clip;
+      border-radius:24px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); }
+    [data-section="tools"] .t-card > img { width:24px; height:24px; display:block; }
+    [data-section="tools"] .t-title { font-size:20px; font-weight:500; color:#fff; line-height:normal; }
+    [data-section="tools"] .t-desc { font-size:15px; line-height:1.5; color:rgba(255,255,255,.65); }
+    .motion [data-section="tools"] .t-card { opacity:0; translate:0 60px; transition:opacity .8s var(--ease) var(--d,0ms), translate 1s var(--ease) var(--d,0ms); }
+    .motion [data-section="tools"] .t-card.is-shown { opacity:1; translate:none; }
+
+    /* Product UI inside the cards */
+    [data-section="tools"] .ui { background:#fff; color:var(--ink); width:100%; display:flex; flex-direction:column; gap:12px; padding:24px; border-radius:22px; overflow:clip; }
+    [data-section="tools"] .ui-row { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:12px 14px; border-radius:12px; background:var(--subtle); font-size:14px; line-height:normal; }
+    [data-section="tools"] .ui-row > div { display:flex; align-items:center; gap:10px; min-width:0; }
+    [data-section="tools"] .ui-row img { width:18px; height:18px; display:block; flex-shrink:0; }
+    [data-section="tools"] .ui-row b { font-weight:600; white-space:nowrap; flex-shrink:0; }
+    [data-section="tools"] .ui-row--amber { background:var(--amber); }
+    [data-section="tools"] .ui-row--amber > div span { font-weight:500; }
+    [data-section="tools"] .ui-note { font-size:12px; color:var(--ink3); line-height:normal; }
+    [data-section="tools"] .ui-tabs { display:flex; gap:6px; padding:4px; border-radius:12px; background:var(--muted); align-self:flex-start; }
+    [data-section="tools"] .ui-tabs span { padding:8px 16px; border-radius:9px; font-size:13px; font-weight:500; color:var(--ink2); line-height:normal; white-space:nowrap; }
+    [data-section="tools"] .ui-tabs span.on { background:#fff; color:var(--ink); }
+    [data-section="tools"] .ui-val { gap:24px; padding:22px 18px; border-radius:32px; }
+    [data-section="tools"] .ui-val .hd { display:flex; justify-content:space-between; align-items:center; white-space:nowrap; }
+    [data-section="tools"] .ui-val .hd p:first-child { font-size:22px; font-weight:500; line-height:1.2; letter-spacing:-0.005em; }
+    [data-section="tools"] .ui-val .hd p:last-child { font-size:13px; line-height:1.4; color:var(--ink3); }
+    [data-section="tools"] .ui-dev { display:flex; gap:16px; align-items:center; padding:16px 20px; border-radius:16px; background:var(--subtle); font-size:14px; }
+    [data-section="tools"] .ui-dev img { width:32px; height:32px; display:block; flex-shrink:0; }
+    [data-section="tools"] .ui-dev p:first-child { font-weight:500; line-height:1.4; }
+    [data-section="tools"] .ui-dev p:last-child { color:var(--ink2); line-height:1.5; margin-top:2px; }
+    [data-section="tools"] .ui-stats { display:flex; gap:12px; font-size:14px; white-space:nowrap; }
+    [data-section="tools"] .ui-stats div { flex:1 0 0; min-width:0; display:flex; flex-direction:column; gap:6px; padding:14px 16px; border:1px solid var(--line); border-radius:12px; }
+    [data-section="tools"] .ui-stats p:first-child { color:var(--ink2); line-height:1.5; }
+    [data-section="tools"] .ui-stats p:last-child { font-weight:500; line-height:1.4; }
+    [data-section="tools"] .ui-total { display:flex; justify-content:space-between; align-items:center; gap:4px; white-space:nowrap; }
+    [data-section="tools"] .ui-total > div { display:flex; flex-direction:column; gap:4px; }
+    [data-section="tools"] .ui-total p:first-child { font-size:14px; line-height:1.5; color:var(--ink2); }
+    [data-section="tools"] .ui-total p:last-child { font-size:40px; font-weight:700; line-height:1; letter-spacing:-0.03em; }
+    [data-section="tools"] .ui-btn { display:flex; align-items:center; gap:8px; height:46px; padding:0 16px; border-radius:12px; background:var(--brand); color:#fff; font-size:15px; font-weight:500; line-height:1; flex-shrink:0; }
+    [data-section="tools"] .ui-btn img { width:24px; height:24px; display:block; }
+    [data-section="tools"] .ui-live { display:flex; justify-content:space-between; align-items:center; white-space:nowrap; }
+    [data-section="tools"] .ui-live > p { font-size:16px; font-weight:500; }
+    [data-section="tools"] .ui-pill { display:flex; gap:6px; align-items:center; padding:5px 10px; border-radius:999px; background:var(--muted); font-size:12px; font-weight:500; }
+    [data-section="tools"] .ui-pill img { width:14px; height:14px; display:block; }
+    [data-section="tools"] .ui-q { font-size:16px; font-weight:500; line-height:normal; }
+    [data-section="tools"] .ui-opt { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:14px 16px; border-radius:14px; border:1px solid var(--line); background:#fff; line-height:normal; }
+    [data-section="tools"] .ui-opt.on { border:1.5px solid var(--brand); }
+    [data-section="tools"] .ui-opt > div { display:flex; gap:12px; align-items:center; flex:1 0 0; min-width:0; }
+    [data-section="tools"] .ui-opt i { display:block; padding:8px; border-radius:10px; background:var(--muted); flex-shrink:0; }
+    [data-section="tools"] .ui-opt.on i { background:var(--brand); }
+    [data-section="tools"] .ui-opt i img { width:18px; height:18px; display:block; }
+    [data-section="tools"] .ui-opt p:first-child { font-size:14px; font-weight:500; }
+    [data-section="tools"] .ui-opt p + p { font-size:12px; color:var(--ink2); margin-top:2px; }
+    [data-section="tools"] .ui-opt > b { font-size:15px; font-weight:600; white-space:nowrap; flex-shrink:0; }
+    [data-section="tools"] .ui-head { display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:12px; color:var(--ink3); white-space:nowrap; line-height:normal; padding:0 2px; }
+    [data-section="tools"] .ui-head b { font-weight:500; color:var(--ink2); }
+    [data-section="tools"] .ui-row small { font-size:12px; color:var(--ink3); margin-left:6px; }
+    [data-section="tools"] .ui-row--on { background:#e8ecff; }
+    [data-section="tools"] .ui-row--on b { color:var(--brand); }
+    [data-section="tools"] .t-num { font-style:normal; font-weight:400; font-size:14px; color:rgba(255,255,255,.5); margin-right:10px; }
+    [data-section="tools"] .t-steps { margin:0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:8px; width:350px; }
+    [data-section="tools"] .t-steps li { padding:8px 12px; border-radius:10px; background:rgba(255,255,255,.08); font-size:13px; font-weight:500; color:rgba(255,255,255,.85); white-space:nowrap; }
+    [data-section="tools"] .t-steps li i { font-style:normal; font-weight:400; opacity:.55; margin-right:6px; }
+    [data-section="tools"] .ui-go { padding:14px 0; border-radius:12px; background:var(--ink); color:#fff; text-align:center; font-size:14px; font-weight:500; line-height:normal; }
+  </style>
+  <div class="v2-canvas">
+    <div class="t-mesh" aria-hidden="true">
+      <img alt="" src="assets/tools-e1.svg" width="743.2" height="1027.42" style="left:-261.23px;top:1379.01px">
+      <img alt="" src="assets/tools-e2.svg" width="618.4" height="818.281" style="left:-254.21px;top:326.34px">
+      <img alt="" src="assets/tools-e3.svg" width="712" height="975.136" style="left:-12.80px;top:-287.72px">
+      <img alt="" src="assets/tools-e4.svg" width="649.6" height="870.566" style="left:-42.44px;top:1817.62px">
+      <img alt="" src="assets/tools-e5.svg" width="618.4" height="818.281" style="left:-86.51px;top:1028.12px">
+      <div class="t-shade"></div>
+    </div>
+
+    <div class="t-top">
+      <h2 class="t-h" data-m="up" style="--d:100ms">How <em>orchestration</em> works</h2>
+      <p class="t-lede" data-m="up" style="--d:200ms">One journey from the first quote to the final report. Offers are compared on expected net recovery, under your program rules.</p>
+      <ol class="t-steps" data-m="up" style="--d:300ms" aria-label="Orchestration steps">
+        <li><i>01</i>Identify</li><li><i>02</i>Assess</li><li><i>03</i>Compare offers</li><li><i>04</i>Customer acceptance</li><li><i>05</i>Collect and inspect</li><li><i>06</i>Settle and report</li>
+      </ol>
+      <div class="t-foot" data-m="up" style="--d:400ms">
+        <p>Quote, customer credit or payout and buyer settlement are separate steps, each under your program's rules.</p>
+        <a class="t-cta" href="/v2/contact/">Discuss your program</a>
+      </div>
+
+    <div class="t-cards">
+      <!-- 01 Identify -->
+      <article class="t-card">
+        <img alt="" src="/v2/assets/tools-route.svg">
+        <p class="t-title"><i class="t-num">01</i>Identify</p>
+        <div class="t-vis">
+          <div class="ui">
+            <div class="ui-head"><b>Device identified</b><span>Sample data</span></div>
+            <div class="ui-dev"><img alt="" src="/v2/assets/tools-smartphone.svg"><div><p>iPhone 15 Pro, 256 GB</p><p>Natural Titanium</p></div></div>
+            <div class="ui-row"><div><img alt="" src="/v2/assets/tools-smartphone-sm.svg"><span>Model and storage</span></div><b>Matched</b></div>
+            <div class="ui-row"><div><img alt="" src="/v2/assets/tools-shield.svg"><span>Serial number</span></div><b>Checked</b></div>
+            <div class="ui-row"><div><img alt="" src="/v2/assets/tools-exchange-sm.svg"><span>Channel</span></div><b>In store</b></div>
+          </div>
+        </div>
+        <p class="t-desc">The device is identified by model, storage and serial number, in store, online or in your app.</p>
+      </article>
+
+      <!-- 02 Assess -->
+      <article class="t-card">
+        <img alt="" src="/v2/assets/tools-exchange.svg">
+        <p class="t-title"><i class="t-num">02</i>Assess</p>
+        <div class="t-vis">
+          <div class="ui ui-val" style="gap:18px;">
+            <div class="hd"><p>Condition</p><p>Sample data</p></div>
+            <div class="ui-stats">
+              <div><p>Screen</p><p>Good</p></div>
+              <div><p>Battery</p><p>91 %</p></div>
+              <div><p>Casing</p><p>Good</p></div>
+            </div>
+            <div class="ui-row ui-row--on"><div><img alt="" src="/v2/assets/tools-award.svg"><span>Assessed grade</span></div><b>Grade A</b></div>
+            <p class="ui-note">Guided checks or diagnostics, depending on the program</p>
+          </div>
+        </div>
+        <p class="t-desc">Condition is assessed with guided checks or diagnostics, so every quote rests on a clear, recorded grade.</p>
+      </article>
+
+      <!-- 03 Compare offers -->
+      <article class="t-card">
+        <img alt="" src="/v2/assets/tools-funds.svg">
+        <p class="t-title"><i class="t-num">03</i>Compare offers</p>
+        <div class="t-vis">
+          <div class="ui">
+            <div class="ui-head"><b>Eligible offers</b><span>Offer · expected net recovery</span></div>
+            <div class="ui-row ui-row--on"><div><img alt="" src="/v2/assets/tools-award.svg"><span>Buyer B<small>offer €612</small></span></div><b>€590</b></div>
+            <div class="ui-row"><div><img alt="" src="/v2/assets/tools-user.svg"><span>Buyer A<small>offer €620</small></span></div><b>€579</b></div>
+            <div class="ui-row"><div><img alt="" src="/v2/assets/tools-user.svg"><span>Buyer C<small>offer €598</small></span></div><b>€571</b></div>
+            <p class="ui-note">Net of expected deductions and logistics, weighted by capacity and settlement reliability. Sample data.</p>
+          </div>
+        </div>
+        <p class="t-desc">Eligible offers are compared on expected net recovery, not on the headline price alone. The highest offer is not always the strongest.</p>
+      </article>
+
+      <!-- 04 Customer acceptance -->
+      <article class="t-card">
+        <img alt="" src="/v2/assets/tools-exchange.svg">
+        <p class="t-title"><i class="t-num">04</i>Customer acceptance</p>
+        <div class="t-vis">
+          <div class="ui">
+            <div class="ui-head"><b>Quote for the customer</b><span>Sample data</span></div>
+            <p class="ui-q">Your trade-in quote: €590</p>
+            <div class="ui-opt on"><div><i><img alt="" src="/v2/assets/tools-exchange-w.svg"></i><div><p>Credit towards the new iPhone</p><p>Applied to this purchase</p></div></div><b>€590</b></div>
+            <div class="ui-opt"><div><i><img alt="" src="/v2/assets/tools-wallet.svg"></i><div><p>Payout</p><p>Where the program offers it</p></div></div><b>€590</b></div>
+            <div class="ui-go">Accept quote</div>
+          </div>
+        </div>
+        <p class="t-desc">The customer sees one quote, subject to inspection, and chooses credit or payout where the program offers both.</p>
+      </article>
+
+      <!-- 05 Collect and inspect -->
+      <article class="t-card">
+        <img alt="" src="/v2/assets/tools-route.svg">
+        <p class="t-title"><i class="t-num">05</i>Collect and inspect</p>
+        <div class="t-vis">
+          <div class="ui">
+            <div class="ui-head"><b>Device handover</b><span>Sample data</span></div>
+            <div class="ui-row"><div><img alt="" src="/v2/assets/tools-smartphone-sm.svg"><span>Handed over</span></div><b>In store</b></div>
+            <div class="ui-row"><div><img alt="" src="/v2/assets/tools-time.svg"><span>Collected for the buyer</span></div><b>Logged</b></div>
+            <div class="ui-row"><div><img alt="" src="/v2/assets/tools-shield.svg"><span>Inspection</span></div><b>Grade A</b></div>
+            <div class="ui-row ui-row--amber"><div><img alt="" src="/v2/assets/tools-exchange-sm.svg"><span>Difference to assessment</span></div><b>None</b></div>
+          </div>
+        </div>
+        <p class="t-desc">The device is collected and inspected against the assessed grade. Any difference is recorded before settlement.</p>
+      </article>
+
+      <!-- 06 Settle and report -->
+      <article class="t-card">
+        <img alt="" src="/v2/assets/tools-bankcard.svg">
+        <p class="t-title"><i class="t-num">06</i>Settle and report</p>
+        <div class="t-vis">
+          <div class="ui">
+            <div class="ui-head"><b>Settlement</b><span>Sample data</span></div>
+            <div class="ui-row"><div><img alt="" src="/v2/assets/tools-exchange-sm.svg"><span>Customer credit</span></div><b>€590</b></div>
+            <div class="ui-row"><div><img alt="" src="/v2/assets/tools-wallet.svg"><span>Buyer settlement</span></div><b>€590</b></div>
+            <div class="ui-row"><div><img alt="" src="/v2/assets/tools-calendar.svg"><span>Program report</span></div><b>Updated</b></div>
+            <p class="ui-note">Illustrative workflow and sample data. Values, buyer availability, timing and supported features depend on the agreed program and market.</p>
+          </div>
+        </div>
+        <p class="t-desc">Customer credit or payout and buyer settlement are separate records, reported per device and per program.</p>
+      </article>
+    </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comparing buyer offers beyond the headline price — Fintegre (v2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;350;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+  // Phones get the mobile layout.
+  if (innerWidth < 768) location.replace('/v2/mobile/guide-comparing-buyer-offers/' + location.search + location.hash);
+  // Hide the page until fonts, Tailwind and images are ready, so the hero entrance is seen from its first frame.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
+</script>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link rel="stylesheet" href="/v2/v2.css">
+</head>
+<body>
+<header class="v2-header" aria-label="Main">
+  <div class="v2-header__bar">
+    <a href="/v2/" class="v2-logo" aria-label="Fintegre home"><img decoding="async" alt="" src="/assets/header-mark.svg">Fintegre</a>
+    <nav class="v2-nav">
+      <a href="/v2/platform/">Platform</a>
+      <a href="/v2/solutions/">Solutions</a>
+      <a href="/v2/vendor-network/">Vendor Network</a>
+      <a href="/v2/intelligence/">Intelligence</a>
+      <a href="/v2/insights/">Insights</a>
+      <a href="/v2/company/">Company</a>
+    </nav>
+    <a href="/v2/contact/" class="v2-cta">Discuss your program</a>
+  </div>
+</header>
+
+<main class="page">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:900px; background: radial-gradient(calc(654.55px * var(--s)) calc(300px * var(--s)) at calc(50% - 392.73px * var(--s)) calc(510px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="hero"] .gh-abs { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+  [data-section="hero"] .gh-glow { position: absolute; pointer-events: none; max-width: none; }
+  [data-section="hero"] .gh-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; z-index: 2; }
+  [data-section="hero"] .gh-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .gh-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .gh-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .gh-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .gh-nav a { transition: color .2s; }
+  [data-section="hero"] .gh-nav a:hover, [data-section="hero"] .gh-nav a[aria-current] { color: #F5F7FA; }
+  [data-section="hero"] .gh-btn { display: inline-flex; align-items: center; border-radius: 999px; font: 400 15px/normal 'Geologica', system-ui, sans-serif; white-space: nowrap; border: 0; cursor: pointer; transition: background-color .25s, box-shadow .25s; }
+  [data-section="hero"] .gh-btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .gh-btn--white { background: #fff; color: #0F1115; }
+  [data-section="hero"] .gh-btn--light:hover, [data-section="hero"] .gh-btn--white:hover { background: #B7D7FF; }
+  [data-section="hero"] .gh-btn--ghost { background: transparent; color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="hero"] .gh-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+
+  [data-section="hero"] .gh-copy { left: 120px; top: 168px; width: 610px; display: flex; flex-direction: column; gap: 22px; align-items: flex-start; z-index: 1; }
+  [data-section="hero"] .gh-crumb { font-size: 14px; color: #B7D7FF; line-height: normal; white-space: pre; }
+  [data-section="hero"] .gh-crumb a:hover { color: #F5F7FA; }
+  [data-section="hero"] h1 { margin: 0; font-weight: 400; font-size: 52px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; text-wrap: balance; }
+  [data-section="hero"] .gh-lede { width: 560px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="hero"] .gh-meta { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #A7B0BE; line-height: normal; }
+  [data-section="hero"] .gh-draft { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #A7B0BE; }
+  [data-section="hero"] .gh-draft i { width: 7px; height: 7px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px #A7B0BE; }
+  [data-section="hero"] .gh-ctas { display: flex; gap: 12px; }
+  [data-section="hero"] .gh-ctas .gh-btn { padding: 14px 22px; }
+
+  [data-section="hero"] .gh-card { position: relative; width: 610px; margin-top: 10px; padding: 22px 26px 24px; border-radius: 26px;
+    background: rgba(255,255,255,.07); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(183,215,255,.14); box-shadow: 0 30px 60px rgba(5,8,31,.5); }
+  [data-section="hero"] .gh-card > p { font-size: 13px; color: #A7B0BE; line-height: normal; margin-bottom: 14px; }
+  [data-section="hero"] .gh-card ol { margin: 0; padding: 0; list-style: none; counter-reset: t; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; }
+  [data-section="hero"] .gh-card li { counter-increment: t; display: flex; gap: 10px; font-weight: 300; font-size: 14px; line-height: 1.4; color: rgba(245,247,250,.86); }
+  [data-section="hero"] .gh-card li::before { content: counter(t, decimal-leading-zero); flex: none; font-size: 12px; line-height: 1.6; color: #B7D7FF; }
+
+  [data-section="hero"] .gh-vis { left: 780px; top: 110px; width: 620px; height: 760px; }
+  [data-section="hero"] .gh-cover { position: absolute; overflow: clip; line-height: normal; }
+  [data-section="hero"] .gh-cover p, [data-section="hero"] .gh-cover img { position: absolute; display: block; max-width: none; }
+
+  .motion [data-section="hero"] [data-m][data-ty] { translate: 0 var(--ty); }
+  .motion [data-section="hero"] [data-m][data-tx] { translate: var(--tx) 0; }
+  .motion [data-section="hero"].is-in [data-m][data-ty], .motion [data-section="hero"].is-in [data-m][data-tx] { translate: none; }
+</style>
+  <div class="v2-canvas">
+    <img decoding="async" class="gh-glow" alt="" src="/v2/assets/insights-hero-glow-1.svg" style="left:720px; top:-100px; width:1060px; height:920px;">
+    <img decoding="async" class="gh-glow" alt="" src="/v2/assets/insights-hero-glow-2.svg" style="left:-380px; top:420px; width:960px; height:780px;">
+
+    <div class="gh-abs gh-vis" aria-hidden="true">
+      <img decoding="async" class="gh-glow" alt="" src="/v2/assets/report-room-light-hero.svg" style="left:136.05px; top:60px; width:944.9px; height:640px;">
+      <div class="gh-abs" data-m="right" data-tx="80px" style="--tx:80px; --d:200ms; left:351px; top:150px; width:498px; height:600px; transform:rotate(10deg);">
+        <img decoding="async" alt="" src="/v2/assets/customers-iphone18pro-silver.webp" style="display:block; width:100%; height:100%; object-fit:contain;">
+      </div>
+      <div class="gh-cover" data-m="up" data-ty="90px" style="--ty:90px; --d:400ms; left:59.02px; top:54.67px; width:420px; height:560px; transform:rotate(-4deg); border:1.4px solid rgba(183,215,255,.25); border-radius:25.2px; box-shadow:0 42px 84px -14px rgba(5,8,31,.6); background:linear-gradient(135deg, #5D74FF 0%, #3047EC 71.429%); color:#F5F7FA;">
+        <p style="left:33.6px; top:33.6px; font-size:16.8px; white-space:nowrap;">Fintegre · Guide</p>
+        <img decoding="async" alt="" src="/v2/assets/report-hbar-1.svg" width="101.698" height="98" style="left:33.6px; top:179.2px; opacity:.55;">
+        <img decoding="async" alt="" src="/v2/assets/report-hbar-2.svg" width="127.811" height="154" style="left:114.8px; top:123.2px; opacity:.55;">
+        <img decoding="async" alt="" src="/v2/assets/report-hbar-3.svg" width="153.925" height="210" style="left:196px; top:67.2px; opacity:.55;">
+        <img decoding="async" alt="" src="/v2/assets/report-hbar-4.svg" width="118.019" height="133" style="left:277.2px; top:144.2px; opacity:.55;">
+        <p style="left:33.6px; bottom:76px; width:350px; font-size:32px; line-height:1.06; letter-spacing:-0.03em;">Comparing buyer offers</p>
+        <p style="left:33.6px; bottom:34px; font-size:15px; color:rgba(245,247,250,.8); white-space:nowrap;">Draft · 3 min read</p>
+      </div>
+    </div>
+
+    <div class="gh-abs gh-top">
+      <a href="/v2/" class="gh-logo" aria-label="Fintegre home"><span class="gh-mark"><img decoding="async" alt="" src="/v2/assets/insights-logo-mark.svg"></span>Fintegre</a>
+      <nav class="gh-nav" aria-label="Hero">
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/vendor-network/">Vendor Network</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/insights/" aria-current="page">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/contact/" class="gh-btn gh-btn--light" style="padding:10px 18px;">Discuss your program</a>
+    </div>
+
+    <div class="gh-abs gh-copy" data-fit="64" data-m="up">
+      <p class="gh-crumb"><a href="/v2/insights/">Insights</a>  /  Guide</p>
+      <h1>Comparing buyer offers beyond the headline price</h1>
+      <p class="gh-lede">The highest price is not always the best result. This guide explains expected net recovery and the factors to compare when several qualified buyers make offers for the same device.</p>
+      <div class="gh-meta">
+        <span>Guide  ·  3 min read</span>
+        <span class="gh-draft"><i></i>Draft guide · pending Fintegre review</span>
+      </div>
+      <div class="gh-ctas">
+        <a href="#article" class="gh-btn gh-btn--white">Read the guide</a>
+        <button type="button" class="gh-btn gh-btn--ghost gh-share">Share&nbsp;&nbsp;↗</button>
+      </div>
+      <div class="gh-card" data-m="up" style="--d:700ms;">
+        <p>In this guide</p>
+        <ol><li>What a headline price leaves out</li><li>Expected net recovery</li><li>Factors to compare</li><li>Using completed transactions</li><li>Making the comparison practical</li><li>Sharing results with buyers</li></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="article" id="article" class="v2-sec" data-tone="light" style="--h:4043px; background:#F5F7FA;">
+<style>
+  [data-section="article"] p { margin: 0; }
+  [data-section="article"] .ga-col { position: absolute; left: 360px; top: 120px; width: 720px; display: flex; flex-direction: column; gap: 24px; }
+  [data-section="article"] .ga-lead { font-weight: 300; font-size: 22px; line-height: 1.55; color: rgba(15,17,21,.9); margin-bottom: 8px; }
+  [data-section="article"] h2 { margin: 32px 0 0; font-weight: 400; font-size: 36px; line-height: 1.12; letter-spacing: -0.03em; color: #0F1115; }
+  [data-section="article"] .ga-p { font-weight: 300; font-size: 18px; line-height: 1.65; color: rgba(15,17,21,.78); }
+  [data-section="article"] .ga-cap { font-size: 14px; line-height: 1.5; color: rgba(15,17,21,.55); margin-top: -4px; }
+  [data-section="article"] .ga-list, [data-section="article"] .ga-olist { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  [data-section="article"] .ga-list li, [data-section="article"] .ga-olist li { position: relative; padding-left: 30px; font-weight: 300; font-size: 18px; line-height: 1.6; color: rgba(15,17,21,.78); }
+  [data-section="article"] .ga-list li b, [data-section="article"] .ga-olist li b { font-weight: 400; color: #0F1115; }
+  [data-section="article"] .ga-list li::before { content: ''; position: absolute; left: 4px; top: .7em; width: 7px; height: 7px; border-radius: 50%; background: #3047EC; }
+  [data-section="article"] .ga-olist { counter-reset: o; gap: 16px; }
+  [data-section="article"] .ga-olist li { counter-increment: o; padding-left: 44px; }
+  [data-section="article"] .ga-olist li::before { content: counter(o); position: absolute; left: 0; top: 2px; width: 28px; height: 28px; border-radius: 50%; background: #3047EC; color: #F5F7FA; font-size: 13px; font-weight: 400; line-height: 28px; text-align: center; }
+
+  [data-section="article"] .gf { position: relative; flex: none; margin: 8px 0 8px -120px; width: 960px; padding: 36px 40px 36px; box-sizing: border-box; border-radius: 28px; background: #fff; box-shadow: 0 20px 50px rgba(15,20,51,.08); line-height: normal; }
+  [data-section="article"] .gf-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 30px; }
+  [data-section="article"] .gf-ttl { font-size: 13px; color: rgba(15,17,21,.6); }
+  [data-section="article"] .gf-tag { flex: none; font-size: 12px; color: #A7B0BE; white-space: nowrap; }
+  [data-section="article"] ol.gf-steps, [data-section="article"] ol.gt-track { margin: 0; padding: 0; list-style: none; }
+  [data-section="article"] .gs small, [data-section="article"] .gt-track small { display: block; font-size: 13px; color: rgba(15,17,21,.55); }
+  [data-section="article"] .gs span, [data-section="article"] .gt-track span { display: block; color: #0F1115; letter-spacing: -0.02em; }
+  [data-section="article"] .gs i, [data-section="article"] .gt-track i { display: block; width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: inset 0 0 0 2px #3047EC; position: relative; z-index: 1; }
+  [data-section="article"] .gs.is-hi i { background: #3047EC; box-shadow: 0 0 0 5px rgba(48,71,236,.15); }
+  [data-section="article"] .gs.is-hi span { color: #3047EC; }
+  [data-section="article"] .gf-steps--nv .gs small { color: #3047EC; }
+  [data-section="article"] .gb-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(15,17,21,.07); }
+  [data-section="article"] .gb-row:first-child { border-top: 0; }
+  [data-section="article"] .gb-lab { font-size: 15px; color: #0F1115; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+  [data-section="article"] .gb-lab em { font-style: normal; font-size: 12px; padding: 4px 10px; border-radius: 999px; background: #3047EC; color: #F5F7FA; white-space: nowrap; }
+  [data-section="article"] .gb-bars { display: flex; flex-direction: column; gap: 8px; }
+  [data-section="article"] .gb-bar { display: flex; align-items: center; gap: 12px; }
+  [data-section="article"] .gb-bar i { display: block; height: 14px; border-radius: 7px; transform-origin: 0 50%; }
+  [data-section="article"] .gb-bar span { font-size: 13px; color: #0F1115; white-space: nowrap; }
+  [data-section="article"] .gb-legend { display: flex; gap: 20px; margin-top: 18px; font-size: 13px; color: rgba(15,17,21,.7); }
+  [data-section="article"] .gb-legend span { display: flex; align-items: center; gap: 8px; }
+  [data-section="article"] .gb-legend i { width: 16px; height: 3px; border-radius: 2px; }
+  [data-section="article"] .gt-name p { font-size: 18px; color: #0F1115; letter-spacing: -0.02em; }
+  [data-section="article"] .gt-name small { display: block; margin-top: 4px; font-size: 13px; color: #3047EC; }
+
+  [data-section="article"] .ga-dark { position: relative; flex: none; margin: 8px 0 8px -120px; width: 960px; height: 520px; border-radius: 28px; overflow: clip;
+    background: radial-gradient(436.36px 173.33px at 218.18px 294.67px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="article"] .ga-dark > * { position: absolute; }
+  [data-section="article"] .ga-dark svg { overflow: visible; }
+  [data-section="article"] .ga-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 14px; line-height: normal; color: #F5F7FA; }
+  [data-section="article"] .ga-chip img { width: 7px; height: 7px; display: block; }
+  [data-section="article"] .ga-dtag { right: 24px; bottom: 20px; font-size: 12px; color: #A7B0BE; line-height: normal; }
+
+  [data-section="article"] .ga-cta { position: relative; flex: none; margin: 56px 0 0 -120px; width: 960px; box-sizing: border-box; padding: 56px 64px 60px; border-radius: 28px; overflow: clip; color: #F5F7FA;
+    background: radial-gradient(520px 260px at 180px 300px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="article"] .ga-cta-k { font-size: 14px; color: #B7D7FF; line-height: normal; }
+  [data-section="article"] .ga-cta h3 { margin: 16px 0 0; font-weight: 400; font-size: 40px; line-height: 1.08; letter-spacing: -0.03em; }
+  [data-section="article"] .ga-cta-p { margin-top: 16px; max-width: 600px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.7); }
+  [data-section="article"] .ga-cta-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+  [data-section="article"] .ga-btn { display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s, box-shadow .25s; }
+  [data-section="article"] .ga-btn--white { background: #fff; color: #0F1115; }
+  [data-section="article"] .ga-btn--white:hover { background: #B7D7FF; }
+  [data-section="article"] .ga-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="article"] .ga-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+  [data-section="article"] .ga-std { font-size: 13px; line-height: 1.55; color: rgba(15,17,21,.5); }
+
+  .motion [data-section="article"] .rv [data-rm] { opacity: 0; translate: 0 var(--ty, 40px);
+    transition: opacity .7s var(--ease) var(--d, 0ms), translate 1s var(--ease) var(--d, 0ms), scale .8s var(--ease) var(--d, 0ms); }
+  .motion [data-section="article"] .rv [data-rm="pop"] { translate: none; scale: .6; transition-timing-function: var(--ease), var(--ease), var(--spring); transition-duration: .4s, .4s, .5s; }
+  .motion [data-section="article"] .rv.r-in [data-rm] { opacity: 1; translate: none; scale: 1; }
+  .motion [data-section="article"] .rv [data-rd] { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset var(--dur, .6s) var(--inout) var(--d, 0ms); }
+  .motion [data-section="article"] .rv.r-in [data-rd] { stroke-dashoffset: 0; }
+  .motion [data-section="article"] .rv .gb-bar i { scale: .02 1; transition: scale 1s var(--ease) .3s; }
+  .motion [data-section="article"] .rv.r-in .gb-bar i { scale: 1; }
+  [data-section="article"] .gf-steps { display: flex; position: relative; }
+  [data-section="article"] .gf-steps::before { content: ''; position: absolute; left: 6px; right: 40px; top: 6px; height: 1px; background: rgba(48,71,236,.25); }
+  [data-section="article"] .gs { flex: 1 1 0; display: flex; flex-direction: column; gap: 10px; padding-right: 16px; }
+  [data-section="article"] .gs i { margin-bottom: 8px; }
+  [data-section="article"] .gs span { font-size: 24px; }
+  [data-section="article"] .gf-steps--nv .gs .gs-lab { font-size: 18px; line-height: 1.25; }
+  [data-section="article"] .gt-row { display: grid; grid-template-columns: 200px 1fr; gap: 24px; padding: 24px 0; border-top: 1px solid rgba(15,17,21,.07); }
+  [data-section="article"] .gt-row:first-child { border-top: 0; padding-top: 4px; }
+  [data-section="article"] .gt-track { display: grid; grid-template-columns: repeat(3, 1fr); position: relative; }
+  [data-section="article"] .gt-track::before { content: ''; position: absolute; left: 6px; right: 60px; top: 6px; height: 1px; background: rgba(48,71,236,.25); }
+  [data-section="article"] .gt-track li { display: flex; flex-direction: column; gap: 8px; padding-right: 16px; }
+  [data-section="article"] .gt-track i { margin-bottom: 6px; }
+  [data-section="article"] .gt-track span { font-size: 18px; line-height: 1.3; }
+  [data-section="article"] table.gf-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.45; }
+  [data-section="article"] .gf-table th, [data-section="article"] .gf-table td { text-align: left; vertical-align: top; padding: 16px 20px 16px 0; border-top: 1px solid rgba(15,17,21,.07); }
+  [data-section="article"] .gf-table thead th { border-top: 0; padding-top: 0; font-weight: 400; font-size: 13px; color: #3047EC; }
+  [data-section="article"] .gf-table tbody th { width: 200px; font-weight: 400; font-size: 13px; color: rgba(15,17,21,.55); }
+  [data-section="article"] .gf-table td { font-weight: 300; color: #0F1115; }
+</style>
+  <div class="v2-canvas">
+    <div class="ga-col" data-fit="140">
+      <p class="ga-lead">When several buyers offer to purchase the same device, the highest price is not always the best result. A more useful comparison is expected net recovery: what the program can expect to receive once conditions, costs and timing are taken into account.</p>
+      <h2>What a headline price leaves out</h2>
+      <p class="ga-p">A buyer’s headline price usually assumes a specific condition, a delivery window and the buyer’s own checks. If any of these change, the amount settled can differ from the offer. Two offers with the same headline price can lead to different results.</p>
+      <p class="ga-p">Offers can also differ in what they include. One buyer may collect devices from the store, while another expects the program to arrange delivery. One may pay soon after receipt, another on a longer schedule.</p>
+      <p class="ga-p">For the program, the difference matters twice. It affects the margin on each device, and if credit was set from the headline price, the program may carry a gap between the credit given and the amount recovered.</p>
+      <h2>Expected net recovery</h2>
+      <p class="ga-p">Expected net recovery is an estimate of what a program will recover from a buyer for a device, after likely adjustments and costs. It brings together:</p>
+      <ul class="ga-list"><li>The offer price for the assessed condition.</li><li>How likely the buyer’s check is to confirm that condition.</li><li>Logistics and handling costs to reach that buyer.</li><li>Payment terms and timing.</li><li>How long the offer is valid compared with the expected handover date.</li></ul>
+      <figure class="gf rv" aria-label="Figure 1, Three offers for the same device. Illustrative · sample data.">
+        <div data-rm><div class="gf-head"><p class="gf-ttl">Three offers for the same device</p><p class="gf-tag">Illustrative · sample data</p></div>
+        <div class="gf-bars"><div class="gb-row"><p class="gb-lab">Buyer A</p><div class="gb-bars"><div class="gb-bar"><i style="width:100.0%; background:#B7D7FF;"></i><span>€410</span></div><div class="gb-bar"><i style="width:90.7%; background:#3047EC;"></i><span>€372</span></div></div></div><div class="gb-row is-hi"><p class="gb-lab">Buyer B<em>Highest expected net recovery</em></p><div class="gb-bars"><div class="gb-bar"><i style="width:97.6%; background:#B7D7FF;"></i><span>€400</span></div><div class="gb-bar"><i style="width:93.9%; background:#3047EC;"></i><span>€385</span></div></div></div><div class="gb-row"><p class="gb-lab">Buyer C</p><div class="gb-bars"><div class="gb-bar"><i style="width:96.3%; background:#B7D7FF;"></i><span>€395</span></div><div class="gb-bar"><i style="width:87.8%; background:#3047EC;"></i><span>€360</span></div></div></div></div><div class="gb-legend"><span><i style="background:#B7D7FF"></i>Headline price</span><span><i style="background:#3047EC"></i>Expected net recovery</span></div></div>
+      </figure>
+      <p class="ga-cap">Figure 1 · The highest headline price (Buyer A) is not the highest expected net recovery (Buyer B). Sample data.</p>
+      <p class="ga-p">The estimate does not need to be exact to be useful. It needs to be consistent, so that offers are compared on the same basis, and it needs to be updated as completed transactions show how each buyer actually settles.</p>
+      <h2>Factors to compare</h2>
+      <ul class="ga-list"><li><b>Condition terms:</b> how the buyer grades devices and how disputes are handled.</li><li><b>Re-grading history:</b> how often the buyer’s assessment has matched the original assessment in completed transactions.</li><li><b>Logistics:</b> where the device must be sent, who pays and how long it takes.</li><li><b>Payment terms:</b> when and how the buyer settles.</li><li><b>Offer validity:</b> how long the price holds and what happens if the device arrives later.</li><li><b>Capacity:</b> whether the buyer can take the expected volume for that model.</li></ul>
+      <p class="ga-p">Not every factor carries the same weight in every program. A program that needs settlement quickly may weigh payment terms more heavily; a program with limited logistics may prefer buyers who collect locally.</p>
+      <h2>Using completed transactions</h2>
+      <p class="ga-p">The best evidence for these factors is the program’s own completed transactions. Over time, they show which buyers settle close to their offers and which adjust more often. Where there is little history, treat estimates with care and review them as records build up.</p>
+      <p class="ga-p">Record the reason for every settlement that differs from its offer. Without the reason, a difference cannot be traced to the buyer, the original assessment or the timing.</p>
+      <p class="ga-p">Look at differences by model and condition as well as by buyer. A buyer may settle closely for recent phones but adjust more often for older devices, and the comparison should reflect that.</p>
+      <h2>Making the comparison practical</h2>
+      <p class="ga-p">Staff at the counter should not have to weigh these factors themselves. The comparison can run in the background, so the customer sees one clear credit value and the device is routed to the eligible offer with the strongest expected net recovery under the program’s rules. Review those rules regularly with commercial and operations teams.</p>
+      <p class="ga-p">Keep a record of which offer was selected for each device and why. This supports reviews with buyers and makes routing decisions easy to explain to commercial teams.</p>
+      <h2>Sharing results with buyers</h2>
+      <p class="ga-p">Comparing offers is not only an internal exercise. Sharing settlement records with buyers helps resolve recurring differences, for example a grading standard that is applied differently. Clear, shared records support a fair conversation about condition terms and prices.</p>
+      <p class="ga-p">Agree in advance how disputes are raised, what evidence is needed and how long each step can take.</p>
+      <p class="ga-std">Illustrative workflow and sample data. Values, buyer availability, timing and supported features depend on the agreed program and market.</p>
+      <div class="ga-cta rv">
+        <div data-rm>
+          <p class="ga-cta-k">Next step</p>
+          <h3>Compare offers on what you can expect to recover.</h3>
+          <p class="ga-cta-p">Tell us how your program routes devices to buyers today. We will discuss how offers could be compared for your devices and markets.</p>
+          <div class="ga-cta-btns"><a href="/v2/contact/?program=trade-in" class="ga-btn ga-btn--white">Discuss your trade-in program</a><a href="/v2/contact/?topic=data" class="ga-btn ga-btn--ghost">Discuss your data and reporting needs</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-section="related" id="related" class="v2-sec" data-tone="light" style="--h:900px; background:#F5F7FA;">
+<style>
+  [data-section="related"] p { margin: 0; }
+  [data-section="related"] h2 { position: absolute; left: 120px; top: 120px; margin: 0; font-weight: 400; font-size: 56px; line-height: normal; letter-spacing: -0.04em; color: #0F1115; white-space: nowrap; }
+  [data-section="related"] .rl-all { position: absolute; left: 1166px; top: 130px; padding: 14px 22px; border-radius: 999px; box-shadow: inset 0 0 0 1px rgba(15,17,21,.2);
+    font-size: 15px; line-height: normal; color: #0F1115; white-space: pre; transition: background-color .25s, color .25s, box-shadow .25s; }
+  [data-section="related"] .rl-all:hover { background: #0F1115; color: #F5F7FA; box-shadow: none; }
+  [data-section="related"] .gc { position: absolute; display: block; overflow: clip; isolation: isolate; line-height: normal; white-space: nowrap; }
+  [data-section="related"] .gc > * { position: absolute; display: block; max-width: none; margin: 0; }
+  [data-section="related"] .gc .lb-ph { transition: transform 1.2s var(--ease); }
+  [data-section="related"] .gc:hover .lb-ph { transform: scale(1.03); }
+  [data-section="related"] .gc-chip { display: flex !important; align-items: center; border-radius: 999px; color: #F5F7FA; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  [data-section="related"] .gc-chip img { display: block; }
+  [data-section="related"] .rl-cover { border-radius: 24px; box-shadow: 0 24px 50px -10px rgba(15,20,51,.16); }
+  [data-section="related"] .rl-meta { position: absolute; top: 684px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+  [data-section="related"] .rl-meta small { font-size: 13px; color: #3047EC; line-height: normal; white-space: nowrap; }
+  [data-section="related"] .rl-meta a { width: 360px; font-size: 22px; line-height: 1.22; letter-spacing: -0.02em; color: #0F1115; transition: color .2s; }
+  [data-section="related"] .rl-meta a:hover { color: #3047EC; }
+  [data-section="related"] .rl-meta a.rl-read { width: auto; margin-top: 4px; font-size: 14px; letter-spacing: 0; color: #3047EC; }
+</style>
+  <div class="v2-canvas">
+    <h2 data-m="up">Related guides</h2>
+    <a href="/v2/insights/#library" class="rl-all" data-m="up" style="--d:100ms">All guides  →</a>
+
+        <a href="/v2/guide-measuring-trade-in-value/" class="gc rl-cover" aria-label="How to measure trade-in value from quote to settlement" data-m="up" style="--d:200ms; left:120px; top:260px; width:384px; height:400px; background:linear-gradient(140deg, #5D74FF 0%, #3047EC 71.429%); ">
+        <img decoding="async" alt="" src="/v2/assets/insights-cbar-1.svg" style="left:27.2px; top:129.5px; width:87.3px; height:50.9px;">
+        <img decoding="async" alt="" src="/v2/assets/insights-cbar-2.svg" style="left:91.2px; top:98.9px; width:87.3px; height:81.5px;">
+        <img decoding="async" alt="" src="/v2/assets/insights-cbar-3.svg" style="left:155.2px; top:71.3px; width:87.3px; height:109.1px;">
+        <img decoding="async" alt="" src="/v2/assets/insights-cbar-4.svg" style="left:219.2px; top:110.5px; width:87.3px; height:69.8px;">
+        <img decoding="async" class="lb-ph" alt="iPhone 18 Pro in burgundy" src="/v2/assets/report-iphone18pro-burgundy.webp" style="left:200px; top:120px; width:230px; height:278px; object-fit:contain; filter:drop-shadow(0 20px 40px rgba(5,8,31,.5));">
+        <p style="left:22.0px; top:22.0px; font-size:12.00px; color:#F5F7FA;">Fintegre · Guide</p>
+        <div class="gc-chip" style="left:22.0px; bottom:22.0px; padding:10.0px 16.0px; gap:8.0px; font-size:14.00px; background:rgba(15,17,21,.55);"><img decoding="async" alt="" src="/v2/assets/insights-dot.svg" style="width:7.0px; height:7.0px;">Quote · credit · settlement</div>
+      </a>
+    <a href="/v2/guide-buyer-participation/" class="gc rl-cover" aria-label="What buyers need to participate in an enterprise trade-in program" data-m="up" style="--d:350ms; left:528px; top:260px; width:384px; height:400px; background:#000; ">
+        <img decoding="async" alt="" src="/v2/assets/insights-room-light.svg" style="left:-38px; top:-48px; width:461px; height:508px; pointer-events:none;">
+        <img decoding="async" class="lb-ph" alt="MacBook Pro" src="/v2/assets/programs-macbookpro.webp" style="left:61px; top:136px; width:307px; height:188px; object-fit:contain; filter:drop-shadow(0 24px 40px rgba(0,0,0,.45));">
+        <p style="left:22.0px; top:22.0px; font-size:12.00px; color:#F5F7FA;">Fintegre · Guide</p>
+        <div class="gc-chip" style="left:22.0px; bottom:22.0px; padding:10.0px 16.0px; gap:8.0px; font-size:14.00px; background:rgba(15,17,21,.55);"><img decoding="async" alt="" src="/v2/assets/insights-dot.svg" style="width:7.0px; height:7.0px;">Qualification · terms</div>
+      </a>
+    <a href="/v2/guide-apple-premium-resellers/" class="gc rl-cover" aria-label="Building an assisted trade-in journey for Apple Premium Resellers" data-m="up" style="--d:500ms; left:936px; top:260px; width:384px; height:400px; background:radial-gradient(173px 132px at 84px 224px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,56,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; ">
+        <img decoding="async" alt="" src="/v2/assets/insights-room-light.svg" style="left:-38px; top:-48px; width:461px; height:508px; pointer-events:none;">
+        <img decoding="async" class="lb-ph" alt="Two iPhone Air in sky blue" src="/v2/assets/report-iphoneair-skyblue.webp" style="left:110px; top:64px; width:210px; height:368px; object-fit:contain; filter:drop-shadow(0 24px 40px rgba(0,0,0,.45));">
+        <p style="left:22.0px; top:22.0px; font-size:12.00px; color:#F5F7FA;">Fintegre · Guide</p>
+        <div class="gc-chip" style="left:22.0px; bottom:22.0px; padding:10.0px 16.0px; gap:8.0px; font-size:14.00px; background:rgba(15,17,21,.55);"><img decoding="async" alt="" src="/v2/assets/insights-dot.svg" style="width:7.0px; height:7.0px;">Assisted · in store</div>
+      </a>
+
+        <div class="rl-meta" style="left:120px; --d:300ms;" data-m="up">
+      <small>Guide · 3 min read</small>
+      <a href="/v2/guide-measuring-trade-in-value/">How to measure trade-in value from quote to settlement</a>
+      <a href="/v2/guide-measuring-trade-in-value/" class="rl-read" aria-label="Read the guide: How to measure trade-in value from quote to settlement">Read the guide&nbsp;&nbsp;→</a>
+    </div>
+    <div class="rl-meta" style="left:528px; --d:450ms;" data-m="up">
+      <small>Guide · 3 min read</small>
+      <a href="/v2/guide-buyer-participation/">What buyers need to participate in an enterprise trade-in program</a>
+      <a href="/v2/guide-buyer-participation/" class="rl-read" aria-label="Read the guide: What buyers need to participate in an enterprise trade-in program">Read the guide&nbsp;&nbsp;→</a>
+    </div>
+    <div class="rl-meta" style="left:936px; --d:600ms;" data-m="up">
+      <small>Guide · 3 min read</small>
+      <a href="/v2/guide-apple-premium-resellers/">Building an assisted trade-in journey for Apple Premium Resellers</a>
+      <a href="/v2/guide-apple-premium-resellers/" class="rl-read" aria-label="Read the guide: Building an assisted trade-in journey for Apple Premium Resellers">Read the guide&nbsp;&nbsp;→</a>
+    </div>
+  </div>
+</section>
+
+<section data-section="closing" id="closing" class="v2-sec" style="--h:900px; background: radial-gradient(calc(1080px * var(--s)) calc(560px * var(--s)) at 50% calc(330px * var(--s)), rgba(48,71,236,.42) 0%, rgba(20,30,110,.22) 50%, rgba(15,17,21,0) 100%), linear-gradient(180deg, rgba(20,30,110,0) 55%, rgba(20,30,110,.55) 100%), #0F1115;" data-tone="dark">
+  <style>
+    [data-section="closing"] .cl-head {
+      position: absolute; left: 70px; top: 284px; width: 1300px; margin: 0; text-align: center;
+      font-weight: 400; font-size: 150px; line-height: .92; letter-spacing: -4.5px;
+      background: linear-gradient(180deg, rgba(245,247,250,.95) 0%, rgba(245,247,250,.1) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+    }
+    [data-section="closing"] .cl-head em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 168px; }
+    [data-section="closing"] .cl-foot {
+      position: absolute; left: 20px; top: 557px; width: 1400px; height: 343px; padding: 48px 56px 36px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: radial-gradient(700px 380px at 10% 0%, rgba(48,71,236,.28) 0%, rgba(48,71,236,0) 70%), linear-gradient(135deg, rgba(28,34,72,.92) 0%, rgba(17,20,34,.92) 100%); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 -20px 60px rgba(0,0,0,.45); border-radius: 32px; color: #F5F7FA; line-height: normal;
+    }
+    [data-section="closing"] .cl-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    [data-section="closing"] .cl-sub { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+    [data-section="closing"] .cl-logo { position: relative; display: block; width: 99.3px; height: 30px; }
+    [data-section="closing"] .cl-logo img { position: absolute; display: block; max-width: none; }
+    [data-section="closing"] .cl-sub h3 { margin: 0; font-weight: 500; font-size: 14px; color: #F5F7FA; }
+    [data-section="closing"] .cl-sub p { margin: 0; font-size: 13px; color: rgba(255,255,255,.6); }
+    [data-section="closing"] .cl-sub p a { color: #B7D7FF; text-decoration: underline; text-underline-offset: 2px; }
+    [data-section="closing"] .cl-sub p[data-state="bad"] { color: #FF9A9E; }
+    [data-section="closing"] .cl-sub p[data-state="ok"] { color: #B7D7FF; }
+    [data-section="closing"] form { display: flex; gap: 8px; align-items: flex-start; }
+    [data-section="closing"] input {
+      width: 260px; height: 46px; padding: 0 16px; border-radius: 10px; border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08); color: #fff; font: 400 14px 'Geologica', system-ui, sans-serif; outline: none; transition: border-color .25s, background-color .25s;
+    }
+    [data-section="closing"] input::placeholder { color: rgba(255,255,255,.5); }
+    [data-section="closing"] input:focus { border-color: rgba(183,215,255,.6); background: rgba(255,255,255,.1); }
+    [data-section="closing"] input[aria-invalid="true"] { border-color: rgba(255,140,140,.7); }
+    [data-section="closing"] button {
+      border: 0; cursor: pointer; padding: 12px 18px; border-radius: 10px; background: #fff; color: #0F1115;
+      font: 500 14px/18px 'Geologica', system-ui, sans-serif; transition: background-color .25s, transform .25s var(--ease);
+    }
+    [data-section="closing"] button:hover { background: #B7D7FF; }
+    [data-section="closing"] button[disabled] { cursor: default; }
+    [data-section="closing"] .cl-cols { display: flex; gap: 96px; white-space: nowrap; }
+    [data-section="closing"] .cl-cols nav { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+    [data-section="closing"] .cl-cols span { font-size: 13px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-cols a, [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 14px; color: #fff; transition: opacity .2s; }
+    [data-section="closing"] .cl-cols a:hover, [data-section="closing"] .cl-legal a:hover { opacity: .7; }
+    [data-section="closing"] .cl-bottom { display: flex; justify-content: space-between; font-size: 12px; }
+    [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
+    [data-section="closing"] .cl-legal { display: flex; gap: 10px; }
+    [data-section="closing"] .cl-legal a { font-size: 12px; color: rgba(255,255,255,.8); }
+  </style>
+  <div class="v2-canvas">
+    <h2 class="cl-head" data-m="up">Make every device<br>worth <em>more</em></h2>
+
+    <footer class="cl-foot" data-m="up" style="--d:250ms">
+      <div class="cl-top">
+        <div class="cl-sub">
+          <a href="/v2/" class="cl-logo" aria-label="Fintegre home">
+            <img decoding="async" src="/v2/assets/closing-logo-mark.svg" alt="" width="32.1605" height="23.0769" style="left:3.77px; top:3.46px;">
+            <img decoding="async" src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
+          </a>
+          <h3>Get trade-in insights</h3>
+          <p>Guides and program notes from Fintegre. No spam.</p>
+          <form class="cl-form" name="newsletter" method="POST" action="/v2/thanks/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+              <input type="hidden" name="form-name" value="newsletter">
+              <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          <p data-nl-msg aria-live="polite">See our <a href="/v2/legal/#privacy">privacy notice</a>.</p>
+        </div>
+        <div class="cl-cols">
+            <nav aria-label="Platform"><span>Platform</span>
+              <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device Value Intelligence</a><a href="/v2/vendor-network/">Vendor Network</a><a href="/v2/platform/#integrations">Integrations</a>
+            </nav>
+            <nav aria-label="Solutions"><span>Solutions</span>
+              <a href="/v2/solutions/#apr">Apple Premium Resellers</a><a href="/v2/solutions/#retailers">Electronics retailers</a><a href="/v2/solutions/#telecom">Telecom operators</a><a href="/v2/solutions/#brands">Device brands and OEM</a>
+            </nav>
+            <nav aria-label="Company"><span>Company</span>
+              <a href="/v2/company/">About</a><a href="/v2/insights/">Insights</a><a href="/v2/contact/">Contact</a>
+            </nav>
+        </div>
+      </div>
+      <div class="cl-bottom">
+        <small>© 2026 Fintegre. All rights reserved.</small>
+        <nav class="cl-legal" aria-label="Legal"><a href="/v2/legal/#privacy">Privacy</a><a href="/v2/legal/#cookies">Cookies</a><a href="/v2/legal/#imprint">Imprint</a></nav>
+      </div>
+    </footer>
+  </div>
+</section>
+</main>
+<script src="/v2/v2.js"></script>
+<script>
+// Guide hero: Share uses the native share sheet when there is one, else copies the link.
+(() => {
+  const btn = document.querySelector('[data-section="hero"] .gh-share');
+  if (!btn) return;
+  const label = btn.innerHTML;
+  btn.addEventListener('click', async () => {
+    const data = { title: document.title, url: location.href.split('#')[0] };
+    try {
+      if (navigator.share) { await navigator.share(data); return; }
+      await navigator.clipboard.writeText(data.url);
+      btn.textContent = 'Link copied';
+    } catch (e) { if (e && e.name === 'AbortError') return; btn.textContent = 'Copy failed'; }
+    setTimeout(() => { btn.innerHTML = label; }, 2000);
+  });
+})();
+</script>
+<script>
+// Article: the section is several screens tall, so each figure reveals on its own as it scrolls in.
+(() => {
+  const blocks = document.querySelectorAll('[data-section="article"] .rv');
+  if (!blocks.length) return;
+  const io = new IntersectionObserver((es) => {
+    for (const e of es) if (e.isIntersecting) { e.target.classList.add('r-in'); io.unobserve(e.target); }
+  }, { rootMargin: '0px 0px -15% 0px' });
+  blocks.forEach((b) => io.observe(b));
+})();
+</script>
+<script>
+// Closing footer: newsletter sign-up.
+// Netlify form "newsletter": validates in the browser, posts with fetch and confirms in place (falls back to a normal POST).
+(() => {
+  const sec = document.querySelector('[data-section="closing"]');
+  if (!sec) return;
+  sec.querySelectorAll('form[name="newsletter"]').forEach((form) => {
+    const input = form.querySelector('input[type="email"]'), btn = form.querySelector('button');
+    const msg = form.parentElement.querySelector('[data-nl-msg]');
+    const base = msg ? msg.innerHTML : '';
+    const say = (html, kind) => { if (!msg) return; msg.innerHTML = html; msg.dataset.state = kind || ''; };
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!input.checkValidity()) {
+        input.setAttribute('aria-invalid', 'true'); say('Please enter a valid work email.', 'bad'); input.focus(); return;
+      }
+      if (!window.fetch) { form.submit(); return; }
+      btn.disabled = true;
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+        .then((r) => {
+          if (!r.ok) throw new Error(r.status);
+          input.value = ''; input.placeholder = 'You are subscribed'; input.disabled = true; btn.textContent = 'Subscribed';
+          say('Thank you. You are on the list.', 'ok');
+        })
+        .catch(() => { btn.disabled = false; say('Something went wrong. Please try again.', 'bad'); });
+    });
+    input.addEventListener('input', () => { input.removeAttribute('aria-invalid'); if (msg && msg.dataset.state === 'bad') say(base, ''); });
+  });
+})();
+</script>
+</body>
+</html>

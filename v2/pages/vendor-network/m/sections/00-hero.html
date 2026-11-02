@@ -1,0 +1,92 @@
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" data-fit style="--h:1400px; background:#0F1115;">
+<style>
+  [data-section="hero"] p, [data-section="hero"] h1 { margin: 0; }
+  /* Top bar (drawn in the hero, like the other mobile heroes) */
+  [data-section="hero"] .mv-top { position: absolute; left: 12px; top: 12px; width: 366px; height: 60px; padding: 8px 8px 8px 18px; border-radius: 999px; z-index: 3;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: inset 0 0 0 1px rgba(183,215,255,.14), 0 16px 40px rgba(0,0,0,.35); }
+  [data-section="hero"] .mv-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .mv-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .mv-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .mv-act { display: flex; align-items: center; gap: 6px; }
+  [data-section="hero"] .mv-pill { height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .mv-burger { width: 44px; height: 44px; border: 0; padding: 0; border-radius: 999px; background: rgba(255,255,255,.08);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  [data-section="hero"] .mv-burger i { display: block; height: 1.5px; border-radius: 1px; background: #F5F7FA; }
+
+  [data-section="hero"] .mv-flow { position: relative; padding: 112px 0 40px; }
+  [data-section="hero"] .mv-room { position: absolute; left: -300px; top: 40px; width: 900px; height: 760px; max-width: none; pointer-events: none; }
+  [data-section="hero"] .mv-copy { position: relative; padding: 0 20px; display: flex; flex-direction: column; align-items: flex-start; }
+  [data-section="hero"] .mv-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px 8px 12px; border-radius: 999px; font-size: 13px; line-height: normal; color: #F5F7FA; white-space: nowrap; background: rgba(48,71,236,.92); }
+  [data-section="hero"] .mv-eyebrow img { width: 6px; height: 6px; display: block; }
+  [data-section="hero"] h1 { margin-top: 20px; width: 350px; font-weight: 400; font-size: 42px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .mv-lede { margin-top: 20px; width: 350px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(245,247,250,.78); }
+  [data-section="hero"] .mv-body { margin-top: 12px; width: 350px; font-weight: 300; font-size: 15px; line-height: 1.55; color: rgba(245,247,250,.6); }
+  [data-section="hero"] .mv-ctas { margin-top: 28px; width: 350px; display: flex; flex-direction: column; gap: 10px; }
+  [data-section="hero"] .mv-btn { display: flex; justify-content: center; align-items: center; height: 52px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; }
+  [data-section="hero"] .mv-btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .mv-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+
+  [data-section="hero"] .mv-vis { position: relative; margin-top: 36px; width: 390px; height: 790px; }
+  [data-section="hero"] .mv-photo { position: absolute; left: 0; top: 0; width: 390px; height: 540px; overflow: hidden; }
+  [data-section="hero"] .mv-photo img { display: block; width: 390px; height: 540px; object-fit: cover; }
+  [data-section="hero"] .mv-shade { position: absolute; left: 0; top: 0; width: 390px; height: 540px; pointer-events: none;
+    background: linear-gradient(180deg, #0F1115 0%, rgba(15,17,21,0) 22%, rgba(15,17,21,0) 55%, rgba(15,17,21,.85) 85%, #0F1115 100%), rgba(20,30,110,.12); }
+  [data-section="hero"] .mv-node { position: absolute; left: 183px; top: 298px; width: 34px; height: 34px; }
+  [data-section="hero"] .mv-node img { display: block; width: 34px; height: 34px; }
+  [data-section="hero"] .mv-fibre { position: absolute; left: 199px; top: 332px; overflow: visible; pointer-events: none; }
+  [data-section="hero"] .mv-card { position: absolute; left: 30px; top: 400px; width: 330px; display: flex; flex-direction: column; gap: 14px; padding: 22px 24px; border-radius: 26px; line-height: normal;
+    background: rgba(15,17,21,.55); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="hero"] .mv-card__k { font-size: 13px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="hero"] .mv-card__t { font-weight: 300; font-size: 21px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .mv-card dl { display: flex; flex-direction: column; gap: 9px; margin: 0; font-size: 14px; }
+  [data-section="hero"] .mv-card dl div { display: flex; justify-content: space-between; gap: 12px; white-space: nowrap; }
+  [data-section="hero"] .mv-card dt { font-weight: 300; color: #A7B0BE; }
+  [data-section="hero"] .mv-card dd { margin: 0; color: #F5F7FA; }
+  [data-section="hero"] .mv-card__div { height: 1px; background: rgba(183,215,255,.14); }
+  [data-section="hero"] .mv-card__fit { display: flex; align-items: center; justify-content: space-between; padding: 13px 14px; border-radius: 14px; background: rgba(48,71,236,.9); color: #F5F7FA; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .mv-card__s { font-size: 12px; font-weight: 300; color: #A7B0BE; }
+</style>
+  <div class="v2-canvas">
+    <div class="mv-top" data-m="down">
+      <a href="/v2/" class="mv-logo" aria-label="Fintegre home"><span class="mv-mark"><img alt="" src="/v2/assets/hero-logo.svg"></span>Fintegre</a>
+      <div class="mv-act">
+        <a href="/v2/contact/" class="mv-pill">Discuss your program</a>
+        <button type="button" class="mv-burger" data-menu-open aria-label="Open menu" aria-controls="m-menu" aria-expanded="false"><i style="width:18px"></i><i style="width:12px"></i></button>
+      </div>
+    </div>
+    <div class="mv-flow" data-fit-flow>
+      <img class="mv-room" alt="" src="/v2/assets/company-hero-roomlight.svg">
+      <div class="mv-copy">
+        <p class="mv-eyebrow" data-m="up" style="--d:80ms"><img alt="" src="/v2/assets/ecosystem-dot.svg">For businesses that buy trade-in devices</p>
+        <h1 data-m="up" style="--d:140ms">Join the network behind better trade‑in value.</h1>
+        <p class="mv-lede" data-m="up" style="--d:220ms">Connect your buying capacity with device supply from participating retailers, telecom operators and device brands.</p>
+        <p class="mv-body" data-m="up" style="--d:280ms">Fintegre coordinates trade-in opportunities, device information and transaction workflows so qualified buyers can assess opportunities against their purchasing criteria. In Fintegre, a vendor is a business that buys trade-in devices: refurbishers, recommerce businesses and other device buyers.</p>
+        <div class="mv-ctas" data-m="up" style="--d:340ms">
+          <a href="#apply" class="mv-btn mv-btn--light">Apply to join the vendor network</a>
+          <a href="#apply" class="mv-btn mv-btn--ghost">Discuss your buying requirements</a>
+        </div>
+      </div>
+      <div class="mv-vis">
+        <div class="mv-photo" data-m="scale" style="--d:300ms"><img alt="A device buyer's team member checking a trade-in iPhone at a warehouse intake desk" src="/v2/mobile/assets/ecosystem-warehouse.webp" width="390" height="540"></div>
+        <div class="mv-shade" aria-hidden="true"></div>
+        <svg class="mv-fibre" width="2" height="70" viewBox="0 0 2 70" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1200ms" d="M1 0.7V69" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.6"/></svg>
+        <div class="mv-node" data-m="pop" style="--d:1000ms" aria-hidden="true"><img alt="" src="/v2/assets/ecosystem-node.svg"></div>
+        <article class="mv-card" data-m="up" style="--d:700ms" aria-label="Example opportunity as a buyer sees it, sample data">
+          <p class="mv-card__k">Opportunity · retail trade-in</p>
+          <p class="mv-card__t">iPhone 15 Pro · 256 GB</p>
+          <dl>
+            <div><dt>Screen</dt><dd>Grade A</dd></div>
+            <div><dt>Battery health</dt><dd>91 %</dd></div>
+            <div><dt>Casing</dt><dd>Grade B</dd></div>
+            <div><dt>Diagnostics report</dt><dd>Available</dd></div>
+            <div><dt>Photos</dt><dd>6 attached</dd></div>
+          </dl>
+          <div class="mv-card__div" aria-hidden="true"></div>
+          <p class="mv-card__fit"><span>Fits your buying criteria</span><span>Yes</span></p>
+          <p class="mv-card__s">Sample data</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

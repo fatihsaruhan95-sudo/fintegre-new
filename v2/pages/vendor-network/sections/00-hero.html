@@ -1,0 +1,116 @@
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:900px; background:#0F1115;">
+<style>
+  [data-section="hero"] .vh-a { position: absolute; }
+  [data-section="hero"] p { margin: 0; }
+
+  /* Photo: a buyer's intake desk in a warehouse, indigo tint, scrims toward the copy. */
+  [data-section="hero"] .vh-photo { left: 600px; top: 0; width: 1376px; height: 900px; overflow: hidden; }
+  [data-section="hero"] .vh-photo img { display: block; width: 1376px; height: 900px; max-width: none; object-fit: cover; transform-origin: 50% 50%; }
+  [data-section="hero"] .vh-tint { left: 600px; top: 0; width: 1376px; height: 900px; background: rgba(20,30,110,.14); pointer-events: none; }
+  [data-section="hero"] .vh-scrim { left: 0; top: 0; width: 1100px; height: 900px; pointer-events: none;
+    background: linear-gradient(90deg, #0F1115 0%, #0F1115 50%, rgba(15,17,21,.85) 64%, rgba(15,17,21,.3) 84%, rgba(15,17,21,0) 100%); }
+  [data-section="hero"] .vh-scrim::before { content: ''; position: absolute; right: 100%; top: 0; width: 2000px; height: 100%; background: #0F1115; }
+  [data-section="hero"] .vh-fade-top { left: -1000px; top: 0; width: 3440px; height: 200px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(15,17,21,.9) 0%, rgba(15,17,21,.45) 55%, rgba(15,17,21,0) 100%); }
+  [data-section="hero"] .vh-fade-bot { left: -1000px; top: 660px; width: 3440px; height: 240px; pointer-events: none;
+    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.96) 100%); }
+  [data-section="hero"] .vh-room { left: -340px; top: 120px; width: 1120px; height: 920px; max-width: none; pointer-events: none; }
+
+  /* Top bar (part of the hero design) */
+  [data-section="hero"] .vh-top { left: 64px; top: 58px; width: 1312px; height: 44px; display: flex; align-items: center; justify-content: space-between; z-index: 2; }
+  [data-section="hero"] .vh-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .vh-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .vh-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .vh-nav { display: flex; gap: 32px; font-size: 14px; color: rgba(245,247,250,.72); white-space: nowrap; }
+  [data-section="hero"] .vh-nav a { transition: color .2s; }
+  [data-section="hero"] .vh-nav a:hover, [data-section="hero"] .vh-nav a[aria-current] { color: #F5F7FA; }
+  [data-section="hero"] .vh-pill { display: inline-flex; align-items: center; padding: 10px 18px; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s; }
+  [data-section="hero"] .vh-pill:hover { background: #fff; }
+
+  /* Copy */
+  [data-section="hero"] .vh-copy { left: 120px; top: 168px; width: 600px; display: flex; flex-direction: column; align-items: flex-start; }
+  [data-section="hero"] .vh-eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px 8px 12px; border-radius: 999px; font-size: 13px; line-height: normal; color: #F5F7FA; white-space: nowrap;
+    background: rgba(48,71,236,.92); }
+  [data-section="hero"] .vh-eyebrow img { width: 6px; height: 6px; display: block; }
+  [data-section="hero"] h1 { margin: 24px 0 0; width: 600px; font-weight: 400; font-size: 64px; line-height: 1.02; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .vh-lede { margin-top: 24px; width: 500px; font-weight: 300; font-size: 18px; line-height: 1.55; color: rgba(245,247,250,.78); }
+  [data-section="hero"] .vh-body { margin-top: 14px; width: 500px; font-weight: 300; font-size: 15px; line-height: 1.55; color: rgba(245,247,250,.6); }
+  [data-section="hero"] .vh-ctas { margin-top: 32px; display: flex; gap: 12px; }
+  [data-section="hero"] .vh-btn { display: inline-flex; align-items: center; padding: 15px 24px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s, box-shadow .25s; }
+  [data-section="hero"] .vh-btn--light { background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .vh-btn--light:hover { background: #fff; }
+  [data-section="hero"] .vh-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+  [data-section="hero"] .vh-btn--ghost:hover { box-shadow: inset 0 0 0 1px rgba(245,247,250,.55); }
+
+  /* Buyer-side opportunity card (sample data) + fibre from the phone in hand */
+  [data-section="hero"] .vh-card { left: 790px; top: 372px; width: 300px; display: flex; flex-direction: column; gap: 14px; padding: 24px 26px; border-radius: 26px; line-height: normal;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="hero"] .vh-card__k { font-size: 13px; color: #B7D7FF; white-space: nowrap; }
+  [data-section="hero"] .vh-card__t { font-weight: 300; font-size: 22px; color: #F5F7FA; white-space: nowrap; }
+  [data-section="hero"] .vh-card dl { display: flex; flex-direction: column; gap: 9px; margin: 0; font-size: 14px; }
+  [data-section="hero"] .vh-card dl div { display: flex; justify-content: space-between; gap: 12px; white-space: nowrap; }
+  [data-section="hero"] .vh-card dt { font-weight: 300; color: #A7B0BE; }
+  [data-section="hero"] .vh-card dd { margin: 0; color: #F5F7FA; }
+  [data-section="hero"] .vh-card__div { height: 1px; background: rgba(183,215,255,.14); }
+  [data-section="hero"] .vh-card__fit { display: flex; align-items: center; justify-content: space-between; padding: 13px 14px; border-radius: 14px; background: rgba(48,71,236,.9); color: #F5F7FA; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .vh-card__s { font-size: 12px; font-weight: 300; color: #A7B0BE; }
+  [data-section="hero"] .vh-fibre { left: 1090px; top: 470px; overflow: visible; pointer-events: none; }
+  [data-section="hero"] .vh-node { left: 1268px; top: 499px; width: 34px; height: 34px; }
+  [data-section="hero"] .vh-node img { display: block; width: 34px; height: 34px; }
+
+  .motion [data-section="hero"] .vh-photo { opacity: 0; transition: opacity 1.2s var(--ease); }
+  .motion [data-section="hero"] .vh-photo img { scale: 1.06; transition: scale 4.5s var(--ease); }
+  .motion [data-section="hero"].is-in .vh-photo { opacity: 1; }
+  .motion [data-section="hero"].is-in .vh-photo img { scale: 1; }
+</style>
+  <div class="v2-canvas">
+    <div class="vh-a vh-photo"><img alt="A device buyer's team member checking a trade-in iPhone at a warehouse intake desk" src="/v2/assets/ecosystem-warehouse.webp" width="1376" height="900"></div>
+    <div class="vh-a vh-tint" aria-hidden="true"></div>
+    <div class="vh-a vh-scrim" aria-hidden="true"></div>
+    <div class="vh-a vh-fade-top" aria-hidden="true"></div>
+    <div class="vh-a vh-fade-bot" aria-hidden="true"></div>
+    <img class="vh-a vh-room" alt="" src="/v2/assets/company-hero-roomlight.svg">
+
+    <div class="vh-a vh-top" data-m="down">
+      <a href="/v2/" class="vh-logo" aria-label="Fintegre home"><span class="vh-mark"><img alt="" src="/v2/assets/hero-logo.svg"></span>Fintegre</a>
+      <nav class="vh-nav" aria-label="Main">
+        <a href="/v2/platform/">Platform</a>
+        <a href="/v2/solutions/">Solutions</a>
+        <a href="/v2/vendor-network/" aria-current="page">Vendor Network</a>
+        <a href="/v2/intelligence/">Intelligence</a>
+        <a href="/v2/insights/">Insights</a>
+        <a href="/v2/company/">Company</a>
+      </nav>
+      <a href="/v2/contact/" class="vh-pill">Discuss your program</a>
+    </div>
+
+    <div class="vh-a vh-copy" data-m="up" style="--d:150ms">
+      <p class="vh-eyebrow"><img alt="" src="/v2/assets/ecosystem-dot.svg">For businesses that buy trade-in devices</p>
+      <h1>Join the network<br>behind better<br>trade‑in value.</h1>
+      <p class="vh-lede">Connect your buying capacity with device supply from participating retailers, telecom operators and device brands.</p>
+      <p class="vh-body">Fintegre coordinates trade-in opportunities, device information and transaction workflows so qualified buyers can assess opportunities against their purchasing criteria. In Fintegre, a vendor is a business that buys trade-in devices: refurbishers, recommerce businesses and other device buyers.</p>
+      <div class="vh-ctas">
+        <a href="#apply" class="vh-btn vh-btn--light">Apply to join the vendor network</a>
+        <a href="#apply" class="vh-btn vh-btn--ghost">Discuss your buying requirements</a>
+      </div>
+    </div>
+
+    <svg class="vh-a vh-fibre" width="190" height="60" viewBox="0 0 190 60" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:1900ms" d="M0.7 0.7C70 0.7 110 45.7 180 45.7" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.6"/></svg>
+    <div class="vh-a vh-node" data-m="pop" style="--d:1700ms" aria-hidden="true"><img alt="" src="/v2/assets/ecosystem-node.svg"></div>
+
+    <article class="vh-a vh-card" data-m="up" style="--d:1100ms" aria-label="Example opportunity as a buyer sees it, sample data">
+      <p class="vh-card__k">Opportunity · retail trade-in</p>
+      <p class="vh-card__t">iPhone 15 Pro · 256 GB</p>
+      <dl>
+        <div><dt>Screen</dt><dd>Grade A</dd></div>
+        <div><dt>Battery health</dt><dd>91 %</dd></div>
+        <div><dt>Casing</dt><dd>Grade B</dd></div>
+        <div><dt>Diagnostics report</dt><dd>Available</dd></div>
+        <div><dt>Photos</dt><dd>6 attached</dd></div>
+      </dl>
+      <div class="vh-card__div" aria-hidden="true"></div>
+      <p class="vh-card__fit"><span>Fits your buying criteria</span><span>Yes</span></p>
+      <p class="vh-card__s">Sample data</p>
+    </article>
+  </div>
+</section>

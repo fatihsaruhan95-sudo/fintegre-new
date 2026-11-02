@@ -1,0 +1,61 @@
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" data-fit style="--h:1180px; background: radial-gradient(calc(195px * var(--s)) calc(440px * var(--s)) at calc(50% - 19.5px * var(--s)) calc(616px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="hero"] p, [data-section="hero"] h1 { margin: 0; }
+  [data-section="hero"] .mh-glow { position: absolute; pointer-events: none; max-width: none; display: block; }
+  [data-section="hero"] .mh-flow { position: relative; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; padding: 116px 20px 48px; }
+  [data-section="hero"] .mh-top { position: absolute; left: 12px; top: 12px; width: 366px; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 8px 8px 8px 18px; border-radius: 999px; z-index: 2;
+    background: rgba(15,17,21,.55); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+  [data-section="hero"] .mh-logo { display: flex; align-items: center; gap: 10px; font-size: 16px; font-weight: 500; letter-spacing: -0.01em; color: #F5F7FA; }
+  [data-section="hero"] .mh-mark { position: relative; width: 26.4px; height: 20px; }
+  [data-section="hero"] .mh-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
+  [data-section="hero"] .mh-act { display: flex; gap: 6px; align-items: center; }
+  [data-section="hero"] .mh-cta { height: 44px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .mh-burger { width: 44px; height: 44px; border: 0; padding: 0; border-radius: 999px; background: rgba(255,255,255,.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; }
+  [data-section="hero"] .mh-burger i { display: block; height: 1.5px; border-radius: 1px; background: #F5F7FA; }
+  [data-section="hero"] h1 { width: 350px; font-weight: 400; font-size: 44px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="hero"] .mh-lede { width: 345px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.72); }
+  [data-section="hero"] .mh-btn { display: flex; justify-content: center; align-items: center; width: 350px; height: 52px; border-radius: 999px; font-size: 15px; line-height: normal; white-space: nowrap; background: #F5F7FA; color: #0F1115; }
+  [data-section="hero"] .mh-vis { position: relative; width: 350px; height: 600px; }
+  [data-section="hero"] .mh-vis > * { position: absolute; }
+  [data-section="hero"] .mh-phone { left: 40px; top: 10px; width: 319px; height: 560px; object-fit: contain; display: block; }
+  [data-section="hero"] .mh-card { left: 0; top: 200px; width: 300px; padding: 24px 24px 26px; border-radius: 26px; display: flex; flex-direction: column; gap: 14px; white-space: nowrap;
+    background: linear-gradient(rgba(255,255,255,.05), rgba(255,255,255,.05)), rgba(15,17,21,.62); border: 1px solid rgba(183,215,255,.14);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
+  [data-section="hero"] .mh-card .lbl { font-size: 13px; color: #B7D7FF; }
+  [data-section="hero"] .mh-card ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  [data-section="hero"] .mh-card li { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; background: rgba(255,255,255,.05); font-size: 14px; color: #F5F7FA; }
+  [data-section="hero"] .mh-card li img { width: 6px; height: 6px; }
+  [data-section="hero"] .mh-card li:first-child { background: rgba(48,71,236,.9); }
+</style>
+  <div class="v2-canvas">
+    <img class="mh-glow" alt="" src="/v2/mobile/assets/design-your-program-glow-1.svg" style="left:-340px; top:-140px; width:720px; height:660px;">
+    <img class="mh-glow" alt="" src="/v2/mobile/assets/design-your-program-glow-2.svg" style="left:-120px; top:380px; width:820px; height:820px;">
+    <div class="mh-top" data-m="down">
+      <a href="/v2/" class="mh-logo" aria-label="Fintegre home"><span class="mh-mark"><img alt="" src="/v2/assets/hero-logo.svg"></span>Fintegre</a>
+      <div class="mh-act">
+        <a href="/v2/contact/" class="mh-cta" aria-current="page">Discuss your program</a>
+        <button type="button" class="mh-burger" data-menu-open aria-label="Open menu" aria-controls="m-menu" aria-expanded="false"><i style="width:18px"></i><i style="width:12px"></i></button>
+      </div>
+    </div>
+    <div class="mh-flow" data-fit-flow>
+      <h1 data-m="up" style="--d:100ms">Let’s discuss your device program.</h1>
+      <p class="mh-lede" data-m="up" style="--d:180ms">Tell us about your business and the markets you want to serve. We will review your objectives, channels, eligible devices, commercial model, integrations and operating requirements.</p>
+      <a href="#enquiry" class="mh-btn" data-m="up" style="--d:260ms">Start your enquiry</a>
+      <div class="mh-vis">
+        <img alt="" src="/v2/mobile/assets/design-your-program-roomlight.svg" style="left:-80px; top:-70px; width:580px; height:580px; max-width:none;">
+        <img class="mh-phone" data-m="right" style="--d:300ms" alt="iPhone 17 in Lavender" src="/v2/assets/design-your-program-iphone17-lavender.webp">
+        <div class="mh-card" data-m="pop" style="--d:800ms" aria-label="What we review together">
+          <p class="lbl">What we review together</p>
+          <ul>
+            <li><img alt="" src="/v2/assets/ecosystem-dot.svg">Objectives</li>
+            <li><img alt="" src="/v2/assets/ecosystem-dot.svg">Channels</li>
+            <li><img alt="" src="/v2/assets/ecosystem-dot.svg">Eligible devices</li>
+            <li><img alt="" src="/v2/assets/ecosystem-dot.svg">Commercial model</li>
+            <li><img alt="" src="/v2/assets/ecosystem-dot.svg">Integrations</li>
+            <li><img alt="" src="/v2/assets/ecosystem-dot.svg">Operating requirements</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

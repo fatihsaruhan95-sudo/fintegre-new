@@ -1,3 +1,9 @@
 # V2 is the site. V1 stays reachable at /index.html until it is removed.
 /   /v2/   302!
 /docs/*   /v2/   302!
+/v2/design-your-program/*          /v2/contact/          301
+/v2/mobile/design-your-program/*   /v2/mobile/contact/   301
+/v2/customers/*                    /v2/case-study/       301
+/v2/mobile/customers/*             /v2/mobile/case-study/ 301
+/v2/report/*                       /v2/insights/         301
+/v2/mobile/report/*                /v2/mobile/insights/  301

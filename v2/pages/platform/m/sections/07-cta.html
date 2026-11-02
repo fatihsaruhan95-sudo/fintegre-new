@@ -1,0 +1,32 @@
+<section data-section="cta" id="cta" class="v2-sec" data-tone="dark" style="--h:860px; background:#0F1115;">
+  <style>
+    .motion [data-section="cta"] [data-m="up"] { translate: 0 var(--ty, 40px); }
+    .motion [data-section="cta"].is-in [data-m] { translate: none; }
+    /* the canvas is its own blend group, so give it the ground colour for the photo's lighten blend */
+    [data-section="cta"] .v2-canvas { background: #0F1115; }
+    [data-section="cta"] .ct-photo { position: absolute; left: -330px; top: 10px; width: 900px; height: 475px; object-fit: cover; mix-blend-mode: lighten; pointer-events: none; max-width: none; }
+    [data-section="cta"] .ct-fade-b { position: absolute; left: 0; top: 280px; width: 390px; height: 240px; background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.9) 60%, #0F1115 100%); pointer-events: none; }
+    [data-section="cta"] .ct-glow { position: absolute; left: -320px; top: 420px; width: 740px; height: 700px; max-width: none; pointer-events: none; }
+    [data-section="cta"] h2 { position: absolute; left: 20px; top: 420px; width: 350px; margin: 0; font-weight: 400; font-size: 40px; line-height: 1; letter-spacing: -1.6px; color: #F5F7FA; }
+    [data-section="cta"] .ct-body { position: absolute; left: 20px; top: 524px; width: 340px; margin: 0; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
+    [data-section="cta"] .ct-btns { position: absolute; left: 20px; top: 660px; display: flex; flex-wrap: wrap; gap: 10px; width: 350px; }
+    [data-section="cta"] .ct-btn { display: flex; align-items: center; justify-content: center; height: 48px; padding: 0 18px; border-radius: 999px; font-size: 14px; line-height: normal; white-space: pre; -webkit-tap-highlight-color: transparent; transition: background-color .25s, box-shadow .25s; }
+    [data-section="cta"] .ct-btn--light { background: #F5F7FA; color: #0F1115; }
+    [data-section="cta"] .ct-btn--light:active { background: #fff; }
+    [data-section="cta"] .ct-btn--ghost { color: #F5F7FA; box-shadow: inset 0 0 0 1px rgba(245,247,250,.24); }
+    [data-section="cta"] .ct-btn--ghost:active { box-shadow: inset 0 0 0 1px rgba(245,247,250,.5); }
+  </style>
+  <div class="v2-canvas">
+    <img class="ct-photo" src="/v2/assets/platform-cta-iphone-camera.webp" alt="" width="900" height="475" loading="lazy" data-m="fade" style="--d:100ms">
+    <div class="ct-fade-b"></div>
+    <img class="ct-glow" src="/v2/mobile/assets/platform-cta-glow.svg" alt="" width="740" height="700">
+
+    <h2 data-m="up" style="--d:200ms">Plan your program with Fintegre.</h2>
+    <p class="ct-body" data-m="up" style="--ty:30px; --d:400ms">Tell us about your channels, markets and the programs you are considering. We will walk through how assessment, offers, handover and settlement could work for you.</p>
+    <div class="ct-btns" data-m="up" style="--ty:24px; --d:550ms">
+      <a class="ct-btn ct-btn--light" href="/v2/contact/">Discuss your program</a>
+        <a class="ct-btn ct-btn--ghost" href="/v2/contact/?topic=integration">Discuss your integration</a>
+    </div>
+
+  </div>
+</section>

@@ -6,7 +6,7 @@
 <title>Company — Fintegre (v2)</title>
 <script>
   // Phones get this page; wider screens go back to the desktop v2.
-  if (innerWidth >= 768) location.replace('/v2/company/' + location.hash);
+  if (innerWidth >= 768) location.replace('/v2/company/' + location.search + location.hash);
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion', 'v2-loading');
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,9 +26,9 @@
 </header>
 
 <main class="page">
-<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:1010px; background:#0F1115;">
+<section data-section="hero" id="hero" class="v2-sec" data-tone="dark" style="--h:1060px; background:#0F1115;">
 <style>
-  /* 390-wide adaptation of the desktop "Hero · Mission" (team photo, ops card, stat chips). */
+  /* 390-wide adaptation of the desktop "Hero · Mission" (team photo, "what we bring together" card). */
   [data-section="hero"] .ch-a { position: absolute; }
   [data-section="hero"] p { margin: 0; }
 
@@ -41,12 +41,12 @@
   [data-section="hero"] .ch-mark { position: relative; width: 26.4px; height: 20px; }
   [data-section="hero"] .ch-mark img { position: absolute; left: 2.53px; top: 2.33px; width: 21.38px; height: 15.34px; }
   [data-section="hero"] .ch-actions { display: flex; align-items: center; gap: 6px; }
-  [data-section="hero"] .ch-pill { height: 44px; padding: 0 16px; display: inline-flex; align-items: center; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
+  [data-section="hero"] .ch-pill { height: 44px; padding: 0 14px; display: inline-flex; align-items: center; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 14px; white-space: nowrap; }
   [data-section="hero"] .ch-burger { width: 44px; height: 44px; border: 0; padding: 0; border-radius: 999px; background: rgba(255,255,255,.08);
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
   [data-section="hero"] .ch-burger i { display: block; height: 1.5px; border-radius: 1px; background: #F5F7FA; }
 
-  [data-section="hero"] .ch-room { left: -330px; top: 260px; width: 760px; height: 624px; max-width: none; pointer-events: none; }
+  [data-section="hero"] .ch-room { left: -330px; top: 390px; width: 760px; height: 624px; max-width: none; pointer-events: none; }
 
   /* Copy */
   [data-section="hero"] .ch-copy { left: 20px; top: 116px; width: 350px; z-index: 1; }
@@ -54,30 +54,22 @@
   [data-section="hero"] .ch-lede { margin-top: 20px; width: 345px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
 
   /* Photo with tint and fades */
-  [data-section="hero"] .ch-photo { left: 0; top: 400px; width: 390px; height: 520px; overflow: hidden; }
+  [data-section="hero"] .ch-photo { left: 0; top: 530px; width: 390px; height: 520px; overflow: hidden; }
   [data-section="hero"] .ch-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 32% 50%; transform-origin: 50% 50%; }
   [data-section="hero"] .ch-photo::after { content: ''; position: absolute; inset: 0; pointer-events: none;
     background: linear-gradient(180deg, #0F1115 0%, rgba(15,17,21,.55) 18%, rgba(15,17,21,0) 34%, rgba(15,17,21,0) 66%, rgba(15,17,21,.96) 100%), rgba(20,30,110,.14); }
 
   /* Ops card, fibre, node */
-  [data-section="hero"] .ch-card { left: 140px; top: 430px; width: 230px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; padding: 14px 18px; border-radius: 20px; line-height: normal; white-space: nowrap;
+  [data-section="hero"] .ch-card { left: 150px; top: 580px; width: 220px; display: flex; flex-direction: column; gap: 6px; align-items: flex-start; padding: 14px 18px; border-radius: 20px; line-height: normal; white-space: nowrap;
     background: rgba(255,255,255,.08); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
   [data-section="hero"] .ch-card__k { font-size: 12px; color: #B7D7FF; }
-  [data-section="hero"] .ch-card__v { font-weight: 300; font-size: 18px; color: #F5F7FA; font-variant-numeric: tabular-nums; }
-  [data-section="hero"] .ch-card__s { font-weight: 300; font-size: 12px; color: #A7B0BE; }
+  [data-section="hero"] .ch-card__list { margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  [data-section="hero"] .ch-card__list li { display: flex; align-items: center; gap: 9px; font-weight: 300; font-size: 15px; color: #F5F7FA; }
+  [data-section="hero"] .ch-card__list img { width: 6px; height: 6px; display: block; }
+  [data-section="hero"] .ch-cta { display: inline-flex; align-items: center; height: 48px; margin-top: 24px; padding: 0 22px; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 15px; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
   [data-section="hero"] .ch-fibre { left: 0; top: 0; overflow: visible; pointer-events: none; }
-  [data-section="hero"] .ch-node { left: 326px; top: 761px; width: 34px; height: 34px; }
+  [data-section="hero"] .ch-node { left: 326px; top: 921px; width: 34px; height: 34px; }
   [data-section="hero"] .ch-node img { display: block; width: 34px; height: 34px; }
-
-  /* Stat chips */
-  [data-section="hero"] .ch-chips { left: 20px; top: 872px; width: 350px; display: flex; flex-wrap: wrap; gap: 6px; }
-  [data-section="hero"] .ch-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px 10px 14px; border-radius: 999px; white-space: nowrap; line-height: normal;
-    background: rgba(15,17,21,.55); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-  [data-section="hero"] .ch-chip img { width: 6px; height: 6px; display: block; }
-  [data-section="hero"] .ch-chip b { font-weight: 400; font-size: 22px; color: #F5F7FA; }
-  [data-section="hero"] .ch-chip span { font-weight: 300; font-size: 13px; color: #A7B0BE; }
-  [data-section="hero"] .ch-chip--indigo { background: rgba(48,71,236,.92); }
-  [data-section="hero"] .ch-chip--indigo span { color: rgba(245,247,250,.85); }
 
   /* Entrance */
   .motion [data-section="hero"] [data-cm] { opacity: 0; translate: 0 var(--ty, 0px);
@@ -91,86 +83,151 @@
   .motion [data-section="hero"] [data-draw] { transition-duration: 1s; }
 </style>
   <div class="v2-canvas">
-    <div class="ch-a ch-photo"><img decoding="async" alt="The Fintegre team at work in the Vilnius office" src="/v2/assets/company-hero-team.webp" width="1536" height="864"></div>
+    <div class="ch-a ch-photo"><img decoding="async" alt="Members of the Fintegre team at work" src="/v2/assets/company-hero-team.webp" width="1536" height="864"></div>
     <img decoding="async" class="ch-a ch-room" alt="" src="/v2/assets/company-hero-roomlight.svg">
 
     <div class="ch-a ch-top">
       <a href="/v2/" class="ch-logo" aria-label="Fintegre home"><span class="ch-mark"><img decoding="async" alt="" src="/v2/assets/hero-logo.svg"></span>Fintegre</a>
       <div class="ch-actions">
-        <a href="/v2/design-your-program/" class="ch-pill">Design your program</a>
+        <a href="/v2/contact/" class="ch-pill">Discuss your program</a>
         <button type="button" class="ch-burger" data-menu-open aria-label="Open menu" aria-controls="m-menu" aria-expanded="false"><i style="width:18px"></i><i style="width:12px"></i></button>
       </div>
     </div>
 
     <div class="ch-a ch-copy" data-cm style="--d:200ms; --to:.8s; --tt:1s; --ty:30px;">
-      <h1>Make every<br>device worth<br>more.</h1>
-      <p class="ch-lede">Fintegre is the platform behind trade-in and device programs at retailers, telecom operators and device brands. We keep devices in use longer and put their value back in the customer’s hand.</p>
+      <h1>The team behind your trade-in program.</h1>
+      <p class="ch-lede">Fintegre brings together retail journeys, device assessment, buying partners and transaction coordination. We work with your teams to define a program that fits your channels, markets and operating requirements.</p>
+      <a href="/v2/contact/" class="ch-cta">Discuss your program</a>
     </div>
 
-    <svg class="ch-a ch-fibre" width="390" height="1010" viewBox="0 0 390 1010" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:2300ms" d="M366 528C392 610 372 700 343 778" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
+    <svg class="ch-a ch-fibre" width="390" height="1060" viewBox="0 0 390 1060" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:2300ms" d="M366 688C392 770 372 860 343 938" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
     <div class="ch-a ch-node" data-cm="pop" style="--d:2200ms; --to:.3s;" aria-hidden="true"><img decoding="async" alt="" src="/v2/assets/company-hero-node.svg"></div>
 
     <div class="ch-a ch-card" data-cm style="--d:1800ms; --to:.72s; --tt:.9s; --ty:30px;">
-      <p class="ch-card__k">Vilnius ops · today</p>
-      <p class="ch-card__v"><span data-ops-count>4,812</span> devices checked</p>
-      <p class="ch-card__s">across 12 markets · avg. 41 s</p>
+      <p class="ch-card__k">What we bring together</p>
+      <ul class="ch-card__list">
+        <li><img decoding="async" alt="" src="/v2/assets/company-dot-ice.svg">Retail journeys</li>
+        <li><img decoding="async" alt="" src="/v2/assets/company-dot-ice.svg">Device assessment</li>
+        <li><img decoding="async" alt="" src="/v2/assets/company-dot-ice.svg">Buying partners</li>
+        <li><img decoding="async" alt="" src="/v2/assets/company-dot-ice.svg">Transaction coordination</li>
+      </ul>
     </div>
 
-    <div class="ch-a ch-chips">
-      <div class="ch-chip" data-cm style="--d:1200ms; --to:.56s; --tt:.7s; --ty:24px;"><img decoding="async" alt="" src="/v2/assets/company-dot-ice.svg"><b>2019</b><span>Founded in Vilnius</span></div>
-      <div class="ch-chip" data-cm style="--d:1320ms; --to:.56s; --tt:.7s; --ty:24px;"><img decoding="async" alt="" src="/v2/assets/company-dot-ice.svg"><b>12</b><span>Markets</span></div>
-      <div class="ch-chip" data-cm style="--d:1440ms; --to:.56s; --tt:.7s; --ty:24px;"><img decoding="async" alt="" src="/v2/assets/company-dot-ice.svg"><b>1.2M</b><span>Devices checked</span></div>
-      <div class="ch-chip ch-chip--indigo" data-cm style="--d:1560ms; --to:.56s; --tt:.7s; --ty:24px;"><img decoding="async" alt="" src="/v2/assets/company-dot-ice.svg"><b>90</b><span>People</span></div>
+  </div>
+</section>
+
+<section data-section="milestones" id="milestones" class="v2-sec" data-tone="dark" style="--h:1400px; background: radial-gradient(calc(195px * var(--s)) calc(415.31px * var(--s)) at 50% calc(830.62px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<style>
+  [data-section="milestones"] p, [data-section="milestones"] h2 { margin: 0; }
+  [data-section="milestones"] .cm-bg { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(195px 415.31px at 195px 830.62px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
+  [data-section="milestones"] .cm-glow { position: absolute; max-width: none; pointer-events: none; }
+  /* Photo: a team member and a store associate at a trade-in counter (cropped for mobile), tint and fades. */
+  [data-section="milestones"] .cm-a { position: absolute; pointer-events: none; }
+  [data-section="milestones"] .cm-photo { left: -15px; top: 0; width: 420px; height: 518.4px; overflow: hidden; }
+  [data-section="milestones"] .cm-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
+  [data-section="milestones"] .cm-tint { left: 0; top: 0; width: 390px; height: 518.4px; background: rgba(20,30,110,.08); }
+  [data-section="milestones"] .cm-fade-top { left: 0; top: 0; width: 390px; height: 90px; background: linear-gradient(180deg, rgba(15,17,21,.75) 0%, rgba(15,17,21,0) 100%); }
+  [data-section="milestones"] .cm-fade-bot { left: 0; top: 250px; width: 390px; height: 300px;
+    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.7) 40%, rgba(15,17,21,.95) 70%, #0F1115 100%); }
+  [data-section="milestones"] .cm-col { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; padding: 360px 20px 88px; }
+  [data-section="milestones"] h2 { width: 350px; font-weight: 400; font-size: 36px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
+  [data-section="milestones"] .cm-lede { width: 320px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
+  [data-section="milestones"] .cm-timeline { position: relative; flex: none; width: 350px; height: 760px; }
+  [data-section="milestones"] .cm-line { position: absolute; left: 5.4px; top: 22px; overflow: visible; pointer-events: none; }
+  [data-section="milestones"] .cm-dot { position: absolute; padding: 0; border: 0; background: none; cursor: pointer; line-height: 0; -webkit-tap-highlight-color: transparent; }
+  [data-section="milestones"] .cm-dot img { display: block; transition: scale .4s var(--spring), filter .3s; }
+  [data-section="milestones"] .cm-dot.is-hot img { scale: 1.35; filter: brightness(1.6); }
+  [data-section="milestones"] .cm-dot--now.is-hot img { scale: 1.1; filter: none; }
+  [data-section="milestones"] .cm-ms { position: absolute; left: 32px; width: 318px; font-weight: 300; }
+  [data-section="milestones"] .cm-ms b { display: block; font-weight: 300; font-size: 28px; line-height: normal; letter-spacing: -0.03em; color: #F5F7FA; transition: color .3s; }
+  [data-section="milestones"] .cm-ms p { margin-top: 5px; width: 300px; font-size: 14px; line-height: 1.5; color: rgba(245,247,250,.65); transition: color .3s; }
+  [data-section="milestones"] .cm-ms.is-hot b { color: #B7D7FF; }
+  [data-section="milestones"] .cm-ms.is-hot p { color: rgba(245,247,250,.85); }
+  .motion [data-section="milestones"] [data-m="up"] { translate: 0 var(--ty, 24px); }
+  .motion [data-section="milestones"].is-in [data-m] { translate: none; }
+  .motion [data-section="milestones"] .cm-photo { opacity: 0; transition: opacity 1.3s var(--ease) 100ms; }
+  .motion [data-section="milestones"] .cm-photo img { scale: 1.06; transition: scale 4.5s var(--ease) 100ms; }
+  .motion [data-section="milestones"].is-in .cm-photo { opacity: 1; }
+  .motion [data-section="milestones"].is-in .cm-photo img { scale: 1; }
+  .motion [data-section="milestones"] .cm-line path { transition-duration: 2.2s; }
+</style>
+  <div class="v2-canvas">
+    <div class="cm-bg"></div>
+    <div class="cm-a cm-photo"><img alt="A Fintegre team member and a store associate checking a phone with a laptop at a trade-in counter" src="/v2/mobile/assets/company-milestones-team.webp" width="700" height="864" loading="lazy" decoding="async"></div>
+    <div class="cm-a cm-tint"></div>
+    <div class="cm-a cm-fade-top"></div>
+    <div class="cm-a cm-fade-bot"></div>
+    <img decoding="async" class="cm-glow" alt="" src="/v2/mobile/assets/company-ms-glow.svg" style="left:-120px; top:510px; width:820px; height:820px;">
+    <div class="cm-col">
+      <h2 data-m="up" style="--d:100ms">Our journey.</h2>
+      <p class="cm-lede" data-m="up" style="--d:200ms">From affordability solutions to trade-in programs with retailers, telecom operators and e-commerce partners.</p>
+      <div class="cm-timeline">
+        <svg class="cm-line" width="1.2" height="672" viewBox="0 0 1.2 672" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:300ms" d="M0.6 0V672" stroke-width="1.2" stroke="#B7D7FF" stroke-opacity="0.35"/></svg>
+          <button type="button" class="cm-dot" style="left:0; top:16px; --d:300ms" data-m="pop" data-year="2017" aria-label="2017"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:10px; --d:350ms" data-m="up" data-year="2017"><b>2017</b><p>Founded in Istanbul to provide affordability solutions.</p></div>
+          <button type="button" class="cm-dot" style="left:0; top:128px; --d:420ms" data-m="pop" data-year="2019" aria-label="2019"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:122px; --d:470ms" data-m="up" data-year="2019"><b>2019</b><p>Launched our first trade-in counter in retail stores.</p></div>
+          <button type="button" class="cm-dot" style="left:0; top:240px; --d:540ms" data-m="pop" data-year="2020" aria-label="2020"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:234px; --d:590ms" data-m="up" data-year="2020"><b>2020</b><p>Partnered with Apple to deliver a unified online experience.</p></div>
+          <button type="button" class="cm-dot" style="left:0; top:352px; --d:660ms" data-m="pop" data-year="2023" aria-label="2023"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:346px; --d:710ms" data-m="up" data-year="2023"><b>2023</b><p>Became the first aggregator to implement Apple Trade In Kit.</p></div>
+          <button type="button" class="cm-dot" style="left:0; top:464px; --d:780ms" data-m="pop" data-year="2024" aria-label="2024"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:458px; --d:830ms" data-m="up" data-year="2024"><b>2024</b><p>Expanded into telecom operator and e-commerce integrations.</p></div>
+          <button type="button" class="cm-dot" style="left:0; top:576px; --d:900ms" data-m="pop" data-year="2025" aria-label="2025"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
+          <div class="cm-ms" style="top:570px; --d:950ms" data-m="up" data-year="2025"><b>2025</b><p>Launched our first European operations in the Baltics.</p></div>
+          <button type="button" class="cm-dot cm-dot--now is-hot" style="left:-18px; top:670px; --d:1020ms" data-m="pop" data-year="2026" aria-label="2026"><img decoding="async" alt="" src="/v2/assets/company-ms-dot-now.svg" width="49" height="49"></button>
+          <div class="cm-ms is-hot" style="top:682px; --d:1070ms" data-m="up" data-year="2026"><b>2026</b><p>Surpassed one million devices checked across three regions.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section data-section="believe" id="believe" class="v2-sec" data-tone="light" style="--h:978px; background:#F5F7FA;">
+<section data-section="founders" id="founders" class="v2-sec" data-tone="light" style="--h:1560px; background:#F5F7FA;">
 <style>
-  [data-section="believe"] p, [data-section="believe"] h2, [data-section="believe"] h3 { margin: 0; }
-  [data-section="believe"] .cb-col { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; padding: 96px 20px 88px; }
-  [data-section="believe"] h2 { width: 350px; font-weight: 400; font-size: 40px; line-height: 1.02; letter-spacing: -0.04em; color: #0F1115; }
-  [data-section="believe"] .cb-lede { width: 320px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.62); }
-  [data-section="believe"] .cb-list { width: 350px; margin: 0; padding: 0; list-style: none; }
-  [data-section="believe"] .cb-item { display: flex; gap: 16px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid rgba(15,17,21,.1); outline: none; -webkit-tap-highlight-color: transparent; }
-  [data-section="believe"] .cb-item:first-child { border-top: 1px solid rgba(15,17,21,.1); }
-  [data-section="believe"] .cb-dot { position: relative; flex: none; width: 10px; height: 10px; margin-top: 1px; }
-  [data-section="believe"] .cb-dot img { position: absolute; inset: 0; width: 10px; height: 10px; display: block; transition: opacity .35s var(--ease), scale .45s var(--spring); }
-  [data-section="believe"] .cb-dot img + img { opacity: 0; scale: .4; }
-  [data-section="believe"] .cb-item.is-active .cb-dot img + img { opacity: 1; scale: 1; }
-  [data-section="believe"] .cb-text { display: flex; flex-direction: column; gap: 10px; flex: 1; min-width: 0; }
-  [data-section="believe"] .cb-text h3 { font-weight: 400; font-size: 22px; line-height: normal; letter-spacing: -0.02em; color: #0F1115; }
-  [data-section="believe"] .cb-text p { font-weight: 300; font-size: 15px; line-height: 1.55; color: rgba(15,17,21,.62); }
-  .motion [data-section="believe"] [data-m="up"] { translate: 0 var(--ty, 30px); }
-  .motion [data-section="believe"].is-in [data-m] { translate: none; }
+  [data-section="founders"] p, [data-section="founders"] h2, [data-section="founders"] h3 { margin: 0; }
+  [data-section="founders"] .cf-col { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; padding: 96px 20px 88px; }
+  [data-section="founders"] h2 { width: 350px; font-weight: 400; font-size: 40px; line-height: 1.02; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="founders"] .cf-lede { width: 320px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.62); }
+  [data-section="founders"] .cf-list { width: 350px; margin: 20px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 44px; }
+  [data-section="founders"] .cf-item { display: flex; flex-direction: column; }
+  /* Portrait placeholder: dark glass frame in the brand language until Fintegre supplies authentic portraits. */
+  [data-section="founders"] .cf-frame { position: relative; width: 350px; height: 300px; border-radius: 28px; overflow: hidden;
+    background: radial-gradient(240px 180px at 50% 40%, rgba(48,71,236,.42) 0%, rgba(48,71,236,0) 100%), linear-gradient(135deg, rgba(28,34,72,.96) 0%, rgba(17,20,34,.96) 100%);
+    border: 1px solid rgba(183,215,255,.14); box-shadow: 0 30px 60px rgba(15,20,64,.18); }
+  [data-section="founders"] .cf-initials { position: absolute; left: 0; right: 0; top: 104px; text-align: center; font-weight: 300; font-size: 72px; line-height: 1; letter-spacing: -0.03em; color: #B7D7FF; }
+  [data-section="founders"] .cf-caption { position: absolute; left: 22px; bottom: 20px; display: flex; align-items: center; gap: 8px; font-size: 13px; line-height: normal; color: #A7B0BE; white-space: nowrap; }
+  [data-section="founders"] .cf-caption img { width: 6px; height: 6px; display: block; }
+  [data-section="founders"] .cf-item h3 { margin-top: 20px; font-weight: 400; font-size: 24px; line-height: normal; letter-spacing: -0.02em; color: #0F1115; }
+  [data-section="founders"] .cf-role { margin-top: 4px; font-weight: 300; font-size: 15px; line-height: normal; color: #5C6373; }
+  .motion [data-section="founders"] [data-m="up"] { translate: 0 var(--ty, 30px); }
+  .motion [data-section="founders"].is-in [data-m] { translate: none; }
 </style>
   <div class="v2-canvas">
-    <div class="cb-col">
-      <h2 data-m="up" style="--d:100ms">What we believe.</h2>
-      <p class="cb-lede" data-m="up" style="--d:200ms">Four ideas that decide how we build the product and who we work with.</p>
-      <ul class="cb-list">
-        <li class="cb-item is-active" tabindex="0" data-m="up" style="--d:350ms">
-          <span class="cb-dot"><img decoding="async" alt="" src="/v2/assets/company-believe-dot.svg"><img decoding="async" alt="" src="/v2/assets/company-believe-dot-on.svg"></span>
-          <div class="cb-text"><h3>A used device is stock, not waste.</h3><p>Every phone in a drawer has a price. Our job is to find it and pay it out while it is still high.</p></div>
+    <div class="cf-col">
+      <h2 data-m="up" style="--d:100ms">Our co-founders.</h2>
+      <p class="cf-lede" data-m="up" style="--d:200ms">Fintegre is led by its three co-founders.</p>
+      <ul class="cf-list">
+        <li class="cf-item" data-m="up" style="--d:300ms">
+          <div class="cf-frame" role="img" aria-label="Portrait of Ali Nihat Tirkeş to be supplied by Fintegre"><span class="cf-initials" aria-hidden="true">AT</span><p class="cf-caption" aria-hidden="true"><img decoding="async" alt="" src="/v2/assets/company-dot-ice.svg">Portrait to be supplied by Fintegre</p></div>
+          <h3>Ali Nihat Tirkeş</h3>
+          <p class="cf-role">Co-founder</p>
         </li>
-        <li class="cb-item" tabindex="0" data-m="up" style="--d:450ms">
-          <span class="cb-dot"><img decoding="async" alt="" src="/v2/assets/company-believe-dot.svg"><img decoding="async" alt="" src="/v2/assets/company-believe-dot-on.svg"></span>
-          <div class="cb-text"><h3>The customer should see one number.</h3><p>Checked, valued and paid in under a minute. No forms, no waiting for a quote by email.</p></div>
+        <li class="cf-item" data-m="up" style="--d:300ms">
+          <div class="cf-frame" role="img" aria-label="Portrait of Ali Salcı to be supplied by Fintegre"><span class="cf-initials" aria-hidden="true">AS</span><p class="cf-caption" aria-hidden="true"><img decoding="async" alt="" src="/v2/assets/company-dot-ice.svg">Portrait to be supplied by Fintegre</p></div>
+          <h3>Ali Salcı</h3>
+          <p class="cf-role">Co-founder</p>
         </li>
-        <li class="cb-item" tabindex="0" data-m="up" style="--d:550ms">
-          <span class="cb-dot"><img decoding="async" alt="" src="/v2/assets/company-believe-dot.svg"><img decoding="async" alt="" src="/v2/assets/company-believe-dot-on.svg"></span>
-          <div class="cb-text"><h3>Buyers compete. We do not pick them.</h3><p>Each device goes to the best bid in its market, not to a fixed partner with a fixed price.</p></div>
-        </li>
-        <li class="cb-item" tabindex="0" data-m="up" style="--d:650ms">
-          <span class="cb-dot"><img decoding="async" alt="" src="/v2/assets/company-believe-dot.svg"><img decoding="async" alt="" src="/v2/assets/company-believe-dot-on.svg"></span>
-          <div class="cb-text"><h3>Your brand stays in front.</h3><p>We work behind your store, your site and your app. Customers never need to know our name.</p></div>
+        <li class="cf-item" data-m="up" style="--d:300ms">
+          <div class="cf-frame" role="img" aria-label="Portrait of Fatih Yıldırım to be supplied by Fintegre"><span class="cf-initials" aria-hidden="true">FY</span><p class="cf-caption" aria-hidden="true"><img decoding="async" alt="" src="/v2/assets/company-dot-ice.svg">Portrait to be supplied by Fintegre</p></div>
+          <h3>Fatih Yıldırım</h3>
+          <p class="cf-role">Co-founder</p>
         </li>
       </ul>
     </div>
   </div>
 </section>
 
-<section data-section="partners" id="partners" class="v2-sec" data-tone="dark" style="--h:1349px; background: radial-gradient(calc(177.27px * var(--s)) calc(449.67px * var(--s)) at calc(124.09px * var(--s)) calc(719.47px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<section data-section="partners" id="how-we-work" class="v2-sec" data-tone="dark" style="--h:1380px; background: radial-gradient(calc(177.27px * var(--s)) calc(449.67px * var(--s)) at calc(124.09px * var(--s)) calc(719.47px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
 <style>
   [data-section="partners"] p, [data-section="partners"] h2, [data-section="partners"] h3 { margin: 0; }
   [data-section="partners"] .cp-glow { position: absolute; max-width: none; pointer-events: none; }
@@ -178,7 +235,8 @@
   [data-section="partners"] h2 { width: 350px; font-weight: 400; font-size: 36px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
   [data-section="partners"] .cp-lede { width: 340px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
   [data-section="partners"] .cp-note { width: 350px; font-size: 14px; line-height: normal; color: #B7D7FF; }
-  [data-section="partners"] .cp-hub { position: relative; flex: none; width: 350px; height: 895px; }
+  [data-section="partners"] .cp-sample { font-size: 12px; line-height: normal; color: #A7B0BE; }
+  [data-section="partners"] .cp-hub { position: relative; flex: none; width: 350px; height: 950px; }
   [data-section="partners"] .cp-hub > * { position: absolute; }
   [data-section="partners"] .cp-fibre { max-width: none; pointer-events: none; }
   [data-section="partners"] .cp-mark { left: 250px; top: 10px; width: 100px; height: 100px; }
@@ -201,9 +259,9 @@
     <img decoding="async" class="cp-glow" alt="" src="/v2/mobile/assets/company-partners-glow-1.svg" style="left:-360px; top:-120px; width:720px; height:660px;">
     <img decoding="async" class="cp-glow" alt="" src="/v2/mobile/assets/company-partners-glow-2.svg" style="left:-100px; top:320px; width:820px; height:880px;">
     <div class="cp-col">
-      <h2 data-m="up" style="--d:100ms">How we work<br>with partners.</h2>
-      <p class="cp-lede" data-m="up" style="--d:200ms">One layer between your customers and the buyers who want their devices. You keep the brand and the customer. We run the checks, the prices and the payouts.</p>
-      <p class="cp-note" data-m="up" style="--d:280ms">41 buyers and refurbishers connected across 12 markets.</p>
+      <h2 data-m="up" style="--d:100ms">How we work.</h2>
+      <p class="cp-lede" data-m="up" style="--d:200ms">Fintegre is a B2B platform. We work behind your stores, website and apps. You keep your brand and the customer relationship. We coordinate device assessment, buyer offers and the transaction.</p>
+      <p class="cp-note" data-m="up" style="--d:280ms">White-label. Vendor-neutral. Fintegre does not buy devices.</p>
       <div class="cp-hub">
         <img decoding="async" class="cp-fibre" data-m="fade" style="left:289.3px; top:110px; width:11.4px; height:40px; --d:700ms" alt="" src="/v2/mobile/assets/company-partners-fibre-1.svg">
         <img decoding="async" class="cp-fibre" data-m="fade" style="left:319.44px; top:60px; width:50.19px; height:380.4px; --d:800ms" alt="" src="/v2/mobile/assets/company-partners-fibre-2.svg">
@@ -211,280 +269,59 @@
         <div class="cp-mark" data-m="pop" style="--d:300ms"><img decoding="async" alt="Fintegre 3D mark" src="/v2/assets/ecosystem-3d-mark.jpg" width="100" height="100"></div>
         <div class="cp-card" style="top:150px; --d:400ms" data-m="up">
           <h3>Vendor-neutral</h3>
-          <p>Any buyer, refurbisher or insurer can connect. The best bid wins, every time.</p>
-          <div class="cp-row"><span>Buyer A · Lithuania</span><b>€598</b></div>
-          <div class="cp-row cp-row--best"><span>Buyer B · Latvia · Best</span><b>€612</b></div>
+          <p>Qualified buyers make offers under your program rules. No fixed partner.</p>
+          <div class="cp-row"><span>Buyer A · offer</span><b>€598</b></div>
+          <div class="cp-row cp-row--best"><span>Buyer B · offer</span><b>€612</b></div>
+          <p class="cp-sample">Sample data</p>
         </div>
-        <div class="cp-card" style="top:414px; --d:150ms" data-m="up">
-          <h3>Asset-light</h3>
-          <p>We never own the devices. Stock moves from your store straight to the buyer.</p>
-          <div class="cp-row"><span>Devices we own</span><b>0</b></div>
-          <div class="cp-row"><span>Pickup partners</span><b>6</b></div>
+        <div class="cp-card" style="top:452px; --d:150ms" data-m="up">
+          <h3>We do not buy devices</h3>
+          <p>Fintegre coordinates the transaction. Devices go from your channel to the qualified buyer under the agreed terms.</p>
+          <div class="cp-row"><span>Customer credit</span><b>Your program</b></div>
+          <div class="cp-row"><span>Buyer settlement</span><b>Agreed terms</b></div>
         </div>
-        <div class="cp-card" style="top:699px; --d:150ms" data-m="up">
+        <div class="cp-card" style="top:752px; --d:150ms" data-m="up">
           <h3>White-label</h3>
-          <p>Your brand on every screen, receipt and email.</p>
-          <span class="cp-chip"><img decoding="async" alt="" src="/v2/assets/company-dot-ice7.svg">trade-in.yourstore.lt</span>
+          <p>Your brand on the journey your customers see, in store and online.</p>
+          <span class="cp-chip"><img decoding="async" alt="" src="/v2/assets/company-dot-ice7.svg">trade-in.yourstore.com</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section data-section="milestones" id="milestones" class="v2-sec" data-tone="dark" style="--h:1419px; background: radial-gradient(calc(195px * var(--s)) calc(415.31px * var(--s)) at 50% calc(830.62px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
+<section data-section="details" id="details" class="v2-sec" data-tone="light" style="--h:740px; background:#F5F7FA;">
 <style>
-  [data-section="milestones"] p, [data-section="milestones"] h2 { margin: 0; }
-  [data-section="milestones"] .cm-bg { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(195px 415.31px at 195px 830.62px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
-  [data-section="milestones"] .cm-glow { position: absolute; max-width: none; pointer-events: none; }
-  /* Photo: founder and store associate at the first trade-in counter (cropped for mobile), tint and fades. */
-  [data-section="milestones"] .cm-a { position: absolute; pointer-events: none; }
-  [data-section="milestones"] .cm-photo { left: -15px; top: 0; width: 420px; height: 518.4px; overflow: hidden; }
-  [data-section="milestones"] .cm-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
-  [data-section="milestones"] .cm-tint { left: 0; top: 0; width: 390px; height: 518.4px; background: rgba(20,30,110,.08); }
-  [data-section="milestones"] .cm-fade-top { left: 0; top: 0; width: 390px; height: 90px; background: linear-gradient(180deg, rgba(15,17,21,.75) 0%, rgba(15,17,21,0) 100%); }
-  [data-section="milestones"] .cm-fade-bot { left: 0; top: 250px; width: 390px; height: 300px;
-    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.7) 40%, rgba(15,17,21,.95) 70%, #0F1115 100%); }
-  [data-section="milestones"] .cm-col { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; padding: 360px 20px 88px; }
-  [data-section="milestones"] h2 { width: 350px; font-weight: 400; font-size: 36px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
-  [data-section="milestones"] .cm-lede { width: 320px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
-  [data-section="milestones"] .cm-timeline { position: relative; flex: none; width: 350px; height: 807px; }
-  [data-section="milestones"] .cm-line { position: absolute; left: 5.4px; top: 22px; overflow: visible; pointer-events: none; }
-  [data-section="milestones"] .cm-dot { position: absolute; padding: 0; border: 0; background: none; cursor: pointer; line-height: 0; -webkit-tap-highlight-color: transparent; }
-  [data-section="milestones"] .cm-dot img { display: block; transition: scale .4s var(--spring), filter .3s; }
-  [data-section="milestones"] .cm-dot.is-hot img { scale: 1.35; filter: brightness(1.6); }
-  [data-section="milestones"] .cm-dot--now.is-hot img { scale: 1.1; filter: none; }
-  [data-section="milestones"] .cm-ms { position: absolute; left: 32px; width: 318px; font-weight: 300; }
-  [data-section="milestones"] .cm-ms b { display: block; font-weight: 300; font-size: 28px; line-height: normal; letter-spacing: -0.03em; color: #F5F7FA; transition: color .3s; }
-  [data-section="milestones"] .cm-ms p { margin-top: 5px; width: 300px; font-size: 14px; line-height: 1.5; color: rgba(245,247,250,.65); transition: color .3s; }
-  [data-section="milestones"] .cm-ms.is-hot b { color: #B7D7FF; }
-  [data-section="milestones"] .cm-ms.is-hot p { color: rgba(245,247,250,.85); }
-  .motion [data-section="milestones"] [data-m="up"] { translate: 0 var(--ty, 24px); }
-  .motion [data-section="milestones"].is-in [data-m] { translate: none; }
-  .motion [data-section="milestones"] .cm-photo { opacity: 0; transition: opacity 1.3s var(--ease) 100ms; }
-  .motion [data-section="milestones"] .cm-photo img { scale: 1.06; transition: scale 4.5s var(--ease) 100ms; }
-  .motion [data-section="milestones"].is-in .cm-photo { opacity: 1; }
-  .motion [data-section="milestones"].is-in .cm-photo img { scale: 1; }
-  .motion [data-section="milestones"] .cm-line path { transition-duration: 2.2s; }
+  [data-section="details"] p, [data-section="details"] h2, [data-section="details"] h3 { margin: 0; }
+  [data-section="details"] .cd-col { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; padding: 96px 20px 88px; }
+  [data-section="details"] h2 { width: 350px; font-weight: 400; font-size: 40px; line-height: 1.02; letter-spacing: -0.04em; color: #0F1115; }
+  [data-section="details"] .cd-lede { width: 320px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.62); }
+  [data-section="details"] .cd-card { width: 350px; margin-top: 8px; padding: 24px 24px 12px; border-radius: 26px; background: #fff; box-shadow: 0 30px 60px rgba(15,20,64,.1); }
+  [data-section="details"] .cd-card h3 { margin-bottom: 12px; font-weight: 400; font-size: 13px; line-height: normal; color: #5C6373; }
+  [data-section="details"] .cd-card dl { margin: 0; }
+  [data-section="details"] .cd-row { display: flex; flex-direction: column; gap: 6px; padding: 14px 0; border-top: 1px solid #E3E8F0; font-size: 15px; line-height: normal; }
+  [data-section="details"] .cd-row dt { font-weight: 300; font-size: 13px; color: #5C6373; }
+  [data-section="details"] .cd-row dd { margin: 0; font-weight: 400; color: #0F1115; }
+  /* Placeholder values: clearly marked until Fintegre supplies the approved details. */
+  [data-section="details"] .cd-ph { color: #8A93A3; border-bottom: 1px dashed rgba(138,147,163,.6); }
+  [data-section="details"] .cd-btn { display: inline-flex; align-items: center; height: 48px; margin-top: 12px; padding: 0 22px; border-radius: 999px; background: #0F1115; color: #F5F7FA; font-size: 15px; white-space: nowrap; -webkit-tap-highlight-color: transparent; }
+  .motion [data-section="details"] [data-m="up"] { translate: 0 var(--ty, 30px); }
+  .motion [data-section="details"].is-in [data-m] { translate: none; }
 </style>
   <div class="v2-canvas">
-    <div class="cm-bg"></div>
-    <div class="cm-a cm-photo"><img alt="Fintegre's founder and a store associate checking an old phone with a laptop at the first trade-in counter in Vilnius" src="/v2/mobile/assets/company-milestones-team.webp" width="700" height="864" loading="lazy" decoding="async"></div>
-    <div class="cm-a cm-tint"></div>
-    <div class="cm-a cm-fade-top"></div>
-    <div class="cm-a cm-fade-bot"></div>
-    <img decoding="async" class="cm-glow" alt="" src="/v2/mobile/assets/company-ms-glow.svg" style="left:-120px; top:510px; width:820px; height:820px;">
-    <div class="cm-col">
-      <h2 data-m="up" style="--d:100ms">Seven years,<br>one product.</h2>
-      <p class="cm-lede" data-m="up" style="--d:200ms">From one counter in Vilnius to programs in twelve markets.</p>
-      <div class="cm-timeline">
-        <svg class="cm-line" width="1.2" height="738" viewBox="0 0 1.2 738" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:300ms" d="M0.6 0V738" stroke-width="1.2" stroke="#B7D7FF" stroke-opacity="0.35"/></svg>
-          <button type="button" class="cm-dot" style="left:0; top:16px; --d:300ms" data-m="pop" data-year="2019" aria-label="2019"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
-          <div class="cm-ms" style="top:10px; --d:350ms" data-m="up" data-year="2019"><b>2019</b><p>Founded in Vilnius. First trade-in counter in four stores.</p></div>
-          <button type="button" class="cm-dot" style="left:0; top:126px; --d:420ms" data-m="pop" data-year="2020" aria-label="2020"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
-          <div class="cm-ms" style="top:120px; --d:470ms" data-m="up" data-year="2020"><b>2020</b><p>Live valuation. Bids from four buyers in under a minute.</p></div>
-          <button type="button" class="cm-dot" style="left:0; top:236px; --d:540ms" data-m="pop" data-year="2021" aria-label="2021"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
-          <div class="cm-ms" style="top:230px; --d:590ms" data-m="up" data-year="2021"><b>2021</b><p>Latvia and Estonia. One program across the Baltics.</p></div>
-          <button type="button" class="cm-dot" style="left:0; top:346px; --d:660ms" data-m="pop" data-year="2022" aria-label="2022"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
-          <div class="cm-ms" style="top:340px; --d:710ms" data-m="up" data-year="2022"><b>2022</b><p>Telecom operators. Early upgrade and BYOD protection.</p></div>
-          <button type="button" class="cm-dot" style="left:0; top:456px; --d:780ms" data-m="pop" data-year="2023" aria-label="2023"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
-          <div class="cm-ms" style="top:450px; --d:830ms" data-m="up" data-year="2023"><b>2023</b><p>Poland. White-label SDK for partner apps.</p></div>
-          <button type="button" class="cm-dot" style="left:0; top:545px; --d:900ms" data-m="pop" data-year="2024" aria-label="2024"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
-          <div class="cm-ms" style="top:539px; --d:950ms" data-m="up" data-year="2024"><b>2024</b><p>Warranty and claim validation join the platform.</p></div>
-          <button type="button" class="cm-dot" style="left:0; top:655px; --d:1020ms" data-m="pop" data-year="2025" aria-label="2025"><img decoding="async" alt="" src="/v2/assets/company-ms-dot.svg" width="13" height="13"></button>
-          <div class="cm-ms" style="top:649px; --d:1070ms" data-m="up" data-year="2025"><b>2025</b><p>One million devices checked.</p></div>
-          <button type="button" class="cm-dot cm-dot--now is-hot" style="left:-18px; top:726px; --d:1140ms" data-m="pop" data-year="2026" aria-label="2026"><img decoding="async" alt="" src="/v2/assets/company-ms-dot-now.svg" width="49" height="49"></button>
-          <div class="cm-ms is-hot" style="top:738px; --d:1190ms" data-m="up" data-year="2026"><b>2026</b><p>12 markets and €240M traded.</p></div>
+    <div class="cd-col">
+      <h2 data-m="up" style="--d:100ms">Company details.</h2>
+      <p class="cd-lede" data-m="up" style="--d:200ms">Registered company information and how to reach us about a program.</p>
+      <div class="cd-card" data-m="up" style="--d:300ms">
+        <h3>Legal entity and contact</h3>
+        <dl>
+          <div class="cd-row"><dt>Legal entity</dt><dd><span class="cd-ph">[Legal entity name]</span></dd></div>
+          <div class="cd-row"><dt>Registered address</dt><dd><span class="cd-ph">[Registered address]</span></dd></div>
+          <div class="cd-row"><dt>Company registration number</dt><dd><span class="cd-ph">[Company registration number]</span></dd></div>
+          <div class="cd-row"><dt>Contact</dt><dd><span class="cd-ph">[Contact e-mail]</span></dd></div>
+        </dl>
       </div>
-    </div>
-  </div>
-</section>
-
-<section data-section="offices" id="offices" class="v2-sec" data-tone="light" style="--h:1124px; background:#F5F7FA;">
-<style>
-  [data-section="offices"] p, [data-section="offices"] h2 { margin: 0; }
-  [data-section="offices"] .co-col { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 20px; align-items: flex-start; padding: 96px 20px 88px; }
-  [data-section="offices"] h2 { width: 350px; font-weight: 400; font-size: 36px; line-height: 1.04; letter-spacing: -0.04em; color: #0F1115; }
-  [data-section="offices"] .co-lede { width: 330px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(15,17,21,.62); }
-  [data-section="offices"] .co-how { width: 350px; }
-  [data-section="offices"] .co-how__k { font-size: 14px; line-height: normal; color: rgba(15,17,21,.55); }
-  [data-section="offices"] .co-chips { margin-top: 13px; width: 350px; display: flex; flex-wrap: wrap; gap: 8px; }
-  [data-section="offices"] .co-chip { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border: 0; border-radius: 999px; background: #0F1115; color: #F5F7FA;
-    font: 400 14px/normal 'Geologica', system-ui, sans-serif; white-space: nowrap; cursor: pointer; -webkit-tap-highlight-color: transparent; transition: background-color .25s; }
-  [data-section="offices"] .co-chip img { width: 7px; height: 7px; display: block; }
-  [data-section="offices"] .co-chip[aria-pressed="true"] { background: #3047EC; }
-  [data-section="offices"] .co-note { margin-top: 12px; font-weight: 300; font-size: 14px; line-height: 1.5; color: rgba(15,17,21,.62); }
-  [data-section="offices"] .co-list { width: 350px; display: flex; flex-direction: column; gap: 16px; }
-  [data-section="offices"] .co-office { width: 100%; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; padding: 24px; border: 0; border-radius: 24px; background: #fff; text-align: left;
-    box-shadow: 0 16px 40px rgba(15,18,51,.07); font-family: inherit; line-height: normal; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-  [data-section="offices"] .co-office__l { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; font-weight: 300; }
-  [data-section="offices"] .co-office__city { font-size: 40px; letter-spacing: -0.03em; color: #0F1115; white-space: nowrap; }
-  [data-section="offices"] .co-office__what { font-size: 15px; color: rgba(15,17,21,.6); }
-  [data-section="offices"] .co-office__r { display: flex; gap: 16px; align-items: center; white-space: nowrap; }
-  [data-section="offices"] .co-time { font-size: 15px; color: rgba(15,17,21,.7); font-variant-numeric: tabular-nums; transition: color .3s; }
-  [data-section="offices"] .co-office[aria-pressed="true"] .co-time { color: #3047EC; }
-  [data-section="offices"] .co-people { font-weight: 300; font-size: 14px; color: rgba(15,17,21,.5); }
-  .motion [data-section="offices"] [data-m="up"] { translate: 0 var(--ty, 30px); }
-  .motion [data-section="offices"].is-in [data-m] { translate: none; }
-</style>
-  <div class="v2-canvas">
-    <div class="co-col">
-      <h2 data-m="up" style="--d:100ms">Three offices,<br>one team.</h2>
-      <p class="co-lede" data-m="up" style="--d:200ms">Product and engineering sit in Vilnius. Partnerships and operations sit close to the markets they serve.</p>
-      <div class="co-how" data-m="up" style="--d:300ms">
-        <p class="co-how__k">How we work</p>
-        <div class="co-chips" role="group" aria-label="How we work">
-        <button type="button" class="co-chip" aria-pressed="true" data-note="Every team is five to seven people, and every metric has one name next to it."><img decoding="async" alt="" src="/v2/assets/company-dot-ice7.svg">Small teams, clear owners</button>
-        <button type="button" class="co-chip" aria-pressed="false" data-note="Decisions live in short written docs, so Vilnius, Warsaw and Riga read the same thing."><img decoding="async" alt="" src="/v2/assets/company-dot-ice7.svg">Write it down</button>
-        <button type="button" class="co-chip" aria-pressed="false" data-note="We count success in devices checked, valued and paid, not in features shipped."><img decoding="async" alt="" src="/v2/assets/company-dot-ice7.svg">Measure in devices</button>
-        <button type="button" class="co-chip" aria-pressed="false" data-note="Small releases every week, behind flags, with partners in the loop."><img decoding="async" alt="" src="/v2/assets/company-dot-ice7.svg">Ship every week</button>
-        <button type="button" class="co-chip" aria-pressed="false" data-note="Partner managers spend time in stores and warehouses, not only on calls."><img decoding="async" alt="" src="/v2/assets/company-dot-ice7.svg">Meet partners in person</button>
-      </div>
-      </div>
-      <div class="co-list" role="group" aria-label="Offices">
-        <button type="button" class="co-office" aria-pressed="true" data-m="up" style="--d:150ms">
-        <span class="co-office__l"><span class="co-office__city">Vilnius</span><span class="co-office__what">Head office · Product, engineering, pricing</span></span>
-        <span class="co-office__r"><span class="co-time" data-tz="Europe/Vilnius">11:43 EET</span><span class="co-people">54 people</span></span>
-      </button>
-        <button type="button" class="co-office" aria-pressed="false" data-m="up" style="--d:250ms">
-        <span class="co-office__l"><span class="co-office__city">Warsaw</span><span class="co-office__what">Partnerships and operations, Central Europe</span></span>
-        <span class="co-office__r"><span class="co-time" data-tz="Europe/Warsaw">10:43 CET</span><span class="co-people">21 people</span></span>
-      </button>
-        <button type="button" class="co-office" aria-pressed="false" data-m="up" style="--d:350ms">
-        <span class="co-office__l"><span class="co-office__city">Riga</span><span class="co-office__what">Buyer network and logistics, Baltics</span></span>
-        <span class="co-office__r"><span class="co-time" data-tz="Europe/Riga">11:43 EET</span><span class="co-people">15 people</span></span>
-      </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section data-section="careers" id="careers" class="v2-sec" data-tone="dark" style="--h:1009px; background: radial-gradient(calc(195px * var(--s)) calc(360.36px * var(--s)) at calc(156px * var(--s)) calc(504.5px * var(--s)), rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115;">
-<style>
-  [data-section="careers"] p, [data-section="careers"] h2 { margin: 0; }
-  [data-section="careers"] .cr-bg { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(195px 360.36px at 156px 504.5px, rgba(34,54,196,.95) 0%, rgba(26,40,143,.925) 25%, rgba(18,26,90,.9) 50%, rgba(17,22,55,.45) 75%, rgba(15,17,21,0) 100%), #0F1115; }
-  [data-section="careers"] .cr-glow { position: absolute; max-width: none; pointer-events: none; }
-  [data-section="careers"] .cr-col { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; padding: 96px 20px 88px; }
-  [data-section="careers"] h2 { width: 350px; font-weight: 400; font-size: 36px; line-height: 1.04; letter-spacing: -0.04em; color: #F5F7FA; }
-  [data-section="careers"] .cr-lede { width: 340px; font-weight: 300; font-size: 16px; line-height: 1.55; color: rgba(245,247,250,.68); }
-  [data-section="careers"] .cr-btn { display: inline-flex; align-items: center; padding: 15px 24px; border: 0; border-radius: 999px; background: #F5F7FA; color: #0F1115;
-    font: 400 15px/normal 'Geologica', system-ui, sans-serif; white-space: nowrap; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-  [data-section="careers"] .cr-visual { position: relative; flex: none; width: 350px; height: 493px; }
-  /* Photo: engineer and analyst at the sticky-note wall (cropped for mobile), tint and fades. */
-  [data-section="careers"] .cr-a { position: absolute; pointer-events: none; }
-  [data-section="careers"] .cr-photo { left: -15.8px; top: 400px; width: 429px; height: 674px; overflow: hidden; }
-  [data-section="careers"] .cr-photo img { display: block; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 50%; }
-  [data-section="careers"] .cr-tint { left: 0; top: 400px; width: 390px; height: 674px; background: rgba(20,30,110,.08); }
-  /* The photo and tint fade in from the top (mask) so the indigo ground continues behind the button. */
-  [data-section="careers"] .cr-photo, [data-section="careers"] .cr-tint { -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 110px); mask-image: linear-gradient(180deg, transparent 0, #000 110px); }
-  [data-section="careers"] .cr-fade-bot { left: 0; top: 600px; width: 390px; height: 409px;
-    background: linear-gradient(180deg, rgba(15,17,21,0) 0%, rgba(15,17,21,.75) 30%, rgba(15,17,21,.97) 55%, #0F1115 100%); }
-  [data-section="careers"] .cr-fibre { position: absolute; left: 186.3px; top: -48.7px; overflow: visible; pointer-events: none; }
-  [data-section="careers"] .cr-card { position: absolute; left: 0; bottom: 2px; width: 350px; padding: 24px 16px; }
-  [data-section="careers"] .cr-card.is-all .cr-list { max-height: 330px; }
-  [data-section="careers"] .cr-role__h { padding: 16px 14px; -webkit-tap-highlight-color: transparent; }
-  [data-section="careers"] .cr-role__t { font-size: 15px; }
-  [data-section="careers"] .cr-role__l { font-size: 13px; }
-  [data-section="careers"] .cr-role__d > div { padding: 0 14px; }
-  [data-section="careers"] .cr-role.is-open .cr-role__d > div { padding-bottom: 16px; }
-  [data-section="careers"] .cr-tab { padding: 6px 9px; }
-  /* Open roles card (shared by desktop and mobile; sizes set per page below) */
-  [data-section="careers"] .cr-card { display: flex; flex-direction: column; gap: 8px; border-radius: 26px; line-height: normal;
-    background: rgba(255,255,255,.07); border: 1px solid rgba(183,215,255,.14); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); box-shadow: 0 30px 60px rgba(0,0,0,.45); }
-  [data-section="careers"] .cr-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 16px; }
-  [data-section="careers"] .cr-head > span { font-size: 13px; color: #A7B0BE; white-space: nowrap; }
-  [data-section="careers"] .cr-tabs { display: none; gap: 4px; }
-  [data-section="careers"] .cr-card.is-all .cr-tabs { display: flex; }
-  [data-section="careers"] .cr-tab { border: 0; cursor: pointer; padding: 6px 11px; border-radius: 999px; background: rgba(255,255,255,.06); color: #A7B0BE; font: 400 12px/normal 'Geologica', system-ui, sans-serif; white-space: nowrap; transition: background-color .2s, color .2s; }
-  [data-section="careers"] .cr-tab:hover { color: #F5F7FA; }
-  [data-section="careers"] .cr-tab[aria-selected="true"] { background: #F5F7FA; color: #0F1115; }
-  [data-section="careers"] .cr-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
-  [data-section="careers"] .cr-card.is-all .cr-list { overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: rgba(183,215,255,.25) transparent; padding-right: 2px; }
-  [data-section="careers"] .cr-role--more, [data-section="careers"] .cr-role[hidden] { display: none; }
-  [data-section="careers"] .cr-card.is-all .cr-role--more:not([hidden]) { display: block; }
-  [data-section="careers"] .cr-role { border-radius: 16px; background: rgba(255,255,255,.05); color: #F5F7FA; transition: background-color .25s; }
-  [data-section="careers"] .cr-role.is-hot { background: rgba(48,71,236,.9); }
-  [data-section="careers"] .cr-role__h { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 0; background: none; color: inherit; cursor: pointer; text-align: left; font-family: inherit; line-height: normal; }
-  [data-section="careers"] .cr-role__t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  [data-section="careers"] .cr-role__l { flex: none; color: #A7B0BE; white-space: nowrap; transition: color .25s; }
-  [data-section="careers"] .cr-role.is-hot .cr-role__l { color: #F5F7FA; }
-  [data-section="careers"] .cr-role__l i { font-style: normal; display: inline-block; transition: transform .35s var(--ease); }
-  [data-section="careers"] .cr-role__h[aria-expanded="true"] .cr-role__l i { transform: rotate(90deg); }
-  [data-section="careers"] .cr-role__d { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .45s var(--ease); }
-  [data-section="careers"] .cr-role__d > div { overflow: hidden; }
-  [data-section="careers"] .cr-role.is-open .cr-role__d { grid-template-rows: 1fr; }
-  [data-section="careers"] .cr-role__d p { margin: 0; font-weight: 300; font-size: 14px; line-height: 1.5; color: rgba(245,247,250,.8); }
-  [data-section="careers"] .cr-role__d a { display: inline-flex; margin-top: 12px; padding: 9px 16px; border-radius: 999px; background: #F5F7FA; color: #0F1115; font-size: 13px; transition: background-color .2s; }
-  [data-section="careers"] .cr-role__d a:hover { background: #fff; }
-  .motion [data-section="careers"] [data-m="up"] { translate: 0 var(--ty, 30px); }
-  .motion [data-section="careers"].is-in [data-m] { translate: none; }
-  .motion [data-section="careers"] .cr-photo { opacity: 0; transition: opacity 1.3s var(--ease) 100ms; }
-  .motion [data-section="careers"] .cr-photo img { scale: 1.06; transition: scale 4.5s var(--ease) 100ms; }
-  .motion [data-section="careers"].is-in .cr-photo { opacity: 1; }
-  .motion [data-section="careers"].is-in .cr-photo img { scale: 1; }
-</style>
-  <div class="v2-canvas">
-    <div class="cr-bg"></div>
-    <div class="cr-a cr-photo"><img alt="Two Fintegre colleagues, an engineer and an analyst, laughing at a glass wall of sticky notes in the Vilnius office at night" src="/v2/mobile/assets/company-careers-team.webp" width="550" height="864" loading="lazy" decoding="async"></div>
-    <div class="cr-a cr-tint"></div>
-    <div class="cr-a cr-fade-bot"></div>
-    <img decoding="async" class="cr-glow" alt="" src="/v2/mobile/assets/company-partners-glow-1.svg" style="left:-360px; top:-100px; width:720px; height:660px;">
-    <img decoding="async" class="cr-glow" alt="" src="/v2/mobile/assets/company-car-glow-2.svg" style="left:-120px; top:340px; width:820px; height:820px;">
-    <div class="cr-col">
-      <h2 data-m="up" style="--d:100ms">Build what sits<br>behind every<br>trade-in.</h2>
-      <p class="cr-lede" data-m="up" style="--d:200ms">We hire engineers, analysts and partner managers who like hard numbers and real devices. Nine roles are open across three offices.</p>
-      <button type="button" class="cr-btn" data-roles-toggle aria-expanded="false" aria-controls="cr-roles" data-m="up" style="--d:300ms">See all 9 open roles</button>
-      <div class="cr-visual">
-        <svg class="cr-fibre" width="159.4" height="299.4" viewBox="0 0 159.4 299.4" fill="none" aria-hidden="true"><path pathLength="1" data-draw style="--d:600ms" d="M0.7 0.7C126.7 0.7 158.7 38.7 158.7 118.7L158.7 299.4" stroke-width="1.4" stroke-linecap="round" stroke="#B7D7FF" stroke-opacity="0.5"/></svg>
-        <div class="cr-card" id="cr-roles" data-m="up" style="--d:400ms">
-          <div class="cr-head">
-            <span data-roles-count>Open roles</span>
-            <div class="cr-tabs" role="tablist" aria-label="Filter roles by office">
-              <button type="button" class="cr-tab" role="tab" aria-selected="true" data-office="all">All</button>
-              <button type="button" class="cr-tab" role="tab" aria-selected="false" data-office="Vilnius">Vilnius</button>
-              <button type="button" class="cr-tab" role="tab" aria-selected="false" data-office="Warsaw">Warsaw</button>
-              <button type="button" class="cr-tab" role="tab" aria-selected="false" data-office="Riga">Riga</button>
-            </div>
-          </div>
-          <ul class="cr-list">
-              <li class="cr-role" data-office="Vilnius">
-                <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Senior Backend Engineer</span><span class="cr-role__l">Vilnius&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
-                <div class="cr-role__d"><div><p>Own the pricing and payout services in Go and Postgres. Five years of backend work, and you like reading the numbers your code produces.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Senior%20Backend%20Engineer">Apply for this role</a></div></div>
-              </li>
-              <li class="cr-role" data-office="Vilnius">
-                <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Pricing Analyst</span><span class="cr-role__l">Vilnius or remote&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
-                <div class="cr-role__d"><div><p>Keep device values right across 12 markets. Build the models that turn buyer bids and condition grades into one fair number.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Pricing%20Analyst">Apply for this role</a></div></div>
-              </li>
-              <li class="cr-role is-hot" data-office="Warsaw">
-                <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Partner Manager, Poland</span><span class="cr-role__l">Warsaw&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
-                <div class="cr-role__d"><div><p>Launch and grow trade-in programs with Polish retailers and operators. Polish and English, and time in stores every month.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Partner%20Manager%2C%20Poland">Apply for this role</a></div></div>
-              </li>
-              <li class="cr-role cr-role--more" data-office="Vilnius">
-                <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Frontend Engineer</span><span class="cr-role__l">Vilnius&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
-                <div class="cr-role__d"><div><p>Build the white-label flows customers see in stores and apps. TypeScript, design sense and care for slow phones.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Frontend%20Engineer">Apply for this role</a></div></div>
-              </li>
-              <li class="cr-role cr-role--more" data-office="Vilnius">
-                <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Data Engineer</span><span class="cr-role__l">Vilnius or remote&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
-                <div class="cr-role__d"><div><p>Run the pipelines behind our device value index: bids, grades and payouts from every market, clean and on time.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Data%20Engineer">Apply for this role</a></div></div>
-              </li>
-              <li class="cr-role cr-role--more" data-office="Vilnius">
-                <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Product Designer</span><span class="cr-role__l">Vilnius&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
-                <div class="cr-role__d"><div><p>Design the check, value and pay flow for store staff and customers. You test with real devices on real counters.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Product%20Designer">Apply for this role</a></div></div>
-              </li>
-              <li class="cr-role cr-role--more" data-office="Warsaw">
-                <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Operations Lead, Central Europe</span><span class="cr-role__l">Warsaw&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
-                <div class="cr-role__d"><div><p>Run pickups, buyer handovers and service levels across Poland and Czechia with our logistics partners.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Operations%20Lead%2C%20Central%20Europe">Apply for this role</a></div></div>
-              </li>
-              <li class="cr-role cr-role--more" data-office="Riga">
-                <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Buyer Network Manager</span><span class="cr-role__l">Riga&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
-                <div class="cr-role__d"><div><p>Bring new buyers and refurbishers onto the network and keep the best bid competitive in every Baltic market.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Buyer%20Network%20Manager">Apply for this role</a></div></div>
-              </li>
-              <li class="cr-role cr-role--more" data-office="Riga">
-                <button type="button" class="cr-role__h" aria-expanded="false"><span class="cr-role__t">Logistics Coordinator</span><span class="cr-role__l">Riga&nbsp;&nbsp;&nbsp;<i>→</i></span></button>
-                <div class="cr-role__d"><div><p>Plan device pickups and transfers between stores and buyers, and fix what goes wrong the same day.</p><a href="mailto:careers@fintegre.com?subject=Application%3A%20Logistics%20Coordinator">Apply for this role</a></div></div>
-              </li>
-          </ul>
-        </div>
-      </div>
+      <a href="/v2/contact/" class="cd-btn" data-m="up" style="--d:400ms">Discuss your program</a>
     </div>
   </div>
 </section>
@@ -532,10 +369,16 @@
     [data-section="closing"] .cl-bottom small { font-size: 12px; color: rgba(255,255,255,.45); }
     [data-section="closing"] .cl-legal { display: flex; gap: 9px; }
     [data-section="closing"] .cl-legal a { font-weight: 500; font-size: 12px; color: rgba(255,255,255,.8); }
+    [data-section="closing"] .cl-sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+    [data-section="closing"] .cl-sub .cl-err { margin-top: -8px; font-size: 12px; color: #FFB3B3; }
+    [data-section="closing"] .cl-sub .cl-ok { margin-top: -8px; font-size: 12px; color: #B7D7FF; }
+    [data-section="closing"] .cl-sub .cl-ok:empty { display: none; }
+    [data-section="closing"] .cl-sub .cl-privacy { margin-top: -8px; font-size: 12px; color: rgba(255,255,255,.5); }
+    [data-section="closing"] .cl-privacy a { color: rgba(255,255,255,.8); text-decoration: underline; text-underline-offset: 2px; }
   </style>
   <div class="v2-canvas">
     <div class="cl-col">
-      <h2 class="cl-head" data-m="up">Built in Vilnius, used across Europe</h2>
+      <h2 class="cl-head" data-m="up" style="font-size:42px; letter-spacing:-1.26px; margin-bottom:28px;">Make every device<br>worth <em>more</em></h2>
 
       <footer class="cl-foot" data-m="up" style="--ty:60px; --d:400ms">
         <div>
@@ -545,27 +388,33 @@
               <img decoding="async" src="/v2/assets/closing-logo-word.svg" alt="" width="56.08" height="14.3174" style="left:39.41px; top:7.86px;">
             </a>
             <h3>Get trade-in insights</h3>
-            <p>Market reports and program benchmarks. No spam.</p>
-            <form class="cl-form" novalidate>
-              <input type="email" name="email" placeholder="Work email" aria-label="Work email" autocomplete="email" required>
+            <p>Guides and program notes from Fintegre. No spam.</p>
+            <form class="cl-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/v2/thanks/" novalidate>
+              <input type="hidden" name="form-name" value="newsletter">
+              <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+              <label for="nl-email" class="cl-sr">Work email</label>
+              <input id="nl-email" type="email" name="email" placeholder="Work email" autocomplete="email" required aria-describedby="nl-err nl-privacy">
               <button type="submit">Subscribe</button>
             </form>
+            <p class="cl-err" id="nl-err" role="alert" hidden>Enter a valid work email.</p>
+            <p class="cl-ok" role="status" aria-live="polite"></p>
+            <p class="cl-privacy" id="nl-privacy">See our <a href="/v2/legal/#privacy">privacy notice</a>.</p>
           </div>
           <div class="cl-cols">
                       <nav aria-label="Platform"><span>Platform</span>
-              <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device value intelligence</a><a href="/v2/platform/">Vendor network</a><a href="/v2/platform/">Integrations</a>
+              <a href="/v2/platform/">Trade-in orchestration</a><a href="/v2/intelligence/">Device Value Intelligence</a><a href="/v2/vendor-network/">Vendor Network</a><a href="/v2/platform/#integrations">Integrations</a>
             </nav>
             <nav aria-label="Solutions"><span>Solutions</span>
-              <a href="/v2/solutions/">Retailers</a><a href="/v2/solutions/">Telecom operators</a><a href="/v2/solutions/">OEM and ecosystems</a><a href="/v2/solutions/">Apple and premium retail</a>
+              <a href="/v2/solutions/#apr">Apple Premium Resellers</a><a href="/v2/solutions/#retailers">Electronics retailers</a><a href="/v2/solutions/#telecom">Telecom operators</a><a href="/v2/solutions/#brands">Device brands and OEM</a>
             </nav>
             <nav aria-label="Company"><span>Company</span>
-              <a href="/v2/customers/">Customers</a><a href="/v2/insights/">Insights</a><a href="/v2/company/">About</a><a href="/v2/design-your-program/">Contact</a>
+              <a href="/v2/company/">About</a><a href="/v2/insights/">Insights</a><a href="/v2/contact/">Contact</a>
             </nav>
           </div>
         </div>
         <div class="cl-bottom">
           <small>© 2026 Fintegre. All rights reserved.</small>
-          <nav class="cl-legal" aria-label="Legal"><a href="/v2/company/">Privacy</a><a href="/v2/company/">Cookies</a><a href="/v2/company/">Imprint</a></nav>
+          <nav class="cl-legal" aria-label="Legal"><a href="/v2/legal/#privacy">Privacy</a><a href="/v2/legal/#cookies">Cookies</a><a href="/v2/legal/#imprint">Imprint</a></nav>
         </div>
       </footer>
     </div>
@@ -580,7 +429,7 @@
       <div class="mm-top">
         <a href="/v2/" class="h-logo" aria-label="Fintegre home"><span class="h-mark"><img decoding="async" alt="" src="/v2/mobile/assets/hero-logo.svg"></span>Fintegre</a>
         <div class="h-actions">
-          <a href="/v2/design-your-program/" class="h-pillbtn">Design your program</a>
+          <a href="/v2/contact/" class="h-pillbtn">Discuss your program</a>
           <button type="button" class="mm-close" data-menu-close aria-label="Close menu"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-close.svg"></button>
         </div>
       </div>
@@ -593,9 +442,9 @@
           </div>
           <div class="mm-sub" id="mm-sub-platform" data-mm style="--d:250ms; --ty:12px;"><div><ul>
             <li><a href="/v2/platform/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot-on.svg">Trade-in orchestration</a></li>
-            <li><a href="/v2/intelligence/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device value intelligence</a></li>
-            <li><a href="/v2/platform/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Vendor network</a></li>
-            <li><a href="/v2/platform/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Integrations</a></li>
+            <li><a href="/v2/intelligence/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device Value Intelligence</a></li>
+            <li><a href="/v2/vendor-network/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Vendor Network</a></li>
+            <li><a href="/v2/platform/#integrations"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Integrations</a></li>
           </ul></div></div>
         </div>
         <div class="mm-group">
@@ -604,73 +453,28 @@
             <button type="button" class="mm-tog" aria-expanded="false" aria-controls="mm-sub-solutions" aria-label="Solutions pages"><img decoding="async" class="is-up" alt="" src="/v2/mobile/assets/hero-menu-chevron-up.svg"><img decoding="async" class="is-down" alt="" src="/v2/mobile/assets/hero-menu-chevron-down.svg"></button>
           </div>
           <div class="mm-sub" id="mm-sub-solutions"><div><ul>
-            <li><a href="/v2/solutions/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Retailers</a></li>
-            <li><a href="/v2/solutions/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Telecom operators</a></li>
-            <li><a href="/v2/solutions/"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device brands</a></li>
+            <li><a href="/v2/solutions/#apr"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Apple Premium Resellers</a></li>
+            <li><a href="/v2/solutions/#retailers"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Electronics retailers</a></li>
+            <li><a href="/v2/solutions/#telecom"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Telecom operators</a></li>
+            <li><a href="/v2/solutions/#brands"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-dot.svg">Device brands and OEM</a></li>
           </ul></div></div>
         </div>
-        <div class="mm-row" data-mm style="--d:270ms;"><a href="/v2/intelligence/">Intelligence</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
-        <div class="mm-row" data-mm style="--d:330ms;"><a href="/v2/customers/">Customers</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:270ms;"><a href="/v2/vendor-network/">Vendor Network</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
+        <div class="mm-row" data-mm style="--d:330ms;"><a href="/v2/intelligence/">Intelligence</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
         <div class="mm-row" data-mm style="--d:390ms;"><a href="/v2/insights/">Insights</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
         <div class="mm-row" data-mm style="--d:450ms;"><a href="/v2/company/">Company</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
-        <div class="mm-row" data-mm style="--d:510ms;"><a href="/brandbook.html">Brandbook</a><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-chevron-right.svg"></div>
       </nav>
 
       <div class="mm-foot">
-        <a href="/v2/report/" class="mm-card" data-mm style="--d:700ms; --ty:30px;">
-          <span class="mm-cover"><img decoding="async" alt="" src="/v2/mobile/assets/hero-menu-report.svg"></span>
-          <span class="mm-card__txt"><span>Latest report · Q3 2026</span><b>European Device Value Index  ↗</b></span>
-        </a>
-        <a href="/v2/design-your-program/" class="mm-cta" data-mm style="--d:800ms; --ty:30px;">Talk to Fintegre  →</a>
-        <p class="mm-legal">Privacy    Cookies    Imprint    ·    EN</p>
+        <a href="/v2/vendor-network/" class="mm-cta mm-cta--ghost" data-mm style="--d:700ms; --ty:30px;">Buying trade-in devices? Join the vendor network  →</a>
+        <a href="/v2/contact/" class="mm-cta" data-mm style="--d:800ms; --ty:30px;">Discuss your program  →</a>
+        <p class="mm-legal"><a href="/v2/legal/#privacy">Privacy</a>    <a href="/v2/legal/#cookies">Cookies</a>    <a href="/v2/legal/#imprint">Imprint</a></p>
       </div>
     </div>
   </div>
 
 <script src="/v2/v2.js"></script>
 <script src="/v2/mobile/menu.js"></script>
-<script>
-// Company hero: the "Vilnius ops · today" counter counts up on arrival, then keeps ticking while on screen.
-(() => {
-  const sec = document.querySelector('[data-section="hero"]');
-  const el = sec && sec.querySelector('[data-ops-count]');
-  if (!el) return;
-  const fmt = (n) => Math.round(n).toLocaleString('en-US');
-  let value = 4812, timer = 0, visible = true;
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const tick = () => {
-    clearTimeout(timer);
-    if (!visible || reduce) return;
-    timer = setTimeout(() => { value += 1 + Math.floor(Math.random() * 3); el.textContent = fmt(value); tick(); }, 2200 + Math.random() * 1600);
-  };
-  sec.addEventListener('v2:in', () => {
-    if (reduce) return;
-    const from = 4200, t0 = performance.now() + 1800, dur = 1400;
-    const step = (t) => {
-      const k = Math.min(1, Math.max(0, (t - t0) / dur));
-      el.textContent = fmt(from + (value - from) * (1 - Math.pow(1 - k, 3)));
-      if (k < 1) requestAnimationFrame(step); else tick();
-    };
-    el.textContent = fmt(from);
-    requestAnimationFrame(step);
-  }, { once: true });
-  new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) tick(); else clearTimeout(timer); }).observe(sec);
-})();
-</script>
-<script>
-// What we believe: the indigo dot follows the principle under the pointer / focus / tap.
-(() => {
-  const sec = document.querySelector('[data-section="believe"]');
-  if (!sec) return;
-  const items = [...sec.querySelectorAll('.cb-item')];
-  const set = (it) => items.forEach((x) => x.classList.toggle('is-active', x === it));
-  items.forEach((it) => {
-    it.addEventListener('pointerenter', () => set(it));
-    it.addEventListener('focus', () => set(it));
-    it.addEventListener('click', () => set(it));
-  });
-})();
-</script>
 <script>
 // Milestones: pointing at (or tapping / focusing) a year or its dot highlights that milestone; 2026 is the default.
 (() => {
@@ -687,100 +491,38 @@
 })();
 </script>
 <script>
-// Offices: live local clocks per office, a selectable office card, and "How we work" chips that explain themselves.
+// Closing footer: Netlify newsletter form. Validates inline, posts with fetch and confirms in place; without JS it posts normally.
 (() => {
-  const sec = document.querySelector('[data-section="offices"]');
-  if (!sec) return;
-  const zone = { 'Europe/Vilnius': ['EET', 'EEST', 2], 'Europe/Riga': ['EET', 'EEST', 2], 'Europe/Warsaw': ['CET', 'CEST', 1] };
-  const clocks = [...sec.querySelectorAll('[data-tz]')];
-  const draw = () => {
-    const now = new Date();
-    clocks.forEach((el) => {
-      const tz = el.dataset.tz;
-      const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZoneName: 'shortOffset' })
-        .formatToParts(now).map((p) => [p.type, p.value]));
-      const off = parseInt((parts.timeZoneName || '').replace('GMT', '') || '0', 10);
-      const [std, dst, base] = zone[tz] || ['', '', 0];
-      el.textContent = `${parts.hour}:${parts.minute} ${off > base ? dst : std}`;
-    });
-  };
-  try { draw(); } catch (e) { /* keep the static times */ }
-  let timer = 0;
-  new IntersectionObserver(([e]) => {
-    clearInterval(timer);
-    if (e.isIntersecting) { try { draw(); timer = setInterval(draw, 15000); } catch (err) { /* static */ } }
-  }).observe(sec);
-
-  const radio = (list, onPick) => list.forEach((b) => b.addEventListener('click', () => {
-    list.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
-    if (onPick) onPick(b);
-  }));
-  radio([...sec.querySelectorAll('.co-office')]);
-  const note = sec.querySelector('.co-note');
-  radio([...sec.querySelectorAll('.co-chip')], (b) => { if (note) note.textContent = b.dataset.note; });
-})();
-</script>
-<script>
-// Careers: "See all 9 open roles" opens the full list with office filters; each role opens like an accordion
-// with a short brief and an apply link. The highlighted (indigo) row follows the pointer / the open role.
-(() => {
-  const sec = document.querySelector('[data-section="careers"]');
-  if (!sec) return;
-  const card = sec.querySelector('.cr-card');
-  const toggle = sec.querySelector('[data-roles-toggle]');
-  const roles = [...sec.querySelectorAll('.cr-role')];
-  const tabs = [...sec.querySelectorAll('.cr-tab')];
-  const count = sec.querySelector('[data-roles-count]');
-  const hot = (r) => roles.forEach((x) => x.classList.toggle('is-hot', x === r));
-  const open = (r, on) => {
-    r.classList.toggle('is-open', on);
-    r.querySelector('.cr-role__h').setAttribute('aria-expanded', String(on));
-    r.querySelector('.cr-role__d').inert = !on;
-  };
-  roles.forEach((r) => {
-    open(r, false);
-    const h = r.querySelector('.cr-role__h');
-    h.addEventListener('click', () => {
-      const on = !r.classList.contains('is-open');
-      roles.forEach((x) => open(x, x === r ? on : false));
-      hot(r);
-    });
-    r.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse' && !roles.some((x) => x.classList.contains('is-open'))) hot(r); });
-  });
-  const filter = (office) => {
-    tabs.forEach((t) => t.setAttribute('aria-selected', String(t.dataset.office === office)));
-    let n = 0;
-    roles.forEach((r) => { const show = office === 'all' || r.dataset.office === office; r.hidden = !show; if (show) n++; if (!show) open(r, false); });
-    if (count) count.textContent = `${n} open role${n === 1 ? '' : 's'}`;
-  };
-  tabs.forEach((t) => t.addEventListener('click', () => filter(t.dataset.office)));
-  toggle.addEventListener('click', () => {
-    const all = !card.classList.contains('is-all');
-    card.classList.toggle('is-all', all);
-    toggle.setAttribute('aria-expanded', String(all));
-    toggle.textContent = all ? 'Show fewer roles' : 'See all 9 open roles';
-    if (!all) { filter('all'); roles.forEach((r) => open(r, false)); if (count) count.textContent = 'Open roles'; }
-    else { filter('all'); }
-  });
-})();
-</script>
-<script>
-// Closing footer: newsletter form has no backend yet, so it validates locally and confirms in place.
-(() => {
-  const form = document.querySelector('[data-section="closing"] .cl-form');
+  const form = document.querySelector('[data-section="closing"] form[name="newsletter"]');
   if (!form) return;
-  form.addEventListener('submit', (e) => {
+  const box = form.parentElement;
+  const input = form.querySelector('input[type="email"]');
+  const btn = form.querySelector('button[type="submit"]');
+  const err = box.querySelector('.cl-err');
+  const ok = box.querySelector('.cl-ok');
+  const mark = (bad, msg) => {
+    input.setAttribute('aria-invalid', bad ? 'true' : 'false');
+    input.style.borderColor = bad ? 'rgba(255,140,140,.7)' : '';
+    if (msg) err.textContent = msg;
+    err.hidden = !bad;
+  };
+  input.addEventListener('input', () => mark(false));
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const input = form.querySelector('input');
-    const btn = form.querySelector('button');
-    if (!input.checkValidity()) { input.focus(); input.style.borderColor = 'rgba(255,140,140,.7)'; return; }
-    input.style.borderColor = '';
-    input.value = '';
-    input.placeholder = 'Thanks, you are on the list';
-    btn.textContent = 'Subscribed';
+    if (!input.checkValidity()) { mark(true, 'Enter a valid work email.'); input.focus(); return; }
+    mark(false);
     btn.disabled = true;
+    try {
+      const res = await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() });
+      if (!res.ok) throw new Error(String(res.status));
+      input.value = '';
+      btn.textContent = 'Subscribed';
+      ok.textContent = 'Thanks, you are on the list.';
+    } catch (_) {
+      btn.disabled = false;
+      mark(true, 'Something went wrong. Please try again.');
+    }
   });
-  form.querySelector('input').addEventListener('input', (e) => { e.target.style.borderColor = ''; });
 })();
 </script>
 </body>

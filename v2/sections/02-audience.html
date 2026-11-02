@@ -1,0 +1,61 @@
+<section data-section="audience" id="audience" class="v2-sec" data-tone="light" style="--h:900px; background: radial-gradient(calc(760px * var(--s)) calc(420px * var(--s)) at calc(50% + 350px * var(--s)) calc(300px * var(--s)), rgba(183,215,255,.7) 0%, rgba(183,215,255,0) 100%), #F5F7FA; color:#0F1115;">
+<style>
+  /* Audience room (Smoke). Apple Premium Resellers lead; the other three audiences follow as tiles.
+     Card language from Solutions › premium (receipt lines), tiles from Solutions › hero segments. */
+  [data-section="audience"] p { margin: 0; }
+  [data-section="audience"] .au-abs { position: absolute; }
+  [data-section="audience"] .au-copy { left: 120px; top: 120px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+  [data-section="audience"] .au-eyebrow { font-size: 14px; line-height: normal; color: #3047EC; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+  [data-section="audience"] .au-eyebrow img { width: 7px; height: 7px; display: block; }
+  [data-section="audience"] h2 { margin: 0; font-weight: 400; font-size: 56px; line-height: 1.04; letter-spacing: -0.04em; color: #0F1115; white-space: nowrap; }
+  [data-section="audience"] .au-lede { width: 500px; font-weight: 300; font-size: 17px; line-height: 1.55; color: rgba(15,17,21,.7); }
+  [data-section="audience"] .au-btn { display: inline-flex; align-items: center; padding: 14px 22px; border-radius: 999px; background: #0F1115; color: #F5F7FA; font-size: 15px; line-height: normal; white-space: nowrap; transition: background-color .25s; }
+  [data-section="audience"] .au-btn:hover { background: #262a33; }
+
+  [data-section="audience"] .au-card { left: 800px; top: 104px; width: 520px; padding: 28px 32px 24px; border-radius: 26px; background: #fff;
+    box-shadow: inset 0 0 0 1px rgba(15,17,21,.08), 0 30px 70px -24px rgba(15,17,21,.18); display: flex; flex-direction: column; }
+  [data-section="audience"] .au-card__hd { display: flex; justify-content: space-between; align-items: baseline; white-space: nowrap; }
+  [data-section="audience"] .au-card__hd p:first-child { font-size: 22px; font-weight: 300; letter-spacing: -0.01em; }
+  [data-section="audience"] .au-card__meta { margin-top: 6px; display: flex; justify-content: space-between; font-size: 13px; color: rgba(15,17,21,.5); white-space: nowrap; }
+  [data-section="audience"] .au-card__meta span:last-child { font-size: 12px; }
+  [data-section="audience"] .au-step { display: grid; grid-template-columns: 34px 1fr auto; align-items: start; gap: 0 10px; padding: 16px 0; box-shadow: inset 0 1px 0 rgba(15,17,21,.08); white-space: nowrap; }
+  [data-section="audience"] .au-step:first-of-type { margin-top: 18px; }
+  [data-section="audience"] .au-step i { font-style: normal; font-size: 13px; color: #3047EC; line-height: 22px; }
+  [data-section="audience"] .au-step b { display: block; font-weight: 400; font-size: 16px; line-height: 22px; color: #0F1115; }
+  [data-section="audience"] .au-step span { display: block; font-weight: 300; font-size: 13px; line-height: 20px; color: rgba(15,17,21,.55); }
+  [data-section="audience"] .au-step em { font-style: normal; font-weight: 300; font-size: 15px; line-height: 22px; color: #0F1115; text-align: right; }
+  [data-section="audience"] .au-step em.on { color: #3047EC; }
+  [data-section="audience"] .au-pill { align-self: flex-start; margin-top: 8px; padding: 6px 12px; border-radius: 999px; background: #B7D7FF; color: #0F1115; font-size: 13px; line-height: normal; white-space: nowrap; }
+
+  [data-section="audience"] .au-also { left: 120px; top: 632px; font-size: 13px; color: rgba(15,17,21,.5); white-space: nowrap; }
+  [data-section="audience"] .au-tile { top: 664px; width: 380px; height: 170px; display: block; color: #0F1115; }
+  [data-section="audience"] .au-tile i { position: absolute; left: 0; top: 0; width: 380px; height: 2px; background: rgba(15,17,21,.12); transition: background-color .3s; }
+  [data-section="audience"] .au-tile b { position: absolute; left: 0; top: 22px; font-weight: 400; font-size: 20px; line-height: normal; white-space: nowrap; }
+  [data-section="audience"] .au-tile span { position: absolute; left: 0; top: 56px; width: 360px; font-weight: 300; font-size: 15px; line-height: 1.5; color: rgba(15,17,21,.68); }
+  [data-section="audience"] .au-tile u { position: absolute; left: 0; top: 136px; text-decoration: none; font-size: 14px; color: #3047EC; white-space: nowrap; }
+  [data-section="audience"] .au-tile:hover i { background: #3047EC; }
+</style>
+  <div class="v2-canvas">
+    <div class="au-abs au-copy">
+      <p class="au-eyebrow" data-m="up"><img alt="" src="assets/programs-dot-indigo.svg">Apple Premium Resellers</p>
+      <h2 data-m="up" style="--d:60ms">Trade-in built for<br>Apple Premium Resellers.</h2>
+      <p class="au-lede" data-m="up" style="--d:140ms">Define an assisted journey with Apple Trade In Kit diagnostics, clear condition assessment and transparent credit terms. Connect device assessment with qualified buyer offers and trade-in credit within your retail journey, under your brand and program rules.</p>
+      <a class="au-btn" href="/v2/contact/?type=apr" data-m="up" style="--d:220ms">Discuss your Apple trade-in program</a>
+    </div>
+
+    <article class="au-abs au-card" data-m="up" style="--d:300ms" aria-label="Illustrative Apple Premium Reseller trade-in workflow">
+      <div class="au-card__hd"><p>Assisted trade-in at the table</p></div>
+      <div class="au-card__meta"><span>iPhone 15 Pro, 256 GB → iPhone 18 Pro</span><span>Illustrative workflow · sample data</span></div>
+      <div class="au-step" data-m="fade" style="--d:700ms"><i>01</i><div><b>Assess the device</b><span>Apple Trade In Kit diagnostics · condition check</span></div><em>Grade A</em></div>
+      <div class="au-step" data-m="fade" style="--d:820ms"><i>02</i><div><b>Compare eligible offers</b><span>Ranked by expected net recovery</span></div><em>3 offers</em></div>
+      <div class="au-step" data-m="fade" style="--d:940ms"><i>03</i><div><b>Present trade-in credit</b><span>Quote shown to the customer, subject to inspection</span></div><em class="on">−€590</em></div>
+      <div class="au-step" data-m="fade" style="--d:1060ms"><i>04</i><div><b>Coordinate handover and settlement</b><span>Device collected · buyer settled on agreed terms</span></div><em>Agreed terms</em></div>
+      <p class="au-pill" data-m="pop" style="--d:1300ms">Credit towards the next purchase</p>
+    </article>
+
+    <p class="au-abs au-also" data-m="up" style="--d:200ms">Also built for</p>
+    <a href="/v2/solutions/#retailers" class="au-abs au-tile" data-m="up" style="left:120px; --d:300ms"><i></i><b>Electronics retailers</b><span>Make trade-in and device programs part of the purchase journey, with clear steps for customers and store teams.</span><u>Explore retailers →</u></a>
+    <a href="/v2/solutions/#telecom" class="au-abs au-tile" data-m="up" style="left:530px; --d:400ms"><i></i><b>Telecom operators</b><span>Connect eligible device value with upgrade and renewal journeys under your program's commercial rules.</span><u>Explore telecom →</u></a>
+    <a href="/v2/solutions/#brands" class="au-abs au-tile" data-m="up" style="left:940px; --d:500ms"><i></i><b>Device brands and OEM ecosystems</b><span>Coordinate device programs across participating channels, with agreed eligibility, incentives and reporting.</span><u>Explore device brands →</u></a>
+  </div>
+</section>
